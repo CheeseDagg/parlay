@@ -51,6 +51,13 @@ from itertools import combinations
 HERE = pathlib.Path(__file__).parent
 DEFAULT = HERE / "slips.json"
 
+
+def _utcnow():
+    """Same 17-char shape board.py uses, so a date read off a slips file and a
+    date read off a leg's start time compare without either being parsed."""
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
+
 # Typical two-way overround by sport, used ONLY when a slip does not record the
 # opposite side's price. These are round numbers on purpose: pretending to know
 # a book's margin to four decimals would be false precision on top of an
@@ -431,6 +438,22 @@ def report(path=DEFAULT, sens=False, mc=False, seq=False, method=None):
     if not slips:
         print("no open slips in " + str(path))
         return 0
+    # THE FILE RECORDS ITS OWN DATE AND NOTHING READ IT. Every number below is a
+    # statement about tickets that were open on one particular morning, so
+    # grading an old file produces a page of confident percentages about bets
+    # that have already resolved -- identical on screen to a live grade.
+    # slips_2026-08-01.json is kept in this repo precisely so an old set can be
+    # re-graded, which makes pointing the tool at a stale file a normal thing to
+    # do rather than an accident. Name the date, and say when it is not today.
+    print(f"  grading {pathlib.Path(path).name}"
+          + (f", as_of {J['as_of']}" if J.get('as_of')
+             else " (NO as_of RECORDED -- add one; every number here is dated)")
+          + f", {len(slips)} open slip(s)")
+    _today = _utcnow()[:10]
+    if J.get('as_of') and J['as_of'] < _today:
+        print(f"  NOTE: that file is dated {J['as_of']} and today is {_today}. "
+              f"These are historical tickets -- the percentages below are what "
+              f"they were worth then, not what is open now.")
     cons = consensus(slips, method)
     imp, mkt = implication_map(slips)
     game = game_map(slips)
@@ -772,6 +795,36 @@ def selftest():
     lo, ind, hi = frechet_band(["home ML", "away ML"], cx, ix, mx, gx)
     chk(lo == 0.0 and ind == 0.0 and hi == 0.0,
         "two sides of one market band to exactly [0,0], not a product")
+
+    # ---- THE FILE'S DATE. Every percentage this tool prints is a statement
+    # about one particular morning, and the as_of that says which morning was
+    # recorded in the file and read by nothing. An old set re-graded looked
+    # exactly like a live one. Captured off real stdout, because the whole
+    # defect is about what does and does not reach the screen.
+    import io, contextlib, tempfile, os
+    def _grade(doc):
+        fd, p = tempfile.mkstemp(suffix='.json'); os.close(fd)
+        pathlib.Path(p).write_text(json.dumps(doc))
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            report(p)
+        os.unlink(p)
+        return buf.getvalue()
+
+    _one = {"slips": [{"name": "t", "legs": [{"lab": "A", "price": -300},
+                                             {"lab": "B", "price": -250}]}]}
+    out = _grade(dict(_one, as_of="2020-01-01"))
+    chk("as_of 2020-01-01" in out, "the grade names the date of the file it read")
+    chk("historical tickets" in out and "not what is open now" in out,
+        "and a file older than today is called historical, not graded silently")
+
+    out = _grade(_one)
+    chk("NO as_of RECORDED" in out,
+        "a file with no as_of is told to add one rather than passing as current")
+
+    out = _grade(dict(_one, as_of=_utcnow()[:10]))
+    chk("historical tickets" not in out,
+        "and TODAY'S file is not scolded -- the note is earned, not automatic")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1

@@ -77,6 +77,31 @@ def _et_date(utc):
     return (datetime.strptime(utc, "%Y-%m-%dT%H:%MZ")
             - timedelta(hours=4)).strftime("%Y-%m-%d")
 
+
+def _utcnow():
+    """Wall clock in the same string shape every leg's t carries, so the two are
+    directly comparable as strings and no leg ever gets parsed just to be
+    compared. One definition, because two solvers were each building their own."""
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
+
+
+def _age_h(then, now):
+    """'42h' / '3.1d' -- how long ago `then` was. A raw pair of timestamps makes
+    a reader do date arithmetic to find out whether a board is an hour stale or a
+    week stale, and those two call for completely different responses."""
+    from datetime import datetime
+    f = "%Y-%m-%dT%H:%MZ"
+    h = (datetime.strptime(now, f) - datetime.strptime(then, f)).total_seconds() / 3600
+    return f"{h:.0f}h" if h < 48 else f"{h/24:.1f}d"
+
+
+# Set by build(): True when NOT ONE leg in the raw pool is still to come. It is a
+# property of the feed, so it survives the filters -- a solver that finds nothing
+# needs to know whether it found nothing because its constraints were tight or
+# because there was never anything live to find. Those have opposite fixes.
+FEED_DEAD = False
+
 MODEL_P = {}
 _unmapped = set()
 for _g in _SL['games']:
@@ -332,6 +357,21 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
             print(f"  board: {len(_badcode)} moneyline team name(s) not in TEAM3 -- "
                   f"{sorted(_badcode)}. Those legs carry no model opinion.")
 
+    # FEED AGE IS MEASURED BEFORE THE FILTERS, NOT AFTER. It used to be measured
+    # after, which meant the one message that says "these prices are days old"
+    # was computed over a pool the cutoff had already emptied -- so passing --now,
+    # the correct thing to do, SUPPRESSED the warning entirely and left "no ticket
+    # meets these constraints" as the only output. That reads as "the board is
+    # thin today". It is not: it is that every file in this package is stale.
+    # How old the feed is has nothing to do with which price floor a solver asked
+    # for, so it is measured over the raw pool.
+    _now = _utcnow()
+    # 'Z' is the sentinel t for a K leg whose game has no START entry -- not a
+    # timestamp. It string-compares greater than any real one, so it would count
+    # as "in the future" and hide a dead board. Excluded from the age maths.
+    _all_t = sorted(o['t'] for v in markets.values() for o in v if o['t'] != 'Z')
+    _live_t = [t for t in _all_t if t > _now]
+
     for k in list(markets):
         markets[k] = [o for o in markets[k]
                       if o['p'] > 1e-9 and o['d'] > 1.0
@@ -347,22 +387,30 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
             del markets[k]
 
     # STALENESS. Every raw feed in this package (mlbml.py, totals.py, f5.py,
-    # mma.py, other.py) is a hand-pasted snapshot with a date in its docstring and
-    # nothing that expires. Without --now the solver will happily build a 25-leg
-    # ticket entirely out of games that finished days ago and report a hit
-    # probability for it, because from the DP's point of view nothing is wrong:
-    # the prices are real, the de-vig is real, the arithmetic is right. It is
-    # answering a question about last Friday. That has to be said out loud rather
-    # than left to whoever remembers to pass --now.
-    from datetime import datetime, timezone
-    _now = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
-    _past = [o for k in markets for o in markets[k] if o['t'] <= _now]
-    if _past:
-        _tot = sum(len(v) for v in markets.values())
-        _last = max(o['t'] for k in markets for o in markets[k])
-        print(f"  board: {len(_past)} of {_tot} candidate legs have ALREADY STARTED "
-              f"(now {_now}, latest leg on the board {_last}). These are not "
-              f"bettable. Pass --now to exclude them.")
+    # mma.py, other.py, times.py) is a hand-pasted snapshot with a date in its
+    # docstring and nothing that expires. With the cutoff off, the solver will
+    # happily build a 25-leg ticket entirely out of games that finished days ago
+    # and report a hit probability for it, because from the DP's point of view
+    # nothing is wrong: the prices are real, the de-vig is real, the arithmetic
+    # is right. It is answering a question about last Friday.
+    global FEED_DEAD
+    FEED_DEAD = bool(_all_t) and not _live_t
+    if FEED_DEAD:
+        # NOT A WARNING. A board on which nothing at all is still to come is not
+        # a thin board, it is a dead feed, and the distinction is the difference
+        # between "try a lower target" and "repaste the files". Said at feed level
+        # so it fires whether or not a cutoff was passed.
+        print(f"  board: THE FEED IS DEAD -- all {len(_all_t)} candidate legs "
+              f"started before now ({_now}). Newest event on the board is "
+              f"{_all_t[-1]}, {_age_h(_all_t[-1], _now)} ago. Every raw file here "
+              f"is a hand-pasted snapshot with no expiry: mlbml.py, totals.py, "
+              f"f5.py, mma.py, other.py, times.py. Nothing below is bettable at "
+              f"the posted price. Repaste the feeds.")
+    elif not cutoff and len(_live_t) < len(_all_t):
+        print(f"  board: {len(_all_t) - len(_live_t)} of {len(_all_t)} candidate "
+              f"legs have ALREADY STARTED (now {_now}, newest event on the board "
+              f"{_all_t[-1]}). These are not bettable and the cutoff is OFF -- "
+              f"they can appear on the ticket. Drop --anytime to exclude them.")
     return markets
 
 
@@ -426,6 +474,38 @@ def selftest():
     MODEL_P = _save
     chk(all(isinstance(k, tuple) and len(k) == 2 for k in MODEL_P),
         "the live MODEL_P is keyed by (date, matchup), never by bare team code")
+
+    # ---- FEED AGE. The second silent-production-bug family in this package.
+    # A hand-pasted snapshot with no expiry produces a complete, confident ticket
+    # made of games that finished days ago, and the only thing that ever stood
+    # between that and the screen was remembering to type --now.
+    chk(_age_h("2026-08-03T12:00Z", "2026-08-03T20:00Z") == "8h",
+        "an eight-hour-old board reads as hours")
+    chk(_age_h("2026-07-31T20:00Z", "2026-08-03T20:00Z") == "3.0d",
+        "a three-day-old board reads as DAYS, not as 72h nobody converts")
+    chk(_age_h("2026-08-01T22:00Z", "2026-08-03T20:00Z") == "46h"
+        and _age_h("2026-08-01T19:00Z", "2026-08-03T20:00Z") == "2.0d",
+        "and the hour/day switch is at 48h, not at a calendar boundary "
+        "(46h stays hours, 49h becomes days)")
+
+    # 'Z' is the sentinel t for a K leg whose game has no START entry. It string-
+    # compares greater than every real timestamp, so counting it as a live leg
+    # would mask a dead board -- one unmatched pitcher would keep FEED_DEAD False
+    # forever. This is the exact shape of the comparison build() makes.
+    _now = "2026-08-03T20:00Z"
+    chk('Z' > _now, "the K sentinel really does compare as 'in the future' "
+                    "(which is why it has to be excluded, not relied on)")
+    _ts = ["2026-08-01T22:00Z", "Z", "2026-08-02T03:00Z"]
+    chk([t for t in _ts if t != 'Z' and t > _now] == [],
+        "a pool of finished legs plus one sentinel counts as ZERO live legs")
+    _ts2 = _ts + ["2026-08-04T00:00Z"]
+    chk([t for t in _ts2 if t != 'Z' and t > _now] == ["2026-08-04T00:00Z"],
+        "and one genuinely future leg is enough to make the board live")
+
+    chk(_utcnow() > "2026-01-01T00:00Z" and _utcnow().endswith('Z')
+        and len(_utcnow()) == 17,
+        "_utcnow() emits the same 17-char shape every leg's t carries, so the "
+        "comparison never needs a parse")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1

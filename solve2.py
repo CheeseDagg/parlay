@@ -1,7 +1,8 @@
 """25-leg single-book solver with a cap on how many baseball legs may be used.
 
-  usage: python3 solve2.py FanDuel 21.0 --now --minprice=200 --maxmlb=12
-         python3 solve2.py FanDuel 21.0 --now --minprice=200 --sweep
+  usage: python3 solve2.py FanDuel 21.0 --minprice=200 --maxmlb=12
+         python3 solve2.py FanDuel 21.0 --minprice=200 --sweep
+         (started legs are excluded by default; --anytime lifts that)
 
 Why this is not just solve.py with a filter: a cap on one sport is a second
 knapsack constraint, and bolting it onto the price DP as a third axis costs
@@ -43,10 +44,18 @@ def flag(name, default=None):
 # ways and both cannot be maximised at once.
 N_LEGS = int(flag('legs', 25))
 
-CUTOFF = None
-if '--now' in sys.argv:
-    from datetime import datetime, timezone
-    CUTOFF = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
+# A GAME THAT HAS ALREADY STARTED IS NOT BETTABLE, so excluding it is not an
+# option a caller opts into -- it is what "candidate leg" means. This was `if
+# '--now' in sys.argv`, and forgetting the flag did not produce an error or an
+# empty result: it produced a complete, confident 25-leg ticket with a headline
+# price and a hit probability, built entirely out of games that had finished
+# days earlier. It looked exactly like a live ticket. That is the same argument
+# the -350 floor below already won, so it gets the same treatment: on by
+# default, and --anytime lifts it explicitly for the one legitimate use, which
+# is pricing a slip that is already running.
+CUTOFF = None if '--anytime' in sys.argv else board._utcnow()
+# --now is kept as a no-op alias so an old command line does not silently change
+# meaning; it now describes what already happens.
 # The -350 floor is a STANDING constraint ("nothing under -350"), so it is the
 # default rather than something to remember to type. It was opt-in, which meant
 # the difference between a ticket that respects the rule and one that quietly
@@ -213,6 +222,7 @@ if '--sweep' in sys.argv:
     print(f"{BOOK}  >= {TARGET:g}x, {N_LEGS} legs, all legs -{MINPRICE} or heavier"
           if MINPRICE else f"{BOOK}  >= {TARGET:g}x, {N_LEGS} legs")
     print(f"{'other':>7s} {'baseball':>9s} {'hit prob':>10s}")
+    _rows = 0
     for m in range(0, min(n_fight_markets, N_LEGS) + 1):
         nm = N_LEGS - m
         if nm > len(POOLS['MLB']):
@@ -220,7 +230,17 @@ if '--sweep' in sys.argv:
         v = max((AF[m, b1] + SM[nm, max(0, NBT - b1)] for b1 in range(NB)
                  if AF[m, b1] > NEG / 2), default=NEG)
         if v > NEG / 2:
+            _rows += 1
             print(f"{m:>7d} {nm:>9d} {math.exp(v)*100:>9.2f}%")
+    # A header over zero rows is the same silent failure as everything else in
+    # this package: it looks like a sweep that found nothing interesting rather
+    # than a sweep with nothing to sweep.
+    if not _rows:
+        print("  (no split reaches the target)"
+              + ("  -- because not one leg in the raw pool is still to come. "
+                 "The feed is stale, not the board thin."
+                 if board.FEED_DEAD else
+                 "  Loosen the target, the leg count, or --minprice."))
     sys.exit()
 
 MIN_FIGHT = max(0, N_LEGS - MAXMLB)
@@ -229,9 +249,19 @@ if val < NEG / 2:
     sys.exit(f"No {N_LEGS}-leg {BOOK} ticket meets these constraints.\n"
              f"  in force: {N_LEGS} legs, >= {TARGET:g}x, "
              f"every leg -{MINPRICE} or heavier, max {MAXMLB} baseball"
-             + (f", started legs excluded (cutoff {CUTOFF})" if CUTOFF else "")
+             + (f", started legs excluded (cutoff {CUTOFF})" if CUTOFF
+                else ", STARTED LEGS ALLOWED (--anytime)")
              + "\n  A shorter ticket and a heavier price floor pull against each "
-               "other; loosen one. --minprice=0 lifts the floor.")
+               "other; loosen one. --minprice=0 lifts the floor."
+             # "No ticket" and "the feed is three days old" are different
+             # problems with opposite fixes, and this line is where the two got
+             # confused: the board's dead-feed message prints above and then
+             # scrolls, and the reader is left with a sentence that reads like a
+             # thin board. Say which one it is, here, last.
+             + ("\n  BUT FIRST: not one leg in the raw pool is still to come. "
+                "This is not a thin board, it is a stale feed -- repaste "
+                "mlbml.py / totals.py / f5.py / mma.py / other.py / times.py."
+                if board.FEED_DEAD else ""))
 
 need = max(0, NBT - b1)
 b2 = int(np.argmax(AM[N_LEGS - m, need:] >= SM[N_LEGS - m, need] - 1e-12)) + need

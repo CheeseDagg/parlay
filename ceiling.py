@@ -14,8 +14,9 @@ possible from underneath, and among the tickets that land in that window, take
 the one most likely to win. So the constraint is a WINDOW, [lo, hi], and the
 DP keeps exact price buckets rather than saturating.
 
-  usage: python3 ceiling.py FanDuel -200 --now --maxlegs=6
-         python3 ceiling.py FanDuel -200 --now --maxlegs=6 --maxmlb=0
+  usage: python3 ceiling.py FanDuel -200 --maxlegs=6
+         python3 ceiling.py FanDuel -200 --maxlegs=6 --maxmlb=0
+         (started legs are excluded by default; --anytime lifts that)
 
 Bucket arithmetic mirrors solve2: db uses FLOOR, so a leg's price contribution
 is understated and the reported total is a lower bound. That is the safe
@@ -27,6 +28,7 @@ import math, sys
 from collections import Counter
 import numpy as np
 sys.path.insert(0, '/root/parlay')
+import board
 from board import build
 from times import et
 
@@ -48,13 +50,17 @@ MAXMLB = int(flag('maxmlb', MAXLEGS))
 FLOORFRAC = float(flag('floorfrac', 0.97))   # how much of the cap must be used
 MINPRICE = int(flag('minprice', 0))
 
-CUTOFF = None
-if '--now' in sys.argv:
-    from datetime import datetime, timezone
-    CUTOFF = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
+# ON BY DEFAULT, for the reason spelled out in solve2.py: a started game is not
+# bettable, so excluding it is what "candidate leg" means rather than a flag to
+# remember. Forgetting --now here produced a finished ticket that looked exactly
+# like a live one. --anytime lifts it explicitly; --now is a no-op alias.
+CUTOFF = None if '--anytime' in sys.argv else board._utcnow()
 
 markets = build(BOOK, no_plus='--allow-plus' not in sys.argv,
                 min_price=MINPRICE, cutoff=CUTOFF)
+if board.FEED_DEAD:
+    print("  ceiling: not one leg in the raw pool is still to come. Anything "
+          "printed below is a question about a board that has already resolved.")
 
 NB = int(math.floor(math.log(CAP) / STEP)) + 1      # exact, no saturation
 LO = int(math.floor(math.log(CAP * FLOORFRAC) / STEP))
