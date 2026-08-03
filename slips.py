@@ -153,7 +153,8 @@ class Leg:
     `implies` names another outcome in the same market that this one entails
     (Stirling-by-points implies Stirling-wins)."""
 
-    __slots__ = ("lab", "price", "sport", "mkt", "out", "opp", "implies", "t")
+    __slots__ = ("lab", "price", "sport", "mkt", "out", "opp", "implies", "t",
+                 "game")
 
     def __init__(self, d):
         if isinstance(d, (list, tuple)):
@@ -166,6 +167,15 @@ class Leg:
         self.opp = d.get("opp")
         self.implies = d.get("implies")
         self.t = d.get("t") or ""
+        # `mkt` is a LOGICAL grouping: same market -> one outcome entails or
+        # excludes the other, which joint() already handles exactly. `game` is a
+        # STATISTICAL one: two legs on the same event in DIFFERENT markets (a
+        # team ML and that game's total, a fighter ML and the round group) are
+        # not logically linked but are certainly not independent, and the product
+        # rule quietly prices them as if they were. Defaulting game to mkt makes
+        # every unlabelled leg its own group, so nothing changes until a slip
+        # actually says two legs share a game.
+        self.game = d.get("game") or self.mkt
 
     def __repr__(self):
         return f"<{self.out} {self.price:+d}>"
@@ -231,6 +241,11 @@ def implication_map(slips):
     return imp, mkt
 
 
+def game_map(slips):
+    """outcome -> the game it settles in (see Leg.game)."""
+    return {l.out: l.game for s in slips for l in s.legs}
+
+
 def _entails(a, b, imp):
     """True if outcome a entails outcome b."""
     seen = set()
@@ -268,6 +283,61 @@ def joint(outcomes, cons, imp, mkt):
 
 def slip_prob(slip, cons, imp, mkt):
     return joint([l.out for l in slip.legs], cons, imp, mkt)
+
+
+def frechet_band(outcomes, cons, imp, mkt, game):
+    """(lo, indep, hi) for P(all outcomes true), without assuming anything about
+    the dependence between legs on the SAME game.
+
+    joint() multiplies across markets. That is the standing assumption of every
+    parlay price, and for legs on different events it is close enough to true.
+    For two legs on the SAME event it can be badly wrong in either direction:
+    a favourite's ML and that game's under are positively correlated (good
+    starting pitching drives both), so the product UNDERSTATES the ticket; the
+    same ML and the over are negatively correlated, so the product OVERSTATES it.
+    A parlay built out of same-game legs is therefore mispriced by the product
+    rule and there is no way to know the sign without a joint model of the game.
+
+    What CAN be said exactly is the Frechet-Hoeffding bound. Within a game group
+    of probabilities p_1..p_n the intersection satisfies
+
+        max(0, sum(p_i) - (n-1))  <=  P(all)  <=  min(p_i)
+
+    with no distributional assumption whatsoever. Across game groups the product
+    rule is kept -- different events really are close to independent. The result
+    is a hard interval containing the truth, reported next to the point estimate
+    so the size of the unmodelled risk is visible instead of implied.
+
+    Groups of one collapse to p, so a slip with no same-game legs returns
+    (p, p, p) and this costs nothing.
+    """
+    by_game = {}
+    for o in outcomes:
+        by_game.setdefault(game.get(o, o), []).append(o)
+    lo = hi = 1.0
+    for outs in by_game.values():
+        p_here = joint(outs, cons, imp, mkt)     # exact within-market handling
+        if len(outs) == 1 or p_here == 0.0:
+            lo *= p_here
+            hi *= p_here
+            continue
+        # collapse each market inside the game to a single probability first, so
+        # entailment/exclusion is not double-counted as statistical dependence
+        by_mkt = {}
+        for o in outs:
+            by_mkt.setdefault(mkt.get(o, o), []).append(o)
+        ps = [joint(g, cons, imp, mkt) for g in by_mkt.values()]
+        lo *= max(0.0, sum(ps) - (len(ps) - 1))
+        hi *= min(ps)
+    return lo, joint(outcomes, cons, imp, mkt), hi
+
+
+def same_game_groups(slip, game):
+    """[(game, [labels])] for every game this slip hits more than once."""
+    by = {}
+    for l in slip.legs:
+        by.setdefault(l.game, []).append(l.lab)
+    return [(g, ls) for g, ls in by.items() if len(ls) > 1]
 
 
 def any_hits(slips, cons, imp, mkt):
@@ -363,15 +433,32 @@ def report(path=DEFAULT, sens=False, mc=False, seq=False, method=None):
         return 0
     cons = consensus(slips, method)
     imp, mkt = implication_map(slips)
+    game = game_map(slips)
 
     print(f"{'slip':30s} {'legs':>4s} {'price':>10s} {'p(hit)':>8s} "
           f"{'true odds':>11s} {'fair':>8s}")
+    sg_any = False
     for s in slips:
         p = slip_prob(s, cons, imp, mkt)
         d = s.decimal
         fair = f"+{american(1/p)}" if p > 0 else "-"
         print(f"{s.name:30s} {len(s.legs):4d} {d:9.2f}x {p*100:7.2f}% "
               f"{('%.0f-1' % (1/p - 1)) if p > 0 else '-':>11s} {fair:>8s}")
+        # the point estimate above multiplies across markets. Where a slip hits
+        # one game twice that is an assumption, not arithmetic — show the hard
+        # bound around it rather than letting the single number stand alone.
+        grp = same_game_groups(s, game)
+        if grp:
+            sg_any = True
+            lo, _, hi = frechet_band([l.out for l in s.legs], cons, imp, mkt, game)
+            print(f"{'':30s} {'':4s} {'':10s} "
+                  f"[{lo*100:5.2f}% .. {hi*100:5.2f}%] correlation band")
+            for g, labs in grp:
+                print(f"{'':32s} same game '{g}': {', '.join(labs)}")
+    if sg_any:
+        print("  the band is Frechet-exact: it assumes NOTHING about how the "
+              "same-game legs move together.\n  The point estimate assumes they "
+              "are independent, which is the one thing they are not.")
 
     # ---- the cross-slip block: the reason this file exists
     if len(slips) > 1:
@@ -643,6 +730,48 @@ def selftest():
         f"the 2026-08-01 16-leg slip still grades 5.19% (got {p*100:.2f}%)")
     chk(abs(L[0].decimal - 14.19) < 0.02,
         f"and still prices 14.19x (got {L[0].decimal:.2f}x)")
+
+    # ---- Frechet-Hoeffding same-game band
+    # (a) COST NOTHING when nothing is labelled. Every leg above defaults game=mkt,
+    # so each is its own group and the band must collapse onto the point estimate.
+    gl = game_map(L)
+    lo, ind, hi = frechet_band([l.out for l in L[0].legs], cl, il, ml_, gl)
+    chk(abs(lo - p) < 1e-12 and abs(ind - p) < 1e-12 and abs(hi - p) < 1e-12,
+        "with no same-game labels the band collapses to the point estimate")
+    chk(same_game_groups(L[0], gl) == [],
+        "and no same-game group is reported")
+
+    # (b) two legs on ONE game in DIFFERENT markets: the band must be the exact
+    # Frechet interval and must strictly contain the independence product.
+    G = [Slip({"name": "SGP", "legs": [
+        {"lab": "Team ML", "price": -300, "mkt": "ml", "game": "g1"},
+        {"lab": "Under 44.5", "price": -110, "mkt": "tot", "game": "g1"}]})]
+    cg = consensus(G)
+    ig, mg = implication_map(G)
+    gg = game_map(G)
+    p1 = cg["Team ML"]["p"]; p2 = cg["Under 44.5"]["p"]
+    lo, ind, hi = frechet_band(["Team ML", "Under 44.5"], cg, ig, mg, gg)
+    chk(abs(lo - max(0.0, p1 + p2 - 1)) < 1e-12,
+        f"lower bound is max(0, p1+p2-1) ({lo:.4f})")
+    chk(abs(hi - min(p1, p2)) < 1e-12, f"upper bound is min(p1,p2) ({hi:.4f})")
+    chk(abs(ind - p1 * p2) < 1e-12, "the middle value is still the product rule")
+    chk(lo < ind < hi, f"and the product sits strictly inside ({lo:.4f} < "
+                       f"{ind:.4f} < {hi:.4f})")
+    chk([g for g, _ in same_game_groups(G[0], gg)] == ["g1"],
+        "the same-game group is reported by name")
+
+    # (c) same game, SAME market, opposite sides: exclusion wins before any
+    # bound is taken. A band of [0,0] is the only correct answer here — the old
+    # product rule would have quoted a positive number.
+    X = [Slip({"name": "impossible", "legs": [
+        {"lab": "home ML", "price": -150, "mkt": "g1ml", "game": "g1"},
+        {"lab": "away ML", "price": +130, "mkt": "g1ml", "game": "g1"}]})]
+    cx = consensus(X)
+    ix, mx = implication_map(X)
+    gx = game_map(X)
+    lo, ind, hi = frechet_band(["home ML", "away ML"], cx, ix, mx, gx)
+    chk(lo == 0.0 and ind == 0.0 and hi == 0.0,
+        "two sides of one market band to exactly [0,0], not a product")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
