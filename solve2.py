@@ -47,7 +47,12 @@ CUTOFF = None
 if '--now' in sys.argv:
     from datetime import datetime, timezone
     CUTOFF = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
-MINPRICE = int(flag('minprice', 0))
+# The -350 floor is a STANDING constraint ("nothing under -350"), so it is the
+# default rather than something to remember to type. It was opt-in, which meant
+# the difference between a ticket that respects the rule and one that quietly
+# does not was a flag on the command line -- and the violating ticket looked
+# exactly as legitimate as the compliant one. --minprice=0 lifts it explicitly.
+MINPRICE = int(flag('minprice', 350))
 # A promo token can cap how heavy each leg may be. That is a per-leg CEILING,
 # the exact mirror of the floor, and it has to be applied at pool construction
 # for the same reason: filtering afterwards edits the answer, filtering first
@@ -57,27 +62,65 @@ MAXMLB   = int(flag("maxmlb", N_LEGS))
 DROP     = set(filter(None, (flag('drop', '') or '').split(',')))
 DROPFAM  = set(filter(None, (flag('nofam', '') or '').split(',')))
 DROPLAB  = [x for x in (flag('noleg', '') or '').split(',') if x]
-# --mlagree keeps only those moneyline legs the MLB model has an opinion on AND
-# agrees with. It is a selection filter, not a repricing: the leg's quoted
-# probability stays the de-vigged market number either way.
+# --mlagree drops moneyline legs the MLB model DISAGREES with. It is a selection
+# filter, not a repricing: the leg's quoted probability stays the de-vigged market
+# number either way.
+#
+# "No opinion" is NOT disagreement. board.py attaches mp=MODEL_P.get(...) and
+# documents that a game absent from slate.json "carries no model opinion and is
+# neither endorsed nor vetoed" -- but the filter here used to read
+# `(o.get('mp') or 0) > 0.5`, and (None or 0) > 0.5 is False, so every leg the
+# model had nothing to say about was DELETED. That is a veto, the exact opposite
+# of the documented contract, and it fails silently in the worst possible
+# direction: MODEL_P is keyed by TEAM3's abbreviation vocabulary, so any spelling
+# drift in the raw feed makes every mp None and --mlagree quietly throws away the
+# entire moneyline pool with no error. mp is None -> abstain, and the count of
+# abstentions is printed so a vocabulary mismatch shows up as a number.
 MLAGREE  = '--mlagree' in sys.argv
-# --power re-runs the whole optimisation believing heavy favourites are worth
-# more than proportional de-vig says. If the heavy-favourite structure is being
-# unfairly penalised, this is where it shows up: the solver is free to rebuild
-# the ticket under the assumption that flatters it.
-board.METHOD = 'power' if '--power' in sys.argv else 'mult'
+# DE-VIG: inherit board.py's shipped default. This line used to read
+#   board.METHOD = 'power' if '--power' in sys.argv else 'mult'
+# which hard-reset the board to 'mult' on every run, silently overriding the
+# default board.py and slips.py both declare ('power'). The consequence was two
+# tools quoting DIFFERENT probabilities for the SAME leg -- a -5000 favourite
+# came out 0.9358 here and 0.9656 in slips/ceiling -- and across a 16-leg ticket
+# that compounds into a visibly different headline number with no flag set and
+# nothing to indicate which one was meant. One board, one de-vig.
+#
+# --power / --mult are now explicit overrides, and whichever is in force is
+# printed, because a de-vig that changes the answer must not be invisible.
+if '--power' in sys.argv:
+    board.METHOD = 'power'
+elif '--mult' in sys.argv:
+    board.METHOD = 'mult'
+print(f"de-vig: {board.METHOD}"
+      + ("" if ('--power' in sys.argv or '--mult' in sys.argv) else " (board default)"))
 
 markets = build(BOOK, no_plus='--allow-plus' not in sys.argv,
                 min_price=MINPRICE, cutoff=CUTOFF, drop=DROP,
                 max_price=MAXPRICE, drop_fam=DROPFAM, drop_lab=DROPLAB,
                 nostack='--nostack' in sys.argv)
 
+def _ml_keep(o):
+    """Keep unless the model has an opinion AND that opinion is against the leg."""
+    if o['fam'] != 'ML':
+        return True
+    mp = o.get('mp')
+    return mp is None or mp > 0.5
+
 if MLAGREE:
+    _ml = [o for k in markets for o in markets[k] if o['fam'] == 'ML']
+    _noop = sum(1 for o in _ml if o.get('mp') is None)
+    _vetoed = sum(1 for o in _ml if not _ml_keep(o))
     for k in list(markets):
-        markets[k] = [o for o in markets[k]
-                      if o['fam'] != 'ML' or (o.get('mp') or 0) > 0.5]
+        markets[k] = [o for o in markets[k] if _ml_keep(o)]
         if not markets[k]:
             del markets[k]
+    print(f"--mlagree: {len(_ml)} ML legs, {_vetoed} vetoed (model disagrees), "
+          f"{_noop} with no model opinion (kept)")
+    if _ml and _noop == len(_ml):
+        print("  WARNING: the model has an opinion on NOTHING. Either no MLB game on "
+              "this board is in slate.json, or board.MODEL_P's team vocabulary no "
+              "longer matches the raw feed's spellings. --mlagree is a no-op.")
 
 NBT = int(math.ceil(math.log(TARGET) / STEP)); NB = NBT + 1
 for k in markets:
@@ -183,7 +226,12 @@ if '--sweep' in sys.argv:
 MIN_FIGHT = max(0, N_LEGS - MAXMLB)
 val, m, b1 = best_for(MIN_FIGHT)
 if val < NEG / 2:
-    sys.exit(f"No {N_LEGS}-leg {BOOK} ticket meets these constraints.")
+    sys.exit(f"No {N_LEGS}-leg {BOOK} ticket meets these constraints.\n"
+             f"  in force: {N_LEGS} legs, >= {TARGET:g}x, "
+             f"every leg -{MINPRICE} or heavier, max {MAXMLB} baseball"
+             + (f", started legs excluded (cutoff {CUTOFF})" if CUTOFF else "")
+             + "\n  A shorter ticket and a heavier price floor pull against each "
+               "other; loosen one. --minprice=0 lifts the floor.")
 
 need = max(0, NBT - b1)
 b2 = int(np.argmax(AM[N_LEGS - m, need:] >= SM[N_LEGS - m, need] - 1e-12)) + need
@@ -196,7 +244,16 @@ for v in pick:
 assert len(pick) == N_LEGS, f"got {len(pick)} legs"
 assert abs(math.log(jp) - val) < 1e-6, f"replay {math.log(jp)} != dp {val}"
 assert jd >= TARGET, f"price {jd:.3f}x under target"
-assert len({v['lab'] for v in pick}) == N_LEGS, "duplicate leg"
+# A leg is identified by (label, GAME), not by label alone. Two meetings of the
+# same series carry the identical label -- "Pittsburgh Pirates ML" is on the board
+# for both PIT@CIN and PIT@CIN2 -- and they are two distinct, separately-settling
+# bets that FanDuel will happily take together. Asserting on labels alone aborted
+# those tickets with "duplicate leg" even though nothing was duplicated. The real
+# invariant is that a solver never takes two options out of one market key, which
+# the market-key structure already guarantees; this asserts it rather than assuming.
+_ids = [(v['lab'], v['grp']) for v in pick]
+assert len(set(_ids)) == N_LEGS, \
+    "duplicate leg: " + str([x for x in set(_ids) if _ids.count(x) > 1])
 if MINPRICE:
     assert all(v['price'] <= -MINPRICE for v in pick), "leg under price floor"
 if MAXPRICE:
