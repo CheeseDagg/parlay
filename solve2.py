@@ -67,6 +67,18 @@ MINPRICE = int(flag('minprice', 350))
 # for the same reason: filtering afterwards edits the answer, filtering first
 # changes what is being optimised.
 MAXPRICE = int(flag('maxprice', 0))
+# --by=YYYY-MM-DD is the mirror of the cutoff and it is NOT cosmetic. The board
+# now spans August to October, the heaviest prices on it are the furthest out,
+# and this solver maximises probability at a price with no notion of "soon" --
+# so it will happily hand back a ticket whose last leg is Canelo on 2026-10-31
+# while every other line reads like tonight. times.et() now prints the date
+# alongside the weekday so the far legs are at least VISIBLE, but visible is not
+# excluded -- this flag is what excludes them. Applied at
+# pool construction rather than to the answer, for the same reason the price
+# floor is: filtering afterwards edits a ticket that was optimised for a
+# different question. Off by default -- a horizon is a real choice, not a
+# standing rule like -350 is.
+HORIZON  = flag('by', None)
 MAXMLB   = int(flag("maxmlb", N_LEGS))
 DROP     = set(filter(None, (flag('drop', '') or '').split(',')))
 DROPFAM  = set(filter(None, (flag('nofam', '') or '').split(',')))
@@ -107,7 +119,7 @@ print(f"de-vig: {board.METHOD}"
 markets = build(BOOK, no_plus='--allow-plus' not in sys.argv,
                 min_price=MINPRICE, cutoff=CUTOFF, drop=DROP,
                 max_price=MAXPRICE, drop_fam=DROPFAM, drop_lab=DROPLAB,
-                nostack='--nostack' in sys.argv)
+                nostack='--nostack' in sys.argv, horizon=HORIZON)
 
 def _ml_keep(o):
     """Keep unless the model has an opinion AND that opinion is against the leg."""
@@ -299,9 +311,9 @@ if MINPRICE:
 if MAXPRICE:
     hdr += f", every leg -{MAXPRICE} or longer"
 print(f"{'='*98}\n{hdr}\n{'='*98}")
-print(f"{'#':>2}  {'start (ET)':12s} {'leg':36s} {'price':>7s} {'p(hit)':>8s}  fam")
+print(f"{'#':>2}  {'start (ET)':16s} {'leg':36s} {'price':>7s} {'p(hit)':>8s}  fam")
 for i, v in enumerate(pick, 1):
-    print(f"{i:2d}  {et(v['t']):12s} {v['lab']:36s} {v['price']:>+7d} {v['p']:8.4f}  {v['fam']}")
+    print(f"{i:2d}  {et(v['t']):16s} {v['lab']:36s} {v['price']:>+7d} {v['p']:8.4f}  {v['fam']}")
 print(f"\n  joint hit probability (independent): {jp:.4f} = {jp*100:.2f}%")
 print(f"  parlay price: {jd:.2f}x  (+{round((jd-1)*100)})  ->  $100 returns ${jd*100:,.2f}")
 c = Counter(v['grp'] for v in pick)

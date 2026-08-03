@@ -1,148 +1,35 @@
-"""FanDuel alternate_totals_1st_5_innings, pulled verbatim 2026-07-31.
+"""FanDuel first-five-innings totals. EMPTY FOR 2026-08-03, and the reason is
+the whole content of this file.
 
-Why this market family is worth the extra API calls: it is two-sided at every
-point, so it de-vigs without a model of my own, and FanDuel's F5 ladders run
-deeper than its full-game ones (Under 10.5 exists on nine games; the full-game
-ladders stop four or five points short of the equivalent tail). That gives the
-constrained solver somewhere new to buy price cheaply.
+FanDuel posts NO first-five totals through the-odds-api for this slate. Not
+"none that were good" -- none at all. Verified three ways before writing this:
+
+  1. `markets=totals_h1,alternate_totals_h1` combined with the full-game call
+     returned every full-game rung and not one h1 rung, for all eight games.
+  2. Three dedicated h1-only probes (WSH@PHI, TOR@HOU, MIN@KC) each came back
+     with "bookmakers": [] -- an empty list, not an error, not a 404, not a
+     rate limit. FanDuel simply is not in the h1 book for these events.
+  3. The same key on the same day returns full ladders for alternate_totals,
+     so this is not an entitlement problem with the key or the plan.
+
+WHY THIS FILE IS NOT JUST DELETED. F5 unders are half of the standing
+instruction -- "f5 unders and fighters only" -- so their absence is the single
+most consequential fact about tonight's board. If this file were removed,
+board.py would still import cleanly, the solver would still build a ticket, and
+the output would look exactly like a normal night on which no F5 leg happened
+to make the cut. That is the defect this entire package was audited to
+eliminate: a failure that renders identically to a legitimate empty result.
+An empty F5_RAW with this docstring attached is the failure made visible.
+
+WHAT TO DO ABOUT IT. The market exists in the FanDuel app; it is the API feed
+that does not carry it. So an F5 leg tonight has to be read off the app by hand
+and pasted in below, in the format `GAME|POINT|OVER|UNDER`, using the same
+AWAY@HOME keys as times.py. Nothing else in the package needs to change --
+board.py reads this file whenever book == 'FanDuel' and prices it exactly as it
+prices a full-game rung.
 
 Format: GAME|POINT|OVER|UNDER
 """
 
 F5_RAW = """
-MIN@SEA|2.5|-400|270
-MIN@SEA|3.5|-200|148
-MIN@SEA|4.5|-112|-118
-MIN@SEA|5.5|152|-205
-MIN@SEA|6.5|230|-330
-MIN@SEA|7.5|360|-580
-MIN@SEA|8.5|550|-1100
-MIN@SEA|9.5|750|-2000
-MIN@SEA|10.5|1100|-4500
-NYY@CHC|2.5|-550|350
-NYY@CHC|3.5|-270|194
-NYY@CHC|4.5|-152|114
-NYY@CHC|5.5|110|-146
-NYY@CHC|6.5|178|-245
-NYY@CHC|7.5|270|-400
-NYY@CHC|8.5|400|-670
-NYY@CHC|9.5|580|-1200
-NYY@CHC|10.5|880|-3000
-PIT@CIN|1.5|-650|390
-PIT@CIN|2.5|-260|188
-PIT@CIN|3.5|-130|-102
-PIT@CIN|4.5|140|-188
-PIT@CIN|5.5|225|-320
-PIT@CIN|6.5|360|-580
-PIT@CIN|7.5|550|-1100
-PIT@CIN|8.5|800|-2200
-PIT@CIN|9.5|1100|-4500
-PHI@BAL|2.5|-450|300
-PHI@BAL|3.5|-230|168
-PHI@BAL|4.5|-122|-108
-PHI@BAL|5.5|140|-188
-PHI@BAL|6.5|220|-310
-PHI@BAL|7.5|320|-490
-PHI@BAL|8.5|490|-900
-PHI@BAL|9.5|680|-1600
-PHI@BAL|10.5|920|-3500
-STL@TOR|2.5|-300|210
-STL@TOR|3.5|-154|116
-STL@TOR|4.5|116|-154
-STL@TOR|5.5|188|-260
-STL@TOR|6.5|290|-440
-STL@TOR|7.5|430|-750
-STL@TOR|8.5|640|-1450
-STL@TOR|9.5|880|-3000
-STL@TOR|10.5|1200|-5000
-ARI@CLE|2.5|-490|320
-ARI@CLE|3.5|-245|178
-ARI@CLE|4.5|-138|104
-ARI@CLE|5.5|118|-158
-ARI@CLE|6.5|182|-250
-ARI@CLE|7.5|280|-420
-ARI@CLE|8.5|400|-670
-ARI@CLE|9.5|630|-1400
-ARI@CLE|10.5|880|-3000
-CWS@TB|2.5|-440|290
-CWS@TB|3.5|-225|164
-CWS@TB|4.5|-122|-108
-CWS@TB|5.5|142|-192
-CWS@TB|6.5|225|-320
-CWS@TB|7.5|350|-550
-CWS@TB|8.5|520|-1000
-CWS@TB|9.5|750|-2000
-CWS@TB|10.5|1100|-4500
-MIA@NYM|2.5|-470|310
-MIA@NYM|3.5|-235|172
-MIA@NYM|4.5|-125|-106
-MIA@NYM|5.5|134|-180
-MIA@NYM|6.5|205|-290
-MIA@NYM|7.5|320|-490
-MIA@NYM|8.5|470|-850
-MIA@NYM|9.5|680|-1600
-MIA@NYM|10.5|920|-3500
-WSH@ATL|2.5|-470|310
-WSH@ATL|3.5|-235|172
-WSH@ATL|4.5|-130|-102
-WSH@ATL|5.5|130|-174
-WSH@ATL|6.5|200|-280
-WSH@ATL|7.5|310|-470
-WSH@ATL|8.5|450|-800
-WSH@ATL|9.5|640|-1450
-WSH@ATL|10.5|880|-3000
-TEX@HOU|2.5|-290|205
-TEX@HOU|3.5|-152|114
-TEX@HOU|4.5|118|-158
-TEX@HOU|5.5|194|-270
-TEX@HOU|6.5|310|-470
-TEX@HOU|7.5|450|-800
-TEX@HOU|8.5|640|-1450
-TEX@HOU|9.5|920|-3500
-TEX@HOU|10.5|1260|-6000
-KC@COL|4.5|-245|178
-KC@COL|5.5|-144|108
-KC@COL|6.5|116|-154
-KC@COL|7.5|174|-240
-KC@COL|8.5|255|-360
-KC@COL|9.5|360|-580
-KC@COL|10.5|520|-1000
-KC@COL|11.5|700|-1800
-KC@COL|12.5|920|-3500
-MIL@LAA|2.5|-500|320
-MIL@LAA|3.5|-250|182
-MIL@LAA|4.5|-140|106
-MIL@LAA|5.5|118|-158
-MIL@LAA|6.5|188|-260
-MIL@LAA|7.5|280|-420
-MIL@LAA|8.5|410|-700
-MIL@LAA|9.5|630|-1400
-MIL@LAA|10.5|850|-2500
-DET@ATH|3.5|-450|300
-DET@ATH|4.5|-245|178
-DET@ATH|5.5|-148|112
-DET@ATH|6.5|110|-146
-DET@ATH|7.5|168|-230
-DET@ATH|8.5|240|-350
-DET@ATH|9.5|360|-580
-DET@ATH|10.5|490|-900
-DET@ATH|11.5|680|-1600
-SF@SD|2.5|-470|310
-SF@SD|3.5|-245|178
-SF@SD|4.5|-138|104
-SF@SD|5.5|118|-158
-SF@SD|6.5|188|-260
-SF@SD|7.5|280|-420
-SF@SD|8.5|410|-700
-SF@SD|9.5|630|-1400
-SF@SD|10.5|850|-2500
-BOS@LAD|2.5|-360|250
-BOS@LAD|3.5|-188|140
-BOS@LAD|4.5|-102|-130
-BOS@LAD|5.5|162|-220
-BOS@LAD|6.5|240|-350
-BOS@LAD|7.5|370|-600
-BOS@LAD|8.5|550|-1100
-BOS@LAD|9.5|750|-2000
-BOS@LAD|10.5|1000|-4000
 """

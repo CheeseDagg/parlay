@@ -212,7 +212,7 @@ def devig_n(sel, others):
 
 
 def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
-          drop_fam=(), drop_lab=(), nostack=False):
+          drop_fam=(), drop_lab=(), nostack=False, horizon=None):
     """min_price is a POSITIVE magnitude: min_price=200 keeps only legs at -200
     or heavier. max_price is the mirror of it: max_price=200 keeps only legs at
     -200 or LONGER, which is what a promo token that caps each leg at -200 needs.
@@ -232,7 +232,19 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
     can no longer sit alongside the same game's total or moneyline, and two
     opposing starters can no longer both appear. Strikeouts suppress runs, so
     those pairs are positively correlated and an SGP+ engine reprices them --
-    the payout shown on the slip would not be the payout offered."""
+    the payout shown on the slip would not be the payout offered.
+
+    horizon is the mirror of cutoff and exists for a failure this board only
+    acquired once boxing and the European league restarts joined it. cutoff
+    removes legs that have already STARTED; nothing removed legs that start in
+    OCTOBER. The solver has no notion of "soon", it maximises probability at a
+    price, and the heaviest prices on a three-month board are the ones furthest
+    out -- so a ticket that reads as "this weekend" in every visible respect
+    quietly contained a 2026-09-13 boxing leg and a 2026-10-31 one, and would
+    not have resolved for three months. Nothing on the printout said so; the
+    start column said 'Sat 11:00pm' and gave no date. Same defect family as the
+    rest of this package: correct arithmetic about a question nobody asked. Pass
+    a 'YYYY-MM-DD' or a full UTC stamp; legs starting after it are gone."""
     markets = {}
 
     def add(key, **kw):
@@ -248,8 +260,20 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
     # snapshot of an older one, so the two name sets had ZERO overlap -- 26
     # ladder pitchers, 26 skips, 0 K legs, no message. "No K legs on the board"
     # and "the K feed is stale" look identical from the outside. Count them.
+    #
+    # An EMPTY ladder file is a third state and needs its own message. It reads
+    # exactly like the two above from the outside -- zero K legs, no complaint --
+    # but it means something completely different: the ladder was cleared on
+    # purpose because pitcher props are excluded by standing instruction. Say so,
+    # otherwise the next reader "fixes" the silence by repasting a ladder and puts
+    # a family back on the board that was removed deliberately.
+    _kraw = open(src).read().strip()
+    if not _kraw:
+        print(f"  board: {src.rsplit('/', 1)[-1]} is EMPTY, so there are no "
+              f"strikeout legs. That is deliberate -- pitcher props are excluded. "
+              f"It is not a failed paste.")
     _nolam = set()
-    for line in open(src).read().strip().splitlines():
+    for line in _kraw.splitlines():
         if not line.strip():
             continue
         parts = line.split('|')
@@ -382,7 +406,17 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
                       and o['fam'] not in drop_fam
                       and not any(x.lower() in o['lab'].lower()
                                   for x in drop_lab)
-                      and not (cutoff and o['t'] <= cutoff)]
+                      and not (cutoff and o['t'] <= cutoff)
+                      # A bare date is padded to the END of that day, not the
+                      # start of it: --by=2026-08-09 has to mean "through
+                      # Sunday", and '2026-08-09T15:00Z' > '2026-08-09' is True
+                      # for every kickoff on the day, so the unpadded compare
+                      # deletes the whole horizon date. The K sentinel 'Z' is
+                      # greater than any real stamp and would be dropped here,
+                      # which is the right answer -- a leg with no known start
+                      # cannot be shown to land inside a horizon.
+                      and not (horizon and o['t'] > (horizon if len(horizon) > 10
+                                                    else horizon + 'T23:59Z'))]
         if not markets[k]:
             del markets[k]
 
@@ -506,6 +540,37 @@ def selftest():
         and len(_utcnow()) == 17,
         "_utcnow() emits the same 17-char shape every leg's t carries, so the "
         "comparison never needs a parse")
+
+    # ---- HORIZON. The mirror of the cutoff, and the newest member of the same
+    # family: a leg that is perfectly valid, perfectly priced, and answers a
+    # question about October when the question was about tonight.
+    def _keep(t, hz):
+        return not (hz and t > (hz if len(hz) > 10 else hz + 'T23:59Z'))
+
+    chk(_keep("2026-08-09T15:00Z", "2026-08-09"),
+        "a bare --by date includes fixtures ON that date -- the horizon is the "
+        "END of the day, not midnight at the start of it")
+    chk(not _keep("2026-08-10T00:30Z", "2026-08-09"),
+        "and the very next morning is outside it")
+    chk(not _keep("2026-10-31T22:00Z", "2026-08-09"),
+        "a leg three months out is excluded, which is the whole point -- it is "
+        "the heaviest price on the board and the solver wants it")
+    chk(_keep("2026-10-31T22:00Z", None),
+        "no --by means no horizon: this is opt-in, not a standing rule")
+    chk(not _keep('Z', "2026-08-09"),
+        "the K sentinel is OUTSIDE every horizon. A leg whose start is unknown "
+        "cannot be shown to land inside one, and 'unknown' must not read as 'soon'")
+    chk(_keep("2026-08-09T23:30Z", "2026-08-09T23:59Z"),
+        "a full UTC stamp is used as given, not padded")
+
+    # ---- et() PRINTS THE DATE. It did not, and three legs on one ticket
+    # labelled 'Sat' were three different Saturdays five weeks apart.
+    from times import et as _et
+    chk(_et("2026-08-09T00:00Z") == "Sat 8/8 8:00pm",
+        "et() carries the date, so two legs on different Saturdays cannot print "
+        "identically")
+    chk(_et("2026-08-04T01:41Z") == "Mon 8/3 9:41pm",
+        "and a post-midnight UTC start still prints as the previous ET evening")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1

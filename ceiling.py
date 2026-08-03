@@ -56,8 +56,14 @@ MINPRICE = int(flag('minprice', 0))
 # like a live one. --anytime lifts it explicitly; --now is a no-op alias.
 CUTOFF = None if '--anytime' in sys.argv else board._utcnow()
 
+# --by=YYYY-MM-DD: see the note on board.build's `horizon`. A ceiling ticket is
+# the one a promo token gets spent on, which makes the horizon MORE important
+# here than in solve2, not less -- a token that expires this week is worth
+# nothing against a leg that does not settle until October.
+HORIZON = flag('by', None)
+
 markets = build(BOOK, no_plus='--allow-plus' not in sys.argv,
-                min_price=MINPRICE, cutoff=CUTOFF)
+                min_price=MINPRICE, cutoff=CUTOFF, horizon=HORIZON)
 if board.FEED_DEAD:
     print("  ceiling: not one leg in the raw pool is still to come. Anything "
           "printed below is a question about a board that has already resolved.")
@@ -151,9 +157,9 @@ if CUTOFF:
 pick.sort(key=lambda v: (v['t'], -v['p']))
 print(f"{'='*92}\n{BOOK} -- total price no longer than {CAP_AM:g}, "
       f"max {MAXLEGS} legs, max {MAXMLB} baseball\n{'='*92}")
-print(f"{'#':>2}  {'start (ET)':12s} {'leg':36s} {'price':>7s} {'p(hit)':>8s}  fam")
+print(f"{'#':>2}  {'start (ET)':16s} {'leg':36s} {'price':>7s} {'p(hit)':>8s}  fam")
 for i, v in enumerate(pick, 1):
-    print(f"{i:2d}  {et(v['t']):12s} {v['lab']:36s} {v['price']:>+7d} "
+    print(f"{i:2d}  {et(v['t']):16s} {v['lab']:36s} {v['price']:>+7d} "
           f"{v['p']:8.4f}  {v['fam']}")
 print(f"\n  joint hit probability (independent): {jp*100:.2f}%")
 print(f"  parlay price: {jd:.4f}x  = {am:+.0f}  ->  $200 returns ${jd*200:,.2f}")

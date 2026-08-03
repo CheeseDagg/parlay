@@ -1,65 +1,48 @@
-"""MMA moneylines, pulled verbatim from the-odds-api on 2026-07-31
-(sport=mma_mixed_martial_arts, markets=h2h, bookmakers=fanduel,draftkings).
+"""MMA moneylines, FanDuel, pulled from the-odds-api on 2026-08-03 ~21:50Z
+(sport=mma_mixed_martial_arts, markets=h2h, bookmakers=fanduel).
 
 These legs are priced the same way the game totals are: de-vig the matched
-two-way pair. No model of mine is involved. That is deliberate -- production's
-UFC p1 is mis-scaled (build_site.py computes sigma(s1 - s2) off model_score,
-SD 0.421, so it emits ~0.5 for nearly every fight), so the model has nothing
-trustworthy to say here and the market does.
+two-way pair. No model of mine is involved, and that is deliberate rather than
+lazy. The forward test on the UFC model is 11 bouts over three events, 36.4%
+correct against the market's 81.8%, and in the five bouts where the model
+disagreed with the price the model went 0-for-5. A model with that record has
+nothing to add to a price, so the price is what gets used.
 
 Multiplicative de-vig is conservative on heavy favourites specifically: the
 favourite-longshot bias says the longshot side carries more of the vig than an
-equal split, so the true probability of a -7000 favourite is a little higher
+equal split, so the true probability of a -720 favourite is a little higher
 than the number below, not lower.
 
-Cards included run through Sunday 2026-08-02. Not every bout is UFC -- the
-2026-07-31 block is PFL and the 2026-08-01T14:00Z block is a European regional
-card. The 22:00Z block is the UFC card. The book does not care which promotion
-a leg comes from; it is flagged only so the card is legible.
-
-Fights on 2026-08-16 and 2026-08-29 are in the feed and are EXCLUDED: a leg
-four weeks out holds the whole ticket open for a month, and none of them
-de-vigged above .80 anyway (Makhachev .766, Umar .791).
+ONE LINE PER BOUT. board.py builds BOTH sides off a single line -- the fighter
+and "the fighter's opponent" -- keyed to ('F', card, who). Listing the opponent
+on his own line would create a SECOND market key for the same fight, and a
+solver would then be free to put both men on one ticket, which is a guaranteed
+loss dressed up as two 60% legs. The same rule governs FIGHT_START in times.py:
+the favourite gets an entry, the opponent inherits it.
 
 Format: BOOK|CARD|FIGHTER|PRICE|OPPONENT_PRICE
+
+Every pair below appeared in two independently-worded draws with the query
+parameters reordered, and every pair holds at 5.9-6.1% over round, which is the
+normal FanDuel MMA number.
+
+EXCLUDED, and worth naming rather than silently dropping: Mackenzie Dern -265
+(08-16), Islam Makhachev -390 (08-16) and Umar Nurmagomedov -520 (08-29) each
+appeared in ONE draw only. A price seen once on a channel that has been caught
+fabricating rows is not a price. They are almost certainly real and roughly
+right -- but "almost certainly" is exactly the standard this package exists to
+refuse.
 """
 
 MMA_RAW = """
-FanDuel|PFL 07-31|Levan Khabalaev|-700|500
-FanDuel|PFL 07-31|Tatiana Postarnakova|-240|198
-FanDuel|PFL 07-31|Jonathan Piersma|-172|144
-FanDuel|PFL 07-31|Sean Gauci|-260|215
-FanDuel|PFL 07-31|Lazaro Dayron|-162|136
-FanDuel|PFL 07-31|Moustapha Diakhate|-350|280
-FanDuel|PFL 07-31|Amru Magomedov|-3500|1400
-FanDuel|PFL 08-01|Dakota Ditcheva|-7000|2000
-FanDuel|PFL 08-01|Usman Nurmagomedov|-560|420
-FanDuel|REG 08-01|Borislav Nikolic|-190|160
-FanDuel|REG 08-01|Nina Milosevic|-520|390
-FanDuel|REG 08-01|Stephanie Luciano|-335|270
-FanDuel|REG 08-01|Noah Gugnon|-120|102
-FanDuel|UFC 08-01|Aleksandar Rakic|-390|310
-FanDuel|UFC 08-01|Jovan Leka|-235|194
-FanDuel|UFC 08-01|Bogdan Grad|-200|168
-FanDuel|UFC 08-01|Uros Medic|-450|350
-FanDuel|UFC 08-01|Robert Valentin|-158|134
-FanDuel|UFC 08-01|Vlasto Cepo|-360|285
-FanDuel|UFC 08-01|Navajo Stirling|-335|270
-FanDuel|UFC 08-01|Mateusz Rebecki|-750|530
-FanDuel|UFC 08-01|Ludovit Klein|-255|210
-FanDuel|UFC 08-01|Michael Oliveira|-350|280
-DraftKings|REG 08-01|Borislav Nikolic|-192|160
-DraftKings|REG 08-01|Nina Milosevic|-500|380
-DraftKings|REG 08-01|Stephanie Luciano|-325|260
-DraftKings|REG 08-01|Noah Gugnon|-120|100
-DraftKings|UFC 08-01|Aleksandar Rakic|-360|285
-DraftKings|UFC 08-01|Jovan Leka|-258|210
-DraftKings|UFC 08-01|Bogdan Grad|-192|160
-DraftKings|UFC 08-01|Uros Medic|-395|310
-DraftKings|UFC 08-01|Robert Valentin|-155|130
-DraftKings|UFC 08-01|Vlasto Cepo|-355|280
-DraftKings|UFC 08-01|Navajo Stirling|-325|260
-DraftKings|UFC 08-01|Mateusz Rebecki|-700|500
-DraftKings|UFC 08-01|Ludovit Klein|-270|220
-DraftKings|UFC 08-01|Michael Oliveira|-360|285
+FanDuel|MMA 08-08|Louie Sutherland|-162|126
+FanDuel|UFC 08-09|Yadier DelValle|-720|450
+FanDuel|UFC 08-09|Ty Miller|-350|255
+FanDuel|UFC 08-09|Manoel Sousa|-295|220
+FanDuel|UFC 08-09|Alexia Thainara|-265|200
+FanDuel|UFC 08-09|Steven Asplund|-265|200
+FanDuel|UFC 08-09|Juliana Miller|-260|196
+FanDuel|UFC 08-09|Carlos Diego Ferreira|-186|144
+FanDuel|UFC 08-09|Diyar Nurgozhay|-164|128
+FanDuel|UFC 08-09|Quillan Salkilld|-150|118
 """
