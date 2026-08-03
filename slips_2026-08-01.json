@@ -1,0 +1,480 @@
+{
+ "as_of": "2026-08-01",
+ "note": "The five slips open on the morning of 2026-08-01. Kept because this is the set that all died at once when Cepo lost, and it is the regression case for the cross-slip maths.",
+ "slips": [
+  {
+   "name": "14-leg +9040",
+   "book": "FanDuel",
+   "price": 9040,
+   "legs": [
+    {
+     "lab": "Cepo ML",
+     "price": -335,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Rakic ML",
+     "price": -390,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Pattinson ML",
+     "price": -380,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Stirling by points",
+     "price": 105,
+     "sport": "PROP",
+     "mkt": "STIRLING",
+     "out": "Stirling by points",
+     "implies": "Stirling ML"
+    },
+    {
+     "lab": "Barney-Smith ML",
+     "price": -650,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Rodriguez R4+",
+     "price": 1100,
+     "sport": "PROP",
+     "mkt": "MEDIC-RODRIGUEZ",
+     "out": "Rodriguez R4+"
+    },
+    {
+     "lab": "Kaleiopu ML",
+     "price": -3000,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Cabrera ML",
+     "price": -5000,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Guzman ML",
+     "price": -1600,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Capetillo ML",
+     "price": -4500,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Iriarte ML",
+     "price": -5000,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Conwell ML",
+     "price": -650,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Curiel ML",
+     "price": -1300,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Muratalla ML",
+     "price": -1300,
+     "sport": "BOX"
+    }
+   ]
+  },
+  {
+   "name": "14-leg +5751",
+   "book": "FanDuel",
+   "price": 5751,
+   "legs": [
+    {
+     "lab": "Cepo ML",
+     "price": -335,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Rakic ML",
+     "price": -390,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Stirling ML",
+     "price": -300,
+     "sport": "MMA",
+     "mkt": "STIRLING",
+     "out": "Stirling ML"
+    },
+    {
+     "lab": "Rodriguez R4+",
+     "price": 1100,
+     "sport": "PROP",
+     "mkt": "MEDIC-RODRIGUEZ",
+     "out": "Rodriguez R4+"
+    },
+    {
+     "lab": "Pattinson ML",
+     "price": -380,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Barney-Smith ML",
+     "price": -650,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Kaleiopu ML",
+     "price": -3000,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Cabrera ML",
+     "price": -5000,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Guzman ML",
+     "price": -1600,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Capetillo ML",
+     "price": -4500,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Iriarte ML",
+     "price": -5000,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Conwell ML",
+     "price": -650,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Curiel ML",
+     "price": -1300,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Muratalla ML",
+     "price": -1300,
+     "sport": "BOX"
+    }
+   ]
+  },
+  {
+   "name": "24-leg +4433",
+   "book": "FanDuel",
+   "price": 4433,
+   "legs": [
+    {
+     "lab": "Luciano ML",
+     "price": -313,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Leka ML",
+     "price": -273,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Milosevic ML",
+     "price": -455,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Rebecki ML",
+     "price": -634,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Oliveira ML",
+     "price": -361,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Cepo ML",
+     "price": -331,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Rakic ML",
+     "price": -361,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Pattinson ML",
+     "price": -352,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Stirling ML",
+     "price": -300,
+     "sport": "MMA",
+     "mkt": "STIRLING",
+     "out": "Stirling ML"
+    },
+    {
+     "lab": "Medic ML",
+     "price": -370,
+     "sport": "MMA",
+     "mkt": "MEDIC-RODRIGUEZ",
+     "out": "Medic ML"
+    },
+    {
+     "lab": "Barney-Smith ML",
+     "price": -579,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Kaleiopu ML",
+     "price": -1981,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Cabrera ML",
+     "price": -2703,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Guzman ML",
+     "price": -1247,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Capetillo ML",
+     "price": -2552,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Iriarte ML",
+     "price": -2703,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Conwell ML",
+     "price": -579,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Curiel ML",
+     "price": -1055,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Muratalla ML",
+     "price": -1055,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Wings ML",
+     "price": -530,
+     "sport": "WNBA"
+    },
+    {
+     "lab": "Valkyries ML",
+     "price": -619,
+     "sport": "WNBA"
+    },
+    {
+     "lab": "Walsh ML",
+     "price": -538,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Shields ML",
+     "price": -1981,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Serrano ML",
+     "price": -1482,
+     "sport": "BOX"
+    }
+   ]
+  },
+  {
+   "name": "16-leg +1188",
+   "book": "FanDuel",
+   "price": 1188,
+   "legs": [
+    {
+     "lab": "Lynx ML",
+     "price": -750,
+     "sport": "WNBA"
+    },
+    {
+     "lab": "Magomedov ML",
+     "price": -3000,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Nurmagomedov ML",
+     "price": -500,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Dream ML",
+     "price": -750,
+     "sport": "WNBA"
+    },
+    {
+     "lab": "Luciano ML",
+     "price": -350,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Milosevic ML",
+     "price": -550,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Kaleiopu ML",
+     "price": -3000,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Rebecki ML",
+     "price": -650,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Oliveira ML",
+     "price": -355,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Cepo ML",
+     "price": -375,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Rakic ML",
+     "price": -355,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Stirling ML",
+     "price": -350,
+     "sport": "MMA",
+     "mkt": "STIRLING",
+     "out": "Stirling ML"
+    },
+    {
+     "lab": "Medic ML",
+     "price": -400,
+     "sport": "MMA",
+     "mkt": "MEDIC-RODRIGUEZ",
+     "out": "Medic ML"
+    },
+    {
+     "lab": "Conwell ML",
+     "price": -600,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Curiel ML",
+     "price": -1300,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Muratalla ML",
+     "price": -1600,
+     "sport": "BOX"
+    }
+   ]
+  },
+  {
+   "name": "16-pick +1155",
+   "book": "other",
+   "price": 1155,
+   "legs": [
+    {
+     "lab": "Lynx ML",
+     "price": -770,
+     "sport": "WNBA"
+    },
+    {
+     "lab": "Dream ML",
+     "price": -850,
+     "sport": "WNBA"
+    },
+    {
+     "lab": "Luciano ML",
+     "price": -325,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Milosevic ML",
+     "price": -500,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Cairns ML",
+     "price": -550,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Barney-Smith ML",
+     "price": -700,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Fail ML",
+     "price": -1200,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Kaleiopu ML",
+     "price": -2500,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Rebecki ML",
+     "price": -700,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Oliveira ML",
+     "price": -345,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Cepo ML",
+     "price": -355,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Rakic ML",
+     "price": -355,
+     "sport": "MMA"
+    },
+    {
+     "lab": "Medic ML",
+     "price": -395,
+     "sport": "MMA",
+     "mkt": "MEDIC-RODRIGUEZ",
+     "out": "Medic ML"
+    },
+    {
+     "lab": "Conwell ML",
+     "price": -550,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Curiel ML",
+     "price": -1200,
+     "sport": "BOX"
+    },
+    {
+     "lab": "Muratalla ML",
+     "price": -1400,
+     "sport": "BOX"
+    }
+   ]
+  }
+ ]
+}
