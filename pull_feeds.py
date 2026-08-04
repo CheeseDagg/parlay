@@ -599,8 +599,9 @@ def main():
     except urllib.error.HTTPError as e:
         for l in log:
             print(" ", l)
-        sys.exit(f"ABORT, nothing written: HTTP {e.code} from the API "
-                 f"({'bad key' if e.code == 401 else 'out of credits' if e.code == 402 else e.code}).")
+        sys.exit(f"ABORT, nothing written: HTTP {e.code} from the API. NOTE: this "
+                 f"provider returns 401 for an EXHAUSTED QUOTA as well as a bad "
+                 f"key -- read the error body logged above before blaming the key.")
     for l in log:
         print(" ", l)
     n_legs = len(ml) + (len(tot) + len(f5_lines)) * 2 + len(mma_lines) * 2 + len(other_lines)
