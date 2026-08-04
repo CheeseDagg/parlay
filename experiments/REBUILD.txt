@@ -1,1 +1,1 @@
-retry 01:05 — secret confirmed present
+retry with scipy installed

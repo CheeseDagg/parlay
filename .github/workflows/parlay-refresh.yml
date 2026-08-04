@@ -21,7 +21,10 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Install deps
-        run: pip install numpy
+        # numpy for the solvers, scipy for board.py's power de-vig (brentq).
+        # scipy's absence failed the first two runs AFTER a perfect pull —
+        # the fetch worked, the final board selftest couldn't import.
+        run: pip install numpy scipy
       - name: Selftest the generators before trusting them with the board
         run: python3 pull_feeds.py --selftest
       - name: Pull the board
