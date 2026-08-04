@@ -16,7 +16,7 @@ Market keys, i.e. what a solver may take at most one of:
 """
 import json, math, sys
 from scipy.optimize import brentq
-sys.path.insert(0, '/root/parlay')
+sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
 from totals import TOTALS_RAW, GAME_OF
 from f5 import F5_RAW
 from mma import MMA_RAW
@@ -276,8 +276,12 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
         markets.setdefault(key, []).append(kw)
 
     # ---- K legs: Poisson off the kprops lambda, one rung per pitcher
-    src = ('/root/parlay/fd_k_ladder.txt' if book == 'FanDuel'
-           else '/root/parlay/kraw.txt')
+    # Resolved relative to THIS file, not to /root/parlay: the same absolute-path
+    # habit that broke the Actions runner on the MLBTool reads broke it again
+    # right here, one run later, on the board's own ladder file.
+    import os as _os
+    _here = _os.path.dirname(_os.path.abspath(__file__))
+    src = _os.path.join(_here, 'fd_k_ladder.txt' if book == 'FanDuel' else 'kraw.txt')
     # A pitcher on the ladder but not in LAM has no lambda, so there is no
     # distribution to price him off and he MUST be skipped. But skipping in
     # silence is how the ENTIRE K family disappeared on 2026-08-03: kprops.json

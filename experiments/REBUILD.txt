@@ -1,1 +1,1 @@
-retry — workflow now publishes its own log
+retry — last absolute path gone

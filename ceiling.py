@@ -27,7 +27,7 @@ the bucket index.
 import math, sys
 from collections import Counter
 import numpy as np
-sys.path.insert(0, '/root/parlay')
+sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
 import board
 from board import build
 from times import et
