@@ -1,10 +1,9 @@
 [notice] A new release of pip is available: 26.1.2 -> 26.2
 [notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 25 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: WSH@PHI has no FanDuel book — skipped
-  MLB: 7 games, 7 moneylines, 51 total rungs
+  MLB: 7 games, 7 moneylines, 48 total rungs
   MMA: 12 bouts
-  WNBA: 3 markets
+  WNBA: 4 markets
   CFL: 4 markets
   BOX: 8 markets
   SOC soccer_uefa_champs_league_qualification: 10 fixtures
@@ -18,7 +17,7 @@ PULL_FEEDS SELFTEST PASS — 25 checks (generators, round-trips, monotone refusa
   SOC soccer_usa_mls: 16 fixtures
   SOC soccer_brazil_campeonato: 20 fixtures
   SOC soccer_mexico_ligamx: 8 fixtures
-  legs representable: ~500 · API credits remaining 263
+  legs representable: ~496 · API credits remaining 234
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -97,17 +96,6 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
 37/37 checks pass
   board: MLBTool's kprops.json is not readable here -- K lambdas off. Every leg still prices from the market; nothing else is affected.
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
-Traceback (most recent call last):
-  File "/home/runner/work/parlay/parlay/daily_report.py", line 102, in <module>
-    main()
-  File "/home/runner/work/parlay/parlay/daily_report.py", line 78, in main
-    heaviest_table(sunday),
-    ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/parlay/parlay/daily_report.py", line 38, in heaviest_table
-    markets = build('FanDuel', no_plus=True, min_price=350,
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/parlay/parlay/board.py", line 295, in build
-    _kraw = open(src).read().strip()
-            ^^^^^^^^^
-PermissionError: [Errno 13] Permission denied: '/root/parlay/fd_k_ladder.txt'
-run conclusion: failure at 2026-08-04 01:31
+  board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
+wrote BOARD.md
+run conclusion: success at 2026-08-04 01:36
