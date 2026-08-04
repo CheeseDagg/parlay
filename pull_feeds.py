@@ -92,13 +92,29 @@ MMA_KEY = "mma_mixed_martial_arts"
 
 
 # ---------------------------------------------------------------- plumbing
-def _get(url):
-    with urllib.request.urlopen(url, timeout=30) as r:
-        h = r.headers
-        if h.get("x-requests-remaining") is not None:
-            QUOTA["remaining"] = h.get("x-requests-remaining")
-            QUOTA["used"] = h.get("x-requests-used")
-        return json.loads(r.read().decode())
+def _get(url, _retry=True):
+    try:
+        with urllib.request.urlopen(url, timeout=30) as r:
+            h = r.headers
+            if h.get("x-requests-remaining") is not None:
+                QUOTA["remaining"] = h.get("x-requests-remaining")
+                QUOTA["used"] = h.get("x-requests-used")
+            return json.loads(r.read().decode())
+    except urllib.error.HTTPError as e:
+        # The provider's error BODY names the actual reason (invalid key vs
+        # quota vs throttle) and two runner-side 401s were undiagnosable
+        # without it. Log it, and retry auth-ish errors once after a pause --
+        # the same key kept working from elsewhere during both failures.
+        try:
+            body = e.read().decode()[:300]
+        except Exception:
+            body = "(unreadable)"
+        print(f"  API HTTP {e.code}: {body}")
+        if _retry and e.code in (401, 429):
+            import time
+            time.sleep(20)
+            return _get(url, _retry=False)
+        raise
 
 
 def _utc_min(iso):
