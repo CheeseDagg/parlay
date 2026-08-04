@@ -1,5 +1,9 @@
 [notice] A new release of pip is available: 26.1.2 -> 26.2
 [notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusal, vig bands, arity)
+  API HTTP 401: {"message":"Usage quota has been reached. See usage plans at https://the-odds-api.com","error_code":"OUT_OF_USAGE_CREDITS","details_url":"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits"}
+
+  API HTTP 401: {"message":"Usage quota has been reached. See usage plans at https://the-odds-api.com","error_code":"OUT_OF_USAGE_CREDITS","details_url":"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits"}
+
 ABORT, nothing written: HTTP 401 from the API (bad key).
-run conclusion: failure at 2026-08-04 18:20
+run conclusion: failure at 2026-08-04 18:25
