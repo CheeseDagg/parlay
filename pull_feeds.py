@@ -20,9 +20,12 @@ WHAT IT WRITES (atomically, tmp+rename):
                 monotonicity re-asserted at import time in the generated file
     mma.py      MMA_RAW    — ONE LINE PER BOUT (favorite named), FanDuel
     other.py    OTHER_RAW  — boxing / WNBA / CFL / soccer three-ways, FanDuel
-It does NOT touch f5.py (a documented negative: FanDuel posts no first-five
-totals through this API) or fd_k_ladder.txt (deliberately empty — pitcher props
-are excluded by standing instruction).
+    f5.py       F5_RAW    — first-five alternate-total ladders, FanDuel.
+                (This was wrongly declared impossible on 2026-08-03: the probe
+                used the totals_h1 market names, which return empty for MLB.
+                The real key is alternate_totals_1st_5_innings.)
+It does NOT touch fd_k_ladder.txt (deliberately empty — pitcher props are
+excluded by standing instruction).
 
 REFUSAL RULES, learned from SoccerTool's pull_props:
   * every family can come back empty (off-days exist) but if the WHOLE pull
@@ -168,7 +171,7 @@ def pull_mlb(log):
     q = urllib.parse.urlencode({"apiKey": KEY, "dateFormat": "iso",
                                 "commenceTimeFrom": lo, "commenceTimeTo": hi})
     events = _get(f"{BASE}/sports/baseball_mlb/events?{q}")
-    start, ml, tot = {}, [], []
+    start, ml, tot, f5 = {}, [], [], []
     seen = {}
     for ev in sorted(events, key=lambda e: e.get("commence_time", "")):
         away, home = TEAM3.get(ev.get("away_team")), TEAM3.get(ev.get("home_team"))
@@ -183,8 +186,15 @@ def pull_mlb(log):
             continue
         t = _utc_min(ev["commence_time"])
         seen[g] = t
+        # THE F5 MARKET KEY IS NOT WHAT THE DOCS PATTERN SUGGESTS. This feed's
+        # first-five market is alternate_totals_1st_5_innings — NOT totals_h1 /
+        # alternate_totals_h1, which return an empty bookmakers array for MLB.
+        # Probing the h1 names on 2026-08-03 produced a confident, thrice-
+        # "verified", WRONG conclusion that FanDuel posts no F5 markets at all;
+        # the 07-31 hand pull had used the right key all along. An empty
+        # response proves the KEY is wrong before it proves the MARKET is gone.
         q2 = urllib.parse.urlencode({"apiKey": KEY, "regions": "us",
-                                     "markets": "h2h,alternate_totals",
+                                     "markets": "h2h,alternate_totals,alternate_totals_1st_5_innings",
                                      "oddsFormat": "american", "bookmakers": BOOK})
         try:
             data = _get(f"{BASE}/sports/baseball_mlb/events/{ev['id']}/odds?{q2}")
@@ -211,7 +221,7 @@ def pull_mlb(log):
                         ml.append(f"{t}|{g}|{n1} ML|{p1}|{p2}")
                         ml.append(f"{t}|{g}|{n2} ML|{p2}|{p1}")
                         wrote_any = True
-            elif mk.get("key") == "alternate_totals":
+            elif mk.get("key") in ("alternate_totals", "alternate_totals_1st_5_innings"):
                 rungs = {}
                 for o in mk.get("outcomes", []):
                     if o.get("point") is None or o.get("price") is None:
@@ -224,25 +234,29 @@ def pull_mlb(log):
                         continue
                     ok, s = vig_ok([two["Over"], two["Under"]])
                     if not ok:
-                        log.append(f"MLB: {g} total {pt} vig-sum {s} out of band — rung dropped")
+                        log.append(f"MLB: {g} {mk['key']} {pt} vig-sum {s} out of band — rung dropped")
                         continue
                     lad.append((pt, two["Over"], two["Under"]))
                 mono = all(_dec(b[1]) > _dec(a[1]) and _dec(b[2]) < _dec(a[2])
                            for a, b in zip(lad, lad[1:]))
                 if lad and not mono:
-                    log.append(f"MLB: {g} ladder NOT monotone — whole ladder dropped. "
+                    log.append(f"MLB: {g} {mk['key']} ladder NOT monotone — dropped. "
                                f"These prices cannot all be real.")
                 elif lad:
-                    for pt, ov, un in lad:
-                        tot.append(f"{g}|{BOOK_LABEL}|{pt}|{ov}|{un}")
+                    if mk["key"] == "alternate_totals":
+                        for pt, ov, un in lad:
+                            tot.append(f"{g}|{BOOK_LABEL}|{pt}|{ov}|{un}")
+                    else:
+                        for pt, ov, un in lad:
+                            f5.append(f"{g}|{pt}|{ov}|{un}")
                     wrote_any = True
         if wrote_any:
             start[g] = t
         else:
             seen.pop(g, None)
     log.append(f"MLB: {len(start)} games, {len(ml)//2} moneylines, "
-               f"{sum(1 for _ in tot)} total rungs")
-    return start, ml, tot
+               f"{len(tot)} total rungs, {len(f5)} F5 rungs")
+    return start, ml, tot, f5
 
 
 def pull_mma(log):
@@ -441,7 +455,7 @@ assert not _bad, ("totals.py ladder is not monotone -- these prices cannot all b
 '''
 
 
-def generate_all(start, ml, tot, fight_start, mma_lines, other_lines, outdir=None):
+def generate_all(start, ml, tot, fight_start, mma_lines, other_lines, f5_lines=(), outdir=None):
     """Write the five feed files. Returns list of paths written."""
     outdir = outdir or HERE
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
@@ -459,6 +473,14 @@ def generate_all(start, ml, tot, fight_start, mma_lines, other_lines, outdir=Non
         "AWAY@HOME|Book|point|over|under. Monotonicity is asserted below at "
         "import time -- a broken ladder must crash, not price."))
     body += "\nGAME_OF = {}\n" + MONO_CHECK
+    _write(p, body); paths.append(p)
+    p = os.path.join(outdir, "f5.py")
+    body = gen_raw_module("F5_RAW", list(f5_lines), ts, (
+        "GAME|POINT|OVER|UNDER — FanDuel first-five-inning alternate totals, "
+        "market key alternate_totals_1st_5_innings (NOT totals_h1, which is "
+        "empty for MLB and once produced a false 'F5 does not exist' verdict). "
+        "Shares the ('GT', game) market key with the full-game ladder in "
+        "board.py, so a solver takes at most one total per game."))
     _write(p, body); paths.append(p)
     p = os.path.join(outdir, "mma.py")
     _write(p, gen_raw_module("MMA_RAW", mma_lines, ts, (
@@ -492,7 +514,8 @@ def selftest():
           "SOC|SOC PSV-Ajax|PSV Eindhoven|-550|1200,650|2026-08-08T18:00Z",
           "SOC|SOC PSV-Ajax|Ajax|1200|-550,650|2026-08-08T18:00Z",
           "SOC|SOC PSV-Ajax|Draw|650|-550,1200|2026-08-08T18:00Z"]
-    paths = generate_all(start, ml, tot, fs, mm, ot, outdir=tmp)
+    f5x = ["WSH@PHI|7.5|300|-450", "WSH@PHI|8.5|430|-750", "WSH@PHI|9.5|640|-1450"]
+    paths = generate_all(start, ml, tot, fs, mm, ot, f5x, outdir=tmp)
     ok = 0
 
     def chk(cond, msg):
@@ -518,7 +541,7 @@ def selftest():
     except AssertionError:
         chk(True, "a non-monotone ladder refuses to import")
     for mod, var, want in (("mlbml", "MLBML_RAW", ml), ("mma", "MMA_RAW", mm),
-                           ("other", "OTHER_RAW", ot)):
+                           ("other", "OTHER_RAW", ot), ("f5", "F5_RAW", f5x)):
         ns = {}
         exec(open(os.path.join(tmp, f"{mod}.py")).read(), ns)
         chk(ns[var].strip().splitlines() == want, f"{mod}.py round-trips")
@@ -527,6 +550,8 @@ def selftest():
         chk(len(l.split("|")) == 5, "ml arity")
     for l in tot:
         chk(len(l.split("|")) == 5, "totals arity")
+    for l in f5x:
+        chk(len(l.split("|")) == 4, "f5 arity (board.py splits it four ways)")
     for l in mm:
         chk(len(l.split("|")) == 5, "mma arity")
     for l in ot:
@@ -552,7 +577,7 @@ def main():
                  "locally: ODDS_API_KEY=... python3 pull_feeds.py")
     log = []
     try:
-        start, ml, tot = pull_mlb(log)
+        start, ml, tot, f5_lines = pull_mlb(log)
         fight_start, mma_lines = pull_mma(log)
         other_lines = pull_other(log)
     except urllib.error.HTTPError as e:
@@ -562,14 +587,14 @@ def main():
                  f"({'bad key' if e.code == 401 else 'out of credits' if e.code == 402 else e.code}).")
     for l in log:
         print(" ", l)
-    n_legs = len(ml) + len(tot) * 2 + len(mma_lines) * 2 + len(other_lines)
+    n_legs = len(ml) + (len(tot) + len(f5_lines)) * 2 + len(mma_lines) * 2 + len(other_lines)
     print(f"  legs representable: ~{n_legs} · API credits remaining {QUOTA['remaining']}")
     if n_legs < MIN_LEGS:
         sys.exit(f"ABORT, nothing written: only {n_legs} legs came back "
                  f"(floor {MIN_LEGS}). A dead pull must not dress itself as a "
                  f"quiet day — yesterday's board stays, and board.py will age it "
                  f"honestly.")
-    paths = generate_all(start, ml, tot, fight_start, mma_lines, other_lines)
+    paths = generate_all(start, ml, tot, fight_start, mma_lines, other_lines, f5_lines)
     for p in paths:
         print(f"  wrote {os.path.basename(p)}")
     import subprocess
