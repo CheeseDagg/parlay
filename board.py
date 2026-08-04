@@ -24,8 +24,33 @@ from other import OTHER_RAW
 from mlbml import MLBML_RAW
 from times import START, FIGHT_START
 
-LAM = {b['pitcher']: b['lam'] for b in json.load(
-    open('/root/MLBTool/mlb/data/kprops.json'))['board']}
+# Cross-repo reads into MLBTool's published data. These are ENRICHMENT, not
+# structure: K lambdas price strikeout rungs (a family that is currently
+# excluded by standing instruction anyway) and slate.json lends the moneyline
+# legs a model opinion to agree or disagree with. Neither exists on the GitHub
+# Actions runner -- only THIS repo is checked out there -- and the hardcoded
+# /root path failed the whole board with PermissionError on 2026-08-04, three
+# steps after a perfect 510-leg pull. Absence has to be a stated condition,
+# not a crash: legs still price from the market, opinions simply say nothing.
+def _mlbtool(fname):
+    import os
+    cands = []
+    if os.environ.get('MLBTOOL_DATA'):
+        cands.append(os.path.join(os.environ['MLBTOOL_DATA'], fname))
+    cands.append(os.path.join('/root/MLBTool/mlb/data', fname))
+    for p in cands:
+        try:
+            with open(p) as fh:
+                return json.load(fh)
+        except Exception:
+            continue
+    print(f"  board: MLBTool's {fname} is not readable here -- "
+          f"{'K lambdas' if 'kprops' in fname else 'ML model opinions'} off. "
+          f"Every leg still prices from the market; nothing else is affected.")
+    return None
+
+_kp = _mlbtool('kprops.json')
+LAM = {b['pitcher']: b['lam'] for b in _kp['board']} if _kp else {}
 
 # Model win probability for the HOME side of each game on today's slate. Used
 # only to AGREE OR DISAGREE with the market, never to replace it: the reported
@@ -33,7 +58,7 @@ LAM = {b['pitcher']: b['lam'] for b in json.load(
 # number substituted into a parlay quote would be reporting my own opinion back
 # to myself as if it were a fact. Saturday games are not on the slate, so they
 # simply carry no model opinion and are neither endorsed nor vetoed.
-_SL = json.load(open('/root/MLBTool/mlb/data/slate.json'))
+_SL = _mlbtool('slate.json') or {}
 TEAM3 = {'Arizona Diamondbacks': 'ARI', 'Atlanta Braves': 'ATL',
          'Baltimore Orioles': 'BAL', 'Boston Red Sox': 'BOS',
          'Chicago Cubs': 'CHC', 'Chicago White Sox': 'CWS',
@@ -104,7 +129,7 @@ FEED_DEAD = False
 
 MODEL_P = {}
 _unmapped = set()
-for _g in _SL['games']:
+for _g in _SL.get('games', []):
     _h, _a = TEAM3.get(_g['home']), TEAM3.get(_g['away'])
     # A name slate.json uses that TEAM3 has never heard of is a VOCABULARY BUG, not
     # a missing opinion. It used to vanish here in silence, and the only visible

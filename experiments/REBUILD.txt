@@ -1,1 +1,1 @@
-retry with scipy installed
+retry — cross-repo reads now fail soft
