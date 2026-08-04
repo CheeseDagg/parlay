@@ -1,1 +1,1 @@
-retry — cross-repo reads now fail soft
+retry — workflow now publishes its own log

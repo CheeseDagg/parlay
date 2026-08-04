@@ -24,24 +24,45 @@ jobs:
         # numpy for the solvers, scipy for board.py's power de-vig (brentq).
         # scipy's absence failed the first two runs AFTER a perfect pull —
         # the fetch worked, the final board selftest couldn't import.
-        run: pip install numpy scipy
+        run: |
+          set -o pipefail
+          pip install numpy scipy 2>&1 | tail -2 | tee -a /tmp/refresh.log
       - name: Selftest the generators before trusting them with the board
-        run: python3 pull_feeds.py --selftest
+        run: |
+          set -o pipefail
+          python3 pull_feeds.py --selftest 2>&1 | tee -a /tmp/refresh.log
       - name: Pull the board
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python3 pull_feeds.py
+        run: |
+          set -o pipefail
+          python3 pull_feeds.py 2>&1 | tee -a /tmp/refresh.log
       - name: Board + slips selftests against the fresh feeds
         run: |
-          python3 board.py --selftest
-          python3 slips.py --selftest
+          set -o pipefail
+          python3 board.py --selftest 2>&1 | tee -a /tmp/refresh.log
+          python3 slips.py --selftest 2>&1 | tee -a /tmp/refresh.log
       - name: Write BOARD.md
-        run: python3 daily_report.py
-      - name: Commit if anything changed
+        run: |
+          set -o pipefail
+          python3 daily_report.py 2>&1 | tee -a /tmp/refresh.log
+      # ALWAYS publish the run log, success or failure. The Actions log UI is
+      # unreadable from the session that maintains this repo, and three failed
+      # runs in a row each cost a human screenshot round-trip to diagnose. A
+      # failed run commits ONLY refresh.log — the feed files it wrote are
+      # reverted first, because an unverified board must never publish.
+      - name: Publish run log (and the board, if everything passed)
+        if: always()
         run: |
           git config user.name  "parlay-bot"
           git config user.email "parlay-bot@users.noreply.github.com"
+          if [ "${{ job.status }}" != "success" ]; then
+            git checkout -- . 2>/dev/null || true
+            git clean -fd 2>/dev/null || true
+          fi
+          cp /tmp/refresh.log refresh.log 2>/dev/null || echo "(no log captured — failed before the first step wrote)" > refresh.log
+          echo "run conclusion: ${{ job.status }} at $(date -u +%F\ %H:%M)" >> refresh.log
           git add -A
           git diff --cached --quiet && echo "no changes" && exit 0
-          git commit -m "board refresh $(date -u +%F\ %H:%M)"
+          git commit -m "board refresh $(date -u +%F\ %H:%M) [${{ job.status }}]"
           git push
