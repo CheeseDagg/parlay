@@ -2,4 +2,4 @@
 [notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusal, vig bands, arity)
 ABORT, nothing written: HTTP 401 from the API (bad key).
-run conclusion: failure at 2026-08-04 18:13
+run conclusion: failure at 2026-08-04 18:20
