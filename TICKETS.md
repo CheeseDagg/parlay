@@ -1,59 +1,26 @@
-# Tonight's two boost tickets — 2026-08-04
+# Live slip — 20-leg FD parlay · placed Tue 8/4 · updated Wed 8/5
 
-**Place before 2:00pm ET** (Dinamo kicks then). Each slip should print **+2600 or better** before boosting — if it doesn't, don't boost, ask first.
+**$25 @ +2803, 50% profit boost → ≈42-1 · collects ≈$1,076.**
+**13/13 settled legs WON** (everything through Tue night). 7 open.
+**True chance to cash from here: ≈22%.** The six board-priced open legs multiply to 27.2% (de-vigged, 8/5 16:44 pull); × Walsh ≈0.81 (not on today's pull, last seen -538) ≈ 22%.
 
----
+## Open legs (ET) — prices from the 8/5 16:44 board, recheck the FD app before sweating
 
-## TICKET 1 — 50% boost → ~40-1 · done Wednesday night · 18 legs
+- [ ] Wed 8/5 7:00p — New York Liberty ML (WNBA) — -355 · p 0.762
+- [ ] Fri 8/7 9:00p — Saskatchewan Roughriders ML (CFL) — -430 · p 0.796
+- [ ] Sat 8/8 2:00p — PSV Eindhoven ML (soccer) — -550 · p 0.829
+- [ ] Sat 8/8 3:00p — Gradus Kraus (boxing) — -1100 · p 0.898
+- [ ] Sat 8/8 4:00p — Aaron McKenna (boxing) — -450 · p 0.797
+- [ ] Sat 8/8 — Callum Walsh (boxing) — not on the 8/5 board pull · ≈0.81 off last-known -538
+- [ ] Sat 8/8 8:00p — Ty Miller ML (UFC) — -350 · p 0.756
 
-- [ ] Dinamo Zagreb ML (UCL qualifier, Tue 2:00p)
-- [ ] LAA @ BAL — **Over 6.5** runs
-- [ ] NYM @ CLE — Under 11.5
-- [ ] WSH @ PHI — Under 12.5
-- [ ] ATH @ CIN — Under 12.5
-- [ ] STL @ NYY — Under 12.5
-- [ ] CWS @ BOS — Under 15.5
-- [ ] MIA @ ATL — Under 12.5
-- [ ] PIT @ MIL — Under 10.5
-- [ ] MIN @ KC — Under 12.5
-- [ ] SF @ TEX — Under 11.5
-- [ ] LAD @ CHC — **Over 6.5** runs
-- [ ] TOR @ HOU — Under 11.5
-- [ ] TB @ COL — Under 16.5
-- [ ] SD @ ARI — Under 15.5
-- [ ] DET @ SEA — Under 10.5
-- [ ] Golden State Valkyries ML (Tue)
-- [ ] New York Liberty ML (Wed)
+## Settled
+
+- [x] Legs 1–13 — ALL WON, settled through Tue 8/4 (leg-by-leg record is the FD app slip)
+
+## Dead this week
+
+- HR trio, 100% boost — lost Tue 8/4.
 
 ---
-
-## TICKET 2 — 50% boost → ~40-1 · done Sunday · 24 legs
-
-- [ ] LAA @ BAL — Under 12.5
-- [ ] ATH @ CIN — Under 15.5
-- [ ] WSH @ PHI — Under 13.5
-- [ ] NYM @ CLE — Under 12.5
-- [ ] STL @ NYY — Under 14.5
-- [ ] CWS @ BOS — Under 13.5
-- [ ] MIA @ ATL — Under 15.5
-- [ ] PIT @ MIL — Under 13.5
-- [ ] MIN @ KC — Under 13.5
-- [ ] SF @ TEX — Under 13.5
-- [ ] LAD @ CHC — Under 12.5
-- [ ] TOR @ HOU — Under 12.5
-- [ ] TB @ COL — Under 15.5
-- [ ] DET @ SEA — Under 14.5
-- [ ] SD @ ARI — Under 13.5
-- [ ] Saskatchewan Roughriders ML (CFL, Fri)
-- [ ] David Nyika (boxing, Sat morning)
-- [ ] PSV Eindhoven ML (Sat)
-- [ ] Kraus (boxing, Sat)
-- [ ] Aaron McKenna (boxing, Sat)
-- [ ] Yadier DelValle ML (UFC, Sat)
-- [ ] Ty Miller ML (UFC, Sat)
-- [ ] FC Porto ML (Sun)
-- [ ] Benfica ML (Sun)
-
----
-
-Every total is the **alternate run line** — pick the exact number shown, not the main line. If FD shows a different point than listed, the line moved: skip it and tell me.
+Slip settles Saturday night with Ty Miller. If the FD app shows a different price than a board number above, the board is stale, not the app.
