@@ -1,1 +1,1 @@
-session-start touch 2026-08-05 16:43 UTC -- confirm write access + fire fresh board pull
+on-demand refresh 2026-08-05 18:27 UTC -- fresh start times
