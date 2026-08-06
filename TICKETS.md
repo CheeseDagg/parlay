@@ -2,14 +2,14 @@
 
 ## Slip A — 20-leg · $25 @ +2803, 50% boost → ≈42-1 · collects ≈$1,076
 
-**14/20 WON, ALIVE.** Liberty won 92-86 Wednesday. 6 open, all Fri-Sat. **True chance ≈31%** (fresh 8/6 14:18 board where priced; Kraus off today's pull, carried at .898 from 8/5; Walsh unpriced, carried ≈.81 off last-known -538).
+**14/20 WON, ALIVE.** Liberty won 92-86 Wednesday. 6 open, all Fri-Sat. **True chance ≈32%** (fresh 8/6 14:18 board where priced; Kraus off today's pull, carried at .898 from 8/5; Walsh re-posted ≈-630 per the FD app Thu, de-vig ≈.84).
 
 - [x] Wed 8/5 — New York Liberty ML — WON 92-86
 - [ ] Fri 8/7 9:00p — Saskatchewan Roughriders ML (CFL) — -430 · p 0.796
 - [ ] Sat 8/8 2:00p — PSV Eindhoven ML — -600 · p 0.839 (heavied from -550)
 - [ ] Sat 8/8 3:00p — Gradus Kraus (boxing) — off today's pull · carried p 0.898
 - [ ] Sat 8/8 4:00p — Aaron McKenna (boxing) — -450 · p 0.797
-- [ ] Sat 8/8 — Callum Walsh (boxing) — unpriced · carried ≈0.81
+- [ ] Sat 8/8 ~3:15p — Callum Walsh (boxing, v Denny, Dublin co-feature) — ≈-630 per FD app · p ≈0.84
 - [ ] Sat 8/8 8:15p — Ty Miller ML (UFC) — -430 · p 0.790 (heavied from -350)
 
 ## Slip B — 17-leg @ +4140 — DEAD Wed night (2 legs lost, 10 won)
