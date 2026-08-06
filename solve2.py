@@ -56,6 +56,15 @@ N_LEGS = int(flag('legs', 25))
 CUTOFF = None if '--anytime' in sys.argv else board._utcnow()
 # --now is kept as a no-op alias so an old command line does not silently change
 # meaning; it now describes what already happens.
+# --from=YYYY-MM-DDTHH:MMZ is the mirror of --by on the NEAR side: "events
+# starting after X only". CUTOFF already means exactly that -- its default X is
+# simply now -- so a window question ("Saturday only") is the same exclusion
+# with a later X, not a second filter. max() keeps it monotone: --from can
+# postpone the cutoff, never pull it back before now to resurrect a started
+# leg. ISO strings compare lexicographically, same as everywhere else here.
+_FROM = flag('from', None)
+if _FROM:
+    CUTOFF = max(CUTOFF, _FROM) if CUTOFF else _FROM
 # The -350 floor is a STANDING constraint ("nothing under -350"), so it is the
 # default rather than something to remember to type. It was opt-in, which meant
 # the difference between a ticket that respects the rule and one that quietly
