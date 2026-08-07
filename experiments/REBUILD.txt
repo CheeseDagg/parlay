@@ -1,1 +1,1 @@
-on-demand refresh 2026-08-06 23:45 UTC -- pre-placement verify
+on-demand refresh 2026-08-07 10:32 UTC -- airport run, early
