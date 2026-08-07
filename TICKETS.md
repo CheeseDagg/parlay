@@ -12,6 +12,41 @@
 - [ ] Sat 8/8 ~3:15p — Callum Walsh (boxing, v Denny, Dublin co-feature) — ≈-630 per FD app · p ≈0.84
 - [ ] Sat 8/8 8:15p — Ty Miller ML (UFC) — -430 · p 0.790 (heavied from -350)
 
+## Slip C — 22-leg · placed Fri 8/7 pre-flight @ +2656 · true ≈2.3% (1 in 44)
+
+Every Fri+Sat fight/CFL/soccer favorite on the board plus Walsh. All
+moneylines; PSV and Sporting are the two 3-ways (a draw kills them). Last
+legs ~10p CT Saturday. Ryan is in Vegas all weekend — Nevada blocks
+wagering actions including cash-out, so this one rides to the end.
+**All six of Slip A's open legs sit inside this slip** — A cannot cash
+without C's spine holding, and one shared upset kills both.
+
+- [ ] Fri 7:00p CT — Valentin Moldavsky ML (v Cappelozza, PFL) — -520
+- [ ] Fri 7:50p CT — Denis Goltsov ML (v Mezhiev, PFL) — -400
+- [ ] Fri 8:00p CT — Saskatchewan Roughriders ML (CFL) — -400 *(also Slip A)*
+- [ ] Fri 8:30p CT — Josh Fremd ML (v Gregory, PFL) — -420
+- [ ] Fri 9:00p CT — Lewis McGrillen ML (v Lewis, PFL) — -900
+- [ ] Sat 6:00a CT — David Nyika (v Masson, boxing) — -600
+- [ ] Sat 10:00a CT — Ted Jackson (v Tompkins, boxing) — -2400
+- [ ] Sat 12:00p CT — Mauro Silva (v Christopher, boxing) — -450
+- [ ] Sat 12:30p CT — Hassan Azim (v Martin, boxing) — -950
+- [ ] Sat 1:00p CT — PSV Eindhoven ML 3-way (v Fortuna Sittard) — -650 *(also Slip A)*
+- [ ] Sat 1:10p CT — Diego Krasimirov (v Eales, boxing) — -450
+- [ ] Sat 2:00p CT — Gradus Kraus (v Hemphill, boxing) — -1100 *(also Slip A)*
+- [ ] Sat 2:30p CT — Sporting Lisbon ML 3-way (v Estrela) — -550
+- [ ] Sat 3:00p CT — Callum Walsh (v Denny, boxing) — -650 *(also Slip A)*
+- [ ] Sat 4:00p CT — Aaron McKenna (v Oliha, boxing) — -410 *(also Slip A)*
+- [ ] Sat 5:00p CT — Jan Paul Rivera-Pizarro (boxing) — -2400
+- [ ] Sat 6:00p CT — BC Lions ML (CFL, v Hamilton) — -410
+- [ ] Sat 7:00p CT — Krystal Rosado (v Yamileth, boxing) — -950
+- [ ] Sat 7:15p CT — Ty Miller ML (v Goff, UFC) — -420 *(also Slip A)*
+- [ ] Sat 8:00p CT — Dainier Pero (v Whitfield, boxing) — -4500
+- [ ] Sat 8:15p CT — Yadier DelValle ML (v Elkins, UFC) — -750
+- [ ] Sat 8:50p CT — Tamm Thibeault (v Robinson, boxing) — -450
+
+Times are the FD slip's (CT), which is the authority — the feed's fight
+times have been junk all week.
+
 ## Slip B — 17-leg @ +4140 — DEAD Wed night (2 legs lost, 10 won)
 
 Killed by **NYM@CLE Under 10.5** (5-5 through nine, Mets won 6-5 in the 10th — 11 runs, the extra frame did it) and **SD@ARI Under 11.5** (D-backs 10-4, a six-run 4th — 14 runs). Everything else hit, for the record:
