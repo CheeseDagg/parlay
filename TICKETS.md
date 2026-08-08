@@ -1,8 +1,8 @@
 # Live slips — graded Thu 8/6 morning
 
-## Slip A — 20-leg · $50 @ +2803, 50% boost → ≈42-1 · collects ≈$1,800-2,150
+## Slip A — 20-leg @ +2803 — DEAD Sat 8/8: PSV DREW (3-way ML, a draw loses)
 
-**15/20 WON, ALIVE (Sat 8/8).** Liberty won 92-86 Wednesday. 5 open, all Saturday. **True chance ≈32%** (fresh 8/6 14:18 board where priced; Kraus off today's pull, carried at .898 from 8/5; Walsh re-posted ≈-630 per the FD app Thu, de-vig ≈.84).
+**15/20 won, then PSV drew v Fortuna Sittard. Dead at leg 16 of 20.** The draw risk was flagged and priced at 11.5%; it landed. Liberty won 92-86 Wednesday. 5 open, all Saturday. **True chance ≈32%** (fresh 8/6 14:18 board where priced; Kraus off today's pull, carried at .898 from 8/5; Walsh re-posted ≈-630 per the FD app Thu, de-vig ≈.84).
 
 - [x] Wed 8/5 — New York Liberty ML — WON 92-86
 - [x] Fri 8/7 — Saskatchewan Roughriders ML — WON 42-20
