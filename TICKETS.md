@@ -2,10 +2,10 @@
 
 ## Slip A — 20-leg · $25 @ +2803, 50% boost → ≈42-1 · collects ≈$1,076
 
-**14/20 WON, ALIVE.** Liberty won 92-86 Wednesday. 6 open, all Fri-Sat. **True chance ≈32%** (fresh 8/6 14:18 board where priced; Kraus off today's pull, carried at .898 from 8/5; Walsh re-posted ≈-630 per the FD app Thu, de-vig ≈.84).
+**15/20 WON, ALIVE.** Liberty won 92-86 Wednesday. 5 open, all Saturday. **True chance ≈32%** (fresh 8/6 14:18 board where priced; Kraus off today's pull, carried at .898 from 8/5; Walsh re-posted ≈-630 per the FD app Thu, de-vig ≈.84).
 
 - [x] Wed 8/5 — New York Liberty ML — WON 92-86
-- [ ] Fri 8/7 9:00p — Saskatchewan Roughriders ML (CFL) — -430 · p 0.796
+- [x] Fri 8/7 — Saskatchewan Roughriders ML — WON 42-20
 - [ ] Sat 8/8 2:00p — PSV Eindhoven ML — -600 · p 0.839 (heavied from -550)
 - [ ] Sat 8/8 3:00p — Gradus Kraus (boxing) — off today's pull · carried p 0.898
 - [ ] Sat 8/8 4:00p — Aaron McKenna (boxing) — -450 · p 0.797
