@@ -12,7 +12,7 @@
 - [ ] Sat 8/8 ~3:15p — Callum Walsh (boxing, v Denny, Dublin co-feature) — ≈-630 per FD app · p ≈0.84
 - [ ] Sat 8/8 8:15p — Ty Miller ML (UFC) — -430 · p 0.790 (heavied from -350)
 
-## Slip C — 22-leg · placed Fri 8/7 pre-flight @ +2656 · true ≈2.3% (1 in 44)
+## Slip C — 22-leg @ +2656 — DEAD Fri night, leg 1 (Cappelozza UD Moldavsky, 29-28 30-27 29-28)
 
 Every Fri+Sat fight/CFL/soccer favorite on the board plus Walsh. All
 moneylines; PSV and Sporting are the two 3-ways (a draw kills them). Last
