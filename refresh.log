@@ -1,17 +1,14 @@
 [notice] A new release of pip is available: 26.1.2 -> 26.2.1
 [notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: COL@STL has no FanDuel book — skipped
-  MLB: BAL@TEX has no FanDuel book — skipped
-  MLB: TB@SEA alternate_totals_1st_5_innings 2.5 vig-sum 1.12 out of band — rung dropped
-  MLB: 6 games, 6 moneylines, 40 total rungs, 25 F5 rungs
+  MLB: 1 games, 1 moneylines, 9 total rungs, 9 F5 rungs
   MMA: 11 bouts
   WNBA: 5 markets
   CFL: 4 markets
   BOX: 6 markets
   SOC soccer_uefa_champs_league_qualification: 10 fixtures
   SOC soccer_netherlands_eredivisie: 9 fixtures
-  SOC soccer_portugal_primeira_liga: 9 fixtures
+  SOC soccer_portugal_primeira_liga: 6 fixtures
   SOC soccer_turkey_super_league: 9 fixtures
   SOC soccer_greece_super_league: 7 fixtures
   SOC soccer_sweden_allsvenskan: 9 fixtures
@@ -19,9 +16,9 @@ PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusa
   SOC soccer_norway_eliteserien: 7 fixtures
   SOC soccer_china_superleague: 7 fixtures
   SOC soccer_usa_mls: 30 fixtures
-  SOC soccer_brazil_campeonato: 13 fixtures
+  SOC soccer_brazil_campeonato: 11 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
-  legs representable: ~566 · API credits remaining 18138
+  legs representable: ~447 · API credits remaining 18112
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -103,4 +100,4 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
 wrote BOARD.md
-run conclusion: success at 2026-08-09 21:23
+run conclusion: success at 2026-08-09 23:59
