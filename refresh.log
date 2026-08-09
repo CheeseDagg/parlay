@@ -1,24 +1,25 @@
 [notice] A new release of pip is available: 26.1.2 -> 26.2.1
 [notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: 15 games, 15 moneylines, 133 total rungs, 116 F5 rungs
-  MMA: 23 bouts
+  MLB: 15 games, 15 moneylines, 135 total rungs, 134 F5 rungs
+  MMA: 11 bouts
   WNBA: 6 markets
-  CFL: 1 markets
-  BOX: 9 markets
+  CFL: 4 markets
+  BOX: 6 markets
   SOC soccer_uefa_champs_league_qualification: 10 fixtures
-  SOC soccer_netherlands_eredivisie: 9 fixtures
-  SOC soccer_portugal_primeira_liga: 7 fixtures
+  SOC soccer_netherlands_eredivisie: 10 fixtures
+  SOC soccer_portugal_primeira_liga: 6 fixtures
   SOC soccer_turkey_super_league: 9 fixtures
-  SOC soccer_greece_super_league: 3 fixtures
-  SOC soccer_sweden_allsvenskan: 8 fixtures
-  SOC soccer_finland_veikkausliiga: 4 fixtures
-  SOC soccer_norway_eliteserien: 4 fixtures
-  SOC soccer_china_superleague: 6 fixtures
-  SOC soccer_usa_mls: 31 fixtures
-  SOC soccer_brazil_campeonato: 19 fixtures
+  SOC soccer_greece_super_league: 4 fixtures
+  SOC soccer_sweden_allsvenskan: 9 fixtures
+  SOC: Ilves Tampere vs IFK Mariehamn vig-sum 1.0157 — dropped
+  SOC soccer_finland_veikkausliiga: 6 fixtures
+  SOC soccer_norway_eliteserien: 8 fixtures
+  SOC soccer_china_superleague: 7 fixtures
+  SOC soccer_usa_mls: 30 fixtures
+  SOC soccer_brazil_campeonato: 15 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
-  legs representable: ~963 · API credits remaining 18356
+  legs representable: ~991 · API credits remaining 18215
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -100,4 +101,4 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
 wrote BOARD.md
-run conclusion: success at 2026-08-08 21:22
+run conclusion: success at 2026-08-09 16:42
