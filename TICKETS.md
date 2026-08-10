@@ -1,4 +1,29 @@
-# Live slips — graded Thu 8/6 morning
+# Live slips
+
+## SETTLED — Sat 8/8: T1 + T2 BOTH CASHED, $2,346
+
+11-leg all-fight parlays at El Cortez, identical spines.
+**T1 $500 @ +231 -> $1,655.17 · T2 $200 @ +246 -> $691.34**
+
+Legs (all won): Stevie McKenna KO1 · Mauro Silva UD · Hassan Azim (T1) ·
+Gradus Kraus TKO1 (T2) · Sam Hickey KO7 · Callum Walsh · Ty Miller TKO3 ·
+Dainier Pero TKO3 · Yadier DelValle KO1 · Jan Paul Rivera-Pizarro ·
+Tammara Thibeault.
+
+Peak-to-cash path: 25% at placement -> 47% after Leeds -> 58% after Ty
+Miller -> 70% after Pero -> 76% after Rosado -> paid.
+
+### Same-day losers
+- T4 $65 @ +2398 — Boston lost
+- T5 $200 @ +3107 — Boston lost
+- T6 $100 @ +2340 — baseball leg
+- T7 $100 @ ~+1000 — Salkilld finished instead of decisioning
+- Daily card $15 @ +79900 — Boston -2
+- UFC props $40 @ +4341 — needed Miller BY DECISION (won by TKO) and
+  Asplund BY KO (won by decision). Method markets, both ways.
+
+Saturday: $1,180 staked, $2,346 back. **Net +$1,166.**
+
 
 ## Slip A — 20-leg @ +2803 — DEAD Sat 8/8: PSV DREW (3-way ML, a draw loses)
 
