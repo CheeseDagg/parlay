@@ -1,5 +1,46 @@
 # Live slips
 
+## DEAD — Mon 8/10: NYM@ATL F5 Under 8.5 went over, all three slips gone
+
+Three identical 11-leg slips, same spine, placed 2:42p CT.
+**$657 staked, $0 back. Net -$657.**
+
+- 2x $50 boosted (+160 boosted 50% to +240, $170.22 each)
+- 1x $557 straight @ +160 ($1,449.29)
+- Placement: **27.8% true (1 in 3.6)**
+
+| # | CT | leg | price |
+|---|---|---|---|
+| 1 | 6:07p | BOS@TOR F5 Under 8.5 | -900 |
+| 2 | 6:15p | NYM@ATL F5 Under 8.5 | -1000 |
+| 3 | 6:40p | BAL@MIN F5 Under 8.5 | -900 |
+| 4 | 6:46p | PHI@STL F5 Under 10.5 | -2000 |
+| 5 | 7:00p | Atlanta Dream ML | -750 |
+| 6 | 8:38p | TEX@LAA F5 Under 8.5 | -1200 |
+| 7 | 8:40p | COL@ARI F5 Under 8.5 | -850 |
+| 8 | 8:41p | TB@ATH F5 Under 9.5 | -750 |
+| 9 | 8:41p | MIL@SD F5 Under 7.5 | -850 |
+| 10 | 8:46p | HOU@SF F5 Under 8.5 | -1000 |
+| 11 | 9:10p | KC@LAD F5 Under 8.5 | -1600 |
+
+**Leg 2 killed it.** Seven runs in the first (grand slam), 8 by the top of
+the 2nd, zero cushion the rest of the way. A home run in the top of the 3rd
+put it at 9+ through five. The other early games (BOS@TOR, BAL@MIN,
+PHI@STL) were all on zeros and the six late unders never got a chance.
+
+Death path: 27.8% at placement -> 12% after the slam -> 3.8% at 8 runs
+after the Braves went quiet in the 2nd -> dead in the top of the 3rd.
+
+### Note for future live grading — Poisson undercounts zeros
+
+Live reads on "need N more runs" were run on Poisson all night, which is
+wrong in the direction that matters. Real MLB: **~72% of half-innings are
+scoreless**; Poisson at the same run rate says ~62%. Run scoring is
+overdispersed — more zeros AND more crooked numbers than Poisson allows.
+For a "need zero runs across K halves" ask, use **0.68^K** in a game where
+both starters got hit, ~0.72^K in a normal one. It roughly tripled the
+number mid-game (2.7% -> 7%) when it mattered.
+
 ## SETTLED — Sat 8/8: T1 + T2 BOTH CASHED, $2,346
 
 11-leg all-fight parlays at El Cortez, identical spines.
