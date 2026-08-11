@@ -3,10 +3,9 @@
 PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusal, vig bands, arity)
   MLB: 15 games, 15 moneylines, 135 total rungs, 135 F5 rungs
   MMA: 17 bouts
-  WNBA: 6 markets
+  WNBA: 7 markets
   CFL: 4 markets
   BOX: 8 markets
-  SOC soccer_uefa_champs_league_qualification: 10 fixtures
   SOC soccer_netherlands_eredivisie: 9 fixtures
   SOC soccer_portugal_primeira_liga: 8 fixtures
   SOC soccer_turkey_super_league: 9 fixtures
@@ -18,7 +17,7 @@ PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusa
   SOC soccer_usa_mls: 30 fixtures
   SOC soccer_brazil_campeonato: 20 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
-  legs representable: ~1033 · API credits remaining 17644
+  legs representable: ~1005 · API credits remaining 17522
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -100,4 +99,4 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
 wrote BOARD.md
-run conclusion: success at 2026-08-11 17:03
+run conclusion: success at 2026-08-11 21:37
