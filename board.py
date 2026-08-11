@@ -37,6 +37,16 @@ def _mlbtool(fname):
     cands = []
     if os.environ.get('MLBTOOL_DATA'):
         cands.append(os.path.join(os.environ['MLBTOOL_DATA'], fname))
+    # /root was this container's checkout root once and is not any more. A
+    # sibling checkout next to THIS repo is the layout that actually ships --
+    # both here (/home/user/{parlay,MLBTool}) and anywhere else the two repos
+    # are cloned side by side -- so derive it from __file__ rather than naming
+    # a machine. The absolute path stays as a fallback, and the Actions runner
+    # still legitimately finds nothing, which is why absence stays a printed
+    # condition rather than a crash.
+    _sib = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        'MLBTool', 'mlb', 'data')
+    cands.append(os.path.join(_sib, fname))
     cands.append(os.path.join('/root/MLBTool/mlb/data', fname))
     for p in cands:
         try:

@@ -5,9 +5,13 @@ and from de-vig arithmetic written out longhand against the raw American odds,
 and the search check is a Lagrangian sweep plus pairwise local search. If greedy
 beat the DP, the DP would be wrong -- so this is a test, not a rubber stamp.
 """
-import json, math, sys
+import json, math, os, sys
 from scipy.stats import poisson
-sys.path.insert(0, '/root/parlay')
+# Same lesson as board._mlbtool and selftest.js: a hardcoded /root is a machine
+# name, not a layout. Derive both paths from THIS file so the checker runs
+# wherever the two repos are cloned side by side.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _HERE)
 from totals import TOTALS_RAW
 from f5 import F5_RAW
 from mma import MMA_RAW
@@ -15,8 +19,26 @@ from mma import MMA_RAW
 TARGET, NLEG = 21.0, 25
 D = lambda a: 1 + (float(a)/100 if float(a) > 0 else 100/-float(a))
 DV = lambda y, n: (1/D(y)) / (1/D(y) + 1/D(n))
-LAM = {b['pitcher']: b['lam'] for b in json.load(
-    open('/root/MLBTool/mlb/data/kprops.json'))['board']}
+
+def _kprops():
+    for p in (os.environ.get('MLBTOOL_DATA'),
+              os.path.join(os.path.dirname(_HERE), 'MLBTool', 'mlb', 'data'),
+              '/root/MLBTool/mlb/data'):
+        if not p:
+            continue
+        try:
+            with open(os.path.join(p, 'kprops.json')) as fh:
+                return json.load(fh)['board']
+        except Exception:
+            continue
+    # This file's whole job is to disagree with solve.py independently. Dying
+    # on a missing enrichment file means the disagreement never gets checked,
+    # which is the one outcome worse than checking it without K lambdas.
+    print('verify2: MLBTool kprops.json not readable -- K legs unchecked, '
+          'everything else still verified.')
+    return []
+
+LAM = {b['pitcher']: b['lam'] for b in _kprops()}
 
 f5 = {(g, pt): (o, u) for g, pt, o, u in
       (l.split('|') for l in F5_RAW.strip().splitlines() if l.strip())}
