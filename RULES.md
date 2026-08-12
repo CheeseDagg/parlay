@@ -124,9 +124,12 @@ loss that created it landed.
 
 ## Working agreement
 
-20. He pings, you check — except for the scheduled morning runs he asked
-    for, which do research passes ahead of build passes so nothing like Ben
-    Rice's 0-for-14 surfaces after he's already placed.
+20. He pings, you check — except the morning runs, which are now STANDING
+    daily Routines (created 8/12): research+settle at 5:00am CT
+    (trig_01GRh78C7qHiNZeDGc53jr6D) and build at 7:00am CT
+    (trig_01PD14LpeCgNYmxc88fCZcsR). Cron is pinned UTC (10:00/12:00), so
+    they drift an hour when DST ends. Kill or retune with update_trigger /
+    delete_trigger; the 7am pass builds nothing Ryan didn't ask for.
 21. All work lands on `main` so the site, BOARD.md and the scheduled runs
     share one branch.
 22. Never print tokens. Pipe push output through
