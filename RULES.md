@@ -155,6 +155,29 @@ loss that created it landed.
     price is not stale because a name is on a report; it is stale only if
     the news broke after the line last moved. Say which of those two you
     are claiming before touching a leg.
+37. **An answer with no checks in it is a guess, and gets labeled one.**
+    *(8/12, verbatim: "we need to make some sort of rule so you thoroughly
+    do your research rather than slap an answer back in 2 seconds.")*
+    Before answering, name the class of claim and run its checks —
+    `python3 research.py bar <code|feed|matchup|live>` prints them:
+    - **code**: read the docstring, grep the other callers, run it
+    - **feed**: the board, plus one source off the board (rule 14)
+    - **matchup**: the de-vigged number first, then BOTH sides (33), then
+      base rates
+    - **live**: `live.py`, never hand arithmetic (rules 17, 18, 30)
+
+    Every required check that didn't get run must be named **in the
+    answer**, with what it would have changed. "I didn't check Toronto"
+    is a complete and acceptable sentence; a silent guess is not. The bar
+    is highest on code claims because they're the cheapest to verify: on
+    8/12 I shipped two broken versions of the same `pull_feeds` change
+    inside an hour — the wrong endpoint (HTTP 422, while `pull_mlb` three
+    functions up used the right one) and then an unguarded `None` (whose
+    own docstring documents it and whose every other caller guards it).
+    Both answers were sitting in the file I was already editing, and the
+    second one took the whole 17:53 refresh down with it. The fast answer
+    and the checked answer are different answers; when they differ, the
+    checked one ships, however long it took.
 
 ## Working agreement
 

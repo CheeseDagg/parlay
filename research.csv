@@ -1,0 +1,7 @@
+date,claim,cls,checks,verdict,note,outcome,catch
+2026-08-12,alternate totals live on the bulk /sports/{key}/odds endpoint,code,,UNSUPPORTED,shipped it,wrong,read pull_mlb's URL three functions up
+2026-08-12,fd_markets always returns a list,code,run,THIN,selftest was green; docstring unread,wrong,"read fd_markets's docstring, grep its other callers"
+2026-08-12,the Wings leg should be dropped on Dallas's injury report,matchup,baserate|market,THIN,Dallas report only,wrong,"Toronto's record (10-22, road, no Sykes since 6/19) - rule 33"
+2026-08-12,that is every sure bet on the board,feed,board,THIN,shopped the board and stopped,wrong,the markets list in pull_feeds - WNBA/CFL only ever requested h2h
+2026-08-12,a live leg needing 5 scoreless half-innings is 2.7%,live,,UNSUPPORTED,hand-rolled Poisson,wrong,"live.py / the 0.72^K empirical rate, not Poisson"
+2026-08-12,fd_markets returns None when FanDuel priced no alternate market,code,callers|docstring|run,SUPPORTED,the fix that finally held,right,
