@@ -348,6 +348,7 @@ def pull_other(log):
             log.append(f"{tag}: fetch HTTP {e.code} — family skipped")
             continue
         n0 = len(lines)
+        h2h_grp = {}          # event id -> the group key its h2h line used
         for ev in sorted(data, key=lambda e: e.get("commence_time", "")):
             mkts = fd_markets(ev)
             if not mkts:
@@ -366,16 +367,30 @@ def pull_other(log):
                 t = _utc_min(ev["commence_time"])
                 sur = (tag == "BOX")
                 grp = f"{tag} {_short(oc[0][0], sur)}-{_short(oc[1][0], sur)}"
+                h2h_grp[ev.get("id")] = grp
                 for i, (nm, pr) in enumerate(oc):
                     other = oc[1 - i][1]
                     lines.append(f"{tag}|{grp}|{nm}|{pr}|{other}|{t}")
         log.append(f"{tag}: {(len(lines)-n0)//2} markets")
 
         # --- alternate total ladders for the same family. Emitted in the SAME
-        # two-way OTHER_RAW shape so board.py needs no new parser: the group
-        # carries the point so each rung is its own market and a solver can
-        # take at most one, exactly as with the MLB ladders. Fail-soft: a
-        # family whose book posts no alternate totals logs and moves on.
+        # two-way OTHER_RAW shape so board.py needs no new parser.
+        #
+        # THE GROUP IS THE GAME, NOT THE RUNG, and it reuses the key this
+        # event's h2h line already used. board.py files every OTHER line under
+        # ('O', grp) and solve2's DP takes at most one leg PER MARKET KEY -- so
+        # the group key is the entire correlation guard. The first version of
+        # this code appended "T{point}" to the key and carried a comment
+        # claiming that made the solver "take at most one, exactly as with the
+        # MLB ladders." It did the reverse: one key per rung let the solver
+        # stack Over 140.5 AND Over 145.5 AND Over 150.5 off one ladder and
+        # multiply them as independent, and it also split a game's ML (DW-TT)
+        # from its totals (TT-DW) so preflight's overlap gate could not see
+        # they were the same game. MLB keys totals by GAME -- ('GT', g) -- and
+        # that is the behaviour being matched here.
+        #
+        # Fail-soft: a family whose book posts no alternate totals logs and
+        # moves on.
         if tag not in ALT_TOTAL_TAGS:
             continue
         # PER EVENT, not the bulk endpoint. Alternate markets exist only on
@@ -427,11 +442,13 @@ def pull_other(log):
                 t = _utc_min(ev0["commence_time"])
                 away = ev0.get("away_team") or ev.get("away_team", "?")
                 home = ev0.get("home_team") or ev.get("home_team", "?")
-                base = f"{tag} {_short(away)}-{_short(home)}"
+                # the h2h key when this event had one, so the ML and the totals
+                # share a market; the away-home fallback only when it did not.
+                pair = f"{_short(away)}-{_short(home)}"
+                grp = h2h_grp.get(ev0["id"], f"{tag} {pair}")
                 for pt, ov, un in lad:
-                    grp = f"{base} T{pt}"
-                    lines.append(f"{tag}|{grp}|Under {pt} ({_short(away)}-{_short(home)})|{un}|{ov}|{t}")
-                    lines.append(f"{tag}|{grp}|Over {pt} ({_short(away)}-{_short(home)})|{ov}|{un}|{t}")
+                    lines.append(f"{tag}|{grp}|Under {pt} ({pair})|{un}|{ov}|{t}")
+                    lines.append(f"{tag}|{grp}|Over {pt} ({pair})|{ov}|{un}|{t}")
         log.append(f"{tag}: {(len(lines)-n1)//2} alternate-total rungs")
 
     for skey in SOCCER_KEYS:
@@ -653,6 +670,18 @@ def selftest():
     # _short never returns empty and BOX uses surnames
     chk(_short("David Nyika", surname=True) == "Nyika", "BOX groups use surnames")
     chk(_short("New York Liberty") == "NYL", "team groups use initials")
+    # ---- the group key IS the correlation guard (see the alt-totals block).
+    # board.py files every OTHER line under ('O', grp) and solve2's DP takes at
+    # most one leg per key, so two rungs of one ladder MUST share a key and a
+    # game's ML must share it too. Shipped 8/12 doing neither.
+    alt = ["WNBA|WNBA DW-TT|Over 159.5 (TT-DW)|-3000|2000|2026-08-13T01:00Z",
+           "WNBA|WNBA DW-TT|Over 160.5 (TT-DW)|-2400|1700|2026-08-13T01:00Z",
+           "WNBA|WNBA DW-TT|Dallas Wings|-500|380|2026-08-13T01:00Z"]
+    grps = {l.split("|")[1] for l in alt}
+    chk(len(grps) == 1,
+        "two rungs off one ladder plus that game's ML share ONE group key -- "
+        "per-rung keys let the solver stack correlated legs as independent")
+    chk(all(len(l.split("|")) == 6 for l in alt), "alt-total lines keep other arity")
     print(f"PULL_FEEDS SELFTEST PASS — {ok} checks (generators, round-trips, "
           f"monotone refusal, vig bands, arity)")
 
