@@ -378,15 +378,23 @@ def pull_other(log):
         # family whose book posts no alternate totals logs and moves on.
         if tag not in ALT_TOTAL_TAGS:
             continue
-        try:
-            data = _get(f"{BASE}/sports/{skey}/odds?{q_for('alternate_totals')}")
-        except urllib.error.HTTPError as e:
-            if e.code in (401, 402):
-                raise
-            log.append(f"{tag}: alternate_totals HTTP {e.code} — ladders skipped")
-            continue
+        # PER EVENT, not the bulk endpoint. Alternate markets exist only on
+        # /events/{id}/odds -- the bulk /sports/{key}/odds returns HTTP 422 for
+        # them, which is exactly what the first version of this code got on
+        # 2026-08-12. Same lesson as the F5 key three functions up: a rejection
+        # proves the REQUEST is wrong before it proves the market is missing.
         n1 = len(lines)
-        for ev in sorted(data, key=lambda e: e.get("commence_time", "")):
+        for ev0 in sorted(data, key=lambda e: e.get("commence_time", "")):
+            q2 = urllib.parse.urlencode({
+                "apiKey": KEY, "regions": "us", "markets": "alternate_totals",
+                "oddsFormat": "american", "bookmakers": BOOK})
+            try:
+                ev = _get(f"{BASE}/sports/{skey}/events/{ev0['id']}/odds?{q2}")
+            except urllib.error.HTTPError as e:
+                if e.code in (401, 402):
+                    raise
+                log.append(f"{tag}: {ev0.get('id','?')} alt-totals HTTP {e.code} — skipped")
+                continue
             for mk in fd_markets(ev):
                 if mk.get("key") != "alternate_totals":
                     continue
@@ -408,10 +416,13 @@ def pull_other(log):
                 mono = all(_dec(b[1]) > _dec(a[1]) and _dec(b[2]) < _dec(a[2])
                            for a, b in zip(lad, lad[1:]))
                 if lad and not mono:
-                    log.append(f"{tag}: {ev.get('id','?')} ladder NOT monotone — dropped")
+                    log.append(f"{tag}: {ev0.get('id','?')} ladder NOT monotone — dropped")
                     continue
-                t = _utc_min(ev["commence_time"])
-                away, home = ev.get("away_team", "?"), ev.get("home_team", "?")
+                # commence_time / team names come from the LIST response (ev0);
+                # the per-event payload may omit them.
+                t = _utc_min(ev0["commence_time"])
+                away = ev0.get("away_team") or ev.get("away_team", "?")
+                home = ev0.get("home_team") or ev.get("home_team", "?")
                 base = f"{tag} {_short(away)}-{_short(home)}"
                 for pt, ov, un in lad:
                     grp = f"{base} T{pt}"
