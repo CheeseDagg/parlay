@@ -1,5 +1,34 @@
 # Live slips
 
+## DEAD — Tue 8/11: all three slips down
+
+**1. 20-leg @ +401 (15 F5 unders + Hasan KO + Wint ML + 3 WNBA)** — dead at
+leg 3: CHC@WSH F5 U9.5, 10 runs through five (Washington run in the B5 was
+the tenth). The game carried the slate's highest full-game total (U15.5
+-1800) — the market had already named it the run-fest. Now rule 25.
+
+**2. DWCS 5-leg, $50 @ boosted +3377 ($1,738.81)** — dead twice over:
+Kunneman lost outright, and Escarrega won BY DECISION against a by-KO leg.
+Pagliarulo DC and Hasan KO both cashed as legs.
+
+**3. 7-pick, $100 @ +2634 ($2,734.02)** — dead at the same moment: its
+Escarrega leg was KO/TKO/DQ +150, killed by the decision at 7:10p. The
+banked legs (Pagliarulo KO +240, Hasan KO-R1 -300) and the Wint-R1 leg
+were moot from there.
+
+### The fight-card score, market vs my overrides
+| leg | market | me | result |
+|---|---|---|---|
+| Pagliarulo DC | 31% | 49% | WON |
+| Kunneman DC | 37% | 53% | lost |
+| Hasan KO R1 fade ("worst number on the card") | 71% | 40% | KO R1 — market right |
+| Escarrega decision fade | 14% | 9% | decision — market right |
+
+1-for-4 overriding de-vigged prices off search-snippet research. Rules
+23-27 written from this. Bright spots that were real: Hasan by KO cashed
+(Ryan's call over my early swap-to-ML advice), Pagliarulo DC cashed
+(built off Ryan's Mulumba-durability pushback).
+
 ## DEAD — Mon 8/10: NYM@ATL F5 Under 8.5 went over, all three slips gone
 
 Three identical 11-leg slips, same spine, placed 2:42p CT.

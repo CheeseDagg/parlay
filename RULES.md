@@ -64,6 +64,34 @@ loss that created it landed.
 19. **"Under 8" and "Under 7.5" are the same bet** on a whole-number board.
     Don't say a rung doesn't exist because the label differs.
 
+## Fight cards (added 8/12, paid for on 8/11)
+
+23. **The de-vigged price is the number. Research adjusts it ±5 points, no
+    more.** On 8/11 I overrode the market by 10+ points four times, on
+    fighters I knew only through search snippets. Score: 1-for-4 (Pagliarulo
+    DC won; Kunneman DC lost, the Hasan-R1 fade lost, the Escarrega-decision
+    fade lost). Search-summary research is for choosing among fairly priced
+    legs and for vetoing legs — it does not mint double-digit edges.
+24. **Retired: "DWCS fighters chase finishes, so shade decisions down."**
+    Two of five fights on the 8/11 card went the distance. This adjustment
+    talked Ryan off Escarrega by decision at +600. It cashed.
+25. **F5 rung selection follows the game's full-game total, not a uniform
+    price target.** The highest FG total on the board is the market naming
+    the night's run-fest. CHC@WSH carried U15.5 -1800, highest on the 8/11
+    slate; its F5 U9.5 died on 10-through-five and killed a 20-leg slip.
+    FG total 14.5 or higher -> top rung only, or leave the game off.
+26. **One answer per fight.** State the range once, pick once, stop moving
+    the number with each new snippet. On 8/11 I moved Kunneman four times
+    and flipped the lightweight pick twice; Ryan called it out both times.
+    When the evidence is thin, say "55, plus or minus 10" — do not
+    re-litigate.
+27. **When the pick is the WINNER, the default instrument is the moneyline
+    or the KO-or-points double chance — never a single method.** Method
+    legs are where slips die (rule 9, and again 8/11: Escarrega by KO lost
+    to Escarrega winning on points; KO-or-points at -105 would have
+    cashed). Narrow to one method only when Ryan explicitly wants payout
+    over hit rate, and say what it costs.
+
 ## Working agreement
 
 20. He pings, you check — except for the scheduled morning runs he asked
