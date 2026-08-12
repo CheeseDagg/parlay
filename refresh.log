@@ -1,14 +1,16 @@
-[notice] A new release of pip is available: 26.1.2 -> 26.2.1
-[notice] To update, run: pip install --upgrade pip
+
+Successfully installed numpy-2.5.2 scipy-1.18.0
 PULL_FEEDS SELFTEST PASS — 33 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: TB@ATH has no FanDuel book — skipped
-  MLB: 12 games, 12 moneylines, 99 total rungs, 87 F5 rungs
+  API HTTP 404: {"message":"Unknown sport","error_code":"UNKNOWN_SPORT","details_url":"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#unknown-sport"}
+
+  MLB: 12 games, 12 moneylines, 92 total rungs, 81 F5 rungs
   MMA: 11 bouts
   WNBA: 6 markets
   WNBA: 153 alternate-total rungs
   CFL: 4 markets
   CFL: 59 alternate-total rungs
   BOX: 9 markets
+  SOC: 32 soccer competition(s) LIVE and NOT pulled — soccer_argentina_primera_division (Primera División - Argentina); soccer_austria_bundesliga (Austrian Football Bundesliga); soccer_belgium_first_div (Belgium First Div); soccer_brazil_serie_b (Brazil Série B); soccer_chile_campeonato (Primera División - Chile); soccer_concacaf_leagues_cup (Leagues Cup); soccer_conmebol_copa_libertadores (Copa Libertadores); soccer_conmebol_copa_sudamericana (Copa Sudamericana); soccer_denmark_superliga (Denmark Superliga); soccer_efl_champ (Championship); soccer_england_efl_cup (EFL Cup); soccer_england_league1 (League 1); soccer_england_league2 (League 2); soccer_epl (EPL); soccer_france_ligue_one (Ligue 1 - France); soccer_france_ligue_two (Ligue 2 - France); soccer_germany_bundesliga (Bundesliga - Germany); soccer_germany_bundesliga2 (Bundesliga 2 - Germany); soccer_germany_dfb_pokal (DFB-Pokal); soccer_germany_liga3 (3. Liga - Germany); soccer_italy_serie_a (Serie A - Italy); soccer_italy_serie_b (Serie B - Italy); soccer_japan_j_league (J League); soccer_korea_kleague1 (K League 1); soccer_poland_ekstraklasa (Ekstraklasa - Poland); soccer_russia_premier_league (Premier League - Russia); soccer_saudi_arabia_pro_league (Saudi Pro League); soccer_spain_la_liga (La Liga - Spain); soccer_spain_segunda_division (La Liga 2 - Spain); soccer_spl (Premiership - Scotland); soccer_sweden_superettan (Superettan - Sweden); soccer_uefa_nations_league (UEFA Nations League)
   SOC soccer_uefa_champs_league_qualification: 7 fixtures
   SOC soccer_netherlands_eredivisie: 9 fixtures
   SOC soccer_portugal_primeira_liga: 8 fixtures
@@ -21,7 +23,8 @@ PULL_FEEDS SELFTEST PASS — 33 checks (generators, round-trips, monotone refusa
   SOC soccer_usa_mls: 30 fixtures
   SOC soccer_brazil_campeonato: 20 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
-  legs representable: ~1264 · API credits remaining 16766
+  SOC soccer_usa_leagues_cup: HTTP 404 — league skipped
+  legs representable: ~1238 · API credits remaining 16698
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -69,7 +72,7 @@ PASS  a quiet game does not flag
 PASS  a STALE slate flags nothing on the model arms -- four-day-old heat is not tonight's heat
 PASS  with no slate at all, a market main of 10+ still flags
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: 54 of 1008 candidate legs have ALREADY STARTED (now 2026-08-12T21:37Z, newest event on the board 2026-08-26T07:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 28 of 982 candidate legs have ALREADY STARTED (now 2026-08-12T22:11Z, newest event on the board 2026-08-26T07:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
 PASS  no Draw outcome survives into any pool
 PASS  every soccer offer is a derived Double Chance, never a 3-way side (128 soccer legs)
 PASS  derived DC probabilities are favourite-shaped, not draw-shaped
@@ -119,4 +122,4 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
 wrote BOARD.md
-run conclusion: success at 2026-08-12 21:37
+run conclusion: success at 2026-08-12 22:11
