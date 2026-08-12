@@ -1,7 +1,7 @@
-
-Successfully installed numpy-2.5.2 scipy-1.18.0
-PULL_FEEDS SELFTEST PASS — 33 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: 12 games, 12 moneylines, 92 total rungs, 81 F5 rungs
+[notice] A new release of pip is available: 26.1.2 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusal, vig bands, arity)
+  MLB: 12 games, 12 moneylines, 81 total rungs, 81 F5 rungs
   MMA: 11 bouts
   WNBA: 6 markets
   WNBA: 153 alternate-total rungs
@@ -19,10 +19,12 @@ PULL_FEEDS SELFTEST PASS — 33 checks (generators, round-trips, monotone refusa
   SOC soccer_norway_eliteserien: 7 fixtures
   SOC soccer_china_superleague: 8 fixtures
   SOC soccer_usa_mls: 30 fixtures
+  SOCT soccer_usa_mls: 212 goal-total rungs
   SOC soccer_brazil_campeonato: 20 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
   SOC soccer_concacaf_leagues_cup: 12 fixtures
-  legs representable: ~1274 · API credits remaining 16642
+  SOCT soccer_concacaf_leagues_cup: 79 goal-total rungs
+  legs representable: ~1834 · API credits remaining 16546
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -70,7 +72,7 @@ PASS  a quiet game does not flag
 PASS  a STALE slate flags nothing on the model arms -- four-day-old heat is not tonight's heat
 PASS  with no slate at all, a market main of 10+ still flags
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: 28 of 994 candidate legs have ALREADY STARTED (now 2026-08-12T22:13Z, newest event on the board 2026-08-26T07:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 6 of 1554 candidate legs have ALREADY STARTED (now 2026-08-12T22:26Z, newest event on the board 2026-08-26T07:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
 PASS  no Draw outcome survives into any pool
 PASS  every soccer offer is a derived Double Chance, never a 3-way side (140 soccer legs)
 PASS  derived DC probabilities are favourite-shaped, not draw-shaped
@@ -120,4 +122,4 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
 wrote BOARD.md
-run conclusion: success at 2026-08-12 22:13
+run conclusion: success at 2026-08-12 22:27
