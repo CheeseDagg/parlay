@@ -2,10 +2,11 @@
 [notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusal, vig bands, arity)
   MLB: 15 games, 15 moneylines, 135 total rungs, 135 F5 rungs
-  MMA: 17 bouts
-  WNBA: 7 markets
+  MMA: 12 bouts
+  WNBA: 6 markets
   CFL: 4 markets
-  BOX: 8 markets
+  BOX: 9 markets
+  SOC soccer_uefa_champs_league_qualification: 7 fixtures
   SOC soccer_netherlands_eredivisie: 9 fixtures
   SOC soccer_portugal_primeira_liga: 8 fixtures
   SOC soccer_turkey_super_league: 9 fixtures
@@ -17,14 +18,14 @@ PULL_FEEDS SELFTEST PASS — 29 checks (generators, round-trips, monotone refusa
   SOC soccer_usa_mls: 30 fixtures
   SOC soccer_brazil_campeonato: 20 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
-  legs representable: ~1005 · API credits remaining 17522
+  legs representable: ~1016 · API credits remaining 17384
   wrote times.py
   wrote mlbml.py
   wrote totals.py
   wrote f5.py
   wrote mma.py
   wrote other.py
-  board selftest: 27/27 checks pass
+  board selftest: 38/38 checks pass
   board: MLBTool's kprops.json is not readable here -- K lambdas off. Every leg still prices from the market; nothing else is affected.
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
 PASS  an evening UTC start keeps its ET date
@@ -54,8 +55,20 @@ PASS  the K sentinel is OUTSIDE every horizon. A leg whose start is unknown cann
 PASS  a full UTC stamp is used as given, not padded
 PASS  et() carries the date, so two legs on different Saturdays cannot print identically
 PASS  and a post-midnight UTC start still prints as the previous ET evening
+PASS  the MAIN total is the balanced rung, not the deepest one posted (U15.5 is a ladder top, and quoting it as 'the total' is the 8/11 post-mortem's own error)
+PASS  no rungs -> None, not a crash
+PASS  the 8/11 slate's two 10+ adj-total games flag hot (['CHC@WSH', 'COL@ARI', 'PIT@MIA'])
+PASS  a model 2.4 runs above the market's main flags hot even under 10 (heat the market has not priced)
+PASS  a quiet game does not flag
+PASS  a STALE slate flags nothing on the model arms -- four-day-old heat is not tonight's heat
+PASS  with no slate at all, a market main of 10+ still flags
+  board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
+PASS  no Draw outcome survives into any pool
+PASS  every soccer offer is a derived Double Chance, never a 3-way side (128 soccer legs)
+PASS  derived DC probabilities are favourite-shaped, not draw-shaped
+PASS  the synthesized payout keeps LESS than fair -- the 85% shave is on, so a derived leg can under-promise but never over-promise
 
-27/27 checks pass
+38/38 checks pass
 PASS  -200 is 1.50x
 PASS  +150 is 2.50x
 PASS  American round-trips
@@ -99,4 +112,4 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
 wrote BOARD.md
-run conclusion: success at 2026-08-11 21:37
+run conclusion: success at 2026-08-12 15:43
