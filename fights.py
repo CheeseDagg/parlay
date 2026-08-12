@@ -82,6 +82,87 @@ def p_method(win_p, division, career=None):
     return {'ko': win_p * k, 'sub': win_p * s, 'dec': win_p * d}
 
 
+def am_from_p(p):
+    """Probability -> fair American odds, so a modelled method can be compared
+    against the -350 floor in the units the app actually prints."""
+    if p <= 0 or p >= 1:
+        return None
+    d = 1.0 / p
+    return round(-100 / (d - 1)) if d < 2 else round(100 * (d - 1))
+
+# ---- UFC 330 -- Sat 8/15/2026, Xfinity Mobile Arena, Philadelphia.
+# Main card 8:00pm CT, main event ~10:30pm CT.
+#
+# career is WINS ONLY as (ko, sub, dec) and EVERY entry is sourced. A fighter
+# whose breakdown could not be verified carries career=None and prices off the
+# divisional prior alone -- which is the honest fallback and is visibly worse,
+# rather than a number invented to fill the column (rule 37).
+#
+# Only four legs on this card clear the -350 floor, so those are the only ones
+# the model needs to be right about. `price` is the board's FanDuel number.
+CARD = {
+    'Islam Makhachev': dict(
+        div='WW', career=(5, 13, 10), price=-360, opp='Ian Machado Garry',
+        note="28-1, WW title defence. Career splits were built at LIGHTWEIGHT; "
+             "he has one welterweight fight (dec over Della Maddalena, UFC 322) "
+             "and is priced here against the WW prior. Unbeaten since 2016, "
+             "16-fight UFC win streak. Garry 17-1."),
+    'Myktybek Orolbai': dict(
+        div='WW', career=(7, 6, 3), price=-900, opp='Jeremiah Wells',
+        note="16-2-1, three-fight win streak, 81% of wins end early."),
+    'Mansur Abdul-Malik': dict(
+        div='MW', career=(7, 2, 0), price=-650, opp='Dustin Stoltzfus',
+        note="9-1-1. ZERO decisions in nine wins -- the shrinkage pulls his "
+             "decision share back to ~20%, which is the whole point of the "
+             "prior: 0-for-9 is not a 0% truth. Coming off the first loss of "
+             "his career, a KO by Belgaroui in March."),
+    'Esteban Ribovics': dict(
+        div='LW', career=None, price=-590, opp='Edson Barboza',
+        note="Win breakdown NOT VERIFIED -- prices off the bare LW prior. "
+             "Board says -590; FanDuel was reported at -430 in fight-week "
+             "previews, so CHECK THE APP before this leg counts as -350+. "
+             "Barboza is 40 and has lost three straight; Ribovics was "
+             "submitted by Gamrot last out but Barboza is a striker."),
+}
+
+def card_lines(card=None, floor=-350):
+    """The model's read on every carded fighter, with rule 27's verdict.
+
+    Prints each method's modelled probability and the fair price it implies,
+    then says whether ANY single method clears the floor. It almost never
+    does -- which is rule 27 stated in numbers rather than in prose."""
+    card = card or CARD
+    out = []
+    for name, d in card.items():
+        wp = from_quote(d['price'])
+        pm = p_method(wp, d['div'], d['career'])
+        best = max(pm.items(), key=lambda kv: kv[1])
+        clears = [k for k, v in pm.items()
+                  if am_from_p(v) is not None and am_from_p(v) <= floor]
+        out.append(dict(name=name, opp=d['opp'], price=d['price'], win_p=wp,
+                        method=pm, best=best, clears=clears,
+                        sourced=d['career'] is not None, note=d['note']))
+    return out
+
+def print_card():
+    print(f"\n  UFC 330 — Sat 8/15, Philadelphia. Floor -350; "
+          f"legs below it are unbettable (rule 2).\n")
+    for r in card_lines():
+        src = "" if r['sourced'] else "   [career UNVERIFIED — prior only]"
+        print(f"  {r['name']}  ({r['price']:+d}, {r['win_p']*100:.1f}%) "
+              f"vs {r['opp']}{src}")
+        for k in ('ko', 'sub', 'dec'):
+            v = r['method'][k]
+            print(f"      by {k:4} {v*100:5.1f}%   fair {am_from_p(v):+6d}")
+        if r['clears']:
+            print(f"      -> {', '.join(r['clears'])} clears the floor")
+        else:
+            print(f"      -> NO single method reaches -350. "
+                  f"Rule 27: take the ML.")
+        print(f"      {r['note']}\n")
+    return 0
+
+
 def selftest():
     ok = [0, 0]
     def chk(c, msg):
@@ -118,6 +199,34 @@ def selftest():
     pm = p_method(0.966, 'HW', (4, 1, 1))
     chk(abs(sum(pm.values()) - 0.966) < 1e-9,
         "method probabilities partition the win probability exactly")
+
+    # ---- UFC 330. The card the model has to be current for.
+    chk(abs(am_from_p(0.7778) - -350) <= 1,
+        "am_from_p inverts the floor: 77.8% is -350")
+    chk(am_from_p(0.5) == 100 and am_from_p(0.8) == -400,
+        "and round-trips an even-money and a heavy price")
+
+    rows = {r['name']: r for r in card_lines()}
+    chk(len(rows) == 4,
+        "every carded fighter that clears the -350 floor is modelled")
+    chk(all(not r['clears'] for r in rows.values()),
+        "NOT ONE single method on this card reaches -350 -- rule 27 in "
+        "numbers: on a card this chalky the ML is the only bettable shape")
+
+    mam = rows['Mansur Abdul-Malik']['method']
+    chk(mam['dec'] > 0.15 * rows['Mansur Abdul-Malik']['win_p'],
+        f"Abdul-Malik is 0-for-9 by decision and the model still gives him "
+        f"{mam['dec']*100:.0f}% -- a zero tally is not a zero probability, "
+        "which is the exact error that priced Escarrega's decision at nil")
+    chk(rows['Mansur Abdul-Malik']['best'][0] == 'ko',
+        "his 7-of-9 KO record still dominates the split, just not 78% of it")
+
+    im = rows['Islam Makhachev']['method']
+    chk(im['sub'] > im['ko'],
+        "Makhachev's modelled path is the submission (13 of 28 wins), not the "
+        "KO -- a fighter's own record outranks 'welterweights knock people out'")
+    chk(not rows['Esteban Ribovics']['sourced'],
+        "Ribovics carries no career split and is flagged, not filled in")
     chk(pm['ko'] < 0.667,
         f"Wint-by-KO off his real record prices {pm['ko']:.2f} -- the -200 "
         "round-1-KO leg (66.7% implied) was unbettable even BEFORE the "
@@ -128,4 +237,4 @@ def selftest():
 
 
 if __name__ == '__main__':
-    sys.exit(selftest())
+    sys.exit(selftest() if '--selftest' in sys.argv else print_card())
