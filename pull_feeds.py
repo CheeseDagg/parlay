@@ -97,6 +97,11 @@ TWO_WAY = [("basketball_wnba", "WNBA"), ("americanfootball_cfl", "CFL"),
 # Families whose alternate-total ladder is worth pulling. A fight has no total
 # to ladder, so BOX/MMA are deliberately absent rather than accidentally so.
 ALT_TOTAL_TAGS = {"WNBA", "CFL"}
+# Soccer goal ladders cost ONE API call per fixture and there are ~128 fixtures
+# across the league list, so they are pulled only for matches kicking off inside
+# this many hours. Anything further out is not bettable on the night it is
+# wanted, and the ladder is still there on the next refresh.
+SOCT_HOURS = 30
 MMA_KEY = "mma_mixed_martial_arts"
 
 
@@ -130,6 +135,12 @@ def _utc_min(iso):
     """API ISO stamp -> the board's 'YYYY-MM-DDTHH:MMZ' minute format."""
     t = dt.datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
     return t.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
+
+
+def _plus_hours(h):
+    """Now + h hours, in the same minute format, so horizons compare as strings."""
+    return (dt.datetime.now(dt.timezone.utc)
+            + dt.timedelta(hours=h)).strftime("%Y-%m-%dT%H:%MZ")
 
 
 def _et_zone():
@@ -526,10 +537,18 @@ def pull_other(log):
         # A deep soccer under is the same shape as a deep F5 under: matches
         # average ~2.7 goals, so Under 5.5 or 6.5 carries the kind of cushion
         # that a Double Chance at 80% does not.
-        n2 = len(lines)
+        # ONE EXTRA API CALL PER FIXTURE, so this is horizon-capped. The first
+        # version asked for every fixture in every league -- ~128 per-event
+        # requests per refresh, three scheduled refreshes a day. It turned a
+        # 2-minute run into a 9-minute one and would have quietly multiplied the
+        # monthly API bill by an order of magnitude. Nothing beyond a day out is
+        # bettable tonight anyway, and the ladder will be there tomorrow.
+        n2, soon = len(lines), _plus_hours(SOCT_HOURS)
         for ev0 in sorted(data, key=lambda e: e.get("commence_time", "")):
             if ev0.get("id") not in soc_grp:
                 continue                      # no usable 3-way, so no group key
+            if _utc_min(ev0["commence_time"]) > soon:
+                continue
             q2 = urllib.parse.urlencode({
                 "apiKey": KEY, "regions": "us", "markets": "alternate_totals",
                 "oddsFormat": "american", "bookmakers": BOOK})
