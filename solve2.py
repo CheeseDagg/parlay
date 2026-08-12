@@ -164,7 +164,12 @@ if '--nohot' not in sys.argv:
     _capped = []
     for k in list(markets):
         v = markets[k]
-        if v and v[0]['fam'] == 'F5' and v[0]['grp'] in _hot and len(v) > 1:
+        # BOTH totals families. The first version of this capped F5 only, and
+        # on 8/12 the solver walked straight through the gap: it put a
+        # full-game U12.5 on CHC@WSH -- model 10.82, cushion 1.68 -- at the
+        # same -350 that bought 3.22 runs of cushion on SEA@NYY. A hot game is
+        # hot for nine innings, not five.
+        if v and v[0]['fam'] in ('F5', 'FG') and v[0]['grp'] in _hot and len(v) > 1:
             top = min(v, key=lambda o: o['price'])
             markets[k] = [top]
             _capped.append(f"{v[0]['grp']}: F5 held to {top['lab']} ({top['price']})"

@@ -84,7 +84,7 @@ loss that created it landed.
     priced). CHC@WSH on 8/11: adj 10.52 — hottest of fifteen games — against
     a market main of just 8.5. Its F5 U9.5 died on 10-through-five and
     killed a 20-leg slip, while the flag sat unread in MLBTool's slate.json
-    all day. Hot games are F5 **top rung only**, or off the card. Enforced
+    all day. Hot games are **top rung only on BOTH totals families**, F5 and full-game, or off the card. *(The F5-only version lasted one day: on 8/12 the solver put a full-game U12.5 on CHC@WSH -- model 10.82, cushion 1.68 -- at the same -350 that bought 3.22 runs of cushion on SEA@NYY.)* Enforced
     in code: `board.hot_games()`, applied by default in solve2 (`--nohot`
     lifts), surfaced in BOARD.md. Requires a FRESH slate — run
     `git -C ../MLBTool pull` every morning; the board banners when it's
