@@ -89,6 +89,34 @@ def gate_overlap(legs, open_slips):
     return ('WARN' if out else 'PASS',
             "; ".join(out) if out else "no legs shared with open slips")
 
+def top_rungs(m):
+    """{(game, family): deepest rung's label} over EVERY leg on the board.
+
+    board.py files a game's full-game totals, its F5 totals AND its moneyline
+    into ONE market key -- ('GT', g) -- because they are one process measured
+    several ways. This used to read v[0] and take min() across that whole mixed
+    list, which got both halves wrong: only the first family present (always FG)
+    ever got an entry, so EVERY F5 leg on a hot game came back is_top_rung=False
+    and the gate FAILed the correct top rung; and the label stored under that FG
+    key was the min over F5+FG+ML together, so it was usually an F5 leg filed
+    under FG. On 8/12 it blocked a clean ticket over COL@ARI F5 U11.5 and
+    CHC@WSH F5 U11.5, both of which ARE their game's deepest F5 rung.
+
+    It survived because the selftest only ever called gate_hot() with hand-built
+    legs and an is_top_rung the test set itself -- the gate was covered, the
+    thing that FEEDS the gate was not. Hence this function exists separately.
+    """
+    top = {}
+    for v in m.values():
+        for o in v:
+            if o.get('fam') not in ('F5', 'FG'):
+                continue
+            k = (o.get('grp'), o['fam'])
+            cur = top.get(k)
+            if cur is None or o['price'] < cur['price']:
+                top[k] = o
+    return {k: o['lab'] for k, o in top.items()}
+
 def run(legs, hot=None, open_slips=None):
     hot = hot or {}
     gates = [("FLOOR", gate_floor(legs)), ("PLUS", gate_plus(legs)),
@@ -105,12 +133,8 @@ def main():
         print(__doc__.strip().splitlines()[2])
         return 2
     m = build('FanDuel', min_price=0, cutoff=board._utcnow())
-    idx, tops = {}, {}
-    for k, v in m.items():
-        for o in v:
-            idx[o['lab']] = o
-        if v and v[0].get('fam') in ('F5', 'FG'):
-            tops[v[0]['grp'], v[0]['fam']] = min(v, key=lambda o: o['price'])['lab']
+    idx = {o['lab']: o for v in m.values() for o in v}
+    tops = top_rungs(m)
     legs, missing = [], []
     for w in want:
         o = idx.get(w)
@@ -167,6 +191,24 @@ def selftest():
     chk(v == 'WARN' and 'Hasan by KO' in msg,
         "the 8/11 double-kill leg is named before the second slip goes in")
     chk(gate_overlap([L('X', -400)], slips)[0] == 'PASS', "disjoint slips pass")
+
+    # ---- what FEEDS gate_hot. Every check above hands gate_hot an is_top_rung
+    # the test set itself, so the lookup that computes it went uncovered and was
+    # wrong from the day it shipped. This is board.py's real shape: one market
+    # key per GAME carrying full-game totals, F5 totals and the moneyline.
+    mixed = {('GT', 'COL@ARI'): [
+        L('COL@ARI Under 14.5', -900, fam='FG', grp='COL@ARI'),
+        L('COL@ARI Under 15.5', -1400, fam='FG', grp='COL@ARI'),
+        L('COL@ARI F5 Under 10.5', -1600, fam='F5', grp='COL@ARI'),
+        L('COL@ARI F5 Under 11.5', -3500, fam='F5', grp='COL@ARI'),
+        L('Arizona Diamondbacks ML', -150, fam='ML', grp='COL@ARI')]}
+    t = top_rungs(mixed)
+    chk(t[('COL@ARI', 'F5')] == 'COL@ARI F5 Under 11.5',
+        "the deepest F5 rung is found even though FG legs sit first in the list")
+    chk(t[('COL@ARI', 'FG')] == 'COL@ARI Under 15.5',
+        "and the FG top is the deepest FG rung -- NOT the -3500 F5 leg that "
+        "min() over the mixed list used to file under FG")
+    chk(('COL@ARI', 'ML') not in t, "moneylines are not a totals ladder")
 
     gates, failed = run(mid + [L('y', 120)], hot)
     chk(failed, "any FAIL blocks the whole preflight")

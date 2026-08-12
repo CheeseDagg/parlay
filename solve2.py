@@ -169,11 +169,33 @@ if '--nohot' not in sys.argv:
         # full-game U12.5 on CHC@WSH -- model 10.82, cushion 1.68 -- at the
         # same -350 that bought 3.22 runs of cushion on SEA@NYY. A hot game is
         # hot for nine innings, not five.
-        if v and v[0]['fam'] in ('F5', 'FG') and v[0]['grp'] in _hot and len(v) > 1:
-            top = min(v, key=lambda o: o['price'])
-            markets[k] = [top]
-            _capped.append(f"{v[0]['grp']}: F5 held to {top['lab']} ({top['price']})"
-                           f" -- {_hot[v[0]['grp']]}")
+        # Read EVERY leg, not v[0]. board.py files a game's FG totals, its F5
+        # totals and its moneyline into one ('GT', g) market, so v[0]'s family
+        # is whichever happened to be appended first -- today FG, and 'K' the
+        # moment kprops.json is readable again, at which point this cap would
+        # have silently stopped firing on hot games. preflight.top_rungs() had
+        # the identical v[0] bug and it blocked a clean ticket on 8/12.
+        if not v or v[0]['grp'] not in _hot or len(v) == 1:
+            continue
+        # Rule 25 is "top rung only on BOTH totals families", so keep the
+        # deepest rung of each and drop the mid-rungs; non-totals legs are not
+        # a ladder and are left alone.
+        keep, best = [], {}
+        for o in v:
+            if o['fam'] in ('F5', 'FG'):
+                cur = best.get(o['fam'])
+                if cur is None or o['price'] < cur['price']:
+                    best[o['fam']] = o
+            else:
+                keep.append(o)
+        if not best or len(keep) + len(best) == len(v):
+            continue
+        markets[k] = keep + list(best.values())
+        _capped.append(
+            f"{v[0]['grp']}: held to "
+            + ", ".join(f"{f} {o['lab']} ({o['price']})"
+                        for f, o in sorted(best.items()))
+            + f" -- {_hot[v[0]['grp']]}")
     for _c in _capped:
         print(f"hot game, {_c}")
 
