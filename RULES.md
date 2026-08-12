@@ -89,11 +89,13 @@ loss that created it landed.
     lifts), surfaced in BOARD.md. Requires a FRESH slate — run
     `git -C ../MLBTool pull` every morning; the board banners when it's
     stale.
-26. **One answer per fight.** State the range once, pick once, stop moving
-    the number with each new snippet. On 8/11 I moved Kunneman four times
-    and flipped the lightweight pick twice; Ryan called it out both times.
-    When the evidence is thin, say "55, plus or minus 10" — do not
-    re-litigate.
+26. **One answer per pick — any sport, not just fights.** State the range
+    once, pick once, stop moving the number with each new snippet. On 8/11
+    I moved Kunneman four times and flipped the lightweight pick twice. On
+    8/12, with rules 23-31 already written, I flipped a WNBA leg inside
+    three messages — because I had scoped this rule to "per fight" and a
+    basketball leg fell outside it. Scope is now every pick. When the
+    evidence is thin, say "81, plus or minus 5" and stop.
 27. **When the pick is the WINNER, the default instrument is the moneyline
     or the KO-or-points double chance — never a single method.** Method
     legs are where slips die (rule 9, and again 8/11: Escarrega by KO lost
@@ -121,6 +123,26 @@ loss that created it landed.
 31. **A slip goes into slips.json when it is PLACED.** slips.py has computed
     cross-slip kill probabilities since 8/1 — and graded nothing on 8/10 or
     8/11 because nobody fed it. The tool was never the gap; the habit was.
+
+32. **A veto IS an override, and obeys rule 23's evidence bar.** Rule 23
+    said research is for "choosing among fairly priced legs and for vetoing
+    legs" — and on 8/12, one day later, I used that carve-out to drop a
+    Wings -480 leg. Dropping a leg moves it to ZERO. That is the largest
+    override available and it cannot be the one that needs no evidence.
+    Killing a leg the market priced requires more support than nudging it,
+    not less.
+33. **News about one side is not news.** Before an injury report moves any
+    leg, you must hold the same class of information about BOTH teams, plus
+    the base rates: records, home/away, and who is missing from the other
+    bench. On 8/12 I read Dallas's report (Shepard out, Fudd and Clark
+    questionable) and recommended dropping the leg — never having checked
+    that Toronto was 10-22, on the road, and missing Brittney Sykes since
+    June 19. Ryan's one-line question was the entire missing check. If the
+    both-sides picture isn't in hand, the leg stands at the market's number.
+34. **The book read the same injury report you did, hours earlier.** A
+    price is not stale because a name is on a report; it is stale only if
+    the news broke after the line last moved. Say which of those two you
+    are claiming before touching a leg.
 
 ## Working agreement
 
