@@ -4,3 +4,4 @@ on-demand refresh 2026-08-12 15:42 UTC -- wednesday builders
 on-demand refresh 2026-08-12 17:52 UTC -- WNBA/CFL alternate totals
 on-demand refresh 2026-08-12 17:53 UTC -- WNBA/CFL ladders, event endpoint
 2026-08-12 17:57 UTC
+2026-08-12 18:05 UTC
