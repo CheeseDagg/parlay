@@ -395,7 +395,11 @@ def pull_other(log):
                     raise
                 log.append(f"{tag}: {ev0.get('id','?')} alt-totals HTTP {e.code} — skipped")
                 continue
-            for mk in fd_markets(ev):
+            # fd_markets returns None when FanDuel priced no alternate market
+            # for this event -- its docstring says so, and every other caller
+            # guards it. Mine did not, and iterating None killed the whole
+            # refresh run on 2026-08-12 17:53.
+            for mk in (fd_markets(ev) or []):
                 if mk.get("key") != "alternate_totals":
                     continue
                 rungs = {}
