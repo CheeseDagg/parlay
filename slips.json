@@ -1,5 +1,154 @@
 {
- "as_of": "",
+ "as_of": "2026-08-12",
  "note": "Open slips. Add one object per ticket. Minimum per leg: lab, price, sport. Add mkt/out when two legs settle in the same event (so the tool can see they conflict or nest), implies when one outcome entails another, opp when you know the other side's price, t for sequencing. See slips_2026-08-01.json for a worked example.",
- "slips": []
+ "slips": [
+  {
+   "name": "18-leg SGP+ +127",
+   "book": "FanDuel",
+   "price": 127,
+   "placed": "2026-08-12T22:45Z",
+   "model_p": 0.372,
+   "note": "3 same-game pairs (DC + that match's under) + 12 singles. DC prices are DERIVED, not FanDuel quotes. Three MLB legs had already started at placement.",
+   "legs": [
+    {
+     "lab": "PIT@MIA F5 Under 10.5",
+     "price": -4500,
+     "sport": "MLB",
+     "t": "2026-08-12T22:41Z",
+     "p": 0.9687
+    },
+    {
+     "lab": "CLE@DET F5 Under 10.5",
+     "price": -4000,
+     "sport": "MLB",
+     "t": "2026-08-12T22:40Z",
+     "p": 0.9658
+    },
+    {
+     "lab": "CHC@WSH F5 Under 11.5",
+     "price": -4000,
+     "sport": "MLB",
+     "t": "2026-08-12T22:45Z",
+     "p": 0.9658
+    },
+    {
+     "lab": "SEA@NYY F5 Under 10.5",
+     "price": -3500,
+     "sport": "MLB",
+     "t": "2026-08-12T23:05Z",
+     "p": 0.9613
+    },
+    {
+     "lab": "BOS@TOR F5 Under 9.5",
+     "price": -3500,
+     "sport": "MLB",
+     "t": "2026-08-12T23:07Z",
+     "p": 0.9613
+    },
+    {
+     "lab": "NYM@ATL F5 Under 11.5",
+     "price": -7000,
+     "sport": "MLB",
+     "t": "2026-08-12T23:15Z",
+     "p": 0.9793
+    },
+    {
+     "lab": "CIN@CWS F5 Under 10.5",
+     "price": -3000,
+     "sport": "MLB",
+     "t": "2026-08-12T23:40Z",
+     "p": 0.9561
+    },
+    {
+     "lab": "TEX@LAA F5 Under 11.5",
+     "price": -5000,
+     "sport": "MLB",
+     "t": "2026-08-13T02:11Z",
+     "p": 0.9726
+    },
+    {
+     "lab": "KC@LAD F5 Under 11.5",
+     "price": -3500,
+     "sport": "MLB",
+     "t": "2026-08-13T02:10Z",
+     "p": 0.9613
+    },
+    {
+     "lab": "Under 6.5 goals (ASL-OC)",
+     "price": -3500,
+     "sport": "SOCCER",
+     "t": "2026-08-12T23:30Z",
+     "p": 0.962,
+     "game": "ASL-OC",
+     "mkt": "ASL-OC-TOT"
+    },
+    {
+     "lab": "Orlando City SC DC (derived)",
+     "price": -520,
+     "sport": "SOCCER",
+     "t": "2026-08-12T23:30Z",
+     "p": 0.8154,
+     "game": "ASL-OC",
+     "mkt": "ASL-OC-DC"
+    },
+    {
+     "lab": "Under 7.5 goals (Dallas-Toluca)",
+     "price": -10000,
+     "sport": "SOCCER",
+     "t": "2026-08-13T02:00Z",
+     "p": 0.9853,
+     "game": "DAL-TOL",
+     "mkt": "DAL-TOL-TOT"
+    },
+    {
+     "lab": "Toluca DC (derived)",
+     "price": -964,
+     "sport": "SOCCER",
+     "t": "2026-08-13T02:00Z",
+     "p": 0.8912,
+     "game": "DAL-TOL",
+     "mkt": "DAL-TOL-DC"
+    },
+    {
+     "lab": "Under 6.5 goals (Puebla-SD)",
+     "price": -4000,
+     "sport": "SOCCER",
+     "t": "2026-08-13T02:15Z",
+     "p": 0.966,
+     "game": "PUE-SD",
+     "mkt": "PUE-SD-TOT"
+    },
+    {
+     "lab": "San Diego FC DC (derived)",
+     "price": -546,
+     "sport": "SOCCER",
+     "t": "2026-08-13T02:15Z",
+     "p": 0.8226,
+     "game": "PUE-SD",
+     "mkt": "PUE-SD-DC"
+    },
+    {
+     "lab": "Under 6.5 goals (IM-Le\u00f3n)",
+     "price": -7000,
+     "sport": "SOCCER",
+     "t": "2026-08-12T23:30Z",
+     "p": 0.9796
+    },
+    {
+     "lab": "Under 6.5 goals (Guadalajar-SS)",
+     "price": -8000,
+     "sport": "SOCCER",
+     "t": "2026-08-13T02:30Z",
+     "p": 0.9818
+    },
+    {
+     "lab": "Under 6.5 goals (LA-Quer\u00e9taro)",
+     "price": -4000,
+     "sport": "SOCCER",
+     "t": "2026-08-13T02:30Z",
+     "p": 0.966
+    }
+   ]
+  }
+ ]
 }

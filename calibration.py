@@ -32,20 +32,45 @@ def score(rows):
                             len(big)),         # "I moved it the right way"
     }
 
-def load(path='calibration.csv'):
-    out = []
+SETTLED = {'won': True, 'win': True, 'w': True,
+           'lost': False, 'loss': False, 'l': False}
+
+def load(path='calibration.csv', with_pending=False):
+    """Settled rows only. A blank outcome is PENDING, not a loss.
+
+    This read `outcome == 'won'` and called everything else False, so a row
+    logged at placement -- which rule 31 requires, hours or days before it can
+    settle -- scored as a loss the moment it was written. Logging the 18-leg
+    slip on 8/12 moved the Brier from 0.338 to 0.708 without a single bet
+    resolving, and every future open ticket would have pushed it further. A
+    file whose whole job is to say whether my numbers beat the market cannot
+    count unplayed games as losses; it also cannot silently drop a typo, so an
+    unrecognised outcome is reported rather than skipped.
+    """
+    out, pending, bad = [], 0, []
     with open(path) as fh:
         for r in csv.DictReader(fh):
-            out.append((float(r['market_p']), float(r['my_p']),
-                        r['outcome'].strip().lower() == 'won'))
-    return out
+            o = (r.get('outcome') or '').strip().lower()
+            if not o:
+                pending += 1
+                continue
+            if o not in SETTLED:
+                bad.append(f"{r.get('date','?')} {r.get('leg','?')[:28]}: {o!r}")
+                continue
+            out.append((float(r['market_p']), float(r['my_p']), SETTLED[o]))
+    return (out, pending, bad) if with_pending else out
 
 def main():
-    s = score(load())
+    rows, pending, bad = load(with_pending=True)
+    s = score(rows)
+    if bad:
+        print(f"!! {len(bad)} row(s) with an unreadable outcome — NOT scored:")
+        for b in bad:
+            print(f"   {b}")
     if not s['n']:
-        print('calibration.csv is empty')
+        print(f'calibration.csv has no settled rows yet ({pending} pending)')
         return 0
-    print(f"rows            {s['n']}")
+    print(f"rows            {s['n']} settled" + (f", {pending} pending" if pending else ""))
     print(f"Brier, market   {s['brier_market']:.4f}")
     print(f"Brier, mine     {s['brier_mine']:.4f}")
     print(f"edge            {s['edge']:+.4f}  "
