@@ -484,6 +484,7 @@ def pull_other(log):
             log.append(f"SOC {skey}: HTTP {e.code} — league skipped")
             continue
         n0 = len(lines)
+        soc_grp = {}          # event id -> the group key its 3-way line used
         for ev in sorted(data, key=lambda e: e.get("commence_time", "")):
             mkts = fd_markets(ev)
             if not mkts:
@@ -507,8 +508,59 @@ def pull_other(log):
                 for i, (nm, pr) in enumerate(oc):
                     others = ",".join(str(p) for j, (_, p) in enumerate(oc) if j != i)
                     lines.append(f"SOC|{grp}|{nm}|{pr}|{others}|{t}")
+                soc_grp[ev.get("id")] = grp
         if len(lines) > n0:
             log.append(f"SOC {skey}: {(len(lines)-n0)//3} fixtures")
+
+        # --- GOAL-TOTAL LADDERS. Emitted under the tag SOCT, deliberately NOT
+        # SOC: board.py buckets every SOC line by group and requires that bucket
+        # to be exactly the 3-way it derives a Double Chance from, so adding
+        # totals rungs to it would push each match to 5, 7, 9 outcomes and the
+        # whole fixture would be discarded as "not a 3-way". SOCT falls through
+        # to the generic two-way handler instead.
+        #
+        # The GROUP is still the match, so a match's Double Chance and its total
+        # share one market key and the solver takes at most one of them -- a
+        # side and that game's goal line are one process measured twice.
+        #
+        # A deep soccer under is the same shape as a deep F5 under: matches
+        # average ~2.7 goals, so Under 5.5 or 6.5 carries the kind of cushion
+        # that a Double Chance at 80% does not.
+        n2 = len(lines)
+        for ev0 in sorted(data, key=lambda e: e.get("commence_time", "")):
+            if ev0.get("id") not in soc_grp:
+                continue                      # no usable 3-way, so no group key
+            q2 = urllib.parse.urlencode({
+                "apiKey": KEY, "regions": "us", "markets": "alternate_totals",
+                "oddsFormat": "american", "bookmakers": BOOK})
+            try:
+                ev = _get(f"{BASE}/sports/{skey}/events/{ev0['id']}/odds?{q2}")
+            except urllib.error.HTTPError as e:
+                if e.code in (401, 402):
+                    raise
+                continue                      # fail-soft, per fixture
+            for mk in (fd_markets(ev) or []):
+                if mk.get("key") != "alternate_totals":
+                    continue
+                rungs = {}
+                for o in mk.get("outcomes", []):
+                    if o.get("point") is None or o.get("price") is None:
+                        continue
+                    rungs.setdefault(float(o["point"]), {})[o.get("name")] = int(o["price"])
+                t = _utc_min(ev0["commence_time"])
+                grp = soc_grp[ev0["id"]]
+                pair = grp[4:] if grp.startswith("SOC ") else grp
+                for pt in sorted(rungs):
+                    two = rungs[pt]
+                    if "Over" not in two or "Under" not in two:
+                        continue
+                    ok, s = vig_ok([two["Over"], two["Under"]])
+                    if not ok:
+                        continue
+                    lines.append(f"SOCT|{grp}|Under {pt} goals ({pair})|{two['Under']}|{two['Over']}|{t}")
+                    lines.append(f"SOCT|{grp}|Over {pt} goals ({pair})|{two['Over']}|{two['Under']}|{t}")
+        if len(lines) > n2:
+            log.append(f"SOCT {skey}: {(len(lines)-n2)//2} goal-total rungs")
     return lines
 
 
@@ -737,6 +789,18 @@ def selftest():
         "two rungs off one ladder plus that game's ML share ONE group key -- "
         "per-rung keys let the solver stack correlated legs as independent")
     chk(all(len(l.split("|")) == 6 for l in alt), "alt-total lines keep other arity")
+    # ---- SOCCER GOAL TOTALS ride the OTHER shape but must NOT be tagged SOC.
+    # board.py buckets every SOC line by group and requires exactly the 3-way it
+    # derives a Double Chance from; totals in that bucket would push a fixture to
+    # 5+ outcomes and it would be thrown away as "not a 3-way".
+    st = ["SOCT|SOC LAFC-QRO|Under 5.5 goals (LAFC-QRO)|-450|340|2026-08-13T02:30Z",
+          "SOCT|SOC LAFC-QRO|Over 5.5 goals (LAFC-QRO)|340|-450|2026-08-13T02:30Z"]
+    chk(all(l.split("|")[0] == "SOCT" for l in st),
+        "goal totals are tagged SOCT, so they miss the 3-way bucket entirely")
+    chk(all(len(l.split("|")) == 6 for l in st), "and keep the six-field other arity")
+    chk({l.split("|")[1] for l in st} == {"SOC LAFC-QRO"},
+        "but keep the MATCH as the group, so a side and that match's goal line "
+        "share one market and the solver can take only one of them")
     print(f"PULL_FEEDS SELFTEST PASS — {ok} checks (generators, round-trips, "
           f"monotone refusal, vig bands, arity)")
 
