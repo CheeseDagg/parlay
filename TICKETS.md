@@ -1,5 +1,16 @@
 # Live slips
 
+## Week ledger (running)
+
+| day | staked | back | net |
+|---|---|---|---|
+| Sat 8/8 | $1,180 | $2,346 | **+$1,166** |
+| Mon 8/10 | $657 | $0 | −$657 |
+| Tue 8/11 | $150 + 20-leg stake (not recorded) | $0 | −$150−? |
+
+Rule 31 exists so that "not recorded" never appears in this table again:
+stake goes into slips.json at placement.
+
 ## DEAD — Tue 8/11: all three slips down
 
 **1. 20-leg @ +401 (15 F5 unders + Hasan KO + Wint ML + 3 WNBA)** — dead at

@@ -459,15 +459,46 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
     #      soccer. FanDuel only in the source file, so no book filter here.
     #      One market key per event, every outcome listed, so a solver can take
     #      at most one side and the de-vig sees the whole book.
+    #
+    #      SOCCER IS THE EXCEPTION, and the exception is RULES.md #8: never a
+    #      3-way moneyline -- PSV drew v Fortuna Sittard on 8/8 and killed a
+    #      20-leg slip sitting 15/20. Until 8/12 that rule lived in prose and
+    #      in chat habits while this loop kept loading the banned sides into
+    #      every solver pool, one forgotten --nofam=SOC away from a ticket.
+    #      Now a 3-way group is collapsed to the ONE bettable shape: the
+    #      favourite's Double Chance (win or draw), p = 1 - p(underdog). The
+    #      feed has no DC market, so the PAYOUT is synthesized: fair odds for
+    #      that p with 85% of the excess kept -- the standing FanDuel-haircut
+    #      estimate, uncalibrated against real DC prints and labelled
+    #      "derived" so nobody quotes it as a book price. The app's print is
+    #      the truth (rule 8); this leg exists so the solver can SEE soccer
+    #      at all without being handed a draw-loses bet.
     if book == 'FanDuel':
+        _soc = {}
         for line in OTHER_RAW.strip().splitlines():
             if not line.strip():
                 continue
             sp, grp, who, price, opps, t = line.split('|')
+            if sp == 'SOC':
+                _soc.setdefault(grp, []).append((who, int(price), opps, t))
+                continue
             others = [int(x) for x in opps.split(',')]
             add(('O', grp), p=devig_n(int(price), others), d=dec(price),
                 lab=who, price=int(price), grp=grp, fam=sp,
                 sport='OTHER', t=t)
+        for grp, rows in _soc.items():
+            if len(rows) != 3 or not any(w == 'Draw' for w, *_ in rows):
+                # not a recognisable 3-way: refuse to guess, and say so
+                print(f"  board: soccer group {grp!r} has {len(rows)} outcomes"
+                      " -- not a 3-way, no DC derived, group skipped (rule 8)")
+                continue
+            dog = max((r for r in rows if r[0] != 'Draw'), key=lambda r: r[1])
+            fav = next(r for r in rows if r[0] not in ('Draw', dog[0]))
+            p_dc = 1 - devig_n(dog[1], [int(x) for x in dog[2].split(',')])
+            d_dc = 1 + 0.85 * (1 / p_dc - 1)
+            am = round(-100 / (d_dc - 1)) if d_dc < 2 else round(100 * (d_dc - 1))
+            add(('O', grp), p=p_dc, d=d_dc, lab=f"{fav[0]} DC (derived)",
+                price=am, grp=grp, fam='SOC', sport='OTHER', t=fav[3])
 
     # ---- MLB moneylines. Keyed to the same ('GT', game) slot as that game's
     #      totals: a team winning and that game's run total are one process
@@ -714,6 +745,23 @@ def selftest():
         "is not tonight's heat")
     _h3 = _hot({'X@Y': 11.0}, {}, slate_fresh=False)
     chk('X@Y' in _h3, "with no slate at all, a market main of 10+ still flags")
+
+    # ---- RULE 8 IN CODE. Until 8/12 the pool carried raw 3-way soccer sides
+    # -- the exact bet shape that killed a 20-leg slip on a PSV draw -- and
+    # only a remembered --nofam=SOC stood between them and a ticket.
+    _m = build('FanDuel', min_price=0)
+    _soc = [o for v in _m.values() for o in v if o['fam'] == 'SOC']
+    _all = [o for v in _m.values() for o in v]
+    chk(not any(o['lab'] == 'Draw' for o in _all),
+        "no Draw outcome survives into any pool")
+    chk(all('DC (derived)' in o['lab'] for o in _soc),
+        f"every soccer offer is a derived Double Chance, never a 3-way side "
+        f"({len(_soc)} soccer legs)")
+    chk(all(0.5 < o['p'] < 0.995 for o in _soc),
+        "derived DC probabilities are favourite-shaped, not draw-shaped")
+    chk(all(o['d'] < 1 / o['p'] for o in _soc),
+        "the synthesized payout keeps LESS than fair -- the 85% shave is on, "
+        "so a derived leg can under-promise but never over-promise")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
