@@ -487,6 +487,20 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
                 lab=who, price=int(price), grp=grp, fam=sp,
                 sport='OTHER', t=t)
         for grp, rows in _soc.items():
+            # A TWO-WAY SOCCER MARKET IS NOT A RULE-8 PROBLEM, IT IS RULE 8's
+            # IDEAL. Rule 8 bans 3-way sides because a DRAW loses one, and it
+            # cost a 20-leg slip sitting 15/20 when PSV drew. A competition with
+            # no draw -- Leagues Cup goes straight to penalties at 90' -- has no
+            # such outcome, so the plain moneyline already IS the safe shape and
+            # needs no DC derived on top of it. This branch used to lump those in
+            # with malformed groups and DISCARD them, which is the rule deleting
+            # the very fixtures it would most approve of.
+            if len(rows) == 2 and not any(w == 'Draw' for w, *_ in rows):
+                for who, price, opps, t in rows:
+                    add(('O', grp), p=devig_n(price, [int(x) for x in opps.split(',')]),
+                        d=dec(price), lab=f"{who} (no-draw comp)", price=price,
+                        grp=grp, fam='SOC', sport='OTHER', t=t)
+                continue
             if len(rows) != 3 or not any(w == 'Draw' for w, *_ in rows):
                 # not a recognisable 3-way: refuse to guess, and say so
                 print(f"  board: soccer group {grp!r} has {len(rows)} outcomes"

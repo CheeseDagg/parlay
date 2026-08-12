@@ -90,7 +90,7 @@ SOCCER_KEYS = [
     # ran seven matches. Best-guess key; the diagnostic in pull_other() logs
     # the authoritative list, so a wrong guess here fails soft and is corrected
     # from the next run's log rather than silently persisting.
-    "soccer_usa_leagues_cup",
+    "soccer_concacaf_leagues_cup",
 ]
 TWO_WAY = [("basketball_wnba", "WNBA"), ("americanfootball_cfl", "CFL"),
            ("boxing_boxing", "BOX")]
