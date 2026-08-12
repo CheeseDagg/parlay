@@ -88,6 +88,9 @@ SOCCER_KEYS = [
 ]
 TWO_WAY = [("basketball_wnba", "WNBA"), ("americanfootball_cfl", "CFL"),
            ("boxing_boxing", "BOX")]
+# Families whose alternate-total ladder is worth pulling. A fight has no total
+# to ladder, so BOX/MMA are deliberately absent rather than accidentally so.
+ALT_TOTAL_TAGS = {"WNBA", "CFL"}
 MMA_KEY = "mma_mixed_martial_arts"
 
 
@@ -323,9 +326,16 @@ def pull_other(log):
     to = (dt.datetime.now(dt.timezone.utc)
           + dt.timedelta(days=FIGHT_DAYS)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    def q_for():
+    # ALTERNATE TOTALS, not just h2h. Until 2026-08-12 this asked for h2h alone,
+    # so every WNBA and CFL leg the board had ever seen was a moneyline: the
+    # heaviest WNBA price all season was -1000 (89.6%), while the same
+    # alternate-total ladder that makes MLB F5 unders 96-98% sat unpulled. A
+    # 30-point WNBA cushion is the same bet as a 6-run F5 cushion and the feed
+    # simply never asked for it. Boxing and MMA stay h2h -- there is no total
+    # to ladder in a fight.
+    def q_for(markets="h2h"):
         return urllib.parse.urlencode({
-            "apiKey": KEY, "regions": "us", "markets": "h2h",
+            "apiKey": KEY, "regions": "us", "markets": markets,
             "oddsFormat": "american", "bookmakers": BOOK, "dateFormat": "iso",
             "commenceTimeTo": to})
 
@@ -360,6 +370,54 @@ def pull_other(log):
                     other = oc[1 - i][1]
                     lines.append(f"{tag}|{grp}|{nm}|{pr}|{other}|{t}")
         log.append(f"{tag}: {(len(lines)-n0)//2} markets")
+
+        # --- alternate total ladders for the same family. Emitted in the SAME
+        # two-way OTHER_RAW shape so board.py needs no new parser: the group
+        # carries the point so each rung is its own market and a solver can
+        # take at most one, exactly as with the MLB ladders. Fail-soft: a
+        # family whose book posts no alternate totals logs and moves on.
+        if tag not in ALT_TOTAL_TAGS:
+            continue
+        try:
+            data = _get(f"{BASE}/sports/{skey}/odds?{q_for('alternate_totals')}")
+        except urllib.error.HTTPError as e:
+            if e.code in (401, 402):
+                raise
+            log.append(f"{tag}: alternate_totals HTTP {e.code} — ladders skipped")
+            continue
+        n1 = len(lines)
+        for ev in sorted(data, key=lambda e: e.get("commence_time", "")):
+            for mk in fd_markets(ev):
+                if mk.get("key") != "alternate_totals":
+                    continue
+                rungs = {}
+                for o in mk.get("outcomes", []):
+                    if o.get("point") is None or o.get("price") is None:
+                        continue
+                    rungs.setdefault(float(o["point"]), {})[o.get("name")] = int(o["price"])
+                lad = []
+                for pt in sorted(rungs):
+                    two = rungs[pt]
+                    if "Over" not in two or "Under" not in two:
+                        continue
+                    ok, s = vig_ok([two["Over"], two["Under"]])
+                    if not ok:
+                        log.append(f"{tag}: {pt} vig-sum {s} out of band — rung dropped")
+                        continue
+                    lad.append((pt, two["Over"], two["Under"]))
+                mono = all(_dec(b[1]) > _dec(a[1]) and _dec(b[2]) < _dec(a[2])
+                           for a, b in zip(lad, lad[1:]))
+                if lad and not mono:
+                    log.append(f"{tag}: {ev.get('id','?')} ladder NOT monotone — dropped")
+                    continue
+                t = _utc_min(ev["commence_time"])
+                away, home = ev.get("away_team", "?"), ev.get("home_team", "?")
+                base = f"{tag} {_short(away)}-{_short(home)}"
+                for pt, ov, un in lad:
+                    grp = f"{base} T{pt}"
+                    lines.append(f"{tag}|{grp}|Under {pt} ({_short(away)}-{_short(home)})|{un}|{ov}|{t}")
+                    lines.append(f"{tag}|{grp}|Over {pt} ({_short(away)}-{_short(home)})|{ov}|{un}|{t}")
+        log.append(f"{tag}: {(len(lines)-n1)//2} alternate-total rungs")
 
     for skey in SOCCER_KEYS:
         try:
