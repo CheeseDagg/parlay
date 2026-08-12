@@ -139,7 +139,19 @@ loss that created it landed.
     that Toronto was 10-22, on the road, and missing Brittney Sykes since
     June 19. Ryan's one-line question was the entire missing check. If the
     both-sides picture isn't in hand, the leg stands at the market's number.
-34. **The book read the same injury report you did, hours earlier.** A
+34. **Run `python3 preflight.py <legs...>` before money moves.** One
+    command, every mechanical gate: the -350 floor (2), plus-money (3),
+    raw 3-way soccer (8), single-method fight legs (9/27), mid-rungs on hot
+    games (25), and shared legs with open slips (28). FAIL blocks, WARN must
+    be said out loud. Built 8/12 because not one rule failed this week for
+    being unwritten — the floor was typed by hand, the hot flag sat in a
+    stale slate, and the overlap was computed after both slips were down.
+35. **State a number through `python3 picks.py log "<leg>" <p> "<why>"`.**
+    It prints every earlier number given for that leg today before the new
+    one goes anywhere. Rule 26 had exactly one enforcement mechanism —
+    Ryan noticing — and on 8/12 that is what caught a WNBA leg moving
+    81 -> 0 -> 81 inside three messages.
+36. **The book read the same injury report you did, hours earlier.** A
     price is not stale because a name is on a report; it is stale only if
     the news broke after the line last moved. Say which of those two you
     are claiming before touching a leg.
