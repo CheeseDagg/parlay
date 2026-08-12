@@ -111,7 +111,16 @@ loss that created it landed.
     won/lost. Seeded 8/12 with the eight verified 8/10-8/11 rows. This file
     is the only way "my numbers beat the market" ever becomes a checkable
     claim instead of a mood; rules 23 and 27 came from its first eight rows
-    (overrides past five points: 1-for-4).
+    (overrides past five points: 1-for-4). `python3 calibration.py` prints
+    the scoreboard; the clamp loosens only when its edge line goes positive.
+30. **Live reads run through `python3 live.py`, not hand arithmetic.**
+    `--line --runs --state [--outs] [--hot]` — it is rule 17's math with
+    rule 18's half-inning accounting, and it exists because the same
+    numbers were derived by hand, message by message, two nights running,
+    once with the wrong distribution.
+31. **A slip goes into slips.json when it is PLACED.** slips.py has computed
+    cross-slip kill probabilities since 8/1 — and graded nothing on 8/10 or
+    8/11 because nobody fed it. The tool was never the gap; the habit was.
 
 ## Working agreement
 
