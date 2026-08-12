@@ -152,6 +152,26 @@ if MLAGREE:
               "this board is in slate.json, or board.MODEL_P's team vocabulary no "
               "longer matches the raw feed's spellings. --mlagree is a no-op.")
 
+# HOT GAMES: on a game whose run environment is extreme (model adj_total >= 10,
+# or the model 1.5+ runs above the market's main total), only the TOP rung of
+# the F5 ladder is a candidate. This is RULES.md #25 and it is ON BY DEFAULT
+# for the same reason the -350 floor is: it was written from two dead slips on
+# consecutive nights (NYM@ATL 8/10, CHC@WSH 8/11), and a rule that has to be
+# remembered is a rule that will be skipped on the morning it matters.
+# --nohot lifts it explicitly.
+if '--nohot' not in sys.argv:
+    _hot = board.hot_games(BOOK)
+    _capped = []
+    for k in list(markets):
+        v = markets[k]
+        if v and v[0]['fam'] == 'F5' and v[0]['grp'] in _hot and len(v) > 1:
+            top = min(v, key=lambda o: o['price'])
+            markets[k] = [top]
+            _capped.append(f"{v[0]['grp']}: F5 held to {top['lab']} ({top['price']})"
+                           f" -- {_hot[v[0]['grp']]}")
+    for _c in _capped:
+        print(f"hot game, {_c}")
+
 NBT = int(math.ceil(math.log(TARGET) / STEP)); NB = NBT + 1
 for k in markets:
     for o in markets[k]:

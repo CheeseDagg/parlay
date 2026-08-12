@@ -63,6 +63,24 @@ def try_ticket(title, target, flags, legs_sweep):
     return f"### {title}\n\n_No ticket meets these constraints today._\n"
 
 
+def hot_section():
+    """RULES.md #25 rendered into the artifact the morning build actually
+    reads. On the Actions runner the slate is absent and only the market arm
+    fires; locally, a fresh MLBTool pull lights up the model arms too. Either
+    way, absence of hot games writes nothing rather than an empty header."""
+    try:
+        import board
+        hot = board.hot_games("FanDuel")
+    except Exception as e:          # a broken flag must not kill the report
+        return [f"_hot-game check unavailable: {e}_", ""]
+    if not hot:
+        return []
+    lines = ["## HOT GAMES — F5 top rung only (rule 25)", ""]
+    lines += [f"- **{g}** — {why}" for g, why in sorted(hot.items())]
+    lines.append("")
+    return lines
+
+
 def main():
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     sunday = next_sunday_et()
@@ -72,6 +90,7 @@ def main():
           "FanDuel app before placing anything** — prices move, and this file "
           "has a timestamp.",
           "",
+          *hot_section(),
           f"## Heaviest favorites through Sunday {sunday} (-350 or better, de-vigged)",
           "",
           heaviest_table(sunday),

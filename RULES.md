@@ -75,11 +75,20 @@ loss that created it landed.
 24. **Retired: "DWCS fighters chase finishes, so shade decisions down."**
     Two of five fights on the 8/11 card went the distance. This adjustment
     talked Ryan off Escarrega by decision at +600. It cashed.
-25. **F5 rung selection follows the game's full-game total, not a uniform
-    price target.** The highest FG total on the board is the market naming
-    the night's run-fest. CHC@WSH carried U15.5 -1800, highest on the 8/11
-    slate; its F5 U9.5 died on 10-through-five and killed a 20-leg slip.
-    FG total 14.5 or higher -> top rung only, or leave the game off.
+25. **F5 rung selection follows the game's run environment, not a uniform
+    price target.** *(Corrected same night: the first version of this rule
+    keyed on "FG total 14.5+", which was a LADDER TOP, not the game total —
+    most games post a U15.5 rung. The real quantities:)* a game is HOT when
+    the model's park/weather-adjusted total is **10 or higher**, or sits
+    **1.5+ runs above the market's main line** (heat the market hasn't
+    priced). CHC@WSH on 8/11: adj 10.52 — hottest of fifteen games — against
+    a market main of just 8.5. Its F5 U9.5 died on 10-through-five and
+    killed a 20-leg slip, while the flag sat unread in MLBTool's slate.json
+    all day. Hot games are F5 **top rung only**, or off the card. Enforced
+    in code: `board.hot_games()`, applied by default in solve2 (`--nohot`
+    lifts), surfaced in BOARD.md. Requires a FRESH slate — run
+    `git -C ../MLBTool pull` every morning; the board banners when it's
+    stale.
 26. **One answer per fight.** State the range once, pick once, stop moving
     the number with each new snippet. On 8/11 I moved Kunneman four times
     and flipped the lightweight pick twice; Ryan called it out both times.
@@ -91,6 +100,18 @@ loss that created it landed.
     to Escarrega winning on points; KO-or-points at -105 would have
     cashed). Narrow to one method only when Ryan explicitly wants payout
     over hit rate, and say what it costs.
+28. **Before a second slip goes in, report the overlap.** Name every shared
+    leg and the probability that one event kills the whole night. On 8/11
+    the Escarrega decision took out two slips at 7:10p ($150 of stakes on
+    one fight's method), and Hasan+Wint sat on both big tickets all night
+    (35% chance of a dead night by 7:30p, computed only after both were
+    placed). Compute it BEFORE.
+29. **Every quoted probability goes in calibration.csv at placement, and
+    gets an outcome at settle** — date, leg, de-vigged market p, my p,
+    won/lost. Seeded 8/12 with the eight verified 8/10-8/11 rows. This file
+    is the only way "my numbers beat the market" ever becomes a checkable
+    claim instead of a mood; rules 23 and 27 came from its first eight rows
+    (overrides past five points: 1-for-4).
 
 ## Working agreement
 

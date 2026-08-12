@@ -1,0 +1,9 @@
+date,leg,market_p,my_p,outcome
+2026-08-10,NYM@ATL F5 U8.5,0.883,0.883,lost
+2026-08-11,CHC@WSH F5 U9.5,0.917,0.917,lost
+2026-08-11,Kunneman sub-or-points DC,0.394,0.530,lost
+2026-08-11,Pagliarulo KO-or-points DC,0.313,0.494,won
+2026-08-11,Hasan by KO,0.771,0.730,won
+2026-08-11,Hasan KO round 1,0.714,0.400,won
+2026-08-11,Escarrega by KO,0.350,0.410,lost
+2026-08-11,Escarrega ML (winner call),0.550,0.550,won

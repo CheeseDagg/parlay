@@ -138,6 +138,7 @@ def _age_h(then, now):
 FEED_DEAD = False
 
 MODEL_P = {}
+ADJ_TOTAL = {}
 _unmapped = set()
 for _g in _SL.get('games', []):
     _h, _a = TEAM3.get(_g['home']), TEAM3.get(_g['away'])
@@ -148,12 +149,85 @@ for _g in _SL.get('games', []):
     # game silently drops out and the filter degrades to a no-op. Name it out loud.
     if _g['home'] not in TEAM3: _unmapped.add(_g['home'])
     if _g['away'] not in TEAM3: _unmapped.add(_g['away'])
-    if _g.get('p_home') is None or not (_h and _a):
+    if not (_h and _a):
         continue
-    MODEL_P[(_g.get('date', SLATE_DATE), f"{_a}@{_h}")] = _g['p_home'] / 100.0
+    _key = (_g.get('date', SLATE_DATE), f"{_a}@{_h}")
+    if _g.get('adj_total') is not None:
+        # The park/weather-adjusted total is the model's read on the game's run
+        # ENVIRONMENT, and it is the input the hot-game veto below runs on. On
+        # 8/11 the slate had CHC@WSH at 10.52 -- the hottest game of fifteen,
+        # two full runs above the market's main total -- and the board never
+        # saw it, because this number was parsed for nothing.
+        ADJ_TOTAL[_key] = float(_g['adj_total'])
+    if _g.get('p_home') is None:
+        continue
+    MODEL_P[_key] = _g['p_home'] / 100.0
 if _unmapped:
     print(f"  board: slate.json uses {len(_unmapped)} team name(s) TEAM3 does not "
           f"know -- {sorted(_unmapped)}. Those games carry no model opinion.")
+
+# A stale slate abstains cleanly on every keyed lookup (the date never matches),
+# but silence is how it stayed four days old without anyone noticing: the fix
+# was one `git pull` away the whole time. Say it once, loudly, at import.
+if _SL:
+    _today_et = _et_date(_utcnow())
+    if SLATE_DATE != _today_et:
+        print(f"  board: MLBTool slate.json is dated {SLATE_DATE}, today is "
+              f"{_today_et} ET -- park/weather/adj-total and model opinions are "
+              f"ABSTAINING. Fix: git -C ../MLBTool pull")
+
+
+def _mainline(rows):
+    """The market's MAIN total for a game is the rung with the most balanced
+    juice, not the deepest rung posted. Confusing those two is how a ladder top
+    of U15.5 got quoted as 'the game total is 15.5' in a post-mortem while the
+    actual main line sat at 8.5. rows: [(point, over_am, under_am), ...]."""
+    def bal(r):
+        io = 1 / dec(r[1]); iu = 1 / dec(r[2])
+        return abs(io - iu)
+    return min(rows, key=bal)[0] if rows else None
+
+
+def main_totals(book='FanDuel'):
+    """{ 'AWAY@HOME': main full-game total } straight from totals.py."""
+    from totals import TOTALS_RAW
+    games = {}
+    for ln in TOTALS_RAW.strip().splitlines():
+        p = ln.strip().split('|')
+        if len(p) != 5 or p[1] != book:
+            continue
+        games.setdefault(p[0], []).append((float(p[2]), int(p[3]), int(p[4])))
+    return {g: _mainline(rows) for g, rows in games.items()}
+
+
+def _hot(main, adj, slate_fresh):
+    """The 8/11 rule, as a pure function so the selftest can hold it down.
+
+    A game is HOT -- its F5 unders are top-rung-only -- when the model's
+    adjusted total says the run environment is extreme (>= 10), or when the
+    model sits 1.5+ runs ABOVE the market's main total (heat the market has
+    not priced; CHC@WSH was adj 10.52 vs main 8.5 the night it killed a
+    20-leg slip). With no fresh slate the market-only arm still catches the
+    obvious bandbox: main total >= 10.
+    """
+    out = {}
+    for g, m in main.items():
+        a = adj.get(g) if slate_fresh else None
+        if a is not None:
+            if a >= 10.0:
+                out[g] = f"model adj_total {a:.2f} >= 10"
+            elif m is not None and a - m >= 1.5:
+                out[g] = f"model {a:.2f} sits {a - m:.1f} runs above the market's main {m}"
+        elif m is not None and m >= 10.0:
+            out[g] = f"market main total {m} >= 10 (no fresh slate)"
+    return out
+
+
+def hot_games(book='FanDuel'):
+    """{ grp: reason } for games whose F5 ladder should be top-rung-only."""
+    fresh = bool(_SL) and SLATE_DATE == _et_date(_utcnow())
+    adj = {g: t for (d, g), t in ADJ_TOTAL.items() if d == SLATE_DATE}
+    return _hot(main_totals(book), adj, fresh)
 
 
 def model_p(code, game, utc):
@@ -610,6 +684,36 @@ def selftest():
         "identically")
     chk(_et("2026-08-04T01:41Z") == "Mon 8/3 9:41pm",
         "and a post-midnight UTC start still prints as the previous ET evening")
+
+    # ---- HOT GAMES. Written 8/12 from the two slips that died on the same
+    # shape two nights running: a mid-rung F5 under on the one game whose run
+    # environment was extreme. The information existed both nights.
+    _lad = [(8.5, -110, -110), (9.5, -180, 150), (15.5, -1800, 900)]
+    chk(_mainline(_lad) == 8.5,
+        "the MAIN total is the balanced rung, not the deepest one posted "
+        "(U15.5 is a ladder top, and quoting it as 'the total' is the 8/11 "
+        "post-mortem's own error)")
+    chk(_mainline([]) is None, "no rungs -> None, not a crash")
+
+    _main = {'CHC@WSH': 8.5, 'COL@ARI': 9.5, 'MIL@SD': 7.5, 'PIT@MIA': 6.5}
+    _adj = {'CHC@WSH': 10.52, 'COL@ARI': 10.47, 'MIL@SD': 8.32, 'PIT@MIA': 8.90}
+    _h = _hot(_main, _adj, slate_fresh=True)
+    chk('CHC@WSH' in _h and 'COL@ARI' in _h,
+        f"the 8/11 slate's two 10+ adj-total games flag hot ({sorted(_h)})")
+    chk('PIT@MIA' in _h,
+        "a model 2.4 runs above the market's main flags hot even under 10 "
+        "(heat the market has not priced)")
+    # (first fixture here used BOS@TOR as the quiet game, with its REAL 8/11
+    # numbers -- adj 8.19 vs main 6.5, gap 1.7 -- and the check failed because
+    # by this rule's own arithmetic that game was NOT quiet. The code caught
+    # the label. MIL@SD, gap 0.8 at Petco, is what quiet actually looks like.)
+    chk('MIL@SD' not in _h, "a quiet game does not flag")
+    _h2 = _hot(_main, _adj, slate_fresh=False)
+    chk(_h2 == {},
+        "a STALE slate flags nothing on the model arms -- four-day-old heat "
+        "is not tonight's heat")
+    _h3 = _hot({'X@Y': 11.0}, {}, slate_fresh=False)
+    chk('X@Y' in _h3, "with no slate at all, a market main of 10+ still flags")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
