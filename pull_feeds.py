@@ -85,6 +85,12 @@ SOCCER_KEYS = [
     "soccer_sweden_allsvenskan", "soccer_finland_veikkausliiga",
     "soccer_norway_eliteserien", "soccer_china_superleague",
     "soccer_usa_mls", "soccer_brazil_campeonato", "soccer_mexico_ligamx",
+    # Leagues Cup: MLS v Liga MX, midweek, US evening kickoffs -- exactly the
+    # slot every European league is dark for. Missing on 2026-08-12 while it
+    # ran seven matches. Best-guess key; the diagnostic in pull_other() logs
+    # the authoritative list, so a wrong guess here fails soft and is corrected
+    # from the next run's log rather than silently persisting.
+    "soccer_usa_leagues_cup",
 ]
 TWO_WAY = [("basketball_wnba", "WNBA"), ("americanfootball_cfl", "CFL"),
            ("boxing_boxing", "BOX")]
@@ -450,6 +456,24 @@ def pull_other(log):
                     lines.append(f"{tag}|{grp}|Under {pt} ({pair})|{un}|{ov}|{t}")
                     lines.append(f"{tag}|{grp}|Over {pt} ({pair})|{ov}|{un}|{t}")
         log.append(f"{tag}: {(len(lines)-n1)//2} alternate-total rungs")
+
+    # WHAT WE ARE NOT ASKING FOR. SOCCER_KEYS is a hand-written list, so a
+    # competition missing from it is invisible: the board shows no fixtures and
+    # looks empty rather than incomplete. On 2026-08-12 that produced a flat
+    # "there is no soccer tonight" when the Leagues Cup was playing SEVEN
+    # matches -- Inter Miami, Monterrey, LAFC, Seattle -- because no key on this
+    # list covers it. Rule 14 says the feed is a floor and not a ceiling; this
+    # makes the floor legible instead of leaving it to be guessed.
+    try:
+        _live = _get(f"{BASE}/sports?apiKey={KEY}")
+        _miss = sorted((s.get("key",""), s.get("title","")) for s in _live
+                       if s.get("key","").startswith("soccer")
+                       and s.get("key") not in SOCCER_KEYS)
+        if _miss:
+            log.append(f"SOC: {len(_miss)} soccer competition(s) LIVE and NOT pulled — "
+                       + "; ".join(f"{k} ({t})" for k, t in _miss))
+    except Exception as e:
+        log.append(f"SOC: could not list available competitions ({type(e).__name__})")
 
     for skey in SOCCER_KEYS:
         try:
