@@ -31,8 +31,16 @@ import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-METHOD_WORDS = ('by ko', 'by tko', 'by submission', 'by decision',
-                'on points', 'inside the distance', 'ko/tko')
+# These are matched against the app's OWN wording, so they have to be the
+# app's wording. 'on points' was here and 'by points' was not -- and FanDuel
+# writes the single-method market as "Islam Makhachev by Points". So on 8/12 a
+# slip with TWO single-method main-event legs came back "2 method leg(s), all
+# double-chance": the gate saw only the two double chances, whose labels happen
+# to contain 'ko/tko', and never saw the legs rule 27 exists to catch.
+METHOD_WORDS = ('by ko', 'by tko', 'ko/tko', 'by submission', 'by sub',
+                'by decision', 'by points', 'on points', 'by dq',
+                'inside the distance', 'goes the distance',
+                'by unanimous', 'by split', 'by majority')
 
 def gate_floor(legs, floor=350):
     bad = [l for l in legs if l['price'] > -floor]
@@ -176,6 +184,20 @@ def selftest():
     chk(gate_method([L('Kunneman by Submission or on Points', 170)])[0] == 'PASS',
         "a double chance does not")
     chk(gate_method([L('Anthony Wint', -1400)])[0] == 'PASS', "a plain ML is fine")
+    # ---- THE APP'S OWN WORDING, copied from the 8/12 UFC 330 bet slip.
+    # This exact slip returned "all double-chance" while carrying two single
+    # method legs, because the word list had 'on points' but not 'by points'.
+    chk(gate_method([L('Islam Makhachev by Points', 135)])[0] == 'WARN',
+        "FanDuel writes it 'by Points', and that is a single method leg")
+    chk(gate_method([L('Ian Machado Garry by Points', 400)])[0] == 'WARN',
+        "so is the other side of the same market")
+    v, msg = gate_method([L('Kaue Fernandes by KO/TKO or on Points', 185),
+                          L('Joel Alvarez by KO/TKO or Submission', -140),
+                          L('Mansur Abdul Malik', -650),
+                          L('Islam Makhachev by Points', 135)])
+    chk(v == 'WARN' and 'by Points' in msg and 'Kaue' not in msg,
+        f"and on the real slip it names ONLY the single-method leg, not the "
+        f"two double chances sitting beside it ({msg})")
 
     hot = {'CHC@WSH': 'adj 10.82'}
     mid = [L('CHC@WSH F5 Under 9.5', -1200, fam='F5', grp='CHC@WSH', is_top_rung=False)]
