@@ -5,3 +5,5 @@ date,claim,cls,checks,verdict,note,outcome,catch
 2026-08-12,that is every sure bet on the board,feed,board,THIN,shopped the board and stopped,wrong,the markets list in pull_feeds - WNBA/CFL only ever requested h2h
 2026-08-12,a live leg needing 5 scoreless half-innings is 2.7%,live,,UNSUPPORTED,hand-rolled Poisson,wrong,"live.py / the 0.72^K empirical rate, not Poisson"
 2026-08-12,fd_markets returns None when FanDuel priced no alternate market,code,callers|docstring|run,SUPPORTED,the fix that finally held,right,
+2026-08-12,CS-GSV Over 140.5 is a 97.4% leg,matchup,baserate|bothsides|market,SUPPORTED,,,
+2026-08-12,the CFL ladder pull yields usable legs,feed,board|ladder,THIN,,,

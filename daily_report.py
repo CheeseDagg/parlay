@@ -18,7 +18,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import board
 from board import build
-from times import et
+from times import ct
 
 
 def _today_et():
@@ -41,10 +41,10 @@ def heaviest_table(horizon, n=25):
                   key=lambda o: -o['p'])[:n]
     if not legs:
         return "_(no legs at -350 or heavier inside the horizon)_\n"
-    out = ["| # | start (ET) | leg | price | p(hit) | fam |",
+    out = ["| # | start (CT) | leg | price | p(hit) | fam |",
            "|---|---|---|---|---|---|"]
     for i, o in enumerate(legs, 1):
-        out.append(f"| {i} | {et(o['t'])} | {o['lab']} | {o['price']:+d} "
+        out.append(f"| {i} | {ct(o['t'])} | {o['lab']} | {o['price']:+d} "
                    f"| {o['p']*100:.1f}% | {o['fam']} |")
     return "\n".join(out) + "\n"
 

@@ -34,10 +34,34 @@ FIGHT_START = {
     "Islam Makhachev": "2026-08-16T03:30Z",
 }
 
-def et(utc):
-    """UTC string -> Eastern wall clock, WITH THE DATE. Fixed -4 offset; fine
-    inside the EDT window this board lives in. The date is not decoration:
-    three 'Sat's on one ticket can be three different Saturdays."""
+# Fixed offsets, correct inside the daylight window this board lives in and
+# WRONG the moment DST ends on 11/1 -- both move to -5/-6 together. One pair of
+# constants so that is a two-line edit and the two can never drift apart.
+_OFF_ET, _OFF_CT = 4, 5
+
+def _wall(utc, off):
     from datetime import datetime, timedelta
-    d = datetime.strptime(utc, "%Y-%m-%dT%H:%MZ") - timedelta(hours=4)
+    d = datetime.strptime(utc, "%Y-%m-%dT%H:%MZ") - timedelta(hours=off)
     return d.strftime("%a %-m/%-d %-I:%M%p").replace("AM", "am").replace("PM", "pm")
+
+def et(utc):
+    """UTC string -> Eastern wall clock, WITH THE DATE. The date is not
+    decoration: three 'Sat's on one ticket can be three different Saturdays.
+
+    Eastern is the SLATE's timezone (MLB slate dates are ET-keyed, see
+    board._et_date). It is not Ryan's timezone -- use ct() for anything he
+    reads."""
+    return _wall(utc, _OFF_ET)
+
+def ct(utc):
+    """UTC string -> CENTRAL wall clock, which is the only clock Ryan owns.
+
+    Rule 15 says convert to CT explicitly, and it was written after a whole
+    afternoon of times shipped an hour wrong. That rule was then enforced
+    nowhere: every start column on the board, in solve2 and in daily_report
+    printed et(), so every time quoted off them ran an hour AHEAD of his
+    clock -- the same defect as the bug that created the rule, sign flipped.
+    Cross-checks on 8/12: Toronto at Dallas printed 8:00pm, and College Park
+    Center (Central) tipped 7:00; Chicago at Golden State printed 10:00pm,
+    and Chase Center (Pacific) tipped 7:00, which is 9:00 Central."""
+    return _wall(utc, _OFF_CT)

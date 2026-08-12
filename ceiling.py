@@ -30,7 +30,7 @@ import numpy as np
 sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
 import board
 from board import build
-from times import et
+from times import ct
 
 BOOK = sys.argv[1] if len(sys.argv) > 1 else 'FanDuel'
 CAP_AM = float(sys.argv[2]) if len(sys.argv) > 2 else -200.0
@@ -157,9 +157,9 @@ if CUTOFF:
 pick.sort(key=lambda v: (v['t'], -v['p']))
 print(f"{'='*92}\n{BOOK} -- total price no longer than {CAP_AM:g}, "
       f"max {MAXLEGS} legs, max {MAXMLB} baseball\n{'='*92}")
-print(f"{'#':>2}  {'start (ET)':16s} {'leg':36s} {'price':>7s} {'p(hit)':>8s}  fam")
+print(f"{'#':>2}  {'start (CT)':16s} {'leg':36s} {'price':>7s} {'p(hit)':>8s}  fam")
 for i, v in enumerate(pick, 1):
-    print(f"{i:2d}  {et(v['t']):16s} {v['lab']:36s} {v['price']:>+7d} "
+    print(f"{i:2d}  {ct(v['t']):16s} {v['lab']:36s} {v['price']:>+7d} "
           f"{v['p']:8.4f}  {v['fam']}")
 print(f"\n  joint hit probability (independent): {jp*100:.2f}%")
 print(f"  parlay price: {jd:.4f}x  = {am:+.0f}  ->  $200 returns ${jd*200:,.2f}")

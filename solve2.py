@@ -26,7 +26,7 @@ import numpy as np
 sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
 import board
 from board import build
-from times import et
+from times import ct
 
 BOOK   = sys.argv[1] if len(sys.argv) > 1 else 'FanDuel'
 TARGET = float(sys.argv[2]) if len(sys.argv) > 2 else 21.0
@@ -345,9 +345,9 @@ if MINPRICE:
 if MAXPRICE:
     hdr += f", every leg -{MAXPRICE} or longer"
 print(f"{'='*98}\n{hdr}\n{'='*98}")
-print(f"{'#':>2}  {'start (ET)':16s} {'leg':36s} {'price':>7s} {'p(hit)':>8s}  fam")
+print(f"{'#':>2}  {'start (CT)':16s} {'leg':36s} {'price':>7s} {'p(hit)':>8s}  fam")
 for i, v in enumerate(pick, 1):
-    print(f"{i:2d}  {et(v['t']):16s} {v['lab']:36s} {v['price']:>+7d} {v['p']:8.4f}  {v['fam']}")
+    print(f"{i:2d}  {ct(v['t']):16s} {v['lab']:36s} {v['price']:>+7d} {v['p']:8.4f}  {v['fam']}")
 print(f"\n  joint hit probability (independent): {jp:.4f} = {jp*100:.2f}%")
 print(f"  parlay price: {jd:.2f}x  (+{round((jd-1)*100)})  ->  $100 returns ${jd*100:,.2f}")
 c = Counter(v['grp'] for v in pick)

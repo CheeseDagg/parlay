@@ -709,12 +709,21 @@ def selftest():
 
     # ---- et() PRINTS THE DATE. It did not, and three legs on one ticket
     # labelled 'Sat' were three different Saturdays five weeks apart.
-    from times import et as _et
+    from times import et as _et, ct as _ct
     chk(_et("2026-08-09T00:00Z") == "Sat 8/8 8:00pm",
         "et() carries the date, so two legs on different Saturdays cannot print "
         "identically")
     chk(_et("2026-08-04T01:41Z") == "Mon 8/3 9:41pm",
         "and a post-midnight UTC start still prints as the previous ET evening")
+    # ---- RULE 15 IS ABOUT RYAN'S CLOCK, and every display column printed et().
+    chk(_ct("2026-08-09T00:00Z") == "Sat 8/8 7:00pm",
+        "ct() is the hour Ryan actually reads -- solve2, daily_report and "
+        "ceiling print this, not Eastern")
+    chk(_ct("2026-08-13T02:00Z") == "Wed 8/12 9:00pm",
+        "Chicago at Golden State: 7:00 Pacific at Chase Center is 9:00 Central, "
+        "and the board printed 10:00pm all day")
+    chk(_et("2026-08-13T02:00Z") != _ct("2026-08-13T02:00Z"),
+        "the two clocks are one hour apart and must never be used interchangeably")
 
     # ---- HOT GAMES. Written 8/12 from the two slips that died on the same
     # shape two nights running: a mid-rung F5 under on the one game whose run
