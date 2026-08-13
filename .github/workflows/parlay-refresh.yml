@@ -46,6 +46,20 @@ jobs:
         run: |
           set -o pipefail
           python3 daily_report.py 2>&1 | tee -a /tmp/refresh.log
+      # SCORES. Every stats host is blocked from the session that maintains this
+      # repo, so with a slip live on 8/12 the honest answer to "is it dead?" was
+      # "I cannot see" -- the board could say what to bet and not whether it won.
+      # This runner has open egress, so the fetch happens here and the result is
+      # committed where anything can read it. Fail-soft on purpose: a scoreboard
+      # outage must never cost the board its refresh.
+      - name: Pull scores
+        if: always()
+        continue-on-error: true
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python3 scores.py --selftest 2>&1 | tail -2 | tee -a /tmp/refresh.log
+          python3 scores.py 2>&1 | tee -a /tmp/refresh.log
       # ALWAYS publish the run log, success or failure. The Actions log UI is
       # unreadable from the session that maintains this repo, and three failed
       # runs in a row each cost a human screenshot round-trip to diagnose. A
