@@ -1,10 +1,15 @@
-  openfootball EPL 25/26     HTTP 200   110141B  keys=['name', 'matches']
-  openfootball index         HTTP 200    22163B  list of 26
-  football-data.org v4       HTTP 200    73105B  keys=['count', 'filters', 'competitions']
-  statsapi MLB (control)     HTTP 200    23219B  keys=['copyright', 'teams']
-  WNBA stats.nba.com         FAIL TimeoutError 
-  WNBA data.nba.com          FAIL HTTPError 403
-  ESPN WNBA scoreboard       FAIL HTTPError 403
-  ESPN soccer scoreboard     FAIL HTTPError 403
-  TheSportsDB free           HTTP 200      392B  keys=['leagues']
-  fbref (scrape)             FAIL HTTPError 403
+  fd.co.uk EPL 25/26     HTTP 200   203438B  ﻿Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,Referee,HS,AS,HST,AST,HF,AF,H
+  fd.co.uk EPL 26/27     HTTP 200     6400B  ﻿Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,Referee,HS,AS,HST,AST,HF,AF,H
+  fd.co.uk USA (MLS)     HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
+  fd.co.uk MEX           HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
+  fd.co.uk ARG           HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
+  fd.co.uk BRA           HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
+  sportsdb MLS 2026      HTTP 200     6273B  {"events":[{"idEvent":"2406707","strEvent":"St. Louis City SC vs Charlotte FC","strEventAl
+  espn MLS scoreboard    FAIL HTTPError 403
+  cdn.wnba scoreboard    HTTP 200     3825B  <!DOCTYPE html> | <html> |  | <head> |     <link rel="dns-prefetch" href="//maxcdn.bootstr
+  stats.wnba gamelog     FAIL TimeoutError 
+  espn WNBA (brwsr UA)   FAIL HTTPError 403
+  ufc mdabbert odds      FAIL HTTPError 404
+  ufc greco results      HTTP 200   250000B  EVENT,BOUT,OUTCOME,WEIGHTCLASS,METHOD,ROUND,TIME,TIME FORMAT,REFEREE,DETAILS,URL | UFC Fig
+  nflverse schedules     FAIL HTTPError 404
+  cfl fixturedownload    FAIL HTTPError 404
