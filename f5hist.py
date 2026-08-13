@@ -102,11 +102,26 @@ def collect(d_from, d_to, log=print):
     CIN@CWS modelled at 9.13, below the hot threshold, and put up 12 runs
     before the fifth.
     """
-    url = (f"{API}/schedule?sportId=1&startDate={d_from}&endDate={d_to}"
-           f"&hydrate=linescore,team,venue&gameType=R")
-    data = get(url)
+    # ONE SEASON IS NOT ENOUGH POWER, so this chunks by year and pools. With
+    # ~120 games per team the dispersion test only reliably detects a team at
+    # THREE TIMES the league blowup rate; a team genuinely twice as wild is
+    # missed four times out of five. That is not "teams do not differ", it is
+    # "one season cannot tell", and the two get reported very differently.
+    # Three seasons roughly triples the per-team sample. Chunked because a
+    # multi-year schedule request is large enough to time out.
+    days = []
+    y0, y1 = int(d_from[:4]), int(d_to[:4])
+    for y in range(y0, y1 + 1):
+        a = d_from if y == y0 else f"{y}-03-01"
+        b = d_to if y == y1 else f"{y}-11-15"
+        url = (f"{API}/schedule?sportId=1&startDate={a}&endDate={b}"
+               f"&hydrate=linescore,team,venue&gameType=R")
+        try:
+            days += get(url).get('dates', [])
+        except Exception as e:
+            log(f"  {y}: {type(e).__name__} -- season skipped")
     out, short, skipped = [], 0, 0
-    for day in data.get('dates', []):
+    for day in days:
         for g in day.get('games', []):
             if g.get('status', {}).get('abstractGameState') != 'Final':
                 skipped += 1

@@ -21,7 +21,7 @@ jobs:
         run: |
           set -o pipefail
           python3 f5hist.py --selftest | tail -2
-          python3 f5hist.py 2>&1 | tee f5hist.txt
+          python3 f5hist.py --from=2024-03-20 2>&1 | tee f5hist.txt
       - name: Publish
         if: always()
         run: |
