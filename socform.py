@@ -224,6 +224,18 @@ def selftest():
     e2, how2 = lookup(acc2, 'Union')
     chk(e2 is None and how2 == 'unmatched',
         "an ambiguous or too-short name refuses to guess between two Unions")
+
+    acc3 = {'inter': {'name': 'Inter', 'rows': rows},
+            'lille': {'name': 'Lille', 'rows': rows}}
+    chk(lookup(acc3, 'FC Inter Turku')[0] is None,
+        "Inter Turku does NOT join to Inter Milan -- the first live run made "
+        "exactly this false join and printed Serie A form as Finnish form")
+    chk(lookup(acc3, 'Lillestrom')[0] is None,
+        "and Lillestrom does not join to Lille: containment needs the SHORTER "
+        "name at six-plus characters, whichever side it is on")
+    acc4 = {'nijmegen': {'name': 'Nijmegen', 'rows': rows}}
+    chk(lookup(acc4, 'NEC Nijmegen')[0] is not None,
+        "while NEC Nijmegen still reaches Nijmegen, which is a real join")
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 
