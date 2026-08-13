@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T04:40Z",
+ "as_of": "2026-08-13T04:43Z",
  "date": "2026-08-13",
  "mlb": [
   {
@@ -139,7 +139,7 @@
    "home": "Seattle Sounders FC",
    "away": "Guadalajara",
    "goals": 3,
-   "completed": false,
+   "completed": true,
    "detail": {
     "Seattle Sounders FC": 1,
     "Guadalajara": 2
