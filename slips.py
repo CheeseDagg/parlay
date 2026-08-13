@@ -462,6 +462,14 @@ def report(path=DEFAULT, sens=False, mc=False, seq=False, method=None):
           f"{'true odds':>11s} {'fair':>8s}")
     sg_any = False
     for s in slips:
+        if not s.legs:
+            # a slip recorded without its legs (the 8/13 16-legger: placed in
+            # a rush, rules 29/31 skipped, legs lost to the screenshot). An
+            # empty product is 1.0 -- printing THAT as p(hit) would claim a
+            # sure thing about a slip nobody can grade. Say what it is instead.
+            print(f"{s.name:30s}    0 legs -- UNGRADEABLE, legs were never "
+                  f"recorded (see slips.json note)")
+            continue
         p = slip_prob(s, cons, imp, mkt)
         d = s.decimal
         fair = f"+{american(1/p)}" if p > 0 else "-"

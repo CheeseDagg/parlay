@@ -200,3 +200,15 @@ Legs left unticked so the hub's Live tab grades them from the source itself; the
 
 ---
 Slip A's week: Roughriders Friday 9:00p ET, then four Saturday legs. If the FD app disagrees with a price here, the app is the truth.
+
+## 16-leg SGP+ W1 — +116 — DEAD Thu 8/13 (lost)
+
+Placed ~12:15pm CT in the noon scramble; killed same evening. **Legs were
+never recorded** — rules 29/31 got skipped at placement and the exact legs
+lived only in the app screenshot, so no per-leg post-mortem is possible
+unless the screenshot resurfaces. Structure: six SGP pairs (match DC or
+to-advance + that match's U6.5) + four F5 unders. The stated ~44% carried
+~3pts/leg of pre-calibration quote inflation on the six soccer pairs
+(hand.py pins the Besiktas measurement); true chance was nearer 36-38%.
+placed.py exists as of tonight so a rushed slip can never go unwritten
+again.

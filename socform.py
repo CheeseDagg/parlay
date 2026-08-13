@@ -145,6 +145,26 @@ def lookup(acc, name):
     return None, 'unmatched'
 
 
+def find(table, name):
+    """lookup()'s twin over the FLATTENED 'all' table socform.json carries.
+
+    The board-joined 'teams' view only knows teams the FEED prices, and the
+    feed's soccer floor is rule 39's whole point: on 8/13 every European leg
+    arrived by screenshot, and on 8/14 Kashiwa Reysol / Shandong / VPS Vaasa
+    all had form sitting in the 753 accumulated teams while socform.json
+    threw it away at write time. This finds a hand-pasted leg's team in the
+    persisted full table, under the same >=6 containment floor -- the Inter
+    Turku lesson applies to this path identically."""
+    q = ALIAS.get(norm(name), norm(name))
+    if q in table:
+        return table[q], 'exact'
+    hits = [k for k in table
+            if (q in k or k in q) and min(len(q), len(k)) >= 6]
+    if len(hits) == 1:
+        return table[hits[0]], f"via {table[hits[0]].get('name', hits[0])}"
+    return None, 'unmatched'
+
+
 def board_teams():
     """Soccer team names on the current board, from the feed itself."""
     try:
@@ -196,8 +216,18 @@ def main():
         print(f"\n  UNMATCHED OR THIN ({len(miss)}): " + '; '.join(miss[:20]))
         print("  -- unmatched is a statement about the JOIN, not the team. Do "
               "not read absence as bad form.")
+    # EVERY accumulated team persists, not only the board-joined view --
+    # hand-pasted legs join against 'all' at ticket time (find() above).
+    alltab = {}
+    for k, e in acc.items():
+        f = form_of(e['rows'])
+        if f:
+            alltab[k] = {**f, 'name': e['name']}
+    print(f"  persisted {len(alltab)} teams with form into 'all' "
+          f"({len(table)} of them board-joined)")
     with open(OUT, 'w') as fh:
         json.dump({'built': date.today().isoformat(), 'teams': table,
+                   'all': alltab,
                    'unmatched': miss}, fh, indent=1)
     print(f"\n  {hit} matched / {len(miss)} not. wrote {OUT}")
     return 0
@@ -258,6 +288,19 @@ def selftest():
     acc4 = {'nijmegen': {'name': 'Nijmegen', 'rows': rows}}
     chk(lookup(acc4, 'NEC Nijmegen')[0] is not None,
         "while NEC Nijmegen still reaches Nijmegen, which is a real join")
+
+    # find(): the same discipline over the persisted 'all' table -- the path
+    # a hand-pasted (screenshot) leg takes, since the feed never priced it
+    flat = {'kashiwa reysol': {'form': 'WWDLWW', 'ppg': 2.17, 'name': 'Kashiwa Reysol'},
+            'inter': {'form': 'WWWWWW', 'ppg': 3.0, 'name': 'Inter'}}
+    e, how = find(flat, 'Kashiwa Reysol')
+    chk(e is not None and e['ppg'] == 2.17 and how == 'exact',
+        "a hand-pasted Kashiwa Reysol leg finds its form in 'all' -- on 8/14 "
+        "this data existed and was thrown away at write time")
+    chk(find(flat, 'Kashiwa')[0] is not None,
+        "the app's short spelling still reaches it through containment")
+    chk(find(flat, 'FC Inter Turku')[0] is None,
+        "and the Inter Turku floor holds on this path identically")
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 

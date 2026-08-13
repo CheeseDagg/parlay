@@ -368,26 +368,44 @@ def gate_soccer_base(legs, form=None, teams_of=None):
     seen, blind, proxied = [], [], []
     cold, forms = [], []
     for l in legs:
-        if l.get('fam') not in ('SOC', 'SOCT'):
+        # HAND legs are soccer by construction (hand.py parses nothing else)
+        # and skipping them here is how 8/13's screenshot slip took six
+        # soccer pairs through preflight with no league and no form check.
+        if l.get('fam') not in ('SOC', 'SOCT', 'HAND'):
             continue
         key = l.get('lg')
         if not key:
             blind.append(f"{l['lab']} (no competition recorded)")
-            continue
-        name, r, note = socbase.rates(key)
-        if r is None:
-            blind.append(f"{l['lab']} ({note})")
-        elif note:
-            proxied.append(f"{l['lab']} -> {name} ({note})")
         else:
-            seen.append(f"{name} draw {r['result']['draw']*100:.1f}% "
-                        f"goals {r['result']['mean_goals']:.2f}")
+            name, r, note = socbase.rates(key)
+            if r is None:
+                blind.append(f"{l['lab']} ({note})")
+            elif note:
+                proxied.append(f"{l['lab']} -> {name} ({note})")
+            else:
+                seen.append(f"{name} draw {r['result']['draw']*100:.1f}% "
+                            f"goals {r['result']['mean_goals']:.2f}")
         # TEAM FORM ON THE TICKET. socform's report was a side channel; the
         # Sparta-Rotterdam shape (0.17 ppg, still priced like last month's
         # team) belongs on the slip itself. Unmatched stays 'unknown' --
         # never bad form, never good.
-        for tm in (teams_of or {}).get(l.get('grp'), []):
+        tms = list((teams_of or {}).get(l.get('grp'), []))
+        if not tms and l.get('mkt'):
+            # a hand leg's match never touched the feed, but the paste names
+            # both teams itself: 'Besiktas|Hradec Kralove', 'Hearts v Benfica'
+            import re as _re
+            tms = [t.strip() for t in _re.split(r'\||\s+v\s+', str(l['mkt']))
+                   if t.strip()]
+        for tm in tms:
             fr = (form.get('teams') or {}).get(tm)
+            if not fr:
+                # the board-joined view only knows feed teams; the full
+                # accumulated table ('all', socform.find) knows the rest
+                try:
+                    import socform as _sf
+                    fr, _how = _sf.find(form.get('all') or {}, tm)
+                except Exception:
+                    fr = None
             if not fr:
                 forms.append(f"{tm}: form unknown")
             else:
@@ -751,6 +769,24 @@ def selftest():
                                 form={'teams': {}}, teams_of={'SOC C-D': ['Unk FC']})
     chk('form unknown' in _m2,
         "an unmatched team reads 'form unknown' -- never bad form, never good")
+
+    # ---- HAND legs reach this gate too, teams drawn from their own paste.
+    # 8/13's screenshot slip took six soccer pairs through preflight with no
+    # league and no form check because fam HAND skipped the gate entirely.
+    _fh = {'teams': {}, 'all': {'kashiwa reysol':
+                                {'form': 'LLLDLL', 'ppg': 0.5, 'name': 'Kashiwa Reysol',
+                                 'newest': '2026-08-10'}}}
+    _v3, _m3 = gate_soccer_base([dict(L('Kashiwa Reysol DC (app-quoted)', -426,
+                                        fam='HAND'),
+                                      mkt='Kashiwa Reysol|Albirex Niigata')],
+                                form=_fh, teams_of={})
+    chk(_v3 == 'WARN' and 'no competition recorded' in _m3,
+        "a hand leg with no league is BLIND out loud, not silently skipped")
+    chk('COLD' in _m3 and 'Kashiwa Reysol' in _m3,
+        "its team is found in the persisted FULL table (socform 'all') and a "
+        "0.5-ppg side is called COLD -- form the feed never carried")
+    chk('Albirex Niigata: form unknown' in _m3,
+        "the other side of the paste is looked for too, honestly unknown")
 
     # ---- FORM. The measured gopher check, injectable so the test owns its data.
     _fd = {'date': '2026-08-13', 'hr9_warn': 1.8, 'games': {

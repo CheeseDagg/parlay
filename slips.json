@@ -151,16 +151,6 @@
    ],
    "result": "WON",
    "settled": "2026-08-13T04:49Z"
-  },
-  {
-   "name": "16-leg SGP+ W1",
-   "book": "FanDuel",
-   "price": 116,
-   "placed": "2026-08-13T17:15Z",
-   "model_p": null,
-   "status": "DEAD 2026-08-13 evening -- lost, per Ryan",
-   "legs": [],
-   "note": "Six SGP pairs (match DC/to-advance + same-match U6.5) + four F5 unders, placed in the noon scramble. LEGS UNRECORDED: rules 29/31 were skipped at placement and the exact legs lived only in the app screenshot. This entry exists so the ledger carries the loss instead of silence; placed.py now makes recording a one-command step so a rushed slip can never go unwritten again."
   }
  ]
 }
