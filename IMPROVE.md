@@ -6,10 +6,6 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
-0b. **UFC-ODDS widget form panel**: the phone widget Ryan and his friend use
-   Saturday shows model-vs-odds but none of ufcform's last-5 / win-by /
-   lose-by. Surface it per bout. Payoff: 'Garry has never been finished' on
-   the screen where the method props get picked.
 2. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
@@ -24,6 +20,14 @@ with no measurable payoff written next to it does not belong on this list.
    CFL leg is ever priced above a hunch.
 
 ## DONE (the number that justified it)
+- Widget form panel: Wins-by split + Durability row (NEVER FINISHED
+  highlighted) on every fighter card, from the method data already inside
+  the page. Shipping it exposed a second bug and fixed it: the refresh gate
+  skipped rebuilds when prices were unchanged, so template changes could
+  not reach readers until the market moved -- the 259-hours bug mirrored.
+  Render inputs now hash into the publish decision.
+- sgplog.py: SGP quotes -> correlation rows, refuses to fit under n=20, and
+  refused its own first seed (a whole-slip quote logged against three legs).
 - solve2 --hand: UEFA legs solved, not assembled (8/13 took five manual
   re-solves). One market per real match via token join, so a pasted DC and
   total can never stack. The smoke test caught the solver's defaults doing
