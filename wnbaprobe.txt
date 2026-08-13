@@ -1,0 +1,6 @@
+WNBA route probe 2026-08-13T20:40:22.178755Z
+  stats.wnba  FAIL TimeoutError 
+  data.wnba   FAIL HTTPError 403
+  espn wnba   FAIL HTTPError 403
+  cdn.wnba    HTTP 200 not-json
+VERDICT: still market-only; coverage.json stands
