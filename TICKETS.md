@@ -2,6 +2,26 @@
 
 ## Week ledger (running)
 
+## WON — Wed 8/12: 18-leg SGP+ @ +127, all 18 legs
+
+First cash since 8/8. Placed 5:45pm CT at a model 37.2% (slips.py 38.98%,
+Frechet band 38.3-42.5) against a 44.1% break-even -- a one-in-three bet that
+landed, not an edge discovered.
+
+  9 F5 unders, all top-or-deep rungs
+  6 Leagues Cup goal-unders (U6.5 / U7.5)
+  3 Double Chances: Orlando (2-2 DRAW), Toluca (3-1), San Diego (3-2)
+
+Orlando is the whole case for rule 8 in one leg: a 2-2 draw cashes the DC and
+loses the 3-way moneyline. Closest calls were SEA@NYY at 10 runs through five
+against a 10.5 line, and Inter Miami-Leon finishing on exactly 5 goals against
+a 6.5 under. CHC@WSH went to 17 total runs and still won on 8 through five --
+rule 25's top-rung-only cap earning its keep.
+
+Ryan built the SGP pairing himself; FanDuel priced it 4% ABOVE the naive
+product, so the correlation ran in his favour.
+
+
 | day | staked | back | net |
 |---|---|---|---|
 | Sat 8/8 | $1,180 | $2,346 | **+$1,166** |
