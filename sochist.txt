@@ -1,0 +1,47 @@
+  England Premier League: 1140 matches
+  England Championship: 1671 matches
+  Spain La Liga: 1130 matches
+  Italy Serie A: 1130 matches
+  Germany Bundesliga: 918 matches
+  France Ligue 1: 992 matches
+  Netherlands Eredivisie: 918 matches
+  Portugal Primeira Liga: 918 matches
+  Austria Bundesliga: 584 matches
+  Belgium Pro League: 313 matches
+  Mexico Liga MX: 340 matches
+  Brazil Serie A: only 0 matches, skipped
+
+  POOLED: 10054 matches, mean 2.77 goals
+
+                                  U1.5    U2.5    U3.5    U4.5    U5.5    U6.5
+  POOLED                         23.7%   47.4%   69.7%   85.1%   93.4%   97.6%
+  Germany Bundesliga             16.4%   39.1%   59.4%   78.6%   88.9%   95.8%   n=918
+  Netherlands Eredivisie         18.3%   40.5%   61.3%   79.7%   90.6%   96.2%   n=918
+  England Premier League         19.0%   42.0%   63.4%   81.7%   91.8%   96.7%   n=1140
+  France Ligue 1                 21.4%   45.0%   69.1%   85.5%   93.3%   97.4%   n=992
+  Austria Bundesliga             22.9%   47.3%   70.0%   84.9%   92.8%   98.5%   n=584
+  Belgium Pro League             24.6%   47.9%   70.3%   83.1%   93.0%   96.8%   n=313
+  Mexico Liga MX                 23.8%   45.3%   72.1%   84.7%   95.0%   98.2%   n=340
+  Portugal Primeira Liga         28.3%   49.3%   71.8%   86.8%   95.4%   98.4%   n=918
+  Spain La Liga                  28.6%   52.6%   75.4%   86.8%   93.8%   97.6%   n=1130
+  Italy Serie A                  25.6%   52.4%   74.6%   88.8%   95.8%   98.9%   n=1130
+  England Championship           28.2%   53.1%   75.9%   89.6%   95.7%   98.6%   n=1671
+
+  RESULT RATES -- the draw is the whole reason a Double Chance exists
+                                 home   draw   away   homeDC   awayDC  goals
+  POOLED                        43.8%  25.3%  30.9%    69.1%    56.2%   2.77
+  Belgium Pro League            43.8%  28.8%  27.5%    72.5%    56.2%   2.76
+  Italy Serie A                 41.5%  28.3%  30.2%    69.8%    58.5%   2.57
+  Austria Bundesliga            39.2%  27.4%  33.4%    66.6%    60.8%   2.76
+  England Championship          43.7%  26.2%  30.0%    70.0%    56.3%   2.52
+  Spain La Liga                 45.5%  25.7%  28.8%    71.2%    54.5%   2.59
+  Germany Bundesliga            43.2%  25.4%  31.4%    68.6%    56.8%   3.17
+  Netherlands Eredivisie        44.4%  24.6%  30.9%    69.1%    55.6%   3.09
+  Mexico Liga MX                48.8%  23.8%  27.4%    72.6%    51.2%   2.74
+  France Ligue 1                42.9%  23.7%  33.4%    66.6%    57.1%   2.83
+  England Premier League        45.1%  23.0%  31.9%    68.1%    54.9%   3.02
+  Portugal Primeira Liga        45.2%  22.8%  32.0%    68.0%    54.8%   2.64
+
+  draw-rate dispersion across leagues: chi2=17.9 p=0.0558  -> CONSISTENT WITH NOISE
+
+wrote /home/runner/work/parlay/parlay/sochist.json
