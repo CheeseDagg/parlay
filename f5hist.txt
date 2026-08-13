@@ -13,6 +13,7 @@ F5 run totals, 2026-03-20 .. 2026-08-13
   U12.5      97.96%    97.21 - 98.52     -4812
 
   BY TEAM (each game counts for both) -- P(F5 total >= 11), league base rate 6.22%
+  dispersion across 30 groups: chi2=39.4 df=29 p=0.094  -> CONSISTENT WITH NOISE
                                 n   mean F5   blowup        95% band
   CWS                         119      5.34   12.61%   7.79-19.76
   HOU                         122      5.78   11.48%   6.96-18.34
@@ -32,6 +33,7 @@ F5 run totals, 2026-03-20 .. 2026-08-13
   TEX                         121      4.98    2.48%   0.85- 7.04
 
   BY VENUE -- P(F5 total >= 11), league base rate 6.22%
+  dispersion across 30 groups: chi2=37.8 df=29 p=0.126  -> CONSISTENT WITH NOISE
                                 n   mean F5   blowup        95% band
   Coors Field                  59      6.58   15.25%   8.24-26.52
   Daikin Park                  59      5.66   11.86%   5.87-22.52
