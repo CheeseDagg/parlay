@@ -61,6 +61,446 @@
    "hi": 0.97862
   }
  ],
+ "blowup_base": 0.06212,
+ "venue": {
+  "Coors Field": {
+   "n": 219,
+   "mean": 6.571,
+   "blowup": 0.14155,
+   "mult": 2.279,
+   "lo": 0.10155,
+   "hi": 0.19392
+  },
+  "Chase Field": {
+   "n": 223,
+   "mean": 5.623,
+   "blowup": 0.11211,
+   "mult": 1.805,
+   "lo": 0.0771,
+   "hi": 0.16026
+  },
+  "Nationals Park": {
+   "n": 224,
+   "mean": 5.451,
+   "blowup": 0.09821,
+   "mult": 1.581,
+   "lo": 0.06576,
+   "hi": 0.14422
+  },
+  "Target Field": {
+   "n": 222,
+   "mean": 5.261,
+   "blowup": 0.08559,
+   "mult": 1.378,
+   "lo": 0.05547,
+   "hi": 0.1298
+  },
+  "Oriole Park at Camden Yards": {
+   "n": 224,
+   "mean": 5.286,
+   "blowup": 0.07589,
+   "mult": 1.222,
+   "lo": 0.04792,
+   "hi": 0.11817
+  },
+  "George M. Steinbrenner Field": {
+   "n": 81,
+   "mean": 5.037,
+   "blowup": 0.07407,
+   "mult": 1.193,
+   "lo": 0.03439,
+   "hi": 0.15233
+  },
+  "Wrigley Field": {
+   "n": 219,
+   "mean": 4.909,
+   "blowup": 0.07306,
+   "mult": 1.176,
+   "lo": 0.04547,
+   "hi": 0.11537
+  },
+  "Yankee Stadium": {
+   "n": 219,
+   "mean": 5.037,
+   "blowup": 0.07306,
+   "mult": 1.176,
+   "lo": 0.04547,
+   "hi": 0.11537
+  },
+  "Oracle Park": {
+   "n": 221,
+   "mean": 4.715,
+   "blowup": 0.0724,
+   "mult": 1.166,
+   "lo": 0.04505,
+   "hi": 0.11436
+  },
+  "Rogers Centre": {
+   "n": 224,
+   "mean": 4.804,
+   "blowup": 0.07143,
+   "mult": 1.15,
+   "lo": 0.04444,
+   "hi": 0.11287
+  },
+  "Kauffman Stadium": {
+   "n": 221,
+   "mean": 4.52,
+   "blowup": 0.06787,
+   "mult": 1.093,
+   "lo": 0.04156,
+   "hi": 0.10895
+  },
+  "Great American Ball Park": {
+   "n": 222,
+   "mean": 5.05,
+   "blowup": 0.06757,
+   "mult": 1.088,
+   "lo": 0.04137,
+   "hi": 0.10848
+  },
+  "Citizens Bank Park": {
+   "n": 223,
+   "mean": 5.022,
+   "blowup": 0.06726,
+   "mult": 1.083,
+   "lo": 0.04118,
+   "hi": 0.108
+  },
+  "Sutter Health Park": {
+   "n": 135,
+   "mean": 6.126,
+   "blowup": 0.06667,
+   "mult": 1.073,
+   "lo": 0.03547,
+   "hi": 0.12185
+  },
+  "Daikin Park": {
+   "n": 140,
+   "mean": 5.236,
+   "blowup": 0.06429,
+   "mult": 1.035,
+   "lo": 0.03419,
+   "hi": 0.11766
+  },
+  "Citi Field": {
+   "n": 219,
+   "mean": 5.055,
+   "blowup": 0.06393,
+   "mult": 1.029,
+   "lo": 0.03846,
+   "hi": 0.10443
+  },
+  "Minute Maid Park": {
+   "n": 80,
+   "mean": 4.713,
+   "blowup": 0.0625,
+   "mult": 1.006,
+   "lo": 0.02699,
+   "hi": 0.1381
+  },
+  "Oakland Coliseum": {
+   "n": 81,
+   "mean": 4.926,
+   "blowup": 0.06173,
+   "mult": 0.994,
+   "lo": 0.02665,
+   "hi": 0.13649
+  },
+  "Comerica Park": {
+   "n": 220,
+   "mean": 4.786,
+   "blowup": 0.05909,
+   "mult": 0.951,
+   "lo": 0.03485,
+   "hi": 0.09846
+  },
+  "Angel Stadium": {
+   "n": 223,
+   "mean": 5.247,
+   "blowup": 0.0583,
+   "mult": 0.938,
+   "lo": 0.03438,
+   "hi": 0.09717
+  },
+  "PNC Park": {
+   "n": 222,
+   "mean": 4.995,
+   "blowup": 0.05405,
+   "mult": 0.87,
+   "lo": 0.03119,
+   "hi": 0.09209
+  },
+  "Petco Park": {
+   "n": 224,
+   "mean": 4.737,
+   "blowup": 0.05357,
+   "mult": 0.862,
+   "lo": 0.03091,
+   "hi": 0.09129
+  },
+  "Fenway Park": {
+   "n": 224,
+   "mean": 4.987,
+   "blowup": 0.05357,
+   "mult": 0.862,
+   "lo": 0.03091,
+   "hi": 0.09129
+  },
+  "Busch Stadium": {
+   "n": 228,
+   "mean": 4.636,
+   "blowup": 0.05263,
+   "mult": 0.847,
+   "lo": 0.03036,
+   "hi": 0.08973
+  },
+  "UNIQLO Field at Dodger Stadium": {
+   "n": 59,
+   "mean": 4.695,
+   "blowup": 0.05085,
+   "mult": 0.819,
+   "lo": 0.01744,
+   "hi": 0.13917
+  },
+  "Truist Park": {
+   "n": 225,
+   "mean": 4.729,
+   "blowup": 0.04444,
+   "mult": 0.716,
+   "lo": 0.02432,
+   "hi": 0.07987
+  },
+  "loanDepot park": {
+   "n": 224,
+   "mean": 5.107,
+   "blowup": 0.04018,
+   "mult": 0.647,
+   "lo": 0.02128,
+   "hi": 0.07458
+  },
+  "Dodger Stadium": {
+   "n": 161,
+   "mean": 5.149,
+   "blowup": 0.03727,
+   "mult": 0.6,
+   "lo": 0.01719,
+   "hi": 0.07891
+  },
+  "Progressive Field": {
+   "n": 220,
+   "mean": 4.773,
+   "blowup": 0.03636,
+   "mult": 0.585,
+   "lo": 0.01854,
+   "hi": 0.0701
+  },
+  "Globe Life Field": {
+   "n": 221,
+   "mean": 4.33,
+   "blowup": 0.0362,
+   "mult": 0.583,
+   "lo": 0.01845,
+   "hi": 0.06979
+  },
+  "American Family Field": {
+   "n": 225,
+   "mean": 4.902,
+   "blowup": 0.03556,
+   "mult": 0.572,
+   "lo": 0.01812,
+   "hi": 0.06858
+  },
+  "Tropicana Field": {
+   "n": 140,
+   "mean": 4.336,
+   "blowup": 0.02857,
+   "mult": 0.46,
+   "lo": 0.01117,
+   "hi": 0.07116
+  },
+  "T-Mobile Park": {
+   "n": 224,
+   "mean": 3.955,
+   "blowup": 0.02679,
+   "mult": 0.431,
+   "lo": 0.01233,
+   "hi": 0.0572
+  },
+  "Guaranteed Rate Field": {
+   "n": 82,
+   "mean": 4.256,
+   "blowup": 0.02439,
+   "mult": 0.393,
+   "lo": 0.00671,
+   "hi": 0.08464
+  },
+  "Rate Field": {
+   "n": 141,
+   "mean": 4.39,
+   "blowup": 0.02128,
+   "mult": 0.343,
+   "lo": 0.00726,
+   "hi": 0.06069
+  }
+ },
+ "team": {
+  "COL": {
+   "n": 445,
+   "blowup": 0.09663,
+   "mult": 1.556
+  },
+  "ATH": {
+   "n": 283,
+   "blowup": 0.09187,
+   "mult": 1.479
+  },
+  "AZ": {
+   "n": 447,
+   "blowup": 0.08501,
+   "mult": 1.369
+  },
+  "WSH": {
+   "n": 446,
+   "blowup": 0.08296,
+   "mult": 1.336
+  },
+  "MIN": {
+   "n": 446,
+   "blowup": 0.08072,
+   "mult": 1.299
+  },
+  "OAK": {
+   "n": 162,
+   "blowup": 0.08025,
+   "mult": 1.292
+  },
+  "CHC": {
+   "n": 445,
+   "blowup": 0.0764,
+   "mult": 1.23
+  },
+  "TOR": {
+   "n": 447,
+   "blowup": 0.07606,
+   "mult": 1.225
+  },
+  "SD": {
+   "n": 446,
+   "blowup": 0.06951,
+   "mult": 1.119
+  },
+  "NYY": {
+   "n": 444,
+   "blowup": 0.06532,
+   "mult": 1.051
+  },
+  "BAL": {
+   "n": 446,
+   "blowup": 0.06502,
+   "mult": 1.047
+  },
+  "CIN": {
+   "n": 446,
+   "blowup": 0.06502,
+   "mult": 1.047
+  },
+  "LAA": {
+   "n": 445,
+   "blowup": 0.06292,
+   "mult": 1.013
+  },
+  "STL": {
+   "n": 446,
+   "blowup": 0.06278,
+   "mult": 1.011
+  },
+  "LAD": {
+   "n": 445,
+   "blowup": 0.06067,
+   "mult": 0.977
+  },
+  "NYM": {
+   "n": 446,
+   "blowup": 0.06054,
+   "mult": 0.975
+  },
+  "HOU": {
+   "n": 444,
+   "blowup": 0.05856,
+   "mult": 0.943
+  },
+  "MIA": {
+   "n": 445,
+   "blowup": 0.05843,
+   "mult": 0.941
+  },
+  "TB": {
+   "n": 444,
+   "blowup": 0.05631,
+   "mult": 0.906
+  },
+  "KC": {
+   "n": 446,
+   "blowup": 0.05605,
+   "mult": 0.902
+  },
+  "ATL": {
+   "n": 447,
+   "blowup": 0.05593,
+   "mult": 0.9
+  },
+  "MIL": {
+   "n": 445,
+   "blowup": 0.05393,
+   "mult": 0.868
+  },
+  "SF": {
+   "n": 446,
+   "blowup": 0.05381,
+   "mult": 0.866
+  },
+  "BOS": {
+   "n": 446,
+   "blowup": 0.05381,
+   "mult": 0.866
+  },
+  "DET": {
+   "n": 444,
+   "blowup": 0.0518,
+   "mult": 0.834
+  },
+  "PHI": {
+   "n": 446,
+   "blowup": 0.05157,
+   "mult": 0.83
+  },
+  "CWS": {
+   "n": 444,
+   "blowup": 0.0473,
+   "mult": 0.761
+  },
+  "SEA": {
+   "n": 444,
+   "blowup": 0.0473,
+   "mult": 0.761
+  },
+  "PIT": {
+   "n": 446,
+   "blowup": 0.04709,
+   "mult": 0.758
+  },
+  "TEX": {
+   "n": 446,
+   "blowup": 0.03812,
+   "mult": 0.614
+  },
+  "CLE": {
+   "n": 444,
+   "blowup": 0.03604,
+   "mult": 0.58
+  }
+ },
  "histogram": {
   "0": 309,
   "1": 555,
