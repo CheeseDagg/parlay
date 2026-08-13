@@ -652,7 +652,54 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
               f"legs have ALREADY STARTED (now {_now}, newest event on the board "
               f"{_all_t[-1]}). These are not bettable and the cutoff is OFF -- "
               f"they can appear on the ticket. Drop --anytime to exclude them.")
+
+    # WHAT THIS BOARD CANNOT SEE, printed beside what it can.
+    #
+    # Rule 14 says the board is a floor and not a ceiling, and on 2026-08-13 that
+    # rule was broken three times before noon. "There are five soccer matches
+    # today" was said off this board alone while FanDuel was pricing about forty
+    # UEFA qualifiers, twice more after claiming it had been verified. The board
+    # was read correctly every time. The board is simply not the schedule.
+    #
+    # A rule that lives only in RULES.md gets skipped under exactly the pressure
+    # that makes it matter, so the blind spots ride along with the count -- same
+    # as a stale MLBTool slate or an empty strikeout ladder. coverage.json is the
+    # source and socdiag.py is its authority.
+    _cov_note(markets)
     return markets
+
+
+def _cov_note(markets):
+    """Print the feed's known blind spots for every family present on the board."""
+    import json as _json, os as _os
+    try:
+        with open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                                'coverage.json')) as fh:
+            cov = _json.load(fh)
+    except Exception:
+        print("  board: coverage.json unreadable -- the feed's blind spots are "
+              "UNKNOWN, so treat every 'there are N games' as a floor (rule 14)")
+        return
+    fams = {o['fam'] for v in markets.values() for o in v}
+    want = []
+    if fams & {'SOC', 'SOCT'}:
+        want.append('soccer')
+    if fams & {'F5', 'FG', 'ML', 'K'}:
+        want.append('mlb')
+    if fams & {'WNBA', 'CFL', 'BOX', 'MMA'}:
+        want.append('other')
+    for key in want:
+        c = cov.get(key) or {}
+        inv = c.get('invisible') or []
+        if not inv:
+            continue
+        print(f"  board: {key.upper()} IS A FLOOR, not the schedule "
+              f"(checked {c.get('checked','?')}). Not visible here: "
+              + '; '.join(inv))
+        for extra in (c.get('priced_elsewhere') or []):
+            print(f"         also: {extra}")
+        if c.get('how_to_recheck'):
+            print(f"         recheck: {c['how_to_recheck']}")
 
 
 # ---------------------------------------------------------------- selftest
@@ -844,6 +891,28 @@ def selftest():
     chk(all(o['d'] < 1 / o['p'] for o in _soc),
         "the synthesized payout keeps LESS than fair -- the 80% shave is on, "
         "so a derived leg can under-promise but never over-promise")
+
+    # ---- COVERAGE. Rule 14 as a printed condition rather than a remembered one.
+    import io, contextlib, json as _j
+    _cov = _j.load(open(__import__('os').path.join(
+        __import__('os').path.dirname(__import__('os').path.abspath(__file__)),
+        'coverage.json')))
+    chk('soccer' in _cov and _cov['soccer'].get('invisible'),
+        "coverage.json names what the soccer feed cannot see")
+    chk(any('Europa' in x for x in _cov['soccer']['invisible']),
+        "and names the two UEFA competitions that have NO catalog key at all -- "
+        "the gap that produced 'there are five soccer matches today' three times "
+        "in one morning while FanDuel priced about forty")
+    _b = io.StringIO()
+    with contextlib.redirect_stdout(_b):
+        _cov_note({('O', 'x'): [{'fam': 'SOC'}]})
+    chk('IS A FLOOR' in _b.getvalue() and 'Europa' in _b.getvalue(),
+        "a board carrying soccer legs prints its blind spots beside the count")
+    _b = io.StringIO()
+    with contextlib.redirect_stdout(_b):
+        _cov_note({('GT', 'x'): [{'fam': 'F5'}]})
+    chk('SOCCER IS A FLOOR' not in _b.getvalue(),
+        "and a board with no soccer on it is not lectured about soccer")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1

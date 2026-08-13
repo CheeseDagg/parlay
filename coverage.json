@@ -1,0 +1,55 @@
+{
+  "_README": [
+    "What the feed STRUCTURALLY CANNOT SEE, per sport.",
+    "",
+    "Rule 14 says the board is a floor and not a ceiling. It was written after",
+    "the board missed Walsh -630 and Plymouth -1100, and on 2026-08-13 it was",
+    "broken three times in one morning: 'there are five soccer matches today'",
+    "was said off the board alone while FanDuel was pricing roughly forty UEFA",
+    "qualifiers. Each time the board was read correctly. The board was simply",
+    "not the schedule, and nothing in the output said so.",
+    "",
+    "A rule that lives only in RULES.md gets skipped under time pressure. This",
+    "file exists so the blind spots are printed BESIDE the count, every time, by",
+    "board.py itself -- the same way a stale MLBTool slate and an empty strikeout",
+    "ladder are printed rather than left to be remembered.",
+    "",
+    "Keep it current with socdiag.py, which enumerates the live catalog in about",
+    "ninety seconds and is the authority for anything in here."
+  ],
+  "soccer": {
+    "checked": "2026-08-13",
+    "catalog_size": 67,
+    "invisible": [
+      "UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included",
+      "UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included",
+      "NCAA soccer (men's and women's) -- not carried",
+      "club friendlies -- not carried",
+      "most women's competitions -- not carried"
+    ],
+    "priced_elsewhere": [
+      "Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is",
+      "absent from the bookmakers list, so they return zero legs and look dark",
+      "Saudi Pro League returns fixtures with zero books attached"
+    ],
+    "note": "A UEFA qualifying round lives under its parent competition, and that parent is out of season in August -- so /v4/sports without all=true does not even list it. Neither key exists in the catalog at all, so no key can be added to fix it. FanDuel prices these; this feed will never see them. Screenshots are the only route.",
+    "how_to_recheck": "python3 socdiag.py  (runs on the Actions runner, ~90s)"
+  },
+  "mlb": {
+    "checked": "2026-08-13",
+    "invisible": [
+      "doubleheader second games -- one game key per day, the nightcap is dropped upstream"
+    ],
+    "note": "MLB coverage is otherwise complete; the gap is park/weather/model when MLBTool's slate is not today's, which board.py already prints separately.",
+    "how_to_recheck": "compare times.py START against the day's schedule"
+  },
+  "other": {
+    "checked": "2026-08-13",
+    "invisible": [
+      "NBA, NHL, NFL and college football are out of season in August and carry no key",
+      "boxing is pulled but FanDuel rarely prices the undercard"
+    ],
+    "note": "WNBA, CFL and MMA are covered.",
+    "how_to_recheck": "python3 socdiag.py lists every catalog key, not only soccer"
+  }
+}
