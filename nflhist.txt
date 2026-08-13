@@ -1,0 +1,17 @@
+7276 played games since 1999, 3028 since 2015
+
+  MONEYLINE reliability over 3027 games (said vs happened):
+    mult   1.94 points
+    power  1.47 points
+  TOTALS (mult) over 3027 games: 0.75 points  (28 pushes counted as under-losses; they void in practice)
+
+  P(favourite wins outright) by closing spread:
+    0-3      52.2%  n=699
+    3-6      62.1%  n=1185
+    6-9      74.8%  n=706
+    9-12     80.9%  n=249
+    12-15    90.1%  n=141
+    15-      93.2%  n=44
+
+  modern era: home wins 54.8%, mean total 45.67
+wrote /home/runner/work/parlay/parlay/nflhist.json
