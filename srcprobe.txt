@@ -1,10 +1,5 @@
-  xlsx path 2023     HTTP 200  67813B html, 0 file link(s)
-      (no xlsx/xls/csv hrefs; title: 🏀Top 10 Sports Betting Sites @ Online Sportsbooks Reviews)
-  old archive page   HTTP 200  67756B html, 0 file link(s)
-      (no xlsx/xls/csv hrefs; title: 🏀Top 10 Sports Betting Sites @ Online Sportsbooks Reviews)
-  wp page 2023       HTTP 200  67819B html, 0 file link(s)
-      (no xlsx/xls/csv hrefs; title: 🏀Top 10 Sports Betting Sites @ Online Sportsbooks Reviews)
-  wp page 2024       HTTP 200  67756B html, 0 file link(s)
-      (no xlsx/xls/csv hrefs; title: 🏀Top 10 Sports Betting Sites @ Online Sportsbooks Reviews)
-  archives index     HTTP 200  44815B html, 0 file link(s)
-      (no xlsx/xls/csv hrefs; title: Historical Sports Scores and Odds Archives @ Betting Odds, Lines & Spreads Explained)
+  espn cfl scoreboard FAIL HTTPError 403
+  espn cfl 2025 wk1   FAIL HTTPError 403
+  fixturedl cfl list  FAIL HTTPError 404
+  fixturedl feed 2025 FAIL HTTPError 404
+  wikipedia 2025 CFL  HTTP 200   300000B  marks=1  <!DOCTYPE html> | <html class="client-nojs vector-feature-language-in-header-ena
