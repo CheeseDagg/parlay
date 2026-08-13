@@ -13,23 +13,33 @@
   Brazil Serie A: 5534 matches with closing odds
   Japan J-League: 4523 matches with closing odds
   China Super League: 2973 matches with closing odds
+  Denmark Superliga: 2968 matches with closing odds
+  Finland Veikkausliiga: 2658 matches with closing odds
+  Norway Eliteserien: 3511 matches with closing odds
+  Poland Ekstraklasa: 4106 matches with closing odds
+  Russia Premier League: 3414 matches with closing odds
+  Sweden Allsvenskan: 3511 matches with closing odds
+  Austria Bundesliga (odds): 2650 matches with closing odds
+  Romania Liga 1: 4213 matches with closing odds
+  Switzerland Super League: 2692 matches with closing odds
+  Ireland Premier: 2697 matches with closing odds
 
-  52710 matches with closing odds and results
+  85130 matches with closing odds and results
 
   DE-VIG RELIABILITY -- n-weighted mean |predicted - actual|
-    3-way mult    0.90 points   |  favourite DC mult    1.24 points
-    3-way power   0.36 points   |  favourite DC power   0.68 points
+    3-way mult    0.86 points   |  favourite DC mult    1.06 points
+    3-way power   0.32 points   |  favourite DC power   0.57 points
     under 2.5 (2-way mult)   1.25 points over 22617 matches
 
   favourite-DC reliability by bin (mult):
-    said  64.3%  happened  64.9%   n=1417
-    said  67.7%  happened  67.2%   n=12044
-    said  72.4%  happened  74.1%   n=12841
-    said  77.4%  happened  79.0%   n=10446
-    said  82.3%  happened  83.4%   n=8364
-    said  87.3%  happened  88.9%   n=5051
-    said  92.1%  happened  93.7%   n=2224
-    said  96.0%  happened  96.9%   n=323
+    said  64.3%  happened  64.9%   n=2335
+    said  67.7%  happened  67.3%   n=19703
+    said  72.4%  happened  73.7%   n=20509
+    said  77.4%  happened  79.0%   n=16554
+    said  82.3%  happened  83.2%   n=13479
+    said  87.3%  happened  88.6%   n=8518
+    said  92.0%  happened  93.7%   n=3592
+    said  96.1%  happened  97.5%   n=440
 
   BASE RATES for the leagues openfootball lacks:
     USA MLS                n=6085   draw 25.1%  goals 2.91  U2.5 43.3%
@@ -38,6 +48,16 @@
     Brazil Serie A         n=5534   draw 26.9%  goals 2.39  U2.5 56.5%
     Japan J-League         n=4523   draw 24.9%  goals 2.62  U2.5 51.5%
     China Super League     n=2973   draw 25.3%  goals 2.92  U2.5 44.0%
+    Denmark Superliga      n=2968   draw 26.1%  goals 2.79  U2.5 46.5%
+    Finland Veikkausliiga  n=2658   draw 25.5%  goals 2.64  U2.5 50.9%
+    Norway Eliteserien     n=3511   draw 24.0%  goals 2.99  U2.5 42.3%
+    Poland Ekstraklasa     n=4106   draw 27.1%  goals 2.65  U2.5 50.6%
+    Russia Premier League  n=3414   draw 25.8%  goals 2.53  U2.5 53.3%
+    Sweden Allsvenskan     n=3511   draw 25.1%  goals 2.81  U2.5 46.0%
+    Austria Bundesliga (odds) n=2650   draw 25.0%  goals 2.90  U2.5 44.8%
+    Romania Liga 1         n=4213   draw 27.8%  goals 2.41  U2.5 56.5%
+    Switzerland Super League n=2692   draw 25.6%  goals 3.01  U2.5 42.0%
+    Ireland Premier        n=2697   draw 24.8%  goals 2.58  U2.5 52.1%
 
-  rows from the CURRENT (2026-27 / 2026) season: 2681 -- form exists here
+  rows from the CURRENT (2026-27 / 2026) season: 3302 -- form exists here
 wrote /home/runner/work/parlay/parlay/sococalib.json
