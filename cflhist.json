@@ -7,123 +7,67 @@
   2025
  ],
  "stats": {
-  "n": 160,
-  "home_w": 89,
-  "ties": 0,
-  "home_pct": 0.5563,
+  "n": 321,
+  "home_w": 170,
+  "ties": 2,
+  "home_pct": 0.5329,
   "home_lo_hi": [
-   0.4788,
-   0.631
+   0.4781,
+   0.5869
   ],
-  "mean_total": 48.6,
+  "mean_total": 51.48,
   "rungs": {
    "41.5": {
-    "p_under": 0.325,
-    "n": 160,
-    "lo": 0.2573,
-    "hi": 0.4009
+    "p_under": 0.2586,
+    "n": 321,
+    "lo": 0.2137,
+    "hi": 0.3091
    },
    "43.5": {
-    "p_under": 0.4,
-    "n": 160,
-    "lo": 0.3273,
-    "hi": 0.4774
+    "p_under": 0.3209,
+    "n": 321,
+    "lo": 0.2722,
+    "hi": 0.3738
    },
    "45.5": {
-    "p_under": 0.4562,
-    "n": 160,
-    "lo": 0.381,
-    "hi": 0.5336
+    "p_under": 0.3707,
+    "n": 321,
+    "lo": 0.3197,
+    "hi": 0.4248
    },
    "47.5": {
-    "p_under": 0.5125,
-    "n": 160,
-    "lo": 0.4357,
-    "hi": 0.5887
+    "p_under": 0.4174,
+    "n": 321,
+    "lo": 0.3648,
+    "hi": 0.4721
    },
    "49.5": {
-    "p_under": 0.5625,
-    "n": 160,
-    "lo": 0.4851,
-    "hi": 0.637
+    "p_under": 0.4673,
+    "n": 321,
+    "lo": 0.4134,
+    "hi": 0.5219
    },
    "51.5": {
-    "p_under": 0.6188,
-    "n": 160,
-    "lo": 0.5415,
-    "hi": 0.6904
+    "p_under": 0.5296,
+    "n": 321,
+    "lo": 0.475,
+    "hi": 0.5835
    },
    "53.5": {
-    "p_under": 0.675,
-    "n": 160,
-    "lo": 0.5991,
-    "hi": 0.7427
+    "p_under": 0.5763,
+    "n": 321,
+    "lo": 0.5217,
+    "hi": 0.6292
    },
    "55.5": {
-    "p_under": 0.7375,
-    "n": 160,
-    "lo": 0.6643,
-    "hi": 0.7995
+    "p_under": 0.6231,
+    "n": 321,
+    "lo": 0.5689,
+    "hi": 0.6743
    }
   }
  },
  "games": [
-  {
-   "date": "2022-05-27",
-   "home": "Ottawa Redblacks",
-   "away": "Toronto Argonauts",
-   "hs": 23,
-   "as": 17
-  },
-  {
-   "date": "2022-05-27",
-   "home": "Winnipeg Blue Bombers",
-   "away": "Edmonton Elks",
-   "hs": 20,
-   "as": 30
-  },
-  {
-   "date": "2022-05-28",
-   "home": "Calgary Stampeders",
-   "away": "BC Lions",
-   "hs": 41,
-   "as": 6
-  },
-  {
-   "date": "2022-05-28",
-   "home": "Hamilton Tiger-Cats",
-   "away": "Montreal Alouettes",
-   "hs": 25,
-   "as": 23
-  },
-  {
-   "date": "2022-06-03",
-   "home": "BC Lions",
-   "away": "Saskatchewan Roughriders",
-   "hs": 20,
-   "as": 18
-  },
-  {
-   "date": "2022-06-03",
-   "home": "Edmonton Elks",
-   "away": "Calgary Stampeders",
-   "hs": 7,
-   "as": 37
-  },
-  {
-   "date": "2022-06-03",
-   "home": "Montreal Alouettes",
-   "away": "Ottawa Redblacks",
-   "hs": 27,
-   "as": 26
-  },
-  {
-   "date": "2022-06-03",
-   "home": "Toronto Argonauts",
-   "away": "Hamilton Tiger-Cats",
-   "hs": 18,
-   "as": 17
-  },
   {
    "date": "2022-06-09",
    "home": "Calgary Stampeders",
@@ -342,67 +286,347 @@
    "as": 23
   },
   {
-   "date": "2023-05-22",
-   "home": "Calgary Stampeders",
-   "away": "Edmonton Elks",
-   "hs": 29,
-   "as": 24
-  },
-  {
-   "date": "2023-05-26",
+   "date": "2022-08-05",
    "home": "Ottawa Redblacks",
+   "away": "Calgary Stampeders",
+   "hs": 3,
+   "as": 17
+  },
+  {
+   "date": "2022-08-06",
+   "home": "BC Lions",
+   "away": "Edmonton Elks",
+   "hs": 46,
+   "as": 14
+  },
+  {
+   "date": "2022-08-06",
+   "home": "Toronto Argonauts",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 34,
+   "as": 20
+  },
+  {
+   "date": "2022-08-11",
+   "home": "Winnipeg Blue Bombers",
    "away": "Montreal Alouettes",
-   "hs": 21,
-   "as": 22
+   "hs": 17,
+   "as": 20
   },
   {
-   "date": "2023-05-27",
-   "home": "Edmonton Elks",
-   "away": "Winnipeg Blue Bombers",
-   "hs": 23,
-   "as": 25
-  },
-  {
-   "date": "2023-05-27",
+   "date": "2022-08-12",
    "home": "Hamilton Tiger-Cats",
    "away": "Toronto Argonauts",
-   "hs": 27,
-   "as": 22
-  },
-  {
-   "date": "2023-05-27",
-   "home": "Saskatchewan Roughriders",
-   "away": "BC Lions",
-   "hs": 30,
+   "hs": 34,
    "as": 27
   },
   {
-   "date": "2023-06-01",
-   "home": "BC Lions",
-   "away": "Calgary Stampeders",
-   "hs": 25,
-   "as": 22
+   "date": "2022-08-13",
+   "home": "Calgary Stampeders",
+   "away": "BC Lions",
+   "hs": 40,
+   "as": 41
   },
   {
-   "date": "2023-06-01",
-   "home": "Toronto Argonauts",
-   "away": "Ottawa Redblacks",
+   "date": "2022-08-13",
+   "home": "Edmonton Elks",
+   "away": "Saskatchewan Roughriders",
    "hs": 23,
    "as": 34
   },
   {
-   "date": "2023-06-02",
+   "date": "2022-08-19",
+   "home": "Ottawa Redblacks",
+   "away": "Edmonton Elks",
+   "hs": 12,
+   "as": 30
+  },
+  {
+   "date": "2022-08-19",
+   "home": "Saskatchewan Roughriders",
+   "away": "BC Lions",
+   "hs": 10,
+   "as": 28
+  },
+  {
+   "date": "2022-08-20",
    "home": "Montreal Alouettes",
    "away": "Hamilton Tiger-Cats",
-   "hs": 25,
+   "hs": 29,
+   "as": 28
+  },
+  {
+   "date": "2022-08-20",
+   "home": "Toronto Argonauts",
+   "away": "Calgary Stampeders",
+   "hs": 19,
    "as": 22
   },
   {
-   "date": "2023-06-02",
+   "date": "2022-08-25",
    "home": "Winnipeg Blue Bombers",
+   "away": "Calgary Stampeders",
+   "hs": 31,
+   "as": 29
+  },
+  {
+   "date": "2022-08-26",
+   "home": "BC Lions",
    "away": "Saskatchewan Roughriders",
    "hs": 16,
+   "as": 23
+  },
+  {
+   "date": "2022-08-26",
+   "home": "Toronto Argonauts",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 37,
+   "as": 20
+  },
+  {
+   "date": "2022-08-27",
+   "home": "Edmonton Elks",
+   "away": "Ottawa Redblacks",
+   "hs": 18,
+   "as": 25
+  },
+  {
+   "date": "2022-09-02",
+   "home": "Montreal Alouettes",
+   "away": "Ottawa Redblacks",
+   "hs": 24,
+   "as": 38
+  },
+  {
+   "date": "2022-09-04",
+   "home": "Saskatchewan Roughriders",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 18,
+   "as": 20
+  },
+  {
+   "date": "2022-09-05",
+   "home": "Calgary Stampeders",
+   "away": "Edmonton Elks",
+   "hs": 26,
+   "as": 18
+  },
+  {
+   "date": "2022-09-05",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Toronto Argonauts",
+   "hs": 8,
    "as": 28
+  },
+  {
+   "date": "2022-09-09",
+   "home": "Montreal Alouettes",
+   "away": "BC Lions",
+   "hs": 31,
+   "as": 10
+  },
+  {
+   "date": "2022-09-10",
+   "home": "Edmonton Elks",
+   "away": "Calgary Stampeders",
+   "hs": 28,
+   "as": 56
+  },
+  {
+   "date": "2022-09-10",
+   "home": "Ottawa Redblacks",
+   "away": "Toronto Argonauts",
+   "hs": 19,
+   "as": 24
+  },
+  {
+   "date": "2022-09-10",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Saskatchewan Roughriders",
+   "hs": 54,
+   "as": 20
+  },
+  {
+   "date": "2022-09-16",
+   "home": "Saskatchewan Roughriders",
+   "away": "Edmonton Elks",
+   "hs": 24,
+   "as": 26
+  },
+  {
+   "date": "2022-09-17",
+   "home": "Calgary Stampeders",
+   "away": "BC Lions",
+   "hs": 29,
+   "as": 31
+  },
+  {
+   "date": "2022-09-17",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 48,
+   "as": 31
+  },
+  {
+   "date": "2022-09-23",
+   "home": "Montreal Alouettes",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 23,
+   "as": 16
+  },
+  {
+   "date": "2022-09-24",
+   "home": "BC Lions",
+   "away": "Calgary Stampeders",
+   "hs": 11,
+   "as": 25
+  },
+  {
+   "date": "2022-09-24",
+   "home": "Ottawa Redblacks",
+   "away": "Toronto Argonauts",
+   "hs": 15,
+   "as": 45
+  },
+  {
+   "date": "2022-09-30",
+   "home": "BC Lions",
+   "away": "Ottawa Redblacks",
+   "hs": 34,
+   "as": 19
+  },
+  {
+   "date": "2022-09-30",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Saskatchewan Roughriders",
+   "hs": 31,
+   "as": 13
+  },
+  {
+   "date": "2022-10-01",
+   "home": "Calgary Stampeders",
+   "away": "Toronto Argonauts",
+   "hs": 29,
+   "as": 2
+  },
+  {
+   "date": "2022-10-01",
+   "home": "Edmonton Elks",
+   "away": "Montreal Alouettes",
+   "hs": 18,
+   "as": 25
+  },
+  {
+   "date": "2022-10-07",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Saskatchewan Roughriders",
+   "hs": 18,
+   "as": 14
+  },
+  {
+   "date": "2022-10-08",
+   "home": "Toronto Argonauts",
+   "away": "BC Lions",
+   "hs": 23,
+   "as": 20
+  },
+  {
+   "date": "2022-10-08",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Edmonton Elks",
+   "hs": 48,
+   "as": 11
+  },
+  {
+   "date": "2022-10-10",
+   "home": "Montreal Alouettes",
+   "away": "Ottawa Redblacks",
+   "hs": 18,
+   "as": 24
+  },
+  {
+   "date": "2022-10-14",
+   "home": "Calgary Stampeders",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 32,
+   "as": 35
+  },
+  {
+   "date": "2022-10-14",
+   "home": "Ottawa Redblacks",
+   "away": "Montreal Alouettes",
+   "hs": 30,
+   "as": 34
+  },
+  {
+   "date": "2022-10-15",
+   "home": "BC Lions",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 40,
+   "as": 32
+  },
+  {
+   "date": "2022-10-15",
+   "home": "Edmonton Elks",
+   "away": "Toronto Argonauts",
+   "hs": 23,
+   "as": 28
+  },
+  {
+   "date": "2022-10-21",
+   "home": "Edmonton Elks",
+   "away": "BC Lions",
+   "hs": 14,
+   "as": 31
+  },
+  {
+   "date": "2022-10-21",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Ottawa Redblacks",
+   "hs": 30,
+   "as": 27
+  },
+  {
+   "date": "2022-10-22",
+   "home": "Montreal Alouettes",
+   "away": "Toronto Argonauts",
+   "hs": 23,
+   "as": 24
+  },
+  {
+   "date": "2022-10-22",
+   "home": "Saskatchewan Roughriders",
+   "away": "Calgary Stampeders",
+   "hs": 21,
+   "as": 32
+  },
+  {
+   "date": "2022-10-28",
+   "home": "Winnipeg Blue Bombers",
+   "away": "BC Lions",
+   "hs": 24,
+   "as": 9
+  },
+  {
+   "date": "2022-10-29",
+   "home": "Calgary Stampeders",
+   "away": "Saskatchewan Roughriders",
+   "hs": 36,
+   "as": 10
+  },
+  {
+   "date": "2022-10-29",
+   "home": "Ottawa Redblacks",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 16,
+   "as": 23
+  },
+  {
+   "date": "2022-10-29",
+   "home": "Toronto Argonauts",
+   "away": "Montreal Alouettes",
+   "hs": 33,
+   "as": 38
   },
   {
    "date": "2023-06-08",
@@ -615,67 +839,354 @@
    "as": 18
   },
   {
-   "date": "2024-05-20",
-   "home": "Saskatchewan Roughriders",
-   "away": "Winnipeg Blue Bombers",
-   "hs": 25,
-   "as": 12
-  },
-  {
-   "date": "2024-05-25",
-   "home": "Calgary Stampeders",
+   "date": "2023-08-03",
+   "home": "Winnipeg Blue Bombers",
    "away": "BC Lions",
-   "hs": 30,
-   "as": 6
-  },
-  {
-   "date": "2024-05-25",
-   "home": "Edmonton Elks",
-   "away": "Saskatchewan Roughriders",
-   "hs": 27,
-   "as": 28
-  },
-  {
-   "date": "2024-05-25",
-   "home": "Hamilton Tiger-Cats",
-   "away": "Ottawa Redblacks",
-   "hs": 22,
-   "as": 31
-  },
-  {
-   "date": "2024-05-25",
-   "home": "Montreal Alouettes",
-   "away": "Toronto Argonauts",
-   "hs": 30,
-   "as": 13
-  },
-  {
-   "date": "2024-05-31",
-   "home": "BC Lions",
-   "away": "Edmonton Elks",
-   "hs": 26,
-   "as": 9
-  },
-  {
-   "date": "2024-05-31",
-   "home": "Ottawa Redblacks",
-   "away": "Montreal Alouettes",
-   "hs": 19,
-   "as": 13
-  },
-  {
-   "date": "2024-05-31",
-   "home": "Toronto Argonauts",
-   "away": "Hamilton Tiger-Cats",
-   "hs": 25,
+   "hs": 50,
    "as": 14
   },
   {
-   "date": "2024-05-31",
-   "home": "Winnipeg Blue Bombers",
+   "date": "2023-08-04",
+   "home": "Calgary Stampeders",
+   "away": "Toronto Argonauts",
+   "hs": 20,
+   "as": 7
+  },
+  {
+   "date": "2023-08-05",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Montreal Alouettes",
+   "hs": 14,
+   "as": 27
+  },
+  {
+   "date": "2023-08-06",
+   "home": "Saskatchewan Roughriders",
+   "away": "Ottawa Redblacks",
+   "hs": 26,
+   "as": 24
+  },
+  {
+   "date": "2023-08-10",
+   "home": "Edmonton Elks",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 29,
+   "as": 38
+  },
+  {
+   "date": "2023-08-11",
+   "home": "Montreal Alouettes",
+   "away": "Saskatchewan Roughriders",
+   "hs": 41,
+   "as": 12
+  },
+  {
+   "date": "2023-08-12",
+   "home": "BC Lions",
    "away": "Calgary Stampeders",
-   "hs": 10,
+   "hs": 37,
+   "as": 9
+  },
+  {
+   "date": "2023-08-13",
+   "home": "Toronto Argonauts",
+   "away": "Ottawa Redblacks",
+   "hs": 44,
    "as": 31
+  },
+  {
+   "date": "2023-08-17",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Edmonton Elks",
+   "hs": 10,
+   "as": 24
+  },
+  {
+   "date": "2023-08-18",
+   "home": "Calgary Stampeders",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 18,
+   "as": 19
+  },
+  {
+   "date": "2023-08-19",
+   "home": "Ottawa Redblacks",
+   "away": "Montreal Alouettes",
+   "hs": 24,
+   "as": 25
+  },
+  {
+   "date": "2023-08-20",
+   "home": "Saskatchewan Roughriders",
+   "away": "BC Lions",
+   "hs": 34,
+   "as": 29
+  },
+  {
+   "date": "2023-08-24",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Montreal Alouettes",
+   "hs": 47,
+   "as": 17
+  },
+  {
+   "date": "2023-08-25",
+   "home": "Toronto Argonauts",
+   "away": "Calgary Stampeders",
+   "hs": 39,
+   "as": 31
+  },
+  {
+   "date": "2023-08-26",
+   "home": "BC Lions",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 13,
+   "as": 30
+  },
+  {
+   "date": "2023-08-27",
+   "home": "Edmonton Elks",
+   "away": "Ottawa Redblacks",
+   "hs": 30,
+   "as": 20
+  },
+  {
+   "date": "2023-09-02",
+   "home": "Montreal Alouettes",
+   "away": "BC Lions",
+   "hs": 25,
+   "as": 34
+  },
+  {
+   "date": "2023-09-03",
+   "home": "Saskatchewan Roughriders",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 32,
+   "as": 30
+  },
+  {
+   "date": "2023-09-04",
+   "home": "Calgary Stampeders",
+   "away": "Edmonton Elks",
+   "hs": 35,
+   "as": 31
+  },
+  {
+   "date": "2023-09-04",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Toronto Argonauts",
+   "hs": 28,
+   "as": 41
+  },
+  {
+   "date": "2023-09-08",
+   "home": "Ottawa Redblacks",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 24,
+   "as": 27
+  },
+  {
+   "date": "2023-09-09",
+   "home": "Edmonton Elks",
+   "away": "Calgary Stampeders",
+   "hs": 25,
+   "as": 23
+  },
+  {
+   "date": "2023-09-09",
+   "home": "Toronto Argonauts",
+   "away": "Montreal Alouettes",
+   "hs": 39,
+   "as": 10
+  },
+  {
+   "date": "2023-09-09",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Saskatchewan Roughriders",
+   "hs": 51,
+   "as": 6
+  },
+  {
+   "date": "2023-09-15",
+   "home": "Montreal Alouettes",
+   "away": "Toronto Argonauts",
+   "hs": 20,
+   "as": 23
+  },
+  {
+   "date": "2023-09-15",
+   "home": "Saskatchewan Roughriders",
+   "away": "Edmonton Elks",
+   "hs": 27,
+   "as": 36
+  },
+  {
+   "date": "2023-09-16",
+   "home": "BC Lions",
+   "away": "Ottawa Redblacks",
+   "hs": 41,
+   "as": 37
+  },
+  {
+   "date": "2023-09-16",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 29,
+   "as": 23
+  },
+  {
+   "date": "2023-09-22",
+   "home": "Edmonton Elks",
+   "away": "BC Lions",
+   "hs": 29,
+   "as": 37
+  },
+  {
+   "date": "2023-09-22",
+   "home": "Ottawa Redblacks",
+   "away": "Saskatchewan Roughriders",
+   "hs": 36,
+   "as": 28
+  },
+  {
+   "date": "2023-09-23",
+   "home": "Calgary Stampeders",
+   "away": "Montreal Alouettes",
+   "hs": 11,
+   "as": 28
+  },
+  {
+   "date": "2023-09-23",
+   "home": "Toronto Argonauts",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 29,
+   "as": 14
+  },
+  {
+   "date": "2023-09-29",
+   "home": "BC Lions",
+   "away": "Saskatchewan Roughriders",
+   "hs": 33,
+   "as": 26
+  },
+  {
+   "date": "2023-09-29",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Toronto Argonauts",
+   "hs": 31,
+   "as": 21
+  },
+  {
+   "date": "2023-09-30",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Calgary Stampeders",
+   "hs": 22,
+   "as": 15
+  },
+  {
+   "date": "2023-09-30",
+   "home": "Ottawa Redblacks",
+   "away": "Montreal Alouettes",
+   "hs": 15,
+   "as": 32
+  },
+  {
+   "date": "2023-10-06",
+   "home": "BC Lions",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 26,
+   "as": 34
+  },
+  {
+   "date": "2023-10-06",
+   "home": "Toronto Argonauts",
+   "away": "Edmonton Elks",
+   "hs": 35,
+   "as": 12
+  },
+  {
+   "date": "2023-10-07",
+   "home": "Saskatchewan Roughriders",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 13,
+   "as": 38
+  },
+  {
+   "date": "2023-10-09",
+   "home": "Montreal Alouettes",
+   "away": "Ottawa Redblacks",
+   "hs": 29,
+   "as": 3
+  },
+  {
+   "date": "2023-10-13",
+   "home": "Calgary Stampeders",
+   "away": "Saskatchewan Roughriders",
+   "hs": 26,
+   "as": 19
+  },
+  {
+   "date": "2023-10-13",
+   "home": "Hamilton Tiger-Cats",
+   "away": "BC Lions",
+   "hs": 30,
+   "as": 33
+  },
+  {
+   "date": "2023-10-14",
+   "home": "Edmonton Elks",
+   "away": "Montreal Alouettes",
+   "hs": 21,
+   "as": 35
+  },
+  {
+   "date": "2023-10-14",
+   "home": "Toronto Argonauts",
+   "away": "Ottawa Redblacks",
+   "hs": 40,
+   "as": 27
+  },
+  {
+   "date": "2023-10-20",
+   "home": "BC Lions",
+   "away": "Calgary Stampeders",
+   "hs": 16,
+   "as": 41
+  },
+  {
+   "date": "2023-10-21",
+   "home": "Saskatchewan Roughriders",
+   "away": "Toronto Argonauts",
+   "hs": 26,
+   "as": 29
+  },
+  {
+   "date": "2023-10-21",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Edmonton Elks",
+   "hs": 45,
+   "as": 25
+  },
+  {
+   "date": "2023-10-27",
+   "home": "Calgary Stampeders",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 13,
+   "as": 36
+  },
+  {
+   "date": "2023-10-28",
+   "home": "Montreal Alouettes",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 22,
+   "as": 20
+  },
+  {
+   "date": "2023-10-28",
+   "home": "Ottawa Redblacks",
+   "away": "Toronto Argonauts",
+   "hs": 22,
+   "as": 27
   },
   {
    "date": "2024-06-06",
@@ -902,67 +1413,340 @@
    "as": 44
   },
   {
-   "date": "2025-05-19",
-   "home": "BC Lions",
-   "away": "Calgary Stampeders",
-   "hs": 16,
-   "as": 26
+   "date": "2024-08-01",
+   "home": "Winnipeg Blue Bombers",
+   "away": "BC Lions",
+   "hs": 25,
+   "as": 0
   },
   {
-   "date": "2025-05-24",
-   "home": "Calgary Stampeders",
+   "date": "2024-08-02",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Montreal Alouettes",
+   "hs": 16,
+   "as": 33
+  },
+  {
+   "date": "2024-08-03",
+   "home": "Saskatchewan Roughriders",
    "away": "Edmonton Elks",
    "hs": 31,
-   "as": 4
+   "as": 42
   },
   {
-   "date": "2025-05-24",
-   "home": "Hamilton Tiger-Cats",
+   "date": "2024-08-04",
+   "home": "Calgary Stampeders",
    "away": "Toronto Argonauts",
-   "hs": 24,
-   "as": 16
-  },
-  {
-   "date": "2025-05-24",
-   "home": "Montreal Alouettes",
-   "away": "Ottawa Redblacks",
-   "hs": 7,
+   "hs": 27,
    "as": 23
   },
   {
-   "date": "2025-05-24",
-   "home": "Winnipeg Blue Bombers",
+   "date": "2024-08-08",
+   "home": "Ottawa Redblacks",
    "away": "Saskatchewan Roughriders",
-   "hs": 15,
-   "as": 9
+   "hs": 22,
+   "as": 22
   },
   {
-   "date": "2025-05-30",
+   "date": "2024-08-09",
+   "home": "Toronto Argonauts",
+   "away": "Calgary Stampeders",
+   "hs": 39,
+   "as": 25
+  },
+  {
+   "date": "2024-08-10",
+   "home": "Montreal Alouettes",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 33,
+   "as": 23
+  },
+  {
+   "date": "2024-08-11",
    "home": "Edmonton Elks",
    "away": "BC Lions",
+   "hs": 33,
+   "as": 16
+  },
+  {
+   "date": "2024-08-15",
+   "home": "Calgary Stampeders",
+   "away": "Ottawa Redblacks",
+   "hs": 29,
+   "as": 31
+  },
+  {
+   "date": "2024-08-16",
+   "home": "Saskatchewan Roughriders",
+   "away": "Montreal Alouettes",
+   "hs": 24,
+   "as": 27
+  },
+  {
+   "date": "2024-08-17",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Edmonton Elks",
+   "hs": 22,
+   "as": 47
+  },
+  {
+   "date": "2024-08-18",
+   "home": "BC Lions",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 11,
+   "as": 20
+  },
+  {
+   "date": "2024-08-22",
+   "home": "Toronto Argonauts",
+   "away": "Saskatchewan Roughriders",
    "hs": 20,
    "as": 19
   },
   {
-   "date": "2025-05-30",
-   "home": "Ottawa Redblacks",
-   "away": "Montreal Alouettes",
-   "hs": 16,
-   "as": 24
+   "date": "2024-08-23",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 26,
+   "as": 23
   },
   {
-   "date": "2025-05-30",
-   "home": "Saskatchewan Roughriders",
-   "away": "Winnipeg Blue Bombers",
-   "hs": 20,
+   "date": "2024-08-24",
+   "home": "Ottawa Redblacks",
+   "away": "BC Lions",
+   "hs": 34,
    "as": 27
   },
   {
-   "date": "2025-05-30",
+   "date": "2024-08-25",
+   "home": "Montreal Alouettes",
+   "away": "Edmonton Elks",
+   "hs": 21,
+   "as": 17
+  },
+  {
+   "date": "2024-09-01",
+   "home": "Saskatchewan Roughriders",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 33,
+   "as": 35
+  },
+  {
+   "date": "2024-09-02",
+   "home": "Calgary Stampeders",
+   "away": "Edmonton Elks",
+   "hs": 20,
+   "as": 35
+  },
+  {
+   "date": "2024-09-02",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Toronto Argonauts",
+   "hs": 31,
+   "as": 28
+  },
+  {
+   "date": "2024-09-06",
+   "home": "Montreal Alouettes",
+   "away": "BC Lions",
+   "hs": 23,
+   "as": 37
+  },
+  {
+   "date": "2024-09-07",
+   "home": "Edmonton Elks",
+   "away": "Calgary Stampeders",
+   "hs": 37,
+   "as": 16
+  },
+  {
+   "date": "2024-09-07",
+   "home": "Ottawa Redblacks",
+   "away": "Toronto Argonauts",
+   "hs": 41,
+   "as": 27
+  },
+  {
+   "date": "2024-09-07",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Saskatchewan Roughriders",
+   "hs": 26,
+   "as": 21
+  },
+  {
+   "date": "2024-09-13",
+   "home": "BC Lions",
+   "away": "Toronto Argonauts",
+   "hs": 17,
+   "as": 33
+  },
+  {
+   "date": "2024-09-14",
+   "home": "Calgary Stampeders",
+   "away": "Montreal Alouettes",
+   "hs": 19,
+   "as": 19
+  },
+  {
+   "date": "2024-09-14",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Ottawa Redblacks",
+   "hs": 37,
+   "as": 21
+  },
+  {
+   "date": "2024-09-20",
+   "home": "Calgary Stampeders",
+   "away": "Saskatchewan Roughriders",
+   "hs": 29,
+   "as": 37
+  },
+  {
+   "date": "2024-09-20",
    "home": "Toronto Argonauts",
    "away": "Hamilton Tiger-Cats",
-   "hs": 30,
+   "hs": 31,
+   "as": 33
+  },
+  {
+   "date": "2024-09-21",
+   "home": "Edmonton Elks",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 14,
+   "as": 27
+  },
+  {
+   "date": "2024-09-21",
+   "home": "Ottawa Redblacks",
+   "away": "Montreal Alouettes",
+   "hs": 12,
+   "as": 24
+  },
+  {
+   "date": "2024-09-27",
+   "home": "BC Lions",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 29,
+   "as": 32
+  },
+  {
+   "date": "2024-09-27",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Edmonton Elks",
+   "hs": 55,
+   "as": 27
+  },
+  {
+   "date": "2024-09-28",
+   "home": "Saskatchewan Roughriders",
+   "away": "Ottawa Redblacks",
+   "hs": 29,
+   "as": 16
+  },
+  {
+   "date": "2024-09-28",
+   "home": "Toronto Argonauts",
+   "away": "Montreal Alouettes",
+   "hs": 37,
+   "as": 31
+  },
+  {
+   "date": "2024-10-04",
+   "home": "BC Lions",
+   "away": "Calgary Stampeders",
+   "hs": 32,
+   "as": 15
+  },
+  {
+   "date": "2024-10-04",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 10,
+   "as": 31
+  },
+  {
+   "date": "2024-10-05",
+   "home": "Edmonton Elks",
+   "away": "Saskatchewan Roughriders",
+   "hs": 24,
+   "as": 28
+  },
+  {
+   "date": "2024-10-11",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Toronto Argonauts",
+   "hs": 11,
+   "as": 14
+  },
+  {
+   "date": "2024-10-12",
+   "home": "Calgary Stampeders",
+   "away": "Edmonton Elks",
+   "hs": 18,
    "as": 23
+  },
+  {
+   "date": "2024-10-12",
+   "home": "Saskatchewan Roughriders",
+   "away": "BC Lions",
+   "hs": 39,
+   "as": 8
+  },
+  {
+   "date": "2024-10-14",
+   "home": "Montreal Alouettes",
+   "away": "Ottawa Redblacks",
+   "hs": 19,
+   "as": 12
+  },
+  {
+   "date": "2024-10-18",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Calgary Stampeders",
+   "hs": 42,
+   "as": 20
+  },
+  {
+   "date": "2024-10-19",
+   "home": "BC Lions",
+   "away": "Montreal Alouettes",
+   "hs": 27,
+   "as": 3
+  },
+  {
+   "date": "2024-10-19",
+   "home": "Toronto Argonauts",
+   "away": "Ottawa Redblacks",
+   "hs": 38,
+   "as": 31
+  },
+  {
+   "date": "2024-10-25",
+   "home": "Edmonton Elks",
+   "away": "Toronto Argonauts",
+   "hs": 31,
+   "as": 30
+  },
+  {
+   "date": "2024-10-25",
+   "home": "Ottawa Redblacks",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 37,
+   "as": 31
+  },
+  {
+   "date": "2024-10-26",
+   "home": "Montreal Alouettes",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 27,
+   "as": 28
+  },
+  {
+   "date": "2024-10-26",
+   "home": "Saskatchewan Roughriders",
+   "away": "Calgary Stampeders",
+   "hs": 12,
+   "as": 27
   },
   {
    "date": "2025-06-05",
@@ -1187,6 +1971,349 @@
    "away": "Calgary Stampeders",
    "hs": 31,
    "as": 11
+  },
+  {
+   "date": "2025-08-01",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Toronto Argonauts",
+   "hs": 40,
+   "as": 31
+  },
+  {
+   "date": "2025-08-02",
+   "home": "Edmonton Elks",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 24,
+   "as": 28
+  },
+  {
+   "date": "2025-08-02",
+   "home": "Montreal Alouettes",
+   "away": "Saskatchewan Roughriders",
+   "hs": 6,
+   "as": 34
+  },
+  {
+   "date": "2025-08-07",
+   "home": "Hamilton Tiger-Cats",
+   "away": "BC Lions",
+   "hs": 38,
+   "as": 41
+  },
+  {
+   "date": "2025-08-08",
+   "home": "Montreal Alouettes",
+   "away": "Edmonton Elks",
+   "hs": 22,
+   "as": 23
+  },
+  {
+   "date": "2025-08-09",
+   "home": "Calgary Stampeders",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 28,
+   "as": 27
+  },
+  {
+   "date": "2025-08-09",
+   "home": "Toronto Argonauts",
+   "away": "Ottawa Redblacks",
+   "hs": 42,
+   "as": 46
+  },
+  {
+   "date": "2025-08-14",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Ottawa Redblacks",
+   "hs": 30,
+   "as": 27
+  },
+  {
+   "date": "2025-08-15",
+   "home": "Edmonton Elks",
+   "away": "Toronto Argonauts",
+   "hs": 28,
+   "as": 20
+  },
+  {
+   "date": "2025-08-16",
+   "home": "BC Lions",
+   "away": "Montreal Alouettes",
+   "hs": 36,
+   "as": 18
+  },
+  {
+   "date": "2025-08-16",
+   "home": "Saskatchewan Roughriders",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 29,
+   "as": 9
+  },
+  {
+   "date": "2025-08-21",
+   "home": "Montreal Alouettes",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 13,
+   "as": 26
+  },
+  {
+   "date": "2025-08-22",
+   "home": "Ottawa Redblacks",
+   "away": "Edmonton Elks",
+   "hs": 20,
+   "as": 30
+  },
+  {
+   "date": "2025-08-23",
+   "home": "Calgary Stampeders",
+   "away": "Saskatchewan Roughriders",
+   "hs": 32,
+   "as": 15
+  },
+  {
+   "date": "2025-08-23",
+   "home": "Toronto Argonauts",
+   "away": "BC Lions",
+   "hs": 52,
+   "as": 34
+  },
+  {
+   "date": "2025-08-31",
+   "home": "Saskatchewan Roughriders",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 34,
+   "as": 30
+  },
+  {
+   "date": "2025-09-01",
+   "home": "Calgary Stampeders",
+   "away": "Edmonton Elks",
+   "hs": 28,
+   "as": 7
+  },
+  {
+   "date": "2025-09-01",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Toronto Argonauts",
+   "hs": 33,
+   "as": 35
+  },
+  {
+   "date": "2025-09-05",
+   "home": "Ottawa Redblacks",
+   "away": "BC Lions",
+   "hs": 34,
+   "as": 33
+  },
+  {
+   "date": "2025-09-06",
+   "home": "Edmonton Elks",
+   "away": "Calgary Stampeders",
+   "hs": 31,
+   "as": 19
+  },
+  {
+   "date": "2025-09-06",
+   "home": "Montreal Alouettes",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 9,
+   "as": 26
+  },
+  {
+   "date": "2025-09-06",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Saskatchewan Roughriders",
+   "hs": 13,
+   "as": 21
+  },
+  {
+   "date": "2025-09-12",
+   "home": "BC Lions",
+   "away": "Ottawa Redblacks",
+   "hs": 38,
+   "as": 27
+  },
+  {
+   "date": "2025-09-12",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 32,
+   "as": 21
+  },
+  {
+   "date": "2025-09-13",
+   "home": "Saskatchewan Roughriders",
+   "away": "Montreal Alouettes",
+   "hs": 31,
+   "as": 48
+  },
+  {
+   "date": "2025-09-13",
+   "home": "Toronto Argonauts",
+   "away": "Edmonton Elks",
+   "hs": 31,
+   "as": 30
+  },
+  {
+   "date": "2025-09-19",
+   "home": "Calgary Stampeders",
+   "away": "BC Lions",
+   "hs": 23,
+   "as": 52
+  },
+  {
+   "date": "2025-09-19",
+   "home": "Toronto Argonauts",
+   "away": "Montreal Alouettes",
+   "hs": 19,
+   "as": 21
+  },
+  {
+   "date": "2025-09-20",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Edmonton Elks",
+   "hs": 29,
+   "as": 27
+  },
+  {
+   "date": "2025-09-20",
+   "home": "Ottawa Redblacks",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 18,
+   "as": 26
+  },
+  {
+   "date": "2025-09-26",
+   "home": "BC Lions",
+   "away": "Toronto Argonauts",
+   "hs": 27,
+   "as": 22
+  },
+  {
+   "date": "2025-09-26",
+   "home": "Montreal Alouettes",
+   "away": "Calgary Stampeders",
+   "hs": 38,
+   "as": 20
+  },
+  {
+   "date": "2025-09-27",
+   "home": "Edmonton Elks",
+   "away": "Saskatchewan Roughriders",
+   "hs": 27,
+   "as": 25
+  },
+  {
+   "date": "2025-09-27",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 40,
+   "as": 3
+  },
+  {
+   "date": "2025-10-03",
+   "home": "Ottawa Redblacks",
+   "away": "Saskatchewan Roughriders",
+   "hs": 13,
+   "as": 20
+  },
+  {
+   "date": "2025-10-04",
+   "home": "BC Lions",
+   "away": "Calgary Stampeders",
+   "hs": 38,
+   "as": 24
+  },
+  {
+   "date": "2025-10-04",
+   "home": "Toronto Argonauts",
+   "away": "Hamilton Tiger-Cats",
+   "hs": 29,
+   "as": 47
+  },
+  {
+   "date": "2025-10-10",
+   "home": "Saskatchewan Roughriders",
+   "away": "Toronto Argonauts",
+   "hs": 27,
+   "as": 19
+  },
+  {
+   "date": "2025-10-11",
+   "home": "Edmonton Elks",
+   "away": "Winnipeg Blue Bombers",
+   "hs": 25,
+   "as": 20
+  },
+  {
+   "date": "2025-10-11",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Calgary Stampeders",
+   "hs": 20,
+   "as": 37
+  },
+  {
+   "date": "2025-10-13",
+   "home": "Montreal Alouettes",
+   "away": "Ottawa Redblacks",
+   "hs": 30,
+   "as": 10
+  },
+  {
+   "date": "2025-10-17",
+   "home": "BC Lions",
+   "away": "Edmonton Elks",
+   "hs": 37,
+   "as": 24
+  },
+  {
+   "date": "2025-10-17",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Saskatchewan Roughriders",
+   "hs": 17,
+   "as": 16
+  },
+  {
+   "date": "2025-10-18",
+   "home": "Calgary Stampeders",
+   "away": "Toronto Argonauts",
+   "hs": 44,
+   "as": 13
+  },
+  {
+   "date": "2025-10-18",
+   "home": "Ottawa Redblacks",
+   "away": "Montreal Alouettes",
+   "hs": 28,
+   "as": 39
+  },
+  {
+   "date": "2025-10-24",
+   "home": "Edmonton Elks",
+   "away": "Calgary Stampeders",
+   "hs": 10,
+   "as": 20
+  },
+  {
+   "date": "2025-10-24",
+   "home": "Hamilton Tiger-Cats",
+   "away": "Ottawa Redblacks",
+   "hs": 35,
+   "as": 15
+  },
+  {
+   "date": "2025-10-25",
+   "home": "Saskatchewan Roughriders",
+   "away": "BC Lions",
+   "hs": 21,
+   "as": 27
+  },
+  {
+   "date": "2025-10-25",
+   "home": "Winnipeg Blue Bombers",
+   "away": "Montreal Alouettes",
+   "hs": 19,
+   "as": 10
   }
  ]
 }
