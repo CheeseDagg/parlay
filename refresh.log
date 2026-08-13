@@ -1,5 +1,5 @@
-[notice] A new release of pip is available: 26.1.2 -> 26.2.1
-[notice] To update, run: pip install --upgrade pip
+
+Successfully installed numpy-2.5.2 scipy-1.18.0
 PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusal, vig bands, arity)
   MLB: 9 games, 9 moneylines, 81 total rungs, 81 F5 rungs
   MMA: 11 bouts
@@ -8,7 +8,6 @@ PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusa
   CFL: 4 markets
   CFL: 60 alternate-total rungs
   BOX: 14 markets
-  SOC: 32 soccer competition(s) LIVE and NOT pulled — soccer_argentina_primera_division (Primera División - Argentina); soccer_austria_bundesliga (Austrian Football Bundesliga); soccer_belgium_first_div (Belgium First Div); soccer_brazil_serie_b (Brazil Série B); soccer_chile_campeonato (Primera División - Chile); soccer_conmebol_copa_libertadores (Copa Libertadores); soccer_conmebol_copa_sudamericana (Copa Sudamericana); soccer_denmark_superliga (Denmark Superliga); soccer_efl_champ (Championship); soccer_england_efl_cup (EFL Cup); soccer_england_league1 (League 1); soccer_england_league2 (League 2); soccer_epl (EPL); soccer_france_ligue_one (Ligue 1 - France); soccer_france_ligue_two (Ligue 2 - France); soccer_germany_bundesliga (Bundesliga - Germany); soccer_germany_bundesliga2 (Bundesliga 2 - Germany); soccer_germany_dfb_pokal (DFB-Pokal); soccer_germany_liga3 (3. Liga - Germany); soccer_italy_coppa_italia (Coppa Italia); soccer_italy_serie_a (Serie A - Italy); soccer_italy_serie_b (Serie B - Italy); soccer_japan_j_league (J League); soccer_korea_kleague1 (K League 1); soccer_poland_ekstraklasa (Ekstraklasa - Poland); soccer_russia_premier_league (Premier League - Russia); soccer_saudi_arabia_pro_league (Saudi Pro League); soccer_spain_la_liga (La Liga - Spain); soccer_spain_segunda_division (La Liga 2 - Spain); soccer_spl (Premiership - Scotland); soccer_sweden_superettan (Superettan - Sweden); soccer_uefa_nations_league (UEFA Nations League)
   SOC soccer_uefa_champs_league_qualification: 7 fixtures
   SOC soccer_netherlands_eredivisie: 9 fixtures
   SOC soccer_portugal_primeira_liga: 9 fixtures
@@ -23,7 +22,25 @@ PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusa
   SOC soccer_mexico_ligamx: 9 fixtures
   SOC soccer_concacaf_leagues_cup: 5 fixtures
   SOCT soccer_concacaf_leagues_cup: 33 goal-total rungs
-  legs representable: ~1304 · API credits remaining 16040
+  SOC soccer_argentina_primera_division: 30 fixtures
+  SOC soccer_brazil_serie_b: 10 fixtures
+  SOC soccer_chile_campeonato: 8 fixtures
+  SOC soccer_epl: 10 fixtures
+  SOC soccer_spain_la_liga: 18 fixtures
+  SOC soccer_italy_serie_a: 10 fixtures
+  SOC soccer_france_ligue_one: 9 fixtures
+  SOC soccer_efl_champ: 12 fixtures
+  SOC soccer_england_efl_cup: 23 fixtures
+  SOC soccer_germany_bundesliga2: 9 fixtures
+  SOC soccer_italy_serie_b: 10 fixtures
+  SOC soccer_spain_segunda_division: 11 fixtures
+  SOC soccer_france_ligue_two: 9 fixtures
+  SOC soccer_austria_bundesliga: 6 fixtures
+  SOC soccer_denmark_superliga: 6 fixtures
+  SOC soccer_japan_j_league: 10 fixtures
+  SOC soccer_poland_ekstraklasa: 9 fixtures
+  SOC soccer_sweden_superettan: 8 fixtures
+  legs representable: ~1928 · API credits remaining 15726
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -71,8 +88,10 @@ PASS  a quiet game does not flag
 PASS  a STALE slate flags nothing on the model arms -- four-day-old heat is not tonight's heat
 PASS  with no slate at all, a market main of 10+ still flags
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
+  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
+  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
 PASS  no Draw outcome survives into any pool
-PASS  every soccer offer is a derived Double Chance, never a 3-way side (134 soccer legs)
+PASS  every soccer offer is a derived Double Chance, never a 3-way side (340 soccer legs)
 PASS  derived DC probabilities are favourite-shaped, not draw-shaped
 PASS  the synthesized payout keeps LESS than fair -- the 85% shave is on, so a derived leg can under-promise but never over-promise
 
@@ -119,6 +138,8 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's kprops.json is not readable here -- K lambdas off. Every leg still prices from the market; nothing else is affected.
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
+  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
+  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
 wrote BOARD.md
 
 7/7 checks pass
@@ -126,6 +147,9 @@ MLB: 9 games on 2026-08-13
 soccer_concacaf_leagues_cup: 12 matches
 soccer_usa_mls: 43 matches
 wrote /home/runner/work/parlay/parlay/scores.json
+  CLE@DET    through5=  -  current=  0  inning=1  
+  CIN@CWS    through5=  -  current=  0  inning=1  
+  PIT@MIA    through5=  -  current=  0  inning=1  
   Atlético San Lui @ Orlando City SC  goals=4  FT
   León             @ Inter Miami CF   goals=5  FT
   Nashville SC     @ Monterrey        goals=3  FT
@@ -133,4 +157,4 @@ wrote /home/runner/work/parlay/parlay/scores.json
   Puebla           @ San Diego FC     goals=5  FT
   Guadalajara      @ Seattle Sounders goals=3  FT
   Querétaro        @ Los Angeles FC   goals=2  FT
-run conclusion: success at 2026-08-13 10:08
+run conclusion: success at 2026-08-13 15:19
