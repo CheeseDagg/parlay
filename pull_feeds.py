@@ -548,6 +548,15 @@ def pull_other(log):
     except Exception as e:
         log.append(f"SOC: could not list available competitions ({type(e).__name__})")
 
+    # WHICH COMPETITION A MATCH IS IN, carried forward. The board has never
+    # known this, so every soccer leg in every league was priced off one
+    # de-vig and compared against one pooled base rate. 40347 matches say that
+    # is wrong in a way that matters: the draw rate -- the entire content of a
+    # Double Chance -- runs 27.2% in the Championship and 23.1% in the
+    # Eredivisie (dispersion p=0.0011), and mean goals runs 2.57 to 3.10. A
+    # goal under and a DC are different bets in different leagues and the
+    # board could not tell them apart.
+    soc_league = {}
     for skey in SOCCER_KEYS:
         try:
             data = _get(f"{BASE}/sports/{skey}/odds?{q_for()}")
@@ -582,6 +591,7 @@ def pull_other(log):
                     others = ",".join(str(p) for j, (_, p) in enumerate(oc) if j != i)
                     lines.append(f"SOC|{grp}|{nm}|{pr}|{others}|{t}")
                 soc_grp[ev.get("id")] = grp
+                soc_league[grp] = skey
         # SAY ZERO OUT LOUD. A league that produced no lines used to log nothing
         # at all, which made three different states look identical in the log:
         # never queried, HTTP error, and queried-but-empty. On 2026-08-13 three
@@ -652,7 +662,11 @@ def pull_other(log):
                     lines.append(f"SOCT|{grp}|Over {pt} goals ({pair})|{two['Over']}|{two['Under']}|{t}")
         if len(lines) > n2:
             log.append(f"SOCT {skey}: {(len(lines)-n2)//2} goal-total rungs")
-    return lines
+    # The league map rides back with the lines rather than being rebuilt from
+    # them: a group name cannot be reverse-engineered into a competition key,
+    # and guessing one from a team name is exactly the kind of inference that
+    # produced "there is no soccer today" three times in one morning.
+    return lines, soc_league
 
 
 # ---------------------------------------------------------------- generators
@@ -752,7 +766,8 @@ assert not _bad, ("totals.py ladder is not monotone -- these prices cannot all b
 '''
 
 
-def generate_all(start, ml, tot, fight_start, mma_lines, other_lines, f5_lines=(), outdir=None):
+def generate_all(start, ml, tot, fight_start, mma_lines, other_lines, f5_lines=(),
+                 outdir=None, soc_league=None):
     """Write the five feed files. Returns list of paths written."""
     outdir = outdir or HERE
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
@@ -787,10 +802,16 @@ def generate_all(start, ml, tot, fight_start, mma_lines, other_lines, f5_lines=(
         "0-for-5 against the market on disagreements.")))
     paths.append(p)
     p = os.path.join(outdir, "other.py")
-    _write(p, gen_raw_module("OTHER_RAW", other_lines, ts, (
+    _ob = gen_raw_module("OTHER_RAW", other_lines, ts, (
         "SPORT|GROUP|SELECTION|PRICE|OTHER_PRICES|UTC. Two-way: boxing, WNBA, "
         "CFL. Three-way (with Draw): soccer. Every outcome of a market is "
-        "listed under one group so the solver can take at most one side.")))
+        "listed under one group so the solver can take at most one side."))
+    _ob += ("\n# group -> odds-API competition key. Written so a soccer leg can be\n"
+            "# priced against ITS OWN league's base rates rather than a pooled one:\n"
+            "# the draw rate spans 23.1%-27.2% across leagues and mean goals\n"
+            "# 2.57-3.10, both measured over 40347 matches (sochist.py).\n"
+            "SOCCER_LEAGUE = " + repr(dict(sorted((soc_league or {}).items()))) + "\n")
+    _write(p, _ob)
     paths.append(p)
     return paths
 
@@ -812,7 +833,8 @@ def selftest():
           "SOC|SOC PSV-Ajax|Ajax|1200|-550,650|2026-08-08T18:00Z",
           "SOC|SOC PSV-Ajax|Draw|650|-550,1200|2026-08-08T18:00Z"]
     f5x = ["WSH@PHI|7.5|300|-450", "WSH@PHI|8.5|430|-750", "WSH@PHI|9.5|640|-1450"]
-    paths = generate_all(start, ml, tot, fs, mm, ot, f5x, outdir=tmp)
+    sl = {'SOC PSV-Ajax': 'soccer_netherlands_eredivisie'}
+    paths = generate_all(start, ml, tot, fs, mm, ot, f5x, outdir=tmp, soc_league=sl)
     ok = 0
 
     def chk(cond, msg):
@@ -892,6 +914,15 @@ def selftest():
     chk({l.split("|")[1] for l in st} == {"SOC LAFC-QRO"},
         "but keep the MATCH as the group, so a side and that match's goal line "
         "share one market and the solver can take only one of them")
+    _o = {}
+    exec(open([p for p in paths if p.endswith('other.py')][0]).read(), _o)
+    chk('SOCCER_LEAGUE' in _o, "other.py exposes SOCCER_LEAGUE")
+    chk(_o['SOCCER_LEAGUE'].get('SOC PSV-Ajax') == 'soccer_netherlands_eredivisie',
+        "and it maps a soccer GROUP to its competition key, which is the only "
+        "way a leg can be priced against its own league's base rates -- the "
+        "draw rate spans 23.1%-27.2% across leagues over 40347 matches")
+    chk(all(k.startswith('SOC') for k in _o['SOCCER_LEAGUE']),
+        "only soccer groups are in the map; WNBA and CFL have no competition key")
     print(f"PULL_FEEDS SELFTEST PASS — {ok} checks (generators, round-trips, "
           f"monotone refusal, vig bands, arity)")
 
@@ -907,7 +938,7 @@ def main():
     try:
         start, ml, tot, f5_lines = pull_mlb(log)
         fight_start, mma_lines = pull_mma(log)
-        other_lines = pull_other(log)
+        other_lines, soc_league = pull_other(log)
     except urllib.error.HTTPError as e:
         for l in log:
             print(" ", l)
@@ -923,7 +954,8 @@ def main():
                  f"(floor {MIN_LEGS}). A dead pull must not dress itself as a "
                  f"quiet day — yesterday's board stays, and board.py will age it "
                  f"honestly.")
-    paths = generate_all(start, ml, tot, fight_start, mma_lines, other_lines, f5_lines)
+    paths = generate_all(start, ml, tot, fight_start, mma_lines, other_lines, f5_lines,
+                         soc_league=soc_league)
     for p in paths:
         print(f"  wrote {os.path.basename(p)}")
     import subprocess
