@@ -8,7 +8,7 @@
    "price": 127,
    "placed": "2026-08-12T22:45Z",
    "model_p": 0.372,
-   "note": "3 same-game pairs (DC + that match's under) + 12 singles. DC prices are DERIVED, not FanDuel quotes. Three MLB legs had already started at placement.",
+   "note": "3 same-game pairs (DC + that match's under) + 12 singles. DC prices are DERIVED, not FanDuel quotes. Three MLB legs had already started at placement. SETTLED: all 18 legs won.",
    "legs": [
     {
      "lab": "PIT@MIA F5 Under 10.5",
@@ -148,7 +148,9 @@
      "t": "2026-08-13T02:30Z",
      "p": 0.966
     }
-   ]
+   ],
+   "result": "WON",
+   "settled": "2026-08-13T04:49Z"
   }
  ]
 }

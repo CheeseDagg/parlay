@@ -7,7 +7,7 @@ date,leg,market_p,my_p,outcome
 2026-08-11,Hasan KO round 1,0.714,0.400,won
 2026-08-11,Escarrega by KO,0.350,0.410,lost
 2026-08-11,Escarrega ML (winner call),0.550,0.550,won
-2026-08-12,18-leg SGP+ +127 (whole slip),0.4412,0.3898,
+2026-08-12,18-leg SGP+ +127 (whole slip),0.4412,0.3898,won
 2026-08-12,PIT@MIA F5 Under 10.5,0.9687,0.9687,won
 2026-08-12,CLE@DET F5 Under 10.5,0.9658,0.9658,won
 2026-08-12,CHC@WSH F5 Under 11.5,0.9658,0.9658,won
@@ -25,4 +25,4 @@ date,leg,market_p,my_p,outcome
 2026-08-12,San Diego FC DC (derived),0.8226,0.8226,won
 2026-08-12,Under 6.5 goals (IM-León),0.9796,0.9796,won
 2026-08-12,Under 6.5 goals (Guadalajar-SS),0.9818,0.9818,won
-2026-08-12,Under 6.5 goals (LA-Querétaro),0.9660,0.9660,
+2026-08-12,Under 6.5 goals (LA-Querétaro),0.9660,0.9660,won
