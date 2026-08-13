@@ -578,6 +578,37 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
         if not markets[k]:
             del markets[k]
 
+    # SHALLOW SOCCER OVERS ARE THE BOARD'S BEST-LOOKING BAD BET.
+    # "Over 0.5 goals" priced -10000 de-vigs to 98.5% and sorts to the very top
+    # of a board ranked by probability -- so a ticket built from the safest-
+    # looking legs gets handed these first. A goalless draw is 5-9% of matches
+    # across major leagues and reaches 20%+ in some competitions; -10000 prices
+    # it near 1%. The de-vig is faithfully reporting the book's number and the
+    # book's number is the thing that is wrong, which is exactly the case rule
+    # 23 cannot catch: there is no opposing side on the ladder to de-vig
+    # against, so the overround has nowhere to land.
+    #
+    # Not repriced -- flagged. Inventing a truer number here would be the same
+    # overconfidence in the other direction. The legs stay bettable and stay
+    # named, every build, so they can never top the board silently.
+    _shal = []
+    for v in markets.values():
+        for o in v:
+            if o.get('fam') != 'SOCT' or not o['lab'].startswith('Over'):
+                continue
+            try:
+                pt = float(o['lab'].split()[1])
+            except (IndexError, ValueError):
+                continue
+            if pt <= 1.5 and o['p'] >= 0.90:
+                _shal.append(o)
+    if _shal:
+        _w = max(_shal, key=lambda o: o['p'])
+        print(f"  board: {len(_shal)} shallow soccer OVER rung(s) read 90%+ "
+              f"(worst {_w['lab']} at {_w['price']}, {_w['p']*100:.1f}%). A 0-0 "
+              f"is 5-9% of matches, so these are the board's most overpriced "
+              f"legs while sorting as its safest. Do not lead a ticket with them.")
+
     # STALENESS. Every raw feed in this package (mlbml.py, totals.py, f5.py,
     # mma.py, other.py, times.py) is a hand-pasted snapshot with a date in its
     # docstring and nothing that expires. With the cutoff off, the solver will
