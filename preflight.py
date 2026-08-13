@@ -262,7 +262,26 @@ def gate_park(legs, hi=1.30):
     return 'WARN', ' | '.join(parts)
 
 
-def gate_soccer_base(legs):
+def _grp_teams(raw=None):
+    """{soccer group: [team names]} straight from the feed, so a leg's group
+    can be turned back into the two clubs the form table knows."""
+    if raw is None:
+        try:
+            import other
+            raw = other.OTHER_RAW
+        except Exception:
+            return {}
+    out = {}
+    for line in raw.strip().split('\n'):
+        p = line.split('|')
+        if len(p) == 6 and p[0] == 'SOC' and p[2] != 'Draw':
+            out.setdefault(p[1], [])
+            if p[2] not in out[p[1]]:
+                out[p[1]].append(p[2])
+    return out
+
+
+def gate_soccer_base(legs, form=None, teams_of=None):
     """Check every soccer leg against ITS OWN league, and say when there is none.
 
     40347 matches (sochist.py): the draw rate -- the entire content of a Double
@@ -281,7 +300,17 @@ def gate_soccer_base(legs):
         import socbase
     except Exception:
         return 'WARN', "socbase unavailable -- no per-league soccer priors"
+    if form is None:
+        try:
+            import json as _j
+            with open(os.path.join(HERE, 'socform.json')) as _fh:
+                form = _j.load(_fh)
+        except Exception:
+            form = {}
+    if teams_of is None:
+        teams_of = _grp_teams()
     seen, blind, proxied = [], [], []
+    cold, forms = [], []
     for l in legs:
         if l.get('fam') not in ('SOC', 'SOCT'):
             continue
@@ -297,16 +326,33 @@ def gate_soccer_base(legs):
         else:
             seen.append(f"{name} draw {r['result']['draw']*100:.1f}% "
                         f"goals {r['result']['mean_goals']:.2f}")
+        # TEAM FORM ON THE TICKET. socform's report was a side channel; the
+        # Sparta-Rotterdam shape (0.17 ppg, still priced like last month's
+        # team) belongs on the slip itself. Unmatched stays 'unknown' --
+        # never bad form, never good.
+        for tm in (teams_of or {}).get(l.get('grp'), []):
+            fr = (form.get('teams') or {}).get(tm)
+            if not fr:
+                forms.append(f"{tm}: form unknown")
+            else:
+                forms.append(f"{tm} {fr['form']} {fr['ppg']}ppg")
+                if fr['ppg'] <= 0.6:
+                    cold.append(f"{tm} is COLD: {fr['form']} "
+                                f"({fr['ppg']} ppg, last {fr['newest']})")
     if not (seen or blind or proxied):
         return 'PASS', "no soccer legs"
     parts = []
+    if cold:
+        parts.append('; '.join(sorted(set(cold))))
     if blind:
         parts.append(f"{len(blind)} leg(s) with NO league history: " + '; '.join(blind))
     if proxied:
         parts.append(f"{len(proxied)} on a PROXY: " + '; '.join(proxied))
     if seen:
         parts.append("measured: " + '; '.join(sorted(set(seen))))
-    return ('WARN' if (blind or proxied) else 'PASS', ' | '.join(parts))
+    if forms:
+        parts.append("form: " + '; '.join(sorted(set(forms))))
+    return ('WARN' if (blind or proxied or cold) else 'PASS', ' | '.join(parts))
 
 
 def gate_form(legs, data=None, today=None):
@@ -626,6 +672,26 @@ def selftest():
     _v, _m = gate_soccer_base([L('Under 2.5 goals (x)', -200, fam='SOCT')])
     chk(_v == 'WARN' and 'NO league history' in _m,
         "a soccer leg with no competition recorded warns rather than passing")
+
+    # ---- form on the ticket. The Sparta shape: 0.17 ppg priced like May.
+    _tf = {'SOC A-B': ['Sparta Rotterdam', 'SC Telstar']}
+    _ff = {'teams': {'Sparta Rotterdam': {'form': 'LLLDLL', 'ppg': 0.17,
+                                          'newest': '2026-08-09'},
+                     'SC Telstar': {'form': 'WWWDWL', 'ppg': 2.17,
+                                    'newest': '2026-08-08'}}}
+    _v, _m = gate_soccer_base([dict(L('SC Telstar DC (derived)', -400, fam='SOC'),
+                                    grp='SOC A-B', lg='soccer_netherlands_eredivisie')],
+                              form=_ff, teams_of=_tf)
+    chk(_v == 'WARN' and 'COLD' in _m and 'Sparta Rotterdam' in _m,
+        "a 0.17-ppg opponent is named COLD on the slip itself -- the "
+        "form report stops being a side channel")
+    chk('SC Telstar WWWDWL' in _m,
+        "and both sides' form strings ride along for the read")
+    _v2, _m2 = gate_soccer_base([dict(L('X DC (derived)', -400, fam='SOC'),
+                                      grp='SOC C-D', lg='soccer_netherlands_eredivisie')],
+                                form={'teams': {}}, teams_of={'SOC C-D': ['Unk FC']})
+    chk('form unknown' in _m2,
+        "an unmatched team reads 'form unknown' -- never bad form, never good")
 
     # ---- FORM. The measured gopher check, injectable so the test owns its data.
     _fd = {'date': '2026-08-13', 'hr9_warn': 1.8, 'games': {
