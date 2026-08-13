@@ -8,21 +8,21 @@ date,leg,market_p,my_p,outcome
 2026-08-11,Escarrega by KO,0.350,0.410,lost
 2026-08-11,Escarrega ML (winner call),0.550,0.550,won
 2026-08-12,18-leg SGP+ +127 (whole slip),0.4412,0.3898,
-2026-08-12,PIT@MIA F5 Under 10.5,0.9687,0.9687,
-2026-08-12,CLE@DET F5 Under 10.5,0.9658,0.9658,
-2026-08-12,CHC@WSH F5 Under 11.5,0.9658,0.9658,
-2026-08-12,SEA@NYY F5 Under 10.5,0.9613,0.9613,
-2026-08-12,BOS@TOR F5 Under 9.5,0.9613,0.9613,
-2026-08-12,NYM@ATL F5 Under 11.5,0.9793,0.9793,
-2026-08-12,CIN@CWS F5 Under 10.5,0.9561,0.9561,
+2026-08-12,PIT@MIA F5 Under 10.5,0.9687,0.9687,won
+2026-08-12,CLE@DET F5 Under 10.5,0.9658,0.9658,won
+2026-08-12,CHC@WSH F5 Under 11.5,0.9658,0.9658,won
+2026-08-12,SEA@NYY F5 Under 10.5,0.9613,0.9613,won
+2026-08-12,BOS@TOR F5 Under 9.5,0.9613,0.9613,won
+2026-08-12,NYM@ATL F5 Under 11.5,0.9793,0.9793,won
+2026-08-12,CIN@CWS F5 Under 10.5,0.9561,0.9561,won
 2026-08-12,TEX@LAA F5 Under 11.5,0.9726,0.9726,
 2026-08-12,KC@LAD F5 Under 11.5,0.9613,0.9613,
-2026-08-12,Under 6.5 goals (ASL-OC),0.9620,0.9620,
-2026-08-12,Orlando City SC DC (derived),0.8154,0.8154,
+2026-08-12,Under 6.5 goals (ASL-OC),0.9620,0.9620,won
+2026-08-12,Orlando City SC DC (derived),0.8154,0.8154,won
 2026-08-12,Under 7.5 goals (Dallas-Toluca),0.9853,0.9853,
 2026-08-12,Toluca DC (derived),0.8912,0.8912,
 2026-08-12,Under 6.5 goals (Puebla-SD),0.9660,0.9660,
 2026-08-12,San Diego FC DC (derived),0.8226,0.8226,
-2026-08-12,Under 6.5 goals (IM-León),0.9796,0.9796,
+2026-08-12,Under 6.5 goals (IM-León),0.9796,0.9796,won
 2026-08-12,Under 6.5 goals (Guadalajar-SS),0.9818,0.9818,
 2026-08-12,Under 6.5 goals (LA-Querétaro),0.9660,0.9660,
