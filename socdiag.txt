@@ -1,0 +1,158 @@
+67 soccer keys in the catalog
+
+  soccer_argentina_primera_division                    ACTIVE       30 events,   1 today/tomorrow
+  soccer_austria_bundesliga                            ACTIVE        6 events,   1 today/tomorrow
+  soccer_belgium_first_div                             ACTIVE        9 events,   1 today/tomorrow
+  soccer_brazil_campeonato                             ACTIVE       20 events,   0 today/tomorrow
+  soccer_brazil_serie_b                                ACTIVE       18 events,   3 today/tomorrow
+  soccer_chile_campeonato                              ACTIVE        8 events,   1 today/tomorrow
+  soccer_china_superleague                             ACTIVE        8 events,   3 today/tomorrow
+  soccer_concacaf_leagues_cup                          ACTIVE        5 events,   5 today/tomorrow
+  soccer_conmebol_copa_libertadores                    ACTIVE        8 events,   2 today/tomorrow
+  soccer_conmebol_copa_sudamericana                    ACTIVE        8 events,   3 today/tomorrow
+  soccer_denmark_superliga                             ACTIVE        6 events,   1 today/tomorrow
+  soccer_efl_champ                                     ACTIVE       12 events,   1 today/tomorrow
+  soccer_england_efl_cup                               ACTIVE       27 events,   0 today/tomorrow
+  soccer_england_league1                               ACTIVE       12 events,   0 today/tomorrow
+  soccer_england_league2                               ACTIVE       12 events,   0 today/tomorrow
+  soccer_epl                                           ACTIVE       10 events,   0 today/tomorrow
+  soccer_fifa_world_cup_winner                         HTTP 422
+  soccer_finland_veikkausliiga                         ACTIVE        6 events,   1 today/tomorrow
+  soccer_france_ligue_one                              ACTIVE        9 events,   0 today/tomorrow
+  soccer_france_ligue_two                              ACTIVE        9 events,   9 today/tomorrow
+  soccer_germany_bundesliga                            ACTIVE        9 events,   0 today/tomorrow
+  soccer_germany_bundesliga2                           ACTIVE        9 events,   2 today/tomorrow
+  soccer_germany_dfb_pokal                             ACTIVE       19 events,   0 today/tomorrow
+  soccer_germany_liga3                                 ACTIVE       20 events,   1 today/tomorrow
+  soccer_greece_super_league                           ACTIVE        7 events,   0 today/tomorrow
+  soccer_italy_coppa_italia                            ACTIVE        4 events,   4 today/tomorrow
+  soccer_italy_serie_a                                 ACTIVE       10 events,   0 today/tomorrow
+  soccer_italy_serie_b                                 ACTIVE       14 events,   0 today/tomorrow
+  soccer_japan_j_league                                ACTIVE       10 events,   1 today/tomorrow
+  soccer_korea_kleague1                                ACTIVE        6 events,   0 today/tomorrow
+  soccer_mexico_ligamx                                 ACTIVE       16 events,   0 today/tomorrow
+  soccer_netherlands_eredivisie                        ACTIVE        9 events,   1 today/tomorrow
+  soccer_norway_eliteserien                            ACTIVE        7 events,   1 today/tomorrow
+  soccer_poland_ekstraklasa                            ACTIVE        9 events,   1 today/tomorrow
+  soccer_portugal_primeira_liga                        ACTIVE        9 events,   1 today/tomorrow
+  soccer_russia_premier_league                         ACTIVE        8 events,   1 today/tomorrow
+  soccer_saudi_arabia_pro_league                       ACTIVE        7 events,   4 today/tomorrow
+  soccer_spain_la_liga                                 ACTIVE       20 events,   0 today/tomorrow
+  soccer_spain_segunda_division                        ACTIVE       11 events,   1 today/tomorrow
+  soccer_spl                                           ACTIVE        6 events,   0 today/tomorrow
+  soccer_sweden_allsvenskan                            ACTIVE        8 events,   1 today/tomorrow
+  soccer_sweden_superettan                             ACTIVE        8 events,   2 today/tomorrow
+  soccer_turkey_super_league                           ACTIVE        9 events,   1 today/tomorrow
+  soccer_uefa_champs_league_qualification              ACTIVE        7 events,   0 today/tomorrow
+  soccer_uefa_nations_league                           ACTIVE       12 events,   0 today/tomorrow
+  soccer_usa_mls                                       ACTIVE       43 events,   0 today/tomorrow
+
+========================================================================
+
+soccer_argentina_primera_division  (Primera División - Argentina)  — 1 fixtures today/tomorrow
+    2026-08-14T23:30:00Z  Banfield @ Racing Club   FANDUEL
+
+soccer_austria_bundesliga  (Austrian Football Bundesliga)  — 1 fixtures today/tomorrow
+    2026-08-14T17:30:00Z  Ried @ LASK   FANDUEL
+
+soccer_belgium_first_div  (Belgium First Div)  — 1 fixtures today/tomorrow
+    2026-08-14T18:45:00Z  Sint Truiden @ Cercle Brugge KSV   no fd (7 books)
+
+soccer_brazil_serie_b  (Brazil Série B)  — 3 fixtures today/tomorrow
+    2026-08-14T22:30:00Z  Botafogo-SP @ São Bernardo   FANDUEL
+    2026-08-14T22:30:00Z  Nautico PE @ Ponte Preta   FANDUEL
+    2026-08-14T23:30:00Z  Londrina @ Sport Recife   FANDUEL
+
+soccer_chile_campeonato  (Primera División - Chile)  — 1 fixtures today/tomorrow
+    2026-08-14T23:00:00Z  La Serena @ Universidad de Concepción   FANDUEL
+
+soccer_china_superleague  (Super League - China)  — 3 fixtures today/tomorrow
+    2026-08-14T11:35:00Z  Qingdao Hainiu FC @ Shandong Luneng Taishan FC   FANDUEL
+    2026-08-14T11:35:00Z  Shanghai SIPG FC @ Wuhan Three Towns   FANDUEL
+    2026-08-14T12:00:00Z  Chongqing Tonglianglong FC @ Qingdao West Coast FC   FANDUEL
+
+soccer_concacaf_leagues_cup  (Leagues Cup)  — 5 fixtures today/tomorrow
+    2026-08-13T23:00:00Z  Santos Laguna @ Philadelphia Union   FANDUEL
+    2026-08-13T23:30:00Z  Necaxa @ New York City FC   FANDUEL
+    2026-08-14T00:30:00Z  Austin FC @ América   FANDUEL
+    2026-08-14T01:00:00Z  Chicago Fire @ Cruz Azul   FANDUEL
+    2026-08-14T02:30:00Z  Tijuana @ Portland Timbers   FANDUEL
+
+soccer_conmebol_copa_libertadores  (Copa Libertadores)  — 2 fixtures today/tomorrow
+    2026-08-13T22:00:00Z  LDU Quito @ Mirassol   no fd (5 books)
+    2026-08-14T00:30:00Z  Corinthians-SP @ Rosario Central   no fd (5 books)
+
+soccer_conmebol_copa_sudamericana  (Copa Sudamericana)  — 3 fixtures today/tomorrow
+    2026-08-13T22:00:00Z  Macará @ Santos   no fd (2 books)
+    2026-08-13T22:00:00Z  Olimpia Asunción @ Vasco da Gama   no fd (2 books)
+    2026-08-14T00:30:00Z  Botafogo @ Club Cienciano   no fd (2 books)
+
+soccer_denmark_superliga  (Denmark Superliga)  — 1 fixtures today/tomorrow
+    2026-08-14T17:00:00Z  AGF Aarhus @ Viborg FF   FANDUEL
+
+soccer_efl_champ  (Championship)  — 1 fixtures today/tomorrow
+    2026-08-14T19:00:00Z  Blackburn Rovers @ Wolverhampton Wanderers   FANDUEL
+
+soccer_finland_veikkausliiga  (Veikkausliiga - Finland)  — 1 fixtures today/tomorrow
+    2026-08-14T15:00:00Z  TPS Turku @ VPS Vaasa   FANDUEL
+
+soccer_france_ligue_two  (Ligue 2 - France)  — 9 fixtures today/tomorrow
+    2026-08-14T18:45:00Z  Rodez AF @ Annecy FC   FANDUEL
+    2026-08-14T18:45:00Z  Boulogne @ Guingamp   FANDUEL
+    2026-08-14T18:45:00Z  Clermont @ Saint Etienne   FANDUEL
+    2026-08-14T18:45:00Z  Pau FC @ Dijon   FANDUEL
+    2026-08-14T18:45:00Z  Metz @ Grenoble   FANDUEL
+    2026-08-14T18:45:00Z  Montpellier @ Nancy   FANDUEL
+    2026-08-14T18:45:00Z  Nantes @ Stade Lavallois   FANDUEL
+    2026-08-14T18:45:00Z  Sochaux @ Red Star   FANDUEL
+    2026-08-14T18:45:00Z  USL Dunkerque @ Stade de Reims   FANDUEL
+
+soccer_germany_bundesliga2  (Bundesliga 2 - Germany)  — 2 fixtures today/tomorrow
+    2026-08-14T16:30:00Z  VfL Bochum @ Eintracht Braunschweig   FANDUEL
+    2026-08-14T16:30:00Z  FC St. Pauli @ Holstein Kiel   FANDUEL
+
+soccer_germany_liga3  (3. Liga - Germany)  — 1 fixtures today/tomorrow
+    2026-08-14T17:00:00Z  Wehen Wiesbaden @ FC Würzburger Kickers   no fd (4 books)
+
+soccer_italy_coppa_italia  (Coppa Italia)  — 4 fixtures today/tomorrow
+    2026-08-14T16:00:00Z  Catania FC @ Parma   no fd (0 books)
+    2026-08-14T16:30:00Z  Arezzo @ Cagliari   no fd (1 books)
+    2026-08-14T18:45:00Z  Avellino @ Monza   no fd (1 books)
+    2026-08-14T19:15:00Z  Benevento @ Fiorentina   no fd (1 books)
+
+soccer_japan_j_league  (J League)  — 1 fixtures today/tomorrow
+    2026-08-14T10:00:00Z  Kashiwa Reysol @ Tokyo Verdy   FANDUEL
+
+soccer_netherlands_eredivisie  (Dutch Eredivisie)  — 1 fixtures today/tomorrow
+    2026-08-14T18:00:00Z  Sparta Rotterdam @ SC Telstar   FANDUEL
+
+soccer_norway_eliteserien  (Eliteserien - Norway)  — 1 fixtures today/tomorrow
+    2026-08-14T17:00:00Z  Viking FK @ Rosenborg   FANDUEL
+
+soccer_poland_ekstraklasa  (Ekstraklasa - Poland)  — 1 fixtures today/tomorrow
+    2026-08-14T18:30:00Z  Radomiak Radom @ Legia Warszawa   FANDUEL
+
+soccer_portugal_primeira_liga  (Primeira Liga - Portugal)  — 1 fixtures today/tomorrow
+    2026-08-14T19:15:00Z  Vitória SC @ Sporting Lisbon   FANDUEL
+
+soccer_russia_premier_league  (Premier League - Russia)  — 1 fixtures today/tomorrow
+    2026-08-14T14:00:00Z  Lokomotiv Moscow @ Gazovik Orenburg   no fd (2 books)
+
+soccer_saudi_arabia_pro_league  (Saudi Pro League)  — 4 fixtures today/tomorrow
+    2026-08-13T16:15:00Z  Al-Hazem @ Abha Club   no fd (0 books)
+    2026-08-13T18:00:00Z  Al-Qadsiah @ Al-Shabab   no fd (0 books)
+    2026-08-14T16:50:00Z  Al-Fayha @ Neom   no fd (0 books)
+    2026-08-14T18:00:00Z  Al-Riyadh @ Al-Ettifaq   no fd (0 books)
+
+soccer_spain_segunda_division  (La Liga 2 - Spain)  — 1 fixtures today/tomorrow
+    2026-08-14T18:30:00Z  CD Castellón @ Real Sociedad B   FANDUEL
+
+soccer_sweden_allsvenskan  (Allsvenskan - Sweden)  — 1 fixtures today/tomorrow
+    2026-08-14T17:00:00Z  Västerås SK @ IF Elfsborg   FANDUEL
+
+soccer_sweden_superettan  (Superettan - Sweden)  — 2 fixtures today/tomorrow
+    2026-08-14T17:00:00Z  Örebro SK @ IK Brage   FANDUEL
+    2026-08-14T17:00:00Z  IK Oddevold @ Landskrona BoIS   FANDUEL
+
+soccer_turkey_super_league  (Turkey Super League)  — 1 fixtures today/tomorrow
+    2026-08-14T18:30:00Z  Çorum FK @ Galatasaray   FANDUEL
