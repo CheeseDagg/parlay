@@ -19,6 +19,9 @@ can check and says out loud what it cannot:
   SOCCER   no 3-way sides -- derived DC only              (rule 8)
   METHOD   flags single-method fight legs                 (rules 9, 27)
   HOT      no mid-rung total on a hot game                (rule 25)
+  TIE      a second leg has its first leg on file          (rule 40)
+  STALE    no leg already under way, board is fresh        (rules 17, 18)
+  DERIVED  synthesized prices named for confirmation       (rule 8)
   OVERLAP  shared legs with every open slip, and the      (rule 28)
            chance one event kills them all
   LOG      calibration.csv and slips.json entries pending (rules 29, 31)
@@ -130,6 +133,67 @@ def gate_tie(legs):
     return 'PASS', "no two-legged ties on this slip"
 
 
+def board_age_min(now=None):
+    """Minutes since pull_feeds wrote the feed, from the file's own header."""
+    import re
+    from datetime import datetime
+    import other
+    m = re.search(r'Generated (\d{4}-\d\d-\d\d \d\d:\d\d)Z', other.__doc__ or '')
+    if not m:
+        return None, None
+    gen = m.group(1)
+    import board
+    n = datetime.strptime(now or board._utcnow(), "%Y-%m-%dT%H:%MZ")
+    return (n - datetime.strptime(gen, "%Y-%m-%d %H:%M")).total_seconds() / 60, gen
+
+
+def gate_stale(legs, now=None):
+    """Refuse to bless a pregame price on a game that has already started.
+
+    Two separate things went wrong on 8/13 and both look like this. Atlanta was
+    quoted at -520 off a board that had since moved it to -550, and CIN@CWS F5
+    Under 10.5 was quoted at 97.0% while the game was live at 8 runs in the
+    third -- a number that was true at first pitch and worth about half that by
+    the time it was said out loud.
+
+    A leg whose event has started is not mispriced, it is UNPRICED: the pregame
+    number is gone and live.py is the tool, not the board. So that is a FAIL,
+    not a warning. Board age is a WARN because a fifteen-minute-old board is
+    usually fine and always worth knowing.
+    """
+    import board
+    n = now or board._utcnow()
+    started = [l for l in legs if l.get('t') and l['t'] <= n]
+    age, gen = board_age_min(n)
+    if started:
+        return ('FAIL', f"{len(started)} leg(s) already under way -- pregame price is "
+                f"gone, price these with live.py: "
+                + ', '.join(f"{l['lab']} (started {l['t']})" for l in started[:4]))
+    if age is None:
+        return 'WARN', "feed carries no generated-at header, so its age is unknown"
+    if age > 90:
+        return 'WARN', f"board is {age:.0f} min old (generated {gen}Z) -- re-pull before betting"
+    return 'PASS', f"board {age:.0f} min old, no leg has started"
+
+
+def gate_derived(legs):
+    """A derived price is our arithmetic, not the book's, and must be confirmed.
+
+    The DC payout is synthesized from the h2h de-vig because the feed carries no
+    DC market. On 8/13 Ryan sent two real DC quotes -- the first ever checked
+    against -- and both derived prices were 8% generous (-835 vs -900, -479 vs
+    -500) and both probabilities ~2 points high. The haircut is recalibrated,
+    but a synthesized number is still an estimate wearing a price's clothes, and
+    every one of them has to be read off the app before it goes on a slip.
+    """
+    d = [l for l in legs if '(derived)' in l['lab']]
+    if not d:
+        return 'PASS', "no derived prices on this slip"
+    return ('WARN', f"{len(d)} DERIVED price(s) -- confirm each on the app before "
+            f"betting, the number here is our arithmetic: "
+            + ', '.join(f"{l['lab']} {l['price']}" for l in d))
+
+
 def gate_overlap(legs, open_slips):
     """open_slips: [(name, [labels], p)] already placed."""
     if not open_slips:
@@ -176,6 +240,7 @@ def run(legs, hot=None, open_slips=None):
     gates = [("FLOOR", gate_floor(legs)), ("PLUS", gate_plus(legs)),
              ("SOCCER", gate_soccer(legs)), ("METHOD", gate_method(legs)),
              ("HOT", gate_hot(legs, hot)), ("TIE", gate_tie(legs)),
+             ("STALE", gate_stale(legs)), ("DERIVED", gate_derived(legs)),
              ("OVERLAP", gate_overlap(legs, open_slips or []))]
     return gates, any(v == 'FAIL' for _, (v, _) in gates)
 
@@ -186,7 +251,13 @@ def main():
     if not want:
         print(__doc__.strip().splitlines()[2])
         return 2
-    m = build('FanDuel', min_price=0, cutoff=board._utcnow())
+    # NO CUTOFF HERE, deliberately. build()'s cutoff drops games that have
+    # already started, so asking preflight about a live leg used to come back
+    # "not on the board (check spelling)" -- which reads as a typo and sent me
+    # looking for one on 8/13 while the real answer was that the game was in
+    # the third inning. A started leg is a thing the STALE gate must SEE in
+    # order to fail it, so the pool is built wide and the gate does the judging.
+    m = build('FanDuel', min_price=0)
     # A LABEL IS NOT A LEG. A team that plays twice in the horizon produces two
     # legs with the SAME label and different groups, prices and start times --
     # 19 such labels on the 8/13 board. This was `{o['lab']: o}`, last one wins,
@@ -327,6 +398,25 @@ def selftest():
     chk(v == 'PASS', "a one-off match is not a tie and is not scolded")
     v, _ = gate_tie([L('CHC@WSH F5 Under 10.5', -4500, fam='F5', grp='CHC@WSH')])
     chk(v == 'PASS', "and baseball never touches this gate")
+
+    # ---- STALE. A started leg has no pregame price left, so it cannot pass.
+    NOW = '2026-08-13T18:30Z'
+    v, m_ = gate_stale([dict(L('CIN@CWS F5 Under 10.5', -4500, fam='F5',
+                               grp='CIN@CWS'), t='2026-08-13T17:11Z')], now=NOW)
+    chk(v == 'FAIL' and 'live.py' in m_,
+        "a leg whose game has started FAILS and is sent to live.py -- 97% at "
+        "first pitch was worth half that by the third inning")
+    v, _ = gate_stale([dict(L('TEX@LAA F5 Under 10.5', -7000, fam='F5',
+                              grp='TEX@LAA'), t='2026-08-14T02:08Z')], now=NOW)
+    chk(v in ('PASS', 'WARN'), "a leg that has not started is not blocked by it")
+
+    # ---- DERIVED. Our arithmetic must never be quoted as the book's price.
+    v, m_ = gate_derived([L('Philadelphia Union DC (derived)', -887, fam='SOC')])
+    chk(v == 'WARN' and '-887' in m_,
+        "a derived price is named with its number so it can be confirmed -- "
+        "the two real quotes we ever checked were both 8% off")
+    v, _ = gate_derived([L('Atlanta Dream', -520, fam='WNBA')])
+    chk(v == 'PASS', "a real book price is not flagged as derived")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
