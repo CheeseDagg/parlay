@@ -141,7 +141,26 @@ def main():
         print(__doc__.strip().splitlines()[2])
         return 2
     m = build('FanDuel', min_price=0, cutoff=board._utcnow())
-    idx = {o['lab']: o for v in m.values() for o in v}
+    # A LABEL IS NOT A LEG. A team that plays twice in the horizon produces two
+    # legs with the SAME label and different groups, prices and start times --
+    # 19 such labels on the 8/13 board. This was `{o['lab']: o}`, last one wins,
+    # so checking tonight's "New York City FC DC (derived)" silently graded
+    # SUNDAY's match at -262 instead of tonight's at -493, and FAILed the floor
+    # on a game that was never on the ticket. A gate that validates a different
+    # fixture than the one being bet is worse than no gate.
+    #
+    # Earliest future start wins, because that is what "today's ticket" means,
+    # and every collision is named so the choice is visible rather than assumed.
+    idx, amb = {}, {}
+    for v in m.values():
+        for o in v:
+            cur = idx.get(o['lab'])
+            if cur is None:
+                idx[o['lab']] = o
+            else:
+                amb.setdefault(o['lab'], [cur]).append(o)
+                if o['t'] < cur['t']:
+                    idx[o['lab']] = o
     tops = top_rungs(m)
     legs, missing = [], []
     for w in want:
@@ -153,6 +172,15 @@ def main():
         legs.append(o)
     if missing:
         print(f"  not on the board (check spelling): {missing}")
+    hit = [w for w in want if w in amb]
+    if hit:
+        from times import ct
+        print(f"  AMBIGUOUS label(s) — took the earliest start:")
+        for w in hit:
+            print(f"    {w}")
+            for o in sorted(amb[w], key=lambda o: o['t']):
+                mark = "  <- used" if o['t'] == idx[w]['t'] else ""
+                print(f"      {ct(o['t']):17} {o['grp']:20} {o['price']:+6d}{mark}")
     gates, failed = run(legs, board.hot_games('FanDuel'))
     print()
     for name, (v, msg) in gates:
