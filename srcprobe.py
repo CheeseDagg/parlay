@@ -30,7 +30,9 @@ T = [
  ("ufc mdabbert odds",    "https://raw.githubusercontent.com/mdabbert/Ultimate-UFC-Dataset/master/ufc-master.csv", {}),
  ("ufc greco results",    "https://raw.githubusercontent.com/Greco1899/scrape_ufc_stats/main/ufc_fight_results.csv", {}),
  # NFL, for September
- ("nflverse schedules",   "https://github.com/nflverse/nflverse-data/releases/download/schedules/schedules.csv", {}),
+ ("nflverse sched (new)",  "https://github.com/nflverse/nflverse-data/releases/download/schedules/sched_all.csv", {}),
+ ("habitatring games",    "http://www.habitatring.com/games.csv", {}),
+ ("nflverse games rel",   "https://github.com/nflverse/nflverse-data/releases/download/games/games.csv", {}),
  ("cfl fixturedownload",  "https://fixturedownload.com/feed/json/cfl-2026", {}),
 ]
 for name, url, hdr in T:

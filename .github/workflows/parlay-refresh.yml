@@ -52,6 +52,18 @@ jobs:
       # This runner has open egress, so the fetch happens here and the result is
       # committed where anything can read it. Fail-soft on purpose: a scoreboard
       # outage must never cost the board its refresh.
+      # FORM RIDES WITH EVERY REFRESH. The board is repriced twice a day; form
+      # that only updates when someone remembers to touch a trigger file is
+      # exactly the stale-slate failure that blinded rule 25. Fail-soft, same
+      # contract as scores: a form outage must never cost the board itself.
+      - name: MLB form (starters + team F5)
+        if: always()
+        continue-on-error: true
+        run: python3 mlbform.py 2>&1 | tail -15 | tee -a /tmp/refresh.log
+      - name: Soccer team form
+        if: always()
+        continue-on-error: true
+        run: python3 socform.py 2>&1 | tail -25 | tee -a /tmp/refresh.log
       - name: Pull scores
         if: always()
         continue-on-error: true

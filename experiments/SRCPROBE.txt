@@ -1,2 +1,3 @@
 probe 2026-08-13T18:45Z
 probe 2026-08-13T18:59Z round2
+probe 2026-08-13T19:27Z nfl
