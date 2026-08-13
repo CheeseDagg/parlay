@@ -1,19 +1,10 @@
-  fd.co.uk EPL 25/26     HTTP 200   203438B  ﻿Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,Referee,HS,AS,HST,AST,HF,AF,H
-  fd.co.uk EPL 26/27     HTTP 200     6400B  ﻿Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,Referee,HS,AS,HST,AST,HF,AF,H
-  fd.co.uk USA (MLS)     HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
-  fd.co.uk MEX           HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
-  fd.co.uk ARG           HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
-  fd.co.uk BRA           HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
-  sportsdb MLS 2026      HTTP 200     6273B  {"events":[{"idEvent":"2406707","strEvent":"St. Louis City SC vs Charlotte FC","strEventAl
-  espn MLS scoreboard    FAIL HTTPError 403
-  cdn.wnba scoreboard    HTTP 200     3824B  <!DOCTYPE html> | <html> |  | <head> |     <link rel="dns-prefetch" href="//maxcdn.bootstr
-  stats.wnba gamelog     FAIL TimeoutError 
-  espn WNBA (brwsr UA)   FAIL HTTPError 403
-  ufc mdabbert odds      FAIL HTTPError 404
-  ufc greco results      HTTP 200   250000B  EVENT,BOUT,OUTCOME,WEIGHTCLASS,METHOD,ROUND,TIME,TIME FORMAT,REFEREE,DETAILS,URL | UFC Fig
-  nflverse sched (new)   FAIL HTTPError 404
-  habitatring games      HTTP 200   250000B  game_id,season,game_type,week,gameday,weekday,gametime,away_team,away_score,home_team,home
-  nflverse games rel     FAIL HTTPError 404
-  cfl fixturedownload    FAIL HTTPError 404
-  sbr mlb odds 2023      HTTP 200    67819B  <!DOCTYPE html> | <html lang="en-us"> | <head> | <meta charset="utf-8"> | <meta name="view
-  sbr mlb odds 2024      HTTP 200    67756B  <!DOCTYPE html> | <html lang="en-us"> | <head> | <meta charset="utf-8"> | <meta name="view
+  xlsx path 2023     HTTP 200  67813B html, 0 file link(s)
+      (no xlsx/xls/csv hrefs; title: 🏀Top 10 Sports Betting Sites @ Online Sportsbooks Reviews)
+  old archive page   HTTP 200  67756B html, 0 file link(s)
+      (no xlsx/xls/csv hrefs; title: 🏀Top 10 Sports Betting Sites @ Online Sportsbooks Reviews)
+  wp page 2023       HTTP 200  67819B html, 0 file link(s)
+      (no xlsx/xls/csv hrefs; title: 🏀Top 10 Sports Betting Sites @ Online Sportsbooks Reviews)
+  wp page 2024       HTTP 200  67756B html, 0 file link(s)
+      (no xlsx/xls/csv hrefs; title: 🏀Top 10 Sports Betting Sites @ Online Sportsbooks Reviews)
+  archives index     HTTP 200  44815B html, 0 file link(s)
+      (no xlsx/xls/csv hrefs; title: Historical Sports Scores and Odds Archives @ Betting Odds, Lines & Spreads Explained)
