@@ -1,0 +1,45 @@
+name: Scores only
+# The board refresh re-sweeps every odds league and every goal ladder -- two to
+# four minutes and a real slice of the monthly API allowance. That is the right
+# cost for rebuilding a board and the wrong one for asking the score, which is
+# what a live slip needs every few minutes.
+#
+# This job runs scores.py and nothing else: MLB linescores come from
+# statsapi.mlb.com (free, unauthenticated, no allowance to burn) and the soccer
+# call is two endpoints rather than thirteen. Seconds, not minutes.
+on:
+  workflow_dispatch: {}
+  push:
+    paths: ['experiments/SCORES.txt']   # touch this file to pull scores on demand
+permissions:
+  contents: write
+concurrency:
+  group: parlay-scores
+  cancel-in-progress: true              # a newer request supersedes an in-flight one
+jobs:
+  scores:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Selftest then pull
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          set -o pipefail
+          python3 scores.py --selftest | tail -2
+          python3 scores.py 2>&1 | tee /tmp/scores.log
+      - name: Commit scores
+        run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          git add scores.json
+          git diff --cached --quiet && echo "no change" && exit 0
+          for attempt in 1 2 3 4 5; do
+            git commit -m "scores $(date -u +%F\ %H:%M)" || true
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || git rebase --abort
+          done
+          exit 1
