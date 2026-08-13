@@ -306,5 +306,6 @@
 
   UNMATCHED OR THIN (240): AEK Athens; PFC Levski Sofia; Dinamo Zagreb; Bodø/Glimt; Hapoel Be'er Sheva; Sabah FK; NK Celje; ŠK Slovan Bratislava; Willem II; SC Cambuur; ADO Den Haag; Académico de Viseu; CS Maritimo; Çorum FK; Basaksehir; Amed SK; Erzurum BB; Iraklis FC; Aris Thessaloniki; Kalamata FC
   -- unmatched is a statement about the JOIN, not the team. Do not read absence as bad form.
+  persisted 480 teams with form into 'all' (303 of them board-joined)
 
   303 matched / 240 not. wrote /home/runner/work/parlay/parlay/socform.json

@@ -2729,6 +2729,4328 @@
    "matched": "exact"
   }
  },
+ "all": {
+  "estoril": {
+   "form": "DDLDDL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.83,
+   "ga": 1.33,
+   "newest": "2026-08-07",
+   "name": "Estoril"
+  },
+  "famalicao": {
+   "form": "DDWDDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.0,
+   "ga": 0.67,
+   "newest": "2026-08-07",
+   "name": "Famalicao"
+  },
+  "casa pia": {
+   "form": "LLDWLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.5,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Casa Pia"
+  },
+  "guimaraes": {
+   "form": "LLLLLW",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.5,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Guimaraes"
+  },
+  "arouca": {
+   "form": "WWWWDL",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.83,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Arouca"
+  },
+  "estrela": {
+   "form": "DDDDLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.5,
+   "ga": 1.83,
+   "newest": "2026-08-08",
+   "name": "Estrela"
+  },
+  "sp lisbon": {
+   "form": "DDWWWD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 3.0,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "Sp Lisbon"
+  },
+  "porto": {
+   "form": "WWWLWW",
+   "n": 6,
+   "ppg": 2.5,
+   "gf": 1.5,
+   "ga": 0.67,
+   "newest": "2026-08-09",
+   "name": "Porto"
+  },
+  "alverca": {
+   "form": "LLLDLW",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.5,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "Alverca"
+  },
+  "benfica": {
+   "form": "DDWDDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.5,
+   "ga": 1.67,
+   "newest": "2026-08-09",
+   "name": "Benfica"
+  },
+  "gil vicente": {
+   "form": "WWLLDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 0.83,
+   "ga": 1.17,
+   "newest": "2026-08-09",
+   "name": "Gil Vicente"
+  },
+  "rio ave": {
+   "form": "LLDLDL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.33,
+   "ga": 1.5,
+   "newest": "2026-08-09",
+   "name": "Rio Ave"
+  },
+  "moreirense": {
+   "form": "DDDLWL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.33,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "name": "Moreirense"
+  },
+  "sp braga": {
+   "form": "DDDDDL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.67,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Sp Braga"
+  },
+  "santa clara": {
+   "form": "DDLWDW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.33,
+   "newest": "2026-08-10",
+   "name": "Santa Clara"
+  },
+  "nacional": {
+   "form": "DDWLLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.5,
+   "ga": 1.33,
+   "newest": "2026-08-10",
+   "name": "Nacional"
+  },
+  "excelsior": {
+   "form": "WWDWWD",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 3.0,
+   "ga": 1.17,
+   "newest": "2026-08-07",
+   "name": "Excelsior"
+  },
+  "nijmegen": {
+   "form": "LWLDDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "Nijmegen"
+  },
+  "telstar": {
+   "form": "WWWDWL",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.17,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "Telstar"
+  },
+  "go ahead eagles": {
+   "form": "WLLDDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.33,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "Go Ahead Eagles"
+  },
+  "psv eindhoven": {
+   "form": "DWWDWW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 3.5,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "PSV Eindhoven"
+  },
+  "for sittard": {
+   "form": "DLWLLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.33,
+   "ga": 1.83,
+   "newest": "2026-08-08",
+   "name": "For Sittard"
+  },
+  "az alkmaar": {
+   "form": "WDDDDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "AZ Alkmaar"
+  },
+  "sparta rotterdam": {
+   "form": "LLLDLL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.83,
+   "ga": 2.67,
+   "newest": "2026-08-09",
+   "name": "Sparta Rotterdam"
+  },
+  "feyenoord": {
+   "form": "WWDWWD",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 1.67,
+   "ga": 0.67,
+   "newest": "2026-08-09",
+   "name": "Feyenoord"
+  },
+  "groningen": {
+   "form": "WWWLLD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.5,
+   "ga": 1.5,
+   "newest": "2026-08-09",
+   "name": "Groningen"
+  },
+  "utrecht": {
+   "form": "LWWWLW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.83,
+   "ga": 1.5,
+   "newest": "2026-08-09",
+   "name": "Utrecht"
+  },
+  "zwolle": {
+   "form": "LLLWLD",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.0,
+   "ga": 2.5,
+   "newest": "2026-08-09",
+   "name": "Zwolle"
+  },
+  "ajax": {
+   "form": "WDLDWW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.67,
+   "ga": 0.67,
+   "newest": "2026-08-09",
+   "name": "Ajax"
+  },
+  "heerenveen": {
+   "form": "WDLWWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 0.83,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Heerenveen"
+  },
+  "twente": {
+   "form": "LLWDDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 1.67,
+   "newest": "2026-08-09",
+   "name": "Twente"
+  },
+  "brugge": {
+   "form": "WWDWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 3.33,
+   "ga": 0.5,
+   "newest": "2026-08-07",
+   "name": "Club Brugge"
+  },
+  "standard": {
+   "form": "DLWDWW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.83,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Standard"
+  },
+  "cercle brugge": {
+   "form": "DLLWWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.33,
+   "ga": 1.83,
+   "newest": "2026-08-08",
+   "name": "Cercle Brugge"
+  },
+  "st truiden": {
+   "form": "DWLDLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.33,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "St Truiden"
+  },
+  "westerlo": {
+   "form": "LLLWLD",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.0,
+   "ga": 2.5,
+   "newest": "2026-08-08",
+   "name": "Westerlo"
+  },
+  "st gilloise": {
+   "form": "WWDLWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.33,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "St. Gilloise"
+  },
+  "gent": {
+   "form": "WLDDDL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.67,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "Gent"
+  },
+  "mechelen": {
+   "form": "LLDDLW",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.83,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "name": "Mechelen"
+  },
+  "charleroi": {
+   "form": "WWDLWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.5,
+   "ga": 0.5,
+   "newest": "2026-08-09",
+   "name": "Charleroi"
+  },
+  "oud heverlee leuven": {
+   "form": "LLDWLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.5,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Oud-Heverlee Leuven"
+  },
+  "waregem": {
+   "form": "WWWWWW",
+   "n": 6,
+   "ppg": 3.0,
+   "gf": 2.5,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Waregem"
+  },
+  "genk": {
+   "form": "LWDDWL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 0.67,
+   "newest": "2026-08-09",
+   "name": "Genk"
+  },
+  "anderlecht": {
+   "form": "WLWDDL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "Anderlecht"
+  },
+  "raal la louviere": {
+   "form": "LWLLLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.83,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "RAAL La Louviere"
+  },
+  "antwerp": {
+   "form": "WWDLLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.67,
+   "ga": 1.67,
+   "newest": "2026-08-09",
+   "name": "Antwerp"
+  },
+  "dundee united": {
+   "form": "LDDDLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.33,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Dundee United"
+  },
+  "rangers": {
+   "form": "LDWLLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.67,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "name": "Rangers"
+  },
+  "falkirk": {
+   "form": "DLLLLW",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.67,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "Falkirk"
+  },
+  "st mirren": {
+   "form": "WWDWLL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.0,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "name": "St Mirren"
+  },
+  "aberdeen": {
+   "form": "LWLLWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Aberdeen"
+  },
+  "hearts": {
+   "form": "WLLWDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.0,
+   "ga": 1.17,
+   "newest": "2026-08-09",
+   "name": "Hearts"
+  },
+  "kilmarnock": {
+   "form": "LLWWWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.83,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Kilmarnock"
+  },
+  "hibernian": {
+   "form": "WLLWWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "Hibernian"
+  },
+  "motherwell": {
+   "form": "DWWLDL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Motherwell"
+  },
+  "celtic": {
+   "form": "WWWWWW",
+   "n": 6,
+   "ppg": 3.0,
+   "gf": 2.83,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Celtic"
+  },
+  "dundee": {
+   "form": "WLWLWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.67,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Dundee"
+  },
+  "liverpool": {
+   "form": "DLDLWW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.83,
+   "ga": 1.83,
+   "newest": "2026-05-24",
+   "name": "Liverpool"
+  },
+  "bournemouth": {
+   "form": "DDWWDW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.67,
+   "ga": 0.83,
+   "newest": "2026-05-24",
+   "name": "Bournemouth"
+  },
+  "aston villa": {
+   "form": "WWDLLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.17,
+   "ga": 1.83,
+   "newest": "2026-05-24",
+   "name": "Aston Villa"
+  },
+  "newcastle": {
+   "form": "LWDWLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 1.33,
+   "newest": "2026-05-24",
+   "name": "Newcastle"
+  },
+  "brighton": {
+   "form": "LLWLWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.5,
+   "ga": 1.5,
+   "newest": "2026-05-24",
+   "name": "Brighton"
+  },
+  "fulham": {
+   "form": "WDLLWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 0.67,
+   "ga": 0.83,
+   "newest": "2026-05-24",
+   "name": "Fulham"
+  },
+  "sunderland": {
+   "form": "WWDDLL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.5,
+   "ga": 2.0,
+   "newest": "2026-05-24",
+   "name": "Sunderland"
+  },
+  "west ham": {
+   "form": "WLLLWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.0,
+   "ga": 1.33,
+   "newest": "2026-05-24",
+   "name": "West Ham"
+  },
+  "tottenham": {
+   "form": "WLDWWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.33,
+   "ga": 1.0,
+   "newest": "2026-05-24",
+   "name": "Tottenham"
+  },
+  "burnley": {
+   "form": "DLDLLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.83,
+   "ga": 2.0,
+   "newest": "2026-05-24",
+   "name": "Burnley"
+  },
+  "wolves": {
+   "form": "DDLDLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.5,
+   "ga": 1.67,
+   "newest": "2026-05-24",
+   "name": "Wolves"
+  },
+  "man city": {
+   "form": "LDWWDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 2.0,
+   "ga": 1.0,
+   "newest": "2026-05-24",
+   "name": "Man City"
+  },
+  "chelsea": {
+   "form": "LWDLLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.83,
+   "ga": 1.83,
+   "newest": "2026-05-24",
+   "name": "Chelsea"
+  },
+  "crystal palace": {
+   "form": "LDLDLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 1.0,
+   "ga": 2.5,
+   "newest": "2026-05-24",
+   "name": "Crystal Palace"
+  },
+  "nott m forest": {
+   "form": "DLDWWW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 2.67,
+   "ga": 1.17,
+   "newest": "2026-05-24",
+   "name": "Nott'm Forest"
+  },
+  "brentford": {
+   "form": "DDLWLD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-05-24",
+   "name": "Brentford"
+  },
+  "man united": {
+   "form": "WWDWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 2.0,
+   "ga": 0.83,
+   "newest": "2026-05-24",
+   "name": "Man United"
+  },
+  "arsenal": {
+   "form": "WWWWWL",
+   "n": 6,
+   "ppg": 2.5,
+   "gf": 1.5,
+   "ga": 0.5,
+   "newest": "2026-05-24",
+   "name": "Arsenal"
+  },
+  "leeds": {
+   "form": "LWDWDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-05-24",
+   "name": "Leeds"
+  },
+  "everton": {
+   "form": "LLDDLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 1.33,
+   "ga": 2.17,
+   "newest": "2026-05-24",
+   "name": "Everton"
+  },
+  "birmingham": {
+   "form": "DWWDWL",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-05-02",
+   "name": "Birmingham"
+  },
+  "ipswich": {
+   "form": "WDDWDL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.17,
+   "newest": "2026-05-02",
+   "name": "Ipswich"
+  },
+  "charlton": {
+   "form": "LWLDLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-05-02",
+   "name": "Charlton"
+  },
+  "watford": {
+   "form": "LLLLLD",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.33,
+   "ga": 2.83,
+   "newest": "2026-05-02",
+   "name": "Watford"
+  },
+  "coventry": {
+   "form": "WWWDDD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.17,
+   "ga": 0.5,
+   "newest": "2026-05-02",
+   "name": "Coventry"
+  },
+  "hull": {
+   "form": "WLDDLD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-05-02",
+   "name": "Hull"
+  },
+  "southampton": {
+   "form": "WDDWWW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 2.33,
+   "ga": 1.17,
+   "newest": "2026-05-02",
+   "name": "Southampton"
+  },
+  "wrexham": {
+   "form": "DLWWLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 2.0,
+   "newest": "2026-05-02",
+   "name": "Wrexham"
+  },
+  "middlesbrough": {
+   "form": "DWWDLD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.0,
+   "ga": 1.33,
+   "newest": "2026-05-02",
+   "name": "Middlesbrough"
+  },
+  "swansea": {
+   "form": "WDWLWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-05-02",
+   "name": "Swansea"
+  },
+  "norwich": {
+   "form": "LDWWLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.5,
+   "newest": "2026-05-02",
+   "name": "Norwich"
+  },
+  "millwall": {
+   "form": "WDWWDL",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 0.67,
+   "newest": "2026-05-02",
+   "name": "Millwall"
+  },
+  "oxford": {
+   "form": "LWLLWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 1.17,
+   "newest": "2026-05-02",
+   "name": "Oxford"
+  },
+  "portsmouth": {
+   "form": "DWLWWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.5,
+   "ga": 1.17,
+   "newest": "2026-05-02",
+   "name": "Portsmouth"
+  },
+  "qpr": {
+   "form": "LLLLDD",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.67,
+   "ga": 1.83,
+   "newest": "2026-05-02",
+   "name": "QPR"
+  },
+  "preston": {
+   "form": "LWLLWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 1.83,
+   "newest": "2026-05-02",
+   "name": "Preston"
+  },
+  "stoke": {
+   "form": "LLLLDL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.5,
+   "ga": 2.17,
+   "newest": "2026-05-02",
+   "name": "Stoke"
+  },
+  "derby": {
+   "form": "LWLWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.33,
+   "newest": "2026-05-02",
+   "name": "Derby"
+  },
+  "west brom": {
+   "form": "LDWWDD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 0.33,
+   "newest": "2026-05-02",
+   "name": "West Brom"
+  },
+  "blackburn": {
+   "form": "LWDLDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.17,
+   "newest": "2026-05-02",
+   "name": "Blackburn"
+  },
+  "sheffield united": {
+   "form": "WLLWWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.5,
+   "newest": "2026-05-02",
+   "name": "Sheffield United"
+  },
+  "bristol city": {
+   "form": "WLDLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.33,
+   "ga": 1.33,
+   "newest": "2026-05-02",
+   "name": "Bristol City"
+  },
+  "leicester": {
+   "form": "WDDLLD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.0,
+   "newest": "2026-05-02",
+   "name": "Leicester"
+  },
+  "sheffield weds": {
+   "form": "WLLDDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.33,
+   "newest": "2026-05-02",
+   "name": "Sheffield Weds"
+  },
+  "girona": {
+   "form": "DLDDLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 1.17,
+   "newest": "2026-05-23",
+   "name": "Girona"
+  },
+  "vallecano": {
+   "form": "WWDDWD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.83,
+   "ga": 1.0,
+   "newest": "2026-05-23",
+   "name": "Vallecano"
+  },
+  "villarreal": {
+   "form": "WLLDWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.5,
+   "ga": 1.5,
+   "newest": "2026-05-24",
+   "name": "Villarreal"
+  },
+  "oviedo": {
+   "form": "LLLDLL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.17,
+   "ga": 1.83,
+   "newest": "2026-05-23",
+   "name": "Oviedo"
+  },
+  "mallorca": {
+   "form": "WLLDWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-05-23",
+   "name": "Mallorca"
+  },
+  "barcelona": {
+   "form": "LWLWWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.67,
+   "ga": 1.0,
+   "newest": "2026-05-23",
+   "name": "Barcelona"
+  },
+  "alaves": {
+   "form": "LWWDLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.33,
+   "ga": 1.33,
+   "newest": "2026-05-23",
+   "name": "Alaves"
+  },
+  "levante": {
+   "form": "LWWWLD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.83,
+   "newest": "2026-05-23",
+   "name": "Levante"
+  },
+  "valencia": {
+   "form": "WWDWLW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.83,
+   "ga": 1.33,
+   "newest": "2026-05-23",
+   "name": "Valencia"
+  },
+  "sociedad": {
+   "form": "DLDDLD",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.67,
+   "ga": 2.0,
+   "newest": "2026-05-23",
+   "name": "Sociedad"
+  },
+  "celta": {
+   "form": "WDLWWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.5,
+   "ga": 1.17,
+   "newest": "2026-05-23",
+   "name": "Celta"
+  },
+  "getafe": {
+   "form": "WLWDLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.67,
+   "ga": 1.0,
+   "newest": "2026-05-23",
+   "name": "Getafe"
+  },
+  "ath bilbao": {
+   "form": "LDLLWL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.5,
+   "ga": 2.17,
+   "newest": "2026-05-23",
+   "name": "Ath Bilbao"
+  },
+  "sevilla": {
+   "form": "LLWWWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 1.17,
+   "newest": "2026-05-23",
+   "name": "Sevilla"
+  },
+  "espanol": {
+   "form": "DWWLLD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.0,
+   "newest": "2026-05-23",
+   "name": "Espanol"
+  },
+  "ath madrid": {
+   "form": "LWWLWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.5,
+   "ga": 1.5,
+   "newest": "2026-05-24",
+   "name": "Ath Madrid"
+  },
+  "elche": {
+   "form": "DWLDLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-05-23",
+   "name": "Elche"
+  },
+  "betis": {
+   "form": "WLWDWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.83,
+   "ga": 1.33,
+   "newest": "2026-05-23",
+   "name": "Betis"
+  },
+  "real madrid": {
+   "form": "WWWLWD",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.67,
+   "ga": 0.83,
+   "newest": "2026-05-23",
+   "name": "Real Madrid"
+  },
+  "osasuna": {
+   "form": "LLLLLW",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.17,
+   "ga": 1.83,
+   "newest": "2026-05-23",
+   "name": "Osasuna"
+  },
+  "genoa": {
+   "form": "LLDDLW",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.5,
+   "ga": 1.0,
+   "newest": "2026-05-24",
+   "name": "Genoa"
+  },
+  "lecce": {
+   "form": "WWLWDD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.17,
+   "ga": 0.83,
+   "newest": "2026-05-24",
+   "name": "Lecce"
+  },
+  "sassuolo": {
+   "form": "LLLWDW",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 1.17,
+   "newest": "2026-05-24",
+   "name": "Sassuolo"
+  },
+  "napoli": {
+   "form": "WWLDWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 0.83,
+   "newest": "2026-05-24",
+   "name": "Napoli"
+  },
+  "milan": {
+   "form": "LWLLDW",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.0,
+   "ga": 1.33,
+   "newest": "2026-05-24",
+   "name": "Milan"
+  },
+  "cremonese": {
+   "form": "LWWLLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.0,
+   "ga": 1.67,
+   "newest": "2026-05-24",
+   "name": "Cremonese"
+  },
+  "roma": {
+   "form": "WWWWWD",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 2.33,
+   "ga": 0.5,
+   "newest": "2026-05-24",
+   "name": "Roma"
+  },
+  "bologna": {
+   "form": "DWWDLL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-05-23",
+   "name": "Bologna"
+  },
+  "cagliari": {
+   "form": "WWLDWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-05-24",
+   "name": "Cagliari"
+  },
+  "fiorentina": {
+   "form": "DWDLDD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.67,
+   "ga": 1.0,
+   "newest": "2026-05-22",
+   "name": "Fiorentina"
+  },
+  "como": {
+   "form": "WWWDWL",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.5,
+   "ga": 0.5,
+   "newest": "2026-05-24",
+   "name": "Como"
+  },
+  "lazio": {
+   "form": "WLLWDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.5,
+   "ga": 1.67,
+   "newest": "2026-05-23",
+   "name": "Lazio"
+  },
+  "atalanta": {
+   "form": "DLWDLD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-05-22",
+   "name": "Atalanta"
+  },
+  "pisa": {
+   "form": "LLLLLL",
+   "n": 6,
+   "ppg": 0.0,
+   "gf": 0.5,
+   "ga": 2.17,
+   "newest": "2026-05-23",
+   "name": "Pisa"
+  },
+  "juventus": {
+   "form": "DLWDDW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 0.83,
+   "newest": "2026-05-24",
+   "name": "Juventus"
+  },
+  "parma": {
+   "form": "WLLLWW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.83,
+   "ga": 1.0,
+   "newest": "2026-05-24",
+   "name": "Parma"
+  },
+  "udinese": {
+   "form": "LLWWDL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 1.0,
+   "newest": "2026-05-24",
+   "name": "Udinese"
+  },
+  "verona": {
+   "form": "LDLDDL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.33,
+   "ga": 1.0,
+   "newest": "2026-05-24",
+   "name": "Verona"
+  },
+  "inter": {
+   "form": "DDWWDW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.33,
+   "ga": 1.0,
+   "newest": "2026-05-23",
+   "name": "Inter"
+  },
+  "torino": {
+   "form": "DLWLDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-05-24",
+   "name": "Torino"
+  },
+  "bayern munich": {
+   "form": "WWDWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 3.67,
+   "ga": 1.5,
+   "newest": "2026-05-16",
+   "name": "Bayern Munich"
+  },
+  "rb leipzig": {
+   "form": "LWLWWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.83,
+   "ga": 1.83,
+   "newest": "2026-05-16",
+   "name": "RB Leipzig"
+  },
+  "ein frankfurt": {
+   "form": "DLLDLW",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.5,
+   "ga": 2.0,
+   "newest": "2026-05-16",
+   "name": "Ein Frankfurt"
+  },
+  "werder bremen": {
+   "form": "LLLDWL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.0,
+   "ga": 1.83,
+   "newest": "2026-05-16",
+   "name": "Werder Bremen"
+  },
+  "freiburg": {
+   "form": "WLDLWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.67,
+   "newest": "2026-05-16",
+   "name": "Freiburg"
+  },
+  "augsburg": {
+   "form": "LWWDWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.83,
+   "ga": 1.67,
+   "newest": "2026-05-16",
+   "name": "Augsburg"
+  },
+  "heidenheim": {
+   "form": "LWDWLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.0,
+   "ga": 1.5,
+   "newest": "2026-05-16",
+   "name": "Heidenheim"
+  },
+  "wolfsburg": {
+   "form": "WLDDWL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.0,
+   "newest": "2026-05-16",
+   "name": "Wolfsburg"
+  },
+  "leverkusen": {
+   "form": "DLWWLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.33,
+   "newest": "2026-05-16",
+   "name": "Leverkusen"
+  },
+  "hoffenheim": {
+   "form": "LWDWWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.67,
+   "ga": 1.83,
+   "newest": "2026-05-16",
+   "name": "Hoffenheim"
+  },
+  "union berlin": {
+   "form": "WWDLLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 2.0,
+   "ga": 1.83,
+   "newest": "2026-05-16",
+   "name": "Union Berlin"
+  },
+  "stuttgart": {
+   "form": "DWDDLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.5,
+   "ga": 1.83,
+   "newest": "2026-05-16",
+   "name": "Stuttgart"
+  },
+  "st pauli": {
+   "form": "LLLLDL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.67,
+   "ga": 2.5,
+   "newest": "2026-05-16",
+   "name": "St Pauli"
+  },
+  "dortmund": {
+   "form": "WWLWLL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.0,
+   "newest": "2026-05-16",
+   "name": "Dortmund"
+  },
+  "mainz": {
+   "form": "WLWLDL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.5,
+   "ga": 1.67,
+   "newest": "2026-05-16",
+   "name": "Mainz"
+  },
+  "koln": {
+   "form": "LLDLDW",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.5,
+   "ga": 2.33,
+   "newest": "2026-05-16",
+   "name": "FC Koln"
+  },
+  "m gladbach": {
+   "form": "WLWDDL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 0.83,
+   "newest": "2026-05-16",
+   "name": "M'gladbach"
+  },
+  "hamburg": {
+   "form": "DWWLLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 2.17,
+   "newest": "2026-05-16",
+   "name": "Hamburg"
+  },
+  "rennes": {
+   "form": "LWLWWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.0,
+   "ga": 1.67,
+   "newest": "2026-05-17",
+   "name": "Rennes"
+  },
+  "marseille": {
+   "form": "WWLDLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.33,
+   "ga": 1.33,
+   "newest": "2026-05-17",
+   "name": "Marseille"
+  },
+  "lens": {
+   "form": "WLWDDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 2.0,
+   "ga": 1.33,
+   "newest": "2026-05-17",
+   "name": "Lens"
+  },
+  "lyon": {
+   "form": "LLWWWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.0,
+   "ga": 1.83,
+   "newest": "2026-05-17",
+   "name": "Lyon"
+  },
+  "monaco": {
+   "form": "LLWDDL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.83,
+   "ga": 2.5,
+   "newest": "2026-05-17",
+   "name": "Monaco"
+  },
+  "le havre": {
+   "form": "WLDDDD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.5,
+   "ga": 1.33,
+   "newest": "2026-05-17",
+   "name": "Le Havre"
+  },
+  "nice": {
+   "form": "DLDDDD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.67,
+   "ga": 0.83,
+   "newest": "2026-05-17",
+   "name": "Nice"
+  },
+  "toulouse": {
+   "form": "DWWDLL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.33,
+   "ga": 1.83,
+   "newest": "2026-05-17",
+   "name": "Toulouse"
+  },
+  "brest": {
+   "form": "DLLLDD",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.0,
+   "ga": 2.0,
+   "newest": "2026-05-17",
+   "name": "Brest"
+  },
+  "lille": {
+   "form": "LWDWDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.17,
+   "ga": 0.5,
+   "newest": "2026-05-17",
+   "name": "Lille"
+  },
+  "angers": {
+   "form": "DDLLDL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.83,
+   "ga": 1.83,
+   "newest": "2026-05-17",
+   "name": "Angers"
+  },
+  "paris": {
+   "form": "WLWLWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.33,
+   "ga": 1.0,
+   "newest": "2026-05-17",
+   "name": "Paris FC"
+  },
+  "auxerre": {
+   "form": "WWWLDD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.83,
+   "ga": 1.17,
+   "newest": "2026-05-17",
+   "name": "Auxerre"
+  },
+  "lorient": {
+   "form": "LWDLWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.67,
+   "ga": 1.5,
+   "newest": "2026-05-17",
+   "name": "Lorient"
+  },
+  "metz": {
+   "form": "DLLDLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 1.17,
+   "ga": 2.67,
+   "newest": "2026-05-17",
+   "name": "Metz"
+  },
+  "strasbourg": {
+   "form": "WWDLWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.0,
+   "ga": 2.17,
+   "newest": "2026-05-17",
+   "name": "Strasbourg"
+  },
+  "nantes": {
+   "form": "DLWLLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.83,
+   "ga": 1.17,
+   "newest": "2026-05-17",
+   "name": "Nantes"
+  },
+  "paris sg": {
+   "form": "LWWDWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.0,
+   "ga": 0.67,
+   "newest": "2026-05-17",
+   "name": "Paris SG"
+  },
+  "nac breda": {
+   "form": "DWLLDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.0,
+   "ga": 1.33,
+   "newest": "2026-05-17",
+   "name": "NAC Breda"
+  },
+  "volendam": {
+   "form": "LDLWLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.83,
+   "ga": 1.17,
+   "newest": "2026-05-17",
+   "name": "Volendam"
+  },
+  "heracles": {
+   "form": "LLLLLL",
+   "n": 6,
+   "ppg": 0.0,
+   "gf": 0.33,
+   "ga": 2.5,
+   "newest": "2026-05-17",
+   "name": "Heracles"
+  },
+  "avs": {
+   "form": "DWWDDD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-05-16",
+   "name": "AVS"
+  },
+  "tondela": {
+   "form": "LWWDLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.0,
+   "ga": 1.5,
+   "newest": "2026-05-16",
+   "name": "Tondela"
+  },
+  "dender": {
+   "form": "LLLLWL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.0,
+   "ga": 2.17,
+   "newest": "2026-05-09",
+   "name": "Dender"
+  },
+  "gaziantep": {
+   "form": "LLLLWL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.0,
+   "ga": 1.83,
+   "newest": "2026-05-16",
+   "name": "Gaziantep"
+  },
+  "galatasaray": {
+   "form": "LWLWWD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 1.5,
+   "newest": "2026-05-17",
+   "name": "Galatasaray"
+  },
+  "samsunspor": {
+   "form": "WLWWWW",
+   "n": 6,
+   "ppg": 2.5,
+   "gf": 2.33,
+   "ga": 1.33,
+   "newest": "2026-05-16",
+   "name": "Samsunspor"
+  },
+  "genclerbirligi": {
+   "form": "WWLWLL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.33,
+   "ga": 1.33,
+   "newest": "2026-05-17",
+   "name": "Genclerbirligi"
+  },
+  "antalyaspor": {
+   "form": "WLDLLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.83,
+   "ga": 2.0,
+   "newest": "2026-05-17",
+   "name": "Antalyaspor"
+  },
+  "kasimpasa": {
+   "form": "WLDLWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.33,
+   "ga": 1.83,
+   "newest": "2026-05-17",
+   "name": "Kasimpasa"
+  },
+  "rizespor": {
+   "form": "DLWLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.5,
+   "ga": 2.17,
+   "newest": "2026-05-15",
+   "name": "Rizespor"
+  },
+  "goztep": {
+   "form": "LWDWDD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.5,
+   "newest": "2026-05-16",
+   "name": "Goztep"
+  },
+  "eyupspor": {
+   "form": "DWDWWL",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 2.33,
+   "ga": 1.17,
+   "newest": "2026-05-17",
+   "name": "Eyupspor"
+  },
+  "konyaspor": {
+   "form": "LLLWWW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.5,
+   "newest": "2026-05-17",
+   "name": "Konyaspor"
+  },
+  "trabzonspor": {
+   "form": "LWDLDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.0,
+   "ga": 1.5,
+   "newest": "2026-05-17",
+   "name": "Trabzonspor"
+  },
+  "kocaelispor": {
+   "form": "LLDLDD",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.5,
+   "ga": 1.0,
+   "newest": "2026-05-17",
+   "name": "Kocaelispor"
+  },
+  "karagumruk": {
+   "form": "WWWDLL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 0.83,
+   "ga": 1.0,
+   "newest": "2026-05-16",
+   "name": "Karagumruk"
+  },
+  "alanyaspor": {
+   "form": "LWDLLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-05-16",
+   "name": "Alanyaspor"
+  },
+  "fenerbahce": {
+   "form": "DWWLDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 2.5,
+   "ga": 1.5,
+   "newest": "2026-05-17",
+   "name": "Fenerbahce"
+  },
+  "besiktas": {
+   "form": "DLWDLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 1.33,
+   "newest": "2026-05-15",
+   "name": "Besiktas"
+  },
+  "buyuksehyr": {
+   "form": "WWLWDW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.33,
+   "ga": 0.83,
+   "newest": "2026-05-16",
+   "name": "Buyuksehyr"
+  },
+  "kayserispor": {
+   "form": "WLDWLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.0,
+   "ga": 2.0,
+   "newest": "2026-05-17",
+   "name": "Kayserispor"
+  },
+  "aris": {
+   "form": "WWWWWD",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 2.33,
+   "ga": 0.83,
+   "newest": "2026-05-17",
+   "name": "Aris"
+  },
+  "volos nfc": {
+   "form": "LLLLLD",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 1.17,
+   "ga": 2.83,
+   "newest": "2026-05-17",
+   "name": "Volos NFC"
+  },
+  "olympiakos": {
+   "form": "DWDLWL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.0,
+   "newest": "2026-05-17",
+   "name": "Olympiakos"
+  },
+  "asteras tripolis": {
+   "form": "WDWDWL",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-05-21",
+   "name": "Asteras Tripolis"
+  },
+  "panetolikos": {
+   "form": "LDDWLD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.0,
+   "newest": "2026-05-21",
+   "name": "Panetolikos"
+  },
+  "atromitos": {
+   "form": "WLWLLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.5,
+   "ga": 1.5,
+   "newest": "2026-05-21",
+   "name": "Atromitos"
+  },
+  "aek": {
+   "form": "DDWDWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.33,
+   "ga": 0.5,
+   "newest": "2026-05-17",
+   "name": "AEK"
+  },
+  "panserraikos": {
+   "form": "LDLLDW",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.67,
+   "ga": 1.83,
+   "newest": "2026-05-21",
+   "name": "Panserraikos"
+  },
+  "paok": {
+   "form": "DDDWLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-05-17",
+   "name": "PAOK"
+  },
+  "larisa": {
+   "form": "LWDDDL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-05-21",
+   "name": "Larisa"
+  },
+  "levadeiakos": {
+   "form": "LWWWLD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.0,
+   "ga": 1.67,
+   "newest": "2026-05-17",
+   "name": "Levadeiakos"
+  },
+  "kifisia": {
+   "form": "WDLWWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.0,
+   "ga": 1.0,
+   "newest": "2026-05-21",
+   "name": "Kifisia"
+  },
+  "ofi crete": {
+   "form": "WLLLWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.5,
+   "ga": 1.67,
+   "newest": "2026-05-17",
+   "name": "OFI Crete"
+  },
+  "panathinaikos": {
+   "form": "DLLDLD",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.5,
+   "ga": 1.17,
+   "newest": "2026-05-17",
+   "name": "Panathinaikos"
+  },
+  "livingston": {
+   "form": "LDLDWL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.17,
+   "ga": 2.0,
+   "newest": "2026-05-17",
+   "name": "Livingston"
+  },
+  "colorado rapids": {
+   "form": "WLWLLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.83,
+   "ga": 0.83,
+   "newest": "2026-08-02",
+   "name": "Colorado Rapids"
+  },
+  "columbus crew": {
+   "form": "DWLWDL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 1.5,
+   "newest": "2026-08-02",
+   "name": "Columbus Crew"
+  },
+  "vancouver whitecaps": {
+   "form": "DDLWLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.83,
+   "ga": 1.67,
+   "newest": "2026-08-02",
+   "name": "Vancouver Whitecaps"
+  },
+  "montreal": {
+   "form": "DLLDDL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.0,
+   "ga": 1.67,
+   "newest": "2026-08-02",
+   "name": "CF Montreal"
+  },
+  "dc united": {
+   "form": "DWDDDL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.83,
+   "ga": 2.0,
+   "newest": "2026-08-02",
+   "name": "DC United"
+  },
+  "sporting kansas city": {
+   "form": "LLWLLW",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.17,
+   "ga": 2.17,
+   "newest": "2026-08-02",
+   "name": "Sporting Kansas City"
+  },
+  "los angeles galaxy": {
+   "form": "DDLLDW",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.33,
+   "newest": "2026-08-02",
+   "name": "Los Angeles Galaxy"
+  },
+  "real salt lake": {
+   "form": "DLLDWW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.5,
+   "ga": 1.33,
+   "newest": "2026-08-02",
+   "name": "Real Salt Lake"
+  },
+  "san jose earthquakes": {
+   "form": "LDLWLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.67,
+   "ga": 2.67,
+   "newest": "2026-08-02",
+   "name": "San Jose Earthquakes"
+  },
+  "new england revolution": {
+   "form": "LDWDLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.33,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "New England Revolution"
+  },
+  "dallas": {
+   "form": "DLDWWL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.5,
+   "ga": 1.5,
+   "newest": "2026-08-02",
+   "name": "FC Dallas"
+  },
+  "new york red bulls": {
+   "form": "WLLWDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.83,
+   "newest": "2026-08-02",
+   "name": "New York Red Bulls"
+  },
+  "houston dynamo": {
+   "form": "WWWDDW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 1.67,
+   "ga": 0.33,
+   "newest": "2026-08-08",
+   "name": "Houston Dynamo"
+  },
+  "portland timbers": {
+   "form": "WWDWLL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.0,
+   "ga": 1.67,
+   "newest": "2026-08-02",
+   "name": "Portland Timbers"
+  },
+  "philadelphia union": {
+   "form": "WWWLDL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.5,
+   "ga": 2.33,
+   "newest": "2026-08-02",
+   "name": "Philadelphia Union"
+  },
+  "chicago fire": {
+   "form": "WLLWWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.0,
+   "ga": 1.5,
+   "newest": "2026-08-02",
+   "name": "Chicago Fire"
+  },
+  "seattle sounders": {
+   "form": "LLLLLL",
+   "n": 6,
+   "ppg": 0.0,
+   "gf": 0.5,
+   "ga": 2.33,
+   "newest": "2026-08-02",
+   "name": "Seattle Sounders"
+  },
+  "toronto": {
+   "form": "DLDDLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 1.33,
+   "newest": "2026-08-01",
+   "name": "Toronto FC"
+  },
+  "orlando city": {
+   "form": "LWWLDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.33,
+   "ga": 2.17,
+   "newest": "2026-08-02",
+   "name": "Orlando City"
+  },
+  "new york city": {
+   "form": "DWWLDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-08-01",
+   "name": "New York City"
+  },
+  "minnesota united": {
+   "form": "DDLDLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 1.17,
+   "newest": "2026-08-02",
+   "name": "Minnesota United"
+  },
+  "atlanta utd": {
+   "form": "LLDLLD",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 1.0,
+   "ga": 2.17,
+   "newest": "2026-08-02",
+   "name": "Atlanta Utd"
+  },
+  "los angeles": {
+   "form": "DWWWWL",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.33,
+   "ga": 0.83,
+   "newest": "2026-08-02",
+   "name": "Los Angeles FC"
+  },
+  "cincinnati": {
+   "form": "WLWWDL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 3.5,
+   "ga": 2.83,
+   "newest": "2026-08-02",
+   "name": "FC Cincinnati"
+  },
+  "nashville": {
+   "form": "DLWWWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-08-02",
+   "name": "Nashville SC"
+  },
+  "inter miami": {
+   "form": "DWWWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 3.17,
+   "ga": 1.83,
+   "newest": "2026-08-02",
+   "name": "Inter Miami"
+  },
+  "austin": {
+   "form": "LLWLLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 2.5,
+   "newest": "2026-08-02",
+   "name": "Austin FC"
+  },
+  "charlotte": {
+   "form": "LWDWWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-08-02",
+   "name": "Charlotte"
+  },
+  "st louis city": {
+   "form": "DWWWWD",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 2.0,
+   "ga": 0.83,
+   "newest": "2026-08-02",
+   "name": "St. Louis City"
+  },
+  "san diego": {
+   "form": "DWLLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 2.0,
+   "ga": 1.5,
+   "newest": "2026-08-02",
+   "name": "San Diego FC"
+  },
+  "tigres uanl": {
+   "form": "LDLLWW",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 2.17,
+   "ga": 2.0,
+   "newest": "2026-08-02",
+   "name": "Tigres UANL"
+  },
+  "tijuana": {
+   "form": "DWWDWD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.33,
+   "ga": 0.5,
+   "newest": "2026-08-01",
+   "name": "Club Tijuana"
+  },
+  "puebla": {
+   "form": "DLWLLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.83,
+   "ga": 2.0,
+   "newest": "2026-08-01",
+   "name": "Puebla"
+  },
+  "cruz azul": {
+   "form": "LWWWDW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.83,
+   "ga": 1.33,
+   "newest": "2026-08-02",
+   "name": "Cruz Azul"
+  },
+  "queretaro": {
+   "form": "WWLWDD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 1.17,
+   "newest": "2026-08-02",
+   "name": "Queretaro"
+  },
+  "leon": {
+   "form": "WLLLLW",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.5,
+   "ga": 2.0,
+   "newest": "2026-08-02",
+   "name": "Club Leon"
+  },
+  "monterrey": {
+   "form": "WLWLWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.83,
+   "newest": "2026-08-02",
+   "name": "Monterrey"
+  },
+  "america": {
+   "form": "WDWDDL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.83,
+   "ga": 1.33,
+   "newest": "2026-08-03",
+   "name": "Club America"
+  },
+  "santos laguna": {
+   "form": "LLLWLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-03",
+   "name": "Santos Laguna"
+  },
+  "atl san luis": {
+   "form": "DDLLWL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-08-01",
+   "name": "Atl. San Luis"
+  },
+  "atlas": {
+   "form": "LWWLLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-08-02",
+   "name": "Atlas"
+  },
+  "unam pumas": {
+   "form": "WWLLDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.5,
+   "ga": 1.17,
+   "newest": "2026-08-01",
+   "name": "UNAM Pumas"
+  },
+  "toluca": {
+   "form": "WLWLLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-03",
+   "name": "Toluca"
+  },
+  "guadalajara chivas": {
+   "form": "DWLLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.17,
+   "newest": "2026-08-01",
+   "name": "Guadalajara Chivas"
+  },
+  "atlante": {
+   "form": "WDL",
+   "n": 3,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 1.67,
+   "newest": "2026-08-02",
+   "name": "Atlante"
+  },
+  "pachuca": {
+   "form": "LLWLWW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 0.67,
+   "newest": "2026-08-02",
+   "name": "Pachuca"
+  },
+  "necaxa": {
+   "form": "LWWLDD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-08-03",
+   "name": "Necaxa"
+  },
+  "juarez": {
+   "form": "LLLWLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.0,
+   "ga": 2.5,
+   "newest": "2026-08-01",
+   "name": "Juarez"
+  },
+  "mazatlan": {
+   "form": "LWDLLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.5,
+   "ga": 2.5,
+   "newest": "2026-04-26",
+   "name": "Mazatlan FC"
+  },
+  "union santa fe": {
+   "form": "LWLDLW",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-08-11",
+   "name": "Union de Santa Fe"
+  },
+  "velez sarsfield": {
+   "form": "DWWWLD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.17,
+   "ga": 0.67,
+   "newest": "2026-08-08",
+   "name": "Velez Sarsfield"
+  },
+  "argentinos jrs": {
+   "form": "WWWWDD",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 1.67,
+   "ga": 0.67,
+   "newest": "2026-08-10",
+   "name": "Argentinos Jrs"
+  },
+  "racing": {
+   "form": "LLDWDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.17,
+   "newest": "2026-08-10",
+   "name": "Racing Club"
+  },
+  "lanus": {
+   "form": "WLLWLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.83,
+   "ga": 0.83,
+   "newest": "2026-08-12",
+   "name": "Lanus"
+  },
+  "boca juniors": {
+   "form": "DWDLDW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "Boca Juniors"
+  },
+  "newells old boys": {
+   "form": "LDLWDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.0,
+   "ga": 1.17,
+   "newest": "2026-08-09",
+   "name": "Newells Old Boys"
+  },
+  "independiente": {
+   "form": "LLWWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Independiente"
+  },
+  "san lorenzo": {
+   "form": "LLWLDL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.5,
+   "ga": 1.17,
+   "newest": "2026-08-09",
+   "name": "San Lorenzo"
+  },
+  "river plate": {
+   "form": "LLLLLW",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.5,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "River Plate"
+  },
+  "belgrano": {
+   "form": "WDLWWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.33,
+   "ga": 0.83,
+   "newest": "2026-08-10",
+   "name": "Belgrano"
+  },
+  "tigre": {
+   "form": "WDWLDL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 0.83,
+   "ga": 0.67,
+   "newest": "2026-08-08",
+   "name": "Tigre"
+  },
+  "estudiantes l p": {
+   "form": "LLWLLW",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Estudiantes L.P."
+  },
+  "gimnasia l p": {
+   "form": "WWWLLW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.17,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Gimnasia L.P."
+  },
+  "rosario central": {
+   "form": "WWDLLD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 0.83,
+   "ga": 0.83,
+   "newest": "2026-08-07",
+   "name": "Rosario Central"
+  },
+  "banfield": {
+   "form": "LDWLWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.17,
+   "newest": "2026-08-10",
+   "name": "Banfield"
+  },
+  "defensa y justicia": {
+   "form": "WLWDLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.0,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "name": "Defensa y Justicia"
+  },
+  "aldosivi": {
+   "form": "LLLDDL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-07",
+   "name": "Aldosivi"
+  },
+  "huracan": {
+   "form": "WDLWDD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.83,
+   "ga": 0.5,
+   "newest": "2026-08-09",
+   "name": "Huracan"
+  },
+  "sarmiento junin": {
+   "form": "WWLLLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 2.0,
+   "newest": "2026-08-08",
+   "name": "Sarmiento Junin"
+  },
+  "atl tucuman": {
+   "form": "LDWDWD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.83,
+   "ga": 0.5,
+   "newest": "2026-08-08",
+   "name": "Atl. Tucuman"
+  },
+  "talleres cordoba": {
+   "form": "LWLLLD",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.0,
+   "ga": 1.5,
+   "newest": "2026-08-12",
+   "name": "Talleres Cordoba"
+  },
+  "central cordoba": {
+   "form": "WWLLLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.67,
+   "ga": 1.0,
+   "newest": "2026-08-11",
+   "name": "Central Cordoba"
+  },
+  "platense": {
+   "form": "WLLDLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.67,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Platense"
+  },
+  "barracas central": {
+   "form": "LWWWLD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 0.83,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Barracas Central"
+  },
+  "instituto": {
+   "form": "WWWLWD",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.17,
+   "ga": 0.5,
+   "newest": "2026-08-09",
+   "name": "Instituto"
+  },
+  "dep riestra": {
+   "form": "WLLWDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.33,
+   "ga": 0.5,
+   "newest": "2026-08-08",
+   "name": "Dep. Riestra"
+  },
+  "ind rivadavia": {
+   "form": "WLWDLD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "Ind. Rivadavia"
+  },
+  "gimnasia mendoza": {
+   "form": "LWLWWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "Gimnasia Mendoza"
+  },
+  "estudiantes rio cuarto": {
+   "form": "LDLWLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.5,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "Estudiantes Rio Cuarto"
+  },
+  "palmeiras": {
+   "form": "DWLWWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.0,
+   "ga": 0.5,
+   "newest": "2026-08-09",
+   "name": "Palmeiras"
+  },
+  "flamengo rj": {
+   "form": "WDDWWL",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.83,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Flamengo RJ"
+  },
+  "botafogo rj": {
+   "form": "DWDWLD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Botafogo RJ"
+  },
+  "sao paulo": {
+   "form": "LDLLDL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.83,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "Sao Paulo"
+  },
+  "corinthians": {
+   "form": "WDDWWW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 1.67,
+   "ga": 0.33,
+   "newest": "2026-08-09",
+   "name": "Corinthians"
+  },
+  "fluminense": {
+   "form": "DDDDDL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.67,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Fluminense"
+  },
+  "internacional": {
+   "form": "DDLLLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.5,
+   "ga": 1.67,
+   "newest": "2026-08-09",
+   "name": "Internacional"
+  },
+  "coritiba": {
+   "form": "WLDLLW",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.0,
+   "ga": 1.67,
+   "newest": "2026-08-09",
+   "name": "Coritiba"
+  },
+  "atletico mg": {
+   "form": "DWDWLW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Atletico-MG"
+  },
+  "bahia": {
+   "form": "DDDDWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.0,
+   "ga": 0.5,
+   "newest": "2026-08-09",
+   "name": "Bahia"
+  },
+  "santos": {
+   "form": "LDLWLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.33,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "Santos"
+  },
+  "cruzeiro": {
+   "form": "WWLWDW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.5,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Cruzeiro"
+  },
+  "vasco": {
+   "form": "DDLLLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.33,
+   "ga": 1.67,
+   "newest": "2026-08-09",
+   "name": "Vasco"
+  },
+  "gremio": {
+   "form": "WDLLWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.5,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Gremio"
+  },
+  "vitoria": {
+   "form": "LLLDWL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.33,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Vitoria"
+  },
+  "athletico pr": {
+   "form": "WDWWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 1.5,
+   "ga": 0.33,
+   "newest": "2026-08-09",
+   "name": "Athletico-PR"
+  },
+  "chapecoense": {
+   "form": "LDLLLL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.67,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "Chapecoense-SC"
+  },
+  "bragantino": {
+   "form": "LDDWWW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 0.67,
+   "newest": "2026-08-09",
+   "name": "Bragantino"
+  },
+  "mirassol": {
+   "form": "LWDWLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.17,
+   "ga": 1.17,
+   "newest": "2026-08-09",
+   "name": "Mirassol"
+  },
+  "remo": {
+   "form": "DLWLWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "Remo"
+  },
+  "henan songshan longmen": {
+   "form": "DDWWLL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-09",
+   "name": "Henan Songshan Longmen"
+  },
+  "beijing guoan": {
+   "form": "WWDDWW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 2.0,
+   "ga": 0.67,
+   "newest": "2026-08-07",
+   "name": "Beijing Guoan"
+  },
+  "shanghai shenhua": {
+   "form": "WLLLWW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Shanghai Shenhua"
+  },
+  "tianjin jinmen tiger": {
+   "form": "LWWWWL",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.83,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Tianjin Jinmen Tiger"
+  },
+  "shandong taishan": {
+   "form": "WWLLWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Shandong Taishan"
+  },
+  "shanghai port": {
+   "form": "WLWDLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "Shanghai Port"
+  },
+  "chengdu rongcheng": {
+   "form": "LDDDDD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.0,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "Chengdu Rongcheng"
+  },
+  "zhejiang professional": {
+   "form": "LWDWLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.83,
+   "ga": 2.17,
+   "newest": "2026-08-01",
+   "name": "Zhejiang Professional"
+  },
+  "wuhan three towns": {
+   "form": "DWWLLD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.0,
+   "newest": "2026-08-01",
+   "name": "Wuhan Three Towns"
+  },
+  "qingdao hainiu": {
+   "form": "LLLLLD",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.67,
+   "ga": 2.33,
+   "newest": "2026-08-08",
+   "name": "Qingdao Hainiu"
+  },
+  "qingdao west coast": {
+   "form": "DWWDLW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.0,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Qingdao West Coast"
+  },
+  "shenzhen xinpengcheng": {
+   "form": "LWLLWL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.33,
+   "ga": 2.17,
+   "newest": "2026-08-07",
+   "name": "Shenzhen Xinpengcheng"
+  },
+  "yunnan yukun": {
+   "form": "WLWDLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.33,
+   "ga": 2.17,
+   "newest": "2026-08-08",
+   "name": "Yunnan Yukun"
+  },
+  "dalian yingbo": {
+   "form": "WDLWWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 1.83,
+   "newest": "2026-08-08",
+   "name": "Dalian Yingbo"
+  },
+  "liaoning tieren": {
+   "form": "LWLDWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Liaoning Tieren"
+  },
+  "chongqing tonglianglong": {
+   "form": "LLLDDL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.83,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Chongqing Tonglianglong"
+  },
+  "aarhus": {
+   "form": "DDWWWD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.17,
+   "ga": 1.0,
+   "newest": "2026-08-01",
+   "name": "Aarhus"
+  },
+  "sonderjyske": {
+   "form": "DLLLWL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-07",
+   "name": "Sonderjyske"
+  },
+  "randers": {
+   "form": "WLDLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.5,
+   "newest": "2026-08-09",
+   "name": "Randers FC"
+  },
+  "silkeborg": {
+   "form": "WLDLLW",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 2.33,
+   "newest": "2026-08-10",
+   "name": "Silkeborg"
+  },
+  "brondby": {
+   "form": "WWDWLD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.33,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Brondby"
+  },
+  "odense": {
+   "form": "LWLLDL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.83,
+   "ga": 1.33,
+   "newest": "2026-08-10",
+   "name": "Odense"
+  },
+  "copenhagen": {
+   "form": "WWWWDW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 3.5,
+   "ga": 1.0,
+   "newest": "2026-08-02",
+   "name": "FC Copenhagen"
+  },
+  "midtjylland": {
+   "form": "WWLDDD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.5,
+   "newest": "2026-08-02",
+   "name": "Midtjylland"
+  },
+  "horsens": {
+   "form": "LLD",
+   "n": 3,
+   "ppg": 0.33,
+   "gf": 0.67,
+   "ga": 1.67,
+   "newest": "2026-08-09",
+   "name": "Horsens"
+  },
+  "nordsjaelland": {
+   "form": "WDWDDL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 0.67,
+   "newest": "2026-08-02",
+   "name": "Nordsjaelland"
+  },
+  "viborg": {
+   "form": "DLWLLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.0,
+   "ga": 1.83,
+   "newest": "2026-08-07",
+   "name": "Viborg"
+  },
+  "lyngby": {
+   "form": "LDL",
+   "n": 3,
+   "ppg": 0.33,
+   "gf": 1.33,
+   "ga": 2.33,
+   "newest": "2026-08-09",
+   "name": "Lyngby"
+  },
+  "vejle": {
+   "form": "WWLLLL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-05-17",
+   "name": "Vejle"
+  },
+  "fredericia": {
+   "form": "WLDLDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.83,
+   "ga": 2.0,
+   "newest": "2026-05-17",
+   "name": "Fredericia"
+  },
+  "hjk": {
+   "form": "WLWWLL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.67,
+   "ga": 1.67,
+   "newest": "2026-08-09",
+   "name": "HJK"
+  },
+  "mariehamn": {
+   "form": "LLDLLL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.5,
+   "ga": 2.67,
+   "newest": "2026-08-09",
+   "name": "Mariehamn"
+  },
+  "vps": {
+   "form": "WLLLWW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "VPS"
+  },
+  "kups": {
+   "form": "DWWWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 2.5,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "KuPS"
+  },
+  "lahti": {
+   "form": "DWLWWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.17,
+   "ga": 0.17,
+   "newest": "2026-08-09",
+   "name": "Lahti"
+  },
+  "tps": {
+   "form": "DWLLWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.5,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "TPS"
+  },
+  "jaro": {
+   "form": "LLWDWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Jaro"
+  },
+  "inter turku": {
+   "form": "DWLDWD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.83,
+   "ga": 0.5,
+   "newest": "2026-08-09",
+   "name": "Inter Turku"
+  },
+  "sjk": {
+   "form": "DWLLLW",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.5,
+   "ga": 1.33,
+   "newest": "2026-08-07",
+   "name": "SJK"
+  },
+  "ilves": {
+   "form": "WLWWLD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Ilves"
+  },
+  "oulu": {
+   "form": "LWDLLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.5,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "AC Oulu"
+  },
+  "gnistan": {
+   "form": "DLWWWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-07",
+   "name": "Gnistan"
+  },
+  "molde": {
+   "form": "LDWLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 2.17,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "name": "Molde"
+  },
+  "lillestrom": {
+   "form": "LLLWWL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Lillestrom"
+  },
+  "aalesund": {
+   "form": "DLDLDD",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.5,
+   "ga": 3.0,
+   "newest": "2026-08-09",
+   "name": "Aalesund"
+  },
+  "tromso": {
+   "form": "WWWDDL",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 2.5,
+   "ga": 1.5,
+   "newest": "2026-08-02",
+   "name": "Tromso"
+  },
+  "fredrikstad": {
+   "form": "WWLLLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.67,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "Fredrikstad"
+  },
+  "valerenga": {
+   "form": "LLWWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.17,
+   "ga": 2.17,
+   "newest": "2026-08-08",
+   "name": "Valerenga"
+  },
+  "rosenborg": {
+   "form": "WLWWWD",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.67,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Rosenborg"
+  },
+  "brann": {
+   "form": "WLWWLL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.83,
+   "ga": 2.0,
+   "newest": "2026-08-02",
+   "name": "Brann"
+  },
+  "viking": {
+   "form": "WWDWWL",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.67,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "name": "Viking"
+  },
+  "sarpsborg 08": {
+   "form": "LDWDWW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.33,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Sarpsborg 08"
+  },
+  "start": {
+   "form": "LLWLLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 2.0,
+   "newest": "2026-08-08",
+   "name": "Start"
+  },
+  "bodo glimt": {
+   "form": "WWWWWW",
+   "n": 6,
+   "ppg": 3.0,
+   "gf": 2.5,
+   "ga": 0.17,
+   "newest": "2026-08-08",
+   "name": "Bodo/Glimt"
+  },
+  "sandefjord": {
+   "form": "LLLLDL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.67,
+   "ga": 1.83,
+   "newest": "2026-08-07",
+   "name": "Sandefjord"
+  },
+  "kristiansund": {
+   "form": "WLLDLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.83,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Kristiansund"
+  },
+  "hamkam": {
+   "form": "DWLLLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.17,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "HamKam"
+  },
+  "kfum oslo": {
+   "form": "WWLLLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.0,
+   "ga": 1.5,
+   "newest": "2026-08-07",
+   "name": "KFUM Oslo"
+  },
+  "pogon szczecin": {
+   "form": "WWLDWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.5,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Pogon Szczecin"
+  },
+  "zaglebie": {
+   "form": "LWLLWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.83,
+   "ga": 0.83,
+   "newest": "2026-08-02",
+   "name": "Zaglebie"
+  },
+  "piast gliwice": {
+   "form": "LWLLLD",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.0,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "Piast Gliwice"
+  },
+  "jagiellonia": {
+   "form": "LWWWDW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.33,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Jagiellonia"
+  },
+  "widzew lodz": {
+   "form": "WDDWLW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Widzew Lodz"
+  },
+  "slask wroclaw": {
+   "form": "DWL",
+   "n": 3,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Slask Wroclaw"
+  },
+  "lech poznan": {
+   "form": "WWDDWD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.83,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Lech Poznan"
+  },
+  "wisla": {
+   "form": "WLW",
+   "n": 3,
+   "ppg": 2.0,
+   "gf": 2.33,
+   "ga": 2.0,
+   "newest": "2026-08-07",
+   "name": "Wisla"
+  },
+  "legia": {
+   "form": "DWWWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 2.0,
+   "ga": 0.5,
+   "newest": "2026-08-08",
+   "name": "Legia"
+  },
+  "korona kielce": {
+   "form": "DLDWLD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.67,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Korona Kielce"
+  },
+  "lechia gdansk": {
+   "form": "LLLLLD",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 1.17,
+   "ga": 2.33,
+   "newest": "2026-05-23",
+   "name": "Lechia Gdansk"
+  },
+  "cracovia": {
+   "form": "DLDDDD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.67,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Cracovia"
+  },
+  "termalica b b": {
+   "form": "WWLLWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 2.33,
+   "newest": "2026-05-23",
+   "name": "Termalica B-B."
+  },
+  "wisla plock": {
+   "form": "LDWDLL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-07",
+   "name": "Wisla Plock"
+  },
+  "arka gdynia": {
+   "form": "LLDDLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.67,
+   "ga": 2.33,
+   "newest": "2026-05-23",
+   "name": "Arka Gdynia"
+  },
+  "rakow": {
+   "form": "LLWWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-02",
+   "name": "Rakow"
+  },
+  "radomiak radom": {
+   "form": "LLWLLD",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.17,
+   "ga": 2.67,
+   "newest": "2026-08-08",
+   "name": "Radomiak Radom"
+  },
+  "gornik zabrze": {
+   "form": "WWWWDL",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.0,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Gornik Zabrze"
+  },
+  "gks katowice": {
+   "form": "WLDDDW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.0,
+   "ga": 1.17,
+   "newest": "2026-08-02",
+   "name": "GKS Katowice"
+  },
+  "motor lublin": {
+   "form": "LLDLDW",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.83,
+   "ga": 2.33,
+   "newest": "2026-08-08",
+   "name": "Motor Lublin"
+  },
+  "lokomotiv moscow": {
+   "form": "LDLWDL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.83,
+   "ga": 1.5,
+   "newest": "2026-08-01",
+   "name": "Lokomotiv Moscow"
+  },
+  "cska moscow": {
+   "form": "DWWWLD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 1.17,
+   "newest": "2026-08-01",
+   "name": "CSKA Moscow"
+  },
+  "rostov": {
+   "form": "WLLWWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.33,
+   "newest": "2026-07-31",
+   "name": "FK Rostov"
+  },
+  "dynamo moscow": {
+   "form": "LDWWDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.33,
+   "ga": 0.83,
+   "newest": "2026-08-01",
+   "name": "Dynamo Moscow"
+  },
+  "spartak moscow": {
+   "form": "WWDWLW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.67,
+   "ga": 0.83,
+   "newest": "2026-08-02",
+   "name": "Spartak Moscow"
+  },
+  "zenit": {
+   "form": "WWWWWW",
+   "n": 6,
+   "ppg": 3.0,
+   "gf": 2.67,
+   "ga": 0.33,
+   "newest": "2026-08-02",
+   "name": "Zenit"
+  },
+  "krylya sovetov": {
+   "form": "DDWLWW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 0.67,
+   "newest": "2026-08-01",
+   "name": "Krylya Sovetov"
+  },
+  "akhmat grozny": {
+   "form": "LDDDWL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.0,
+   "ga": 1.17,
+   "newest": "2026-08-02",
+   "name": "Akhmat Grozny"
+  },
+  "krasnodar": {
+   "form": "WWWLWW",
+   "n": 6,
+   "ppg": 2.5,
+   "gf": 2.17,
+   "ga": 1.0,
+   "newest": "2026-08-02",
+   "name": "Krasnodar"
+  },
+  "rubin kazan": {
+   "form": "WLDLWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-08-01",
+   "name": "Rubin Kazan"
+  },
+  "orenburg": {
+   "form": "LWLWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-02",
+   "name": "Orenburg"
+  },
+  "pari nn": {
+   "form": "DLLLLD",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 1.0,
+   "ga": 1.83,
+   "newest": "2026-05-17",
+   "name": "Pari NN"
+  },
+  "sochi": {
+   "form": "DLWLWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.33,
+   "ga": 1.17,
+   "newest": "2026-05-17",
+   "name": "Sochi"
+  },
+  "baltika": {
+   "form": "WLLLLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 1.33,
+   "newest": "2026-08-01",
+   "name": "Baltika"
+  },
+  "akron togliatti": {
+   "form": "LLLLLW",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 2.5,
+   "newest": "2026-08-01",
+   "name": "Akron Togliatti"
+  },
+  "dynamo makhachkala": {
+   "form": "WWDDLL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.17,
+   "newest": "2026-08-01",
+   "name": "Dynamo Makhachkala"
+  },
+  "elfsborg": {
+   "form": "WWLLLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "Elfsborg"
+  },
+  "djurgarden": {
+   "form": "LWWDWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.33,
+   "ga": 0.5,
+   "newest": "2026-08-10",
+   "name": "Djurgarden"
+  },
+  "gais": {
+   "form": "WDLWDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.33,
+   "ga": 0.67,
+   "newest": "2026-08-09",
+   "name": "GAIS"
+  },
+  "hacken": {
+   "form": "LDDWLL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.33,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "name": "Hacken"
+  },
+  "kalmar": {
+   "form": "LDWDLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 1.5,
+   "newest": "2026-08-09",
+   "name": "Kalmar"
+  },
+  "aik": {
+   "form": "WLDWWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.67,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "AIK"
+  },
+  "mjallby": {
+   "form": "LLDLDD",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Mjallby"
+  },
+  "goteborg": {
+   "form": "WWLWLL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "Goteborg"
+  },
+  "malmo ff": {
+   "form": "LWLDWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 1.17,
+   "newest": "2026-08-09",
+   "name": "Malmo FF"
+  },
+  "halmstad": {
+   "form": "LLDLLL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.33,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "Halmstad"
+  },
+  "brommapojkarna": {
+   "form": "DLDLLD",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-08-10",
+   "name": "Brommapojkarna"
+  },
+  "hammarby": {
+   "form": "WDWWWL",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.33,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Hammarby"
+  },
+  "sirius": {
+   "form": "DWWWWD",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 2.83,
+   "ga": 1.5,
+   "newest": "2026-08-10",
+   "name": "Sirius"
+  },
+  "degerfors": {
+   "form": "WLLLLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.33,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Degerfors"
+  },
+  "vasteras": {
+   "form": "WLWDWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.33,
+   "ga": 1.17,
+   "newest": "2026-08-10",
+   "name": "Vasteras SK"
+  },
+  "orgryte": {
+   "form": "LWLDWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.67,
+   "ga": 2.0,
+   "newest": "2026-08-08",
+   "name": "Orgryte"
+  },
+  "sturm graz": {
+   "form": "WDWWDD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.83,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "name": "Sturm Graz"
+  },
+  "salzburg": {
+   "form": "DWLLDL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.83,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "Salzburg"
+  },
+  "rapid": {
+   "form": "WWLLLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 0.83,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "SK Rapid"
+  },
+  "ried": {
+   "form": "LDLLWL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.67,
+   "ga": 1.17,
+   "newest": "2026-08-09",
+   "name": "Ried"
+  },
+  "wolfsberger": {
+   "form": "DWWWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 2.0,
+   "ga": 0.33,
+   "newest": "2026-08-09",
+   "name": "Wolfsberger AC"
+  },
+  "austria vienna": {
+   "form": "LLLWWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.67,
+   "ga": 1.5,
+   "newest": "2026-08-09",
+   "name": "Austria Vienna"
+  },
+  "altach": {
+   "form": "WLWDLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 1.83,
+   "newest": "2026-08-07",
+   "name": "Altach"
+  },
+  "lask": {
+   "form": "WWWWWW",
+   "n": 6,
+   "ppg": 3.0,
+   "gf": 3.0,
+   "ga": 0.5,
+   "newest": "2026-08-09",
+   "name": "LASK"
+  },
+  "hartberg": {
+   "form": "LLWLLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.0,
+   "ga": 2.33,
+   "newest": "2026-08-08",
+   "name": "Hartberg"
+  },
+  "tirol": {
+   "form": "LDLDLW",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.67,
+   "ga": 1.83,
+   "newest": "2026-08-07",
+   "name": "Tirol"
+  },
+  "bw linz": {
+   "form": "LDLWWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.0,
+   "newest": "2026-05-16",
+   "name": "BW Linz"
+  },
+  "grazer ak": {
+   "form": "WLWDWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "Grazer AK"
+  },
+  "u cluj": {
+   "form": "WLWDLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.0,
+   "ga": 1.5,
+   "newest": "2026-08-03",
+   "name": "U. Cluj"
+  },
+  "din bucuresti": {
+   "form": "LWDWDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 1.17,
+   "newest": "2026-02-21",
+   "name": "Din. Bucuresti"
+  },
+  "petrolul": {
+   "form": "WLLWLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.67,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Petrolul"
+  },
+  "cfr cluj": {
+   "form": "LWLDDD",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.33,
+   "ga": 1.0,
+   "newest": "2026-08-02",
+   "name": "CFR Cluj"
+  },
+  "otelul": {
+   "form": "LDDWWW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 2.17,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "Otelul"
+  },
+  "rapid bucuresti": {
+   "form": "DWDWDD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.17,
+   "ga": 0.67,
+   "newest": "2026-08-07",
+   "name": "FC Rapid Bucuresti"
+  },
+  "fcsb": {
+   "form": "DDWWDD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.0,
+   "newest": "2026-08-10",
+   "name": "FCSB"
+  },
+  "botosani": {
+   "form": "DLDDDL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-08-10",
+   "name": "FC Botosani"
+  },
+  "voluntari": {
+   "form": "LWLDWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 2.33,
+   "newest": "2026-08-08",
+   "name": "FC Voluntari"
+  },
+  "uta arad": {
+   "form": "DLDLWW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 0.67,
+   "ga": 1.17,
+   "newest": "2026-08-07",
+   "name": "UTA Arad"
+  },
+  "sepsi sf gheorghe": {
+   "form": "DDWL",
+   "n": 4,
+   "ppg": 1.25,
+   "gf": 0.5,
+   "ga": 0.5,
+   "newest": "2026-08-10",
+   "name": "Sepsi Sf. Gheorghe"
+  },
+  "hermannstadt": {
+   "form": "LWWDDD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.5,
+   "ga": 1.5,
+   "newest": "2026-06-01",
+   "name": "FC Hermannstadt"
+  },
+  "arges": {
+   "form": "WWWLDD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.0,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "FC Arges"
+  },
+  "univ craiova": {
+   "form": "LWLWDW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.33,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Univ. Craiova"
+  },
+  "farul constanta": {
+   "form": "WDWLDD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.0,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Farul Constanta"
+  },
+  "csikszereda m ciuc": {
+   "form": "LLLLWL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Csikszereda M. Ciuc"
+  },
+  "unirea slobozia": {
+   "form": "LDDDLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.0,
+   "ga": 1.5,
+   "newest": "2026-05-18",
+   "name": "Unirea Slobozia"
+  },
+  "metaloglobus bucharest": {
+   "form": "WDDDLL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.33,
+   "ga": 1.5,
+   "newest": "2026-05-18",
+   "name": "Metaloglobus Bucharest"
+  },
+  "dinamo bucuresti": {
+   "form": "WDWLDD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.0,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "name": "Dinamo Bucuresti"
+  },
+  "corvinul": {
+   "form": "DDLW",
+   "n": 4,
+   "ppg": 1.25,
+   "gf": 1.0,
+   "ga": 0.75,
+   "newest": "2026-08-10",
+   "name": "Corvinul"
+  },
+  "servette": {
+   "form": "WLLWWD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "Servette"
+  },
+  "basel": {
+   "form": "WLWLLL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.0,
+   "ga": 2.17,
+   "newest": "2026-08-09",
+   "name": "Basel"
+  },
+  "thun": {
+   "form": "LLWDLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.5,
+   "ga": 3.67,
+   "newest": "2026-08-09",
+   "name": "Thun"
+  },
+  "lausanne": {
+   "form": "DWDLLL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.0,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Lausanne"
+  },
+  "grasshoppers": {
+   "form": "LLDWWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.67,
+   "ga": 2.0,
+   "newest": "2026-08-08",
+   "name": "Grasshoppers"
+  },
+  "sion": {
+   "form": "WWLDDW",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 2.5,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Sion"
+  },
+  "luzern": {
+   "form": "DLLWWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Luzern"
+  },
+  "zurich": {
+   "form": "LWLLLW",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "name": "Zurich"
+  },
+  "st gallen": {
+   "form": "DWWDWW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 2.17,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "St. Gallen"
+  },
+  "young boys": {
+   "form": "DWWDWW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 4.33,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Young Boys"
+  },
+  "vaduz": {
+   "form": "LLL",
+   "n": 3,
+   "ppg": 0.0,
+   "gf": 1.67,
+   "ga": 2.67,
+   "newest": "2026-08-09",
+   "name": "Vaduz"
+  },
+  "lugano": {
+   "form": "WWWWDL",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 3.0,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Lugano"
+  },
+  "winterthur": {
+   "form": "LLWDLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.5,
+   "ga": 2.67,
+   "newest": "2026-05-16",
+   "name": "Winterthur"
+  },
+  "drogheda": {
+   "form": "DDDWLL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.67,
+   "ga": 1.17,
+   "newest": "2026-08-07",
+   "name": "Drogheda"
+  },
+  "shamrock rovers": {
+   "form": "WDWWDW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 1.83,
+   "ga": 0.83,
+   "newest": "2026-08-07",
+   "name": "Shamrock Rovers"
+  },
+  "derry city": {
+   "form": "WDLWDL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.5,
+   "ga": 1.33,
+   "newest": "2026-08-07",
+   "name": "Derry City"
+  },
+  "bohemians": {
+   "form": "LDWWWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Bohemians"
+  },
+  "st patricks": {
+   "form": "WDDDWL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.33,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "St. Patricks"
+  },
+  "dundalk": {
+   "form": "LDDLLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 1.33,
+   "ga": 2.0,
+   "newest": "2026-08-07",
+   "name": "Dundalk"
+  },
+  "shelbourne": {
+   "form": "LLWDLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.17,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "Shelbourne"
+  },
+  "sligo rovers": {
+   "form": "LDDLLD",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.33,
+   "ga": 2.0,
+   "newest": "2026-08-07",
+   "name": "Sligo Rovers"
+  },
+  "waterford": {
+   "form": "WWDDWW",
+   "n": 6,
+   "ppg": 2.33,
+   "gf": 2.0,
+   "ga": 1.0,
+   "newest": "2026-08-09",
+   "name": "Waterford"
+  },
+  "galway": {
+   "form": "DDDWLL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.83,
+   "ga": 1.5,
+   "newest": "2026-08-07",
+   "name": "Galway"
+  }
+ },
  "unmatched": [
   "AEK Athens",
   "PFC Levski Sofia",
