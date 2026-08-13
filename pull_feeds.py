@@ -75,10 +75,20 @@ TEAM3 = {'Arizona Diamondbacks': 'ARI', 'Atlanta Braves': 'ATL',
          'Toronto Blue Jays': 'TOR', 'Washington Nationals': 'WSH'}
 assert len(set(TEAM3.values())) == len(TEAM3) == 30
 
-# Curated, not discovered: /v4/sports lists ~40 active soccer leagues and every
-# /odds call costs credits whether or not FanDuel prices the league. These are
-# the leagues where FanDuel actually posts heavy favourites in August.
+# Curated, not discovered -- and curation is what kept costing us matches. Every
+# /odds call costs credits whether or not FanDuel prices the league, so this list
+# started as "the leagues FanDuel posts heavy favourites in during August". Twice
+# that judgement was wrong in the same direction: Leagues Cup was absent on 8/12
+# while it ran seven matches, and on 8/13 the diagnostic named THIRTY-TWO more
+# live competitions the board could not see while Ryan was looking at a full
+# Thursday slate. A curated list cannot be audited against a board that never
+# shows what it skipped, so the curation is now the diagnostic's, not ours: this
+# is every competition /v4/sports reports active. The cost that motivated the
+# short list is real but small -- one call per league, and the far more expensive
+# goal ladders are already capped to fixtures inside SOCT_HOURS, so a league that
+# is live but dark tonight adds one call and no rungs.
 SOCCER_KEYS = [
+    # -- originally curated; kept in kickoff-relevance order for readability
     "soccer_uefa_champs_league_qualification",
     "soccer_netherlands_eredivisie", "soccer_portugal_primeira_liga",
     "soccer_turkey_super_league", "soccer_greece_super_league",
@@ -91,7 +101,30 @@ SOCCER_KEYS = [
     # the authoritative list, so a wrong guess here fails soft and is corrected
     # from the next run's log rather than silently persisting.
     "soccer_concacaf_leagues_cup",
+    # -- added 2026-08-13 from that diagnostic's "LIVE and NOT pulled" list.
+    # South American midweek cups are the ones that actually hurt: they play
+    # Tue/Wed/Thu in August, in the same US-evening window as Leagues Cup.
+    "soccer_conmebol_copa_libertadores", "soccer_conmebol_copa_sudamericana",
+    "soccer_argentina_primera_division", "soccer_brazil_serie_b",
+    "soccer_chile_campeonato",
+    # Europe's big five plus the domestic cups and second tiers. Mostly
+    # Fri-Sun, so most nights these cost five calls and return nothing -- that
+    # is the point: the board now says "dark" instead of saying nothing.
+    "soccer_epl", "soccer_spain_la_liga", "soccer_italy_serie_a",
+    "soccer_germany_bundesliga", "soccer_france_ligue_one",
+    "soccer_efl_champ", "soccer_england_league1", "soccer_england_league2",
+    "soccer_england_efl_cup", "soccer_germany_bundesliga2",
+    "soccer_germany_liga3", "soccer_germany_dfb_pokal",
+    "soccer_italy_serie_b", "soccer_italy_coppa_italia",
+    "soccer_spain_segunda_division", "soccer_france_ligue_two",
+    # Remaining live competitions, alphabetical.
+    "soccer_austria_bundesliga", "soccer_belgium_first_div",
+    "soccer_denmark_superliga", "soccer_japan_j_league",
+    "soccer_korea_kleague1", "soccer_poland_ekstraklasa",
+    "soccer_russia_premier_league", "soccer_saudi_arabia_pro_league",
+    "soccer_spl", "soccer_sweden_superettan", "soccer_uefa_nations_league",
 ]
+assert len(set(SOCCER_KEYS)) == len(SOCCER_KEYS), "duplicate soccer key"
 TWO_WAY = [("basketball_wnba", "WNBA"), ("americanfootball_cfl", "CFL"),
            ("boxing_boxing", "BOX")]
 # Families whose alternate-total ladder is worth pulling. A fight has no total
