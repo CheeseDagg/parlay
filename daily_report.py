@@ -81,6 +81,50 @@ def hot_section():
     return lines
 
 
+def flags_section():
+    """The measured red flags, in the artifact the morning pass reads first.
+    Hot games already print; these are the three instruments added 8/13 --
+    gopher starters, COLD soccer teams, blowup parks -- each fail-soft,
+    because a missing form file must dim the report, not kill it."""
+    import json
+    lines = []
+    try:
+        with open(os.path.join(HERE, 'mlbform.json')) as fh:
+            mf = json.load(fh)
+        gop = []
+        for g, v in (mf.get('games') or {}).items():
+            for side in ('away_sp', 'home_sp'):
+                sp = v.get(side) or {}
+                if sp.get('hr9_5') and sp['hr9_5'] >= mf.get('hr9_warn', 1.8):
+                    gop.append(f"- **{g}** {sp['name']} HR/9 **{sp['hr9_5']:.2f}** last 5")
+        if gop:
+            lines += [f"## GOPHER starters (mlbform, {mf.get('date','?')})", ''] + gop + ['']
+    except Exception:
+        lines += ['_mlbform.json unreadable -- starter form unknown_', '']
+    try:
+        with open(os.path.join(HERE, 'socform.json')) as fh:
+            sf = json.load(fh)
+        cold = [f"- **{t}** {v['form']} ({v['ppg']} ppg, last {v['newest']})"
+                for t, v in (sf.get('teams') or {}).items() if v.get('ppg', 9) <= 0.6]
+        if cold:
+            lines += [f"## COLD soccer teams on the board (socform, {sf.get('built','?')})", ''] + cold + ['']
+    except Exception:
+        lines += ['_socform.json unreadable -- team form unknown_', '']
+    try:
+        with open(os.path.join(HERE, 'f5hist.json')) as fh:
+            f5 = json.load(fh)
+        rows = f5.get('venue') or []
+        base = f5.get('blowup_base', 0.062)
+        hotp = {r['k']: r for r in rows if r.get('blow', 0) >= 0.10}
+        if hotp:
+            lines += ['## Blowup parks (F5 >= 11 runs, 3 seasons)', '']
+            lines += [f"- **{k}** {v['blow']*100:.1f}% vs {base*100:.1f}% league"
+                      for k, v in sorted(hotp.items(), key=lambda x: -x[1]['blow'])] + ['']
+    except Exception:
+        pass
+    return lines
+
+
 def main():
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     sunday = next_sunday_et()
@@ -91,6 +135,7 @@ def main():
           "has a timestamp.",
           "",
           *hot_section(),
+          *flags_section(),
           f"## Heaviest favorites through Sunday {sunday} (-350 or better, de-vigged)",
           "",
           heaviest_table(sunday),
