@@ -6,11 +6,6 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
-1. **UEFA screenshot workflow**: on Europa/Conference nights the feed is
-   structurally blind (no catalog key). Build a paste-parser: Ryan pastes the
-   app's DC/total prices as text or screenshot transcription, a script de-vigs
-   each with devig_n, writes them into a hand.py feed file the board merges
-   with an (app-quoted) tag. Kills the 3-hour scramble of 8/13 permanently.
 2. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
@@ -28,6 +23,10 @@ with no measurable payoff written next to it does not belong on this list.
    CFL leg is ever priced above a hunch.
 
 ## DONE (the number that justified it)
+- hand.py paste-parser: pasted FanDuel lines -> de-vigged legs in one command
+  (2-way mult / 3-way power / DC 0.80 factor), typo'd pastes refused on vig
+  bands. Found its own justifying number in its fixtures: the 8/13 to-advance
+  legs were quoted ~3 points high (97.8 vs a measured 94.4 on Besiktas).
 - Per-family de-vig: MLB mult 1.35 vs power 4.46; soccer power 0.68 vs mult
   1.24; NFL power 1.47 vs mult 1.94. Overround shape decides.
 - Empirical F5 ladder + park table (6681 games; Coors U10.5 85.8% vs AmFam 96.4%).

@@ -1,0 +1,19 @@
+{
+ "legs": [
+  {
+   "lab": "Besiktas to advance (app-quoted)",
+   "p": 0.9435707678075856,
+   "price": -6000,
+   "d": 1.0166666666666666,
+   "note": "aggregate, no draw"
+  },
+  {
+   "lab": "Hradec Kralove to advance (app-quoted)",
+   "p": 0.05642923219241443,
+   "price": 1600,
+   "d": 17.0,
+   "note": ""
+  }
+ ],
+ "refused": []
+}
