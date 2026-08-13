@@ -48,4 +48,40 @@ F5 run totals, 2024-03-20 .. 2026-08-13
   Guaranteed Rate Field        82      4.26    2.44%   0.67- 8.46
   Rate Field                  141      4.39    2.13%   0.73- 6.07
 
+  RUNG x PARK -- P(F5 under) at each rung, parks with >= 120 games
+                                   U6.5     U7.5     U8.5     U9.5    U10.5
+  LEAGUE                          71.6%    79.6%    85.8%    90.4%    93.8%
+  Coors Field                     53.4%    60.7%    70.3%    78.5%    85.8%   n=219
+  Sutter Health Park              59.3%    72.6%    80.7%    88.1%    93.3%   n=135
+  Chase Field                     66.8%    74.4%    81.6%    84.8%    88.8%   n=223
+  Nationals Park                  65.6%    74.1%    82.6%    86.6%    90.2%   n=224
+  Oriole Park at Camden Yards     68.3%    78.6%    84.4%    89.3%    92.4%   n=224
+  Target Field                    69.8%    78.4%    85.1%    88.7%    91.4%   n=222
+  Angel Stadium                   69.5%    76.2%    83.4%    90.1%    94.2%   n=223
+  Daikin Park                     65.0%    77.9%    85.0%    88.6%    93.6%   n=140
+  Dodger Stadium                  70.2%    78.9%    87.0%    93.2%    96.3%   n=161
+  loanDepot park                  70.5%    77.7%    84.4%    92.0%    96.0%   n=224
+  Citi Field                      67.6%    77.2%    82.2%    88.1%    93.6%   n=219
+  Great American Ball Park        72.5%    77.9%    85.6%    89.2%    93.2%   n=222
+  Yankee Stadium                  69.9%    80.4%    84.9%    90.0%    92.7%   n=219
+  Citizens Bank Park              71.7%    80.3%    84.3%    89.2%    93.3%   n=223
+  PNC Park                        71.6%    76.1%    84.7%    91.9%    94.6%   n=222
+  Fenway Park                     71.9%    81.2%    87.5%    91.1%    94.6%   n=224
+  Wrigley Field                   69.9%    76.3%    83.6%    88.1%    92.7%   n=219
+  American Family Field           72.4%    80.4%    88.9%    94.2%    96.4%   n=225
+  Rogers Centre                   71.4%    79.0%    85.3%    90.2%    92.9%   n=224
+  Comerica Park                   73.6%    81.8%    85.0%    90.0%    94.1%   n=220
+  Progressive Field               72.7%    82.7%    88.2%    92.7%    96.4%   n=220
+  Petco Park                      75.4%    86.6%    91.1%    92.4%    94.6%   n=224
+  Truist Park                     73.8%    83.6%    89.8%    92.4%    95.6%   n=225
+  Oracle Park                     73.8%    80.1%    84.6%    88.7%    92.8%   n=221
+  Busch Stadium                   75.0%    80.3%    86.4%    92.5%    94.7%   n=228
+  Kauffman Stadium                80.1%    83.3%    86.9%    90.0%    93.2%   n=221
+  Rate Field                      74.5%    83.0%    91.5%    94.3%    97.9%   n=141
+  Tropicana Field                 79.3%    88.6%    92.9%    96.4%    97.1%   n=140
+  Globe Life Field                77.8%    88.2%    91.9%    95.0%    96.4%   n=221
+  T-Mobile Park                   83.9%    88.8%    94.6%    96.9%    97.3%   n=224
+    U8.5: T-Mobile Park 94.6%  ..  Coors Field 70.3%   spread 24.3 points
+    U10.5: Rate Field 97.9%  ..  Coors Field 85.9%   spread 12.0 points
+
 wrote /home/runner/work/parlay/parlay/f5hist.json
