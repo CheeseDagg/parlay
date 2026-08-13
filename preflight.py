@@ -67,15 +67,39 @@ def gate_soccer(legs):
             f"raw 3-way soccer: {', '.join(l['lab'] for l in bad)}" if bad
             else "no raw 3-way soccer sides")
 
-def gate_method(legs):
+def _ufc_rates():
+    import json
+    try:
+        with open(os.path.join(HERE, 'ufchist.json')) as fh:
+            return json.load(fh)
+    except Exception:
+        return None
+
+
+def gate_method(legs, rates=None):
+    """Rules 9 and 27 used to argue from scar tissue; now there is a
+    denominator. When a method leg is on the slip, the modern-era base rates
+    (ufchist.py, 5599 decided bouts since 2015) ride along, title fights
+    split out because five championship rounds end differently."""
     m = [l for l in legs if any(w in l['lab'].lower() for w in METHOD_WORDS)]
     single = [l for l in m if ' or ' not in l['lab'].lower()]
     if not m:
         return 'PASS', "no method-of-victory legs"
+    r = rates if rates is not None else _ufc_rates()
+    ctx = ''
+    if r and r.get('title') and r.get('non_title'):
+        t, nt = r['title'], r['non_title']
+        ctx = (f" | modern base since {r.get('modern_since','?')}: title "
+               f"dec {t['dec']*100:.0f}/ko {t['ko']*100:.0f}/sub {t['sub']*100:.0f}"
+               f" -- non-title dec {nt['dec']*100:.0f}/ko {nt['ko']*100:.0f}"
+               f"/sub {nt['sub']*100:.0f} (ufchist)")
+    else:
+        ctx = " | no ufchist base rates readable -- the prop is priced blind"
     if single:
         return ('WARN', f"{len(single)} single-method leg(s) -- rule 27 wants "
-                f"ML or a double chance: {', '.join(l['lab'] for l in single)}")
-    return 'PASS', f"{len(m)} method leg(s), all double-chance"
+                f"ML or a double chance: {', '.join(l['lab'] for l in single)}"
+                + ctx)
+    return 'PASS', f"{len(m)} method leg(s), all double-chance" + ctx
 
 def gate_hot(legs, hot):
     """A totals leg on a hot game must be that game's TOP rung."""
@@ -719,6 +743,19 @@ def selftest():
     chk(_v == 'WARN' and 'form data is for' in _m,
         "yesterday's form is stale, not silently current -- same failure shape "
         "as the MLBTool slate that left rule 25 blind")
+
+    # ---- METHOD carries its denominator now.
+    _ur = {'modern_since': 2015,
+           'title': {'dec': 0.436, 'ko': 0.378, 'sub': 0.183},
+           'non_title': {'dec': 0.498, 'ko': 0.321, 'sub': 0.178}}
+    _v, _m = gate_method([L('Islam Makhachev by Points', -137)], rates=_ur)
+    chk(_v == 'WARN' and 'title dec 44' in _m,
+        "a method prop is warned WITH the modern base rates beside it -- "
+        "rules 9 and 27 argue from a denominator now, not from scar tissue")
+    _v, _m = gate_method([L('X by Points', -137)], rates={})
+    chk('priced blind' in _m,
+        "and when the base rates are unreadable the gate says the prop is "
+        "priced blind rather than quietly dropping the context")
 
     chk(_h['rungs'][4]['rung'] == 10.5 and 0.930 < _h['rungs'][4]['p'] < 0.945,
         f"U10.5 sits at {_h['rungs'][4]['p']*100:.2f}% over three seasons, "

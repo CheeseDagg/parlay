@@ -236,5 +236,44 @@ def selftest():
     return 0 if ok[0] == ok[1] else 1
 
 
+def form_notes():
+    """Append ufcform (last five, wins-by/loses-by) and ufchist division
+    rates to the card view. Both files are built on the Actions runner from
+    the full UFC record; absent files say so rather than vanishing -- a card
+    note that silently covers half the card reads as complete."""
+    import json, os
+    here = os.path.dirname(os.path.abspath(__file__))
+    try:
+        with open(os.path.join(here, 'ufcform.json')) as fh:
+            uf = json.load(fh).get('teams', {})
+    except Exception:
+        print('  (ufcform.json unreadable -- no recent-fight table; touch '
+              'experiments/UFCFORM.txt)')
+        return
+    print('\nRECENT FIGHTS (full record, newest first) --- how they win / lose')
+    for fav, d in CARD.items():
+        for name in (fav, d.get('opp')):
+            if not name:
+                continue
+            row = uf.get(name)
+            if not row:
+                print(f'  {name:<24} no UFC record on file (debut or unmatched)')
+                continue
+            pr = row['profile']
+            l5 = ' '.join(('W' if f['win'] else 'L') + '-' + f['method']
+                          for f in row['last5'])
+            wb = pr.get('win_by') or {}
+            lb = pr.get('lose_by') or {}
+            wtxt = (f"wins dec {wb.get('dec',0)*100:.0f}/ko {wb.get('ko',0)*100:.0f}"
+                    f"/sub {wb.get('sub',0)*100:.0f}") if wb else 'no wins'
+            ltxt = (f"loses dec {lb.get('dec',0)*100:.0f}/ko {lb.get('ko',0)*100:.0f}"
+                    f"/sub {lb.get('sub',0)*100:.0f}") if lb else 'NEVER LOST'
+            print(f'  {name:<24} {pr["record"]:<13} {l5:<22} {wtxt}; {ltxt}')
+
+
 if __name__ == '__main__':
-    sys.exit(selftest() if '--selftest' in sys.argv else print_card())
+    if '--selftest' in sys.argv:
+        sys.exit(selftest())
+    rc = print_card()
+    form_notes()
+    sys.exit(rc)
