@@ -3,9 +3,9 @@ MLB form for 2026-08-13 -- 9 games
   game       away starter            hr9 home starter            hr9  F5 env
   CLE@DET    Parker Messick         1.19 Keider Montero         1.29    4.95
   CIN@CWS    Andrew Abbott          0.32 Davis Martin           2.84     4.9  << GOPHER
-  PIT@MIA    Braxton Ashcraft       1.80 Tyler Phillips         1.90    5.55  << GOPHER
-  SEA@NYY    Logan Gilbert          1.53 Max Fried              0.37    3.25
-  BOS@TOR    Payton Tolle           1.69 Max Scherzer           3.20     4.8  << GOPHER
+  PIT@MIA    Braxton Ashcraft       1.73 Tyler Phillips         1.90    5.55  << GOPHER
+  SEA@NYY    Logan Gilbert          1.50 Max Fried              0.36    3.25
+  BOS@TOR    Payton Tolle           1.69 Max Scherzer           2.04     4.8  << GOPHER
   CHC@WSH    Kevin Gausman          0.32 Cade Cavalli           2.10    5.75  << GOPHER
   PHI@MIN    Aaron Nola             2.89 Taj Bradley            0.62     4.8  << GOPHER
   TEX@LAA    Jacob deGrom           0.39 Walbert Ureña          0.37    3.95

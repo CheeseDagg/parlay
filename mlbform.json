@@ -31,7 +31,7 @@
    "away_sp": {
     "name": "Andrew Abbott",
     "hr9_5": 0.32,
-    "r_start": 2.6,
+    "r_start": 2.8,
     "starts": 5
    },
    "home_sp": {
@@ -55,7 +55,7 @@
   "PIT@MIA": {
    "away_sp": {
     "name": "Braxton Ashcraft",
-    "hr9_5": 1.8,
+    "hr9_5": 1.73,
     "r_start": 3.4,
     "starts": 5
    },
@@ -80,13 +80,13 @@
   "SEA@NYY": {
    "away_sp": {
     "name": "Logan Gilbert",
-    "hr9_5": 1.53,
+    "hr9_5": 1.5,
     "r_start": 2.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Max Fried",
-    "hr9_5": 0.37,
+    "hr9_5": 0.36,
     "r_start": 1.0,
     "starts": 5
    },
@@ -111,8 +111,8 @@
    },
    "home_sp": {
     "name": "Max Scherzer",
-    "hr9_5": 3.2,
-    "r_start": 3.2,
+    "hr9_5": 2.04,
+    "r_start": 1.8,
     "starts": 5
    },
    "away_form": {
