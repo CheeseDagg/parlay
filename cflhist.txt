@@ -1,0 +1,22 @@
+CFL history — Wikipedia per-team season pages (results only;
+odds history measured-absent on every probed route)
+
+2022: 71 page-rows, 1 refused rows
+    Edmonton Elks 2022: 'L 24–10' letter disagrees with score
+2023: 76 page-rows
+2024: 81 page-rows
+2025: 81 page-rows
+merged: 160 games, 11 single-page (unverified), 0 cross-page mismatches EXCLUDED
+
+home wins 55.6% of decided (95% 47.9-63.1, n=160); ties 0
+mean total 48.6
+
+P(total UNDER line):
+  U41.5   32.5%  (95% 25.7-40.1)
+  U43.5   40.0%  (95% 32.7-47.7)
+  U45.5   45.6%  (95% 38.1-53.4)
+  U47.5   51.2%  (95% 43.6-58.9)
+  U49.5   56.2%  (95% 48.5-63.7)
+  U51.5   61.9%  (95% 54.1-69.0)
+  U53.5   67.5%  (95% 59.9-74.3)
+  U55.5   73.8%  (95% 66.4-80.0)
