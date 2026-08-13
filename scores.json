@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T03:42Z",
+ "as_of": "2026-08-13T03:45Z",
  "date": "2026-08-12",
  "mlb": [
   {
@@ -125,7 +125,7 @@
    "key": "KC@LAD",
    "through5": 6,
    "current": 6,
-   "inning": 5,
+   "inning": 6,
    "final": false
   },
   {
