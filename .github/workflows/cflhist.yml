@@ -1,0 +1,38 @@
+name: CFL history (Wikipedia per-team pages)
+# CFL is the one sport on FanDuel's board with no empirical grounding.
+# Results-only base rates from the per-team season articles (srcprobe 4-4c:
+# ESPN 403, fixturedownload absent, odds history measured-absent everywhere).
+# Wikipedia is unreachable from the maintaining session; only this runner
+# can fetch it. Weekly in-season keeps the current year growing; off-season
+# runs find nothing new and commit nothing.
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "17 12 * * 1"   # Mondays 12:17 UTC, after CFL weekends
+permissions: { contents: write }
+concurrency: { group: parlay-cflhist, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Selftest then build
+        run: |
+          set -o pipefail
+          python3 cflhist.py --selftest | tail -2
+          python3 cflhist.py
+      - name: Publish
+        if: always()
+        run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          git add cflhist.json cflhist.txt 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          for a in 1 2 3 4 5; do
+            git commit -m "cflhist $(date -u +%F)" || true
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || git rebase --abort
+          done
