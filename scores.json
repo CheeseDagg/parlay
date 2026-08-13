@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T04:19Z",
+ "as_of": "2026-08-13T04:21Z",
  "date": "2026-08-13",
  "mlb": [
   {
@@ -129,7 +129,7 @@
    "home": "San Diego FC",
    "away": "Puebla",
    "goals": 5,
-   "completed": false,
+   "completed": true,
    "detail": {
     "San Diego FC": 3,
     "Puebla": 2
