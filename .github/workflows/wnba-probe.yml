@@ -1,0 +1,68 @@
+name: WNBA route probe (monthly)
+# WNBA was declared MARKET-ONLY on 2026-08-13 after every route failed from
+# two networks (stats.wnba timeout, data.wnba 403, ESPN 403, cdn serves HTML).
+# Blocks change without notice; a monthly re-probe keeps the declaration
+# honest instead of eternal. First Monday of each month, or on demand.
+on:
+  schedule:
+    - cron: "23 14 * * 1"     # Mondays 14:23 UTC; the job exits unless week 1
+  workflow_dispatch: {}
+  push: { paths: ['experiments/WNBAPROBE.txt'] }
+permissions: { contents: write }
+concurrency: { group: parlay-wnba-probe, cancel-in-progress: true }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: First-Monday gate (manual and file triggers always run)
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%d)" -gt 7 ]; then
+            echo "run=no" >> "$GITHUB_OUTPUT"; echo "not the first Monday — skip"
+          else
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Probe WNBA routes
+        if: steps.gate.outputs.run == 'yes'
+        run: |
+          python3 - <<'PY' | tee wnbaprobe.txt
+          import urllib.request, datetime
+          BUA=("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+               "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
+          T=[("stats.wnba","https://stats.wnba.com/stats/leaguegamelog?LeagueID=10&Season=2026&SeasonType=Regular%20Season&PlayerOrTeam=T",
+              {"User-Agent":BUA,"Referer":"https://www.wnba.com/","Origin":"https://www.wnba.com",
+               "x-nba-stats-origin":"stats","x-nba-stats-token":"true"}),
+             ("data.wnba","https://data.wnba.com/data/10s/prod/v1/2026/schedule.json",{"User-Agent":BUA}),
+             ("espn wnba","https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",{"User-Agent":BUA}),
+             ("cdn.wnba","https://cdn.wnba.com/static/json/liveData/scoreboard/todaysScoreboard_10.json",{"User-Agent":BUA})]
+          print("WNBA route probe", datetime.datetime.utcnow().isoformat()+"Z")
+          any_open=False
+          for n,u,h in T:
+              try:
+                  r=urllib.request.urlopen(urllib.request.Request(u,headers=h),timeout=20)
+                  b=r.read(2000)
+                  js=b.strip().startswith(b"{") or b.strip().startswith(b"[")
+                  print(f"  {n:<11} HTTP {r.status} {'JSON' if js else 'not-json'}")
+                  any_open = any_open or js
+              except Exception as e:
+                  print(f"  {n:<11} FAIL {type(e).__name__} {getattr(e,'code','')}")
+          print("VERDICT:", "A ROUTE IS OPEN — build wnbahist (mirror nflhist) and "
+                "update coverage.json" if any_open else
+                "still market-only; coverage.json stands")
+          PY
+      - name: Publish
+        if: always() && steps.gate.outputs.run == 'yes'
+        run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          git add wnbaprobe.txt 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          for a in 1 2 3; do
+            git commit -m "wnba route probe $(date -u +%F)" || true
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || git rebase --abort
+          done
