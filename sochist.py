@@ -48,7 +48,19 @@ LEAGUES = {
     "at.1": "Austria Bundesliga", "be.1": "Belgium Pro League",
     "mx.1": "Mexico Liga MX", "br.1": "Brazil Serie A",
 }
-SEASONS = ["2022-23", "2023-24", "2024-25"]
+# FIFTEEN SEASONS, not three. The draw-rate dispersion across leagues came
+# back p=0.056 on three -- borderline, and borderline is exactly what MLB
+# looked like at one season before three seasons turned it over (venue
+# p=0.126 -> p<0.001). The lesson there was that a null at low power is not a
+# finding, it is a missing measurement, so the sample gets taken to where the
+# question can actually be answered. Missing league-seasons 404 and are
+# skipped, so asking for all of them costs only the requests.
+#
+# NOTE: this is HISTORY, not form. openfootball's newest season is a shell --
+# 20 league files for 2025-26 and only Belgium with matches played -- and
+# there is no 2026-27 at all. Nothing in this file knows how a team is playing
+# right now, and it must never be read as if it does.
+SEASONS = [f"{y}-{str(y+1)[2:]}" for y in range(2010, 2025)]
 RUNGS = [1.5, 2.5, 3.5, 4.5, 5.5, 6.5]
 
 
