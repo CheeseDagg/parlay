@@ -122,7 +122,43 @@ def flags_section():
                       for k, v in sorted(hotp.items(), key=lambda x: -x[1]['blow'])] + ['']
     except Exception:
         pass
+    try:
+        with open(os.path.join(HERE, 'cflhist.json')) as fh:
+            ch = json.load(fh)
+        import board
+        legs = [l for v in board.build('FanDuel', min_price=0).values() for l in v]
+        lines += cfl_flags(legs, ch)
+    except Exception:
+        pass                       # no CFL on the board most days -- silence
     return lines
+
+
+def cfl_flags(legs, ch):
+    """CFL total legs beside the measured base (cflhist: 321 games 2022-25).
+    CFL was the one carried sport priced on nothing; now a Thursday-board
+    total says how often its line ACTUALLY held, and shouts when the market
+    and four seasons of results disagree by 8+ points."""
+    import re as _re
+    st = (ch or {}).get('stats') or {}
+    rungs = st.get('rungs') or {}
+    out = []
+    for l in legs:
+        if l.get('fam') != 'CFL':
+            continue
+        m = _re.search(r'\b(Over|Under)\s+(\d+\.5)\b', l.get('lab', ''))
+        if not m or m.group(2) not in rungs:
+            continue
+        r = rungs[m.group(2)]
+        base = r['p_under'] if m.group(1) == 'Under' else 1 - r['p_under']
+        gap = (l.get('p', 0) - base) * 100
+        tag = '  **market >> base**' if gap >= 8 else ''
+        out.append(f"- {l['lab']} {l.get('price','?')}: market {l.get('p',0)*100:.0f}% "
+                   f"vs base {base*100:.0f}% (n={r['n']}){tag}")
+    if out:
+        out = [f"## CFL legs vs measured base (cflhist n={st.get('n','?')}, "
+               f"home {st.get('home_pct',0)*100:.1f}%, mean total "
+               f"{st.get('mean_total','?')})", ''] + out + ['']
+    return out
 
 
 def main():
@@ -161,5 +197,37 @@ def main():
     print("wrote BOARD.md")
 
 
+def selftest():
+    ok = [0, 0]
+    def chk(c, m):
+        ok[1] += 1; ok[0] += bool(c)
+        print(f"{'PASS' if c else 'FAIL'}  {m}")
+
+    ch = {'stats': {'n': 321, 'home_pct': 0.533, 'mean_total': 51.48,
+                    'rungs': {'49.5': {'p_under': 0.467, 'n': 321}}}}
+    legs = [
+        {'fam': 'CFL', 'lab': 'WPG@SSK Under 49.5', 'price': -180, 'p': 0.70},
+        {'fam': 'CFL', 'lab': 'WPG@SSK Over 49.5', 'price': -105, 'p': 0.51},
+        {'fam': 'CFL', 'lab': 'WPG@SSK Under 40.5', 'price': -300, 'p': 0.75},
+        {'fam': 'FG', 'lab': 'CIN@CWS Under 9.5', 'price': -300, 'p': 0.90},
+    ]
+    out = cfl_flags(legs, ch)
+    chk(any('Under 49.5' in l and 'market 70% vs base 47%' in l
+            and 'market >> base' in l for l in out),
+        "a market 23 points over four seasons of results is SHOUTED")
+    chk(any('Over 49.5' in l and 'base 53%' in l
+            and 'market >> base' not in l for l in out),
+        "the over side prices against 1-p_under and a 2-point gap stays quiet")
+    chk(not any('40.5' in l for l in out) and not any('CIN@CWS' in l for l in out),
+        "an unmeasured rung and a non-CFL leg say nothing")
+    chk(out[0].startswith('## CFL legs vs measured base (cflhist n=321'),
+        "the header carries n, home edge and mean total")
+    chk(cfl_flags([{'fam': 'FG', 'lab': 'x Under 9.5', 'p': .9}], ch) == [],
+        "no CFL legs -> no section, not an empty header")
+    print(f"\n{ok[0]}/{ok[1]} checks pass")
+    return 0 if ok[0] == ok[1] else 1
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    sys.exit(selftest() if '--selftest' in sys.argv else main())
