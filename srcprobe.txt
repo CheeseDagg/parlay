@@ -1,5 +1,18 @@
-  espn cfl scoreboard FAIL HTTPError 403
-  espn cfl 2025 wk1   FAIL HTTPError 403
-  fixturedl cfl list  FAIL HTTPError 404
-  fixturedl feed 2025 FAIL HTTPError 404
-  wikipedia 2025 CFL  HTTP 200   300000B  marks=1  <!DOCTYPE html> | <html class="client-nojs vector-feature-language-in-header-ena
+== 2025: 836585B, 17 wikitable(s)
+  [Standings] 7 rows
+    .mw-parser-output .navbar-header{t
+    Team | GP | W | L | T | Pts | PF | PA | Div
+    Saskatchewan Roughriders | 18 | 12 | 6 | 0 | 24 | 472 | 409 | 5–5
+  [Standings] 6 rows
+    East Division view talk edit
+    Team | GP | W | L | T | Pts | PF | PA | Div
+    Hamilton Tiger-Cats | 18 | 11 | 7 | 0 | 22 | 525 | 496 | 7–1
+== 2024: 807419B, 16 wikitable(s)
+  [Standings] 7 rows
+    .mw-parser-output .navbar-header{t
+    Team | GP | W | L | T | Pts | PF | PA | Div
+    Winnipeg Blue Bombers | 18 | 11 | 7 | 0 | 22 | 447 | 365 | 7–3
+  [Standings] 6 rows
+    East Division view talk edit
+    Team | GP | W | L | T | Pts | PF | PA | Div
+    Montreal Alouettes | 18 | 12 | 5 | 1 | 25 | 455 | 404 | 6–2
