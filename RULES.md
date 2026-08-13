@@ -201,6 +201,29 @@ loss that created it landed.
     the day's schedule. That mistake was made three times in one morning,
     twice after claiming it had been verified.
 
+40. **On a two-legged tie the first leg is part of the state — pull it before
+    pricing anything.** *(8/13, verbatim: "aggregate score 1-0 is something we
+    should have noticed.")* A second leg is not a standalone match, and the
+    90-minute markets do not know that. The same morning's research had already
+    surfaced two first-leg scores in passing and nothing consumed them.
+
+    What the aggregate changes is INCENTIVE, and it runs in both directions:
+    - **Tie already won** (Tromso 5-0 up, Nordsjaelland and Midtjylland 2-0 up):
+      the favourite rotates and coasts. The book knows -- Tromso was only -165
+      at home after winning 5-0 away, which is the rotation already priced --
+      but the VARIANCE is higher than the number looks, because the lineup is
+      close to binary. Unders get better; the favourite's DC gets shakier.
+    - **Tie level** (Rakow 0-0 Hammarby): the second leg is a must-win, both
+      goal expectations rise, and an under on it is worse than its price.
+
+    The trap is mixing market types on one ticket. "To advance" prices the
+    AGGREGATE and is correct by construction. A 90-minute Double Chance prices
+    the DAY and is blind to it. Pairing an under with a DC on a dead rubber is
+    not the bet it looks like.
+
+    So: before any second-leg leg, fetch the first-leg score. It is one search
+    and it reframes every number on the match.
+
 ## Working agreement
 
 20. He pings, you check — except the morning runs, which are now STANDING
