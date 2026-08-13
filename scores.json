@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T17:48Z",
+ "as_of": "2026-08-13T18:07Z",
  "date": "2026-08-13",
  "mlb": [
   {
@@ -7,8 +7,8 @@
    "home": "DET",
    "key": "CLE@DET",
    "through5": null,
-   "current": 0,
-   "inning": 3,
+   "current": 1,
+   "inning": 4,
    "final": false
   },
   {
@@ -16,8 +16,8 @@
    "home": "CWS",
    "key": "CIN@CWS",
    "through5": null,
-   "current": 7,
-   "inning": 2,
+   "current": 8,
+   "inning": 3,
    "final": false
   },
   {
@@ -26,7 +26,7 @@
    "key": "PIT@MIA",
    "through5": null,
    "current": 0,
-   "inning": 3,
+   "inning": 4,
    "final": false
   },
   {
@@ -34,8 +34,8 @@
    "home": "NYY",
    "key": "SEA@NYY",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 1,
+   "inning": 2,
    "final": false
   },
   {
