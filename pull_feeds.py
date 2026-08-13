@@ -582,8 +582,18 @@ def pull_other(log):
                     others = ",".join(str(p) for j, (_, p) in enumerate(oc) if j != i)
                     lines.append(f"SOC|{grp}|{nm}|{pr}|{others}|{t}")
                 soc_grp[ev.get("id")] = grp
+        # SAY ZERO OUT LOUD. A league that produced no lines used to log nothing
+        # at all, which made three different states look identical in the log:
+        # never queried, HTTP error, and queried-but-empty. On 2026-08-13 three
+        # UEFA keys were added to catch that night's qualifiers, returned no
+        # FanDuel-priced fixtures, and printed nothing -- so the log could not
+        # distinguish "the API does not carry these matches" from "the key is a
+        # typo". Those need different fixes, and only one of them is ours.
         if len(lines) > n0:
             log.append(f"SOC {skey}: {(len(lines)-n0)//3} fixtures")
+        else:
+            log.append(f"SOC {skey}: 0 fixtures — queried, {len(data)} event(s) "
+                       f"returned, none priced by {BOOK}")
 
         # --- GOAL-TOTAL LADDERS. Emitted under the tag SOCT, deliberately NOT
         # SOC: board.py buckets every SOC line by group and requires that bucket
