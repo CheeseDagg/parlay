@@ -1,0 +1,104 @@
+{
+ "modern_since": 2015,
+ "bouts": 5599,
+ "divisions": {
+  "Lightweight": {
+   "n": 833,
+   "dec": 0.4742,
+   "ko": 0.3373,
+   "sub": 0.1861,
+   "other": 0.0024
+  },
+  "Welterweight": {
+   "n": 793,
+   "dec": 0.4792,
+   "ko": 0.348,
+   "sub": 0.1702,
+   "other": 0.0025
+  },
+  "Featherweight": {
+   "n": 656,
+   "dec": 0.5244,
+   "ko": 0.314,
+   "sub": 0.1616,
+   "other": 0.0
+  },
+  "Middleweight": {
+   "n": 650,
+   "dec": 0.4185,
+   "ko": 0.3969,
+   "sub": 0.18,
+   "other": 0.0046
+  },
+  "Bantamweight": {
+   "n": 602,
+   "dec": 0.5465,
+   "ko": 0.2708,
+   "sub": 0.1811,
+   "other": 0.0017
+  },
+  "Heavyweight": {
+   "n": 420,
+   "dec": 0.3857,
+   "ko": 0.4762,
+   "sub": 0.1333,
+   "other": 0.0048
+  },
+  "Light Heavyweight": {
+   "n": 416,
+   "dec": 0.3486,
+   "ko": 0.4784,
+   "sub": 0.1731,
+   "other": 0.0
+  },
+  "Women's Strawweight": {
+   "n": 359,
+   "dec": 0.6574,
+   "ko": 0.1365,
+   "sub": 0.2006,
+   "other": 0.0056
+  },
+  "Flyweight": {
+   "n": 351,
+   "dec": 0.5385,
+   "ko": 0.2365,
+   "sub": 0.2222,
+   "other": 0.0028
+  },
+  "Women's Flyweight": {
+   "n": 274,
+   "dec": 0.6314,
+   "ko": 0.1679,
+   "sub": 0.2007,
+   "other": 0.0
+  },
+  "Women's Bantamweight": {
+   "n": 215,
+   "dec": 0.6186,
+   "ko": 0.2,
+   "sub": 0.1814,
+   "other": 0.0
+  },
+  "Women's Featherweight": {
+   "n": 30,
+   "dec": 0.5667,
+   "ko": 0.2333,
+   "sub": 0.2,
+   "other": 0.0
+  }
+ },
+ "title": {
+  "n": 241,
+  "dec": 0.4357,
+  "ko": 0.3776,
+  "sub": 0.1826,
+  "other": 0.0041
+ },
+ "non_title": {
+  "n": 5358,
+  "dec": 0.4983,
+  "ko": 0.321,
+  "sub": 0.1784,
+  "other": 0.0022
+ }
+}
