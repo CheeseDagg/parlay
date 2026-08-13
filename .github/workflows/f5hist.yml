@@ -1,0 +1,37 @@
+name: F5 empirical distribution
+# Builds the season's real distribution of runs through five innings from
+# statsapi, which is free and unauthenticated but unreachable from the session
+# that maintains this repo. The result is the only number in the toolchain that
+# disagrees with the market rather than repeating it.
+on:
+  workflow_dispatch: {}
+  push:
+    paths: ['experiments/F5HIST.txt']
+permissions: { contents: write }
+concurrency: { group: parlay-f5hist, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Selftest then build
+        run: |
+          set -o pipefail
+          python3 f5hist.py --selftest | tail -2
+          python3 f5hist.py 2>&1 | tee f5hist.txt
+      - name: Publish
+        if: always()
+        run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          git add f5hist.json f5hist.txt 2>/dev/null || git add f5hist.txt
+          git diff --cached --quiet && echo "no change" && exit 0
+          for a in 1 2 3 4 5; do
+            git commit -m "f5 empirical distribution $(date -u +%F)" || true
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || git rebase --abort
+          done
+          exit 1
