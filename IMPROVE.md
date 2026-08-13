@@ -13,9 +13,6 @@ with no measurable payoff written next to it does not belong on this list.
    split is rung x the game's own posted main line (market's info, then the
    empirical tail past it). Needs historical F5 lines -- probe if any source
    carries them before promising it.
-4. **Live win-prob for soccer** (live.py is MLB-only): a Hammarby-style
-   in-match DC number from score+minute+red-card state, Poisson with the
-   sococalib league lambdas. Selftest against the 8/13 Hammarby trajectory.
 5. **WNBA retry monthly**: all routes dead 8/13 (stats timeout, ESPN/data 403).
    Re-probe first Monday each month; if a route opens, build wnbahist mirroring
    nflhist. Until then the coverage.json market-only note stands.
@@ -23,6 +20,12 @@ with no measurable payoff written next to it does not belong on this list.
    CFL leg is ever priced above a hunch.
 
 ## DONE (the number that justified it)
+- soclive.py: the Hammarby arithmetic computed one way (9/9 against the 8/13
+  trajectory). The tested model says the red-card state was ~29%, not the
+  ~17% improvised live -- ad-hoc numbers ran 12 points hot under pressure.
+- MLBTool pre-dawn cron: both morning passes ran before the earliest slate
+  build EVERY day by construction (8/13: slate stale until 14:38Z). 08:37Z
+  cron lands the board ~04:50 CT, ahead of both.
 - hand.py paste-parser: pasted FanDuel lines -> de-vigged legs in one command
   (2-way mult / 3-way power / DC 0.80 factor), typo'd pastes refused on vig
   bands. Found its own justifying number in its fixtures: the 8/13 to-advance
