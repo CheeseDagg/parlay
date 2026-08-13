@@ -19,3 +19,4 @@ on-demand refresh 2026-08-12 17:53 UTC -- WNBA/CFL ladders, event endpoint
 2026-08-13 03:03 UTC
 2026-08-13 10:07 UTC
 rebuild 2026-08-13T15:15Z — soccer sweep: SOCCER_KEYS 13 -> 45, every live competition
+rebuild 2026-08-13T15:18Z — retry after push race lost run 65
