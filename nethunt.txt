@@ -1,0 +1,10 @@
+  odds-api sports      FAIL HTTPError 401
+  sofascore api        FAIL HTTPError 403
+  fd sbapi nj          FAIL URLError 
+  fd sportsbook www    HTTP 200    11319 bytes  text/html; charset=utf-8
+  oddsportal           HTTP 200   400000 bytes  text/html; charset=utf-8
+  oddspedia            FAIL HTTPError 403
+  flashscore           HTTP 200   400000 bytes  text/html; charset=UTF-8
+  espn scoreboard      FAIL HTTPError 403
+  espn conf qual       FAIL HTTPError 403
+  bbc sport            HTTP 200   400000 bytes  text/html
