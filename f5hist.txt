@@ -12,4 +12,38 @@ F5 run totals, 2026-03-20 .. 2026-08-13
   U11.5      96.15%    95.16 - 96.94     -2495
   U12.5      97.96%    97.21 - 98.52     -4812
 
+  BY TEAM (each game counts for both) -- P(F5 total >= 11), league base rate 6.22%
+                                n   mean F5   blowup        95% band
+  CWS                         119      5.34   12.61%   7.79-19.76
+  HOU                         122      5.78   11.48%   6.96-18.34
+  COL                         121      6.04   10.74%   6.39-17.52
+  SF                          122      4.84    8.20%   4.51-14.43
+  WSH                         122      5.78    8.20%   4.51-14.43
+  MIN                         122      5.68    8.20%   4.51-14.43
+  CHC                         121      5.25    7.44%   3.96-13.53
+  BAL                         121      5.18    7.44%   3.96-13.53
+  ATH                         121      5.57    7.44%   3.96-13.53
+  MIA                         121      4.96    7.44%   3.96-13.53
+  PIT                         122      5.41    7.38%   3.93-13.43
+  KC                          122      5.02    7.38%   3.93-13.43
+  ...                       
+  CIN                         119      5.08    2.52%   0.86- 7.15
+  DET                         120      4.64    2.50%   0.85- 7.09
+  TEX                         121      4.98    2.48%   0.85- 7.04
+
+  BY VENUE -- P(F5 total >= 11), league base rate 6.22%
+                                n   mean F5   blowup        95% band
+  Coors Field                  59      6.58   15.25%   8.24-26.52
+  Daikin Park                  59      5.66   11.86%   5.87-22.52
+  Nationals Park               62      6.29   11.29%   5.58-21.52
+  Oracle Park                  59      4.42   10.17%   4.74-20.46
+  Kauffman Stadium             59      5.14   10.17%   4.74-20.46
+  Chase Field                  61      5.20    9.84%   4.59-19.84
+  Citizens Bank Park           62      5.29    9.68%   4.51-19.55
+  Wrigley Field                59      5.46    8.47%   3.67-18.35
+  ...                       
+  T-Mobile Park                62      3.58    1.61%   0.29- 8.59
+  Truist Park                  63      4.68    1.59%   0.28- 8.46
+  Busch Stadium                66      4.09    1.52%   0.27- 8.10
+
 wrote /home/runner/work/parlay/parlay/f5hist.json
