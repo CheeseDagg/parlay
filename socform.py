@@ -37,7 +37,10 @@ UA = "Mozilla/5.0 (compatible; parlay-research/1.0)"
 
 MMZ_CUR = ['2627', '2526']            # current European season, plus the tail
 MMZ_DIVS = ['E0', 'E1', 'SP1', 'I1', 'D1', 'F1', 'N1', 'P1', 'B1',
-            'T1', 'G1', 'SC0']    # Turkey, Greece, Scotland -- all on the board
+            'T1', 'G1', 'SC0',    # Turkey, Greece, Scotland -- all on the board
+            'F2', 'D2']           # Ligue 2 / 2.Bundesliga: Friday-board staples
+                                  # (Guingamp was a live DC candidate on 8/14
+                                  #  with its entire league never pulled)
 # The unmatched tail on 8/13 was 329 names and MOST were not join failures
 # at all -- they were whole leagues never pulled. football-data's new/ folder
 # carries sixteen countries; six were being read. Every one below has
@@ -60,6 +63,10 @@ ALIAS = {
     'braga': 'sp braga',
     'fortuna sittard': 'for sittard',
     'besiktas jk': 'besiktas',
+    # fd keys VPS as the bare acronym; three letters can never clear the
+    # containment floor, and lowering the floor for it would re-open the
+    # Inter Turku hole. Aliases are the price of a floor that holds.
+    'vps vaasa': 'vps',
 }
 
 
@@ -90,10 +97,13 @@ def parse_date(d):
 
 def add_rows(text, kind, acc):
     """Fold one CSV into acc: {norm_team: [(date, gf, ga)]}. Unplayed rows and
-    unparseable dates are skipped -- a missing score is not a 0-0 here either."""
+    unparseable dates are skipped -- a missing score is not a 0-0 here either.
+    Returns (rows_added, newest_date) so a stale or empty source file is
+    VISIBLE: on 8/13 every J-League team was silently absent and nothing in
+    the output could say whether the join failed or the file was dead."""
     hk, ak = ('HomeTeam', 'AwayTeam') if kind == 'mmz' else ('Home', 'Away')
     gk, qk = ('FTHG', 'FTAG') if kind == 'mmz' else ('HG', 'AG')
-    n = 0
+    n, mx = 0, None
     for row in csv.DictReader(io.StringIO(text)):
         d = parse_date(row.get('Date') or '')
         h, a = (row.get(hk) or '').strip(), (row.get(ak) or '').strip()
@@ -106,7 +116,8 @@ def add_rows(text, kind, acc):
         acc.setdefault(norm(h), {'name': h, 'rows': []})['rows'].append((d, hg, ag))
         acc.setdefault(norm(a), {'name': a, 'rows': []})['rows'].append((d, ag, hg))
         n += 1
-    return n
+        mx = d if (mx is None or d > mx) else mx
+    return n, mx
 
 
 def form_of(rows, today=None, last=LAST_N):
@@ -181,17 +192,32 @@ def board_teams():
 
 def main():
     acc = {}
+    got = {}
     for ssn in MMZ_CUR:
         for div in MMZ_DIVS:
             try:
-                add_rows(get(f"{BASE}/mmz4281/{ssn}/{div}.csv"), 'mmz', acc)
+                n, mx = add_rows(get(f"{BASE}/mmz4281/{ssn}/{div}.csv"), 'mmz', acc)
             except Exception:
                 continue
+            o = got.get(div, (0, None))
+            got[div] = (o[0] + n, max(x for x in (o[1], mx) if x) if (o[1] or mx) else None)
     for code in NEW:
         try:
-            add_rows(get(f"{BASE}/new/{code}.csv"), 'new', acc)
+            n, mx = add_rows(get(f"{BASE}/new/{code}.csv"), 'new', acc)
+            got[code] = (n, mx)
         except Exception as e:
-            print(f"  {code}: {type(e).__name__}")
+            print(f"  {code}: FETCH {type(e).__name__}")
+    # per-source yield, staleness flagged -- a dead file must not look like
+    # a join problem (the 8/13 J-League lesson)
+    stale_cut = date.today() - timedelta(days=60)
+    for src in sorted(got):
+        n, mx = got[src]
+        flag = ''
+        if n == 0:
+            flag = '  << EMPTY FILE'
+        elif mx and mx < stale_cut:
+            flag = f'  << STALE FILE (nothing since {mx})'
+        print(f"  {src:<4} {n:>5} rows, newest {mx}{flag}")
     print(f"  {len(acc)} teams accumulated\n")
     want = [(n, None, None) for n in sys.argv[1:] if not n.startswith('--')]
     if not want:
@@ -250,11 +276,15 @@ def selftest():
            "E0,08/08/2026,Chelsea,Arsenal,1,1\n"
            "E0,bad,Chelsea,Arsenal,1,1\n"
            "E0,09/08/2026,Wolves,,2,1\n")
-    n = add_rows(mmz, 'mmz', acc)
+    n, _mx = add_rows(mmz, 'mmz', acc)
     chk(n == 2 and len(acc['arsenal']['rows']) == 2,
         "each match lands on BOTH teams; junk dates and blank names are dropped")
     chk(acc['chelsea']['rows'][0] == (date(2026, 8, 1), 0, 2),
         "goals are oriented per team -- Chelsea away 0-2 is gf 0 ga 2")
+    chk(_mx == date(2026, 8, 8),
+        "add_rows reports the newest KEPT row's date (the 09/08 row has a "
+        "blank name and does not count) -- a stale source file prints its "
+        "age instead of masquerading as a join failure")
 
     today = date(2026, 8, 13)
     rows = [(date(2026, 8, 13) - timedelta(days=k * 7), (k % 3), 1)
