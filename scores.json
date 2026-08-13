@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T01:22Z",
+ "as_of": "2026-08-13T01:31Z",
  "date": "2026-08-12",
  "mlb": [
   {
@@ -61,8 +61,8 @@
    "home": "DET",
    "key": "CLE@DET",
    "through5": 7,
-   "current": 9,
-   "inning": 8,
+   "current": 10,
+   "inning": 9,
    "final": false
   },
   {
@@ -72,14 +72,14 @@
    "through5": 8,
    "current": 10,
    "inning": 9,
-   "final": false
+   "final": true
   },
   {
    "away": "CHC",
    "home": "WSH",
    "key": "CHC@WSH",
    "through5": 8,
-   "current": 15,
+   "current": 17,
    "inning": 8,
    "final": false
   },
@@ -97,7 +97,7 @@
    "home": "TOR",
    "key": "BOS@TOR",
    "through5": 2,
-   "current": 2,
+   "current": 5,
    "inning": 8,
    "final": false
   },
@@ -106,8 +106,8 @@
    "home": "ATL",
    "key": "NYM@ATL",
    "through5": 3,
-   "current": 8,
-   "inning": 8,
+   "current": 9,
+   "inning": 9,
    "final": false
   },
   {
@@ -140,16 +140,6 @@
  ],
  "soccer": [
   {
-   "home": "Real Salt Lake",
-   "away": "FC Ju\u00e1rez",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "Real Salt Lake": 3,
-    "FC Ju\u00e1rez": 0
-   }
-  },
-  {
    "home": "Tigres",
    "away": "Vancouver Whitecaps FC",
    "goals": 2,
@@ -172,20 +162,20 @@
   {
    "home": "Inter Miami CF",
    "away": "Le\u00f3n",
-   "goals": 4,
+   "goals": 5,
    "completed": false,
    "detail": {
     "Inter Miami CF": 2,
-    "Le\u00f3n": 2
+    "Le\u00f3n": 3
    }
   },
   {
    "home": "Monterrey",
    "away": "Nashville SC",
-   "goals": 1,
+   "goals": 2,
    "completed": false,
    "detail": {
-    "Monterrey": 0,
+    "Monterrey": 1,
     "Nashville SC": 1
    }
   },
