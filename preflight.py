@@ -22,6 +22,7 @@ can check and says out loud what it cannot:
   TIE      a second leg has its first leg on file          (rule 40)
   STALE    no leg already under way, board is fresh        (rules 17, 18)
   DERIVED  synthesized prices named for confirmation       (rule 8)
+  PARK     F5 totals at high-blowup or unknown parks       (f5hist)
   OVERLAP  shared legs with every open slip, and the      (rule 28)
            chance one event kills them all
   LOG      calibration.csv and slips.json entries pending (rules 29, 31)
@@ -194,6 +195,71 @@ def gate_derived(legs):
             + ', '.join(f"{l['lab']} {l['price']}" for l in d))
 
 
+def _parks():
+    """{game key: (venue, blowup multiplier or None)} from MLBTool + f5hist."""
+    import json
+    out = {}
+    try:
+        with open(os.path.join(HERE, 'f5hist.json')) as fh:
+            v = json.load(fh).get('venue', {})
+    except Exception:
+        return out
+    import board
+    for g in (board._SL.get('games') or []):
+        a, h = board.TEAM3.get(g['away']), board.TEAM3.get(g['home'])
+        if not (a and h):
+            continue
+        ven = g.get('venue', '')
+        hit = next((k for k in v if k.lower() in ven.lower()
+                    or ven.lower() in k.lower()), None)
+        out[f"{a}@{h}"] = (ven, v[hit]['mult'] if hit else None)
+    return out
+
+
+def gate_park(legs, hi=1.30):
+    """An F5 under is worth what the PARK says, and the board never mentions it.
+
+    Three seasons and 6681 games (f5hist.py): P(F5 total >= 11) runs 14.16% at
+    Coors and 2.13% at Rate Field against a 6.21% base -- a 6.6x spread, venue
+    dispersion p<0.001. One season could not see it (p=0.126) and the team-level
+    version is much weaker (p=0.025), so this is the park, not the clubs.
+
+    A park with NO history is the sharper flag. On 8/13 PHI@MIN was at Field of
+    Dreams, a neutral site with no rows in three seasons, and MLBTool's slate
+    said 'park neutral [unknown park]' and 'no wx'. Two models abstaining at
+    once on a deep under is worth saying out loud rather than defaulting to
+    league average, which is what silence does.
+
+    WARN, not FAIL: a hot park is a reason to take a shallower rung or skip the
+    game, and that is Ryan's call, not the gate's.
+    """
+    parks = _parks()
+    if not parks:
+        return 'WARN', "f5hist.json or the slate is unreadable -- no park context"
+    hot, blind, ok = [], [], 0
+    for l in legs:
+        if l.get('fam') not in ('F5', 'FG'):
+            continue
+        ven, mult = parks.get(l.get('grp'), (None, None))
+        if ven is None:
+            continue
+        if mult is None:
+            blind.append(f"{l['lab']} at {ven} (NO park history)")
+        elif mult >= hi:
+            hot.append(f"{l['lab']} at {ven} ({mult:.2f}x league blowup rate)")
+        else:
+            ok += 1
+    if not (hot or blind):
+        return 'PASS', (f"{ok} totals leg(s), every park at or below "
+                        f"{hi:.2f}x blowup" if ok else "no totals legs")
+    parts = []
+    if hot:
+        parts.append("elevated-blowup park: " + '; '.join(hot))
+    if blind:
+        parts.append("UNKNOWN park: " + '; '.join(blind))
+    return 'WARN', ' | '.join(parts)
+
+
 def gate_overlap(legs, open_slips):
     """open_slips: [(name, [labels], p)] already placed."""
     if not open_slips:
@@ -241,6 +307,7 @@ def run(legs, hot=None, open_slips=None):
              ("SOCCER", gate_soccer(legs)), ("METHOD", gate_method(legs)),
              ("HOT", gate_hot(legs, hot)), ("TIE", gate_tie(legs)),
              ("STALE", gate_stale(legs)), ("DERIVED", gate_derived(legs)),
+             ("PARK", gate_park(legs)),
              ("OVERLAP", gate_overlap(legs, open_slips or []))]
     return gates, any(v == 'FAIL' for _, (v, _) in gates)
 
@@ -417,6 +484,23 @@ def selftest():
         "the two real quotes we ever checked were both 8% off")
     v, _ = gate_derived([L('Atlanta Dream', -520, fam='WNBA')])
     chk(v == 'PASS', "a real book price is not flagged as derived")
+
+    # ---- PARK. Measured over 6681 games, not asserted.
+    import json as _pj
+    _h = _pj.load(open(os.path.join(HERE, 'f5hist.json')))
+    _v = _h['venue']
+    chk(_h['games'] > 5000,
+        f"f5hist covers {_h['games']} games -- one season could not resolve the "
+        "venue spread at all (p=0.126), three seasons put it at p<0.001")
+    _coors = _v.get('Coors Field', {}).get('mult')
+    _rate = _v.get('Rate Field', {}).get('mult')
+    chk(_coors and _rate and _coors / _rate > 4,
+        f"the park spread is real and large: Coors {_coors}x vs Rate Field "
+        f"{_rate}x, a {_coors/_rate:.1f}x ratio on the same bet")
+    chk(_h['rungs'][4]['rung'] == 10.5 and 0.930 < _h['rungs'][4]['p'] < 0.945,
+        f"U10.5 sits at {_h['rungs'][4]['p']*100:.2f}% over three seasons, "
+        "against 93.78% over one -- the de-vig calibration is not a one-season "
+        "artefact")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
