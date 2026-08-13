@@ -6,6 +6,16 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
+0. **hand.py legs through the gates**: app-quoted legs currently bypass
+   preflight entirely. Teach hand.py an optional "@ 7:30pm" kickoff token,
+   have preflight merge handlegs.json into its pool (STALE gate uses the
+   token; DERIVED already names them), and solve2 accept --hand. Payoff: a
+   UEFA night runs end to end through the same twelve gates as everything
+   else instead of the gates covering only the feed's half of the slip.
+0b. **UFC-ODDS widget form panel**: the phone widget Ryan and his friend use
+   Saturday shows model-vs-odds but none of ufcform's last-5 / win-by /
+   lose-by. Surface it per bout. Payoff: 'Garry has never been finished' on
+   the screen where the method props get picked.
 2. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
