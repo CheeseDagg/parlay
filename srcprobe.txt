@@ -1,0 +1,10 @@
+  openfootball EPL 25/26     HTTP 200   110141B  keys=['name', 'matches']
+  openfootball index         HTTP 200    22163B  list of 26
+  football-data.org v4       HTTP 200    73105B  keys=['count', 'filters', 'competitions']
+  statsapi MLB (control)     HTTP 200    23219B  keys=['copyright', 'teams']
+  WNBA stats.nba.com         FAIL TimeoutError 
+  WNBA data.nba.com          FAIL HTTPError 403
+  ESPN WNBA scoreboard       FAIL HTTPError 403
+  ESPN soccer scoreboard     FAIL HTTPError 403
+  TheSportsDB free           HTTP 200      392B  keys=['leagues']
+  fbref (scrape)             FAIL HTTPError 403
