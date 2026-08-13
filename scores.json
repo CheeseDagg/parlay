@@ -1,0 +1,529 @@
+{
+ "as_of": "2026-08-13T01:22Z",
+ "date": "2026-08-12",
+ "mlb": [
+  {
+   "away": "BAL",
+   "home": "MIN",
+   "key": "BAL@MIN",
+   "through5": 11,
+   "current": 12,
+   "inning": 9,
+   "final": true
+  },
+  {
+   "away": "PHI",
+   "home": "STL",
+   "key": "PHI@STL",
+   "through5": 6,
+   "current": 8,
+   "inning": 9,
+   "final": true
+  },
+  {
+   "away": "TB",
+   "home": "ATH",
+   "key": "TB@ATH",
+   "through5": 9,
+   "current": 12,
+   "inning": 9,
+   "final": true
+  },
+  {
+   "away": "COL",
+   "home": "AZ",
+   "key": "COL@AZ",
+   "through5": 8,
+   "current": 10,
+   "inning": 9,
+   "final": true
+  },
+  {
+   "away": "HOU",
+   "home": "SF",
+   "key": "HOU@SF",
+   "through5": 1,
+   "current": 3,
+   "inning": 9,
+   "final": true
+  },
+  {
+   "away": "MIL",
+   "home": "SD",
+   "key": "MIL@SD",
+   "through5": 3,
+   "current": 7,
+   "inning": 11,
+   "final": true
+  },
+  {
+   "away": "CLE",
+   "home": "DET",
+   "key": "CLE@DET",
+   "through5": 7,
+   "current": 9,
+   "inning": 8,
+   "final": false
+  },
+  {
+   "away": "PIT",
+   "home": "MIA",
+   "key": "PIT@MIA",
+   "through5": 8,
+   "current": 10,
+   "inning": 9,
+   "final": false
+  },
+  {
+   "away": "CHC",
+   "home": "WSH",
+   "key": "CHC@WSH",
+   "through5": 8,
+   "current": 15,
+   "inning": 8,
+   "final": false
+  },
+  {
+   "away": "SEA",
+   "home": "NYY",
+   "key": "SEA@NYY",
+   "through5": 10,
+   "current": 10,
+   "inning": 7,
+   "final": false
+  },
+  {
+   "away": "BOS",
+   "home": "TOR",
+   "key": "BOS@TOR",
+   "through5": 2,
+   "current": 2,
+   "inning": 8,
+   "final": false
+  },
+  {
+   "away": "NYM",
+   "home": "ATL",
+   "key": "NYM@ATL",
+   "through5": 3,
+   "current": 8,
+   "inning": 8,
+   "final": false
+  },
+  {
+   "away": "CIN",
+   "home": "CWS",
+   "key": "CIN@CWS",
+   "through5": 1,
+   "current": 3,
+   "inning": 7,
+   "final": false
+  },
+  {
+   "away": "KC",
+   "home": "LAD",
+   "key": "KC@LAD",
+   "through5": null,
+   "current": 0,
+   "inning": 1,
+   "final": false
+  },
+  {
+   "away": "TEX",
+   "home": "LAA",
+   "key": "TEX@LAA",
+   "through5": null,
+   "current": 0,
+   "inning": 1,
+   "final": false
+  }
+ ],
+ "soccer": [
+  {
+   "home": "Real Salt Lake",
+   "away": "FC Ju\u00e1rez",
+   "goals": 3,
+   "completed": true,
+   "detail": {
+    "Real Salt Lake": 3,
+    "FC Ju\u00e1rez": 0
+   }
+  },
+  {
+   "home": "Tigres",
+   "away": "Vancouver Whitecaps FC",
+   "goals": 2,
+   "completed": true,
+   "detail": {
+    "Tigres": 1,
+    "Vancouver Whitecaps FC": 1
+   }
+  },
+  {
+   "home": "Orlando City SC",
+   "away": "Atl\u00e9tico San Luis",
+   "goals": 3,
+   "completed": false,
+   "detail": {
+    "Orlando City SC": 2,
+    "Atl\u00e9tico San Luis": 1
+   }
+  },
+  {
+   "home": "Inter Miami CF",
+   "away": "Le\u00f3n",
+   "goals": 4,
+   "completed": false,
+   "detail": {
+    "Inter Miami CF": 2,
+    "Le\u00f3n": 2
+   }
+  },
+  {
+   "home": "Monterrey",
+   "away": "Nashville SC",
+   "goals": 1,
+   "completed": false,
+   "detail": {
+    "Monterrey": 0,
+    "Nashville SC": 1
+   }
+  },
+  {
+   "home": "Toluca",
+   "away": "FC Dallas",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "San Diego FC",
+   "away": "Puebla",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Seattle Sounders FC",
+   "away": "Guadalajara",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Los Angeles FC",
+   "away": "Quer\u00e9taro",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Philadelphia Union",
+   "away": "Santos Laguna",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "New York City FC",
+   "away": "Necaxa",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Am\u00e9rica",
+   "away": "Austin FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Cruz Azul",
+   "away": "Chicago Fire",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Portland Timbers",
+   "away": "Tijuana",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atlanta United FC",
+   "away": "New York Red Bulls",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "CF Montreal",
+   "away": "D.C. United",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Charlotte FC",
+   "away": "Columbus Crew SC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Orlando City SC",
+   "away": "FC Cincinnati",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Toronto FC",
+   "away": "New England Revolution",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Houston Dynamo",
+   "away": "LA Galaxy",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Nashville SC",
+   "away": "Inter Miami CF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Colorado Rapids",
+   "away": "Sporting Kansas City",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Real Salt Lake",
+   "away": "Minnesota United FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Los Angeles FC",
+   "away": "San Diego FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "San Jose Earthquakes",
+   "away": "St. Louis City SC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Chicago Fire",
+   "away": "Portland Timbers",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "New York City FC",
+   "away": "Philadelphia Union",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Austin FC",
+   "away": "FC Dallas",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Seattle Sounders FC",
+   "away": "Vancouver Whitecaps FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Columbus Crew SC",
+   "away": "CF Montreal",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Toronto FC",
+   "away": "Charlotte FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Orlando City SC",
+   "away": "Chicago Fire",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "D.C. United",
+   "away": "New England Revolution",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "FC Cincinnati",
+   "away": "New York City FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Philadelphia Union",
+   "away": "Inter Miami CF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "New York Red Bulls",
+   "away": "Nashville SC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Sporting Kansas City",
+   "away": "St. Louis City SC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Minnesota United FC",
+   "away": "Atlanta United FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Seattle Sounders FC",
+   "away": "Austin FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Colorado Rapids",
+   "away": "Los Angeles FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Real Salt Lake",
+   "away": "FC Dallas",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Vancouver Whitecaps FC",
+   "away": "Houston Dynamo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "LA Galaxy",
+   "away": "San Jose Earthquakes",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Portland Timbers",
+   "away": "San Diego FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "CF Montreal",
+   "away": "LA Galaxy",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Charlotte FC",
+   "away": "D.C. United",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "New York Red Bulls",
+   "away": "Chicago Fire",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "FC Cincinnati",
+   "away": "Seattle Sounders FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Inter Miami CF",
+   "away": "Toronto FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Orlando City SC",
+   "away": "Real Salt Lake",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Austin FC",
+   "away": "Philadelphia Union",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Nashville SC",
+   "away": "Columbus Crew SC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "St. Louis City SC",
+   "away": "Houston Dynamo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  }
+ ]
+}
