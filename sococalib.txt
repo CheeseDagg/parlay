@@ -1,0 +1,43 @@
+  England Premier League: 2660 matches with closing odds
+  England Championship: 3864 matches with closing odds
+  Spain La Liga: 2660 matches with closing odds
+  Italy Serie A: 2660 matches with closing odds
+  Germany Bundesliga: 2142 matches with closing odds
+  France Ligue 1: 2337 matches with closing odds
+  Netherlands Eredivisie: 2068 matches with closing odds
+  Portugal Primeira Liga: 2142 matches with closing odds
+  Belgium Pro League: 2085 matches with closing odds
+  USA MLS: 6085 matches with closing odds
+  Mexico Liga MX: 4682 matches with closing odds
+  Argentina Primera: 6295 matches with closing odds
+  Brazil Serie A: 5534 matches with closing odds
+  Japan J-League: 4523 matches with closing odds
+  China Super League: 2973 matches with closing odds
+
+  52710 matches with closing odds and results
+
+  DE-VIG RELIABILITY -- n-weighted mean |predicted - actual|
+    3-way mult    0.90 points   |  favourite DC mult    1.24 points
+    3-way power   0.36 points   |  favourite DC power   0.68 points
+    under 2.5 (2-way mult)   1.25 points over 22617 matches
+
+  favourite-DC reliability by bin (mult):
+    said  64.3%  happened  64.9%   n=1417
+    said  67.7%  happened  67.2%   n=12044
+    said  72.4%  happened  74.1%   n=12841
+    said  77.4%  happened  79.0%   n=10446
+    said  82.3%  happened  83.4%   n=8364
+    said  87.3%  happened  88.9%   n=5051
+    said  92.1%  happened  93.7%   n=2224
+    said  96.0%  happened  96.9%   n=323
+
+  BASE RATES for the leagues openfootball lacks:
+    USA MLS                n=6085   draw 25.1%  goals 2.91  U2.5 43.3%
+    Mexico Liga MX         n=4682   draw 27.1%  goals 2.66  U2.5 49.5%
+    Argentina Primera      n=6295   draw 30.2%  goals 2.23  U2.5 61.1%
+    Brazil Serie A         n=5534   draw 26.9%  goals 2.39  U2.5 56.5%
+    Japan J-League         n=4523   draw 24.9%  goals 2.62  U2.5 51.5%
+    China Super League     n=2973   draw 25.3%  goals 2.92  U2.5 44.0%
+
+  rows from the CURRENT (2026-27 / 2026) season: 2681 -- form exists here
+wrote /home/runner/work/parlay/parlay/sococalib.json
