@@ -6,7 +6,7 @@
   fd.co.uk BRA           HTTP 200   250000B  ﻿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgC
   sportsdb MLS 2026      HTTP 200     6273B  {"events":[{"idEvent":"2406707","strEvent":"St. Louis City SC vs Charlotte FC","strEventAl
   espn MLS scoreboard    FAIL HTTPError 403
-  cdn.wnba scoreboard    HTTP 200     3825B  <!DOCTYPE html> | <html> |  | <head> |     <link rel="dns-prefetch" href="//maxcdn.bootstr
+  cdn.wnba scoreboard    HTTP 200     3824B  <!DOCTYPE html> | <html> |  | <head> |     <link rel="dns-prefetch" href="//maxcdn.bootstr
   stats.wnba gamelog     FAIL TimeoutError 
   espn WNBA (brwsr UA)   FAIL HTTPError 403
   ufc mdabbert odds      FAIL HTTPError 404
@@ -15,3 +15,5 @@
   habitatring games      HTTP 200   250000B  game_id,season,game_type,week,gameday,weekday,gametime,away_team,away_score,home_team,home
   nflverse games rel     FAIL HTTPError 404
   cfl fixturedownload    FAIL HTTPError 404
+  sbr mlb odds 2023      HTTP 200    67819B  <!DOCTYPE html> | <html lang="en-us"> | <head> | <meta charset="utf-8"> | <meta name="view
+  sbr mlb odds 2024      HTTP 200    67756B  <!DOCTYPE html> | <html lang="en-us"> | <head> | <meta charset="utf-8"> | <meta name="view
