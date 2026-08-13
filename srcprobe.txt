@@ -1,27 +1,2 @@
-== Sask 2025: 321292B, 6 wikitable(s)
-  [CFL global draft] 3 rows x 6 cols
-    Round | Pick | Player | Position | School | Nationality
-    1 | 6 | Sylvain Yondjouen | DL | Georgia Tech | Belgium
-    2 | 15 | Jesse Mirco | P | Vanderbilt | Australia
-  [CFL national draft] 8 rows x 6 cols
-    Round | Pick | Player | Position | School | Hometown
-    1 | 4 | Ali Saad | DL | Bowling Green | Windsor, ON
-    2 | 13 | Erik Andersen | OL | Western | London, ON
-  [Preseason] 5 rows x 11 cols
-    Week | Game | Date | Kickoff | Opponent | Results | TV | Venue | Attendance | Summary
-    Score | Record
-    A | Bye
-  [Standings] 7 rows x 11 cols
-    .mw-parser-output .navbar-he
-    Team | GP | W | L | T | Pts | PF | PA | Div | Stk
-    Saskatchewan Roughriders | 18 | 12 | 6 | 0 | 24 | 472 | 409 | 5–5 | L2
-  [Schedule] 23 rows x 11 cols
-    Week | Game | Date | Kickoff | Opponent | Results | TV | Venue | Attendance | Summary
-    Score | Record
-    1 | 1 | Thu, June 5 | 7:00 p.m. CST | vs. Ottawa Redblacks | W 31–26 | 1–0 | TSN / RDS2 / CBSSN | Mosaic Stadium | 25,973
-  [Schedule] 5 rows x 10 cols
-    Game | Date | Kickoff | Opponent | Results | TV | Venue | Attendance | Summary
-    Score | Record
-    West Semi-Final | Bye
-== 2025 team pages: 9/9 exist (Roughriders, Tiger-Cats, Bombers, Alouettes, Lions, Stampeders, Elks, Redblacks, Argonauts)
-== 2024 team pages: 9/9 exist (Roughriders, Tiger-Cats, Bombers, Alouettes, Lions, Stampeders, Elks, Redblacks, Argonauts)
+== 2025_Saskatchewan_Roughriders_season
+== 2023_Toronto_Argonauts_season
