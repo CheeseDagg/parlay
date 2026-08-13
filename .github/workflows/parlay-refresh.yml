@@ -70,9 +70,17 @@ jobs:
         run: |
           git config user.name  "parlay-bot"
           git config user.email "parlay-bot@users.noreply.github.com"
+          # SCORES SURVIVE A BAD BOARD. The revert below exists so an unverified
+          # board never publishes, and it wiped scores.json too -- so on 8/13 the
+          # first successful scores pull was thrown away by a board selftest
+          # failure that had nothing to do with it. Results are not a board:
+          # they are what already happened, they cannot be made wrong by a bad
+          # feed, and they are most wanted on exactly the nights something breaks.
+          cp scores.json /tmp/scores.json 2>/dev/null || true
           if [ "${{ job.status }}" != "success" ]; then
             git checkout -- . 2>/dev/null || true
             git clean -fd 2>/dev/null || true
+            cp /tmp/scores.json scores.json 2>/dev/null || true
           fi
           cp /tmp/refresh.log refresh.log 2>/dev/null || echo "(no log captured — failed before the first step wrote)" > refresh.log
           echo "run conclusion: ${{ job.status }} at $(date -u +%F\ %H:%M)" >> refresh.log

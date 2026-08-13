@@ -860,6 +860,14 @@ def main():
     tail = (r.stdout + r.stderr).strip().splitlines()
     print("  board selftest:", tail[-1] if tail else "(no output)")
     if r.returncode != 0:
+        # NAME THE CHECK. This printed only tail[-1] -- the summary count -- and
+        # discarded the FAIL lines it had already captured, so a failed gate said
+        # "40/41" and nothing about WHICH one. On 2026-08-13 that cost a whole
+        # diagnosis cycle with a live slip on the board, and the run it blocked
+        # was the first scores pull.
+        for ln in tail:
+            if ln.strip().startswith("FAIL"):
+                print(f"  {ln.strip()}")
         sys.exit("board.py --selftest FAILED against the freshly written feeds — "
                  "the files are on disk for inspection; do not trust this board "
                  "until it passes.")
