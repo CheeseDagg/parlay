@@ -1,39 +1,45 @@
 #!/usr/bin/env python3
-"""srcprobe.py — which historical data sources can the runner actually reach?
+"""srcprobe.py — which data sources can the runner actually reach?
 
-MLB now has an empirical grounding (f5hist, 6681 games). Soccer and WNBA have
-none at all, and soccer is where today's money went. Before writing a module
-against any source, find out what answers -- this is the same lesson as the
-soccer catalog: an hour was spent inferring what an API had instead of asking.
-
-Prints status, size and a content probe for every candidate.
+Round 2. Round 1 found openfootball (history, no form) and statsapi (MLB,
+everything). Still missing: soccer WITH odds (to calibrate the de-vig the way
+f5hist calibrated MLB), current-season soccer form, WNBA anything, UFC
+history for Saturday's card, and NFL before September. Ask, don't infer.
 """
 import json, sys, urllib.request
-UA = "Mozilla/5.0 (compatible; parlay-research/1.0)"
+BUA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 T = [
- ("openfootball EPL 25/26",  "https://raw.githubusercontent.com/openfootball/football.json/master/2024-25/en.1.json"),
- ("openfootball index",      "https://api.github.com/repos/openfootball/football.json/contents/2024-25"),
- ("football-data.org v4",    "https://api.football-data.org/v4/competitions"),
- ("statsapi MLB (control)",  "https://statsapi.mlb.com/api/v1/teams?sportId=1"),
- ("WNBA stats.nba.com",      "https://stats.nba.com/stats/leaguegamelog?LeagueID=10&Season=2025&SeasonType=Regular+Season&PlayerOrTeam=T"),
- ("WNBA data.nba.com",       "https://data.wnba.com/data/10s/prod/v1/2025/schedule.json"),
- ("ESPN WNBA scoreboard",    "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"),
- ("ESPN soccer scoreboard",  "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.conf/scoreboard"),
- ("TheSportsDB free",        "https://www.thesportsdb.com/api/v1/json/3/all_leagues.php"),
- ("fbref (scrape)",          "https://fbref.com/en/comps/9/Premier-League-Stats"),
+ # soccer results WITH closing odds -- the de-vig calibration set
+ ("fd.co.uk EPL 25/26",   "https://www.football-data.co.uk/mmz4281/2526/E0.csv", {}),
+ ("fd.co.uk EPL 26/27",   "https://www.football-data.co.uk/mmz4281/2627/E0.csv", {}),
+ ("fd.co.uk USA (MLS)",   "https://www.football-data.co.uk/new/USA.csv", {}),
+ ("fd.co.uk MEX",         "https://www.football-data.co.uk/new/MEX.csv", {}),
+ ("fd.co.uk ARG",         "https://www.football-data.co.uk/new/ARG.csv", {}),
+ ("fd.co.uk BRA",         "https://www.football-data.co.uk/new/BRA.csv", {}),
+ # current-season soccer form
+ ("sportsdb MLS 2026",    "https://www.thesportsdb.com/api/v1/json/3/eventsseason.php?id=4346&s=2026", {}),
+ ("espn MLS scoreboard",  "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard", {"User-Agent": BUA}),
+ # WNBA, with the headers their own site sends
+ ("cdn.wnba scoreboard",  "https://cdn.wnba.com/static/json/liveData/scoreboard/todaysScoreboard_10.json", {"User-Agent": BUA, "Referer": "https://www.wnba.com/"}),
+ ("stats.wnba gamelog",   "https://stats.wnba.com/stats/leaguegamelog?LeagueID=10&Season=2026&SeasonType=Regular%20Season&PlayerOrTeam=T",
+  {"User-Agent": BUA, "Referer": "https://www.wnba.com/", "Origin": "https://www.wnba.com",
+   "x-nba-stats-origin": "stats", "x-nba-stats-token": "true"}),
+ ("espn WNBA (brwsr UA)", "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard", {"User-Agent": BUA}),
+ # UFC history
+ ("ufc mdabbert odds",    "https://raw.githubusercontent.com/mdabbert/Ultimate-UFC-Dataset/master/ufc-master.csv", {}),
+ ("ufc greco results",    "https://raw.githubusercontent.com/Greco1899/scrape_ufc_stats/main/ufc_fight_results.csv", {}),
+ # NFL, for September
+ ("nflverse schedules",   "https://github.com/nflverse/nflverse-data/releases/download/schedules/schedules.csv", {}),
+ ("cfl fixturedownload",  "https://fixturedownload.com/feed/json/cfl-2026", {}),
 ]
-for name, url in T:
+for name, url, hdr in T:
     try:
-        r = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=25)
-        b = r.read(300000)
-        note = ""
-        if b.strip()[:1] in (b"{", b"["):
-            try:
-                d = json.loads(b)
-                note = (f"keys={list(d)[:5]}" if isinstance(d, dict)
-                        else f"list of {len(d)}")
-            except Exception:
-                note = "json truncated"
-        print(f"  {name:<26} HTTP {r.status:<4} {len(b):>7}B  {note}")
+        h = {"User-Agent": "Mozilla/5.0 (compatible; parlay-research/1.0)"}
+        h.update(hdr)
+        r = urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=25)
+        b = r.read(250000)
+        head = b[:160].decode('utf-8', 'replace').replace('\n', ' | ')
+        print(f"  {name:<22} HTTP {r.status:<4} {len(b):>7}B  {head[:90]}")
     except Exception as e:
-        print(f"  {name:<26} FAIL {type(e).__name__} {getattr(e,'code','')}")
+        print(f"  {name:<22} FAIL {type(e).__name__} {getattr(e, 'code', '')}")
