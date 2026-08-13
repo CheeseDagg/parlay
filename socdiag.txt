@@ -30,13 +30,14 @@
   soccer_italy_serie_b                                 ACTIVE       14 events,   0 today/tomorrow
   soccer_japan_j_league                                ACTIVE       10 events,   1 today/tomorrow
   soccer_korea_kleague1                                ACTIVE        6 events,   0 today/tomorrow
+  soccer_league_of_ireland                             ACTIVE        1 events,   0 today/tomorrow
   soccer_mexico_ligamx                                 ACTIVE       16 events,   0 today/tomorrow
   soccer_netherlands_eredivisie                        ACTIVE        9 events,   1 today/tomorrow
   soccer_norway_eliteserien                            ACTIVE        7 events,   1 today/tomorrow
   soccer_poland_ekstraklasa                            ACTIVE        9 events,   1 today/tomorrow
   soccer_portugal_primeira_liga                        ACTIVE        9 events,   1 today/tomorrow
   soccer_russia_premier_league                         ACTIVE        8 events,   1 today/tomorrow
-  soccer_saudi_arabia_pro_league                       ACTIVE        7 events,   4 today/tomorrow
+  soccer_saudi_arabia_pro_league                       ACTIVE        6 events,   3 today/tomorrow
   soccer_spain_la_liga                                 ACTIVE       20 events,   0 today/tomorrow
   soccer_spain_segunda_division                        ACTIVE       11 events,   1 today/tomorrow
   soccer_spl                                           ACTIVE        6 events,   0 today/tomorrow
@@ -138,8 +139,7 @@ soccer_portugal_primeira_liga  (Primeira Liga - Portugal)  — 1 fixtures today/
 soccer_russia_premier_league  (Premier League - Russia)  — 1 fixtures today/tomorrow
     2026-08-14T14:00:00Z  Lokomotiv Moscow @ Gazovik Orenburg   no fd (2 books)
 
-soccer_saudi_arabia_pro_league  (Saudi Pro League)  — 4 fixtures today/tomorrow
-    2026-08-13T16:15:00Z  Al-Hazem @ Abha Club   no fd (0 books)
+soccer_saudi_arabia_pro_league  (Saudi Pro League)  — 3 fixtures today/tomorrow
     2026-08-13T18:00:00Z  Al-Qadsiah @ Al-Shabab   no fd (0 books)
     2026-08-14T16:50:00Z  Al-Fayha @ Neom   no fd (0 books)
     2026-08-14T18:00:00Z  Al-Riyadh @ Al-Ettifaq   no fd (0 books)
