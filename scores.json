@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T03:24Z",
+ "as_of": "2026-08-13T03:27Z",
  "date": "2026-08-12",
  "mlb": [
   {
@@ -132,9 +132,9 @@
    "away": "TEX",
    "home": "LAA",
    "key": "TEX@LAA",
-   "through5": null,
+   "through5": 3,
    "current": 3,
-   "inning": 4,
+   "inning": 5,
    "final": false
   }
  ],
