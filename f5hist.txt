@@ -1,51 +1,51 @@
-F5 run totals, 2026-03-20 .. 2026-08-13
-  1817 games with a clean F5 result, 27 too short to count, 9 not final
+F5 run totals, 2024-03-20 .. 2026-08-13
+  6681 games with a clean F5 result, 96 too short to count, 9 not final
 
-  mean F5 total 5.00 runs over 1817 games
+  mean F5 total 4.98 runs over 6681 games
 
     rung  empirical       95% interval   implied fair
-  U6.5       70.67%    68.53 - 72.71      -241
-  U7.5       79.53%    77.61 - 81.32      -388
-  U8.5       86.13%    84.47 - 87.64      -621
-  U9.5       90.75%    89.33 - 92.00      -982
-  U10.5      93.78%    92.58 - 94.80     -1508
-  U11.5      96.15%    95.16 - 96.94     -2495
-  U12.5      97.96%    97.21 - 98.52     -4812
+  U6.5       71.56%    70.47 - 72.63      -252
+  U7.5       79.60%    78.62 - 80.55      -390
+  U8.5       85.81%    84.95 - 86.63      -605
+  U9.5       90.39%    89.66 - 91.07      -941
+  U10.5      93.79%    93.18 - 94.34     -1510
+  U11.5      96.02%    95.52 - 96.46     -2412
+  U12.5      97.52%    97.11 - 97.86     -3924
 
-  BY TEAM (each game counts for both) -- P(F5 total >= 11), league base rate 6.22%
-  dispersion across 30 groups: chi2=39.4 df=29 p=0.094  -> CONSISTENT WITH NOISE
+  BY TEAM (each game counts for both) -- P(F5 total >= 11), league base rate 6.21%
+  dispersion across 31 groups: chi2=47.0 df=30 p=0.025  -> REAL spread
                                 n   mean F5   blowup        95% band
-  CWS                         119      5.34   12.61%   7.79-19.76
-  HOU                         122      5.78   11.48%   6.96-18.34
-  COL                         121      6.04   10.74%   6.39-17.52
-  SF                          122      4.84    8.20%   4.51-14.43
-  WSH                         122      5.78    8.20%   4.51-14.43
-  MIN                         122      5.68    8.20%   4.51-14.43
-  CHC                         121      5.25    7.44%   3.96-13.53
-  BAL                         121      5.18    7.44%   3.96-13.53
-  ATH                         121      5.57    7.44%   3.96-13.53
-  MIA                         121      4.96    7.44%   3.96-13.53
-  PIT                         122      5.41    7.38%   3.93-13.43
-  KC                          122      5.02    7.38%   3.93-13.43
+  COL                         445      5.77    9.66%   7.25-12.76
+  ATH                         283      5.60    9.19%   6.35-13.12
+  AZ                          447      5.47    8.50%   6.26-11.45
+  WSH                         446      5.27    8.30%   6.08-11.23
+  MIN                         446      5.29    8.07%   5.89-10.97
+  OAK                         162      4.95    8.02%   4.75-13.24
+  CHC                         445      5.12    7.64%   5.52-10.49
+  TOR                         447      4.74    7.61%   5.49-10.44
+  SD                          446      4.95    6.95%   4.94- 9.70
+  NYY                         444      5.01    6.53%   4.59- 9.22
+  BAL                         446      5.15    6.50%   4.57- 9.18
+  CIN                         446      4.93    6.50%   4.57- 9.18
   ...                       
-  CIN                         119      5.08    2.52%   0.86- 7.15
-  DET                         120      4.64    2.50%   0.85- 7.09
-  TEX                         121      4.98    2.48%   0.85- 7.04
+  PIT                         446      4.78    4.71%   3.10- 7.09
+  TEX                         446      4.74    3.81%   2.39- 6.02
+  CLE                         444      4.63    3.60%   2.23- 5.77
 
-  BY VENUE -- P(F5 total >= 11), league base rate 6.22%
-  dispersion across 30 groups: chi2=37.8 df=29 p=0.126  -> CONSISTENT WITH NOISE
+  BY VENUE -- P(F5 total >= 11), league base rate 6.21%
+  dispersion across 35 groups: chi2=70.8 df=34 p=0.000  -> REAL spread
                                 n   mean F5   blowup        95% band
-  Coors Field                  59      6.58   15.25%   8.24-26.52
-  Daikin Park                  59      5.66   11.86%   5.87-22.52
-  Nationals Park               62      6.29   11.29%   5.58-21.52
-  Oracle Park                  59      4.42   10.17%   4.74-20.46
-  Kauffman Stadium             59      5.14   10.17%   4.74-20.46
-  Chase Field                  61      5.20    9.84%   4.59-19.84
-  Citizens Bank Park           62      5.29    9.68%   4.51-19.55
-  Wrigley Field                59      5.46    8.47%   3.67-18.35
+  Coors Field                 219      6.57   14.16%  10.15-19.39
+  Chase Field                 223      5.62   11.21%   7.71-16.03
+  Nationals Park              224      5.45    9.82%   6.58-14.42
+  Target Field                222      5.26    8.56%   5.55-12.98
+  Oriole Park at Camden Yar   224      5.29    7.59%   4.79-11.82
+  George M. Steinbrenner Fi    81      5.04    7.41%   3.44-15.23
+  Wrigley Field               219      4.91    7.31%   4.55-11.54
+  Yankee Stadium              219      5.04    7.31%   4.55-11.54
   ...                       
-  T-Mobile Park                62      3.58    1.61%   0.29- 8.59
-  Truist Park                  63      4.68    1.59%   0.28- 8.46
-  Busch Stadium                66      4.09    1.52%   0.27- 8.10
+  T-Mobile Park               224      3.96    2.68%   1.23- 5.72
+  Guaranteed Rate Field        82      4.26    2.44%   0.67- 8.46
+  Rate Field                  141      4.39    2.13%   0.73- 6.07
 
 wrote /home/runner/work/parlay/parlay/f5hist.json
