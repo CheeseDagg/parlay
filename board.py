@@ -780,8 +780,18 @@ def selftest():
     chk(all('DC (derived)' in o['lab'] for o in _soc),
         f"every soccer offer is a derived Double Chance, never a 3-way side "
         f"({len(_soc)} soccer legs)")
-    chk(all(0.5 < o['p'] < 0.995 for o in _soc),
-        "derived DC probabilities are favourite-shaped, not draw-shaped")
+    # NAME THE OFFENDER. This asserted the band and printed only the band, so
+    # when it failed on the runner at 2026-08-13 01:31 the feed that broke it was
+    # reverted by the publish step and the check was unreproducible locally --
+    # the same defect as pull_feeds printing tail[-1]. A leg outside this band is
+    # usually not a bug at all: a -5000 favourite's DC legitimately de-vigs past
+    # 0.995. Whichever it is, the next failure says which leg and at what number.
+    _oob = [o for o in _soc if not (0.5 < o['p'] < 0.995)]
+    chk(not _oob,
+        "derived DC probabilities are favourite-shaped, not draw-shaped"
+        + (f" -- {len(_oob)} outside (0.5, 0.995): "
+           + "; ".join(f"{o['lab']} p={o['p']:.4f} @ {o['price']}" for o in _oob[:4])
+           if _oob else ""))
     chk(all(o['d'] < 1 / o['p'] for o in _soc),
         "the synthesized payout keeps LESS than fair -- the 85% shave is on, "
         "so a derived leg can under-promise but never over-promise")
