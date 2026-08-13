@@ -123,6 +123,17 @@ SOCCER_KEYS = [
     "soccer_korea_kleague1", "soccer_poland_ekstraklasa",
     "soccer_russia_premier_league", "soccer_saudi_arabia_pro_league",
     "soccer_spl", "soccer_sweden_superettan", "soccer_uefa_nations_league",
+    # -- added 2026-08-13, and NOT from the diagnostic: it could not see these.
+    # /v4/sports lists competitions that are IN SEASON. A UEFA tournament's
+    # league phase starts in September, so on 13 August the Europa and
+    # Conference League keys read as out of season -- while both were playing
+    # third-qualifying-round second legs THAT NIGHT, twenty-four matches with
+    # FanDuel prices up: Rangers, Anderlecht, Hearts-Benfica, Pafos-Salzburg.
+    # The board showed five Leagues Cup games and called it the day's soccer.
+    # A qualifying round is the season's first month and the parent key is the
+    # only place it lives, so "in season" is the wrong question to ask.
+    "soccer_uefa_europa_league", "soccer_uefa_europa_conference_league",
+    "soccer_uefa_champs_league",
 ]
 assert len(set(SOCCER_KEYS)) == len(SOCCER_KEYS), "duplicate soccer key"
 TWO_WAY = [("basketball_wnba", "WNBA"), ("americanfootball_cfl", "CFL"),
@@ -508,14 +519,32 @@ def pull_other(log):
     # matches -- Inter Miami, Monterrey, LAFC, Seattle -- because no key on this
     # list covers it. Rule 14 says the feed is a floor and not a ceiling; this
     # makes the floor legible instead of leaving it to be guessed.
+    # ASK FOR THE INACTIVE ONES TOO. This called /sports without all=true, which
+    # returns only competitions that are IN SEASON -- and that is not the same
+    # question as "is anyone playing tonight". On 2026-08-13 the Europa League
+    # and Conference League were both running third-qualifying-round second
+    # legs, twenty-four matches, priced on FanDuel; their league phases do not
+    # start until September, so both keys were out of season, absent from this
+    # list, and therefore absent from the board. The diagnostic reported "0
+    # missing" while the night's biggest soccer card was invisible.
+    #
+    # all=true costs nothing extra (the sports list is a free endpoint) and the
+    # out-of-season keys are reported separately below, because most of them
+    # really are dark and a hundred-line log entry teaches nothing.
     try:
-        _live = _get(f"{BASE}/sports?apiKey={KEY}")
-        _miss = sorted((s.get("key",""), s.get("title","")) for s in _live
-                       if s.get("key","").startswith("soccer")
-                       and s.get("key") not in SOCCER_KEYS)
+        _live = _get(f"{BASE}/sports?apiKey={KEY}&all=true")
+        _soc = [(s.get("key",""), s.get("title",""), bool(s.get("active")))
+                for s in _live if s.get("key","").startswith("soccer")]
+        _miss = sorted((k, t) for k, t, a in _soc if a and k not in SOCCER_KEYS)
+        _off  = sorted((k, t) for k, t, a in _soc if not a and k not in SOCCER_KEYS)
         if _miss:
             log.append(f"SOC: {len(_miss)} soccer competition(s) LIVE and NOT pulled — "
                        + "; ".join(f"{k} ({t})" for k, t in _miss))
+        if _off:
+            log.append(f"SOC: {len(_off)} out-of-season soccer key(s) not pulled — "
+                       "a qualifying round lives under its parent key, so check "
+                       "these before saying a competition is dark: "
+                       + "; ".join(k for k, _ in _off))
     except Exception as e:
         log.append(f"SOC: could not list available competitions ({type(e).__name__})")
 
