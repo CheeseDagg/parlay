@@ -72,12 +72,12 @@ for slug in ("2025_Saskatchewan_Roughriders_season", "2023_Toronto_Argonauts_sea
         print(f"== {slug} FAIL {type(e).__name__}"); continue
     p = Tables(); p.feed(html)
     print(f"== {slug}")
-    for t in p.out:
+    for head, t in p.out:            # srcprobe's Tables yields (heading, rows)
         if not t or not t[0]:
             continue
         h = [c.lower() for c in t[0]]
-        if h[0] != "week" or "opponent" not in h:
+        if not h or h[0] != "week" or "opponent" not in h:
             continue
-        print(f"  -- table: {len(t)} rows")
+        print(f"  -- [{head}] {len(t)} rows")
         for row in t:
             print(f"    {' | '.join(c[:30] for c in row[:8])}")
