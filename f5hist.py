@@ -223,14 +223,31 @@ def main():
                 else round(100 * (1 - r['p']) / r['p']))
         print(f"  U{r['rung']:<5} {r['p']*100:9.2f}% "
               f"{r['lo']*100:8.2f} - {r['hi']*100:5.2f}   {fair:>+7}")
-    by_key(games, lambda x: (x['away'], x['home']), 'BY TEAM (each game counts for both)')
-    by_key(games, lambda x: (x['venue'],), 'BY VENUE', floor=50, top=8)
+    teams = by_key(games, lambda x: (x['away'], x['home']),
+                   'BY TEAM (each game counts for both)')
+    venues = by_key(games, lambda x: (x['venue'],), 'BY VENUE', floor=50, top=8)
     dist = {}
     for t in totals:
         dist[t] = dist.get(t, 0) + 1
     with open(OUT, 'w') as fh:
+        base = sum(1 for t in totals if t >= 11) / len(totals)
         json.dump({'from': d_from, 'to': d_to, 'games': len(totals),
                    'mean': round(mean, 3), 'rungs': rows,
+                   'blowup_base': round(base, 5),
+                   # Saved so the board can USE them, not only so a human can
+                   # read them. A venue multiplier of 2.3 (Coors) or 0.34 (Rate
+                   # Field) against a 6.2% base is the difference between a
+                   # deep F5 under being the safest leg available and being the
+                   # one that ends the ticket.
+                   'venue': {str(r['k'][0] if isinstance(r['k'], tuple) else r['k']):
+                             {'n': r['n'], 'mean': round(r['mean'], 3),
+                              'blowup': round(r['blow'], 5),
+                              'mult': round(r['blow'] / base, 3) if base else None,
+                              'lo': round(r['lo'], 5), 'hi': round(r['hi'], 5)}
+                             for r in venues},
+                   'team': {str(r['k']): {'n': r['n'], 'blowup': round(r['blow'], 5),
+                                          'mult': round(r['blow'] / base, 3) if base else None}
+                            for r in teams},
                    'histogram': {str(k): v for k, v in sorted(dist.items())}},
                   fh, indent=1)
     print(f"\nwrote {OUT}")
