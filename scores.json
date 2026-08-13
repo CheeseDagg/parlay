@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T02:52Z",
+ "as_of": "2026-08-13T03:04Z",
  "date": "2026-08-12",
  "mlb": [
   {
@@ -124,7 +124,7 @@
    "home": "LAD",
    "key": "KC@LAD",
    "through5": null,
-   "current": 2,
+   "current": 3,
    "inning": 3,
    "final": false
   },
@@ -133,7 +133,7 @@
    "home": "LAA",
    "key": "TEX@LAA",
    "through5": null,
-   "current": 1,
+   "current": 2,
    "inning": 3,
    "final": false
   }
@@ -172,41 +172,41 @@
   {
    "home": "Toluca",
    "away": "FC Dallas",
-   "goals": 2,
+   "goals": 3,
    "completed": false,
    "detail": {
-    "Toluca": 1,
+    "Toluca": 2,
     "FC Dallas": 1
    }
   },
   {
    "home": "San Diego FC",
    "away": "Puebla",
-   "goals": 1,
+   "goals": 2,
    "completed": false,
    "detail": {
     "San Diego FC": 1,
-    "Puebla": 0
+    "Puebla": 1
    }
   },
   {
    "home": "Seattle Sounders FC",
    "away": "Guadalajara",
-   "goals": 0,
+   "goals": 1,
    "completed": false,
    "detail": {
-    "Seattle Sounders FC": 0,
+    "Seattle Sounders FC": 1,
     "Guadalajara": 0
    }
   },
   {
    "home": "Los Angeles FC",
    "away": "Quer\u00e9taro",
-   "goals": 0,
+   "goals": 1,
    "completed": false,
    "detail": {
     "Los Angeles FC": 0,
-    "Quer\u00e9taro": 0
+    "Quer\u00e9taro": 1
    }
   },
   {
