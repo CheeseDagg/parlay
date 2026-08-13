@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T15:19Z",
+ "as_of": "2026-08-13T15:49Z",
  "date": "2026-08-13",
  "mlb": [
   {
@@ -34,8 +34,8 @@
    "home": "NYY",
    "key": "SEA@NYY",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {

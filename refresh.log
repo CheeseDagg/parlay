@@ -1,13 +1,14 @@
-
-Successfully installed numpy-2.5.2 scipy-1.18.0
+[notice] A new release of pip is available: 26.1.2 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: 9 games, 9 moneylines, 81 total rungs, 81 F5 rungs
+  MLB: 9 games, 9 moneylines, 81 total rungs, 80 F5 rungs
   MMA: 11 bouts
   WNBA: 5 markets
   WNBA: 153 alternate-total rungs
   CFL: 4 markets
   CFL: 60 alternate-total rungs
   BOX: 14 markets
+  SOC: 19 out-of-season soccer key(s) not pulled — a qualifying round lives under its parent key, so check these before saying a competition is dark: soccer_africa_cup_of_nations; soccer_australia_aleague; soccer_concacaf_gold_cup; soccer_conmebol_copa_america; soccer_fa_cup; soccer_fifa_club_world_cup; soccer_fifa_world_cup; soccer_fifa_world_cup_qualifiers_europe; soccer_fifa_world_cup_qualifiers_south_america; soccer_fifa_world_cup_winner; soccer_fifa_world_cup_womens; soccer_france_coupe_de_france; soccer_germany_bundesliga_women; soccer_league_of_ireland; soccer_spain_copa_del_rey; soccer_switzerland_superleague; soccer_uefa_champs_league_women; soccer_uefa_euro_qualification; soccer_uefa_european_championship
   SOC soccer_uefa_champs_league_qualification: 7 fixtures
   SOC soccer_netherlands_eredivisie: 9 fixtures
   SOC soccer_portugal_primeira_liga: 9 fixtures
@@ -40,7 +41,7 @@ PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusa
   SOC soccer_japan_j_league: 10 fixtures
   SOC soccer_poland_ekstraklasa: 9 fixtures
   SOC soccer_sweden_superettan: 8 fixtures
-  legs representable: ~1928 · API credits remaining 15726
+  legs representable: ~1926 · API credits remaining 15546
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -150,6 +151,7 @@ wrote /home/runner/work/parlay/parlay/scores.json
   CLE@DET    through5=  -  current=  0  inning=1  
   CIN@CWS    through5=  -  current=  0  inning=1  
   PIT@MIA    through5=  -  current=  0  inning=1  
+  SEA@NYY    through5=  -  current=  0  inning=1  
   Atlético San Lui @ Orlando City SC  goals=4  FT
   León             @ Inter Miami CF   goals=5  FT
   Nashville SC     @ Monterrey        goals=3  FT
@@ -157,4 +159,4 @@ wrote /home/runner/work/parlay/parlay/scores.json
   Puebla           @ San Diego FC     goals=5  FT
   Guadalajara      @ Seattle Sounders goals=3  FT
   Querétaro        @ Los Angeles FC   goals=2  FT
-run conclusion: success at 2026-08-13 15:19
+run conclusion: success at 2026-08-13 15:49
