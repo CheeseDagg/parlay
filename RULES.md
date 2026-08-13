@@ -179,6 +179,28 @@ loss that created it landed.
     and the checked answer are different answers; when they differ, the
     checked one ships, however long it took.
 
+38. **Top rung or nothing on an F5 under.** *(8/13, verbatim: "im never
+    placing a u6.5 f5.")* A five-inning under is bet because eleven runs
+    through five innings is a freak event, not because the number is
+    cheap. Walking down the ladder trades the only reason the leg is on the
+    ticket for price, and it is the trade the solver reaches for first when
+    a target price is set — twice on 8/13 the DP answered "even money" by
+    quietly moving F5 unders to 6.5 and 7.5. It is a rung constraint, not a
+    price preference: build with the top rung, and if the ticket is short of
+    the target, the shortfall gets covered by ANOTHER GAME, never by a
+    cheaper rung on this one.
+
+39. **The feed's soccer is not FanDuel's soccer.** *(8/13, verbatim: "im
+    literally looking at the games on fanduel.")* The Odds API catalog has
+    67 soccer keys and NO Europa League or Conference League entry, so on a
+    Thursday in August it cannot see the two dozen UEFA qualifiers FanDuel
+    is pricing. This is a catalog gap, not a missing key: `socdiag.py`
+    lists it in 90 seconds. Every odds site is blocked by the egress proxy,
+    so there is no scrape fallback. When soccer looks thin, say the feed
+    cannot see it and ask for prices — do NOT report the board's silence as
+    the day's schedule. That mistake was made three times in one morning,
+    twice after claiming it had been verified.
+
 ## Working agreement
 
 20. He pings, you check — except the morning runs, which are now STANDING
