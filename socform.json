@@ -262,24 +262,6 @@
    "newest": "2026-08-08",
    "matched": "exact"
   },
-  "FC Inter Turku": {
-   "form": "DDWWDW",
-   "n": 6,
-   "ppg": 2.0,
-   "gf": 2.33,
-   "ga": 1.0,
-   "newest": "2026-05-23",
-   "matched": "via Inter"
-  },
-  "Lillestrom": {
-   "form": "LWDWDW",
-   "n": 6,
-   "ppg": 1.83,
-   "gf": 1.17,
-   "ga": 0.5,
-   "newest": "2026-05-17",
-   "matched": "via Lille"
-  },
   "Qingdao Hainiu FC": {
    "form": "LLLLLD",
    "n": 6,
@@ -360,15 +342,6 @@
    "ga": 2.17,
    "newest": "2026-08-08",
    "matched": "exact"
-  },
-  "Henan FC": {
-   "form": "DDWWLL",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 1.67,
-   "ga": 1.17,
-   "newest": "2026-08-09",
-   "matched": "via Henan Songshan Longmen"
   },
   "Shanghai Shenhua FC": {
    "form": "WLLLWW",
@@ -703,15 +676,6 @@
    "newest": "2026-08-09",
    "matched": "exact"
   },
-  "Vasco da Gama": {
-   "form": "DDLLLL",
-   "n": 6,
-   "ppg": 0.33,
-   "gf": 0.33,
-   "ga": 1.67,
-   "newest": "2026-08-09",
-   "matched": "via Vasco"
-  },
   "Botafogo": {
    "form": "DWDWLD",
    "n": 6,
@@ -829,14 +793,14 @@
    "newest": "2026-08-02",
    "matched": "exact"
   },
-  "Pumas": {
-   "form": "WWLLDW",
+  "Tigres": {
+   "form": "LDLLWW",
    "n": 6,
-   "ppg": 1.67,
-   "gf": 1.5,
-   "ga": 1.17,
-   "newest": "2026-08-01",
-   "matched": "via UNAM Pumas"
+   "ppg": 1.17,
+   "gf": 2.17,
+   "ga": 2.0,
+   "newest": "2026-08-02",
+   "matched": "via Tigres UANL"
   },
   "Quer\u00e9taro": {
    "form": "WWLWDD",
@@ -955,15 +919,6 @@
    "newest": "2026-08-07",
    "matched": "via Aldosivi"
   },
-  "CA Tigre BA": {
-   "form": "WDWLDL",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 0.83,
-   "ga": 0.67,
-   "newest": "2026-08-08",
-   "matched": "via Tigre"
-  },
   "San Lorenzo": {
    "form": "LLWLDL",
    "n": 6,
@@ -1044,15 +999,6 @@
    "ga": 2.0,
    "newest": "2026-08-08",
    "matched": "exact"
-  },
-  "Argentinos Juniors": {
-   "form": "WLDDDL",
-   "n": 6,
-   "ppg": 1.0,
-   "gf": 0.67,
-   "ga": 1.33,
-   "newest": "2026-08-09",
-   "matched": "via Gent"
   },
   "River Plate": {
    "form": "LLLLLW",
@@ -1189,15 +1135,6 @@
    "newest": "2026-05-24",
    "matched": "via Everton"
   },
-  "\u00d1ublense": {
-   "form": "WLWDDW",
-   "n": 6,
-   "ppg": 1.83,
-   "gf": 2.0,
-   "ga": 1.33,
-   "newest": "2026-05-17",
-   "matched": "via Lens"
-  },
   "Arsenal": {
    "form": "WWWWWL",
    "n": 6,
@@ -1215,15 +1152,6 @@
    "ga": 0.5,
    "newest": "2026-05-02",
    "matched": "via Coventry"
-  },
-  "Hull City": {
-   "form": "WLDDLD",
-   "n": 6,
-   "ppg": 1.0,
-   "gf": 1.17,
-   "ga": 1.33,
-   "newest": "2026-05-02",
-   "matched": "via Hull"
   },
   "Crystal Palace": {
    "form": "LDLDLL",
@@ -1260,15 +1188,6 @@
    "ga": 2.0,
    "newest": "2026-05-24",
    "matched": "exact"
-  },
-  "Leeds United": {
-   "form": "LWDWDW",
-   "n": 6,
-   "ppg": 1.83,
-   "gf": 1.67,
-   "ga": 1.17,
-   "newest": "2026-05-24",
-   "matched": "via Leeds"
   },
   "Brentford": {
    "form": "DDLWLD",
@@ -1423,15 +1342,6 @@
    "newest": "2026-05-23",
    "matched": "exact"
   },
-  "Real Betis": {
-   "form": "WLWDWD",
-   "n": 6,
-   "ppg": 1.83,
-   "gf": 1.83,
-   "ga": 1.33,
-   "newest": "2026-05-23",
-   "matched": "via Betis"
-  },
   "Real Sociedad": {
    "form": "DLDDLD",
    "n": 6,
@@ -1440,15 +1350,6 @@
    "ga": 2.0,
    "newest": "2026-05-23",
    "matched": "via Sociedad"
-  },
-  "Celta Vigo": {
-   "form": "WDLWWL",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 1.5,
-   "ga": 1.17,
-   "newest": "2026-05-23",
-   "matched": "via Celta"
   },
   "Valencia": {
    "form": "WWDWLW",
@@ -1657,15 +1558,6 @@
    "newest": "2026-05-17",
    "matched": "exact"
   },
-  "RC Lens": {
-   "form": "WLWDDW",
-   "n": 6,
-   "ppg": 1.83,
-   "gf": 2.0,
-   "ga": 1.33,
-   "newest": "2026-05-17",
-   "matched": "via Lens"
-  },
   "Brest": {
    "form": "DLLLDD",
    "n": 6,
@@ -1747,15 +1639,6 @@
    "newest": "2026-05-17",
    "matched": "exact"
   },
-  "Paris Saint Germain": {
-   "form": "WLWLWW",
-   "n": 6,
-   "ppg": 2.0,
-   "gf": 2.33,
-   "ga": 1.0,
-   "newest": "2026-05-17",
-   "matched": "via Paris FC"
-  },
   "Rennes": {
    "form": "LWLWWW",
    "n": 6,
@@ -1810,15 +1693,6 @@
    "newest": "2026-05-02",
    "matched": "via Charlton"
   },
-  "Derby County": {
-   "form": "LWLWLW",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 1.5,
-   "ga": 1.33,
-   "newest": "2026-05-02",
-   "matched": "via Derby"
-  },
   "Middlesbrough": {
    "form": "DWWDLD",
    "n": 6,
@@ -1863,15 +1737,6 @@
    "ga": 1.83,
    "newest": "2026-05-17",
    "matched": "via Angers"
-  },
-  "Stoke City": {
-   "form": "LLLLDL",
-   "n": 6,
-   "ppg": 0.17,
-   "gf": 0.5,
-   "ga": 2.17,
-   "newest": "2026-05-02",
-   "matched": "via Stoke"
   },
   "Swansea City": {
    "form": "WDWLWD",
@@ -2137,12 +2002,14 @@
   "HJK Helsinki",
   "Jaro",
   "AC Oulu",
+  "FC Inter Turku",
   "FC Lahti",
   "KuPS Kuopio",
   "IF Gnistan",
   "Ilves Tampere",
   "Rosenborg",
   "KFUM",
+  "Lillestrom",
   "Aalesund",
   "V\u00e5lerenga",
   "HamKam",
@@ -2158,16 +2025,20 @@
   "Shenzhen Peng City FC",
   "Beijing FC",
   "Zhejiang",
+  "Henan FC",
   "Atlanta United FC",
   "D.C. United",
   "LA Galaxy",
   "Atletico Paranaense",
   "Atletico Mineiro",
-  "Tigres",
+  "Vasco da Gama",
+  "Pumas",
   "Atl\u00e9tico San Luis",
+  "CA Tigre BA",
   "Estudiantes",
   "Gimnasia La Plata",
   "Deportivo Riestra",
+  "Argentinos Juniors",
   "Atl\u00e9tico Tucuman",
   "Botafogo-SP",
   "S\u00e3o Bernardo",
@@ -2193,6 +2064,7 @@
   "Universidad de Chile",
   "Audax Italiano",
   "Union La Calera",
+  "\u00d1ublense",
   "Cobresal",
   "Deportes Concepci\u00f3n",
   "Coquimbo Unido",
@@ -2201,23 +2073,31 @@
   "O'Higgins",
   "Huachipato",
   "Palestino",
+  "Hull City",
   "Manchester United",
+  "Leeds United",
   "Nottingham Forest",
   "Manchester City",
   "Espanyol",
   "Deportivo La Coru\u00f1a",
   "Atl\u00e9tico Madrid",
   "M\u00e1laga",
+  "Real Betis",
   "Athletic Bilbao",
+  "Celta Vigo",
   "Inter Milan",
   "Monza",
   "Frosinone",
   "Venezia",
+  "RC Lens",
   "Le Mans FC",
   "Troyes",
+  "Paris Saint Germain",
   "Wolverhampton Wanderers",
   "Bolton Wanderers",
+  "Derby County",
   "Lincoln City",
+  "Stoke City",
   "Cardiff City",
   "Barnsley",
   "Crewe Alexandra",
