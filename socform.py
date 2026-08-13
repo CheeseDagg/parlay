@@ -36,13 +36,31 @@ BASE = "https://www.football-data.co.uk"
 UA = "Mozilla/5.0 (compatible; parlay-research/1.0)"
 
 MMZ_CUR = ['2627', '2526']            # current European season, plus the tail
-MMZ_DIVS = ['E0', 'E1', 'SP1', 'I1', 'D1', 'F1', 'N1', 'P1', 'B1']
-NEW = ['USA', 'MEX', 'ARG', 'BRA', 'JPN', 'CHN']
+MMZ_DIVS = ['E0', 'E1', 'SP1', 'I1', 'D1', 'F1', 'N1', 'P1', 'B1',
+            'T1', 'G1', 'SC0']    # Turkey, Greece, Scotland -- all on the board
+# The unmatched tail on 8/13 was 329 names and MOST were not join failures
+# at all -- they were whole leagues never pulled. football-data's new/ folder
+# carries sixteen countries; six were being read. Every one below has
+# fixtures on the current board.
+NEW = ['USA', 'MEX', 'ARG', 'BRA', 'JPN', 'CHN',
+       'DNK', 'FIN', 'NOR', 'POL', 'RUS', 'SWE', 'AUT', 'ROU', 'SWZ', 'IRL']
 WINDOW_DAYS = 240
 LAST_N = 6
 
 STRIP = {'fc', 'cf', 'sc', 'afc', 'cd', 'ca', 'club', 'de', 'fk', 'if',
          'bk', 'sk', 'ac', 'as', 'ii'}
+
+
+# Hand-verified joins the normaliser cannot make. Each one was checked against
+# the CSV by eye; an alias here is a claim that two spellings are one club,
+# and a wrong claim is the Inter-Milan bug with extra steps. Keys and values
+# are both post-norm().
+ALIAS = {
+    'sporting lisbon': 'sp lisbon',
+    'braga': 'sp braga',
+    'fortuna sittard': 'for sittard',
+    'besiktas jk': 'besiktas',
+}
 
 
 def get(url, timeout=60):
@@ -117,7 +135,7 @@ def lookup(acc, name):
     the length floor sat on the query while the matched key could be five
     letters. A refused join prints as unmatched, which is honest; a false
     join prints as form, which is a lie with decimals."""
-    q = norm(name)
+    q = ALIAS.get(norm(name), norm(name))
     if q in acc:
         return acc[q], 'exact'
     hits = [k for k in acc

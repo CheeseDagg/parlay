@@ -46,7 +46,13 @@ DIVS = {'E0': 'England Premier League', 'E1': 'England Championship',
 # new/ = one file per country, full history, different column names.
 EXTRA = {'USA': 'USA MLS', 'MEX': 'Mexico Liga MX',
          'ARG': 'Argentina Primera', 'BRA': 'Brazil Serie A',
-         'JPN': 'Japan J-League', 'CHN': 'China Super League'}
+         'JPN': 'Japan J-League', 'CHN': 'China Super League',
+         # added 8/13: all on the board, all previously 'measured absent'
+         'DNK': 'Denmark Superliga', 'FIN': 'Finland Veikkausliiga',
+         'NOR': 'Norway Eliteserien', 'POL': 'Poland Ekstraklasa',
+         'RUS': 'Russia Premier League', 'SWE': 'Sweden Allsvenskan',
+         'AUT': 'Austria Bundesliga (odds)', 'ROU': 'Romania Liga 1',
+         'SWZ': 'Switzerland Super League', 'IRL': 'Ireland Premier'}
 
 
 def get(url, timeout=60):

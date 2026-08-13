@@ -64,6 +64,13 @@ CALIB = {
     'soccer_brazil_campeonato': 'Brazil Serie A',
     'soccer_japan_j_league': 'Japan J-League',
     'soccer_china_superleague': 'China Super League',
+    'soccer_denmark_superliga': 'Denmark Superliga',
+    'soccer_finland_veikkausliiga': 'Finland Veikkausliiga',
+    'soccer_norway_eliteserien': 'Norway Eliteserien',
+    'soccer_poland_ekstraklasa': 'Poland Ekstraklasa',
+    'soccer_russia_premier_league': 'Russia Premier League',
+    'soccer_sweden_allsvenskan': 'Sweden Allsvenskan',
+    'soccer_switzerland_superleague': 'Switzerland Super League',
 }
 
 
