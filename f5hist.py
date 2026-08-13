@@ -35,7 +35,7 @@ and a sanity check, never a leg's probability on its own. --by-total splits
 it by the game's own posted line, which is the crudest useful conditioning
 and is where to look before trusting any of it.
 """
-import json, os, sys, urllib.request
+import json, math, os, sys, urllib.request
 from datetime import date, datetime
 
 API = "https://statsapi.mlb.com/api/v1"
@@ -150,8 +150,23 @@ def by_key(games, keyf, label, floor=40, top=12):
         rows.append({'k': k, 'n': len(v), 'mean': sum(v) / len(v),
                      'blow': p, 'lo': lo, 'hi': hi})
     rows.sort(key=lambda r: -r['blow'])
+    # IS THIS SIGNAL OR IS IT THIRTY COINS? With 30 groups and a 95% band, one
+    # or two WILL clear it by chance, and the top of a sorted leaderboard is the
+    # single most likely place for noise to look like a finding. So before any
+    # row gets read as a tendency, ask whether the spread across groups is
+    # bigger than binomial noise alone would produce. Pearson chi-square on the
+    # blowup counts against the pooled rate, df = groups - 1.
     base = sum(1 for x in games if x['f5'] >= 11) / len(games)
+    chi = sum((r['blow'] * r['n'] - base * r['n']) ** 2 / (base * (1 - base) * r['n'])
+              for r in rows)
+    df = len(rows) - 1
+    # Wilson-Hilferty: chi-square -> standard normal, good enough past df~10 and
+    # avoids needing scipy in a file that otherwise has no dependencies.
+    z = ((chi / df) ** (1 / 3) - (1 - 2 / (9 * df))) / ((2 / (9 * df)) ** 0.5)
+    pv = 0.5 * math.erfc(z / math.sqrt(2))
     print(f"\n  {label} -- P(F5 total >= 11), league base rate {base*100:.2f}%")
+    print(f"  dispersion across {len(rows)} groups: chi2={chi:.1f} df={df} "
+          f"p={pv:.3f}  -> {'REAL spread' if pv < 0.05 else 'CONSISTENT WITH NOISE'}")
     print(f"  {'':<26}{'n':>5} {'mean F5':>9} {'blowup':>8} {'95% band':>15}")
     for r in rows[:top] + [None] + rows[-3:]:
         if r is None:
