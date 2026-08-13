@@ -315,26 +315,42 @@ METHOD = 'mult'
 # measurement says 'mult' has started understating. See devigcmp.py.
 
 
-def _split(qs):
-    if METHOD == 'mult':
+def _split(qs, method=None):
+    m = method or METHOD
+    if m == 'mult':
         s = sum(qs)
         return [q / s for q in qs]
-    if METHOD == 'power':
+    if m == 'power':
         k = brentq(lambda k: sum(q ** k for q in qs) - 1, 0.2, 8.0)
         return [q ** k for q in qs]
-    raise ValueError(METHOD)
+    raise ValueError(m)
 
 
 def devig(yes, no):
-    """De-vig of a matched two-way pair under the board's current METHOD."""
-    return _split([1 / dec(yes), 1 / dec(no)])[0]
+    """De-vig a matched TWO-WAY pair -- mult, by measurement.
+
+    On MLB alternate totals, whose overround is fat and parked on the longshot
+    side, mult missed 1817 games of ground truth by 1.35 points where power
+    missed by 4.46 and sat outside the Wilson band at every rung (f5hist)."""
+    return _split([1 / dec(yes), 1 / dec(no)], method='mult')[0]
 
 
 def devig_n(sel, others):
-    """Same idea as devig() but for a market with any number of outcomes, which
-    is what a soccer three-way needs: the draw is a real outcome and dropping it
-    would overstate the favourite by roughly the draw's whole share."""
-    return _split([1 / dec(sel)] + [1 / dec(o) for o in others])[0]
+    """De-vig an N-WAY market -- power, by measurement, and this is NOT the
+    same answer the two-way got. Each family was tested on its own ground truth:
+
+      soccer 3-ways vs 52710 matches with CLOSING odds (sococalib.py):
+        3-way reliability     power 0.36 pts   mult 0.90 pts
+        favourite DC          power 0.68 pts   mult 1.24 pts
+      and mult UNDERSTATED the favourite's double chance in every bin --
+      "said 87.3, happened 88.9" -- which is favourite-longshot bias doing
+      exactly what the textbooks say on a thin three-way overround.
+
+    The same correction OVERSHOOTS on MLB's fat two-way overrounds (see
+    devig), so the method rides with the market family, not with the board.
+    A global METHOD was the 8/03 mistake in both directions at once."""
+    return _split([1 / dec(sel)] + [1 / dec(o) for o in others],
+                  method='power')[0]
 
 
 def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
@@ -949,15 +965,25 @@ def selftest():
         "93.78% that 1817 games actually produced (f5hist.py). 'power' put it "
         "at 97.1%, outside the 95% Wilson band and high at every rung")
     _dc = 1 - devig_n(550, [-270, 380])
-    chk(0.845 <= _dc <= 0.870,
-        f"Philadelphia Union DC derives to {_dc*100:.1f}% against FanDuel's own "
-        "DC market at 85.3% -- the first real quote this was ever checked on")
+    chk(0.870 <= _dc <= 0.885,
+        f"Philadelphia Union DC derives to {_dc*100:.1f}% under POWER. FanDuel's "
+        "own DC quote de-vigged to 85.3%, but a quote is a SHADED number, not "
+        "ground truth: 52710 matches with closing odds show mult understating "
+        "the favourite DC in every reliability bin (sococalib.py)")
     _dc2 = 1 - devig_n(340, [-165, 320])
-    chk(0.775 <= _dc2 <= 0.800,
-        f"and NYCFC to {_dc2*100:.1f}% against a true 78.3%")
+    chk(0.795 <= _dc2 <= 0.815,
+        f"and NYCFC to {_dc2*100:.1f}% -- said-vs-happened error 0.68 points "
+        "under power against 1.24 under mult, on the leg family actually bet")
+    chk(abs(devig(-4500, 1100) - _split([1/dec(-4500), 1/dec(1100)], 'mult')[0]) < 1e-12
+        and abs(devig_n(550, [-270, 380])
+                - _split([1/dec(550), 1/dec(-270), 1/dec(380)], 'power')[0]) < 1e-12,
+        "the de-vig method rides with the MARKET FAMILY: two-way mult (1817 "
+        "MLB games), N-way power (52710 soccer matches) -- each pinned to its "
+        "own ground truth, because the global METHOD of 8/03 was wrong in both "
+        "directions at once")
     chk(METHOD == 'mult',
-        "METHOD is the measured one, not the theorised one -- re-run f5hist.py "
-        "against a new season before changing it")
+        "METHOD stays the two-way default; changing either family means "
+        "re-running f5hist AND sococalib first, not editing a constant")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1

@@ -52,23 +52,67 @@ PROXY = {
 }
 
 
+# Leagues measured by sococalib.py -- football-data.co.uk, results WITH closing
+# odds. These were 'measured absent' when only openfootball existed; now MLS
+# alone is 6085 matches. Key discovery in the numbers: Argentina draws 30.2%
+# of the time (pooled Europe: 25.2%) at 2.23 goals a game -- a DC and an under
+# are structurally STRONGER there than anywhere else on the board.
+CALIB = {
+    'soccer_usa_mls': 'USA MLS',
+    'soccer_mexico_ligamx': 'Mexico Liga MX',
+    'soccer_argentina_primera_division': 'Argentina Primera',
+    'soccer_brazil_campeonato': 'Brazil Serie A',
+    'soccer_japan_j_league': 'Japan J-League',
+    'soccer_china_superleague': 'China Super League',
+}
+
+
+def _calib(name):
+    """sococalib league row reshaped to the sochist result contract."""
+    try:
+        with open(os.path.join(HERE, 'sococalib.json')) as fh:
+            c = json.load(fh)
+    except Exception:
+        return None
+    b = (c.get('leagues') or {}).get(name)
+    if not b:
+        return None
+    return {'result': {'draw': b['draw'], 'home': b['home'], 'away': b['away'],
+                       'mean_goals': b['mean_goals'], 'n': b['n']},
+            'under': b.get('under'), 'src': 'sococalib'}
+
+
 def rates(key):
-    """(league_name, dict, proxy_note) or (None, None, why) if nothing fits."""
+    """(league_name, dict, note) or (None, None, why) if nothing fits."""
+    if key in CALIB:
+        r = _calib(CALIB[key])
+        if r:
+            return CALIB[key], r, None
+    if key == 'soccer_concacaf_leagues_cup':
+        a, b = _calib('USA MLS'), _calib('Mexico Liga MX')
+        if a and b:
+            blend = {'result': {k: round((a['result'][k] + b['result'][k]) / 2, 5)
+                                for k in ('draw', 'home', 'away', 'mean_goals')},
+                     'src': 'blend'}
+            blend['result']['n'] = a['result']['n'] + b['result']['n']
+            return 'MLS+Liga MX blend', blend, (
+                'PROXY blend for the Leagues Cup: both halves now MEASURED '
+                '(6085 MLS + 4682 Liga MX matches), averaged evenly')
     try:
         with open(os.path.join(HERE, 'sochist.json')) as fh:
             h = json.load(fh)
     except Exception:
-        return None, None, "sochist.json unreadable"
+        return None, None, 'sochist.json unreadable'
     name = MAP.get(key)
     if name and name in h['leagues']:
         return name, h['leagues'][name], None
     if key in PROXY:
         pn, why = PROXY[key]
         if pn in h['leagues']:
-            return pn, h['leagues'][pn], f"PROXY for {key}: {why}"
+            return pn, h['leagues'][pn], f'PROXY for {key}: {why}'
     if key not in MAP:
-        return None, None, f"{key} is not in socbase.MAP -- unmapped, not absent"
-    return None, None, f"{key} has no historical rows (measured absent)"
+        return None, None, f'{key} is not in socbase.MAP -- unmapped, not absent'
+    return None, None, f'{key} has no historical rows (measured absent)'
 
 
 if __name__ == '__main__':
