@@ -34,6 +34,10 @@ T = [
  ("habitatring games",    "http://www.habitatring.com/games.csv", {}),
  ("nflverse games rel",   "https://github.com/nflverse/nflverse-data/releases/download/games/games.csv", {}),
  ("cfl fixturedownload",  "https://fixturedownload.com/feed/json/cfl-2026", {}),
+ # historical MLB odds w/ totals lines -- would let FG totals be calibrated
+ # like soccer's, and condition run distributions ON the posted line
+ ("sbr mlb odds 2023",    "https://www.sportsbookreviewsonline.com/scoresoddsarchives/mlb/mlb%20odds%202023.xlsx", {}),
+ ("sbr mlb odds 2024",    "https://www.sportsbookreviewsonline.com/scoresoddsarchives/mlb/mlb%20odds%202024.xlsx", {}),
 ]
 for name, url, hdr in T:
     try:

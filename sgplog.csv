@@ -1,0 +1,2 @@
+date,quote_am,legs,prices,naive_dec,quote_dec,ratio_excess,shape,note
+2026-08-13,127,Union DC | U6.5 PU-SL | NYC DC,-835 | -4000 | -493,1.3806,2.27,3.3371,dc+under,"8/13 placed slip, book quote vs board"
