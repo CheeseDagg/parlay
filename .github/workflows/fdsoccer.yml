@@ -1,0 +1,38 @@
+name: FanDuel soccer pull
+# The Odds API catalog has no Europa/Conference League key, so on UEFA
+# qualifying nights the board is blind to the biggest soccer card of the day.
+# This reads FanDuel's own public sportsbook endpoints from the runner, which
+# has open egress. Prices land in fdsoccer.json and go through the same de-vig
+# and the same preflight gates as every other leg.
+on:
+  workflow_dispatch: {}
+  push:
+    paths: ['experiments/FDSOC.txt']
+permissions:
+  contents: write
+concurrency:
+  group: parlay-fdsoccer
+  cancel-in-progress: true
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Pull
+        run: python3 fdsoccer.py 2>&1 | tee fdsoccer.txt
+      - name: Publish
+        if: always()
+        run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          git add fdsoccer.txt fdsoccer.json 2>/dev/null || git add fdsoccer.txt
+          git diff --cached --quiet && echo "no change" && exit 0
+          for a in 1 2 3 4 5; do
+            git commit -m "fanduel soccer $(date -u +%F\ %H:%M)" || true
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || git rebase --abort
+          done
+          exit 1
