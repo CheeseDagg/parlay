@@ -41,9 +41,14 @@ TEAMS = ["Saskatchewan Roughriders", "Hamilton Tiger-Cats", "Winnipeg Blue Bombe
          "Montreal Alouettes", "BC Lions", "Calgary Stampeders", "Edmonton Elks",
          "Ottawa Redblacks", "Toronto Argonauts"]
 SEASONS = [2022, 2023, 2024, 2025]
+# Wikipedia abbreviates the long months and is not even consistent about it:
+# round 4d saw "Aug 2", "Sept 6" and "Sep 27" on the SAME page. Every form
+# observed or plausible gets a key; the date regex stops at periods anyway.
 MONTHS = {m: i + 1 for i, m in enumerate(
     ['January', 'February', 'March', 'April', 'May', 'June', 'July',
      'August', 'September', 'October', 'November', 'December'])}
+MONTHS.update({'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'Jun': 6, 'Jul': 7,
+               'Aug': 8, 'Sep': 9, 'Sept': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12})
 RUNGS = [41.5, 43.5, 45.5, 47.5, 49.5, 51.5, 53.5, 55.5]
 
 
@@ -80,26 +85,31 @@ class Tables(HTMLParser):
 
 def parse_schedule(html, team, year):
     """Regular-season game rows for one team page. Refuses what it cannot
-    prove: rows failing the W/L-vs-score check come back in `bad`."""
+    prove: rows failing the W/L-vs-score check come back in `bad`; neutral-
+    site rows (no vs./at prefix -- Touchdown Atlantic) come back counted in
+    `neutral` rather than being guessed a home side."""
     p = Tables(); p.feed(html)
-    games, bad = [], []
+    games, bad, neutral = [], [], 0
     for t in p.out:
         if not t or not t[0]:
             continue
-        # the regular-season log: Week first, then Date/Opponent among headers
+        # the regular-season log: Week first, then Date/Opponent among headers.
+        # The PRESEASON table has identical headers but letters its weeks
+        # (A/B/C, round 4d) -- the numeric-week test below is what drops it.
         h = [c.lower() for c in t[0]]
         if h[0] != 'week' or 'opponent' not in h or 'date' not in h:
             continue
         for row in t:
-            if len(row) < 7:
-                continue                      # bye / header / subheader rows
+            if len(row) < 7 or not row[0].isdigit():
+                continue              # header / subheader / bye / preseason
             m_date = re.match(r'\w{3},\s*(\w+)\s+(\d{1,2})', row[2])
-            m_opp = re.match(r'(vs\.?|at)\s+(.+)', row[4])
             m_sc = re.search(r'([WLT])\s*(\d+)\s*[–-]\s*(\d+)', row[5])
-            if not (m_date and m_opp and m_sc):
+            mo = MONTHS.get(m_date.group(1)) if m_date else None
+            if not (m_date and m_sc and mo):
                 continue
-            mo = MONTHS.get(m_date.group(1))
-            if not mo:
+            m_opp = re.match(r'(vs\.?|at)\s+(.+)', row[4])
+            if not m_opp:
+                neutral += 1          # a real game, but neither side is home
                 continue
             wlt, pf, pa = m_sc.group(1), int(m_sc.group(2)), int(m_sc.group(3))
             if (wlt == 'W' and pf <= pa) or (wlt == 'L' and pf >= pa) \
@@ -111,7 +121,7 @@ def parse_schedule(html, team, year):
                           'home': team if home else m_opp.group(2).strip(),
                           'away': m_opp.group(2).strip() if home else team,
                           'hs': pf if home else pa, 'as': pa if home else pf})
-    return games, bad
+    return games, bad, neutral
 
 
 def merge(rows):
@@ -161,20 +171,22 @@ def stats(games):
 def main():
     allrows, notes = [], []
     for yr in SEASONS:
-        yrows, ybad, misses = [], [], []
+        yrows, ybad, misses, yneu = [], [], [], 0
         for t in TEAMS:
             u = f"https://en.wikipedia.org/wiki/{yr}_{t.replace(' ', '_')}_season"
             try:
                 r = urllib.request.urlopen(
                     urllib.request.Request(u, headers={"User-Agent": BUA}), timeout=30)
-                g, b = parse_schedule(r.read().decode('utf-8', 'replace'), t, yr)
+                g, b, neu = parse_schedule(r.read().decode('utf-8', 'replace'), t, yr)
                 if not g:
                     misses.append(t.split()[-1] + ':0 rows')
-                yrows += g; ybad += b
+                yrows += g; ybad += b; yneu += neu
             except Exception as e:
                 misses.append(f"{t.split()[-1]}:{type(e).__name__}")
             time.sleep(1)
-        note = f"{yr}: {len(yrows)} page-rows" + \
+        # 18 games x 9 teams = 162 rows when every game sits on both pages
+        note = f"{yr}: {len(yrows)}/162 page-rows" + \
+               (f", {yneu} neutral-site row(s) skipped" if yneu else "") + \
                (f", PROBLEMS {misses}" if misses else "") + \
                (f", {len(ybad)} refused rows" if ybad else "")
         notes.append(note); allrows += yrows
@@ -233,7 +245,7 @@ def selftest():
     <tr><td>West Final</td><td>Sat, Nov 8</td><td>5:00 p.m.</td>
     <td>vs. BC Lions</td><td>W 30–10</td><td>1–0</td><td>TSN</td>
     <td>Mosaic Stadium</td><td>30,000</td></tr></table>"""
-    g, bad = parse_schedule(page, 'Saskatchewan Roughriders', 2025)
+    g, bad, _ = parse_schedule(page, 'Saskatchewan Roughriders', 2025)
     chk(len(g) == 2,
         f"the dumped shape parses: 2 clean games (got {len(g)}) -- the bye is "
         "skipped and the playoff table (no Week column) is not regular season")
@@ -245,6 +257,40 @@ def selftest():
         "'at Hamilton / L 17-20' puts Hamilton home 20, Sask away 17")
     chk(len(bad) == 1 and 'W 20–27' in bad[0],
         "a W whose score reads as a loss is REFUSED by name, not guessed at")
+
+    # round 4d verbatim: abbreviated months (three spellings on live pages),
+    # letter-week preseason, the ǁ-decorated Game cell, and the prefix-less
+    # neutral-site Touchdown Atlantic row
+    page2 = """
+    <table class="wikitable"><tr><th>Week</th><th>Game</th><th>Date</th>
+    <th>Kickoff</th><th>Opponent</th><th colspan=2>Results</th><th>TV</th></tr>
+    <tr><th>Score</th><th>Record</th></tr>
+    <tr><td>B</td><td>1</td><td>Sat, May 24</td><td>2:00 p.m. CST</td>
+    <td>at Winnipeg Blue Bombers</td><td>L 9–15</td><td>0–1</td><td>CFL+</td></tr>
+    <tr><td>9</td><td>8</td><td>Sat, Aug 2</td><td>5:00 p.m. CST</td>
+    <td>at Montreal Alouettes</td><td>W 34–6</td><td>7–1</td><td>TSN</td></tr>
+    <tr><td>13</td><td>ǁ 11 ǁ</td><td>Sun, Aug 31</td><td>5:00 p.m. CST</td>
+    <td>vs. Winnipeg Blue Bombers</td><td>W 34–30</td><td>9–2</td><td>TSN</td></tr>
+    <tr><td>14</td><td>12</td><td>Sat, Sept 6</td><td>2:00 p.m. CST</td>
+    <td>at Winnipeg Blue Bombers</td><td>W 21–13</td><td>10–2</td><td>TSN</td></tr>
+    <tr><td>17</td><td>14</td><td>Sat, Sep 27</td><td>5:00 p.m. CST</td>
+    <td>at Edmonton Elks</td><td>L 25–27</td><td>10–4</td><td>TSN</td></tr>
+    <tr><td>8</td><td>6</td><td>Sat, July 29</td><td>4:00 p.m. EDT</td>
+    <td>Saskatchewan Roughriders</td><td>W 31–13</td><td>6–0</td><td>TSN</td></tr>
+    </table>"""
+    g2, bad2, neu2 = parse_schedule(page2, 'Toronto Argonauts', 2025)
+    chk([x['date'] for x in g2] == ['2025-08-02', '2025-08-31',
+                                    '2025-09-06', '2025-09-27'],
+        "'Aug', 'Sept' and 'Sep' all parse -- the three spellings round 4d "
+        "saw on live pages; the season no longer ends in July")
+    chk(not any(x['date'].startswith('2025-05') for x in g2),
+        "the letter-week preseason row (B) is dropped by the numeric-week "
+        "test, so May never contaminates the base again")
+    chk(g2[1]['hs'] == 34 and g2[1]['home'] == 'Toronto Argonauts',
+        "the decorated Game cell still parses around its markers")
+    chk(neu2 == 1 and bad2 == [],
+        "the prefix-less Touchdown Atlantic row is counted neutral, not "
+        "guessed a home side and not silently dropped")
 
     h = {'date': '2025-06-05', 'home': 'Saskatchewan Roughriders',
          'away': 'Ottawa Redblacks', 'hs': 31, 'as': 26}
