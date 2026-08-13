@@ -6,10 +6,6 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
-0. **solve2 --hand**: preflight now covers app-quoted legs (done below);
-   the solver still cannot mix them into a build. Add --hand to solve2 so a
-   UEFA night's windows are solved, not assembled by eye. Payoff: the 8/13
-   windows took five manual re-solves; one flag replaces them.
 0b. **UFC-ODDS widget form panel**: the phone widget Ryan and his friend use
    Saturday shows model-vs-odds but none of ufcform's last-5 / win-by /
    lose-by. Surface it per bout. Payoff: 'Garry has never been finished' on
@@ -28,6 +24,13 @@ with no measurable payoff written next to it does not belong on this list.
    CFL leg is ever priced above a hunch.
 
 ## DONE (the number that justified it)
+- solve2 --hand: UEFA legs solved, not assembled (8/13 took five manual
+  re-solves). One market per real match via token join, so a pasted DC and
+  total can never stack. The smoke test caught the solver's defaults doing
+  worse than the feature: THREE shallow Over-0.5s and WNBA totals in one
+  six-leg build. Both now default-excluded (0-0 is 5-9% real vs ~1% implied;
+  'no wnba totals' 8/13), --allow flags to restore. Retired --power/--mult:
+  they printed a de-vig that was no longer in force.
 - hand legs through the gates: kickoff tokens ("@ 7:30pm", rollover-safe),
   STALE fails a started app-quoted leg and WARNs a tokenless one BY NAME,
   and the fixture found a real hole -- TIE matched only the tie-name's

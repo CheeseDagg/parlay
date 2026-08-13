@@ -1,21 +1,43 @@
 {
  "legs": [
   {
+   "lab": "Tromso DC (derived) (app-quoted)",
+   "p": 0.8331654756561946,
+   "mkt": "Tromso|CFR Cluj",
+   "price": -624,
+   "d": 1.1601934110026897,
+   "note": "90-min market -- BLIND to any first leg (rule 40)",
+   "t": "2026-08-14T04:00Z",
+   "fam": "HAND"
+  },
+  {
    "lab": "Besiktas to advance (app-quoted)",
    "p": 0.9435707678075856,
+   "mkt": "Besiktas|Hradec Kralove",
    "price": -6000,
    "d": 1.0166666666666666,
    "note": "aggregate, no draw",
-   "t": "2026-08-13T17:00Z",
+   "t": "2026-08-14T03:30Z",
    "fam": "HAND"
   },
   {
    "lab": "Hradec Kralove to advance (app-quoted)",
    "p": 0.05642923219241443,
+   "mkt": "Besiktas|Hradec Kralove",
    "price": 1600,
    "d": 17.0,
    "note": "",
-   "t": "2026-08-13T17:00Z",
+   "t": "2026-08-14T03:30Z",
+   "fam": "HAND"
+  },
+  {
+   "lab": "Hearts v Benfica U6.5 (app-quoted)",
+   "mkt": "Hearts v Benfica",
+   "p": 0.7706422018348623,
+   "price": -400,
+   "d": 1.25,
+   "note": "2-way",
+   "t": "2026-08-14T03:45Z",
    "fam": "HAND"
   }
  ],

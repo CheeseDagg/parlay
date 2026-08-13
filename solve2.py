@@ -118,12 +118,17 @@ MLAGREE  = '--mlagree' in sys.argv
 #
 # --power / --mult are now explicit overrides, and whichever is in force is
 # printed, because a de-vig that changes the answer must not be invisible.
-if '--power' in sys.argv:
-    board.METHOD = 'power'
-elif '--mult' in sys.argv:
-    board.METHOD = 'mult'
-print(f"de-vig: {board.METHOD}"
-      + ("" if ('--power' in sys.argv or '--mult' in sys.argv) else " (board default)"))
+# DE-VIG IS PER MARKET FAMILY NOW, by measurement, and no longer a global
+# dial: two-way pairs de-vig mult (1817 MLB games), N-way markets power
+# (52710 soccer matches) -- board.devig/devig_n carry the method internally.
+# The old --power/--mult flags therefore CANNOT do what they said: flipping
+# board.METHOD no longer moves devig()/devig_n(), so a flag that prints one
+# method while legs price under another is exactly the two-tools-two-numbers
+# bug the old comment here documents. They refuse instead of lying.
+if '--power' in sys.argv or '--mult' in sys.argv:
+    sys.exit("--power/--mult are retired: the de-vig is per market family by "
+             "measurement (two-way mult, N-way power; see board.devig).")
+print("de-vig: two-way mult / N-way power (measured, per family)")
 
 markets = build(BOOK, no_plus='--allow-plus' not in sys.argv,
                 min_price=MINPRICE, cutoff=CUTOFF, drop=DROP,
@@ -198,6 +203,65 @@ if '--nohot' not in sys.argv:
             + f" -- {_hot[v[0]['grp']]}")
     for _c in _capped:
         print(f"hot game, {_c}")
+
+# STANDING EXCLUSIONS, on by default like the hot cap and for the same
+# reason: a rule that has to be remembered is a rule that gets skipped.
+#   * Shallow soccer overs (Over 0.5/1.5 goals). The board's best-looking bad
+#     bet: 0-0 arrives in 5-9% of matches (sochist, 40347) while -10000
+#     implies ~1%. The smoke test that added --hand watched the solver reach
+#     for THREE of them in one six-leg build -- they price like free money
+#     and are the single most mispriced-against-us shape on the board.
+#     --allow-shallow restores them.
+#   * WNBA totals. Ryan, 8/13: "no wnba totals." Sides stay; the ladders go.
+#     --allow-wnbatotals restores them.
+import re as _re
+_shal = _wt = 0
+for _k in list(markets):
+    _kept = []
+    for _o in markets[_k]:
+        _m = _re.match(r'Over (\d+\.5) goals', _o['lab'])
+        if (_m and float(_m.group(1)) <= 1.5
+                and '--allow-shallow' not in sys.argv):
+            _shal += 1
+            continue
+        if (_o['fam'] == 'WNBA' and _re.search(r'(Under|Over) \d', _o['lab'])
+                and '--allow-wnbatotals' not in sys.argv):
+            _wt += 1
+            continue
+        _kept.append(_o)
+    if _kept:
+        markets[_k] = _kept
+    else:
+        del markets[_k]
+if _shal:
+    print(f"dropped {_shal} shallow soccer over(s) -- 0-0 is 5-9% real vs ~1% "
+          f"implied; --allow-shallow restores")
+if _wt:
+    print(f"dropped {_wt} WNBA total(s) -- standing instruction 8/13; "
+          f"--allow-wnbatotals restores")
+
+# HAND LEGS (--hand): app-quoted markets the feed is structurally blind to,
+# de-vigged by hand.py and gate-covered by preflight. One solver market per
+# real-world match via hand.group_keys, so a DC and a total pasted separately
+# can never stack -- the ('GT', game) discipline extended to legs that never
+# touched the feed. sport 'HAND' lands them in the non-MLB pool, which is the
+# uncorrelated pool, which is what a UEFA leg is to a baseball slate.
+if '--hand' in sys.argv:
+    import hand as _hand
+    import preflight as _pf
+    _hl = _pf.hand_legs()
+    _dropped = [l for l in _hl if CUTOFF and l.get('t') and l['t'] <= CUTOFF]
+    _live = [l for l in _hl if l not in _dropped]
+    _unk = sum(1 for l in _live if not l.get('t'))
+    for _gk, _legs in _hand.group_keys(_live):
+        markets[('HAND', _gk)] = [
+            {'p': l['p'], 'd': l['d'], 'lab': l['lab'], 'price': l['price'],
+             'grp': _gk, 'fam': 'HAND', 'sport': 'HAND', 't': l.get('t') or 'Z'}
+            for l in _legs]
+    print(f"--hand: {len(_live)} app-quoted leg(s) in "
+          f"{sum(1 for k in markets if k[0] == 'HAND')} market(s)"
+          + (f", {len(_dropped)} dropped (already started)" if _dropped else "")
+          + (f", {_unk} with NO kickoff token" if _unk else ""))
 
 NBT = int(math.ceil(math.log(TARGET) / STEP)); NB = NBT + 1
 for k in markets:

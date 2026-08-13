@@ -129,10 +129,11 @@ def devig(mkt):
         if not (VIG2[0] <= s <= VIG2[1]):
             return None, f'two-way vig sum {s:.3f} outside {VIG2} -- typo?'
         tag = ' to advance' if mkt['kind'] == 'adv' else ''
-        return [{'lab': f'{na}{tag} (app-quoted)', 'p': board.devig(pa, pb),
+        mid = f'{na}|{nb}'
+        return [{'lab': f'{na}{tag} (app-quoted)', 'p': board.devig(pa, pb), 'mkt': mid,
                  'price': pa, 'd': dec(pa),
                  'note': 'aggregate, no draw' if mkt['kind'] == 'adv' else '2-way'},
-                {'lab': f'{nb}{tag} (app-quoted)', 'p': board.devig(pb, pa),
+                {'lab': f'{nb}{tag} (app-quoted)', 'p': board.devig(pb, pa), 'mkt': mid,
                  'price': pb, 'd': dec(pb), 'note': ''}], None
     if mkt['kind'] == 'three':
         s = sum(1 / dec(p) for _, p in mkt['sides'])
@@ -146,6 +147,7 @@ def devig(mkt):
         d_dc = 1 + DC_FACTOR * (1 / p_dc - 1)
         am = round((d_dc - 1) * 100) if d_dc >= 2 else -round(100 / (d_dc - 1))
         return [{'lab': f'{fav[0]} DC (derived) (app-quoted)', 'p': p_dc,
+                 'mkt': f'{fav[0]}|{dog[0]}',
                  'price': am, 'd': d_dc,
                  'note': f'90-min market -- BLIND to any first leg (rule 40)'}], None
     if mkt['kind'] == 'total':
@@ -154,9 +156,34 @@ def devig(mkt):
             return None, f'total vig sum {s:.3f} outside {VIG2} -- typo?'
         import board
         return [{'lab': f"{mkt['match']} U{mkt['pt']} (app-quoted)",
+                 'mkt': mkt['match'],
                  'p': board.devig(mkt['under'], mkt['over']),
                  'price': mkt['under'], 'd': dec(mkt['under']), 'note': '2-way'}], None
     return None, f"unknown kind {mkt['kind']}"
+
+
+def group_keys(legs):
+    """[(key, [legs])] -- ONE SOLVER MARKET PER REAL-WORLD MATCH. A DC and a
+    goal total pasted separately are two lines but one match, and a solver
+    that keys them separately will happily stack them -- the same correlation
+    error the board's ('GT', game) key exists to prevent. Joined on shared
+    name tokens of five-plus characters, the same floor the socform join
+    learned the hard way."""
+    def toks(m):
+        return {t for t in re.split(r'[^a-z0-9]+', (m or '').lower())
+                if len(t) >= 5}
+    groups = []
+    for l in legs:
+        T = toks(l.get('mkt') or l['lab'])
+        for G in groups:
+            if T & G['toks']:
+                G['legs'].append(l)
+                G['toks'] |= T
+                break
+        else:
+            groups.append({'toks': T, 'legs': [l]})
+    return [(min((l.get('mkt') or l['lab'] for l in G['legs']), key=len),
+             G['legs']) for G in groups]
 
 
 def run(lines):
@@ -237,6 +264,20 @@ def selftest():
     _, ref = run(["X v Y U6.5 -400 / O5.5 +320"])
     chk(ref and 'different markets' in ref[0][1],
         "U6.5 against O5.5 is two ladders, not a pair")
+
+    legs, _ = run(["Tromso -165 / draw +290 / CFR Cluj +430",
+                   "Tromso v CFR Cluj U5.5 -300 / O5.5 +240",
+                   "Besiktas -6000 / Hradec Kralove +1600 to advance"])
+    gk = group_keys(legs)
+    chk(len(gk) == 2,
+        "a DC and a total on the SAME match share one solver market -- pasted "
+        "as two lines, they are one game and must never stack")
+    tromso = next(g for g in gk if 'tromso' in g[0].lower())
+    chk(len(tromso[1]) == 2 and any('U5.5' in l['lab'] for l in tromso[1]),
+        "the Tromso market holds the DC and the under together -- two legs, "
+        "because a pasted total emits only its under")
+    chk(all('mkt' in l for l in legs),
+        "every emitted leg names its market, which is what the join runs on")
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 
