@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T03:21Z",
+ "as_of": "2026-08-13T03:24Z",
  "date": "2026-08-12",
  "mlb": [
   {
@@ -172,10 +172,10 @@
   {
    "home": "Toluca",
    "away": "FC Dallas",
-   "goals": 3,
+   "goals": 4,
    "completed": false,
    "detail": {
-    "Toluca": 2,
+    "Toluca": 3,
     "FC Dallas": 1
    }
   },
