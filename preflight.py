@@ -23,6 +23,7 @@ can check and says out loud what it cannot:
   STALE    no leg already under way, board is fresh        (rules 17, 18)
   DERIVED  synthesized prices named for confirmation       (rule 8)
   PARK     F5 totals at high-blowup or unknown parks       (f5hist)
+  SOCBASE  soccer legs against their own league's history    (sochist)
   OVERLAP  shared legs with every open slip, and the      (rule 28)
            chance one event kills them all
   LOG      calibration.csv and slips.json entries pending (rules 29, 31)
@@ -260,6 +261,53 @@ def gate_park(legs, hi=1.30):
     return 'WARN', ' | '.join(parts)
 
 
+def gate_soccer_base(legs):
+    """Check every soccer leg against ITS OWN league, and say when there is none.
+
+    40347 matches (sochist.py): the draw rate -- the entire content of a Double
+    Chance -- runs 27.2% in the Championship and 23.1% in the Eredivisie,
+    dispersion p=0.0011, and mean goals runs 2.57 to 3.10. A pooled prior hides
+    all of that, and until today the board did not even record which league a
+    match was in.
+
+    The absences are the sharper half. Leagues Cup, MLS and every UEFA
+    qualifying round have no rows at all -- and those are the competitions the
+    money was actually on. This says so out loud instead of borrowing a number,
+    because borrowing quietly is how a Championship leg gets priced off
+    Eredivisie history and nobody ever finds out.
+    """
+    try:
+        import socbase
+    except Exception:
+        return 'WARN', "socbase unavailable -- no per-league soccer priors"
+    seen, blind, proxied = [], [], []
+    for l in legs:
+        if l.get('fam') not in ('SOC', 'SOCT'):
+            continue
+        key = l.get('lg')
+        if not key:
+            blind.append(f"{l['lab']} (no competition recorded)")
+            continue
+        name, r, note = socbase.rates(key)
+        if r is None:
+            blind.append(f"{l['lab']} ({note})")
+        elif note:
+            proxied.append(f"{l['lab']} -> {name} ({note})")
+        else:
+            seen.append(f"{name} draw {r['result']['draw']*100:.1f}% "
+                        f"goals {r['result']['mean_goals']:.2f}")
+    if not (seen or blind or proxied):
+        return 'PASS', "no soccer legs"
+    parts = []
+    if blind:
+        parts.append(f"{len(blind)} leg(s) with NO league history: " + '; '.join(blind))
+    if proxied:
+        parts.append(f"{len(proxied)} on a PROXY: " + '; '.join(proxied))
+    if seen:
+        parts.append("measured: " + '; '.join(sorted(set(seen))))
+    return ('WARN' if (blind or proxied) else 'PASS', ' | '.join(parts))
+
+
 def gate_overlap(legs, open_slips):
     """open_slips: [(name, [labels], p)] already placed."""
     if not open_slips:
@@ -308,6 +356,7 @@ def run(legs, hot=None, open_slips=None):
              ("HOT", gate_hot(legs, hot)), ("TIE", gate_tie(legs)),
              ("STALE", gate_stale(legs)), ("DERIVED", gate_derived(legs)),
              ("PARK", gate_park(legs)),
+             ("SOCBASE", gate_soccer_base(legs)),
              ("OVERLAP", gate_overlap(legs, open_slips or []))]
     return gates, any(v == 'FAIL' for _, (v, _) in gates)
 
@@ -497,6 +546,28 @@ def selftest():
     chk(_coors and _rate and _coors / _rate > 4,
         f"the park spread is real and large: Coors {_coors}x vs Rate Field "
         f"{_rate}x, a {_coors/_rate:.1f}x ratio on the same bet")
+    # ---- SOCBASE. A league is not a pool, and an absence is not a default.
+    import socbase as _sb
+    _n, _r, _note = _sb.rates('soccer_efl_champ')
+    _n2, _r2, _ = _sb.rates('soccer_netherlands_eredivisie')
+    chk(_r and _r2 and _r['result']['draw'] - _r2['result']['draw'] > 0.03,
+        f"the draw rate really does move by league: Championship "
+        f"{_r['result']['draw']*100:.1f}% vs Eredivisie {_r2['result']['draw']*100:.1f}%, "
+        "measured over 40347 matches at p=0.0011 -- and a Double Chance is "
+        "nothing but the draw plus a side")
+    _n3, _r3, _note3 = _sb.rates('soccer_uefa_champs_league_qualification')
+    chk(_r3 is None and 'absent' in (_note3 or ''),
+        "a competition with no history returns NOTHING and says so, rather than "
+        "silently borrowing the pooled number -- Leagues Cup, MLS and every UEFA "
+        "qualifier are in exactly this state and are what the money was on")
+    _n4, _r4, _note4 = _sb.rates('soccer_concacaf_leagues_cup')
+    chk(_r4 is not None and 'PROXY' in (_note4 or ''),
+        "and where a proxy is used it is NAMED, because a proxy is a stated "
+        "assumption and not a measurement")
+    _v, _m = gate_soccer_base([L('Under 2.5 goals (x)', -200, fam='SOCT')])
+    chk(_v == 'WARN' and 'NO league history' in _m,
+        "a soccer leg with no competition recorded warns rather than passing")
+
     chk(_h['rungs'][4]['rung'] == 10.5 and 0.930 < _h['rungs'][4]['p'] < 0.945,
         f"U10.5 sits at {_h['rungs'][4]['p']*100:.2f}% over three seasons, "
         "against 93.78% over one -- the de-vig calibration is not a one-season "

@@ -682,6 +682,15 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
     # that makes it matter, so the blind spots ride along with the count -- same
     # as a stale MLBTool slate or an empty strikeout ladder. coverage.json is the
     # source and socdiag.py is its authority.
+    # ATTACH THE COMPETITION to every soccer leg. pull_feeds now records it
+    # (other.SOCCER_LEAGUE) and without it a soccer leg is compared against a
+    # pooled base rate that spans 23.1%-27.2% on the draw alone -- the entire
+    # content of a Double Chance -- across 40347 matches.
+    _lg = getattr(__import__('other'), 'SOCCER_LEAGUE', {}) or {}
+    for _v in markets.values():
+        for _o in _v:
+            if _o.get('fam') in ('SOC', 'SOCT'):
+                _o['lg'] = _lg.get(_o.get('grp'))
     _cov_note(markets)
     return markets
 
