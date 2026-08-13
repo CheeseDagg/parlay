@@ -1,11 +1,13 @@
 [notice] A new release of pip is available: 26.1.2 -> 26.2.1
 [notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: PIT@MIA has no FanDuel book — skipped
-  MLB: 8 games, 7 moneylines, 28 total rungs, 18 F5 rungs
+  MLB: SEA@NYY has no FanDuel book — skipped
+  MLB: CIN@CWS has no FanDuel book — skipped
+  MLB: 2 games, 2 moneylines, 18 total rungs, 18 F5 rungs
   MMA: 11 bouts
   WNBA: 7 markets
-  WNBA: 132 alternate-total rungs
+  WNBA: 744d7516c6ce883856e697bfe904153d ladder NOT monotone — dropped
+  WNBA: 204 alternate-total rungs
   CFL: 4 markets
   CFL: 59 alternate-total rungs
   BOX: 9 markets
@@ -22,9 +24,9 @@ PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusa
   SOC soccer_usa_mls: 30 fixtures
   SOC soccer_brazil_campeonato: 20 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
-  SOC soccer_concacaf_leagues_cup: 12 fixtures
-  SOCT soccer_concacaf_leagues_cup: 68 goal-total rungs
-  legs representable: ~1106 · API credits remaining 16384
+  SOC soccer_concacaf_leagues_cup: 10 fixtures
+  SOCT soccer_concacaf_leagues_cup: 61 goal-total rungs
+  legs representable: ~1200 · API credits remaining 16338
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -32,13 +34,13 @@ PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusa
   wrote mma.py
   wrote other.py
   board selftest: 40/41 checks pass
-  FAIL  derived DC probabilities are favourite-shaped, not draw-shaped
+  FAIL  derived DC probabilities are favourite-shaped, not draw-shaped -- 1 outside (0.5, 0.995): Monterrey DC (derived) p=0.9999 @ -1070836
 board.py --selftest FAILED against the freshly written feeds — the files are on disk for inspection; do not trust this board until it passes.
 
 7/7 checks pass
 MLB: 15 games on 2026-08-12
-soccer_concacaf_leagues_cup: 13 matches
-soccer_usa_mls: 39 matches
+soccer_concacaf_leagues_cup: 12 matches
+soccer_usa_mls: 40 matches
 wrote /home/runner/work/parlay/parlay/scores.json
   BAL@MIN    through5= 11  current= 12  inning=9  FINAL
   PHI@STL    through5=  6  current=  8  inning=9  FINAL
@@ -46,17 +48,17 @@ wrote /home/runner/work/parlay/parlay/scores.json
   COL@AZ     through5=  8  current= 10  inning=9  FINAL
   HOU@SF     through5=  1  current=  3  inning=9  FINAL
   MIL@SD     through5=  3  current=  7  inning=11  FINAL
-  CLE@DET    through5=  7  current= 10  inning=9  
+  CLE@DET    through5=  7  current= 10  inning=9  FINAL
   PIT@MIA    through5=  8  current= 10  inning=9  FINAL
-  CHC@WSH    through5=  8  current= 17  inning=8  
-  SEA@NYY    through5= 10  current= 10  inning=7  
-  BOS@TOR    through5=  2  current=  5  inning=8  
-  NYM@ATL    through5=  3  current=  9  inning=9  
-  CIN@CWS    through5=  1  current=  3  inning=7  
+  CHC@WSH    through5=  8  current= 18  inning=9  FINAL
+  SEA@NYY    through5= 10  current= 15  inning=9  
+  BOS@TOR    through5=  2  current= 10  inning=9  FINAL
+  NYM@ATL    through5=  3  current=  9  inning=9  FINAL
+  CIN@CWS    through5=  1  current=  5  inning=9  FINAL
   KC@LAD     through5=  -  current=  0  inning=1  
   TEX@LAA    through5=  -  current=  0  inning=1  
-  Vancouver Whitec @ Tigres           goals=2  FT
-  Atlético San Lui @ Orlando City SC  goals=3  live
-  León             @ Inter Miami CF   goals=5  live
-  Nashville SC     @ Monterrey        goals=2  live
-run conclusion: failure at 2026-08-13 01:31
+  Atlético San Lui @ Orlando City SC  goals=4  FT
+  León             @ Inter Miami CF   goals=5  FT
+  Nashville SC     @ Monterrey        goals=3  live
+  FC Dallas        @ Toluca           goals=0  live
+run conclusion: failure at 2026-08-13 02:08

@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T01:31Z",
+ "as_of": "2026-08-13T02:08Z",
  "date": "2026-08-12",
  "mlb": [
   {
@@ -63,7 +63,7 @@
    "through5": 7,
    "current": 10,
    "inning": 9,
-   "final": false
+   "final": true
   },
   {
    "away": "PIT",
@@ -79,17 +79,17 @@
    "home": "WSH",
    "key": "CHC@WSH",
    "through5": 8,
-   "current": 17,
-   "inning": 8,
-   "final": false
+   "current": 18,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "SEA",
    "home": "NYY",
    "key": "SEA@NYY",
    "through5": 10,
-   "current": 10,
-   "inning": 7,
+   "current": 15,
+   "inning": 9,
    "final": false
   },
   {
@@ -97,9 +97,9 @@
    "home": "TOR",
    "key": "BOS@TOR",
    "through5": 2,
-   "current": 5,
-   "inning": 8,
-   "final": false
+   "current": 10,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "NYM",
@@ -108,16 +108,16 @@
    "through5": 3,
    "current": 9,
    "inning": 9,
-   "final": false
+   "final": true
   },
   {
    "away": "CIN",
    "home": "CWS",
    "key": "CIN@CWS",
    "through5": 1,
-   "current": 3,
-   "inning": 7,
-   "final": false
+   "current": 5,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "KC",
@@ -140,30 +140,20 @@
  ],
  "soccer": [
   {
-   "home": "Tigres",
-   "away": "Vancouver Whitecaps FC",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "Tigres": 1,
-    "Vancouver Whitecaps FC": 1
-   }
-  },
-  {
    "home": "Orlando City SC",
    "away": "Atl\u00e9tico San Luis",
-   "goals": 3,
-   "completed": false,
+   "goals": 4,
+   "completed": true,
    "detail": {
     "Orlando City SC": 2,
-    "Atl\u00e9tico San Luis": 1
+    "Atl\u00e9tico San Luis": 2
    }
   },
   {
    "home": "Inter Miami CF",
    "away": "Le\u00f3n",
    "goals": 5,
-   "completed": false,
+   "completed": true,
    "detail": {
     "Inter Miami CF": 2,
     "Le\u00f3n": 3
@@ -172,19 +162,22 @@
   {
    "home": "Monterrey",
    "away": "Nashville SC",
-   "goals": 2,
+   "goals": 3,
    "completed": false,
    "detail": {
-    "Monterrey": 1,
+    "Monterrey": 2,
     "Nashville SC": 1
    }
   },
   {
    "home": "Toluca",
    "away": "FC Dallas",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Toluca": 0,
+    "FC Dallas": 0
+   }
   },
   {
    "home": "San Diego FC",
@@ -511,6 +504,13 @@
   {
    "home": "St. Louis City SC",
    "away": "Houston Dynamo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Vancouver Whitecaps FC",
+   "away": "FC Dallas",
    "goals": null,
    "completed": false,
    "detail": {}
