@@ -468,9 +468,11 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
     #      Now a 3-way group is collapsed to the ONE bettable shape: the
     #      favourite's Double Chance (win or draw), p = 1 - p(underdog). The
     #      feed has no DC market, so the PAYOUT is synthesized: fair odds for
-    #      that p with 85% of the excess kept -- the standing FanDuel-haircut
-    #      estimate, uncalibrated against real DC prints and labelled
-    #      "derived" so nobody quotes it as a book price. The app's print is
+    #      that p with 80% of the excess kept -- calibrated 2026-08-13 against
+    #      the first two real DC prints we ever got (see the note at the factor
+    #      itself), and still labelled "derived" because the PROBABILITY is an
+    #      h2h-de-vig estimate that ran ~2 points above the book's own DC market
+    #      on both of them. The app's print is
     #      the truth (rule 8); this leg exists so the solver can SEE soccer
     #      at all without being handed a draw-loses bet.
     if book == 'FanDuel':
@@ -509,7 +511,23 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
             dog = max((r for r in rows if r[0] != 'Draw'), key=lambda r: r[1])
             fav = next(r for r in rows if r[0] not in ('Draw', dog[0]))
             p_dc = 1 - devig_n(dog[1], [int(x) for x in dog[2].split(',')])
-            d_dc = 1 + 0.85 * (1 / p_dc - 1)
+            # 0.85 was a guess and it was too generous in BOTH directions. On
+            # 2026-08-13 Ryan sent the full Double Chance market -- all three
+            # prices, which de-vigs exactly -- for two Leagues Cup matches, the
+            # first real quotes this derivation has ever been checked against:
+            #
+            #   Philadelphia Union  derived 87.7% @ -835   actual 85.3% @ -900
+            #   New York City FC    derived 80.3% @ -479   actual 78.3% @ -500
+            #
+            # The payout factor implied by those quotes is 0.789 and 0.814, so
+            # 0.80 is the honest middle. The PROBABILITY was also ~2 points high
+            # both times: the h2h de-vig is a fair-odds estimate and the book
+            # shades its own DC market below that. Two points is inside the
+            # noise of a derived number and the label already says "(derived)",
+            # so the probability is left alone -- but the payout is not an
+            # estimate, it is a quote we were beating by 8%, and a leg quoted at
+            # a price the book will not honour is a lie on the ticket.
+            d_dc = 1 + 0.80 * (1 / p_dc - 1)
             am = round(-100 / (d_dc - 1)) if d_dc < 2 else round(100 * (d_dc - 1))
             add(('O', grp), p=p_dc, d=d_dc, lab=f"{fav[0]} DC (derived)",
                 price=am, grp=grp, fam='SOC', sport='OTHER', t=fav[3])
@@ -824,7 +842,7 @@ def selftest():
            + "; ".join(f"{o['lab']} p={o['p']:.4f} @ {o['price']}" for o in _oob[:4])
            if _oob else ""))
     chk(all(o['d'] < 1 / o['p'] for o in _soc),
-        "the synthesized payout keeps LESS than fair -- the 85% shave is on, "
+        "the synthesized payout keeps LESS than fair -- the 80% shave is on, "
         "so a derived leg can under-promise but never over-promise")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
