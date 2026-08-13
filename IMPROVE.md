@@ -6,12 +6,10 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
-0. **hand.py legs through the gates**: app-quoted legs currently bypass
-   preflight entirely. Teach hand.py an optional "@ 7:30pm" kickoff token,
-   have preflight merge handlegs.json into its pool (STALE gate uses the
-   token; DERIVED already names them), and solve2 accept --hand. Payoff: a
-   UEFA night runs end to end through the same twelve gates as everything
-   else instead of the gates covering only the feed's half of the slip.
+0. **solve2 --hand**: preflight now covers app-quoted legs (done below);
+   the solver still cannot mix them into a build. Add --hand to solve2 so a
+   UEFA night's windows are solved, not assembled by eye. Payoff: the 8/13
+   windows took five manual re-solves; one flag replaces them.
 0b. **UFC-ODDS widget form panel**: the phone widget Ryan and his friend use
    Saturday shows model-vs-odds but none of ufcform's last-5 / win-by /
    lose-by. Surface it per bout. Payoff: 'Garry has never been finished' on
@@ -30,6 +28,10 @@ with no measurable payoff written next to it does not belong on this list.
    CFL leg is ever priced above a hunch.
 
 ## DONE (the number that justified it)
+- hand legs through the gates: kickoff tokens ("@ 7:30pm", rollover-safe),
+  STALE fails a started app-quoted leg and WARNs a tokenless one BY NAME,
+  and the fixture found a real hole -- TIE matched only the tie-name's
+  second half, so favourite-named hand legs walked past rule 40. Gate fixed.
 - soclive.py: the Hammarby arithmetic computed one way (9/9 against the 8/13
   trajectory). The tested model says the red-card state was ~29%, not the
   ~17% improvised live -- ad-hoc numbers ran 12 points hot under pressure.

@@ -56,11 +56,36 @@ def _price(tok):
     return int(tok) if m else None
 
 
+def parse_kick(tok, today_ct=None):
+    """'@ 7:30pm' (CT, today) -> UTC 'YYYY-MM-DDTHH:MMZ'. A 7:30pm CT kick
+    is 00:30Z TOMORROW -- the rollover that rule 15 exists to stop by hand."""
+    import datetime as _dt
+    m = re.fullmatch(r'(\d{1,2}):(\d{2})\s*(am|pm)', tok.strip(), re.I)
+    if not m:
+        return None
+    h, mi = int(m.group(1)) % 12, int(m.group(2))
+    if m.group(3).lower() == 'pm':
+        h += 12
+    if today_ct is None:
+        import times
+        today_ct = (_dt.datetime.utcnow() - _dt.timedelta(hours=times._OFF_CT)).date()
+    import times
+    utc = _dt.datetime.combine(today_ct, _dt.time(h, mi)) + _dt.timedelta(hours=times._OFF_CT)
+    return utc.strftime('%Y-%m-%dT%H:%MZ')
+
+
 def parse_line(line):
     """One pasted market -> dict, or (None, why). Shapes documented above."""
     raw = line.strip()
     if not raw or raw.startswith('#'):
         return None, 'blank'
+    kick = None
+    km = re.search(r'@\s*([\d:apmAPM ]+)$', raw)
+    if km:
+        kick = parse_kick(km.group(1))
+        if kick is None:
+            return None, f'unreadable kickoff {km.group(1)!r} -- want "@ 7:30pm" CT'
+        raw = raw[:km.start()].strip()
     is_adv = bool(re.search(r'to advance', raw, re.I))
     body = re.sub(r'to advance', '', raw, flags=re.I).strip()
     parts = [p.strip() for p in body.split('/')]
@@ -76,7 +101,7 @@ def parse_line(line):
         mt = re.match(r'(.+?)\s+[UO]\d', parts[0], re.I)
         name = mt.group(1).strip() if mt else 'match'
         return {'kind': 'total', 'match': name, 'pt': float(m1.group(1)),
-                'under': int(m1.group(2)), 'over': int(m2.group(2))}, None
+                'under': int(m1.group(2)), 'over': int(m2.group(2)), 'kick': kick}, None
 
     sides = []
     for p in parts:
@@ -85,12 +110,12 @@ def parse_line(line):
             return None, f'cannot read a name+price from {p!r}'
         sides.append((m.group(1).strip(), int(m.group(2))))
     if len(sides) == 2:
-        return {'kind': 'adv' if is_adv else 'two', 'sides': sides}, None
+        return {'kind': 'adv' if is_adv else 'two', 'sides': sides, 'kick': kick}, None
     if len(sides) == 3:
         draw = [i for i, (n, _) in enumerate(sides) if n.lower() == 'draw']
         if len(draw) != 1:
             return None, 'three prices need exactly one named draw'
-        return {'kind': 'three', 'sides': sides, 'draw_i': draw[0]}, None
+        return {'kind': 'three', 'sides': sides, 'draw_i': draw[0], 'kick': kick}, None
     return None, f'{len(sides)} prices -- markets here are 2-way or 3-way'
 
 
@@ -146,6 +171,9 @@ def run(lines):
         if out is None:
             refused.append((ln.strip(), why))
         else:
+            for o in out:
+                o['t'] = mkt.get('kick')
+                o['fam'] = 'HAND'
             legs.extend(out)
     return legs, refused
 

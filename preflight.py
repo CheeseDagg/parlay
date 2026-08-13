@@ -145,8 +145,14 @@ def gate_tie(legs):
         if l.get('fam') not in ('SOC', 'SOCT') and 'advance' not in l['lab'].lower():
             continue
         grp = (l.get('grp') or '').replace('SOC ', '')
+        # BOTH halves of the tie name are checked against the label. A feed
+        # leg carries the pair ('SOC Besiktas-Hradec Kralove'); a hand-entered
+        # leg usually names only the favourite ('Besiktas to advance'), and
+        # matching only the second half let exactly those legs walk past rule
+        # 40 -- found by the hand-leg fixture, fixed in the gate.
         hit = next((k for k in ties if k in grp or grp in k
-                    or k.split('-')[-1].lower() in l['lab'].lower()), None)
+                    or k.split('-')[-1].lower() in l['lab'].lower()
+                    or k.split('-')[0].lower() in l['lab'].lower()), None)
         if hit is None:
             continue                       # not a known tie; the sweep's job
         if not ties[hit].get('first_leg'):
@@ -158,6 +164,26 @@ def gate_tie(legs):
     if ctx:
         return 'PASS', f"{len(ctx)} second-leg tie(s) with context: " + '; '.join(sorted(set(ctx)))
     return 'PASS', "no two-legged ties on this slip"
+
+
+def hand_legs(path=None):
+    """App-quoted legs from hand.py, shaped for the gates. These exist for
+    the competitions the feed is structurally blind to (UEFA nights); until
+    now they bypassed preflight entirely, so the gates covered exactly the
+    half of the slip the feed could see and the slip READ as fully checked."""
+    import json
+    try:
+        with open(path or os.path.join(HERE, 'handlegs.json')) as fh:
+            d = json.load(fh)
+    except Exception:
+        return []
+    out = []
+    for l in d.get('legs', []):
+        o = dict(l)
+        o.setdefault('fam', 'HAND')
+        o.setdefault('grp', o['lab'])
+        out.append(o)
+    return out
 
 
 def board_age_min(now=None):
@@ -191,11 +217,17 @@ def gate_stale(legs, now=None):
     import board
     n = now or board._utcnow()
     started = [l for l in legs if l.get('t') and l['t'] <= n]
+    unk = [l for l in legs if l.get('fam') == 'HAND' and not l.get('t')]
     age, gen = board_age_min(n)
     if started:
         return ('FAIL', f"{len(started)} leg(s) already under way -- pregame price is "
                 f"gone, price these with live.py: "
                 + ', '.join(f"{l['lab']} (started {l['t']})" for l in started[:4]))
+    if unk:
+        return ('WARN', f"{len(unk)} app-quoted leg(s) with NO kickoff token -- "
+                "add '@ 7:30pm' to the hand.py line, or a started game can "
+                "slip through as pregame: "
+                + ', '.join(l['lab'] for l in unk[:3]))
     if age is None:
         return 'WARN', "feed carries no generated-at header, so its age is unknown"
     if age > 90:
@@ -523,6 +555,9 @@ def main():
                 amb.setdefault(o['lab'], [cur]).append(o)
                 if o['t'] < cur['t']:
                     idx[o['lab']] = o
+    for _h in hand_legs():
+        if _h['lab'] not in idx:
+            idx[_h['lab']] = _h
     tops = top_rungs(m)
     legs, missing = [], []
     for w in want:
@@ -756,6 +791,32 @@ def selftest():
     chk('priced blind' in _m,
         "and when the base rates are unreadable the gate says the prop is "
         "priced blind rather than quietly dropping the context")
+
+    # ---- hand legs through the gates: the UEFA-night path.
+    import json as _json, tempfile as _tf
+    _hf = _tf.NamedTemporaryFile('w', suffix='.json', delete=False)
+    _json.dump({'legs': [
+        {'lab': 'Besiktas to advance (app-quoted)', 'p': 0.944, 'd': 1.0167,
+         'price': -6000, 't': '2026-08-13T17:00Z'},
+        {'lab': 'Tromso DC (derived) (app-quoted)', 'p': 0.833, 'd': 1.16,
+         'price': -625}]}, _hf)
+    _hf.close()
+    _hl = hand_legs(_hf.name)
+    chk(len(_hl) == 2 and all(l['fam'] == 'HAND' for l in _hl),
+        "hand legs load shaped for the gates, tagged HAND")
+    _v, _m = gate_stale([_hl[0]], now='2026-08-13T18:00Z')
+    chk(_v == 'FAIL',
+        "an app-quoted leg with its kickoff PAST fails STALE like any other -- "
+        "the gates now cover the half of the slip the feed cannot see")
+    _v, _m = gate_stale([_hl[1]], now='2026-08-13T12:00Z')
+    chk(_v == 'WARN' and 'kickoff token' in _m,
+        "and one with NO token warns by name instead of passing silently -- "
+        "unknown start is unknown, not fine")
+    _v, _m = gate_tie([_hl[0]])
+    chk(_v == 'FAIL' and 'first leg NOT on file' in _m,
+        "a hand-entered Besiktas leg still hits rule 40: ties.json has no "
+        "first leg recorded, so the TIE gate blocks it -- app-quoted does "
+        "not mean gate-exempt")
 
     chk(_h['rungs'][4]['rung'] == 10.5 and 0.930 < _h['rungs'][4]['p'] < 0.945,
         f"U10.5 sits at {_h['rungs'][4]['p']*100:.2f}% over three seasons, "
