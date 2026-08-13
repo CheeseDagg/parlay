@@ -13,13 +13,13 @@ with no measurable payoff written next to it does not belong on this list.
    split is rung x the game's own posted main line (market's info, then the
    empirical tail past it). Needs historical F5 lines -- probe if any source
    carries them before promising it.
-5. **WNBA retry monthly**: all routes dead 8/13 (stats timeout, ESPN/data 403).
-   Re-probe first Monday each month; if a route opens, build wnbahist mirroring
-   nflhist. Until then the coverage.json market-only note stands.
 6. **CFL history**: fixturedownload 404'd; find results+odds source before a
    CFL leg is ever priced above a hunch.
 
 ## DONE (the number that justified it)
+- WNBA monthly probe workflow: the market-only declaration re-tests itself
+  first Monday each month and prints a build-wnbahist verdict if any route
+  opens. Closed by machinery instead of memory.
 - Widget form panel: Wins-by split + Durability row (NEVER FINISHED
   highlighted) on every fighter card, from the method data already inside
   the page. Shipping it exposed a second bug and fixed it: the refresh gate
