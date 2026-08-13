@@ -9,8 +9,11 @@ with no measurable payoff written next to it does not belong on this list.
 2. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
-3. **CFL history**: fixturedownload 404'd; find results+odds source before a
-   CFL leg is ever priced above a hunch.
+3. **CFL history**: srcprobe round 4 — ESPN 403s on CFL (the UA that works
+   for MLS does not), fixturedownload has no CFL at all, Wikipedia season
+   pages answer 200. So: results-only base rates from Wikipedia season
+   tables (home edge, totals distribution, ~80 games/season), odds history
+   measured-absent. Build cflhist on the Wikipedia route.
 4. **F5 rung x posted-line conditioning** (WAITING ON ITS OWN DATA): history
    is measured-absent -- srcprobe round 3 showed sportsbookreviewsonline is
    an affiliate shell now, every archive path serves the same marketing page,
