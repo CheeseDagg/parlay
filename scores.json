@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T02:08Z",
+ "as_of": "2026-08-13T02:52Z",
  "date": "2026-08-12",
  "mlb": [
   {
@@ -90,7 +90,7 @@
    "through5": 10,
    "current": 15,
    "inning": 9,
-   "final": false
+   "final": true
   },
   {
    "away": "BOS",
@@ -124,8 +124,8 @@
    "home": "LAD",
    "key": "KC@LAD",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 2,
+   "inning": 3,
    "final": false
   },
   {
@@ -133,8 +133,8 @@
    "home": "LAA",
    "key": "TEX@LAA",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 1,
+   "inning": 3,
    "final": false
   }
  ],
@@ -163,7 +163,7 @@
    "home": "Monterrey",
    "away": "Nashville SC",
    "goals": 3,
-   "completed": false,
+   "completed": true,
    "detail": {
     "Monterrey": 2,
     "Nashville SC": 1
@@ -172,33 +172,42 @@
   {
    "home": "Toluca",
    "away": "FC Dallas",
-   "goals": 0,
+   "goals": 2,
    "completed": false,
    "detail": {
-    "Toluca": 0,
-    "FC Dallas": 0
+    "Toluca": 1,
+    "FC Dallas": 1
    }
   },
   {
    "home": "San Diego FC",
    "away": "Puebla",
-   "goals": null,
+   "goals": 1,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "San Diego FC": 1,
+    "Puebla": 0
+   }
   },
   {
    "home": "Seattle Sounders FC",
    "away": "Guadalajara",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Seattle Sounders FC": 0,
+    "Guadalajara": 0
+   }
   },
   {
    "home": "Los Angeles FC",
    "away": "Quer\u00e9taro",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Los Angeles FC": 0,
+    "Quer\u00e9taro": 0
+   }
   },
   {
    "home": "Philadelphia Union",
@@ -511,6 +520,27 @@
   {
    "home": "Vancouver Whitecaps FC",
    "away": "FC Dallas",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "San Diego FC",
+   "away": "Colorado Rapids",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Los Angeles FC",
+   "away": "Portland Timbers",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "San Jose Earthquakes",
+   "away": "Minnesota United FC",
    "goals": null,
    "completed": false,
    "detail": {}
