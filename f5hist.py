@@ -93,9 +93,17 @@ def wilson(k, n, z=1.96):
 
 
 def collect(d_from, d_to, log=print):
-    """[(f5_total, posted_total_or_None)] for every completed 9-inning game."""
+    """[{f5, away, home, venue, date}] for every completed game.
+
+    The pooled number answers "what is an F5 under worth on an average game",
+    which is not the question anyone actually has. Carrying the identity of the
+    game is what lets the same data answer "what is it worth on THIS one" --
+    the whole point of rule 25 existing and, on 2026-08-13, of it not firing:
+    CIN@CWS modelled at 9.13, below the hot threshold, and put up 12 runs
+    before the fifth.
+    """
     url = (f"{API}/schedule?sportId=1&startDate={d_from}&endDate={d_to}"
-           f"&hydrate=linescore&gameType=R")
+           f"&hydrate=linescore,team,venue&gameType=R")
     data = get(url)
     out, short, skipped = [], 0, 0
     for day in data.get('dates', []):
@@ -107,10 +115,51 @@ def collect(d_from, d_to, log=print):
             if t is None:
                 short += 1
                 continue
-            out.append(t)
+            tm = g.get('teams') or {}
+            out.append({
+                'f5': t,
+                'away': ((tm.get('away') or {}).get('team') or {}).get('abbreviation', '?'),
+                'home': ((tm.get('home') or {}).get('team') or {}).get('abbreviation', '?'),
+                'venue': (g.get('venue') or {}).get('name', '?'),
+                'date': day.get('date', ''),
+            })
     log(f"  {len(out)} games with a clean F5 result, {short} too short to count, "
         f"{skipped} not final")
     return out
+
+
+def by_key(games, keyf, label, floor=40, top=12):
+    """P(F5 >= 11) and mean F5, grouped -- who actually produces the blowups.
+
+    A blowup is what kills a deep under, and the pooled 6% rate is useless for
+    deciding whether to take one on a specific game. If the rate is flat across
+    teams then the leg is a coin the schedule cannot help you weight; if it is
+    concentrated, the pooled number is hiding the only thing worth knowing.
+    """
+    import collections
+    g = collections.defaultdict(list)
+    for x in games:
+        for k in keyf(x):
+            g[k].append(x['f5'])
+    rows = []
+    for k, v in g.items():
+        if len(v) < floor:
+            continue
+        blow = sum(1 for t in v if t >= 11)
+        lo, p, hi = wilson(blow, len(v))
+        rows.append({'k': k, 'n': len(v), 'mean': sum(v) / len(v),
+                     'blow': p, 'lo': lo, 'hi': hi})
+    rows.sort(key=lambda r: -r['blow'])
+    base = sum(1 for x in games if x['f5'] >= 11) / len(games)
+    print(f"\n  {label} -- P(F5 total >= 11), league base rate {base*100:.2f}%")
+    print(f"  {'':<26}{'n':>5} {'mean F5':>9} {'blowup':>8} {'95% band':>15}")
+    for r in rows[:top] + [None] + rows[-3:]:
+        if r is None:
+            print(f"  {'...':<26}")
+            continue
+        print(f"  {str(r['k'])[:25]:<26}{r['n']:>5} {r['mean']:>9.2f} "
+              f"{r['blow']*100:>7.2f}% {r['lo']*100:>6.2f}-{r['hi']*100:5.2f}")
+    return rows
 
 
 RUNGS = [6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5]
@@ -131,7 +180,8 @@ def main():
     d_to = flag('to', date.today().isoformat())
     d_from = flag('from', f"{d_to[:4]}-03-20")
     print(f"F5 run totals, {d_from} .. {d_to}")
-    totals = collect(d_from, d_to)
+    games = collect(d_from, d_to)
+    totals = [g['f5'] for g in games]
     if not totals:
         print("  no games collected"); return 1
     rows = table(totals)
@@ -143,6 +193,8 @@ def main():
                 else round(100 * (1 - r['p']) / r['p']))
         print(f"  U{r['rung']:<5} {r['p']*100:9.2f}% "
               f"{r['lo']*100:8.2f} - {r['hi']*100:5.2f}   {fair:>+7}")
+    by_key(games, lambda x: (x['away'], x['home']), 'BY TEAM (each game counts for both)')
+    by_key(games, lambda x: (x['venue'],), 'BY VENUE', floor=50, top=8)
     dist = {}
     for t in totals:
         dist[t] = dist.get(t, 0) + 1
