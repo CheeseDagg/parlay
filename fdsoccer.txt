@@ -1,0 +1,4 @@
+window 2026-08-13 16:08Z -> 2026-08-14 08:08Z
+
+    all regions failed (va: URLError )
+could not reach FanDuel
