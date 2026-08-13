@@ -206,6 +206,39 @@ def table(totals):
     return rows
 
 
+def rung_by_park(games, floor=120):
+    """P(under) per rung, per park -- the interaction is the whole point.
+
+    The pooled ladder prices U10.5 at 93.79% everywhere, and the board quotes
+    the same -4500 at Coors as at Rate Field. Three seasons say those are not
+    the same bet: the blowup rate differs 6.6x between them. This is where that
+    difference lands on the rungs actually bet.
+    """
+    import collections
+    by = collections.defaultdict(list)
+    for g in games:
+        by[g['venue']].append(g['f5'])
+    keep = {k: v for k, v in by.items() if len(v) >= floor}
+    base = table([g['f5'] for g in games])
+    print(f"\n  RUNG x PARK -- P(F5 under) at each rung, parks with >= {floor} games")
+    print(f"  {'':<28}" + ''.join(f"{('U%.1f' % r['rung']):>9}" for r in base if r['rung'] <= 10.5))
+    print(f"  {'LEAGUE':<28}" + ''.join(f"{r['p']*100:8.1f}%" for r in base if r['rung'] <= 10.5))
+    rows = sorted(keep.items(), key=lambda kv: sum(kv[1]) / len(kv[1]), reverse=True)
+    out = {}
+    for ven, tot in rows:
+        t = table(tot)
+        out[ven] = {str(r['rung']): round(r['p'], 4) for r in t}
+        line = ''.join(f"{r['p']*100:8.1f}%" for r in t if r['rung'] <= 10.5)
+        print(f"  {ven[:27]:<28}{line}   n={len(tot)}")
+    # the spread that matters, stated rather than left to be eyeballed
+    for rr in (8.5, 10.5):
+        vals = [(v[str(rr)], k) for k, v in out.items()]
+        lo, hi = min(vals), max(vals)
+        print(f"    U{rr}: {hi[1][:22]} {hi[0]*100:.1f}%  ..  {lo[1][:22]} {lo[0]*100:.1f}%"
+              f"   spread {(hi[0]-lo[0])*100:.1f} points")
+    return out
+
+
 def main():
     d_to = flag('to', date.today().isoformat())
     d_from = flag('from', f"{d_to[:4]}-03-20")
@@ -226,6 +259,7 @@ def main():
     teams = by_key(games, lambda x: (x['away'], x['home']),
                    'BY TEAM (each game counts for both)')
     venues = by_key(games, lambda x: (x['venue'],), 'BY VENUE', floor=50, top=8)
+    rung_by_park(games)
     dist = {}
     for t in totals:
         dist[t] = dist.get(t, 0) + 1
