@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T17:02Z",
+ "as_of": "2026-08-13T17:48Z",
  "date": "2026-08-13",
  "mlb": [
   {
@@ -8,7 +8,7 @@
    "key": "CLE@DET",
    "through5": null,
    "current": 0,
-   "inning": 1,
+   "inning": 3,
    "final": false
   },
   {
@@ -16,8 +16,8 @@
    "home": "CWS",
    "key": "CIN@CWS",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 7,
+   "inning": 2,
    "final": false
   },
   {
@@ -26,7 +26,7 @@
    "key": "PIT@MIA",
    "through5": null,
    "current": 0,
-   "inning": 1,
+   "inning": 3,
    "final": false
   },
   {
