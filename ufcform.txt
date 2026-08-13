@@ -1,0 +1,28 @@
+8689 decided bouts on record; 8 names requested
+
+  Islam Makhachev          17-1 in UFC    W-sub(2025) Renato Moicano  W-dec(2025) Jack Della Mad  W-sub(2024) Dustin Poirier  W-dec(2023) Alexander Volk  W-ko(2023) Alexander Volk
+                           wins:  dec 35% ko 18% sub 47%  (n=17)
+                           loses: dec 0% ko 100% sub 0%  (n=1)
+  Ian Machado Garry        10-1 in UFC    W-dec(2025) Carlos Prates  W-dec(2025) Belal Muhammad  W-dec(2024) Geoff Neal  W-dec(2024) Michael Page  L-dec(2024) Shavkat Rakhmo
+                           wins:  dec 70% ko 30% sub 0%  (n=10)
+                           loses: dec 100% ko 0% sub 0%  (n=1)
+  Myktybek Orolbai         5-1 in UFC     W-dec(2026) Chris Curtis  W-sub(2025) Tofiq Musayev  W-ko(2025) Jack Hermansso  W-dec(2024) Elves Brener  L-dec(2024) Mateusz Rebeck
+                           wins:  dec 40% ko 20% sub 40%  (n=5)
+                           loses: dec 100% ko 0% sub 0%  (n=1)
+  Jeremiah Wells           5-2 in UFC     W-dec(2025) Themba Gorimbo  L-dec(2024) Max Griffin  W-dec(2023) Matthew Semels  L-sub(2023) Carlston Harri  W-sub(2022) Blood Diamond
+                           wins:  dec 40% ko 40% sub 20%  (n=5)
+                           loses: dec 50% ko 0% sub 50%  (n=2)
+  Mansur Abdul-Malik       3-1 in UFC     L-ko(2026) Yousri Belgaro  W-ko(2025) Nick Klein  W-sub(2025) Antonio Trocol  W-ko(2024) Dusko Todorovi
+                           wins:  dec 0% ko 67% sub 33%  (n=3)
+                           loses: dec 0% ko 100% sub 0%  (n=1)
+  Dustin Stoltzfus         3-8 in UFC     L-dec(2025) Nursulton Ruzi  L-dec(2025) Kelvin Gastelu  L-ko(2024) Brunno Ferreir  W-ko(2024) Marc-Andre Bar  W-sub(2023) Punahele Soria
+                           wins:  dec 33% ko 33% sub 33%  (n=3)
+                           loses: dec 50% ko 25% sub 25%  (n=8)
+  Esteban Ribovics         4-3 in UFC     L-sub(2026) Mateusz Gamrot  L-dec(2025) Nasrat Haqpara  W-dec(2025) Elves Brener  W-ko(2024) Terrance McKin  W-dec(2024) Daniel Zellhub
+                           wins:  dec 75% ko 25% sub 0%  (n=4)
+                           loses: dec 67% ko 0% sub 33%  (n=3)
+  Edson Barboza            18-14 in UFC   L-dec(2025) Drakkar Klose  L-ko(2025) Jalin Turner  L-dec(2024) Lerone Murphy  W-ko(2023) Billy Quaranti  W-dec(2023) Sodiq Yusuff
+                           wins:  dec 50% ko 50% sub 0%  (n=18)
+                           loses: dec 50% ko 36% sub 14%  (n=14)
+
+wrote /home/runner/work/parlay/parlay/ufcform.json
