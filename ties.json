@@ -1,0 +1,70 @@
+{
+  "_README": [
+    "Two-legged ties in play, and the context a 90-minute market cannot see.",
+    "",
+    "Written 2026-08-13 after Hammarby. That leg was taken as a routine home",
+    "favourite; the tie was level from a 0-0 first leg, so the second leg was a",
+    "must-win, and 0-1 down with a red card on 54 minutes it went 85% -> 17%.",
+    "None of that was visible in the price, and the first-leg score had already",
+    "passed through the morning's own research without being written down.",
+    "",
+    "preflight's TIE gate reads this file. A soccer leg on a match listed here",
+    "with no first_leg recorded is a FAIL, not a warning: the whole point is",
+    "that silence stops counting as 'checked'.",
+    "",
+    "Keys are the match as the board labels it. 'first_leg' is the score of leg",
+    "one written from the SIDE THE LEG IS ON. 'standing' is what that makes the",
+    "aggregate before kickoff. 'note' is the incentive read -- a tie already won",
+    "means rotation, a level tie means both sides push."
+  ],
+  "ties": {
+    "Rakow-Hammarby": {
+      "competition": "UEFA Conference League Q3",
+      "leg": 2,
+      "first_leg": "Rakow 0-0 Hammarby",
+      "standing": "level",
+      "note": "LEVEL TIE = must-win second leg. Both goal expectations up, so an under is worse than its price and the DC is far more volatile than a home favourite's number suggests.",
+      "as_of": "2026-08-13"
+    },
+    "Bohemians-Midtjylland": {
+      "competition": "UEFA Conference League Q3",
+      "leg": 2,
+      "first_leg": "Bohemians 0-2 Midtjylland",
+      "standing": "Midtjylland +2",
+      "note": "Comfortable. Expect rotation; under improves, favourite's 90-minute DC gets shakier than the price implies.",
+      "as_of": "2026-08-13"
+    },
+    "CFR Cluj-Tromso": {
+      "competition": "UEFA Conference League Q3",
+      "leg": 2,
+      "first_leg": "CFR Cluj 0-5 Tromso",
+      "standing": "Tromso +5",
+      "note": "DEAD RUBBER. Nothing to play for on either side. Tromso only -165 at home after a 5-0 away win is the book pricing the reserve XI. Under is materially better than it looks; the DC carries lineup risk that is close to binary.",
+      "as_of": "2026-08-13"
+    },
+    "Valur-Nordsjaelland": {
+      "competition": "UEFA Conference League Q3",
+      "leg": 2,
+      "first_leg": "Valur 0-2 Nordsjaelland",
+      "standing": "Nordsjaelland +2",
+      "note": "Comfortable. Same rotation shape as Midtjylland, smaller.",
+      "as_of": "2026-08-13"
+    },
+    "Besiktas-Hradec Kralove": {
+      "competition": "UEFA Conference League Q3",
+      "leg": 2,
+      "first_leg": null,
+      "standing": null,
+      "note": "Bet as TO ADVANCE, which prices the aggregate by construction -- but the first leg is still unrecorded and a 90-minute market on this match must not be taken until it is.",
+      "as_of": "2026-08-13"
+    },
+    "Hearts-Benfica": {
+      "competition": "UEFA Europa League Q3",
+      "leg": 2,
+      "first_leg": null,
+      "standing": null,
+      "note": "Bet as TO ADVANCE. Hearts +10000 and Benfica locked means the book sees the tie as effectively over; record the first leg before touching a 90-minute market here.",
+      "as_of": "2026-08-13"
+    }
+  }
+}

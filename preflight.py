@@ -84,6 +84,52 @@ def gate_hot(legs, hot):
             "mid-rung on a HOT game: " + '; '.join(bad) if bad
             else f"{len(hot)} hot game(s), no mid-rungs taken")
 
+def _ties():
+    import json
+    try:
+        with open(os.path.join(HERE, 'ties.json')) as fh:
+            return json.load(fh).get('ties', {})
+    except Exception:
+        return {}
+
+
+def gate_tie(legs):
+    """A second-leg soccer market must have its FIRST LEG on file.
+
+    Rule 40. A 90-minute Double Chance prices the day and is blind to the tie,
+    so on 8/13 Hammarby was taken as a routine home favourite when the tie was
+    level from a 0-0 first leg -- a must-win, not a coast. 0-1 down with a red
+    card it went 85% -> 17%, and the first-leg score had already gone past us
+    that morning without being written down.
+
+    The failure mode is silence, so silence is what this gate removes: a leg on
+    a match listed in ties.json with no first_leg recorded FAILS. It cannot
+    detect a tie nobody has listed -- that is what the WARN is for, and why
+    ties.json is the thing to update, not this function.
+    """
+    ties = _ties()
+    if not ties:
+        return 'WARN', "ties.json unreadable -- no second-leg context checked"
+    blind, ctx = [], []
+    for l in legs:
+        if l.get('fam') not in ('SOC', 'SOCT') and 'advance' not in l['lab'].lower():
+            continue
+        grp = (l.get('grp') or '').replace('SOC ', '')
+        hit = next((k for k in ties if k in grp or grp in k
+                    or k.split('-')[-1].lower() in l['lab'].lower()), None)
+        if hit is None:
+            continue                       # not a known tie; the sweep's job
+        if not ties[hit].get('first_leg'):
+            blind.append(f"{l['lab']} ({hit}: first leg NOT on file)")
+        else:
+            ctx.append(f"{hit} {ties[hit]['standing']}")
+    if blind:
+        return 'FAIL', "second leg with no first-leg score: " + '; '.join(blind)
+    if ctx:
+        return 'PASS', f"{len(ctx)} second-leg tie(s) with context: " + '; '.join(sorted(set(ctx)))
+    return 'PASS', "no two-legged ties on this slip"
+
+
 def gate_overlap(legs, open_slips):
     """open_slips: [(name, [labels], p)] already placed."""
     if not open_slips:
@@ -129,7 +175,7 @@ def run(legs, hot=None, open_slips=None):
     hot = hot or {}
     gates = [("FLOOR", gate_floor(legs)), ("PLUS", gate_plus(legs)),
              ("SOCCER", gate_soccer(legs)), ("METHOD", gate_method(legs)),
-             ("HOT", gate_hot(legs, hot)),
+             ("HOT", gate_hot(legs, hot)), ("TIE", gate_tie(legs)),
              ("OVERLAP", gate_overlap(legs, open_slips or []))]
     return gates, any(v == 'FAIL' for _, (v, _) in gates)
 
@@ -264,6 +310,23 @@ def selftest():
     chk(failed, "any FAIL blocks the whole preflight")
     gates, failed = run(top, hot)
     chk(not failed, "a clean ticket clears")
+
+    # ---- TIE. Rule 40: a second leg whose first leg is not written down is a
+    # blind bet, and the way it hides is by looking like an ordinary favourite.
+    v, m_ = gate_tie([L('Hammarby DC (derived)', -647, fam='SOC',
+                        grp='SOC Rakow-Hammarby')])
+    chk(v == 'PASS' and 'level' in m_,
+        "a second leg WITH its first leg on file passes, and says the standing")
+    v, _ = gate_tie([L('Besiktas to advance', -6000, fam='SOC',
+                       grp='SOC Besiktas-Hradec Kralove')])
+    chk(v == 'FAIL',
+        "a listed tie with first_leg still null FAILS -- silence is the failure "
+        "mode this gate exists to remove, so it cannot be a warning")
+    v, _ = gate_tie([L('Under 6.5 goals (PU-SL)', -4000, fam='SOCT',
+                       grp='SOC PU-SL')])
+    chk(v == 'PASS', "a one-off match is not a tie and is not scolded")
+    v, _ = gate_tie([L('CHC@WSH F5 Under 10.5', -4500, fam='F5', grp='CHC@WSH')])
+    chk(v == 'PASS', "and baseball never touches this gate")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
