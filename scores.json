@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T04:46Z",
+ "as_of": "2026-08-13T04:49Z",
  "date": "2026-08-13",
  "mlb": [
   {
@@ -149,7 +149,7 @@
    "home": "Los Angeles FC",
    "away": "Quer\u00e9taro",
    "goals": 2,
-   "completed": false,
+   "completed": true,
    "detail": {
     "Los Angeles FC": 1,
     "Quer\u00e9taro": 1
