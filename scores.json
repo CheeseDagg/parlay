@@ -1,140 +1,86 @@
 {
- "as_of": "2026-08-13T03:57Z",
- "date": "2026-08-12",
+ "as_of": "2026-08-13T04:00Z",
+ "date": "2026-08-13",
  "mlb": [
-  {
-   "away": "BAL",
-   "home": "MIN",
-   "key": "BAL@MIN",
-   "through5": 11,
-   "current": 12,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "PHI",
-   "home": "STL",
-   "key": "PHI@STL",
-   "through5": 6,
-   "current": 8,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "TB",
-   "home": "ATH",
-   "key": "TB@ATH",
-   "through5": 9,
-   "current": 12,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "COL",
-   "home": "AZ",
-   "key": "COL@AZ",
-   "through5": 8,
-   "current": 10,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "HOU",
-   "home": "SF",
-   "key": "HOU@SF",
-   "through5": 1,
-   "current": 3,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "MIL",
-   "home": "SD",
-   "key": "MIL@SD",
-   "through5": 3,
-   "current": 7,
-   "inning": 11,
-   "final": true
-  },
   {
    "away": "CLE",
    "home": "DET",
    "key": "CLE@DET",
-   "through5": 7,
-   "current": 10,
-   "inning": 9,
-   "final": true
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
   },
   {
    "away": "PIT",
    "home": "MIA",
    "key": "PIT@MIA",
-   "through5": 8,
-   "current": 10,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "CHC",
-   "home": "WSH",
-   "key": "CHC@WSH",
-   "through5": 8,
-   "current": 18,
-   "inning": 9,
-   "final": true
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
   },
   {
    "away": "SEA",
    "home": "NYY",
    "key": "SEA@NYY",
-   "through5": 10,
-   "current": 15,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "BOS",
-   "home": "TOR",
-   "key": "BOS@TOR",
-   "through5": 2,
-   "current": 10,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "NYM",
-   "home": "ATL",
-   "key": "NYM@ATL",
-   "through5": 3,
-   "current": 9,
-   "inning": 9,
-   "final": true
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
   },
   {
    "away": "CIN",
    "home": "CWS",
    "key": "CIN@CWS",
-   "through5": 1,
-   "current": 5,
-   "inning": 9,
-   "final": true
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
   },
   {
-   "away": "KC",
-   "home": "LAD",
-   "key": "KC@LAD",
-   "through5": 6,
-   "current": 6,
-   "inning": 6,
+   "away": "BOS",
+   "home": "TOR",
+   "key": "BOS@TOR",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "CHC",
+   "home": "WSH",
+   "key": "CHC@WSH",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "PHI",
+   "home": "MIN",
+   "key": "PHI@MIN",
+   "through5": null,
+   "current": null,
+   "inning": null,
    "final": false
   },
   {
    "away": "TEX",
    "home": "LAA",
    "key": "TEX@LAA",
-   "through5": 3,
-   "current": 3,
-   "inning": 6,
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "MIL",
+   "home": "LAD",
+   "key": "MIL@LAD",
+   "through5": null,
+   "current": null,
+   "inning": null,
    "final": false
   }
  ],
@@ -202,10 +148,10 @@
   {
    "home": "Los Angeles FC",
    "away": "Quer\u00e9taro",
-   "goals": 1,
+   "goals": 2,
    "completed": false,
    "detail": {
-    "Los Angeles FC": 0,
+    "Los Angeles FC": 1,
     "Quer\u00e9taro": 1
    }
   },
