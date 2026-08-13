@@ -9,11 +9,6 @@ with no measurable payoff written next to it does not belong on this list.
 2. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
-3. **CFL history**: srcprobe round 4 — ESPN 403s on CFL (the UA that works
-   for MLS does not), fixturedownload has no CFL at all, Wikipedia season
-   pages answer 200. So: results-only base rates from Wikipedia season
-   tables (home edge, totals distribution, ~80 games/season), odds history
-   measured-absent. Build cflhist on the Wikipedia route.
 4. **F5 rung x posted-line conditioning** (WAITING ON ITS OWN DATA): history
    is measured-absent -- srcprobe round 3 showed sportsbookreviewsonline is
    an affiliate shell now, every archive path serves the same marketing page,
@@ -23,6 +18,16 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- cflhist: 321 of ~324 games 2022-25 from per-team Wikipedia pages, every
+  game cross-checked against BOTH teams' tables (one real page disagreement
+  caught and excluded). CFL was the only carried sport with zero grounding.
+  The build process itself proved the discipline: the first parse silently
+  lost every game after July (abbreviated months) and let preseason leak
+  in -- mean total 48.6 vs the true 51.48, U49.5 said 56% when it is 46.7%.
+  A 9-point lie on the most bettable rung, caught by dumping the real rows
+  (round 4d) before trusting the parser. Odds history measured-absent on
+  every probed route; linelog-style self-collection is not worth it for a
+  sport bet a few times a season -- the results base is the deliverable.
 - WNBA monthly probe workflow: the market-only declaration re-tests itself
   first Monday each month and prints a build-wnbahist verdict if any route
   opens. Closed by machinery instead of memory.

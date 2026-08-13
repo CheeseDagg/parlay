@@ -49,7 +49,7 @@
    "NBA, NHL, NFL and college football are out of season in August and carry no key",
    "boxing is pulled but FanDuel rarely prices the undercard"
   ],
-  "note": "WNBA, CFL and MMA are covered.",
+  "note": "WNBA, CFL and MMA are covered. CFL legs now have a results base (cflhist.txt: 321 games 2022-25, home 53.3%, mean total 51.5, P(under) per rung) -- odds history measured-absent, so no de-vig calibration exists for CFL; the base grounds totals and sides only.",
   "how_to_recheck": "python3 socdiag.py lists every catalog key, not only soccer"
  },
  "nfl": {
