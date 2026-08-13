@@ -24,6 +24,7 @@ can check and says out loud what it cannot:
   DERIVED  synthesized prices named for confirmation       (rule 8)
   PARK     F5 totals at high-blowup or unknown parks       (f5hist)
   SOCBASE  soccer legs against their own league's history    (sochist)
+  FORM     starter HR/9 and F5 form on MLB totals legs      (mlbform)
   OVERLAP  shared legs with every open slip, and the      (rule 28)
            chance one event kills them all
   LOG      calibration.csv and slips.json entries pending (rules 29, 31)
@@ -308,6 +309,63 @@ def gate_soccer_base(legs):
     return ('WARN' if (blind or proxied) else 'PASS', ' | '.join(parts))
 
 
+def gate_form(legs, data=None, today=None):
+    """Recent starter form on every MLB totals leg -- the measured gopher check.
+
+    'aaron nola is a gopher baller' and 'looks like gopher ballers in lad mil'
+    were both vetoes the toolchain could neither confirm nor refute; CIN@CWS
+    blew up behind two starters nobody's numbers had looked at. mlbform.py now
+    measures it: each probable's last five starts as HR/9, each club's last
+    ten games of F5 runs. This gate reads the file and names what it finds.
+
+    WARN only. Five starts is a reason to look harder, never a measurement of
+    tonight -- and a missing probable is itself the flag (an opener or a
+    bullpen day is exactly when an F5 under means something different).
+    """
+    import json
+    from datetime import date
+    if data is None:
+        try:
+            with open(os.path.join(HERE, 'mlbform.json')) as fh:
+                data = json.load(fh)
+        except Exception:
+            return 'WARN', "mlbform.json unreadable -- starter form UNKNOWN (run mlbform)"
+    tod = today or date.today().isoformat()
+    if data.get('date') != tod:
+        return 'WARN', (f"form data is for {data.get('date')}, today is {tod} "
+                        "-- touch experiments/MLBFORM.txt to refresh")
+    hi = data.get('hr9_warn', 1.8)
+    gopher, blind, ok = [], [], 0
+    for l in legs:
+        if l.get('fam') not in ('F5', 'FG'):
+            continue
+        g = (data.get('games') or {}).get(l.get('grp'))
+        if not g:
+            blind.append(f"{l['lab']} (no form row)")
+            continue
+        worst = None
+        for side in ('away_sp', 'home_sp'):
+            sp = g.get(side) or {}
+            if sp.get('name') is None:
+                blind.append(f"{l['lab']} ({side.split('_')[0]} probable NOT LISTED)")
+            h = sp.get('hr9_5')
+            if h is not None and (worst is None or h > worst[0]):
+                worst = (h, sp.get('name'))
+        if worst and worst[0] >= hi:
+            gopher.append(f"{l['lab']}: {worst[1]} HR/9 {worst[0]:.2f} last 5 starts")
+        else:
+            ok += 1
+    if not (gopher or blind):
+        return 'PASS', (f"{ok} MLB totals leg(s), no starter above HR/9 {hi}"
+                        if ok else "no MLB totals legs")
+    parts = []
+    if gopher:
+        parts.append("GOPHER form: " + '; '.join(gopher))
+    if blind:
+        parts.append('; '.join(blind))
+    return 'WARN', ' | '.join(parts)
+
+
 def gate_overlap(legs, open_slips):
     """open_slips: [(name, [labels], p)] already placed."""
     if not open_slips:
@@ -357,6 +415,7 @@ def run(legs, hot=None, open_slips=None):
              ("STALE", gate_stale(legs)), ("DERIVED", gate_derived(legs)),
              ("PARK", gate_park(legs)),
              ("SOCBASE", gate_soccer_base(legs)),
+             ("FORM", gate_form(legs)),
              ("OVERLAP", gate_overlap(legs, open_slips or []))]
     return gates, any(v == 'FAIL' for _, (v, _) in gates)
 
@@ -567,6 +626,33 @@ def selftest():
     _v, _m = gate_soccer_base([L('Under 2.5 goals (x)', -200, fam='SOCT')])
     chk(_v == 'WARN' and 'NO league history' in _m,
         "a soccer leg with no competition recorded warns rather than passing")
+
+    # ---- FORM. The measured gopher check, injectable so the test owns its data.
+    _fd = {'date': '2026-08-13', 'hr9_warn': 1.8, 'games': {
+        'MIL@LAD': {'away_sp': {'name': 'Shane Drohan', 'hr9_5': 2.31},
+                    'home_sp': {'name': 'Roki Sasaki', 'hr9_5': 0.95}},
+        'TEX@LAA': {'away_sp': {'name': 'Jacob deGrom', 'hr9_5': 0.61},
+                    'home_sp': {'name': 'W. Urena', 'hr9_5': 1.10}},
+        'PIT@MIA': {'away_sp': {'name': None, 'hr9_5': None},
+                    'home_sp': {'name': 'T. Phillips', 'hr9_5': 1.2}}}}
+    _v, _m = gate_form([L('MIL@LAD F5 Under 10.5', -4000, fam='F5', grp='MIL@LAD')],
+                       data=_fd, today='2026-08-13')
+    chk(_v == 'WARN' and 'Drohan' in _m and '2.31' in _m,
+        "a starter at HR/9 2.31 over five starts is NAMED on the leg -- the "
+        "measured version of 'gopher baller', which twice had to be eyeballed")
+    _v, _ = gate_form([L('TEX@LAA F5 Under 10.5', -7000, fam='F5', grp='TEX@LAA')],
+                      data=_fd, today='2026-08-13')
+    chk(_v == 'PASS', "deGrom in form passes without comment")
+    _v, _m = gate_form([L('PIT@MIA F5 Under 10.5', -5000, fam='F5', grp='PIT@MIA')],
+                       data=_fd, today='2026-08-13')
+    chk(_v == 'WARN' and 'NOT LISTED' in _m,
+        "a missing probable is itself the flag -- an opener or bullpen day is "
+        "when an F5 under means something different")
+    _v, _m = gate_form([L('MIL@LAD F5 Under 10.5', -4000, fam='F5', grp='MIL@LAD')],
+                       data=_fd, today='2026-08-14')
+    chk(_v == 'WARN' and 'form data is for' in _m,
+        "yesterday's form is stale, not silently current -- same failure shape "
+        "as the MLBTool slate that left rule 25 blind")
 
     chk(_h['rungs'][4]['rung'] == 10.5 and 0.930 < _h['rungs'][4]['p'] < 0.945,
         f"U10.5 sits at {_h['rungs'][4]['p']*100:.2f}% over three seasons, "
