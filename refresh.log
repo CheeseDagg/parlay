@@ -1,5 +1,5 @@
-[notice] A new release of pip is available: 26.1.2 -> 26.2.1
-[notice] To update, run: pip install --upgrade pip
+
+Successfully installed numpy-2.5.2 scipy-1.18.0
 PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusal, vig bands, arity)
   MLB: 9 games, 9 moneylines, 81 total rungs, 80 F5 rungs
   MMA: 11 bouts
@@ -23,25 +23,42 @@ PULL_FEEDS SELFTEST PASS — 36 checks (generators, round-trips, monotone refusa
   SOC soccer_mexico_ligamx: 9 fixtures
   SOC soccer_concacaf_leagues_cup: 5 fixtures
   SOCT soccer_concacaf_leagues_cup: 33 goal-total rungs
+  SOC soccer_conmebol_copa_libertadores: 0 fixtures — queried, 8 event(s) returned, none priced by fanduel
+  SOC soccer_conmebol_copa_sudamericana: 0 fixtures — queried, 8 event(s) returned, none priced by fanduel
   SOC soccer_argentina_primera_division: 30 fixtures
   SOC soccer_brazil_serie_b: 10 fixtures
   SOC soccer_chile_campeonato: 8 fixtures
   SOC soccer_epl: 10 fixtures
   SOC soccer_spain_la_liga: 18 fixtures
   SOC soccer_italy_serie_a: 10 fixtures
+  SOC soccer_germany_bundesliga: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_france_ligue_one: 9 fixtures
   SOC soccer_efl_champ: 12 fixtures
+  SOC soccer_england_league1: 0 fixtures — queried, 12 event(s) returned, none priced by fanduel
+  SOC soccer_england_league2: 0 fixtures — queried, 12 event(s) returned, none priced by fanduel
   SOC soccer_england_efl_cup: 23 fixtures
   SOC soccer_germany_bundesliga2: 9 fixtures
+  SOC soccer_germany_liga3: 0 fixtures — queried, 10 event(s) returned, none priced by fanduel
+  SOC soccer_germany_dfb_pokal: 0 fixtures — queried, 18 event(s) returned, none priced by fanduel
   SOC soccer_italy_serie_b: 10 fixtures
+  SOC soccer_italy_coppa_italia: 0 fixtures — queried, 4 event(s) returned, none priced by fanduel
   SOC soccer_spain_segunda_division: 11 fixtures
   SOC soccer_france_ligue_two: 9 fixtures
   SOC soccer_austria_bundesliga: 6 fixtures
+  SOC soccer_belgium_first_div: 0 fixtures — queried, 9 event(s) returned, none priced by fanduel
   SOC soccer_denmark_superliga: 6 fixtures
   SOC soccer_japan_j_league: 10 fixtures
+  SOC soccer_korea_kleague1: 0 fixtures — queried, 6 event(s) returned, none priced by fanduel
   SOC soccer_poland_ekstraklasa: 9 fixtures
+  SOC soccer_russia_premier_league: 0 fixtures — queried, 8 event(s) returned, none priced by fanduel
+  SOC soccer_saudi_arabia_pro_league: 0 fixtures — queried, 7 event(s) returned, none priced by fanduel
+  SOC soccer_spl: 0 fixtures — queried, 6 event(s) returned, none priced by fanduel
   SOC soccer_sweden_superettan: 8 fixtures
-  legs representable: ~1926 · API credits remaining 15546
+  SOC soccer_uefa_nations_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_uefa_champs_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  legs representable: ~1926 · API credits remaining 15456
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -159,4 +176,4 @@ wrote /home/runner/work/parlay/parlay/scores.json
   Puebla           @ San Diego FC     goals=5  FT
   Guadalajara      @ Seattle Sounders goals=3  FT
   Querétaro        @ Los Angeles FC   goals=2  FT
-run conclusion: success at 2026-08-13 15:49
+run conclusion: success at 2026-08-13 15:52
