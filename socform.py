@@ -111,15 +111,19 @@ def form_of(rows, today=None, last=LAST_N):
 
 
 def lookup(acc, name):
-    """(entry, how) by normalised name; contains-match only past five chars so
-    'Union' cannot claim 'Union Berlin'. Failure returns (None, 'unmatched')."""
+    """(entry, how) by normalised name. Containment counts only when the
+    SHORTER of the two names is six-plus characters: the first live run
+    joined 'FC Inter Turku' to Inter Milan and 'Lillestrom' to Lille because
+    the length floor sat on the query while the matched key could be five
+    letters. A refused join prints as unmatched, which is honest; a false
+    join prints as form, which is a lie with decimals."""
     q = norm(name)
     if q in acc:
         return acc[q], 'exact'
-    if len(q) >= 5:
-        hits = [k for k in acc if q in k or k in q]
-        if len(hits) == 1:
-            return acc[hits[0]], f'via {acc[hits[0]]["name"]}'
+    hits = [k for k in acc
+            if (q in k or k in q) and min(len(q), len(k)) >= 6]
+    if len(hits) == 1:
+        return acc[hits[0]], f'via {acc[hits[0]]["name"]}'
     return None, 'unmatched'
 
 
