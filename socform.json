@@ -649,6 +649,15 @@
    "newest": "2026-08-09",
    "matched": "via Halmstad"
   },
+  "VPS Vaasa": {
+   "form": "WLLLWW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
   "IFK Mariehamn": {
    "form": "LLDLLL",
    "n": 6,
@@ -2116,6 +2125,15 @@
    "newest": "2026-05-17",
    "matched": "exact"
   },
+  "Le Mans FC": {
+   "form": "WDDWDW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.5,
+   "ga": 0.33,
+   "newest": "2026-05-09",
+   "matched": "exact"
+  },
   "Lorient": {
    "form": "LWDLWL",
    "n": 6,
@@ -2150,6 +2168,15 @@
    "gf": 2.33,
    "ga": 1.0,
    "newest": "2026-05-17",
+   "matched": "exact"
+  },
+  "Troyes": {
+   "form": "LWWWLD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 0.83,
+   "newest": "2026-05-09",
    "matched": "exact"
   },
   "Angers": {
@@ -2359,31 +2386,148 @@
    "newest": "2026-05-02",
    "matched": "via Leicester"
   },
-  "FC St. Pauli": {
-   "form": "LLLLDL",
+  "Eintracht Braunschweig": {
+   "form": "WLWLWD",
    "n": 6,
-   "ppg": 0.17,
-   "gf": 0.67,
-   "ga": 2.5,
-   "newest": "2026-05-16",
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "matched": "via Braunschweig"
+  },
+  "VfL Bochum": {
+   "form": "LWDDWL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.17,
+   "newest": "2026-08-07",
+   "matched": "via Bochum"
+  },
+  "FC St. Pauli": {
+   "form": "DLLLLD",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.83,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "matched": "exact"
+  },
+  "Holstein Kiel": {
+   "form": "DLLWWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-08",
    "matched": "exact"
   },
   "1. FC Heidenheim": {
-   "form": "LWDWLW",
+   "form": "WLWDWL",
    "n": 6,
    "ppg": 1.67,
-   "gf": 2.0,
-   "ga": 1.5,
-   "newest": "2026-05-16",
+   "gf": 2.17,
+   "ga": 1.83,
+   "newest": "2026-08-08",
    "matched": "via Heidenheim"
   },
-  "VfL Wolfsburg": {
-   "form": "WLDDWL",
+  "Hertha Berlin": {
+   "form": "WLWLLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-07",
+   "matched": "via Hertha"
+  },
+  "1. FC Magdeburg": {
+   "form": "LLWWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "matched": "via Magdeburg"
+  },
+  "1. FC N\u00fcrnberg": {
+   "form": "WDWDWD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.0,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "matched": "via Nurnberg"
+  },
+  "Greuther F\u00fcrth": {
+   "form": "DWLDLW",
    "n": 6,
    "ppg": 1.33,
-   "gf": 1.17,
+   "gf": 1.67,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "matched": "exact"
+  },
+  "1. FC Kaiserslautern": {
+   "form": "DWWLLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.5,
    "ga": 1.0,
-   "newest": "2026-05-16",
+   "newest": "2026-08-08",
+   "matched": "via Kaiserslautern"
+  },
+  "Karlsruher SC": {
+   "form": "WLDWLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 2.0,
+   "newest": "2026-08-08",
+   "matched": "via Karlsruhe"
+  },
+  "Arminia Bielefeld": {
+   "form": "LWLDWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 2.0,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "matched": "via Bielefeld"
+  },
+  "Dynamo Dresden": {
+   "form": "LWLWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-08-09",
+   "matched": "via Dresden"
+  },
+  "SV Darmstadt 98": {
+   "form": "DLDLDL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.5,
+   "ga": 2.17,
+   "newest": "2026-08-08",
+   "matched": "via Darmstadt"
+  },
+  "Hannover 96": {
+   "form": "LDDDWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 2.0,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "matched": "via Hannover"
+  },
+  "VfL Wolfsburg": {
+   "form": "DWLDDW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 0.67,
+   "newest": "2026-08-08",
    "matched": "via Wolfsburg"
   },
   "Hellas Verona": {
@@ -2449,23 +2593,113 @@
    "newest": "2026-05-23",
    "matched": "exact"
   },
-  "Metz": {
-   "form": "DLLDLL",
+  "Annecy FC": {
+   "form": "WLWWWD",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.33,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "Boulogne": {
+   "form": "DLLLLD",
    "n": 6,
    "ppg": 0.33,
+   "gf": 0.67,
+   "ga": 1.83,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "Guingamp": {
+   "form": "LLLLLD",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "Clermont": {
+   "form": "DWWDLD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "Pau FC": {
+   "form": "LLLLWW",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.33,
+   "ga": 2.5,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "Grenoble": {
+   "form": "LWWDLD",
+   "n": 6,
+   "ppg": 1.33,
    "gf": 1.17,
-   "ga": 2.67,
-   "newest": "2026-05-17",
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "Metz": {
+   "form": "WDLLDL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.33,
+   "ga": 2.33,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "Montpellier": {
+   "form": "DDLWWD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "Nancy": {
+   "form": "DWWDLD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.83,
+   "newest": "2026-08-08",
    "matched": "exact"
   },
   "Nantes": {
-   "form": "DLWLLD",
+   "form": "LDLWLL",
    "n": 6,
-   "ppg": 0.83,
-   "gf": 0.83,
+   "ppg": 0.67,
+   "gf": 0.67,
    "ga": 1.17,
-   "newest": "2026-05-17",
+   "newest": "2026-08-08",
    "matched": "exact"
+  },
+  "Red Star": {
+   "form": "WDWWLW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.33,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "matched": "exact"
+  },
+  "USL Dunkerque": {
+   "form": "WLLWLL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 2.17,
+   "ga": 2.0,
+   "newest": "2026-08-08",
+   "matched": "via Dunkerque"
   },
   "Ried": {
    "form": "LDLLWL",
@@ -3242,6 +3476,294 @@
    "ga": 1.0,
    "newest": "2026-08-08",
    "name": "Dundee"
+  },
+  "boulogne": {
+   "form": "DLLLLD",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.67,
+   "ga": 1.83,
+   "newest": "2026-08-08",
+   "name": "Boulogne"
+  },
+  "nancy": {
+   "form": "DWWDLD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.83,
+   "newest": "2026-08-08",
+   "name": "Nancy"
+  },
+  "clermont": {
+   "form": "DWWDLD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "name": "Clermont"
+  },
+  "reims": {
+   "form": "DWDDWD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.0,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "Reims"
+  },
+  "dunkerque": {
+   "form": "WLLWLL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 2.17,
+   "ga": 2.0,
+   "newest": "2026-08-08",
+   "name": "Dunkerque"
+  },
+  "grenoble": {
+   "form": "LWWDLD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "Grenoble"
+  },
+  "metz": {
+   "form": "WDLLDL",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.33,
+   "ga": 2.33,
+   "newest": "2026-08-08",
+   "name": "Metz"
+  },
+  "guingamp": {
+   "form": "LLLLLD",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Guingamp"
+  },
+  "montpellier": {
+   "form": "DDLWWD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "name": "Montpellier"
+  },
+  "nantes": {
+   "form": "LDLWLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.67,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "Nantes"
+  },
+  "red star": {
+   "form": "WDWWLW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.33,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Red Star"
+  },
+  "pau": {
+   "form": "LLLLWW",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.33,
+   "ga": 2.5,
+   "newest": "2026-08-08",
+   "name": "Pau FC"
+  },
+  "annecy": {
+   "form": "WLWWWD",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 2.33,
+   "ga": 0.83,
+   "newest": "2026-08-08",
+   "name": "Annecy"
+  },
+  "rodez": {
+   "form": "WWWDWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 2.0,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Rodez"
+  },
+  "laval": {
+   "form": "LWLDWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-08-08",
+   "name": "Laval"
+  },
+  "st etienne": {
+   "form": "WWLLLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.83,
+   "ga": 1.33,
+   "newest": "2026-08-08",
+   "name": "St Etienne"
+  },
+  "bochum": {
+   "form": "LWDDWL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.0,
+   "ga": 1.17,
+   "newest": "2026-08-07",
+   "name": "Bochum"
+  },
+  "hertha": {
+   "form": "WLWLLD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.83,
+   "ga": 1.67,
+   "newest": "2026-08-07",
+   "name": "Hertha"
+  },
+  "darmstadt": {
+   "form": "DLDLDL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.5,
+   "ga": 2.17,
+   "newest": "2026-08-08",
+   "name": "Darmstadt"
+  },
+  "holstein kiel": {
+   "form": "DLLWWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.17,
+   "newest": "2026-08-08",
+   "name": "Holstein Kiel"
+  },
+  "heidenheim": {
+   "form": "WLWDWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.17,
+   "ga": 1.83,
+   "newest": "2026-08-08",
+   "name": "Heidenheim"
+  },
+  "karlsruhe": {
+   "form": "WLDWLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 2.0,
+   "newest": "2026-08-08",
+   "name": "Karlsruhe"
+  },
+  "bielefeld": {
+   "form": "LWLDWD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 2.0,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "Bielefeld"
+  },
+  "magdeburg": {
+   "form": "LLWWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-08-08",
+   "name": "Magdeburg"
+  },
+  "braunschweig": {
+   "form": "WLWLWD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Braunschweig"
+  },
+  "wolfsburg": {
+   "form": "DWLDDW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 0.67,
+   "newest": "2026-08-08",
+   "name": "Wolfsburg"
+  },
+  "kaiserslautern": {
+   "form": "DWWLLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.5,
+   "ga": 1.0,
+   "newest": "2026-08-08",
+   "name": "Kaiserslautern"
+  },
+  "hannover": {
+   "form": "LDDDWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 2.0,
+   "ga": 2.0,
+   "newest": "2026-08-09",
+   "name": "Hannover"
+  },
+  "nurnberg": {
+   "form": "WDWDWD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.0,
+   "ga": 0.83,
+   "newest": "2026-08-09",
+   "name": "Nurnberg"
+  },
+  "dresden": {
+   "form": "LWLWLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.17,
+   "ga": 1.5,
+   "newest": "2026-08-09",
+   "name": "Dresden"
+  },
+  "st pauli": {
+   "form": "DLLLLD",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 0.83,
+   "ga": 1.83,
+   "newest": "2026-08-09",
+   "name": "St Pauli"
+  },
+  "greuther furth": {
+   "form": "DWLDLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.67,
+   "ga": 1.33,
+   "newest": "2026-08-09",
+   "name": "Greuther Furth"
   },
   "liverpool": {
    "form": "DLDLWW",
@@ -4053,24 +4575,6 @@
    "newest": "2026-05-16",
    "name": "Augsburg"
   },
-  "heidenheim": {
-   "form": "LWDWLW",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 2.0,
-   "ga": 1.5,
-   "newest": "2026-05-16",
-   "name": "Heidenheim"
-  },
-  "wolfsburg": {
-   "form": "WLDDWL",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 1.17,
-   "ga": 1.0,
-   "newest": "2026-05-16",
-   "name": "Wolfsburg"
-  },
   "leverkusen": {
    "form": "DLWWLW",
    "n": 6,
@@ -4106,15 +4610,6 @@
    "ga": 1.83,
    "newest": "2026-05-16",
    "name": "Stuttgart"
-  },
-  "st pauli": {
-   "form": "LLLLDL",
-   "n": 6,
-   "ppg": 0.17,
-   "gf": 0.67,
-   "ga": 2.5,
-   "newest": "2026-05-16",
-   "name": "St Pauli"
   },
   "dortmund": {
    "form": "WWLWLL",
@@ -4287,15 +4782,6 @@
    "newest": "2026-05-17",
    "name": "Lorient"
   },
-  "metz": {
-   "form": "DLLDLL",
-   "n": 6,
-   "ppg": 0.33,
-   "gf": 1.17,
-   "ga": 2.67,
-   "newest": "2026-05-17",
-   "name": "Metz"
-  },
   "strasbourg": {
    "form": "WWDLWL",
    "n": 6,
@@ -4304,15 +4790,6 @@
    "ga": 2.17,
    "newest": "2026-05-17",
    "name": "Strasbourg"
-  },
-  "nantes": {
-   "form": "DLWLLD",
-   "n": 6,
-   "ppg": 0.83,
-   "gf": 0.83,
-   "ga": 1.17,
-   "newest": "2026-05-17",
-   "name": "Nantes"
   },
   "paris sg": {
    "form": "LWWDWW",
@@ -4673,6 +5150,87 @@
    "ga": 2.0,
    "newest": "2026-05-17",
    "name": "Livingston"
+  },
+  "le mans": {
+   "form": "WDDWDW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.5,
+   "ga": 0.33,
+   "newest": "2026-05-09",
+   "name": "Le Mans"
+  },
+  "troyes": {
+   "form": "LWWWLD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.83,
+   "ga": 0.83,
+   "newest": "2026-05-09",
+   "name": "Troyes"
+  },
+  "amiens": {
+   "form": "LLLLLD",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.67,
+   "ga": 2.5,
+   "newest": "2026-05-09",
+   "name": "Amiens"
+  },
+  "bastia": {
+   "form": "LWDWLD",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.33,
+   "ga": 1.33,
+   "newest": "2026-05-09",
+   "name": "Bastia"
+  },
+  "schalke 04": {
+   "form": "WLWWWW",
+   "n": 6,
+   "ppg": 2.5,
+   "gf": 1.83,
+   "ga": 1.17,
+   "newest": "2026-05-17",
+   "name": "Schalke 04"
+  },
+  "elversberg": {
+   "form": "WLWDWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.67,
+   "ga": 1.5,
+   "newest": "2026-05-17",
+   "name": "Elversberg"
+  },
+  "preu\u00dfen munster": {
+   "form": "LDDLLD",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.17,
+   "ga": 2.33,
+   "newest": "2026-05-17",
+   "name": "Preu\u00dfen M\u00fcnster"
+  },
+  "paderborn": {
+   "form": "WDLLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 2.0,
+   "ga": 2.33,
+   "newest": "2026-05-17",
+   "name": "Paderborn"
+  },
+  "fortuna dusseldorf": {
+   "form": "LWLWLL",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 1.17,
+   "ga": 1.67,
+   "newest": "2026-05-17",
+   "name": "Fortuna Dusseldorf"
   },
   "colorado rapids": {
    "form": "WLWLLW",
@@ -7076,7 +7634,6 @@
   "Levadiakos",
   "PAOK Thessaloniki",
   "TPS Turku",
-  "VPS Vaasa",
   "SJK Sein\u00e4joki",
   "HJK Helsinki",
   "KuPS Kuopio",
@@ -7152,8 +7709,6 @@
   "Frosinone",
   "Venezia",
   "RC Lens",
-  "Le Mans FC",
-  "Troyes",
   "Paris Saint Germain",
   "Wolverhampton Wanderers",
   "Bolton Wanderers",
@@ -7179,21 +7734,8 @@
   "Walsall",
   "Peterborough United",
   "Sheffield Wednesday",
-  "Eintracht Braunschweig",
-  "VfL Bochum",
-  "Holstein Kiel",
-  "Hertha Berlin",
-  "1. FC Magdeburg",
   "VfL Osnabr\u00fcck",
-  "1. FC N\u00fcrnberg",
-  "Greuther F\u00fcrth",
-  "1. FC Kaiserslautern",
-  "Karlsruher SC",
-  "Arminia Bielefeld",
   "FC Energie Cottbus",
-  "Dynamo Dresden",
-  "SV Darmstadt 98",
-  "Hannover 96",
   "Arezzo",
   "Avellino",
   "Ascoli",
@@ -7228,22 +7770,12 @@
   "Sporting Gij\u00f3n",
   "Almer\u00eda",
   "CD Eldense",
-  "Annecy FC",
   "Rodez AF",
-  "Boulogne",
-  "Guingamp",
-  "Clermont",
   "Saint Etienne",
   "Dijon",
-  "Pau FC",
-  "Grenoble",
-  "Montpellier",
-  "Nancy",
   "Stade Lavallois",
-  "Red Star",
   "Sochaux",
   "Stade de Reims",
-  "USL Dunkerque",
   "Austria Lustenau",
   "Austria Wien",
   "WSG Tirol",
