@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """srcprobe.py — which data sources can the runner actually reach?
 
-Round 4c: CFL per-team game logs. Round 4 found the route (Wikipedia 200;
+Round 4d: the rows cflhist could not see. Round 4 found the route (Wikipedia 200;
 ESPN 403, fixturedownload absent). Before a parser exists, LOOK at the
 page: dump every wikitable's nearest heading, header row, and first two
 data rows for two season pages — structure drift across seasons is the
@@ -57,38 +57,27 @@ class Tables(HTMLParser):
             self.cell.append(d)
 
 
-TEAMS = ["Saskatchewan Roughriders", "Hamilton Tiger-Cats", "Winnipeg Blue Bombers",
-         "Montreal Alouettes", "BC Lions", "Calgary Stampeders", "Edmonton Elks",
-         "Ottawa Redblacks", "Toronto Argonauts"]
-
-# 4c: the season page has standings only (4b) -- game logs live on per-team
-# season articles. Dump ONE team page's wikitable shapes in full, then just
-# existence-check the other eight so the fetch count stays polite.
+# 4d: cflhist parsed only May-July -- months after July are abbreviated
+# ("Aug.", "Sept.") and the May rows say the Preseason table (identical
+# headers) leaked in. Before fixing either, SEE the rows: every row of every
+# Week-headed table, two teams, no truncation of the cells that matter.
 def get(url):
     r = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": BUA}), timeout=30)
     return r.read().decode("utf-8", "replace")
 
-url = "https://en.wikipedia.org/wiki/2025_Saskatchewan_Roughriders_season"
-try:
-    html = get(url)
+for slug in ("2025_Saskatchewan_Roughriders_season", "2023_Toronto_Argonauts_season"):
+    try:
+        html = get(f"https://en.wikipedia.org/wiki/{slug}")
+    except Exception as e:
+        print(f"== {slug} FAIL {type(e).__name__}"); continue
     p = Tables(); p.feed(html)
-    print(f"== Sask 2025: {len(html)}B, {len(p.out)} wikitable(s)")
-    for head, rows in p.out:
-        if not rows:
+    print(f"== {slug}")
+    for t in p.out:
+        if not t or not t[0]:
             continue
-        print(f"  [{head}] {len(rows)} rows x {max(len(r) for r in rows)} cols")
-        for row in rows[:3]:
-            print(f"    {' | '.join(c[:28] for c in row[:10])}")
-except Exception as e:
-    print(f"== Sask 2025 FAIL {type(e).__name__} {getattr(e, 'code', '')}")
-
-for yr in (2025, 2024):
-    ok = []
-    for t in TEAMS:
-        u = f"https://en.wikipedia.org/wiki/{yr}_{t.replace(' ', '_')}_season"
-        try:
-            urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": BUA}), timeout=20)
-            ok.append(t.split()[-1])
-        except Exception:
-            pass
-    print(f"== {yr} team pages: {len(ok)}/9 exist ({', '.join(ok)})")
+        h = [c.lower() for c in t[0]]
+        if h[0] != "week" or "opponent" not in h:
+            continue
+        print(f"  -- table: {len(t)} rows")
+        for row in t:
+            print(f"    {' | '.join(c[:30] for c in row[:8])}")
