@@ -283,19 +283,36 @@ def pois_sf(k, lam):
 # corrections. This is a global switch and not a per-leg fudge -- a de-vig that
 # flattered one ticket's legs and not another's would make the two
 # unbcomparable, which is the whole thing the comparison is for.
-METHOD = 'power'
-# Changed from 'mult' on 2026-08-03. Multiplicative de-vig is the wrong default
-# for THIS board specifically: every ticket built here is heavy favourites, and
-# multiplicative de-vig is biased against heavy favourites in a known direction.
-# It splits the overround in proportion to implied price, but books do not load
-# margin that way -- they load more of it onto the longshot side. A -5000 leg
-# de-vigs to .9363 under 'mult' and .9737 under 'power', and a 16-leg slip made
-# of legs like that compounds the difference into the headline number. See
-# devigcmp.py for the side-by-side, including Shin (more aggressive still).
+METHOD = 'mult'
+# CHANGED BACK TO 'mult' ON 2026-08-13, ON EVIDENCE. It was switched to 'power'
+# on 2026-08-03 for a reason that is theoretically sound and turned out to be
+# quantitatively wrong here: books load more margin onto the longshot side, so
+# proportional de-vig understates heavy favourites, and 'power' corrects for it.
+# It corrects far too much. Two independent tests, different sports, different
+# ground truths, same ordering:
 #
-# 'mult' remains available and is the more conservative choice; it is NOT the
-# safer one here, because understating a favourite makes a bad parlay look
-# worse but also makes a solver prefer the wrong legs.
+#   F5 alternate-total ladders vs 1817 games of statsapi linescores (f5hist.py),
+#   mean absolute error against the empirical rate across five rungs:
+#       mult 1.35 pts   Shin 2.74 pts   power 4.46 pts
+#   and 'power' was outside the 95% Wilson band at EVERY rung, always high.
+#
+#   Soccer 3-way -> derived Double Chance vs FanDuel's OWN double chance market,
+#   the first two real DC quotes we ever obtained (2026-08-13):
+#       mult 0.71 pts   Shin 1.76 pts   power 2.16 pts
+#
+# What that cost: 'power' read F5 U10.5 at 97.1% when 1817 games say 93.8%. A
+# nine-leg F5 stack quoted at 76% was really 57%. Every ticket built between
+# 8/03 and 8/13 was overstated, and the overstatement grew with the leg count --
+# worst on exactly the max-leg tickets that got asked for most.
+#
+# The old comment argued 'mult' is "NOT the safer one, because understating a
+# favourite makes a solver prefer the wrong legs". That reasoning is still
+# right and no longer applies: the question was never which error is safer, it
+# is which number is TRUE, and now there is data. Re-run f5hist.py against a new
+# season before trusting this again -- it is calibration, not a constant.
+#
+# Shin sits between the two on both tests and is the fallback if a future
+# measurement says 'mult' has started understating. See devigcmp.py.
 
 
 def _split(qs):
@@ -913,6 +930,25 @@ def selftest():
         _cov_note({('GT', 'x'): [{'fam': 'F5'}]})
     chk('SOCCER IS A FLOOR' not in _b.getvalue(),
         "and a board with no soccer on it is not lectured about soccer")
+
+    # ---- DE-VIG, pinned to the two measurements that chose it. These are not
+    # round-trip tests of the arithmetic; they are the calibration itself, and
+    # if a future edit moves METHOD the numbers below have to move with it.
+    _u105 = devig(-4500, 1100)
+    chk(0.920 <= _u105 <= 0.935,
+        f"F5 U10.5 at -4500/+1100 de-vigs to {_u105*100:.1f}%, next to the "
+        "93.78% that 1817 games actually produced (f5hist.py). 'power' put it "
+        "at 97.1%, outside the 95% Wilson band and high at every rung")
+    _dc = 1 - devig_n(550, [-270, 380])
+    chk(0.845 <= _dc <= 0.870,
+        f"Philadelphia Union DC derives to {_dc*100:.1f}% against FanDuel's own "
+        "DC market at 85.3% -- the first real quote this was ever checked on")
+    _dc2 = 1 - devig_n(340, [-165, 320])
+    chk(0.775 <= _dc2 <= 0.800,
+        f"and NYCFC to {_dc2*100:.1f}% against a true 78.3%")
+    chk(METHOD == 'mult',
+        "METHOD is the measured one, not the theorised one -- re-run f5hist.py "
+        "against a new season before changing it")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
