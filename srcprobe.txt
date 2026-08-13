@@ -11,5 +11,7 @@
   espn WNBA (brwsr UA)   FAIL HTTPError 403
   ufc mdabbert odds      FAIL HTTPError 404
   ufc greco results      HTTP 200   250000B  EVENT,BOUT,OUTCOME,WEIGHTCLASS,METHOD,ROUND,TIME,TIME FORMAT,REFEREE,DETAILS,URL | UFC Fig
-  nflverse schedules     FAIL HTTPError 404
+  nflverse sched (new)   FAIL HTTPError 404
+  habitatring games      HTTP 200   250000B  game_id,season,game_type,week,gameday,weekday,gametime,away_team,away_score,home_team,home
+  nflverse games rel     FAIL HTTPError 404
   cfl fixturedownload    FAIL HTTPError 404
