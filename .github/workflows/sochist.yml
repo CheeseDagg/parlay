@@ -1,0 +1,29 @@
+name: Soccer empirical base rates
+on:
+  workflow_dispatch: {}
+  push: { paths: ['experiments/SOCHIST.txt'] }
+permissions: { contents: write }
+concurrency: { group: parlay-sochist, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          set -o pipefail
+          python3 sochist.py --selftest | tail -2
+          python3 sochist.py 2>&1 | tee sochist.txt
+      - if: always()
+        run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          git add sochist.txt sochist.json 2>/dev/null || git add sochist.txt
+          git diff --cached --quiet && exit 0
+          for a in 1 2 3 4 5; do
+            git commit -m "soccer base rates $(date -u +%F)" || true
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || git rebase --abort
+          done
