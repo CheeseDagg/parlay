@@ -331,7 +331,14 @@ def devig(yes, no):
 
     On MLB alternate totals, whose overround is fat and parked on the longshot
     side, mult missed 1817 games of ground truth by 1.35 points where power
-    missed by 4.46 and sat outside the Wilson band at every rung (f5hist)."""
+    missed by 4.46 and sat outside the Wilson band at every rung (f5hist).
+
+    THE PATTERN, after a third measurement (NFL moneylines, 3027 games:
+    power 1.47 vs mult 1.94 -- nflhist.py): it is not two-way versus N-way,
+    it is the SHAPE of the overround. Fat, asymmetric ladder vig -> mult.
+    Thin, balanced main-market vig (soccer 1X2, NFL ML) -> power. Everything
+    routed through here today is ladder-shaped; when NFL moneylines reach
+    this board in September they must NOT inherit mult by default."""
     return _split([1 / dec(yes), 1 / dec(no)], method='mult')[0]
 
 

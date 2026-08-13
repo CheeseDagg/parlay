@@ -57,7 +57,7 @@
   "invisible": [
    "nothing yet -- out of season until September"
   ],
-  "note": "GROUNDED FOR SEPTEMBER: habitatring.com/games.csv (nflverse mirror) answers from the runner with every game's result, spread_line, total_line and moneylines back to 1999. Build nflhist.py against it before week 1, not during it.",
+  "note": "GROUNDED: nflhist.json holds 3028 modern games. Moneyline de-vig for NFL is POWER (1.47 vs mult 1.94 -- thin balanced overround, same family as soccer 1X2), totals de-vig mult at 0.75 pts, and spread_to_winprob translates 'laying 7' into a probability. Wire devig method BEFORE week 1: board.devig defaults mult, which is the ladder answer, not the moneyline answer.",
   "how_to_recheck": "python3 srcprobe.py"
  },
  "wnba": {
