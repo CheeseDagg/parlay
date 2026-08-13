@@ -64,6 +64,15 @@ jobs:
         if: always()
         continue-on-error: true
         run: python3 socform.py 2>&1 | tail -25 | tee -a /tmp/refresh.log
+      # POSTED-LINE LEDGER. Nobody sells MLB line history (srcprobe round 3:
+      # the one free archive is an affiliate shell now), so every refresh
+      # snapshots the board's own alt-total rungs; last pregame look wins,
+      # started games never overwrite. A season of this makes f5hist's rung
+      # table conditionable on the posted line.
+      - name: Log posted MLB lines
+        if: always()
+        continue-on-error: true
+        run: python3 linelog.py 2>&1 | tail -3 | tee -a /tmp/refresh.log
       - name: Pull scores
         if: always()
         continue-on-error: true

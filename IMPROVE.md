@@ -9,12 +9,15 @@ with no measurable payoff written next to it does not belong on this list.
 2. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
-3. **F5 rung x posted-line conditioning**: f5hist has rung x park; the sharper
-   split is rung x the game's own posted main line (market's info, then the
-   empirical tail past it). Needs historical F5 lines -- probe if any source
-   carries them before promising it.
-6. **CFL history**: fixturedownload 404'd; find results+odds source before a
+3. **CFL history**: fixturedownload 404'd; find results+odds source before a
    CFL leg is ever priced above a hunch.
+4. **F5 rung x posted-line conditioning** (WAITING ON ITS OWN DATA): history
+   is measured-absent -- srcprobe round 3 showed sportsbookreviewsonline is
+   an affiliate shell now, every archive path serves the same marketing page,
+   zero file links. So linelog.py records our own: every refresh snapshots
+   the board's MLB alt-total rungs, last pregame look wins, started games
+   never overwrite. Revisit when the csv holds ~2 months of dates; until
+   then there is nothing to fit.
 
 ## DONE (the number that justified it)
 - WNBA monthly probe workflow: the market-only declaration re-tests itself
