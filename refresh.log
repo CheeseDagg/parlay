@@ -1,8 +1,7 @@
 
 Successfully installed numpy-2.5.2 scipy-1.18.0
 PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: PIT@MIA moneyline vig-sum 1.004 out of band — dropped
-  MLB: 9 games, 8 moneylines, 66 total rungs, 47 F5 rungs
+  MLB: 9 games, 8 moneylines, 62 total rungs, 44 F5 rungs
   MMA: 11 bouts
   WNBA: 5 markets
   WNBA: 153 alternate-total rungs
@@ -31,7 +30,7 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_brazil_serie_b: 10 fixtures
   SOC soccer_chile_campeonato: 8 fixtures
   SOC soccer_epl: 10 fixtures
-  SOC soccer_spain_la_liga: 18 fixtures
+  SOC soccer_spain_la_liga: 19 fixtures
   SOC soccer_italy_serie_a: 10 fixtures
   SOC soccer_germany_bundesliga: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_france_ligue_one: 9 fixtures
@@ -60,14 +59,14 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_champs_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  legs representable: ~1834 · API credits remaining 15202
+  legs representable: ~1823 · API credits remaining 15067
   wrote times.py
   wrote mlbml.py
   wrote totals.py
   wrote f5.py
   wrote mma.py
   wrote other.py
-  board selftest: 49/49 checks pass
+  board selftest: 50/50 checks pass
   board: MLBTool's kprops.json is not readable here -- K lambdas off. Every leg still prices from the market; nothing else is affected.
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
 PASS  an evening UTC start keeps its ET date
@@ -109,8 +108,8 @@ PASS  a STALE slate flags nothing on the model arms -- four-day-old heat is not 
 PASS  with no slate at all, a market main of 10+ still flags
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 94.4%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 52 of 1148 candidate legs have ALREADY STARTED (now 2026-08-13T18:53Z, newest event on the board 2026-08-26T19:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
+  board: 76 of 1135 candidate legs have ALREADY STARTED (now 2026-08-13T19:09Z, newest event on the board 2026-08-27T19:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -121,7 +120,7 @@ PASS  with no slate at all, a market main of 10+ still flags
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
 PASS  no Draw outcome survives into any pool
-PASS  every soccer offer is a derived Double Chance, never a 3-way side (340 soccer legs)
+PASS  every soccer offer is a derived Double Chance, never a 3-way side (341 soccer legs)
 PASS  derived DC probabilities are favourite-shaped, not draw-shaped
 PASS  the synthesized payout keeps LESS than fair -- the 80% shave is on, so a derived leg can under-promise but never over-promise
 PASS  coverage.json names what the soccer feed cannot see
@@ -129,11 +128,12 @@ PASS  and names the two UEFA competitions that have NO catalog key at all -- the
 PASS  a board carrying soccer legs prints its blind spots beside the count
 PASS  and a board with no soccer on it is not lectured about soccer
 PASS  F5 U10.5 at -4500/+1100 de-vigs to 92.2%, next to the 93.78% that 1817 games actually produced (f5hist.py). 'power' put it at 97.1%, outside the 95% Wilson band and high at every rung
-PASS  Philadelphia Union DC derives to 85.9% against FanDuel's own DC market at 85.3% -- the first real quote this was ever checked on
-PASS  and NYCFC to 79.1% against a true 78.3%
-PASS  METHOD is the measured one, not the theorised one -- re-run f5hist.py against a new season before changing it
+PASS  Philadelphia Union DC derives to 87.7% under POWER. FanDuel's own DC quote de-vigged to 85.3%, but a quote is a SHADED number, not ground truth: 52710 matches with closing odds show mult understating the favourite DC in every reliability bin (sococalib.py)
+PASS  and NYCFC to 80.3% -- said-vs-happened error 0.68 points under power against 1.24 under mult, on the leg family actually bet
+PASS  the de-vig method rides with the MARKET FAMILY: two-way mult (1817 MLB games), N-way power (52710 soccer matches) -- each pinned to its own ground truth, because the global METHOD of 8/03 was wrong in both directions at once
+PASS  METHOD stays the two-way default; changing either family means re-running f5hist AND sococalib first, not editing a constant
 
-49/49 checks pass
+50/50 checks pass
 PASS  -200 is 1.50x
 PASS  +150 is 2.50x
 PASS  American round-trips
@@ -177,7 +177,7 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 94.4%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
+  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -194,9 +194,9 @@ MLB: 9 games on 2026-08-13
 soccer_concacaf_leagues_cup: 12 matches
 soccer_usa_mls: 43 matches
 wrote /home/runner/work/parlay/parlay/scores.json
-  CLE@DET    through5=  1  current=  2  inning=7  
-  CIN@CWS    through5= 13  current= 13  inning=5  
-  PIT@MIA    through5=  2  current=  5  inning=7  
+  CLE@DET    through5=  1  current=  2  inning=8  
+  CIN@CWS    through5= 13  current= 14  inning=6  
+  PIT@MIA    through5=  2  current=  5  inning=8  
   SEA@NYY    through5=  1  current=  1  inning=5  
   BOS@TOR    through5=  -  current=  0  inning=1  
   CHC@WSH    through5=  -  current=  0  inning=1  
@@ -207,4 +207,4 @@ wrote /home/runner/work/parlay/parlay/scores.json
   Puebla           @ San Diego FC     goals=5  FT
   Guadalajara      @ Seattle Sounders goals=3  FT
   Querétaro        @ Los Angeles FC   goals=2  FT
-run conclusion: success at 2026-08-13 18:53
+run conclusion: success at 2026-08-13 19:09
