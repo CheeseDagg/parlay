@@ -1,0 +1,29 @@
+name: UFC method base rates
+on:
+  workflow_dispatch: {}
+  push: { paths: ['experiments/UFCHIST.txt'] }
+permissions: { contents: write }
+concurrency: { group: parlay-ufchist, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          set -o pipefail
+          python3 ufchist.py --selftest | tail -2
+          python3 ufchist.py 2>&1 | tee ufchist.txt
+      - if: always()
+        run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          git add ufchist.json ufchist.txt 2>/dev/null || git add ufchist.txt
+          git diff --cached --quiet && exit 0
+          for a in 1 2 3 4 5; do
+            git commit -m "ufc method base rates $(date -u +%F)" || true
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || git rebase --abort
+          done
