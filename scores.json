@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T03:36Z",
+ "as_of": "2026-08-13T03:39Z",
  "date": "2026-08-12",
  "mlb": [
   {
@@ -123,8 +123,8 @@
    "away": "KC",
    "home": "LAD",
    "key": "KC@LAD",
-   "through5": 5,
-   "current": 5,
+   "through5": 6,
+   "current": 6,
    "inning": 5,
    "final": false
   },
