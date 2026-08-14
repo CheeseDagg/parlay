@@ -1,194 +1,294 @@
 {
- "date": "2026-08-13",
+ "date": "2026-08-14",
  "hr9_warn": 1.8,
  "games": {
-  "CLE@DET": {
+  "STL@CHC": {
    "away_sp": {
-    "name": "Parker Messick",
-    "hr9_5": 1.19,
-    "r_start": 1.8,
+    "name": "Matthew Liberatore",
+    "hr9_5": 1.04,
+    "r_start": 2.6,
     "starts": 5
    },
    "home_sp": {
-    "name": "Keider Montero",
-    "hr9_5": 1.29,
-    "r_start": 2.4,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 3.1,
-    "f5_ag": 2.9
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 2.7,
-    "f5_ag": 1.2
-   },
-   "f5_env": 4.95
-  },
-  "CIN@CWS": {
-   "away_sp": {
-    "name": "Andrew Abbott",
-    "hr9_5": 0.32,
-    "r_start": 2.8,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Davis Martin",
-    "hr9_5": 2.84,
-    "r_start": 4.6,
+    "name": "Clay Holmes",
+    "hr9_5": 0.34,
+    "r_start": 2.2,
     "starts": 5
    },
    "away_form": {
     "n": 10,
     "f5_for": 2.5,
-    "f5_ag": 2.6
+    "f5_ag": 1.7
    },
    "home_form": {
     "n": 10,
-    "f5_for": 2.2,
-    "f5_ag": 2.5
+    "f5_for": 3.4,
+    "f5_ag": 2.9
    },
-   "f5_env": 4.9
+   "f5_env": 5.25
   },
-  "PIT@MIA": {
+  "MIA@CIN": {
    "away_sp": {
-    "name": "Braxton Ashcraft",
-    "hr9_5": 1.93,
-    "r_start": 3.6,
+    "name": "Sandy Alcantara",
+    "hr9_5": 1.09,
+    "r_start": 1.2,
     "starts": 5
    },
    "home_sp": {
-    "name": "Tyler Phillips",
-    "hr9_5": 1.9,
-    "r_start": 2.4,
+    "name": "Chase Burns",
+    "hr9_5": 0.34,
+    "r_start": 2.8,
     "starts": 5
    },
    "away_form": {
     "n": 10,
-    "f5_for": 2.0,
-    "f5_ag": 4.5
+    "f5_for": 2.8,
+    "f5_ag": 1.4
    },
    "home_form": {
     "n": 10,
     "f5_for": 3.2,
-    "f5_ag": 1.4
+    "f5_ag": 2.8
    },
-   "f5_env": 5.55
+   "f5_env": 5.1
   },
-  "SEA@NYY": {
+  "BOS@PIT": {
    "away_sp": {
-    "name": "Logan Gilbert",
-    "hr9_5": 1.44,
-    "r_start": 2.2,
+    "name": "Jake Bennett",
+    "hr9_5": 0.62,
+    "r_start": 2.6,
     "starts": 5
    },
    "home_sp": {
-    "name": "Max Fried",
-    "hr9_5": 0.36,
-    "r_start": 1.0,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 1.2,
-    "f5_ag": 1.9
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 1.6,
-    "f5_ag": 1.8
-   },
-   "f5_env": 3.25
-  },
-  "BOS@TOR": {
-   "away_sp": {
-    "name": "Payton Tolle",
-    "hr9_5": 1.45,
-    "r_start": 1.8,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Max Scherzer",
-    "hr9_5": 1.61,
+    "name": "Bubba Chandler",
+    "hr9_5": 0.0,
     "r_start": 2.0,
     "starts": 5
    },
    "away_form": {
     "n": 10,
-    "f5_for": 3.7,
-    "f5_ag": 2.2
+    "f5_for": 3.3,
+    "f5_ag": 1.9
    },
    "home_form": {
     "n": 10,
-    "f5_for": 1.8,
-    "f5_ag": 1.9
+    "f5_for": 2.1,
+    "f5_ag": 3.6
    },
-   "f5_env": 4.8
+   "f5_env": 5.45
   },
-  "CHC@WSH": {
+  "CWS@DET": {
    "away_sp": {
-    "name": "Kevin Gausman",
-    "hr9_5": 0.68,
-    "r_start": 3.4,
+    "name": null,
+    "hr9_5": null,
+    "r_start": null,
+    "note": "NO PROBABLE LISTED"
+   },
+   "home_sp": {
+    "name": "Jackson Jobe",
+    "hr9_5": null,
+    "r_start": 0.0,
+    "starts": 1
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.7,
+    "f5_ag": 3.2
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.4,
+    "f5_ag": 1.0
+   },
+   "f5_env": 4.65
+  },
+  "WSH@NYM": {
+   "away_sp": {
+    "name": "Andrew Alvarez",
+    "hr9_5": 0.0,
+    "r_start": 2.6,
     "starts": 5
    },
    "home_sp": {
-    "name": "Cade Cavalli",
-    "hr9_5": 1.82,
+    "name": "Robert Stock",
+    "hr9_5": 1.12,
+    "r_start": 4.5,
+    "starts": 2
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 3.0,
+    "f5_ag": 2.6
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 3.7,
+    "f5_ag": 2.9
+   },
+   "f5_env": 6.1
+  },
+  "SD@CLE": {
+   "away_sp": {
+    "name": "Michael King",
+    "hr9_5": 1.61,
+    "r_start": 2.0,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Gavin Williams",
+    "hr9_5": 1.44,
     "r_start": 1.8,
     "starts": 5
    },
    "away_form": {
     "n": 10,
-    "f5_for": 3.5,
-    "f5_ag": 2.5
+    "f5_for": 2.9,
+    "f5_ag": 2.4
    },
    "home_form": {
     "n": 10,
-    "f5_for": 2.6,
-    "f5_ag": 2.9
+    "f5_for": 2.9,
+    "f5_ag": 2.8
    },
-   "f5_env": 5.75
+   "f5_env": 5.5
   },
-  "PHI@MIN": {
+  "BAL@TB": {
    "away_sp": {
-    "name": "Aaron Nola",
-    "hr9_5": 2.89,
-    "r_start": 2.8,
-    "starts": 5
+    "name": null,
+    "hr9_5": null,
+    "r_start": null,
+    "note": "NO PROBABLE LISTED"
    },
    "home_sp": {
-    "name": "Taj Bradley",
-    "hr9_5": 0.62,
-    "r_start": 2.8,
+    "name": "Steven Matz",
+    "hr9_5": 1.66,
+    "r_start": 3.0,
     "starts": 5
    },
    "away_form": {
     "n": 10,
-    "f5_for": 2.2,
+    "f5_for": 2.5,
+    "f5_ag": 2.4
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 3.5,
+    "f5_ag": 2.1
+   },
+   "f5_env": 5.25
+  },
+  "AZ@ATL": {
+   "away_sp": {
+    "name": "Brandon Pfaadt",
+    "hr9_5": 0.0,
+    "r_start": 1.0,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": null,
+    "hr9_5": null,
+    "r_start": null,
+    "note": "NO PROBABLE LISTED"
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.9,
+    "f5_ag": 1.6
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.1,
+    "f5_ag": 1.3
+   },
+   "f5_env": 3.95
+  },
+  "NYY@TOR": {
+   "away_sp": {
+    "name": "Gerrit Cole",
+    "hr9_5": 0.85,
+    "r_start": 1.6,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Shane Bieber",
+    "hr9_5": 0.72,
+    "r_start": 2.2,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 1.5,
     "f5_ag": 1.8
    },
    "home_form": {
     "n": 10,
-    "f5_for": 2.4,
-    "f5_ag": 3.2
+    "f5_for": 1.5,
+    "f5_ag": 2.0
    },
-   "f5_env": 4.8
+   "f5_env": 3.4
   },
-  "TEX@LAA": {
+  "SEA@HOU": {
    "away_sp": {
-    "name": "Jacob deGrom",
-    "hr9_5": 0.39,
+    "name": "George Kirby",
+    "hr9_5": 1.93,
+    "r_start": 2.0,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Peter Lambert",
+    "hr9_5": 0.33,
+    "r_start": 2.0,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 1.0,
+    "f5_ag": 1.8
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.1,
+    "f5_ag": 2.3
+   },
+   "f5_env": 3.6
+  },
+  "KC@LAA": {
+   "away_sp": {
+    "name": "Seth Lugo",
+    "hr9_5": 0.3,
     "r_start": 2.8,
     "starts": 5
    },
    "home_sp": {
-    "name": "Walbert Ure\u00f1a",
-    "hr9_5": 0.37,
-    "r_start": 1.2,
+    "name": null,
+    "hr9_5": null,
+    "r_start": null,
+    "note": "NO PROBABLE LISTED"
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.3,
+    "f5_ag": 2.2
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 1.3,
+    "f5_ag": 2.8
+   },
+   "f5_env": 4.3
+  },
+  "TEX@ATH": {
+   "away_sp": {
+    "name": "Kumar Rocker",
+    "hr9_5": 2.36,
+    "r_start": 3.6,
     "starts": 5
+   },
+   "home_sp": {
+    "name": null,
+    "hr9_5": null,
+    "r_start": null,
+    "note": "NO PROBABLE LISTED"
    },
    "away_form": {
     "n": 10,
@@ -197,22 +297,22 @@
    },
    "home_form": {
     "n": 10,
-    "f5_for": 1.3,
-    "f5_ag": 2.8
+    "f5_for": 2.0,
+    "f5_ag": 4.4
    },
-   "f5_env": 3.95
+   "f5_env": 5.1
   },
   "MIL@LAD": {
    "away_sp": {
-    "name": "Shane Drohan",
-    "hr9_5": 1.23,
-    "r_start": 3.8,
+    "name": "Robert Gasser",
+    "hr9_5": 1.14,
+    "r_start": 2.8,
     "starts": 5
    },
    "home_sp": {
-    "name": "Roki Sasaki",
-    "hr9_5": 1.2,
-    "r_start": 1.8,
+    "name": "Yoshinobu Yamamoto",
+    "hr9_5": 1.04,
+    "r_start": 2.4,
     "starts": 5
    },
    "away_form": {
@@ -226,6 +326,31 @@
     "f5_ag": 3.1
    },
    "f5_env": 5.25
+  },
+  "COL@SF": {
+   "away_sp": {
+    "name": "Kyle Freeland",
+    "hr9_5": 1.17,
+    "r_start": 3.4,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Landen Roupp",
+    "hr9_5": 0.68,
+    "r_start": 2.4,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.5,
+    "f5_ag": 3.8
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 1.7,
+    "f5_ag": 1.6
+   },
+   "f5_env": 4.8
   }
  }
 }

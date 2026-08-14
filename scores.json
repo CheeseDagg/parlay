@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-13T21:37Z",
+ "as_of": "2026-08-14T00:07Z",
  "date": "2026-08-13",
  "mlb": [
   {
@@ -52,17 +52,17 @@
    "home": "WSH",
    "key": "CHC@WSH",
    "through5": 6,
-   "current": 6,
-   "inning": 6,
-   "final": false
+   "current": 7,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "PHI",
    "home": "MIN",
    "key": "PHI@MIN",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 2,
+   "inning": 2,
    "final": false
   },
   {
@@ -70,8 +70,8 @@
    "home": "LAA",
    "key": "TEX@LAA",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -79,42 +79,12 @@
    "home": "LAD",
    "key": "MIL@LAD",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   }
  ],
  "soccer": [
-  {
-   "home": "Orlando City SC",
-   "away": "Atl\u00e9tico San Luis",
-   "goals": 4,
-   "completed": true,
-   "detail": {
-    "Orlando City SC": 2,
-    "Atl\u00e9tico San Luis": 2
-   }
-  },
-  {
-   "home": "Inter Miami CF",
-   "away": "Le\u00f3n",
-   "goals": 5,
-   "completed": true,
-   "detail": {
-    "Inter Miami CF": 2,
-    "Le\u00f3n": 3
-   }
-  },
-  {
-   "home": "Monterrey",
-   "away": "Nashville SC",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "Monterrey": 2,
-    "Nashville SC": 1
-   }
-  },
   {
    "home": "Toluca",
    "away": "FC Dallas",
@@ -158,16 +128,22 @@
   {
    "home": "Philadelphia Union",
    "away": "Santos Laguna",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Philadelphia Union": 0,
+    "Santos Laguna": 0
+   }
   },
   {
    "home": "New York City FC",
    "away": "Necaxa",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "New York City FC": 0,
+    "Necaxa": 0
+   }
   },
   {
    "home": "Am\u00e9rica",

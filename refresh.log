@@ -1,11 +1,10 @@
 [notice] A new release of pip is available: 26.1.2 -> 26.2.1
 [notice] To update, run: pip install --upgrade pip
 PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: BOS@TOR has no FanDuel book — skipped
-  MLB: 4 games, 4 moneylines, 36 total rungs, 27 F5 rungs
+  MLB: 3 games, 3 moneylines, 27 total rungs, 27 F5 rungs
   MMA: 11 bouts
   WNBA: 5 markets
-  WNBA: 153 alternate-total rungs
+  WNBA: 144 alternate-total rungs
   CFL: 8 markets
   CFL: 59 alternate-total rungs
   BOX: 14 markets
@@ -24,8 +23,8 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_brazil_campeonato: 20 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
   SOC soccer_concacaf_leagues_cup: 5 fixtures
-  SOCT soccer_concacaf_leagues_cup: 33 goal-total rungs
-  SOC soccer_conmebol_copa_libertadores: 0 fixtures — queried, 8 event(s) returned, none priced by fanduel
+  SOCT soccer_concacaf_leagues_cup: 28 goal-total rungs
+  SOC soccer_conmebol_copa_libertadores: 0 fixtures — queried, 7 event(s) returned, none priced by fanduel
   SOC soccer_conmebol_copa_sudamericana: 0 fixtures — queried, 8 event(s) returned, none priced by fanduel
   SOC soccer_argentina_primera_division: 30 fixtures
   SOC soccer_brazil_serie_b: 17 fixtures
@@ -60,7 +59,7 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_champs_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  legs representable: ~1750 · API credits remaining 14970
+  legs representable: ~1702 · API credits remaining 14893
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -109,8 +108,8 @@ PASS  a STALE slate flags nothing on the model arms -- four-day-old heat is not 
 PASS  with no slate at all, a market main of 10+ still flags
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 20 of 1048 candidate legs have ALREADY STARTED (now 2026-08-13T21:36Z, newest event on the board 2026-08-27T19:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 4 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PT-Tijuana) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
+  board: 144 of 1000 candidate legs have ALREADY STARTED (now 2026-08-14T00:06Z, newest event on the board 2026-08-27T19:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -178,8 +177,8 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 20 of 1048 candidate legs have ALREADY STARTED (now 2026-08-13T21:36Z, newest event on the board 2026-08-27T19:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 4 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PT-Tijuana) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
+  board: 144 of 1000 candidate legs have ALREADY STARTED (now 2026-08-14T00:06Z, newest event on the board 2026-08-27T19:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -191,7 +190,7 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
          recheck: python3 socdiag.py lists every catalog key, not only soccer
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 5 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PU-SL) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
+  board: 3 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (PT-Tijuana) at -10000, 98.5%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -202,21 +201,21 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
 wrote BOARD.md
-MLB form for 2026-08-13 -- 9 games
-
-  game       away starter            hr9 home starter            hr9  F5 env
-  CLE@DET    Parker Messick         1.19 Keider Montero         1.29    4.95
-  CIN@CWS    Andrew Abbott          0.32 Davis Martin           2.84     4.9  << GOPHER
-  PIT@MIA    Braxton Ashcraft       1.93 Tyler Phillips         1.90    5.55  << GOPHER
-  SEA@NYY    Logan Gilbert          1.44 Max Fried              0.36    3.25
-  BOS@TOR    Payton Tolle           1.45 Max Scherzer           1.61     4.8
-  CHC@WSH    Kevin Gausman          0.68 Cade Cavalli           1.82    5.75  << GOPHER
-  PHI@MIN    Aaron Nola             2.89 Taj Bradley            0.62     4.8  << GOPHER
-  TEX@LAA    Jacob deGrom           0.39 Walbert Ureña          0.37    3.95
-  MIL@LAD    Shane Drohan           1.23 Roki Sasaki            1.20    5.25
+  MIA@CIN    Sandy Alcantara        1.09 Chase Burns            0.34     5.1
+  BOS@PIT    Jake Bennett           0.62 Bubba Chandler         0.00    5.45
+  CWS@DET    None                    --  Jackson Jobe            --     4.65
+  WSH@NYM    Andrew Alvarez         0.00 Robert Stock           1.12     6.1
+  SD@CLE     Michael King           1.61 Gavin Williams         1.44     5.5
+  BAL@TB     None                    --  Steven Matz            1.66    5.25
+  AZ@ATL     Brandon Pfaadt         0.00 None                    --     3.95
+  NYY@TOR    Gerrit Cole            0.85 Shane Bieber           0.72     3.4
+  SEA@HOU    George Kirby           1.93 Peter Lambert          0.33     3.6  << GOPHER
+  KC@LAA     Seth Lugo              0.30 None                    --      4.3
+  TEX@ATH    Kumar Rocker           2.36 None                    --      5.1  << GOPHER
+  MIL@LAD    Robert Gasser          1.14 Yoshinobu Yamamoto     1.04    5.25
+  COL@SF     Kyle Freeland          1.17 Landen Roupp           0.68     4.8
 
 wrote /home/runner/work/parlay/parlay/mlbform.json
-  AC Horsens                  LLD     ppg 0.33  gf 0.67  ga 1.67  (last 2026-08-09)
   OB Odense BK                LWLLDL  ppg 0.67  gf 0.83  ga 1.33  (last 2026-08-10)  [via Odense]
   FC Nordsjaelland            WDWDDL  ppg 1.5   gf 1.17  ga 0.67  (last 2026-08-02)
   Silkeborg IF                WLDLLW  ppg 1.17  gf 1.17  ga 2.33  (last 2026-08-10)
@@ -237,17 +236,18 @@ wrote /home/runner/work/parlay/parlay/mlbform.json
   Górnik Zabrze               WWWWDL  ppg 2.17  gf 2.0   ga 1.0   (last 2026-08-08)
   Lech Poznań                 WWDDWD  ppg 2.0   gf 1.83  ga 0.83  (last 2026-08-09)
 
-  UNMATCHED OR THIN (240): AEK Athens; PFC Levski Sofia; Dinamo Zagreb; Bodø/Glimt; Hapoel Be'er Sheva; Sabah FK; NK Celje; ŠK Slovan Bratislava; Willem II; SC Cambuur; ADO Den Haag; Académico de Viseu; CS Maritimo; Çorum FK; Basaksehir; Amed SK; Erzurum BB; Iraklis FC; Aris Thessaloniki; Kalamata FC
+  UNMATCHED OR THIN (214): AEK Athens; PFC Levski Sofia; Dinamo Zagreb; Bodø/Glimt; Hapoel Be'er Sheva; Sabah FK; NK Celje; ŠK Slovan Bratislava; Willem II; SC Cambuur; ADO Den Haag; Académico de Viseu; CS Maritimo; Çorum FK; Basaksehir; Amed SK; Erzurum BB; Iraklis FC; Aris Thessaloniki; Kalamata FC
   -- unmatched is a statement about the JOIN, not the team. Do not read absence as bad form.
+  persisted 516 teams with form into 'all' (329 of them board-joined)
 
-  303 matched / 240 not. wrote /home/runner/work/parlay/parlay/socform.json
+  329 matched / 214 not. wrote /home/runner/work/parlay/parlay/socform.json
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
-  mlblines: 59 pregame leg(s) snapshotted, 59 row(s) total (1 new)
+  mlblines: 38 pregame leg(s) snapshotted, 59 row(s) total (0 new)
 
 7/7 checks pass
 MLB: 9 games on 2026-08-13
-soccer_concacaf_leagues_cup: 12 matches
+soccer_concacaf_leagues_cup: 9 matches
 soccer_usa_mls: 44 matches
 wrote /home/runner/work/parlay/parlay/scores.json
   CLE@DET    through5=  1  current=  3  inning=9  FINAL
@@ -255,13 +255,14 @@ wrote /home/runner/work/parlay/parlay/scores.json
   PIT@MIA    through5=  2  current= 14  inning=9  FINAL
   SEA@NYY    through5=  1  current=  1  inning=9  FINAL
   BOS@TOR    through5=  1  current=  7  inning=9  FINAL
-  CHC@WSH    through5=  6  current=  6  inning=6  
-  PHI@MIN    through5=  -  current=  0  inning=1  
-  Atlético San Lui @ Orlando City SC  goals=4  FT
-  León             @ Inter Miami CF   goals=5  FT
-  Nashville SC     @ Monterrey        goals=3  FT
+  CHC@WSH    through5=  6  current=  7  inning=9  FINAL
+  PHI@MIN    through5=  -  current=  2  inning=2  
+  TEX@LAA    through5=  -  current=  0  inning=1  
+  MIL@LAD    through5=  -  current=  0  inning=1  
   FC Dallas        @ Toluca           goals=4  FT
   Puebla           @ San Diego FC     goals=5  FT
   Guadalajara      @ Seattle Sounders goals=3  FT
   Querétaro        @ Los Angeles FC   goals=2  FT
-run conclusion: success at 2026-08-13 21:37
+  Santos Laguna    @ Philadelphia Uni goals=0  live
+  Necaxa           @ New York City FC goals=0  live
+run conclusion: success at 2026-08-14 00:07
