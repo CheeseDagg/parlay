@@ -6,16 +6,13 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
-1. **Career-length correction for the blend** (follow-on of the confirmed
-   lag): the backtest says +5.7 on short-winning sides (n=733) and -4.8 on
-   long sides (n=597), out of sample. Design: derive the correction on a
-   train-internal split, verify on the untouched tail -- NEVER derive and
-   validate on the same rows. Until it ships, the stated rule stands: when
-   blend and market disagree 10+, trust market on long-career decliners,
-   and read the blend's coolness on short-career winners as lag, not signal.
-2. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
+1. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
+2. **Veteran-side blend correction** (16+ fights overrated ~6 pts out of
+   sample): the term REFUSED to derive on 2021-23 -- signal too weak. Needs
+   another season before retrying; until then the stated distrust rule
+   stands. Do not force a constant.
 4. **F5 rung x posted-line conditioning** (WAITING ON ITS OWN DATA): history
    is measured-absent -- srcprobe round 3 showed sportsbookreviewsonline is
    an affiliate shell now, every archive path serves the same marketing page,
@@ -25,6 +22,17 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- Board ships past a bad quote: 8/14 noon refresh FAILED entirely because one
+  degenerate 3-way derived a 99.88% DC @ -102284 -- nothing committed, board
+  froze at 11:20a on a night Ryan was betting, and the 4pm/6:30pm runs would
+  have died the same way. Degenerate groups are now quarantined and NAMED;
+  the other ~1,200 legs ship. 52/52.
+- Career-length blend correction: +0.25 logits for 3-8-fight sides on 70%+
+  last-5 wins, derived 2021-23 and verified on untouched 2023-26 -- the
+  short-winning flag cleared (+6.6 -> +1.8) and Brier improved 0.2322 ->
+  0.2306. The veteran term refused to derive; recorded, not guessed.
+- socform carries per-match SCORELINES: an average of 2.6 goals hides a 4-3.
+  Ryan 8/14: "recommend them because they are going to go under". 17/17.
 - fightprops.py: a posted method ladder de-vigs WHOLE (6-outcome power,
   rule 30) instead of leg-by-leg with the assumed 2% one-sided haircut --
   and the first ladder measured why that mattered: the haircut is

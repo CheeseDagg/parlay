@@ -360,6 +360,9 @@ def devig_n(sel, others):
                   method='power')[0]
 
 
+_DC_REFUSED = []
+
+
 def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
           drop_fam=(), drop_lab=(), nostack=False, horizon=None):
     """min_price is a POSITIVE magnitude: min_price=200 keeps only legs at -200
@@ -394,6 +397,7 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
     start column said 'Sat 11:00pm' and gave no date. Same defect family as the
     rest of this package: correct arithmetic about a question nobody asked. Pass
     a 'YYYY-MM-DD' or a full UTC stamp; legs starting after it are gone."""
+    _DC_REFUSED.clear()
     markets = {}
 
     def add(key, **kw):
@@ -567,6 +571,17 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
             # so the probability is left alone -- but the payout is not an
             # estimate, it is a quote we were beating by 8%, and a leg quoted at
             # a price the book will not honour is a lie on the ticket.
+            # QUARANTINE, DO NOT HALT. On 2026-08-14 the noon feed carried one
+            # degenerate 3-way (a side quoted so long the derived DC came to
+            # 99.88% @ -102284) and the whole board build FAILED its selftest
+            # over that single group -- nothing committed, the board froze at
+            # 11:20a with Ryan betting that night. A garbage quote in one match
+            # is a data-quality event, not a reason to lose the other 1,200
+            # legs. The leg is dropped and NAMED; the board still ships.
+            if not (0.50 < p_dc < 0.995):
+                _DC_REFUSED.append(f"{fav[0]} DC ({grp}): derived {p_dc*100:.2f}% "
+                                   f"-- outside (50, 99.5), the 3-way is degenerate")
+                continue
             d_dc = 1 + 0.80 * (1 / p_dc - 1)
             am = round(-100 / (d_dc - 1)) if d_dc < 2 else round(100 * (d_dc - 1))
             add(('O', grp), p=p_dc, d=d_dc, lab=f"{fav[0]} DC (derived)",
@@ -714,6 +729,11 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
         for _o in _v:
             if _o.get('fam') in ('SOC', 'SOCT'):
                 _o['lg'] = _lg.get(_o.get('grp'))
+    if _DC_REFUSED:
+        print(f"  board: {len(_DC_REFUSED)} soccer group(s) REFUSED as degenerate "
+              f"3-ways -- the board still shipped, these legs did not:")
+        for r in _DC_REFUSED[:6]:
+            print(f"         {r}")
     _cov_note(markets)
     return markets
 
@@ -943,6 +963,19 @@ def selftest():
 
     # ---- COVERAGE. Rule 14 as a printed condition rather than a remembered one.
     import io, contextlib, json as _j
+    # the 8/14 noon failure: ONE degenerate 3-way must not cost the board.
+    _DC_REFUSED.clear()
+    _before = len(_DC_REFUSED)
+    _p_bad = 0.9988
+    chk(not (0.50 < _p_bad < 0.995),
+        "a 99.88% derived DC is outside the sane band -- that exact value "
+        "(TPS Turku @ -102284, noon 8/14) failed the whole board build")
+    _m = build('FanDuel', min_price=0)
+    chk(all(0.50 < o['p'] < 0.995 for v in _m.values() for o in v
+            if 'DC (derived)' in o['lab']),
+        "every derived DC that SHIPS is inside the band -- degenerate groups "
+        "are quarantined and named, not allowed to halt the build")
+
     _cov = _j.load(open(__import__('os').path.join(
         __import__('os').path.dirname(__import__('os').path.abspath(__file__)),
         'coverage.json')))
