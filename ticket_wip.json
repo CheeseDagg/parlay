@@ -90,10 +90,10 @@
   "t": "2026-08-15T23:45Z"
  },
  {
-  "p": 0.823943661971831,
-  "d": 1.1538461538461537,
+  "p": 0.8329853862212943,
+  "d": 1.1428571428571428,
   "lab": "Esteban Ribovics ML",
-  "price": -650,
+  "price": -700,
   "grp": "MMA 08-15",
   "fam": "MMA",
   "sport": "FIGHT",
@@ -118,33 +118,36 @@
   "t": "2026-08-16T02:15Z"
  },
  {
-  "lab": "U6.5 goals Alverca-Estrela (est -4000)",
-  "price": -4000,
-  "p": 0.997,
-  "d": 1.025,
+  "lab": "U5.5 Alverca v CF Estrela",
+  "price": -8000,
+  "p": 0.956,
+  "d": 1.0125,
   "fam": "SOCT",
-  "grp": "SOC Alverca-Estrela",
+  "grp": "U5.5 Alverca v CF Estrela",
   "t": "2026-08-15T14:30Z",
+  "match": "Alverca v CF Estrela",
   "lg": "soccer_portugal_primeira_liga"
  },
  {
-  "lab": "U6.5 goals San Lorenzo-USF (est -4000)",
-  "price": -4000,
-  "p": 0.9936,
-  "d": 1.025,
+  "lab": "U5.5 San Lorenzo v Union Santa Fe",
+  "price": -5000,
+  "p": 0.971,
+  "d": 1.02,
   "fam": "SOCT",
-  "grp": "SOC SL-USF",
+  "grp": "U5.5 San Lorenzo v Union Santa Fe",
   "t": "2026-08-15T17:30Z",
+  "match": "San Lorenzo v Union Santa Fe",
   "lg": "soccer_portugal_primeira_liga"
  },
  {
-  "lab": "U6.5 goals FC Porto (est -4000)",
-  "price": -4000,
-  "p": 0.9936,
-  "d": 1.025,
+  "lab": "U5.5 FC Porto v Rio Ave",
+  "price": -3500,
+  "p": 0.956,
+  "d": 1.0285714285714285,
   "fam": "SOCT",
-  "grp": "SOC Porto",
+  "grp": "U5.5 FC Porto v Rio Ave",
   "t": "2026-08-15T19:30Z",
+  "match": "FC Porto v Rio Ave",
   "lg": "soccer_portugal_primeira_liga"
  }
 ]
