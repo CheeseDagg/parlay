@@ -1,0 +1,67 @@
+[
+ {
+  "lab": "Ashleyann Lozada",
+  "opp": "v Valenzuela Cuesta",
+  "price": -1150,
+  "dog": 550,
+  "t": "2026-08-16T01:15Z",
+  "src": "FanDuel board",
+  "conf": "confirmed",
+  "p": 0.9017885068136843,
+  "d": 1.0869565217391304,
+  "book": "DraftKings",
+  "fam": "BOX"
+ },
+ {
+  "lab": "Ernesto Mercado",
+  "opp": "v Emmanuel Tagoe",
+  "price": -3000,
+  "dog": 890,
+  "t": "2026-08-16T00:00Z",
+  "src": "FanDuel last quote before the 6:07p pull",
+  "conf": "UNVERIFIED on DK",
+  "p": 0.9562342983881312,
+  "d": 1.0333333333333334,
+  "book": "DraftKings",
+  "fam": "BOX"
+ },
+ {
+  "lab": "Casey Dixon",
+  "opp": "v Michael Nelson",
+  "price": -1600,
+  "dog": 750,
+  "t": "2026-08-15T21:00Z",
+  "src": "oddsdigger 3-way (1/16)",
+  "conf": "UNVERIFIED on DK",
+  "p": 0.9281284805314359,
+  "d": 1.0625,
+  "book": "DraftKings",
+  "fam": "BOX"
+ },
+ {
+  "lab": "Jaquan McElroy",
+  "opp": "v Alexander Thiel",
+  "price": -1600,
+  "dog": 700,
+  "t": "2026-08-15T21:00Z",
+  "src": "oddsdigger 3-way (1/16)",
+  "conf": "UNVERIFIED on DK",
+  "p": 0.9266590859588407,
+  "d": 1.0625,
+  "book": "DraftKings",
+  "fam": "BOX"
+ },
+ {
+  "lab": "Shannel Butler",
+  "opp": "v Marianela Ramirez",
+  "price": -2000,
+  "dog": 750,
+  "t": "2026-08-15T21:00Z",
+  "src": "oddsdigger 3-way (1/20)",
+  "conf": "UNVERIFIED on DK",
+  "p": 0.9384261924414742,
+  "d": 1.05,
+  "book": "DraftKings",
+  "fam": "BOX"
+ }
+]
