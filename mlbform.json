@@ -79,10 +79,10 @@
   },
   "CWS@DET": {
    "away_sp": {
-    "name": null,
+    "name": "Sean Newcomb",
     "hr9_5": null,
-    "r_start": null,
-    "note": "NO PROBABLE LISTED"
+    "r_start": 0.0,
+    "starts": 1
    },
    "home_sp": {
     "name": "Jackson Jobe",
@@ -260,10 +260,10 @@
     "starts": 5
    },
    "home_sp": {
-    "name": null,
-    "hr9_5": null,
-    "r_start": null,
-    "note": "NO PROBABLE LISTED"
+    "name": "Grayson Rodriguez",
+    "hr9_5": 1.88,
+    "r_start": 3.8,
+    "starts": 5
    },
    "away_form": {
     "n": 10,
@@ -272,10 +272,10 @@
    },
    "home_form": {
     "n": 10,
-    "f5_for": 1.3,
+    "f5_for": 1.7,
     "f5_ag": 2.8
    },
-   "f5_env": 4.3
+   "f5_env": 4.5
   },
   "TEX@ATH": {
    "away_sp": {
@@ -292,15 +292,15 @@
    },
    "away_form": {
     "n": 10,
-    "f5_for": 1.8,
-    "f5_ag": 2.0
+    "f5_for": 1.6,
+    "f5_ag": 2.3
    },
    "home_form": {
     "n": 10,
     "f5_for": 2.0,
     "f5_ag": 4.4
    },
-   "f5_env": 5.1
+   "f5_env": 5.15
   },
   "MIL@LAD": {
    "away_sp": {
@@ -317,15 +317,15 @@
    },
    "away_form": {
     "n": 10,
-    "f5_for": 2.9,
-    "f5_ag": 2.8
+    "f5_for": 3.0,
+    "f5_ag": 2.5
    },
    "home_form": {
     "n": 10,
-    "f5_for": 1.7,
-    "f5_ag": 3.1
+    "f5_for": 1.5,
+    "f5_ag": 2.8
    },
-   "f5_env": 5.25
+   "f5_env": 4.9
   },
   "COL@SF": {
    "away_sp": {
