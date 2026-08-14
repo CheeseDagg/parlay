@@ -118,7 +118,8 @@ def read_bout(bt, greco, hist):
             'fd1': bt['fd1'], 'f1': bt['f1'],
             'age_line': age_line(fv['name'], dg['name'], bt.get('ages') or {}),
             'ridx': bt.get('ridx') or {},
-            'chin': bt.get('chin') or {}, 'chinlad': bt.get('chinlad')}
+            'chin': bt.get('chin') or {}, 'chinlad': bt.get('chinlad'),
+            'strk': bt.get('strk') or {}, 'strklad': bt.get('strklad')}
 
 
 AGE_OLD = 38          # where "veteran" starts costing, per the blend's age block
@@ -274,6 +275,78 @@ def chin_line(name, tbl, lad):
     return out
 
 
+def strike_idx():
+    """Career striking/takedown rates, plus what defhist measured about them."""
+    try:
+        import defhist
+        return defhist.career_rates(), json.load(
+            open(os.path.join(HERE, 'defhist.json')))
+    except Exception:
+        return {}, None
+
+
+def strike_points(a_name, b_name, tbl, lad):
+    """What the shipped rates are WORTH, in probability points, for this
+    matchup. Never an override -- rule 23 clamps any read to five points,
+    and this is one input among the market's sixteen books."""
+    x, y = tbl.get(a_name), tbl.get(b_name)
+    if not x or not y or not lad:
+        return None
+    try:
+        import defhist
+    except Exception:
+        return None
+    m = lad.get('shipped_model')
+    d = {}
+    for k in (m or {}).get('keys', []):
+        if k == 'winpct':
+            continue
+        if x.get(k) is None or y.get(k) is None:
+            return None
+        d[k] = x[k] - y[k]
+    return defhist.points(m, d)
+
+
+def strike_line(a_name, b_name, tbl, lad=None):
+    """The two rates that EARNED a place, as a matchup differential.
+
+    defhist tested four on 3,897 bouts with prior career on both sides,
+    against prior win rate, on an untouched 2019+ tail:
+
+      strikes ABSORBED per minute  ADDS (p=0.048, 57.2 -> 58.6% accuracy)
+      striking ACCURACY            ADDS (p=0.048, 58.0 -> 58.5%)
+      takedown defence %           did NOT clear the bar (p=0.095) -- its
+                                   ladder is clean and monotone, one of 20
+                                   shuffles beat it, so it is printed and
+                                   NOT priced off
+      striking defence %           REFUSED outright: the gain is NEGATIVE
+                                   out of sample and the ladder is not
+                                   monotone (42/47/54/47/54). This is the
+                                   rate every preview quotes, so it is
+                                   named here as measured-useless rather
+                                   than quietly dropped.
+
+    Absorbed-per-minute and defence% are the same fight seen two ways, and
+    only the volume one works: slipping half of a barrage still means the
+    other half landed."""
+    x, y = tbl.get(a_name), tbl.get(b_name)
+    if not x or not y:
+        return None
+    out = (f"absorbed/min {x['absorb']:.1f} vs {y['absorb']:.1f} "
+           f"({x['absorb'] - y['absorb']:+.1f})")
+    if x.get('stracc') is not None and y.get('stracc') is not None:
+        out += (f" | accuracy {x['stracc'] * 100:.0f}% vs {y['stracc'] * 100:.0f}%"
+                f" ({(x['stracc'] - y['stracc']) * 100:+.0f})")
+    if x.get('tddef') is not None and y.get('tddef') is not None:
+        out += (f" | TD-def {x['tddef'] * 100:.0f}% vs {y['tddef'] * 100:.0f}%"
+                f" (not priced, p=0.095)")
+    pts = strike_points(a_name, b_name, tbl, lad)
+    if pts is not None:
+        out += (f"\n    -> worth {pts:+.1f} pts to {a_name.split()[-1]} "
+                f"vs an even matchup (clamp 5, rule 23)")
+    return out
+
+
 def durability(prof, name):
     lb = prof['lose_by'] if prof else None
     if not prof:
@@ -303,6 +376,10 @@ def print_read(r):
     al = r.get('age_line')
     if al:
         print(f"  {al}")
+    _st = strike_line(r['fav']['name'], r['dog']['name'], r.get('strk') or {},
+                      r.get('strklad'))
+    if _st:
+        print(f"  {_st}")
     for _s in (r['fav'], r['dog']):
         _sk = skill_line(_s['name'], r.get('ridx') or {})
         if _sk:
@@ -328,11 +405,14 @@ def main():
     bouts = load_card()
     _ages, _ridx = ages('2026-08-15'), ratings_idx()
     _chin, _chinlad = chin_idx()
+    _strk, _strklad = strike_idx()
     for _b in bouts:
         _b['ages'] = _ages
         _b['ridx'] = _ridx
         _b['chin'] = _chin
         _b['chinlad'] = _chinlad
+        _b['strk'] = _strk
+        _b['strklad'] = _strklad
     print(f"{len(bouts)} bouts on the pin; consensus of 16 books; method = "
           f"winner's win-by x loser's lose-by, shrunk to measured bases "
           f"(ufchist n=5599). NOT certainties -- the mix is the claim.")
@@ -499,6 +579,64 @@ def selftest():
         and _chin_bin(0.0, _lad)['bin'] == '<0.01'
         and _chin_bin(99.0, _lad)['bin'] == '>=1',
         "bin lookup lands on the right rung at both ends and in the middle")
+
+    # ---- STRIKING. defhist refused the rate everybody quotes and shipped
+    # two nobody does, so the line must carry the refusal in words.
+    _sk = {'Volume Guy': {'absorb': 5.2, 'output': 6.0, 'stracc': 0.38,
+                          'strdef': 0.62, 'tddef': 0.70, 'n': 12, 'mins': 150.0},
+           'Ghost': {'absorb': 2.1, 'output': 4.0, 'stracc': 0.52,
+                     'strdef': 0.62, 'tddef': 0.40, 'n': 12, 'mins': 150.0}}
+    _mod = {'shipped_model': {'keys': ['winpct', 'stracc', 'absorb'],
+                              'intercept': 0.0,
+                              'coef': {'d_winpct': 0.216, 'd_stracc': 0.035,
+                                       'd_absorb': -0.146},
+                              'mean': {'d_winpct': 0.0, 'd_stracc': 0.0,
+                                       'd_absorb': 0.0},
+                              'sd': {'d_winpct': 0.3, 'd_stracc': 0.1064,
+                                     'd_absorb': 1.281}}}
+    _l = strike_line('Volume Guy', 'Ghost', _sk)
+    chk(_l and 'absorbed/min 5.2 vs 2.1' in _l and '+3.1' in _l,
+        f"the feature that measured STRONGEST prints first, with its "
+        f"differential ({_l})")
+    chk('accuracy 38% vs 52% (-14)' in _l,
+        "and striking accuracy, the other one that cleared the bar")
+    chk('TD-def 70% vs 40% (not priced, p=0.095)' in _l,
+        "takedown defence prints WITH the reason it is not priced -- a clean "
+        "monotone ladder that one of 20 shuffles still beat")
+    chk('62%' not in _l,
+        "striking DEFENCE %, identical for both men here, is not printed at "
+        "all: measured gain NEGATIVE out of sample, ladder non-monotone")
+    chk(strike_line('Volume Guy', 'Nobody', _sk) is None,
+        "one missing corner prints nothing -- a differential needs both sides")
+
+    # ---- THE EXCHANGE RATE. A differential is not a finding until it has
+    # a size, and the two shipped rates have wildly different ones.
+    _p = strike_points('Volume Guy', 'Ghost', _sk, _mod)
+    chk(_p is not None and _p < -6,
+        f"absorbing 3.1 more per minute costs real points, not a shrug ({_p:+.1f})")
+    _p2 = strike_points('Ghost', 'Volume Guy', _sk, _mod)
+    chk(abs(_p + _p2) < 1e-9,
+        "and the read is ANTISYMMETRIC -- flipping the corners flips the sign "
+        "exactly, which a differential model owes you")
+    _sk2 = {'A': dict(_sk['Ghost'], stracc=0.60), 'B': dict(_sk['Ghost'])}
+    _pa = strike_points('A', 'B', _sk2, _mod)
+    chk(_pa is not None and abs(_pa) < 1.0,
+        f"8 points of striking accuracy is worth under a point of win "
+        f"probability -- significant is not the same as big ({_pa:+.2f})")
+    chk(strike_points('Volume Guy', 'Ghost', _sk, None) is None,
+        "with no measured model the points are None, never a zero -- "
+        "'unmeasured' and 'no effect' are different answers")
+    _ln = strike_line('Volume Guy', 'Ghost', _sk, _mod)
+    chk('worth' in _ln and 'clamp 5' in _ln,
+        "and the printed line carries the size AND the rule-23 clamp")
+    _thin = {'A': {'absorb': 3.0, 'output': 3.0, 'stracc': None, 'strdef': None,
+                   'tddef': None, 'n': 4, 'mins': 40.0},
+             'B': {'absorb': 4.0, 'output': 3.0, 'stracc': None, 'strdef': None,
+                   'tddef': None, 'n': 4, 'mins': 40.0}}
+    _l2 = strike_line('A', 'B', _thin)
+    chk(_l2 and 'absorbed/min' in _l2 and 'accuracy' not in _l2,
+        f"under the attempt floor the rate is ABSENT, never a number nobody "
+        f"measured ({_l2})")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1

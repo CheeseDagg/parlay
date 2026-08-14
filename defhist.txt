@@ -1,0 +1,35 @@
+defhist: 17372 corner-rows -> 3897 bouts with prior career on BOTH sides (4789 dropped)
+  coverage after the attempt floors (sig>=150, td>=5 faced, both corners):
+    d_winpct   3897 bouts  (100%)
+    d_strdef   3348 bouts  (86%)
+    d_stracc   3480 bouts  (89%)
+    d_tddef    3167 bouts  (81%)
+    d_tdacc    2828 bouts  (73%)
+    d_absorb   3888 bouts  (100%)
+
+  WIN RATE BY DIFFERENTIAL (positive = our side is better)
+    d_strdef
+            <-0.06  n=  912  won   386   42.3%  [39.2, 45.6]
+      -0.06..-0.02  n=  552  won   262   47.5%  [43.3, 51.6]
+       -0.02..0.02  n=  587  won   318   54.2%  [50.1, 58.2]
+        0.02..0.06  n=  520  won   246   47.3%  [43.1, 51.6]
+            >=0.06  n=  777  won   421   54.2%  [50.7, 57.7]
+    d_tddef
+             <-0.3  n=  296  won   133   44.9%  [39.4, 50.6]
+        -0.3..-0.1  n=  714  won   318   44.5%  [40.9, 48.2]
+         -0.1..0.1  n= 1050  won   500   47.6%  [44.6, 50.6]
+          0.1..0.3  n=  773  won   407   52.7%  [49.1, 56.2]
+             >=0.3  n=  334  won   193   57.8%  [52.4, 63.0]
+
+  OUT OF SAMPLE -- can each rate add to prior win rate?
+    d_winpct alone: log loss 0.67786 vs base 0.69350, 57.2% on 2002 untouched bouts
+    +d_strdef  n= 3348  0.67873 -> 0.68029  gain -0.00156  (best null +0.00053, p=1.000)  acc 57.8 -> 56.9%  no
+    +d_tddef   n= 3167  0.67697 -> 0.67573  gain +0.00124  (best null +0.00142, p=0.095)  acc 57.0 -> 57.6%  no
+    +d_stracc  n= 3480  0.67737 -> 0.67449  gain +0.00289  (best null +0.00028, p=0.048)  acc 58.0 -> 58.5%  ADDS
+    +d_absorb  n= 3888  0.67780 -> 0.67281  gain +0.00498  (best null +0.00080, p=0.048)  acc 57.2 -> 58.6%  ADDS
+
+  VERDICT: d_stracc, d_absorb earn a place beside prior win rate -- each beat every one of 20 shuffles of itself on the untouched tail.
+    d_stracc: coefficient +0.057, accuracy 58.0 -> 58.5%
+    d_absorb: coefficient -0.175, accuracy 57.2 -> 58.6%
+  REFUSED and recorded so it is not re-proposed: d_strdef, d_tddef
+  wrote defhist.json

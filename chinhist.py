@@ -195,7 +195,7 @@ def evaluate(rows, split=SPLIT, verbose=True):
     return res
 
 
-def _logistic2(rows, keys, iters=600, lr=0.5):
+def logistic2(rows, keys, iters=600, lr=0.5, symmetric=False):
     """Same fit, two features. This exists because the single-feature
     comparison answers the wrong question: 'which proxy is better' is not
     'does the second one ADD anything'. A fighter dropped six times and
@@ -206,7 +206,14 @@ def _logistic2(rows, keys, iters=600, lr=0.5):
     for k in keys:
         mu = sum(r[k] for r in rows) / n
         sd = (sum((r[k] - mu) ** 2 for r in rows) / n) ** 0.5 or 1.0
-        st[k] = (mu, sd)
+        # A DIFFERENTIAL design is symmetric by construction: the same bout
+        # written from the other corner is -d, so the population mean of
+        # every feature IS zero and the intercept IS zero. Fitting them
+        # anyway lets sampling noise in the arbitrary orientation (here,
+        # alphabetical) buy the first-named corner a standing edge -- which
+        # showed up as p(A beats B) + p(B beats A) != 1. Pinning both to
+        # zero enforces the symmetry the design already has.
+        st[k] = (0.0 if symmetric else mu, sd)
     a, b = 0.0, {k: 0.0 for k in keys}
     for _ in range(iters):
         ga, gb = 0.0, {k: 0.0 for k in keys}
@@ -218,13 +225,14 @@ def _logistic2(rows, keys, iters=600, lr=0.5):
             ga += d
             for k in keys:
                 gb[k] += d * z[k]
-        a += lr * ga / n
+        if not symmetric:
+            a += lr * ga / n
         for k in keys:
             b[k] += lr * gb[k] / n
     return a, b, st, keys
 
 
-def _apply2(m, r):
+def apply2(m, r):
     a, b, st, keys = m
     lin = a + sum(b[k] * (r[k] - st[k][0]) / st[k][1] for k in keys)
     return 1.0 / (1.0 + math.exp(-max(-30, min(30, lin))))
@@ -237,15 +245,15 @@ def joint(rows, split=SPLIT):
     if len(tr) < 200 or len(te) < 200:
         return None
     ys = [r['y'] for r in te]
-    solo = _logistic2(tr, ['kolost'])
-    both = _logistic2(tr, ['kolost', 'kdabs'])
-    return {'solo': logloss([_apply2(solo, r) for r in te], ys),
-            'both': logloss([_apply2(both, r) for r in te], ys),
+    solo = logistic2(tr, ['kolost'])
+    both = logistic2(tr, ['kolost', 'kdabs'])
+    return {'solo': logloss([apply2(solo, r) for r in te], ys),
+            'both': logloss([apply2(both, r) for r in te], ys),
             'b_kolost': both[1]['kolost'], 'b_kdabs': both[1]['kdabs'],
             'n_test': len(te)}
 
 
-def _permute(rows, seed=7, keys=('kdabs',)):
+def permute(rows, seed=7, keys=('kdabs',)):
     """Deterministic shuffle of the FEATURE only, outcomes left where they
     are. For the joint test only kdabs moves -- permuting both would test
     a different claim (does anything predict) than the one being made
@@ -263,6 +271,8 @@ def _permute(rows, seed=7, keys=('kdabs',)):
     return sh
 
 
+_logistic2, _apply2, _permute = logistic2, apply2, permute
+
 PERMS = 20   # p resolves to 1/(PERMS+1) = 0.048; more costs time, not truth
 
 
@@ -279,7 +289,7 @@ def perm_test(rows, real, perms=PERMS, split=SPLIT):
     real_gain = real['solo'] - real['both']
     gains = []
     for s in range(perms):
-        j = joint(_permute(rows, seed=101 + 7 * s), split=split)
+        j = joint(permute(rows, seed=101 + 7 * s), split=split)
         if j:
             gains.append(j['solo'] - j['both'])
     if not gains:
@@ -292,7 +302,7 @@ def null_control(rows, seed=7, split=SPLIT):
     """The f5hist guard. Permute the feature across rows, keeping the
     outcome where it is, and re-run the identical pipeline. A real
     finding survives; a pipeline artefact shows up here too."""
-    return evaluate(_permute(rows, seed, ('kdabs', 'kolost')), split,
+    return evaluate(permute(rows, seed, ('kdabs', 'kolost')), split,
                     verbose=False)
 
 
@@ -519,7 +529,7 @@ def selftest():
     good2, p2, _ = perm_test(sig, fake, perms=6, split='2014-01-01')
     chk(not good2 and p2 > 0.2,
         f"a gain of ~zero is NOT significant -- the test can say no (p={p2:.3f})")
-    chk(_permute([{'kdabs': 1.0, 'kolost': 9.0, 'y': 1}], keys=('kdabs',))[0]['kolost'] == 9.0,
+    chk(permute([{'kdabs': 1.0, 'kolost': 9.0, 'y': 1}], keys=('kdabs',))[0]['kolost'] == 9.0,
         "the joint permutation moves kd_abs ONLY -- kolost must stay put or "
         "the shuffle tests a different claim than the one being made")
 

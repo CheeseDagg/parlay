@@ -7,10 +7,9 @@ with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
 1. **Finish the 8/14 field audit** (fields carried, read by NO report):
-   fighter_bouts.csv's kd/kd_abs are now SHIPPED (chinhist + cardread);
-   STILL unused there: sig_l/sig_a both sides, td_l/td_a, ctrl -- a
-   striking-defence and takedown-defence rate is the same shape of work
-   the chin just proved is worth doing. ufc_ratings still hides
+   fighter_bouts.csv's kd/kd_abs (chinhist) and sig_l/sig_a, td_l/td_a
+   (defhist) are now SHIPPED. STILL unused there: ctrl (control seconds)
+   and the sub column. ufc_ratings still hides
    finish_rounds, finishes, best_wins, physical, style8, archetype,
    legkick, strike_location/position, model_score, vs_avg_pct,
    overall_pct, ranked/recent ratings. MLB slate raw_total is unused
@@ -33,6 +32,18 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- Striking rates, measured: on 3,897 bouts with prior career on both sides,
+  against prior win rate, on an untouched 2019+ tail -- strikes ABSORBED
+  per minute ADDS (p=0.048, accuracy 57.2 -> 58.6%) and striking ACCURACY
+  ADDS (p=0.048) but is worth under a point of win probability, so it is
+  printed and never leaned on. The rate every preview quotes -- striking
+  DEFENCE % -- was REFUSED: negative gain out of sample, ladder not even
+  monotone (42/47/54/47/54). Takedown defence has a clean monotone ladder
+  (44.9 -> 57.8%) and still missed the bar at p=0.095; printed, not priced,
+  and recorded as refused so it is not re-proposed. Fixing the antisymmetry
+  the selftest caught (the fit was buying the alphabetically-first corner a
+  standing edge) was the difference between a matchup model and an artefact.
+  12/12 + 37/37.
 - Chin, measured instead of assumed: the 8/14 audit called kd_abs "a better
   chin proxy" than counting finishes in losses. It is NOT. Out of sample on
   5,170 untouched bouts it LOSES to the naive proxy solo (0.43403 vs
