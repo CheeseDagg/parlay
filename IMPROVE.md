@@ -25,6 +25,14 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- fightprops.py: a posted method ladder de-vigs WHOLE (6-outcome power,
+  rule 30) instead of leg-by-leg with the assumed 2% one-sided haircut --
+  and the first ladder measured why that mattered: the haircut is
+  price-dependent, ~11% on the favourite outcome to ~73% on a +3000.
+  A flat 2% was structurally wrong, and so would be a mean; lone quotes
+  now price off the haircut at their price level. Also prints each
+  fighter's method-market win% beside the pin's moneyline consensus, so
+  a repriced ladder shows its drift instead of absorbing it. 10/10.
 - cflhist: 321 of ~324 games 2022-25 from per-team Wikipedia pages, every
   game cross-checked against BOTH teams' tables (one real page disagreement
   caught and excluded). CFL was the only carried sport with zero grounding.

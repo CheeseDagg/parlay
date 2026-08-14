@@ -26,10 +26,15 @@ def dec(am):
     return 1 + (am / 100.0 if am > 0 else 100.0 / -am)
 
 def from_quote(am, overround=0.02):
-    """A single-sided method quote -> probability. The 2% haircut is the
-    typical one-sided share of a method market's overround; without the
-    opposing prices there is nothing better to anchor to, and pretending the
-    raw implied is clean flatters every leg."""
+    """A single-sided method quote -> probability. The 2% haircut is an
+    ASSUMPTION and fightprops.py showed it is structurally wrong: on a full
+    six-outcome ladder the one-sided haircut is PRICE-DEPENDENT under the
+    measured power de-vig -- ~11% on the favourite outcome rising past 70%
+    on a +3000. Whenever the app shows the whole ladder, use fightprops.py
+    and this function does not run; a lone quote with no ladder should pass
+    the haircut measured at its price level from the most recent full
+    ladder via the overround argument. The 2% default remains only as the
+    least-wrong floor when nothing measured exists yet."""
     return (1.0 / dec(am)) / (1 + overround)
 
 def clamp(market_p, my_p, cap=0.05):
