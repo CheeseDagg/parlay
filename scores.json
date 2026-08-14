@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-14T18:07Z",
+ "as_of": "2026-08-14T18:34Z",
  "date": "2026-08-14",
  "mlb": [
   {
@@ -8,7 +8,7 @@
    "key": "STL@CHC",
    "through5": null,
    "current": 0,
-   "inning": 1,
+   "inning": 2,
    "final": false
   },
   {

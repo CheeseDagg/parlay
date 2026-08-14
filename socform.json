@@ -3857,6 +3857,40 @@
    "newest": "2026-05-22",
    "matched": "exact"
   },
+  "Bayern Munich": {
+   "form": "WWDWWW",
+   "n": 6,
+   "ppg": 2.67,
+   "gf": 3.67,
+   "ga": 1.5,
+   "totals": [
+    6,
+    1,
+    6,
+    7,
+    6,
+    5
+   ],
+   "newest": "2026-05-16",
+   "matched": "exact"
+  },
+  "VfB Stuttgart": {
+   "form": "DWDDLW",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.5,
+   "ga": 1.83,
+   "totals": [
+    4,
+    4,
+    6,
+    2,
+    6,
+    4
+   ],
+   "newest": "2026-05-16",
+   "matched": "via Stuttgart"
+  },
   "Marseille": {
    "form": "WWLDLW",
    "n": 6,
