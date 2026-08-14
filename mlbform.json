@@ -30,14 +30,14 @@
   "MIA@CIN": {
    "away_sp": {
     "name": "Sandy Alcantara",
-    "hr9_5": 1.09,
+    "hr9_5": 0.83,
     "r_start": 1.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Chase Burns",
-    "hr9_5": 0.34,
-    "r_start": 2.8,
+    "hr9_5": 0.33,
+    "r_start": 2.2,
     "starts": 5
    },
    "away_form": {
@@ -55,14 +55,14 @@
   "BOS@PIT": {
    "away_sp": {
     "name": "Jake Bennett",
-    "hr9_5": 0.62,
-    "r_start": 2.6,
+    "hr9_5": 1.01,
+    "r_start": 3.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Bubba Chandler",
     "hr9_5": 0.0,
-    "r_start": 2.0,
+    "r_start": 1.6,
     "starts": 5
    },
    "away_form": {
@@ -82,13 +82,13 @@
     "name": "Sean Newcomb",
     "hr9_5": null,
     "r_start": 0.0,
-    "starts": 1
+    "starts": 2
    },
    "home_sp": {
     "name": "Jackson Jobe",
-    "hr9_5": null,
-    "r_start": 0.0,
-    "starts": 1
+    "hr9_5": 2.08,
+    "r_start": 2.0,
+    "starts": 2
    },
    "away_form": {
     "n": 10,
@@ -106,14 +106,14 @@
    "away_sp": {
     "name": "Andrew Alvarez",
     "hr9_5": 0.0,
-    "r_start": 2.6,
+    "r_start": 2.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Robert Stock",
-    "hr9_5": 1.12,
-    "r_start": 4.5,
-    "starts": 2
+    "hr9_5": 0.87,
+    "r_start": 3.0,
+    "starts": 3
    },
    "away_form": {
     "n": 10,
@@ -130,14 +130,14 @@
   "SD@CLE": {
    "away_sp": {
     "name": "Michael King",
-    "hr9_5": 1.61,
+    "hr9_5": 1.82,
     "r_start": 2.0,
     "starts": 5
    },
    "home_sp": {
     "name": "Gavin Williams",
-    "hr9_5": 1.44,
-    "r_start": 1.8,
+    "hr9_5": 0.66,
+    "r_start": 0.8,
     "starts": 5
    },
    "away_form": {
@@ -155,14 +155,14 @@
   "BAL@TB": {
    "away_sp": {
     "name": "Chris Bassitt",
-    "hr9_5": 1.09,
-    "r_start": 2.6,
+    "hr9_5": 1.42,
+    "r_start": 2.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Steven Matz",
-    "hr9_5": 1.66,
-    "r_start": 3.0,
+    "hr9_5": 1.72,
+    "r_start": 2.6,
     "starts": 5
    },
    "away_form": {
@@ -181,13 +181,13 @@
    "away_sp": {
     "name": "Brandon Pfaadt",
     "hr9_5": 0.0,
-    "r_start": 1.0,
+    "r_start": 0.6,
     "starts": 5
    },
    "home_sp": {
     "name": "Chris Sale",
     "hr9_5": 0.0,
-    "r_start": 1.2,
+    "r_start": 1.4,
     "starts": 5
    },
    "away_form": {
@@ -205,13 +205,13 @@
   "NYY@TOR": {
    "away_sp": {
     "name": "Gerrit Cole",
-    "hr9_5": 0.85,
-    "r_start": 1.6,
+    "hr9_5": 0.67,
+    "r_start": 1.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Shane Bieber",
-    "hr9_5": 0.72,
+    "hr9_5": 0.86,
     "r_start": 2.2,
     "starts": 5
    },
@@ -285,10 +285,10 @@
     "starts": 5
    },
    "home_sp": {
-    "name": null,
-    "hr9_5": null,
-    "r_start": null,
-    "note": "NO PROBABLE LISTED"
+    "name": "Gage Jump",
+    "hr9_5": 1.12,
+    "r_start": 3.6,
+    "starts": 5
    },
    "away_form": {
     "n": 10,

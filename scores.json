@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-14T21:18Z",
+ "as_of": "2026-08-14T23:46Z",
  "date": "2026-08-14",
  "mlb": [
   {
@@ -15,9 +15,9 @@
    "away": "MIA",
    "home": "CIN",
    "key": "MIA@CIN",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
+   "through5": 0,
+   "current": 1,
+   "inning": 6,
    "final": false
   },
   {
@@ -25,8 +25,8 @@
    "home": "PIT",
    "key": "BOS@PIT",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 4,
+   "inning": 4,
    "final": false
   },
   {
@@ -34,8 +34,8 @@
    "home": "DET",
    "key": "CWS@DET",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 7,
+   "inning": 4,
    "final": false
   },
   {
@@ -43,8 +43,8 @@
    "home": "NYM",
    "key": "WSH@NYM",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 1,
+   "inning": 3,
    "final": false
   },
   {
@@ -52,8 +52,8 @@
    "home": "CLE",
    "key": "SD@CLE",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 1,
+   "inning": 3,
    "final": false
   },
   {
@@ -61,8 +61,8 @@
    "home": "TB",
    "key": "BAL@TB",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 1,
+   "inning": 2,
    "final": false
   },
   {
@@ -70,8 +70,8 @@
    "home": "ATL",
    "key": "AZ@ATL",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 1,
+   "inning": 2,
    "final": false
   },
   {
@@ -80,7 +80,7 @@
    "key": "NYY@TOR",
    "through5": null,
    "current": 0,
-   "inning": 1,
+   "inning": 2,
    "final": false
   },
   {
@@ -97,8 +97,8 @@
    "home": "LAA",
    "key": "KC@LAA",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -106,8 +106,8 @@
    "home": "ATH",
    "key": "TEX@ATH",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -115,8 +115,8 @@
    "home": "LAD",
    "key": "MIL@LAD",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -124,32 +124,12 @@
    "home": "SF",
    "key": "COL@SF",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   }
  ],
  "soccer": [
-  {
-   "home": "Philadelphia Union",
-   "away": "Santos Laguna",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "Philadelphia Union": 0,
-    "Santos Laguna": 2
-   }
-  },
-  {
-   "home": "New York City FC",
-   "away": "Necaxa",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "New York City FC": 1,
-    "Necaxa": 2
-   }
-  },
   {
    "home": "Am\u00e9rica",
    "away": "Austin FC",
