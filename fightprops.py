@@ -153,8 +153,86 @@ def report(quotes):
     return lines
 
 
+LOG = os.path.join(HERE, 'methodlog.csv')
+LOG_FIELDS = ['date', 'f1', 'f2', 'who', 'm', 'am', 'p', 'result']
+MIN_VERDICT = 30
+
+
+def log_ladder(fm, when, path=LOG):
+    """Persist a FULL ladder's de-vigged outcomes, idempotent per
+    (date, bout, outcome). Partial markets are never logged -- a ledger of
+    assumed numbers would calibrate the assumption, not the market."""
+    import csv as _csv
+    rows = list(_csv.DictReader(open(path))) if os.path.exists(path) else []
+    key = {(r['date'], r['f1'], r['f2'], r['who'], r['m']) for r in rows}
+    n = 0
+    f1, f2 = fm['names']
+    with open(path, 'a', newline='') as fh:
+        w = _csv.DictWriter(fh, LOG_FIELDS)
+        if not rows:
+            w.writeheader()
+        for q in fm['outs']:
+            k = (when, f1, f2, q['who'], q['m'])
+            if k in key:
+                continue
+            w.writerow({'date': when, 'f1': f1, 'f2': f2, 'who': q['who'],
+                        'm': q['m'], 'am': q['am'], 'p': round(q['p'], 4),
+                        'result': 'open'})
+            n += 1
+    return n
+
+
+def settle(path=LOG, greco=None):
+    """Grade open rows from Greco results: the fight's winner and method are
+    public within a day of the card. -> (n_settled, calibration_lines)."""
+    import csv as _csv
+    import ufcform
+    if not os.path.exists(path):
+        return 0, ['no methodlog.csv yet']
+    rows = list(_csv.DictReader(open(path)))
+    if greco is None and any(r['result'] == 'open' for r in rows):
+        ev = ufcform.parse_events(ufcform.get(f"{ufcform.RAW}/ufc_event_details.csv"))
+        greco = ufcform.parse_bouts(ufcform.get(f"{ufcform.RAW}/ufc_fight_results.csv"), ev)
+    n = 0
+    for r in rows:
+        if r['result'] != 'open':
+            continue
+        for bt in greco or []:
+            names = {ufcform.norm(bt['a']), ufcform.norm(bt['b'])}
+            if {ufcform.norm(r['f1']), ufcform.norm(r['f2'])} != names:
+                continue
+            winner = bt['a'] if bt['winner'] == 'a' else bt['b']
+            hit = (ufcform.norm(winner) == ufcform.norm(r['who'])
+                   and bt['method'] == r['m'])
+            r['result'] = 'won' if hit else 'lost'
+            n += 1
+            break
+    with open(path, 'w', newline='') as fh:
+        w = _csv.DictWriter(fh, LOG_FIELDS)
+        w.writeheader(); w.writerows(rows)
+    done = [r for r in rows if r['result'] in ('won', 'lost')]
+    lines = [f"{len(done)} settled, {sum(1 for r in rows if r['result'] == 'open')} open"]
+    if len(done) < MIN_VERDICT:
+        lines.append(f"NOT A VERDICT YET -- {MIN_VERDICT - len(done)} more settled "
+                     "outcomes before the method market's calibration gets read")
+    else:
+        pred = sum(float(r['p']) for r in done) / len(done)
+        act = sum(1 for r in done if r['result'] == 'won') / len(done)
+        lines.append(f"method market calibration: predicted {pred*100:.1f}% "
+                     f"actual {act*100:.1f}% over n={len(done)}")
+    return n, lines
+
+
 def main():
-    src = sys.argv[1] if len(sys.argv) > 1 else None
+    import datetime
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    if '--settle' in sys.argv:
+        n, lines = settle()
+        print(f"  settled {n} outcome(s)")
+        for l in lines:
+            print(f"  {l}")
+        return 0
+    src = args[0] if args else None
     text = open(src).read() if src and src != '-' else sys.stdin.read()
     quotes, why = parse(text)
     if quotes is None:
@@ -162,6 +240,13 @@ def main():
         return 1
     for ln in report(quotes):
         print(ln)
+    fm = full_market(quotes)
+    if fm and '--log' in sys.argv:
+        n = log_ladder(fm, datetime.date.today().isoformat())
+        print(f"  logged {n} outcome(s) -> methodlog.csv (settles itself "
+              f"from Greco results after the card)")
+    elif fm is None and '--log' in sys.argv:
+        print("  NOT logged: only full ladders enter the ledger")
     return 0
 
 
@@ -208,6 +293,26 @@ def selftest():
     chk(any('method-market win' in l for l in rep6),
         "each fighter's summed method win%% prints, for the moneyline "
         "drift check when the pin knows the bout")
+    import tempfile, csv as _csv, ufcform
+    tmp = os.path.join(tempfile.mkdtemp(), 'methodlog.csv')
+    fm = full_market(q)
+    n1 = log_ladder(fm, '2026-08-15', tmp)
+    n2 = log_ladder(fm, '2026-08-15', tmp)
+    chk(n1 == 6 and n2 == 0,
+        "a ladder logs all six outcomes once -- re-running logs nothing")
+    greco = ufcform.parse_bouts(
+        "EVENT,BOUT,OUTCOME,WEIGHTCLASS,METHOD\n"
+        "E1,Makhachev vs. Garry,W/L,Welterweight,Submission\n", {'E1': 2026})
+    ns, lines = settle(tmp, greco)
+    rows = list(_csv.DictReader(open(tmp)))
+    won = [r for r in rows if r['result'] == 'won']
+    chk(ns == 6 and len(won) == 1 and won[0]['who'] == 'Makhachev'
+        and won[0]['m'] == 'sub',
+        "the card settles the ledger by itself: winner-by-sub grades one "
+        "row won and five lost, from the public result alone")
+    chk(any('NOT A VERDICT YET' in l for l in lines),
+        "six settled outcomes refuse to become a calibration verdict -- "
+        "thirty before the method market gets read (sgplog's discipline)")
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 
