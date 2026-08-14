@@ -6,18 +6,17 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
-1. **Finish the 8/14 field audit** (44 fields carried, read by NO report):
-   ufc_ratings had 27 unused -- sos_pct/ctrl_def_pct/ranked_record now
-   shipped in cardread; STILL unused: finish_rounds, finishes, best_wins,
-   physical, style8, archetype, legkick, strike_location/position,
-   model_score, vs_avg_pct, overall_pct, ranked/recent ratings.
-   fighter_bouts.csv has 17 unused per-fight stats (sig_l/sig_a both sides,
-   td_l/td_a, ctrl, kd/kd_abs) -- knockdowns absorbed is a better chin
-   proxy than "finished Nx in N losses". MLB slate raw_total is unused
+1. **Finish the 8/14 field audit** (fields carried, read by NO report):
+   fighter_bouts.csv's kd/kd_abs are now SHIPPED (chinhist + cardread);
+   STILL unused there: sig_l/sig_a both sides, td_l/td_a, ctrl -- a
+   striking-defence and takedown-defence rate is the same shape of work
+   the chin just proved is worth doing. ufc_ratings still hides
+   finish_rounds, finishes, best_wins, physical, style8, archetype,
+   legkick, strike_location/position, model_score, vs_avg_pct,
+   overall_pct, ranked/recent ratings. MLB slate raw_total is unused
    (raw vs adj IS the park+weather adjustment). f5hist histogram unused.
-   Payoff: every one of these is a factor the tools own and the reports
-   hide, which is how Ryan ended up catching Ribovics' sort bug, strength
-   of schedule and Barboza's age in a single afternoon.
+   Payoff: measured, not assumed -- the kd_abs pass found the audit's own
+   headline claim was WRONG, which is worth more than shipping it.
 1. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
@@ -34,6 +33,22 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- Chin, measured instead of assumed: the 8/14 audit called kd_abs "a better
+  chin proxy" than counting finishes in losses. It is NOT. Out of sample on
+  5,170 untouched bouts it LOSES to the naive proxy solo (0.43403 vs
+  0.43295) -- but it ADDS to it (joint 0.43193), and none of 20 shuffles of
+  kd_abs alone came near that gain (best null +0.00005 vs real +0.00102,
+  p=0.048). So both print and neither is called better. The pass also found
+  a second thing nobody asked for: "never been dropped" is worth 14.1% on
+  under an hour of tape and 8.7% on 150+ minutes, so a rate is now read on
+  its own EXPOSURE ladder -- Kaue Fernandes' 38 minutes reads 14%, not the
+  pooled 12.5% that flattered a chin nobody has tested. 15/15 + 26/26.
+- LIVE gate: Ernesto Mercado sat on Saturday's ticket at 95.6% for hours
+  after FanDuel took the whole bout down between the 14:27 and 18:07 pulls.
+  Fifteen gates read the leg as written; none re-read the board. Now one
+  does -- and it caught its own false positive on its first live run (an
+  app-quoted rung under a self-named group is confirmed at FIXTURE level,
+  not failed as vanished). 79/79.
 - Board ships past a bad quote: 8/14 noon refresh FAILED entirely because one
   degenerate 3-way derived a 99.88% DC @ -102284 -- nothing committed, board
   froze at 11:20a on a night Ryan was betting, and the 4pm/6:30pm runs would

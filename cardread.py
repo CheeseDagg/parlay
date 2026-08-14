@@ -117,7 +117,8 @@ def read_bout(bt, greco, hist):
             'base': base, 'wc': bt['wc'], 'title': bt['title'],
             'fd1': bt['fd1'], 'f1': bt['f1'],
             'age_line': age_line(fv['name'], dg['name'], bt.get('ages') or {}),
-            'ridx': bt.get('ridx') or {}}
+            'ridx': bt.get('ridx') or {},
+            'chin': bt.get('chin') or {}, 'chinlad': bt.get('chinlad')}
 
 
 AGE_OLD = 38          # where "veteran" starts costing, per the blend's age block
@@ -198,6 +199,81 @@ def skill_line(name, idx):
     return '  '.join(bits) if bits else None
 
 
+def chin_idx():
+    """Career knockdowns-absorbed rate per fighter, plus the MEASURED
+    ladder those rates sit on (chinhist.json).
+
+    The 8/14 audit called kd_abs 'a better chin proxy' than counting
+    finishes in losses. chinhist measured that and the audit was WRONG:
+    as a solo predictor kd_abs LOSES to the naive proxy out of sample
+    (0.43403 vs 0.43295). What it does do is ADD to it -- joint log loss
+    0.43193, and none of 20 shuffles of kd_abs got near that gain
+    (best +0.00005 vs the real +0.00102, p=0.048). So both print, and
+    neither is called the better one."""
+    try:
+        import chinhist
+        tbl = chinhist.career_stats()
+        lad = json.load(open(os.path.join(HERE, 'chinhist.json')))
+    except Exception:
+        return {}, None
+    return tbl, lad
+
+
+def _stratum(mins, lad):
+    """Which exposure ladder this fighter's own sample earns."""
+    for e in (lad or {}).get('exposure') or []:
+        if mins >= e['lo_min'] and (e['hi_min'] is None or mins < e['hi_min']):
+            return e['name']
+    return None
+
+
+def _chin_bin(rate, lad, mins=None):
+    """Where a rate lands on the measured ladder.
+
+    Conditioned on EXPOSURE when the fighter's own fight time is known,
+    because a rate hides its sample size: 'never dropped' is worth 14.1%
+    on under an hour of tape and 8.7% on 150+ minutes (chinhist, 8/14).
+    Kaue Fernandes has 38 minutes; reading him off the pooled 12.5% would
+    have flattered a chin nobody has tested."""
+    if not lad:
+        return None
+    cuts = lad.get('cuts_kdabs') or []
+    i = sum(1 for c in cuts if rate >= c)
+    rows = None
+    st = _stratum(mins, lad) if mins is not None else None
+    if st:
+        rows = (lad.get('ladder_by_exposure') or {}).get(st)
+        # A stratum bin can be EMPTY (no thin-exposure fighter can post a
+        # rate of 0.01-0.25 -- one knockdown in 40 minutes is 0.375). An
+        # empty bin is no evidence, so fall back rather than print a 0%.
+        if rows and i < len(rows) and not rows[i]['n']:
+            rows, st = None, None
+    if not rows:
+        rows = lad.get('ladder_kdabs') or []
+    if i >= len(rows):
+        return None
+    out = dict(rows[i])
+    out['stratum'] = st
+    return out
+
+
+def chin_line(name, tbl, lad):
+    """Both chin facts on one line, each with the number behind it."""
+    f = tbl.get(name)
+    if not f:
+        return None
+    out = (f"dropped {f['kdabs']:.2f}/15min "
+           f"({f['kd_abs_raw']} KD absorbed in {f['mins']:.0f} min)")
+    b = _chin_bin(f['kdabs'], lad, f.get('mins'))
+    if b:
+        st = f" @{b['stratum']} exposure" if b.get('stratum') else " (pooled)"
+        out += (f" -> bin {b['bin']}{st}, {b['rate'] * 100:.0f}% of "
+                f"{b['n']} such bouts ended in a KO loss")
+    out += (f" | {f['ko_losses']} KO loss(es) in {f['n']} fights"
+            if f['ko_losses'] else f" | never KO'd in {f['n']} fights")
+    return out
+
+
 def durability(prof, name):
     lb = prof['lose_by'] if prof else None
     if not prof:
@@ -239,6 +315,9 @@ def print_read(r):
             d = durability(s['prof'], s['name'])
             if d:
                 print(f"  {d}")
+            c = chin_line(s['name'], r.get('chin') or {}, r.get('chinlad'))
+            if c:
+                print(f"    {c}")
 
 
 def main():
@@ -248,9 +327,12 @@ def main():
     greco = ufcform.parse_bouts(ufcform.get(f"{ufcform.RAW}/ufc_fight_results.csv"), ev)
     bouts = load_card()
     _ages, _ridx = ages('2026-08-15'), ratings_idx()
+    _chin, _chinlad = chin_idx()
     for _b in bouts:
         _b['ages'] = _ages
         _b['ridx'] = _ridx
+        _b['chin'] = _chin
+        _b['chinlad'] = _chinlad
     print(f"{len(bouts)} bouts on the pin; consensus of 16 books; method = "
           f"winner's win-by x loser's lose-by, shrunk to measured bases "
           f"(ufchist n=5599). NOT certainties -- the mix is the claim.")
@@ -340,6 +422,83 @@ def selftest():
     chk('cardio_rounds' not in skill_line('Kaue Fernandes', ridx),
         "cardio_rounds is NOT reported as quality -- it is the sample size "
         "behind the cardio rating (widget: 'Cardio needs round-3+ data')")
+
+    # ---- CHIN. The 8/14 audit's headline guess ("kd_abs is a BETTER chin
+    # proxy") was measured by chinhist and came back wrong -- it is the
+    # weaker solo predictor and only earns a place as a SECOND one. So the
+    # line must carry both facts, and must never rank them.
+    _lad = {'cuts_kdabs': [0.01, 0.25, 0.5, 1.0],
+            'ladder_kdabs': [{'bin': '<0.01', 'n': 4222, 'rate': 0.125},
+                             {'bin': '0.01-0.25', 'n': 2245, 'rate': 0.159},
+                             {'bin': '0.25-0.5', 'n': 2465, 'rate': 0.184},
+                             {'bin': '0.5-1', 'n': 1260, 'rate': 0.237},
+                             {'bin': '>=1', 'n': 362, 'rate': 0.243}]}
+    _ct = {'Glass Joe': {'kdabs': 1.4, 'kd': 0.0, 'kolost': 0.6, 'n': 5,
+                         'mins': 30.0, 'kd_abs_raw': 4, 'ko_losses': 3},
+           'Granite Sam': {'kdabs': 0.0, 'kd': 0.5, 'kolost': 0.0, 'n': 9,
+                           'mins': 120.0, 'kd_abs_raw': 0, 'ko_losses': 0},
+           'Dropped Never Out': {'kdabs': 0.7, 'kd': 0.1, 'kolost': 0.0,
+                                 'n': 8, 'mins': 90.0, 'kd_abs_raw': 6,
+                                 'ko_losses': 0}}
+    _lad['exposure'] = [{'name': 'thin', 'lo_min': 0.0, 'hi_min': 60.0},
+                        {'name': 'mid', 'lo_min': 60.0, 'hi_min': 150.0},
+                        {'name': 'deep', 'lo_min': 150.0, 'hi_min': None}]
+    _lad['ladder_by_exposure'] = {
+        'thin': [{'bin': '<0.01', 'n': 2319, 'rate': 0.141},
+                 {'bin': '0.01-0.25', 'n': 0, 'rate': 0.0},
+                 {'bin': '0.25-0.5', 'n': 863, 'rate': 0.169},
+                 {'bin': '0.5-1', 'n': 685, 'rate': 0.222},
+                 {'bin': '>=1', 'n': 323, 'rate': 0.235}],
+        'mid': [{'bin': '<0.01', 'n': 1638, 'rate': 0.108},
+                {'bin': '0.01-0.25', 'n': 1381, 'rate': 0.154},
+                {'bin': '0.25-0.5', 'n': 960, 'rate': 0.176},
+                {'bin': '0.5-1', 'n': 517, 'rate': 0.251},
+                {'bin': '>=1', 'n': 39, 'rate': 0.308}],
+        'deep': [{'bin': '<0.01', 'n': 265, 'rate': 0.087},
+                 {'bin': '0.01-0.25', 'n': 864, 'rate': 0.167},
+                 {'bin': '0.25-0.5', 'n': 642, 'rate': 0.217},
+                 {'bin': '0.5-1', 'n': 58, 'rate': 0.276},
+                 {'bin': '>=1', 'n': 0, 'rate': 0.0}]}
+    _c = chin_line('Glass Joe', _ct, _lad)
+    chk(_c and '1.40/15min' in _c and '>=1' in _c and '24%' in _c
+        and '3 KO loss' in _c,
+        f"a glass chin prints its rate, its measured bin AND its KO losses ({_c})")
+    _c = chin_line('Granite Sam', _ct, _lad)
+    chk(_c and '<0.01' in _c and "never KO'd in 9 fights" in _c,
+        f"and a granite one prints the bottom bin ({_c})")
+
+    # ---- EXPOSURE. 'Never dropped' is not one fact. THE KAUE CASE: 38
+    # minutes of tape reads 14.1%, not the pooled 12.5%, and a 240-minute
+    # career of the same reads 8.7%. Same rate, different evidence.
+    _ct['Rookie Clean'] = {'kdabs': 0.0, 'kd': 0.0, 'kolost': 0.0, 'n': 4,
+                           'mins': 38.0, 'kd_abs_raw': 0, 'ko_losses': 0}
+    _ct['Iron Veteran'] = {'kdabs': 0.0, 'kd': 0.0, 'kolost': 0.0, 'n': 18,
+                           'mins': 240.0, 'kd_abs_raw': 0, 'ko_losses': 0}
+    _a = chin_line('Rookie Clean', _ct, _lad)
+    _b = chin_line('Iron Veteran', _ct, _lad)
+    chk('14%' in _a and '@thin' in _a, f"38 minutes of clean tape is 14%, not 12.5% ({_a})")
+    chk('9%' in _b and '@deep' in _b, f"240 minutes of it is 9% ({_b})")
+    chk(_a.split('(')[0].strip() == _b.split('(')[0].strip()
+        and '14%' in _a and '9%' in _b,
+        "the two print the SAME rate (0.00/15min) and DIFFERENT risk (14 vs 9) "
+        "-- which is the whole point of conditioning on exposure")
+    # An empty stratum bin is no evidence and must fall back, never print 0%.
+    _e = _chin_bin(0.10, _lad, 20.0)
+    chk(_e and _e['n'] == 2245 and _e.get('stratum') is None,
+        f"a rate no thin fighter can post falls back to pooled, not to 0% ({_e})")
+    # THE CASE THE NAIVE PROXY CANNOT SEE, and the reason both print.
+    _c = chin_line('Dropped Never Out', _ct, _lad)
+    chk(_c and '0.5-1' in _c and '25%' in _c and "never KO'd" in _c,
+        f"a fighter dropped six times and never finished reads BULLETPROOF on "
+        f"the naive proxy and 25% on the measured one -- both said ({_c})")
+    chk(chin_line('Nobody', _ct, _lad) is None,
+        "a fighter with no bout rows prints nothing, never a zero")
+    chk('bin' not in (chin_line('Glass Joe', _ct, None) or 'bin'),
+        "with no measured ladder the rate still prints, the bin does not")
+    chk(_chin_bin(0.30, _lad)['bin'] == '0.25-0.5'
+        and _chin_bin(0.0, _lad)['bin'] == '<0.01'
+        and _chin_bin(99.0, _lad)['bin'] == '>=1',
+        "bin lookup lands on the right rung at both ends and in the middle")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
