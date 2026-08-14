@@ -32,6 +32,18 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- edge.py: every totals leg vs its OWN history (52,710 soccer closing-odds
+  matches, 6,681 first-fives with parks, 321 CFL games), sorted by
+  measured-minus-implied, with the model's hot-game read DISQUALIFYING
+  league-base unders (its first live run ranked TEX@ATH F5 unders top of
+  the MLB list while hot_games had the game at adj 10.04 -- the gate
+  caught the tool). Both ends print: candidates AND traps. First live
+  scan flagged legs the board's own candidate tickets carry: Alavés-
+  Getafe U4.5 -4500 reads 11 points above its league table, and the
+  shallow MLS overs read 9-15 points high, consistent with the 0-0
+  lesson. Form scorelines print beside every soccer row because the
+  league base does NOT transfer to teams like Inter Miami [1,5,10,2,8].
+  13/13.
 - Strength-of-schedule + activity as blend features: REFUSED, and the
   refusal is the finding. Ryan called Orolbai-Wells (SoS +20.7 pct, 4
   fights/24mo vs 1, Wells 287d idle) and every fact checks out -- but as a
