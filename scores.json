@@ -1,23 +1,23 @@
 {
- "as_of": "2026-08-14T18:34Z",
+ "as_of": "2026-08-14T21:18Z",
  "date": "2026-08-14",
  "mlb": [
   {
    "away": "STL",
    "home": "CHC",
    "key": "STL@CHC",
-   "through5": null,
-   "current": 0,
-   "inning": 2,
-   "final": false
+   "through5": 0,
+   "current": 3,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "MIA",
    "home": "CIN",
    "key": "MIA@CIN",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -25,8 +25,8 @@
    "home": "PIT",
    "key": "BOS@PIT",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -34,8 +34,8 @@
    "home": "DET",
    "key": "CWS@DET",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -43,8 +43,8 @@
    "home": "NYM",
    "key": "WSH@NYM",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -52,8 +52,8 @@
    "home": "CLE",
    "key": "SD@CLE",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -61,8 +61,8 @@
    "home": "TB",
    "key": "BAL@TB",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -70,8 +70,8 @@
    "home": "ATL",
    "key": "AZ@ATL",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -79,8 +79,8 @@
    "home": "TOR",
    "key": "NYY@TOR",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -88,8 +88,8 @@
    "home": "HOU",
    "key": "SEA@HOU",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
