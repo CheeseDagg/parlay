@@ -154,10 +154,10 @@
   },
   "BAL@TB": {
    "away_sp": {
-    "name": null,
-    "hr9_5": null,
-    "r_start": null,
-    "note": "NO PROBABLE LISTED"
+    "name": "Chris Bassitt",
+    "hr9_5": 1.09,
+    "r_start": 2.6,
+    "starts": 5
    },
    "home_sp": {
     "name": "Steven Matz",

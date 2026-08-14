@@ -1225,23 +1225,6 @@
    "newest": "2026-08-09",
    "matched": "via Halmstad"
   },
-  "VPS Vaasa": {
-   "form": "WLLLWW",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 1.67,
-   "ga": 1.17,
-   "totals": [
-    4,
-    1,
-    4,
-    3,
-    1,
-    4
-   ],
-   "newest": "2026-08-08",
-   "matched": "exact"
-  },
   "IFK Mariehamn": {
    "form": "LLDLLL",
    "n": 6,
@@ -5148,40 +5131,6 @@
    ],
    "newest": "2026-08-08",
    "matched": "exact"
-  },
-  "AGF Aarhus": {
-   "form": "DDWWWD",
-   "n": 6,
-   "ppg": 2.0,
-   "gf": 2.17,
-   "ga": 1.0,
-   "totals": [
-    4,
-    2,
-    8,
-    2,
-    3,
-    0
-   ],
-   "newest": "2026-08-01",
-   "matched": "via Aarhus"
-  },
-  "Viborg FF": {
-   "form": "DLWLLD",
-   "n": 6,
-   "ppg": 0.83,
-   "gf": 1.0,
-   "ga": 1.83,
-   "totals": [
-    0,
-    1,
-    1,
-    8,
-    1,
-    6
-   ],
-   "newest": "2026-08-07",
-   "matched": "via Viborg"
   },
   "AC Horsens": {
    "form": "LLD",
@@ -14294,7 +14243,6 @@
   "Volos FC",
   "Levadiakos",
   "PAOK Thessaloniki",
-  "TPS Turku",
   "SJK Sein\u00e4joki",
   "HJK Helsinki",
   "KuPS Kuopio",
