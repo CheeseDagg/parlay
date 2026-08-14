@@ -1,166 +1,162 @@
 [
  {
   "lab": "U5.5 Alverca v CF Estrela",
-  "price": -8000,
-  "p": 0.956,
-  "d": 1.0125,
-  "fam": "SOCT",
-  "grp": "U5.5 Alverca v CF Estrela",
+  "price": -20000,
+  "p": 0.9813248756218906,
+  "d": 1.005,
   "t": "2026-08-15T14:30Z",
-  "match": "Alverca v CF Estrela",
-  "lg": "soccer_portugal_primeira_liga"
+  "fam": "SOCT",
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "lab": "SGP: Porto DC + U5.5 (app quote)",
-  "price": -739,
-  "d": 1.13531799729364,
-  "p": 0.857532,
-  "fam": "SOCT",
-  "grp": "SOC Porto-RA",
+  "lab": "SGP: U5.5 + Tie-or-Porto DC (Porto v Rio Ave)",
+  "price": -900,
+  "p": 0.8799999999999999,
+  "d": 1.1111111111111112,
   "t": "2026-08-15T19:30Z",
-  "match": "FC Porto v Rio Ave FC"
+  "fam": "SOCT",
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
   "lab": "Casey Dixon",
-  "opp": "v Michael Nelson",
-  "price": -1600,
-  "p": 0.9281284805314359,
-  "d": 1.0625,
-  "grp": "BOX Dixon-Nelson",
-  "fam": "BOX",
-  "sport": "OTHER",
+  "price": -2000,
+  "p": 0.9386809523809523,
+  "d": 1.05,
   "t": "2026-08-15T20:00Z",
+  "fam": "BOX",
   "book": "DraftKings",
-  "src": "UNVERIFIED \u2014 not a DK quote",
-  "t_approx": "card start, bout time unknown"
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
   "lab": "Jaquan McElroy",
-  "opp": "v Alexander Thiel",
   "price": -1600,
-  "p": 0.9266590859588407,
+  "p": 0.9274764705882352,
   "d": 1.0625,
-  "grp": "BOX McElroy-Thiel",
-  "fam": "BOX",
-  "sport": "OTHER",
   "t": "2026-08-15T20:00Z",
+  "fam": "BOX",
   "book": "DraftKings",
-  "src": "UNVERIFIED \u2014 not a DK quote",
-  "t_approx": "card start, bout time unknown"
+  "status": "PLACED 8/14 5:05p CT"
+ },
+ {
+  "lab": "Daniel Mercado",
+  "price": -10000,
+  "p": 0.97639900990099,
+  "d": 1.01,
+  "t": "2026-08-15T20:00Z",
+  "fam": "BOX",
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
   "lab": "Shannel Butler",
-  "opp": "v Marianela Ramirez",
-  "price": -2000,
-  "p": 0.9384261924414742,
-  "d": 1.05,
-  "grp": "BOX Butler-Ramirez",
-  "fam": "BOX",
-  "sport": "OTHER",
+  "price": -1600,
+  "p": 0.9274764705882352,
+  "d": 1.0625,
   "t": "2026-08-15T20:00Z",
+  "fam": "BOX",
   "book": "DraftKings",
-  "src": "UNVERIFIED \u2014 not a DK quote",
-  "t_approx": "card start, bout time unknown"
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "p": 0.8780487804878049,
-  "d": 1.0833333333333333,
   "lab": "Myktybek Orolbai ML",
-  "price": -1200,
-  "grp": "MMA 08-15",
+  "price": -1050,
+  "p": 0.8993434782608695,
+  "d": 1.0952380952380953,
+  "t": "2026-08-15T21:45Z",
   "fam": "MMA",
-  "sport": "FIGHT",
-  "t": "2026-08-15T21:45Z"
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "p": 0.9379292350111015,
-  "d": 1.05,
   "lab": "Atif Oberlton",
   "price": -2000,
-  "grp": "BOX Oberlton-Angulo",
+  "p": 0.9379,
+  "d": 1.05,
+  "t": "2026-08-15T23:20Z",
   "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-15T23:20Z"
- },
- {
-  "lab": "Ernesto Mercado",
-  "opp": "v Emmanuel Tagoe",
-  "price": -3000,
-  "p": 0.9562342983881312,
-  "d": 1.0333333333333334,
-  "grp": "BOX Tagoe-Mercado",
-  "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-16T00:00Z",
   "book": "DraftKings",
-  "src": "UNVERIFIED \u2014 not a DK quote"
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "p": 0.7153024911032029,
-  "d": 1.3333333333333333,
   "lab": "Joel Alvarez ML",
-  "price": -300,
-  "grp": "MMA 08-15",
+  "price": -305,
+  "p": 0.7153,
+  "d": 1.3278688524590163,
+  "t": "2026-08-16T00:45Z",
   "fam": "MMA",
-  "sport": "FIGHT",
-  "t": "2026-08-16T00:45Z"
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "p": 0.9017885068136843,
-  "d": 1.0869565217391304,
   "lab": "Ashleyann Lozada",
-  "price": -1150,
-  "grp": "BOX Lozada-Cuesta",
+  "price": -1200,
+  "p": 0.9093769230769231,
+  "d": 1.0833333333333333,
+  "t": "2026-08-16T01:15Z",
   "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-16T01:15Z"
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "p": 0.8329853862212943,
-  "d": 1.1428571428571428,
   "lab": "Esteban Ribovics ML",
   "price": -700,
-  "grp": "MMA 08-15",
+  "p": 0.833,
+  "d": 1.1428571428571428,
+  "t": "2026-08-16T01:15Z",
   "fam": "MMA",
-  "sport": "FIGHT",
-  "t": "2026-08-16T01:15Z"
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "p": 0.8476633152292541,
-  "d": 1.1538461538461537,
   "lab": "Troy Isley",
   "price": -650,
-  "grp": "BOX Hicks-Isley",
+  "p": 0.8477,
+  "d": 1.1538461538461537,
+  "t": "2026-08-16T01:50Z",
   "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-16T01:50Z"
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "lab": "Kaue Fernandes by KO/TKO or Points",
+  "lab": "Kaue Fernandes by KO/TKO/DQ or Decision",
   "price": 150,
   "p": 0.362,
   "d": 2.5,
+  "t": "2026-08-16T02:15Z",
   "fam": "MMA",
-  "grp": "MMA 08-15",
-  "t": "2026-08-16T02:15Z"
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "lab": "Islam Makhachev by Points",
+  "lab": "Islam Makhachev by Decision [SLIP A]",
   "price": 120,
   "p": 0.4025,
   "d": 2.2,
+  "t": "2026-08-16T03:30Z",
   "fam": "MMA",
-  "grp": "MMA 08-15",
-  "t": "2026-08-16T03:30Z"
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  },
  {
-  "p": 0.9626639610662717,
-  "d": 1.0333333333333334,
+  "lab": "Ian Machado Garry ML [SLIP B]",
+  "price": 285,
+  "p": 0.23974025974025973,
+  "d": 3.85,
+  "t": "2026-08-16T03:30Z",
+  "fam": "MMA",
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
+ },
+ {
   "lab": "Claressa Shields",
   "price": -3000,
-  "grp": "BOX Shields-Scott",
+  "p": 0.9627,
+  "d": 1.0333333333333334,
+  "t": "2026-08-16T05:00Z",
   "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-16T05:00Z"
+  "book": "DraftKings",
+  "status": "PLACED 8/14 5:05p CT"
  }
 ]

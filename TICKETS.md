@@ -219,3 +219,39 @@ again.
 - [ ] Mansur Abdul Malik by KO/TKO (v Stoltzfus) — -105 (model 40.0%)
 - [ ] Kaue Fernandes by KO/TKO (v Turner) — +250 (model 20.0%)
 - [ ] Islam Makhachev by Points (v Garry) — +120 (model 35.0%)
+
+## UFC330+boxing 16-leg SGPx A — +1557 — placed 2026-08-14T22:05Z
+
+- [ ] U5.5 Total Goals (Alverca v CF Estrela) — -20000
+- [ ] SGP: U5.5 + Tie-or-Porto DC (Porto v Rio Ave) — -900
+- [ ] Ashleyann Lozada — -1200
+- [ ] Casey Dixon — -2000
+- [ ] Jaquan McElroy — -1600
+- [ ] Daniel Mercado — -10000
+- [ ] Shannel Butler — -1600
+- [ ] Myktybek Orolbai — -1050
+- [ ] Atif Oberlton — -2000
+- [ ] Joel Alvarez — -305
+- [ ] Esteban Ribovics — -700
+- [ ] Kaue Fernandes to Win by KO/TKO/DQ or Decision — +150
+- [ ] Troy Isley — -650
+- [ ] Claressa Shields — -3000
+- [ ] Islam Makhachev by Decision — +120
+
+## UFC330+boxing 16-leg SGPx B — +2800 — placed 2026-08-14T22:05Z
+
+- [ ] U5.5 Total Goals (Alverca v CF Estrela) — -20000
+- [ ] SGP: U5.5 + Tie-or-Porto DC (Porto v Rio Ave) — -900
+- [ ] Ashleyann Lozada — -1200
+- [ ] Casey Dixon — -2000
+- [ ] Jaquan McElroy — -1600
+- [ ] Daniel Mercado — -10000
+- [ ] Shannel Butler — -1600
+- [ ] Myktybek Orolbai — -1050
+- [ ] Atif Oberlton — -2000
+- [ ] Joel Alvarez — -305
+- [ ] Esteban Ribovics — -700
+- [ ] Kaue Fernandes to Win by KO/TKO/DQ or Decision — +150
+- [ ] Troy Isley — -650
+- [ ] Claressa Shields — -3000
+- [ ] Ian Machado Garry ML — +285

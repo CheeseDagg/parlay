@@ -182,6 +182,148 @@
     }
    ],
    "note": "0 BONUS BET (not cash): FLOOR/PLUS gates fail by design and are waived for free-bet conversion. Three single-method legs (rule 27 shape). p= are clamped numbers: model mix vs single-sided market quote, clamp 5pts, haircut band 10-20% stated (no full ladders yet -- fightprops when pasted). Settles Sat night; Greco grades methods Sunday."
+  },
+  {
+   "name": "UFC330+boxing 16-leg SGPx A",
+   "book": "FanDuel",
+   "price": 1557,
+   "stake": 350.0,
+   "placed": "2026-08-14T22:05Z",
+   "model_p": null,
+   "legs": [
+    {
+     "lab": "U5.5 Total Goals (Alverca v CF Estrela)",
+     "price": -20000
+    },
+    {
+     "lab": "SGP: U5.5 + Tie-or-Porto DC (Porto v Rio Ave)",
+     "price": -900
+    },
+    {
+     "lab": "Ashleyann Lozada",
+     "price": -1200
+    },
+    {
+     "lab": "Casey Dixon",
+     "price": -2000
+    },
+    {
+     "lab": "Jaquan McElroy",
+     "price": -1600
+    },
+    {
+     "lab": "Daniel Mercado",
+     "price": -10000
+    },
+    {
+     "lab": "Shannel Butler",
+     "price": -1600
+    },
+    {
+     "lab": "Myktybek Orolbai",
+     "price": -1050
+    },
+    {
+     "lab": "Atif Oberlton",
+     "price": -2000
+    },
+    {
+     "lab": "Joel Alvarez",
+     "price": -305
+    },
+    {
+     "lab": "Esteban Ribovics",
+     "price": -700
+    },
+    {
+     "lab": "Kaue Fernandes to Win by KO/TKO/DQ or Decision",
+     "price": 150
+    },
+    {
+     "lab": "Troy Isley",
+     "price": -650
+    },
+    {
+     "lab": "Claressa Shields",
+     "price": -3000
+    },
+    {
+     "lab": "Islam Makhachev by Decision",
+     "price": 120
+    }
+   ],
+   "note": "DraftKings SGPx, 16 picks (the 2-Pick SGP counts 2). Both slips pay $5,801.20; $550 staked across the pair. The two differ ONLY on Islam-by-Decision vs Garry ML, which are mutually exclusive, so at most one can land. Model true 3.70%. Pair: P(either)=5.90%, one in 17, EV -38%. Kaue +150 and (slip A) Islam +120 break rules 2 and 3 knowingly. Daniel Mercado is the 4-round prospect at -10000, NOT Ernesto Mercado whose bout FanDuel pulled."
+  },
+  {
+   "name": "UFC330+boxing 16-leg SGPx B",
+   "book": "FanDuel",
+   "price": 2800,
+   "stake": 200.0,
+   "placed": "2026-08-14T22:05Z",
+   "model_p": null,
+   "legs": [
+    {
+     "lab": "U5.5 Total Goals (Alverca v CF Estrela)",
+     "price": -20000
+    },
+    {
+     "lab": "SGP: U5.5 + Tie-or-Porto DC (Porto v Rio Ave)",
+     "price": -900
+    },
+    {
+     "lab": "Ashleyann Lozada",
+     "price": -1200
+    },
+    {
+     "lab": "Casey Dixon",
+     "price": -2000
+    },
+    {
+     "lab": "Jaquan McElroy",
+     "price": -1600
+    },
+    {
+     "lab": "Daniel Mercado",
+     "price": -10000
+    },
+    {
+     "lab": "Shannel Butler",
+     "price": -1600
+    },
+    {
+     "lab": "Myktybek Orolbai",
+     "price": -1050
+    },
+    {
+     "lab": "Atif Oberlton",
+     "price": -2000
+    },
+    {
+     "lab": "Joel Alvarez",
+     "price": -305
+    },
+    {
+     "lab": "Esteban Ribovics",
+     "price": -700
+    },
+    {
+     "lab": "Kaue Fernandes to Win by KO/TKO/DQ or Decision",
+     "price": 150
+    },
+    {
+     "lab": "Troy Isley",
+     "price": -650
+    },
+    {
+     "lab": "Claressa Shields",
+     "price": -3000
+    },
+    {
+     "lab": "Ian Machado Garry ML",
+     "price": 285
+    }
+   ],
+   "note": "DraftKings SGPx, 16 picks (the 2-Pick SGP counts 2). Both slips pay $5,801.20; $550 staked across the pair. The two differ ONLY on Islam-by-Decision vs Garry ML, which are mutually exclusive, so at most one can land. Model true 2.20%. Pair: P(either)=5.90%, one in 17, EV -38%. Kaue +150 and (slip A) Islam +120 break rules 2 and 3 knowingly. Daniel Mercado is the 4-round prospect at -10000, NOT Ernesto Mercado whose bout FanDuel pulled."
   }
  ]
 }
