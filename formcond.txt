@@ -31,6 +31,10 @@ formcond: fetching per-match rows (same routes sococalib audited)
   U3.5: tail gain +0.00173 (n=8088), best of 20 shuffles +0.00022, p=0.048 -> SHIPS
   U4.5: tail gain +0.00152 (n=8088), best of 20 shuffles +0.00006, p=0.048 -> SHIPS
   U5.5: tail gain +0.00150 (n=8088), best of 20 shuffles +0.00009, p=0.048 -> SHIPS
+  U2.5 +identity: tail gain +0.00217 (n=7851), best shuffle +0.00010, p=0.048 -> SHIPS
+  U3.5 +identity: tail gain +0.00166 (n=7851), best shuffle +0.00007, p=0.048 -> SHIPS
+  U4.5 +identity: tail gain +0.00180 (n=7851), best shuffle +0.00009, p=0.048 -> SHIPS
+  U5.5 +identity: tail gain +0.00170 (n=7851), best shuffle +0.00006, p=0.048 -> SHIPS
 
   wrote formcond.json -- shipped rungs: ['2.5', '3.5', '4.5', '5.5']
   U2.5 deltas by pace bin (slow->fast): +4.0  +2.5  -0.1  -2.2  -5.3
