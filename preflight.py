@@ -490,17 +490,29 @@ def gate_form(legs, data=None, today=None):
 
 
 def gate_overlap(legs, open_slips):
-    """open_slips: [(name, [labels], p)] already placed."""
+    """open_slips: [(name, [labels], p)] already placed.
+
+    EVENT level, not label level (rule 28's own words). Label equality
+    missed Makhachev ML on a new ticket against Makhachev-by-Points on an
+    open slip -- one Garry upset kills both, and the gate said "no legs
+    shared". Fight legs match by fighter tokens (_fight_key); everything
+    else still matches by label."""
     if not open_slips:
         return 'PASS', "no other open slips"
     out = []
-    mine = {l['lab'] for l in legs}
     for name, labs, _ in open_slips:
-        sh = mine & set(labs)
-        if sh:
-            out.append(f"{name}: {len(sh)} shared ({', '.join(sorted(sh))})")
+        hits = []
+        for l in legs:
+            for ol in labs:
+                if l['lab'] == ol or (_fight_key(l['lab']) and
+                                      _fight_key(l['lab']) & _fight_key(ol)):
+                    hits.append(f"{l['lab']} ~ {ol}")
+        if hits:
+            out.append(f"{name}: {len(hits)} shared EVENT(s) "
+                       f"({'; '.join(sorted(set(hits)))}) -- one result can "
+                       f"kill both slips")
     return ('WARN' if out else 'PASS',
-            "; ".join(out) if out else "no legs shared with open slips")
+            "; ".join(out) if out else "no events shared with open slips")
 
 def top_rungs(m):
     """{(game, family): deepest rung's label} over EVERY leg on the board.
@@ -596,6 +608,40 @@ def gate_shape(legs, pool=None, floor=-350, slack=1.34):
     return 'PASS', f"{len(legs)} legs vs heaviest-first bound {n_min}"
 
 
+FIGHT_STOP = {'Under', 'Over', 'Method', 'Victory', 'Double', 'Chance',
+              'Submission', 'Decision', 'Points', 'Round', 'Rounds', 'Fight',
+              'Goes', 'Distance', 'Inside', 'Wins'}
+
+
+def _fight_key(lab):
+    """Event identity for a FIGHT leg, from the label's proper-noun tokens.
+    The feed groups a whole card under one grp ('MMA 08-15'), so grp is a
+    CARD key there, not a bout key -- the first live run of SGPPAIR flagged
+    Orolbai+Makhachev as a same-game pair on that grp, and OVERLAP missed
+    Makhachev ML vs Makhachev-by-Points across slips for the same reason.
+    Capitalized 4+ letter tokens minus market words name the fighters; a
+    label with none (CIN@CWS F5 Under 9.5) returns empty and callers fall
+    back to grp/label matching."""
+    import re as _re
+    return frozenset(t for t in _re.findall(r'[A-Z][a-z]{3,}', str(lab))
+                     if t not in FIGHT_STOP)
+
+
+def _same_event(a, b):
+    """Two legs on one real-world event: same grp when the grp is a real
+    match key, or intersecting fighter tokens when both labels carry them."""
+    ka, kb = _fight_key(a.get('lab', a) if isinstance(a, dict) else a),              _fight_key(b.get('lab', b) if isinstance(b, dict) else b)
+    if ka and kb:
+        return bool(ka & kb)
+    ga = a.get('grp') if isinstance(a, dict) else None
+    gb = b.get('grp') if isinstance(b, dict) else None
+    if ga and gb:
+        return ga == gb
+    la = a.get('lab') if isinstance(a, dict) else a
+    lb = b.get('lab') if isinstance(b, dict) else b
+    return la == lb
+
+
 def gate_sgppair(legs):
     """Same-game pairs are priced by the BOOK, not by multiplication.
 
@@ -606,11 +652,22 @@ def gate_sgppair(legs):
     This gate names every same-game pair so the app's own quote gets
     fetched and logged (sgplog.py); the naive number is never the slip's
     real price when this gate speaks."""
-    from collections import defaultdict
-    by = defaultdict(list)
-    for l in legs:
-        by[l.get('grp') or l.get('mkt') or l['lab']].append(l['lab'])
-    pairs = {g: ls for g, ls in by.items() if len(ls) > 1}
+    # Pairwise event identity, because no single key survives all three
+    # shapes: soccer legs share a real match grp, fight legs share only a
+    # CARD-level grp and must match by fighter tokens, and a totals leg with
+    # no name tokens must still pair with its match's DC by grp.
+    pairs = {}
+    used = set()
+    for i in range(len(legs)):
+        for j in range(i + 1, len(legs)):
+            if _same_event(legs[i], legs[j]):
+                key = (_fight_key(legs[i]['lab']) and
+                       min(_fight_key(legs[i]['lab']))) or                     legs[i].get('grp') or legs[i]['lab']
+                pairs.setdefault(key, [])
+                for k in (i, j):
+                    if k not in used:
+                        pairs[key].append(legs[k]['lab'])
+                        used.add(k)
     if not pairs:
         return 'PASS', 'no same-game pairs'
     named = '; '.join(f"{g}: {' + '.join(ls)}" for g, ls in sorted(pairs.items()))
@@ -1020,6 +1077,29 @@ def selftest():
         "is not the slip's real price (book paid +4% above it once, n=1)")
     _v, _m = gate_sgppair(_sg[1:])
     chk(_v == 'PASS', "distinct games carry no pair warning")
+    # first live run, 8/14: the UFC feed groups the WHOLE CARD under one grp
+    _card = [{'lab': 'Myktybek Orolbai ML', 'grp': 'MMA 08-15', 'price': -1200},
+             {'lab': 'Islam Makhachev ML', 'grp': 'MMA 08-15', 'price': -355}]
+    _v, _m = gate_sgppair(_card)
+    chk(_v == 'PASS',
+        "two DIFFERENT bouts sharing the feed's card-level grp are NOT a "
+        "same-game pair -- the gate's first live run flagged exactly this")
+    _same = [{'lab': 'Islam Makhachev ML', 'grp': 'MMA 08-15', 'price': -355},
+             {'lab': 'Islam Makhachev by Points', 'grp': 'MMA 08-15', 'price': 120}]
+    _v, _m = gate_sgppair(_same)
+    chk(_v == 'WARN' and 'Makhachev' in _m,
+        "two legs on the SAME bout still pair, matched by fighter not grp")
+    # ...and OVERLAP matches by EVENT across slips (the live false negative)
+    _v, _m = gate_overlap([{'lab': 'Islam Makhachev ML', 'price': -355}],
+                          [('bonus 4-leg',
+                            ['Islam Makhachev by Points (v Garry)'], 0.013)])
+    chk(_v == 'WARN' and 'kill both' in _m,
+        "Makhachev ML vs Makhachev-by-Points on an open slip is ONE event "
+        "-- a Garry upset kills both, and the gate now says so")
+    _v, _m = gate_overlap([{'lab': 'CIN@CWS F5 Under 9.5', 'price': -500}],
+                          [('bonus', ['Islam Makhachev by Points'], 0.5)])
+    chk(_v == 'PASS',
+        "a fightless label with no fighter tokens never fuzzy-matches")
 
     # ---- DH: the feed keys one game per matchup per day
     _slate = {'games': [{'away': 'St. Louis Cardinals', 'home': 'Chicago Cubs'},
