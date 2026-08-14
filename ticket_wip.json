@@ -118,5 +118,16 @@
   "t": "2026-08-15T19:30Z",
   "match": "FC Porto v Rio Ave",
   "lg": "soccer_portugal_primeira_liga"
+ },
+ {
+  "lab": "FC Porto DC (derived)",
+  "price": -1089,
+  "p": 0.8970698319594481,
+  "d": 1.0917923348872174,
+  "fam": "SOC",
+  "grp": "SOC Porto-RA",
+  "t": "2026-08-15T19:30Z",
+  "match": "FC Porto v Rio Ave FC",
+  "lg": "soccer_portugal_primeira_liga"
  }
 ]
