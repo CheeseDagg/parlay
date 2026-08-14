@@ -18,34 +18,34 @@
    },
    "last5": [
     {
-     "opp": "Renato Moicano",
-     "win": true,
-     "method": "sub",
-     "year": 2025
-    },
-    {
      "opp": "Jack Della Maddalena",
      "win": true,
      "method": "dec",
-     "year": 2025
+     "year": "2025-11-15"
+    },
+    {
+     "opp": "Renato Moicano",
+     "win": true,
+     "method": "sub",
+     "year": "2025-01-18"
     },
     {
      "opp": "Dustin Poirier",
      "win": true,
      "method": "sub",
-     "year": 2024
-    },
-    {
-     "opp": "Alexander Volkanovski",
-     "win": true,
-     "method": "dec",
-     "year": 2023
+     "year": "2024-06-01"
     },
     {
      "opp": "Alexander Volkanovski",
      "win": true,
      "method": "ko",
-     "year": 2023
+     "year": "2023-10-21"
+    },
+    {
+     "opp": "Alexander Volkanovski",
+     "win": true,
+     "method": "dec",
+     "year": "2023-02-11"
     }
    ],
    "matched_as": "Islam Makhachev"
@@ -68,34 +68,34 @@
    },
    "last5": [
     {
-     "opp": "Carlos Prates",
-     "win": true,
-     "method": "dec",
-     "year": 2025
-    },
-    {
      "opp": "Belal Muhammad",
      "win": true,
      "method": "dec",
-     "year": 2025
+     "year": "2025-11-22"
     },
     {
-     "opp": "Geoff Neal",
+     "opp": "Carlos Prates",
      "win": true,
      "method": "dec",
-     "year": 2024
-    },
-    {
-     "opp": "Michael Page",
-     "win": true,
-     "method": "dec",
-     "year": 2024
+     "year": "2025-04-26"
     },
     {
      "opp": "Shavkat Rakhmonov",
      "win": false,
      "method": "dec",
-     "year": 2024
+     "year": "2024-12-07"
+    },
+    {
+     "opp": "Michael Page",
+     "win": true,
+     "method": "dec",
+     "year": "2024-06-29"
+    },
+    {
+     "opp": "Geoff Neal",
+     "win": true,
+     "method": "dec",
+     "year": "2024-02-17"
     }
    ],
    "matched_as": "Ian Machado Garry"
@@ -121,31 +121,31 @@
      "opp": "Chris Curtis",
      "win": true,
      "method": "dec",
-     "year": 2026
-    },
-    {
-     "opp": "Tofiq Musayev",
-     "win": true,
-     "method": "sub",
-     "year": 2025
+     "year": "2026-03-14"
     },
     {
      "opp": "Jack Hermansson",
      "win": true,
      "method": "ko",
-     "year": 2025
+     "year": "2025-11-22"
     },
     {
-     "opp": "Elves Brener",
+     "opp": "Tofiq Musayev",
      "win": true,
-     "method": "dec",
-     "year": 2024
+     "method": "sub",
+     "year": "2025-06-21"
     },
     {
      "opp": "Mateusz Rebecki",
      "win": false,
      "method": "dec",
-     "year": 2024
+     "year": "2024-10-26"
+    },
+    {
+     "opp": "Elves Brener",
+     "win": true,
+     "method": "dec",
+     "year": "2024-05-04"
     }
    ],
    "matched_as": "Myktybek Orolbai"
@@ -171,31 +171,31 @@
      "opp": "Themba Gorimbo",
      "win": true,
      "method": "dec",
-     "year": 2025
+     "year": "2025-11-01"
     },
     {
      "opp": "Max Griffin",
      "win": false,
      "method": "dec",
-     "year": 2024
-    },
-    {
-     "opp": "Matthew Semelsberger",
-     "win": true,
-     "method": "dec",
-     "year": 2023
+     "year": "2024-02-10"
     },
     {
      "opp": "Carlston Harris",
      "win": false,
      "method": "sub",
-     "year": 2023
+     "year": "2023-08-05"
     },
     {
-     "opp": "Blood Diamond",
+     "opp": "Matthew Semelsberger",
      "win": true,
-     "method": "sub",
-     "year": 2022
+     "method": "dec",
+     "year": "2023-04-22"
+    },
+    {
+     "opp": "Court McGee",
+     "win": true,
+     "method": "ko",
+     "year": "2022-06-18"
     }
    ],
    "matched_as": "Jeremiah Wells"
@@ -221,25 +221,25 @@
      "opp": "Yousri Belgaroui",
      "win": false,
      "method": "ko",
-     "year": 2026
-    },
-    {
-     "opp": "Nick Klein",
-     "win": true,
-     "method": "ko",
-     "year": 2025
+     "year": "2026-03-28"
     },
     {
      "opp": "Antonio Trocoli",
      "win": true,
      "method": "sub",
-     "year": 2025
+     "year": "2025-12-06"
+    },
+    {
+     "opp": "Nick Klein",
+     "win": true,
+     "method": "ko",
+     "year": "2025-02-22"
     },
     {
      "opp": "Dusko Todorovic",
      "win": true,
      "method": "ko",
-     "year": 2024
+     "year": "2024-11-09"
     }
    ],
    "matched_as": "Mansur Abdul-Malik"
@@ -262,34 +262,34 @@
    },
    "last5": [
     {
-     "opp": "Nursulton Ruziboev",
-     "win": false,
-     "method": "dec",
-     "year": 2025
-    },
-    {
      "opp": "Kelvin Gastelum",
      "win": false,
      "method": "dec",
-     "year": 2025
+     "year": "2025-09-13"
     },
     {
-     "opp": "Brunno Ferreira",
+     "opp": "Nursulton Ruziboev",
      "win": false,
-     "method": "ko",
-     "year": 2024
+     "method": "dec",
+     "year": "2025-05-17"
     },
     {
      "opp": "Marc-Andre Barriault",
      "win": true,
      "method": "ko",
-     "year": 2024
+     "year": "2024-11-02"
+    },
+    {
+     "opp": "Brunno Ferreira",
+     "win": false,
+     "method": "ko",
+     "year": "2024-06-08"
     },
     {
      "opp": "Punahele Soriano",
      "win": true,
      "method": "sub",
-     "year": 2023
+     "year": "2023-12-02"
     }
    ],
    "matched_as": "Dustin Stoltzfus"
@@ -315,31 +315,31 @@
      "opp": "Mateusz Gamrot",
      "win": false,
      "method": "sub",
-     "year": 2026
-    },
-    {
-     "opp": "Nasrat Haqparast",
-     "win": false,
-     "method": "dec",
-     "year": 2025
+     "year": "2026-04-11"
     },
     {
      "opp": "Elves Brener",
      "win": true,
      "method": "dec",
-     "year": 2025
+     "year": "2025-08-02"
     },
     {
-     "opp": "Terrance McKinney",
-     "win": true,
-     "method": "ko",
-     "year": 2024
+     "opp": "Nasrat Haqparast",
+     "win": false,
+     "method": "dec",
+     "year": "2025-03-01"
     },
     {
      "opp": "Daniel Zellhuber",
      "win": true,
      "method": "dec",
-     "year": 2024
+     "year": "2024-09-14"
+    },
+    {
+     "opp": "Terrance McKinney",
+     "win": true,
+     "method": "ko",
+     "year": "2024-05-11"
     }
    ],
    "matched_as": "Esteban Ribovics"
@@ -362,34 +362,34 @@
    },
    "last5": [
     {
-     "opp": "Drakkar Klose",
-     "win": false,
-     "method": "dec",
-     "year": 2025
-    },
-    {
      "opp": "Jalin Turner",
      "win": false,
      "method": "ko",
-     "year": 2025
+     "year": "2025-12-06"
+    },
+    {
+     "opp": "Drakkar Klose",
+     "win": false,
+     "method": "dec",
+     "year": "2025-08-16"
     },
     {
      "opp": "Lerone Murphy",
      "win": false,
      "method": "dec",
-     "year": 2024
-    },
-    {
-     "opp": "Billy Quarantillo",
-     "win": true,
-     "method": "ko",
-     "year": 2023
+     "year": "2024-05-18"
     },
     {
      "opp": "Sodiq Yusuff",
      "win": true,
      "method": "dec",
-     "year": 2023
+     "year": "2023-10-14"
+    },
+    {
+     "opp": "Billy Quarantillo",
+     "win": true,
+     "method": "ko",
+     "year": "2023-04-15"
     }
    ],
    "matched_as": "Edson Barboza"

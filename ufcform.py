@@ -64,16 +64,26 @@ def parse_bouts(results_text, years):
     return out
 
 
+MONTHS = {m: i + 1 for i, m in enumerate(
+    ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+     'August', 'September', 'October', 'November', 'December'])}
+
+
 def parse_events(text):
+    """{event: 'YYYY-MM-DD'}. This carried YEARS ONLY until 2026-08-14,
+    and record_of sorted on it -- so two fights in the same year kept the
+    CSV's file order and the 'newest first' display could invert inside a
+    year. That fabricated 'lost 2 straight' for Ribovics (his 2025 win and
+    2025 loss swapped) and Ryan caught it from memory. Full dates now."""
     out = {}
     for row in csv.DictReader(io.StringIO(text)):
         name = (row.get('EVENT') or '').strip()
-        yr = None
-        for tok in (row.get('DATE') or '').replace(',', ' ').split():
-            if tok.isdigit() and len(tok) == 4:
-                yr = int(tok)
-        if name and yr:
-            out[name] = yr
+        raw = (row.get('DATE') or '').replace(',', ' ').split()
+        d = None
+        if len(raw) >= 3 and raw[0] in MONTHS and raw[1].isdigit()                 and raw[2].isdigit() and len(raw[2]) == 4:
+            d = f"{raw[2]}-{MONTHS[raw[0]]:02d}-{int(raw[1]):02d}"
+        if name and d:
+            out[name] = d
     return out
 
 
@@ -87,12 +97,12 @@ def record_of(bouts, name):
             if norm(bt[side]) == q:
                 names.add(bt[side])
                 mine.append({'opp': bt[opp], 'win': bt['winner'] == side,
-                             'method': bt['method'], 'year': bt['year'] or 0})
+                             'method': bt['method'], 'year': bt['year'] or ''})
     if not mine:
         return None, 'unmatched'
     if len(names) > 1:
         return None, f'ambiguous: {sorted(names)}'
-    mine.sort(key=lambda f: f['year'])
+    mine.sort(key=lambda f: str(f['year']))
     return mine[::-1], sorted(names)[0]
 
 
@@ -139,7 +149,7 @@ def main():
             continue
         pr = profile(fights_)
         last5 = fights_[:5]
-        line = '  '.join(f"{'W' if f['win'] else 'L'}-{f['method']}({f['year']}) "
+        line = '  '.join(f"{'W' if f['win'] else 'L'}-{f['method']}({str(f['year'])[:4]}) "
                          f"{f['opp'][:14]}" for f in last5)
         print(f"  {name:<24} {pr['record']:<14} {line}")
         wb, lb = pr['win_by'], pr['lose_by']
@@ -176,8 +186,9 @@ def selftest():
     bouts = parse_bouts(res, years)
     chk(len(bouts) == 2, "draws drop; decided bouts carry both names and a year")
     f, how = record_of(bouts, 'islam makhachev')
-    chk(how == 'Islam Makhachev' and len(f) == 2 and f[0]['year'] == 2023,
-        "a fighter's record folds both sides of the BOUT column, newest first")
+    chk(how == 'Islam Makhachev' and len(f) == 2 and f[0]['year'] == '2023-06-05',
+        "a fighter's record folds both sides of the BOUT column, newest "
+        "first, carrying the FULL event date (year-only was the inversion)")
     chk(f[0]['win'] and f[0]['method'] == 'sub' and f[0]['opp'] == 'Charles Oliveira',
         "L/W means the SECOND-named fighter won -- attribution is per side, "
         "and getting it backwards would invert every record in the file")
@@ -190,6 +201,21 @@ def selftest():
                        'method': 'ko', 'year': 2022}]
     chk(record_of(bouts2, 'Bobby Green')[0][0]['win'] is False,
         "the loser's side of a W/L bout records a loss")
+    # THE RIBOVICS INVERSION, 2026-08-14. Greco's file lists newer events
+    # first; a year-only sort kept file order inside a year, and reversing
+    # made the OLDER same-year fight print as the newer one -- 'lost 2
+    # straight' fabricated from a win and a loss in the wrong order. Ryan
+    # caught it from memory against a -650 price.
+    bouts = parse_bouts(
+        "EVENT,BOUT,OUTCOME,WEIGHTCLASS,METHOD\n"
+        "E_aug,Elves Brener vs. Rib Test,L/W,Lightweight,Decision - Unanimous\n"
+        "E_mar,Nasrat Haqparast vs. Rib Test,W/L,Lightweight,Decision - Split\n",
+        {'E_aug': '2025-08-02', 'E_mar': '2025-03-01'})
+    rec, _ = record_of(bouts, 'Rib Test')
+    chk(rec[0]['win'] and not rec[1]['win'],
+        "two same-year fights in Greco file order come back TRULY newest "
+        "first: the August WIN before the March loss, not inverted")
+
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 

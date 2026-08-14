@@ -27,9 +27,15 @@ Orolbai 88 market / 77 model; Abdul-Malik 83 / 73; Makhachev 75 / 69.
 Same Elo-convergence lag in reverse: six-fight careers have not pulled
 Elo far from its prior, so risers read underrated. Market likely closer,
 BUT for parlay pricing treat the market number as the CEILING: an 88%
-leg that might be 80 is how a safe stack rots. Ribovics -700 carries a
-form flag besides: two straight losses (sub, dec) before this booking.
-Abdul-Malik comes off a KO loss at -720.
+leg that might be 80 is how a safe stack rots.
+
+CORRECTED 8/14 (Ryan caught it): Ribovics has NOT lost two straight --
+that was a year-only sort inverting his 2025 win and loss (ufcform now
+sorts full dates, the case is pinned). Truth: 3-2 in his last five, one
+loss in his last two, to Gamrot. And Barboza has lost THREE straight
+(KO'd by Turner 2025-06, then two decisions) -- the -650 is better
+supported than the bugged flag suggested. Abdul-Malik's KO-loss flag is
+REAL and dated: L-ko 2026-03.
 
 ## Diagnosis MEASURED (ufc_lag_backtest, 8,686 fights, out of sample)
 
