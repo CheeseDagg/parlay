@@ -6,6 +6,18 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
+1. **Finish the 8/14 field audit** (44 fields carried, read by NO report):
+   ufc_ratings had 27 unused -- sos_pct/ctrl_def_pct/ranked_record now
+   shipped in cardread; STILL unused: finish_rounds, finishes, best_wins,
+   physical, style8, archetype, legkick, strike_location/position,
+   model_score, vs_avg_pct, overall_pct, ranked/recent ratings.
+   fighter_bouts.csv has 17 unused per-fight stats (sig_l/sig_a both sides,
+   td_l/td_a, ctrl, kd/kd_abs) -- knockdowns absorbed is a better chin
+   proxy than "finished Nx in N losses". MLB slate raw_total is unused
+   (raw vs adj IS the park+weather adjustment). f5hist histogram unused.
+   Payoff: every one of these is a factor the tools own and the reports
+   hide, which is how Ryan ended up catching Ribovics' sort bug, strength
+   of schedule and Barboza's age in a single afternoon.
 1. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.

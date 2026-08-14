@@ -116,7 +116,8 @@ def read_bout(bt, greco, hist):
     return {'fav': fv, 'dog': dg, 'p_fav': pf, 'fmix': fmix, 'dmix': dmix,
             'base': base, 'wc': bt['wc'], 'title': bt['title'],
             'fd1': bt['fd1'], 'f1': bt['f1'],
-            'age_line': age_line(fv['name'], dg['name'], bt.get('ages') or {})}
+            'age_line': age_line(fv['name'], dg['name'], bt.get('ages') or {}),
+            'ridx': bt.get('ridx') or {}}
 
 
 AGE_OLD = 38          # where "veteran" starts costing, per the blend's age block
@@ -160,6 +161,43 @@ def age_line(a_name, b_name, tbl):
     return out
 
 
+def ratings_idx():
+    """Fighter rows from ufc_ratings.json, keyed by name.
+
+    THE 8/14 AUDIT. 27 fields in this file were carried and read by NO
+    report -- including sos_pct, which I hand-recomputed from scratch the
+    same afternoon while it sat here. Only fields whose meaning was
+    verified against the widget's own copy are used:
+      sos_pct       percentile, strength of schedule
+      ctrl_def_pct  percentile, control/grappling defence
+      ranked_record [W, L] against ranked opponents
+    cardio_rounds is deliberately NOT used as a quality signal: the widget
+    says "Cardio needs round-3+ data", i.e. it is the SAMPLE SIZE behind
+    the cardio rating. Turner's 3 means three deep rounds on record, not
+    bad cardio -- exactly the misread that guessing would have produced."""
+    try:
+        d = json.load(open(os.path.join(UFCODDS, 'Github', 'output',
+                                        'ufc_ratings.json')))
+    except Exception:
+        return {}
+    return {f['name']: f for f in d.get('fighters', []) + d.get('prospects', [])}
+
+
+def skill_line(name, idx):
+    """SoS / control-defence / ranked record for one fighter, or None."""
+    f = idx.get(name)
+    if not f:
+        return None
+    bits = []
+    if f.get('sos_pct') is not None:
+        bits.append(f"SoS {f['sos_pct']}th")
+    if f.get('ctrl_def_pct') is not None:
+        bits.append(f"ctrl-def {f['ctrl_def_pct']}th")
+    rr = f.get('ranked_record')
+    bits.append(f"vs ranked {rr[0]}-{rr[1]}" if rr else "never faced a ranked opponent")
+    return '  '.join(bits) if bits else None
+
+
 def durability(prof, name):
     lb = prof['lose_by'] if prof else None
     if not prof:
@@ -189,6 +227,10 @@ def print_read(r):
     al = r.get('age_line')
     if al:
         print(f"  {al}")
+    for _s in (r['fav'], r['dog']):
+        _sk = skill_line(_s['name'], r.get('ridx') or {})
+        if _sk:
+            print(f"  {_s['name']}: {_sk}")
     for s in (r['fav'], r['dog']):
         if s['blind']:
             print(f"  !! {s['name']}: NO UFC RECORD -- method is the division "
@@ -205,9 +247,10 @@ def main():
     ev = ufcform.parse_events(ufcform.get(f"{ufcform.RAW}/ufc_event_details.csv"))
     greco = ufcform.parse_bouts(ufcform.get(f"{ufcform.RAW}/ufc_fight_results.csv"), ev)
     bouts = load_card()
-    _ages = ages('2026-08-15')
+    _ages, _ridx = ages('2026-08-15'), ratings_idx()
     for _b in bouts:
         _b['ages'] = _ages
+        _b['ridx'] = _ridx
     print(f"{len(bouts)} bouts on the pin; consensus of 16 books; method = "
           f"winner's win-by x loser's lose-by, shrunk to measured bases "
           f"(ufchist n=5599). NOT certainties -- the mix is the claim.")
@@ -280,6 +323,23 @@ def selftest():
         "an ordinary age gap prints both ages and no flag")
     chk(age_line('Nobody Here', 'Ian Machado Garry', {}) is None,
         "no DOB -> no age line, never a guessed age")
+
+    ridx = {'Kaue Fernandes': {'sos_pct': 2, 'ctrl_def_pct': 46,
+                               'ranked_record': None, 'cardio_rounds': None},
+            'Islam Makhachev': {'sos_pct': 98, 'ctrl_def_pct': 96,
+                                'ranked_record': [11, 1]}}
+    sl = skill_line('Kaue Fernandes', ridx)
+    chk(sl and 'SoS 2th' in sl and 'never faced a ranked opponent' in sl,
+        "the 8/14 audit fields print: a 2nd-percentile schedule and a fighter "
+        "who has never met a ranked opponent are said out loud")
+    sl2 = skill_line('Islam Makhachev', ridx)
+    chk(sl2 and 'ctrl-def 96th' in sl2 and 'vs ranked 11-1' in sl2,
+        "control defence and ranked record print for the other corner too")
+    chk(skill_line('Nobody', ridx) is None,
+        "a fighter absent from ratings prints nothing, never a guess")
+    chk('cardio_rounds' not in skill_line('Kaue Fernandes', ridx),
+        "cardio_rounds is NOT reported as quality -- it is the sample size "
+        "behind the cardio rating (widget: 'Cardio needs round-3+ data')")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
