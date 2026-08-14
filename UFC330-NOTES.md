@@ -31,6 +31,15 @@ leg that might be 80 is how a safe stack rots. Ribovics -700 carries a
 form flag besides: two straight losses (sub, dec) before this booking.
 Abdul-Malik comes off a KO loss at -720.
 
+## Diagnosis MEASURED (ufc_lag_backtest, 8,686 fights, out of sample)
+
+Confirmed the night it was written: the model underrates short-career
+fighters on winning records by +5.7 points (n=733) and overrates 16+
+fight careers by -4.8 (n=597). So: Orolbai's model 77 reads as lag (true
+nearer the market's 88); Luque's model 67 reads as inflation (true nearer
+the market's 49). Both adjudications above now carry a backtest, not a
+narrative.
+
 ## Diagnosis worth keeping (also in IMPROVE.md)
 
 Blend Elo converges slowly from its prior:

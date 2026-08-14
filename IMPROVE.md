@@ -6,19 +6,13 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
-1. **Blend Elo convergence lag, career-length-conditioned**: on one card
-   (UFC 330) the age/Elo blend was wrong the same way three times --
-   Luque overrated in decline (long career), Orolbai underrated rising
-   (six fights), Robertson's 20-fight streak fully credited. DESIGN
-   (odds-free -- the mdabbert odds archive is 404 from container AND
-   runner, receipts in srcprobe history; live graded rows are n=11):
-   replay the blend chronologically over the 5,599 modern Greco bouts,
-   grade every prediction, bucket calibration (predicted vs actual win
-   rate, Wilson bands) by the fighter's UFC bout count at fight time
-   (<=6 / 7-15 / 16+). If short-career sides win MORE than predicted and
-   long-career sides LESS, the lag is real -> career-length shrink in
-   the blend. If buckets are flat, the UFC 330 pattern was three
-   coincidences and the diagnosis dies. Either outcome is a payoff.
+1. **Career-length correction for the blend** (follow-on of the confirmed
+   lag): the backtest says +5.7 on short-winning sides (n=733) and -4.8 on
+   long sides (n=597), out of sample. Design: derive the correction on a
+   train-internal split, verify on the untouched tail -- NEVER derive and
+   validate on the same rows. Until it ships, the stated rule stands: when
+   blend and market disagree 10+, trust market on long-career decliners,
+   and read the blend's coolness on short-career winners as lag, not signal.
 2. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.
