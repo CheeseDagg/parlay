@@ -820,15 +820,6 @@
    "newest": "2026-08-09",
    "matched": "exact"
   },
-  "Qingdao Hainiu FC": {
-   "form": "LLLLLD",
-   "n": 6,
-   "ppg": 0.17,
-   "gf": 0.67,
-   "ga": 2.33,
-   "newest": "2026-08-08",
-   "matched": "exact"
-  },
   "Wuhan Three Towns": {
    "form": "DWWLLD",
    "n": 6,
@@ -7639,7 +7630,6 @@
   "KuPS Kuopio",
   "Ilves Tampere",
   "KFUM",
-  "Shandong Luneng Taishan FC",
   "Shanghai SIPG FC",
   "Shenzhen Peng City FC",
   "Beijing FC",
@@ -7780,8 +7770,6 @@
   "Austria Wien",
   "WSG Tirol",
   "Rapid Wien",
-  "Kashiwa Reysol",
-  "Tokyo Verdy",
   "Gamba Osaka",
   "Mito HollyHock",
   "Kashima Antlers",
