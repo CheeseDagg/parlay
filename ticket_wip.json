@@ -70,16 +70,6 @@
   "t": "2026-08-16T00:45Z"
  },
  {
-  "p": 0.7153024911032029,
-  "d": 1.3333333333333333,
-  "lab": "Donte Johnson ML",
-  "price": -300,
-  "grp": "MMA 08-15",
-  "fam": "MMA",
-  "sport": "FIGHT",
-  "t": "2026-08-15T23:45Z"
- },
- {
   "p": 0.8329853862212943,
   "d": 1.1428571428571428,
   "lab": "Esteban Ribovics ML",
@@ -99,10 +89,10 @@
   "t": "2026-08-16T03:30Z"
  },
  {
-  "lab": "Kaue Fernandes ML",
-  "price": 122,
-  "p": 0.42881646655231564,
-  "d": 2.22,
+  "lab": "Kaue Fernandes by KO/TKO or Points",
+  "price": 150,
+  "p": 0.362,
+  "d": 2.5,
   "fam": "MMA",
   "grp": "MMA 08-15",
   "t": "2026-08-16T02:15Z"
