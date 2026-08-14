@@ -83,7 +83,7 @@ def priors(rows):
         n = w = 0
         sl_op = sa_op = sl = sa = 0
         tl_op = ta_op = tl = ta = 0
-        secs = 0
+        secs = ctl = 0
         for r in career:
             if n >= MIN_PRIOR:
                 out[(f, r['date'])] = {
@@ -95,6 +95,7 @@ def priors(rows):
                               if ta_op >= MIN_TD_FACED else None),
                     'tdacc': (tl / float(ta) if ta >= MIN_TD_FACED else None),
                     'absorb': (sl_op / (secs / 60.0)) if secs >= 300 else None,
+                    'ctrlrate': (ctl / (secs / 60.0)) if secs >= 300 else None,
                     'sig_faced': sa_op, 'td_faced': ta_op, 'mins': secs / 60.0,
                 }
             n += 1
@@ -103,11 +104,11 @@ def priors(rows):
             sl += r['sig_l']; sa += r['sig_a']
             tl_op += r['td_l_opp']; ta_op += r['td_a_opp']
             tl += r['td_l']; ta += r['td_a']
-            secs += r['secs']
+            secs += r['secs']; ctl += r['ctrl']
     return out
 
 
-KEYS = ('winpct', 'strdef', 'stracc', 'tddef', 'tdacc', 'absorb')
+KEYS = ('winpct', 'strdef', 'stracc', 'tddef', 'tdacc', 'absorb', 'ctrlrate')
 
 
 def matchups(rows, pri=None):
@@ -262,7 +263,7 @@ def career_rates(rows=None):
     for r in rows:
         a = agg[r['f']]
         for k in ('sig_l', 'sig_a', 'sig_l_opp', 'sig_a_opp',
-                  'td_l', 'td_a', 'td_l_opp', 'td_a_opp', 'secs'):
+                  'td_l', 'td_a', 'td_l_opp', 'td_a_opp', 'secs', 'ctrl'):
             a[k] += r[k]
         a['n'] += 1
     out = {}
@@ -280,6 +281,7 @@ def career_rates(rows=None):
                        if a['sig_a_opp'] >= MIN_SIG_FACED else None),
             'tddef': (1.0 - a['td_l_opp'] / float(a['td_a_opp'])
                       if a['td_a_opp'] >= MIN_TD_FACED else None),
+            'ctrlrate': a['ctrl'] / mins,
             'td_faced': a['td_a_opp'], 'sig_faced': a['sig_a_opp'],
         }
     return out
@@ -378,7 +380,7 @@ def main():
               f"{solo['base_ll']:.5f}, {solo['acc'] * 100:.1f}% on "
               f"{solo['n_test']} untouched bouts")
     verdicts = []
-    for extra in ('strdef', 'tddef', 'stracc', 'absorb'):
+    for extra in ('strdef', 'tddef', 'stracc', 'absorb', 'ctrlrate'):
         r = adds(mus, ['winpct'], extra)
         if not r:
             print(f"    d_{extra}: too few usable bouts either side of the "
@@ -443,10 +445,12 @@ def selftest():
             'won': 1}]
     pri = {('Abe', '2013-01-01'): dict(n=5, winpct=0.2, strdef=0.5, stracc=0.5,
                                        tddef=0.5, tdacc=0.5, absorb=1.0,
-                                       sig_faced=999, td_faced=99, mins=99),
+                                       ctrlrate=1.0, sig_faced=999,
+                                       td_faced=99, mins=99),
            ('Zed', '2013-01-01'): dict(n=5, winpct=0.8, strdef=0.6, stracc=0.5,
                                        tddef=0.5, tdacc=0.5, absorb=1.0,
-                                       sig_faced=999, td_faced=99, mins=99)}
+                                       ctrlrate=1.0, sig_faced=999,
+                                       td_faced=99, mins=99)}
     mus, _ = matchups(two, pri)
     chk(len(mus) == 1 and mus[0]['a'] == 'Abe' and mus[0]['y'] == 0,
         "the bout orients ALPHABETICALLY and y follows the orientation -- Zed "

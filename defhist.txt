@@ -6,6 +6,7 @@ defhist: 17372 corner-rows -> 3897 bouts with prior career on BOTH sides (4789 d
     d_tddef    3167 bouts  (81%)
     d_tdacc    2828 bouts  (73%)
     d_absorb   3888 bouts  (100%)
+    d_ctrlrate  3888 bouts  (100%)
 
   WIN RATE BY DIFFERENTIAL (positive = our side is better)
     d_strdef
@@ -27,9 +28,11 @@ defhist: 17372 corner-rows -> 3897 bouts with prior career on BOTH sides (4789 d
     +d_tddef   n= 3167  0.67697 -> 0.67573  gain +0.00124  (best null +0.00142, p=0.095)  acc 57.0 -> 57.6%  no
     +d_stracc  n= 3480  0.67737 -> 0.67449  gain +0.00289  (best null +0.00028, p=0.048)  acc 58.0 -> 58.5%  ADDS
     +d_absorb  n= 3888  0.67780 -> 0.67281  gain +0.00498  (best null +0.00080, p=0.048)  acc 57.2 -> 58.6%  ADDS
+    +d_ctrlrate n= 3888  0.67780 -> 0.67429  gain +0.00351  (best null +0.00009, p=0.048)  acc 57.2 -> 58.1%  ADDS
 
-  VERDICT: d_stracc, d_absorb earn a place beside prior win rate -- each beat every one of 20 shuffles of itself on the untouched tail.
+  VERDICT: d_stracc, d_absorb, d_ctrlrate earn a place beside prior win rate -- each beat every one of 20 shuffles of itself on the untouched tail.
     d_stracc: coefficient +0.057, accuracy 58.0 -> 58.5%
     d_absorb: coefficient -0.175, accuracy 57.2 -> 58.6%
+    d_ctrlrate: coefficient +0.118, accuracy 57.2 -> 58.1%
   REFUSED and recorded so it is not re-proposed: d_strdef, d_tddef
   wrote defhist.json
