@@ -212,3 +212,10 @@ to-advance + that match's U6.5) + four F5 unders. The stated ~44% carried
 (hand.py pins the Besiktas measurement); true chance was nearer 36-38%.
 placed.py exists as of tonight so a rushed slip can never go unwritten
 again.
+
+## UFC330 bonus 4-leg — +2405 — placed 2026-08-14T15:24Z
+
+- [ ] Joel Alvarez by KO/TKO or Submission (v Njokuani) — -150 (model 47.0%)
+- [ ] Mansur Abdul Malik by KO/TKO (v Stoltzfus) — -105 (model 40.0%)
+- [ ] Kaue Fernandes by KO/TKO (v Turner) — +250 (model 20.0%)
+- [ ] Islam Makhachev by Points (v Garry) — +120 (model 35.0%)
