@@ -30,6 +30,7 @@ can check and says out loud what it cannot:
   SHAPE    fewer legs at fixed price, as a bound           (8/13 16-legger)
   SGPPAIR  same-game pairs named -- the book reprices them  (sgplog)
   DH       doubleheader days, where the feed keys one game (coverage)
+  LIVE     every leg still ON the board, at the quoted price   (8/14 Mercado)
   LOG      calibration.csv and slips.json entries pending (rules 29, 31)
 
 FAIL blocks. WARN is a judgement call that must be spoken aloud, not
@@ -705,6 +706,141 @@ def gate_dh(legs, slate=None):
                     f"this start time's game, not the nightcap")
 
 
+def gate_live(legs, pool=None, now=None):
+    """Is every leg STILL on the board, at the price we priced it from?
+
+    8/14, live money: Ernesto Mercado was on the FanDuel board at -3000 and
+    sat on the Saturday ticket at 95.6%. Between the 14:27 and 18:07 pulls
+    FanDuel took the whole bout down -- Tagoe-Mercado, both sides, gone.
+    Nothing noticed. The ticket kept printing a 95.6% leg for a market that
+    no longer existed, and it only surfaced because Ryan went looking for
+    Mercado on another book. Every other gate here reads the leg as WRITTEN;
+    none of them re-read the BOARD.
+
+    Group-level absence is the unambiguous signal and the one this gate
+    fails on. A selection missing while its group survives is ordinary --
+    the feed carries moneylines, not the method props and app-quoted SGPs
+    that legitimately sit on a ticket -- so those are named as unverifiable
+    rather than failed. A whole group gone is a market that is gone.
+
+    Price movement is the quieter half. Our p came from the OLD price; a
+    leg that moved is a leg whose probability is stale even though its name
+    still matches. Any move is named. A move that breaks rule 2 or rule 3
+    fails, because the ticket now carries a leg the rules forbid.
+
+    Started legs are excluded from the vanish check and named: STALE
+    already fails those, and a live game leaving the board is not the
+    failure this gate is about.
+
+    THE FALSE POSITIVE, found on this gate's own first live run and fixed
+    before it shipped: Ryan's U5.5 Alverca-Estrela is quoted off his app at
+    a rung the feed does not carry, and it is filed under a group named for
+    itself, so a naive group lookup called a perfectly live leg vanished.
+    An app-quoted leg is therefore checked at FIXTURE level instead -- the
+    board still lists Alverca-Estrela, so the leg is confirmed alive with
+    the rung named as unfetchable. Only a fixture the board has lost is
+    escalated, and to WARN, because feed coverage is a floor and not the
+    schedule (board.py says so in three families)."""
+    if not pool:
+        return 'PASS', 'no pool provided -- board presence unchecked'
+    import board
+    n = now or board._utcnow()
+    by_lab, groups = {}, set()
+    for o in pool:
+        by_lab.setdefault(o['lab'], []).append(o)
+        if o.get('grp'):
+            groups.add(o['grp'])
+
+    gone, moved, breaks, unver, started = [], [], [], [], []
+    appok, nofix = [], []
+    for l in legs:
+        lab, grp = l['lab'], l.get('grp')
+        if l.get('t') and l['t'] <= n:
+            started.append(lab); continue
+        here = by_lab.get(lab)
+        if here:
+            # Same label can sit on two fixtures (19 such labels on the 8/13
+            # board). Grade the one we BET -- matched on start time -- and
+            # only fall back to the first when the leg carries no time.
+            o = next((c for c in here if c.get('t') == l.get('t')), here[0])
+            if o['price'] != l['price']:
+                moved.append((lab, l['price'], o['price']))
+                if o['price'] > -350 or o['price'] > 0:
+                    breaks.append((lab, o['price']))
+            continue
+        if _app_quoted(l):
+            fx = _fixture_live(l, pool)
+            (appok if fx else nofix).append((lab, fx))
+        elif grp and grp not in groups:
+            gone.append((lab, grp))
+        else:
+            unver.append(lab)
+
+    if gone:
+        return ('FAIL', f"{len(gone)} leg(s) NO LONGER ON THE BOARD -- the whole "
+                f"market is gone, not just the price: "
+                + '; '.join(f"{lab} ({grp})" for lab, grp in gone)
+                + " | re-pull, and if it is still absent the leg cannot be bet here")
+    if breaks:
+        return ('FAIL', f"{len(breaks)} leg(s) moved through the rules: "
+                + '; '.join(f"{lab} now {pr:+d}" for lab, pr in breaks)
+                + " | rule 2/3 fail at the CURRENT price, not the quoted one")
+    bits = []
+    if moved:
+        bits.append(f"{len(moved)} leg(s) MOVED since quoting ("
+                    + '; '.join(f"{lab} {a:+d} -> {b:+d}" for lab, a, b in moved)
+                    + ") -- p is stale, reprice before betting")
+    if nofix:
+        bits.append(f"{len(nofix)} app-quoted leg(s) whose FIXTURE is not on the "
+                    f"board at all: {', '.join(lab for lab, _ in nofix)} -- "
+                    f"confirm the match is still on before betting")
+    if appok:
+        bits.append(f"{len(appok)} app-quoted leg(s) confirmed at fixture level "
+                    f"(rung deeper than the feed carries): "
+                    + '; '.join(f"{lab} -> {fx}" for lab, fx in appok))
+    if unver:
+        bits.append(f"{len(unver)} leg(s) the feed cannot confirm "
+                    f"(method props): {', '.join(unver)}")
+    if started:
+        bits.append(f"{len(started)} started leg(s) skipped -- STALE owns those")
+    if moved or nofix:
+        return 'WARN', ' | '.join(bits)
+    if bits:
+        return 'PASS', ' | '.join(bits)
+    return 'PASS', f"all {len(legs)} legs still on the board at the quoted price"
+
+
+_FIXNOISE = {'under', 'over', 'goals', 'draw', 'derived', 'quote', 'both',
+             'score', 'team', 'total', 'points', 'chance', 'double'}
+
+def _app_quoted(l):
+    """A leg whose PRICE came from Ryan's app, not from the feed. Three
+    honest markers, no guessing: hand.py stamps fam='HAND'; a leg built
+    from a quote is filed under a group named for itself, which no board
+    leg ever is; and the SGP labels say so in words."""
+    return (l.get('fam') == 'HAND' or l.get('src') == 'app'
+            or not l.get('grp') or l.get('grp') == l['lab']
+            or 'app quote' in l['lab'].lower() or l['lab'].lower().startswith('sgp:'))
+
+def _fixtoks(s):
+    import re
+    return {w for w in re.findall(r"[A-Za-zÀ-ÿ]{4,}", str(s).lower())
+            if w not in _FIXNOISE}
+
+def _fixture_live(l, pool):
+    """Is the app-quoted leg's MATCH still on the board, even though its
+    rung is not? Returns the board group that carries it, or None."""
+    want = _fixtoks(l.get('match') or l['lab'])
+    if not want:
+        return None
+    for o in pool:
+        have = _fixtoks(o.get('match') or '') | _fixtoks(o.get('grp') or '')
+        hit = want & have
+        if len(hit) >= 2 or any(len(w) >= 5 for w in hit):
+            return o.get('grp') or o['lab']
+    return None
+
+
 def run(legs, hot=None, open_slips=None, pool=None):
     hot = hot or {}
     gates = [("FLOOR", gate_floor(legs)), ("PLUS", gate_plus(legs)),
@@ -717,7 +853,8 @@ def run(legs, hot=None, open_slips=None, pool=None):
              ("OVERLAP", gate_overlap(legs, open_slips or [])),
              ("SHAPE", gate_shape(legs, pool)),
              ("SGPPAIR", gate_sgppair(legs)),
-             ("DH", gate_dh(legs))]
+             ("DH", gate_dh(legs)),
+             ("LIVE", gate_live(legs, pool))]
     return gates, any(v == 'FAIL' for _, (v, _) in gates)
 
 def main():
@@ -1118,6 +1255,92 @@ def selftest():
                      {'games': [{'away': 'A', 'home': 'B'}]})
     chk(_v == 'PASS' and 'no doubleheaders' in _m,
         "a single-game slate passes clean")
+
+    # ---- LIVE: the 8/14 Mercado case, replayed. The board pool is the
+    # POST-pull board (Tagoe-Mercado absent); the ticket is the pre-pull one.
+    _now = '2026-08-14T20:00Z'
+    _pool = [{'lab': 'Claressa Shields', 'price': -3000, 'grp': 'BOX Shields-Scott',
+              't': '2026-08-16T05:00Z'},
+             {'lab': 'Troy Isley', 'price': -650, 'grp': 'BOX Hicks-Isley',
+              't': '2026-08-16T01:50Z'},
+             {'lab': 'Myktybek Orolbai ML', 'price': -1200, 'grp': 'MMA 08-15',
+              't': '2026-08-15T21:45Z'}]
+    _tik = [{'lab': 'Ernesto Mercado', 'price': -3000, 'grp': 'BOX Tagoe-Mercado',
+             't': '2026-08-16T00:00Z'},
+            {'lab': 'Claressa Shields', 'price': -3000, 'grp': 'BOX Shields-Scott',
+             't': '2026-08-16T05:00Z'}]
+    _v, _m = gate_live(_tik, _pool, now=_now)
+    chk(_v == 'FAIL' and 'Mercado' in _m and 'BOX Tagoe-Mercado' in _m,
+        "the pulled bout FAILS by name -- the exact 8/14 miss, replayed")
+    _v, _m = gate_live([_tik[1]], _pool, now=_now)
+    chk(_v == 'PASS' and 'still on the board' in _m,
+        "a leg still on the board at its quoted price passes clean")
+
+    # A method prop's GROUP survives (the card is there), the selection never
+    # existed in the feed. That is unverifiable, not vanished.
+    _v, _m = gate_live([{'lab': 'Islam Makhachev by Points', 'price': 120,
+                         'grp': 'MMA 08-15', 't': '2026-08-16T03:30Z'}],
+                       _pool, now=_now)
+    chk(_v == 'PASS' and 'cannot confirm' in _m and 'Makhachev' in _m,
+        "a method prop is named unverifiable, NOT failed as vanished")
+
+    # Price movement: p is stale even when the name still matches.
+    _v, _m = gate_live([{'lab': 'Troy Isley', 'price': -650,
+                         'grp': 'BOX Hicks-Isley', 't': '2026-08-16T01:50Z'}],
+                       [dict(_pool[1], price=-900)], now=_now)
+    chk(_v == 'WARN' and '-650 -> -900' in _m,
+        "a moved price WARNs with both numbers, because p came from the old one")
+    _v, _m = gate_live([{'lab': 'Troy Isley', 'price': -650,
+                         'grp': 'BOX Hicks-Isley', 't': '2026-08-16T01:50Z'}],
+                       [dict(_pool[1], price=-300)], now=_now)
+    chk(_v == 'FAIL' and '-300' in _m,
+        "a leg that moved THROUGH the -350 floor fails at the current price")
+    _v, _m = gate_live([{'lab': 'Troy Isley', 'price': -650,
+                         'grp': 'BOX Hicks-Isley', 't': '2026-08-16T01:50Z'}],
+                       [dict(_pool[1], price=160)], now=_now)
+    chk(_v == 'FAIL' and '+160' in _m, "and one that moved to plus money fails (rule 3)")
+
+    # A started leg is STALE's business, not this gate's -- and must not be
+    # reported as vanished when the feed drops a live game.
+    _v, _m = gate_live([{'lab': 'Gone Team', 'price': -500, 'grp': 'NOPE',
+                         't': '2026-08-14T19:00Z'}], _pool, now=_now)
+    chk(_v == 'PASS' and 'started' in _m,
+        "a started leg is skipped and named, not failed as off-board")
+    chk(gate_live([{'lab': 'x', 'price': -500, 'grp': 'y'}], None)[0] == 'PASS',
+        "no pool means unchecked, not a false alarm")
+
+    # ---- THE FALSE POSITIVE THIS GATE FOUND IN ITSELF, 8/14. Ryan's U5.5 is
+    # quoted off his app at a rung the feed does not carry, filed under a
+    # self-named group. First live run called it vanished. It is not.
+    _fx = [{'lab': 'Alverca DC (derived)', 'price': -334,
+            'grp': 'SOC Alverca-Estrela', 't': '2026-08-15T14:30Z'}]
+    _app = {'lab': 'U5.5 Alverca v CF Estrela', 'price': -8000, 'fam': 'SOCT',
+            'grp': 'U5.5 Alverca v CF Estrela', 'match': 'Alverca v CF Estrela',
+            't': '2026-08-15T14:30Z'}
+    _v, _m = gate_live([_app], _fx, now=_now)
+    chk(_v == 'PASS' and 'SOC Alverca-Estrela' in _m and 'fixture level' in _m,
+        "an app-quoted rung is CONFIRMED by its fixture, not failed as vanished")
+    _v, _m = gate_live([_app], _pool, now=_now)
+    chk(_v == 'WARN' and 'FIXTURE is not on the board' in _m,
+        "but an app-quoted leg whose match is gone entirely still WARNs")
+    chk(_app_quoted(_app) and _app_quoted({'lab': 'SGP: Porto DC + U5.5 (app quote)',
+                                           'grp': 'SOC Porto-RA'})
+        and not _app_quoted({'lab': 'Troy Isley', 'grp': 'BOX Hicks-Isley'}),
+        "self-named group and 'app quote' wording mark a quote; a board leg is not marked")
+    chk(_fixture_live({'match': 'FC Porto v Rio Ave FC', 'lab': 'x'},
+                      [{'lab': 'y', 'grp': 'SOC Porto-RA'}]) == 'SOC Porto-RA',
+        "one distinctive 5+ char club token is enough to confirm a fixture")
+    chk(_fixture_live({'lab': 'Under 5.5 goals', 'match': ''}, _fx) is None,
+        "a leg with only noise words confirms nothing -- no accidental match")
+
+    # Same label on two fixtures: grade the one we BET, by start time.
+    _twin = [{'lab': 'NYCFC DC (derived)', 'price': -493, 'grp': 'A',
+              't': '2026-08-15T23:30Z'},
+             {'lab': 'NYCFC DC (derived)', 'price': -262, 'grp': 'B',
+              't': '2026-08-17T23:30Z'}]
+    _v, _m = gate_live([dict(_twin[0])], _twin, now=_now)
+    chk(_v == 'PASS' and 'still on the board' in _m,
+        "the twin-fixture label grades ITS OWN start time, not the other one")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
