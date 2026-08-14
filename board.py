@@ -542,10 +542,11 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
             # with malformed groups and DISCARD them, which is the rule deleting
             # the very fixtures it would most approve of.
             if len(rows) == 2 and not any(w == 'Draw' for w, *_ in rows):
+                _both = ' v '.join(w for w, *_ in rows)
                 for who, price, opps, t in rows:
                     add(('O', grp), p=devig_n(price, [int(x) for x in opps.split(',')]),
                         d=dec(price), lab=f"{who} (no-draw comp)", price=price,
-                        grp=grp, fam='SOC', sport='OTHER', t=t)
+                        grp=grp, fam='SOC', sport='OTHER', t=t, match=_both)
                 continue
             if len(rows) != 3 or not any(w == 'Draw' for w, *_ in rows):
                 # not a recognisable 3-way: refuse to guess, and say so
@@ -584,8 +585,15 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
                 continue
             d_dc = 1 + 0.80 * (1 / p_dc - 1)
             am = round(-100 / (d_dc - 1)) if d_dc < 2 else round(100 * (d_dc - 1))
+            # THE OPPONENT IS PART OF THE LEG. 'San Lorenzo' names an
+            # Argentine club, a Paraguayan one and eight others; on 8/14 the
+            # board's SL-USF (Argentina) was read against an app price for a
+            # San Lorenzo v Cerro fixture, and the form check was done on the
+            # wrong club entirely. Both sides are right there in the 3-way
+            # rows, so every soccer leg now carries them.
             add(('O', grp), p=p_dc, d=d_dc, lab=f"{fav[0]} DC (derived)",
-                price=am, grp=grp, fam='SOC', sport='OTHER', t=fav[3])
+                price=am, grp=grp, fam='SOC', sport='OTHER', t=fav[3],
+                match=f"{fav[0]} v {dog[0]}", home=fav[0], away=dog[0])
 
     # ---- MLB moneylines. Keyed to the same ('GT', game) slot as that game's
     #      totals: a team winning and that game's run total are one process
@@ -729,6 +737,19 @@ def build(book, no_plus=True, min_price=0, cutoff=None, drop=(), max_price=0,
         for _o in _v:
             if _o.get('fam') in ('SOC', 'SOCT'):
                 _o['lg'] = _lg.get(_o.get('grp'))
+    # TOTALS legs inherit their fixture from the same group's 3-way, so an
+    # 'Under 5.5 goals (SL-USF)' can never be checked against the wrong San
+    # Lorenzo again.
+    _fx = {}
+    for _v in markets.values():
+        for _o in _v:
+            if _o.get('match') and _o.get('grp'):
+                _fx.setdefault(_o['grp'], _o['match'])
+    for _v in markets.values():
+        for _o in _v:
+            if _o.get('fam') == 'SOCT' and not _o.get('match'):
+                _o['match'] = _fx.get(_o.get('grp'), '')
+
     if _DC_REFUSED:
         print(f"  board: {len(_DC_REFUSED)} soccer group(s) REFUSED as degenerate "
               f"3-ways -- the board still shipped, these legs did not:")
@@ -963,6 +984,16 @@ def selftest():
 
     # ---- COVERAGE. Rule 14 as a printed condition rather than a remembered one.
     import io, contextlib, json as _j
+    _m2 = build('FanDuel', min_price=0)
+    _soc = [o for v in _m2.values() for o in v if o.get('fam') in ('SOC','SOCT')]
+    chk(_soc and all(o.get('match') for o in _soc),
+        "EVERY soccer leg names both clubs -- 'San Lorenzo' alone is ten "
+        "different teams, and on 8/14 the Argentine fixture was checked "
+        "against a Paraguayan one's price")
+    _u = next((o for o in _soc if o.get('fam')=='SOCT'), None)
+    chk(_u is None or ' v ' in _u.get('match',''),
+        "a totals leg inherits the fixture from its group's 3-way")
+
     # the 8/14 noon failure: ONE degenerate 3-way must not cost the board.
     _DC_REFUSED.clear()
     _before = len(_DC_REFUSED)
