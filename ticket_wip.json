@@ -29,9 +29,10 @@
   "grp": "BOX Dixon-Nelson",
   "fam": "BOX",
   "sport": "OTHER",
-  "t": "2026-08-15T21:00Z",
+  "t": "2026-08-15T20:00Z",
   "book": "DraftKings",
-  "src": "UNVERIFIED \u2014 not a DK quote"
+  "src": "UNVERIFIED \u2014 not a DK quote",
+  "t_approx": "card start, bout time unknown"
  },
  {
   "lab": "Jaquan McElroy",
@@ -42,9 +43,10 @@
   "grp": "BOX McElroy-Thiel",
   "fam": "BOX",
   "sport": "OTHER",
-  "t": "2026-08-15T21:00Z",
+  "t": "2026-08-15T20:00Z",
   "book": "DraftKings",
-  "src": "UNVERIFIED \u2014 not a DK quote"
+  "src": "UNVERIFIED \u2014 not a DK quote",
+  "t_approx": "card start, bout time unknown"
  },
  {
   "lab": "Shannel Butler",
@@ -55,9 +57,10 @@
   "grp": "BOX Butler-Ramirez",
   "fam": "BOX",
   "sport": "OTHER",
-  "t": "2026-08-15T21:00Z",
+  "t": "2026-08-15T20:00Z",
   "book": "DraftKings",
-  "src": "UNVERIFIED \u2014 not a DK quote"
+  "src": "UNVERIFIED \u2014 not a DK quote",
+  "t_approx": "card start, bout time unknown"
  },
  {
   "p": 0.8780487804878049,
