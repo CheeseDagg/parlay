@@ -57,6 +57,17 @@ Blend Elo converges slowly from its prior:
 Three receipts on one card. When blend and market split by 10+, check
 career length + last-8 momentum before trusting either instrument.
 
+## Saturday method-prop workflow (rule 27, tooled)
+
+Paste each bout's FULL method ladder (both fighters x dec/ko/sub) into
+fightprops.py with --log: whole-ladder power de-vig (the flat 2% haircut
+is dead -- measured 11%..73% by price level), fighter method-win% vs
+moneyline drift printed, and every outcome enters methodlog.csv, which
+GRADES ITSELF from public results after the card. The de-vigged numbers
+ARE the probabilities; cardread's mix may pull a pick at most 5 points
+(clamp). Partial ladders fall back to from_quote with the assumption
+named and are never logged.
+
 ## Bettable-by-our-rules Saturday shortlist (prices move; recheck)
 
 Makhachev, Alvarez, Orolbai, D. Johnson (never lost), Ribovics only if
