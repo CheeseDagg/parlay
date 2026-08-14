@@ -32,6 +32,16 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- Team IDENTITY conditions soccer unders BEYOND recent pace: trailing-30
+  team level, measured on the residual after the pace delta, ships on all
+  four rungs (tail gains +0.0015..+0.0022 on 7,851 untouched matches,
+  every one beating all 20 identity-shuffles at p=0.048). The Cincinnati
+  call is now arithmetic: league base 92.9 -> 86.6 (pace -1.5, identity
+  -4.7) vs 81.1 implied -- the edge is real but HALF what the naive base
+  claimed, which is exactly the correction the eye guessed at and could
+  not size. Every team's current trailing-30 ships inside formcond.json
+  because the container cannot reach the source; the join refuses
+  ambiguity (San Lorenzo rule).
 - edge.py: every totals leg vs its OWN history (52,710 soccer closing-odds
   matches, 6,681 first-fives with parks, 321 CFL games), sorted by
   measured-minus-implied, with the model's hot-game read DISQUALIFYING
