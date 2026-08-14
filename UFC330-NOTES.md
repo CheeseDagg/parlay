@@ -40,6 +40,14 @@ nearer the market's 88); Luque's model 67 reads as inflation (true nearer
 the market's 49). Both adjudications above now carry a backtest, not a
 narrative.
 
+Correction SHIPPED overnight (+0.25 logits for 3-8-fight sides on 70%+
+last-5 wins; derived 2021-23, verified on untouched 2023-26, Brier
+0.2322 -> 0.2306). Corrected Orolbai: model 77 -> 81 vs market 88 --
+the gap halves and reads as residual caution, not a red flag. The
+veteran side (16+ fights, ~-6) remains uncorrected: the term refused to
+derive honestly, so Luque-shaped fighters still carry a stated distrust
+rule instead of a number.
+
 ## Diagnosis worth keeping (also in IMPROVE.md)
 
 Blend Elo converges slowly from its prior:
