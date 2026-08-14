@@ -115,7 +115,49 @@ def read_bout(bt, greco, hist):
                       fv['prof']['lose_by'] if fv['prof'] else None, base)
     return {'fav': fv, 'dog': dg, 'p_fav': pf, 'fmix': fmix, 'dmix': dmix,
             'base': base, 'wc': bt['wc'], 'title': bt['title'],
-            'fd1': bt['fd1'], 'f1': bt['f1']}
+            'fd1': bt['fd1'], 'f1': bt['f1'],
+            'age_line': age_line(fv['name'], dg['name'], bt.get('ages') or {})}
+
+
+AGE_OLD = 38          # where "veteran" starts costing, per the blend's age block
+
+
+def ages(card_date):
+    """{norm_name: age_on_card} from the same DOB cache the model's age block
+    uses. Age was available all along and was NOT printed until Ryan pointed
+    out, 8/14, that Barboza is 40 and Wells is 40 on a ticket I had already
+    'double-checked'. A factor the model uses and the report omits is a
+    corner cut."""
+    import datetime, sys
+    sys.path.insert(0, os.path.join(UFCODDS, 'Github'))
+    try:
+        import ufc_blend_predict as B
+        dobs = B.load_meta(B.META_CACHE)
+    except Exception:
+        return {}
+    try:
+        cd = datetime.date.fromisoformat(str(card_date)[:10])
+    except Exception:
+        cd = datetime.date.today()
+    return {k: round((cd - v).days / 365.25, 1) for k, v in dobs.items()}
+
+
+def age_line(a_name, b_name, tbl):
+    """One line naming both ages, and the 38+ side if there is one."""
+    import re
+    def look(n):
+        k = re.sub(r'[^a-z ]', '', n.lower()).strip()
+        return tbl.get(k) or next((v for kk, v in tbl.items()
+                                   if kk.split()[-1:] == k.split()[-1:]), None)
+    x, y = look(a_name), look(b_name)
+    if x is None or y is None:
+        return None
+    out = f"age {x} vs {y}"
+    if y >= AGE_OLD:
+        out += f"  << {b_name.split()[-1]} is {y:.0f}"
+    if x >= AGE_OLD:
+        out += f"  << OUR SIDE {a_name.split()[-1]} is {x:.0f}"
+    return out
 
 
 def durability(prof, name):
@@ -144,6 +186,9 @@ def print_read(r):
     print(f"  {r['dog']['name']} {pd_*100:.0f}%: "
           + '  '.join(f"{m} {pd_*dm[m]*100:.0f}%"
                       for m in sorted(dm, key=dm.get, reverse=True)))
+    al = r.get('age_line')
+    if al:
+        print(f"  {al}")
     for s in (r['fav'], r['dog']):
         if s['blind']:
             print(f"  !! {s['name']}: NO UFC RECORD -- method is the division "
@@ -160,6 +205,9 @@ def main():
     ev = ufcform.parse_events(ufcform.get(f"{ufcform.RAW}/ufc_event_details.csv"))
     greco = ufcform.parse_bouts(ufcform.get(f"{ufcform.RAW}/ufc_fight_results.csv"), ev)
     bouts = load_card()
+    _ages = ages('2026-08-15')
+    for _b in bouts:
+        _b['ages'] = _ages
     print(f"{len(bouts)} bouts on the pin; consensus of 16 books; method = "
           f"winner's win-by x loser's lose-by, shrunk to measured bases "
           f"(ufchist n=5599). NOT certainties -- the mix is the claim.")
@@ -221,6 +269,18 @@ def selftest():
         and abs(sum(r['dmix'].values()) - 1) < 1e-9,
         "both sides' mixes are proper distributions, so outright numbers "
         "sum to each side's win probability")
+    tbl = {'edson barboza': 40.6, 'esteban ribovics': 30.3,
+           'islam makhachev': 34.8, 'ian machado garry': 28.7}
+    al = age_line('Esteban Ribovics', 'Edson Barboza', tbl)
+    chk(al and 'Barboza is 41' in al,
+        "a 40-year-old opponent is NAMED on the bout line -- Ryan had to "
+        "point out Barboza's age on a ticket I had already double-checked")
+    al2 = age_line('Islam Makhachev', 'Ian Machado Garry', tbl)
+    chk(al2 and '<<' not in al2,
+        "an ordinary age gap prints both ages and no flag")
+    chk(age_line('Nobody Here', 'Ian Machado Garry', {}) is None,
+        "no DOB -> no age line, never a guessed age")
+
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 
