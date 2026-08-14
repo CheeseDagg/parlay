@@ -136,6 +136,11 @@ def form_of(rows, today=None, last=LAST_N):
             'ppg': round(pts / len(recent), 2),
             'gf': round(sum(gf for _, gf, _ in recent) / len(recent), 2),
             'ga': round(sum(ga for _, _, ga in recent) / len(recent), 2),
+            # THE SCORELINES, not just their mean. An average of 2.6 can be
+            # six 2-3 goal games or a 0-0 next to a 7-1; only the first is a
+            # reason to take an under. Ryan, 8/14: 'recommend them because
+            # they are going to go under, not because of the price.'
+            'totals': [gf + ga for _, gf, ga in recent],
             'newest': recent[0][0].isoformat()}
 
 
@@ -331,6 +336,11 @@ def selftest():
         "the app's short spelling still reaches it through containment")
     chk(find(flat, 'FC Inter Turku')[0] is None,
         "and the Inter Turku floor holds on this path identically")
+    f6 = form_of([(date(2026,8,1),0,0),(date(2026,8,4),1,0),(date(2026,8,8),4,3)],
+                 today=date(2026,8,13))
+    chk(f6['totals'] == [7, 1, 0],
+        "form carries each match's TOTAL goals newest-first (7,1,0) -- the "
+        "mean of 2.67 hides a 4-3; an under is taken on the scorelines")
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 
