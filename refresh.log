@@ -59,148 +59,16 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_champs_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  legs representable: ~1948 · API credits remaining 14415
+  legs representable: ~1948 · API credits remaining 14316
   wrote times.py
   wrote mlbml.py
   wrote totals.py
   wrote f5.py
   wrote mma.py
   wrote other.py
-  board selftest: 50/50 checks pass
-  board: MLBTool's kprops.json is not readable here -- K lambdas off. Every leg still prices from the market; nothing else is affected.
-  board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
-PASS  an evening UTC start keeps its ET date
-PASS  a post-midnight UTC start belongs to the PREVIOUS ET slate date
-PASS  the home side gets p_home (0.675)
-PASS  the away side gets 1 - p_home (0.32499999999999996)
-PASS  the same matchup on a date the model has no slate for gets NO opinion
-PASS  a different day of the same series reads that day's number, not today's
-PASS  a trailing digit on the game key is stripped, not treated as a team
-PASS  a team not in the matchup gets no opinion
-PASS  an unknown club name gets no opinion, not a crash
-PASS  --mlagree contract: None abstains, >0.5 keeps, <0.5 vetoes
-PASS  and the old expression `(mp or 0) > 0.5` really did veto a None (this is the bug)
-PASS  the live MODEL_P is keyed by (date, matchup), never by bare team code
-PASS  an eight-hour-old board reads as hours
-PASS  a three-day-old board reads as DAYS, not as 72h nobody converts
-PASS  and the hour/day switch is at 48h, not at a calendar boundary (46h stays hours, 49h becomes days)
-PASS  the K sentinel really does compare as 'in the future' (which is why it has to be excluded, not relied on)
-PASS  a pool of finished legs plus one sentinel counts as ZERO live legs
-PASS  and one genuinely future leg is enough to make the board live
-PASS  _utcnow() emits the same 17-char shape every leg's t carries, so the comparison never needs a parse
-PASS  a bare --by date includes fixtures ON that date -- the horizon is the END of the day, not midnight at the start of it
-PASS  and the very next morning is outside it
-PASS  a leg three months out is excluded, which is the whole point -- it is the heaviest price on the board and the solver wants it
-PASS  no --by means no horizon: this is opt-in, not a standing rule
-PASS  the K sentinel is OUTSIDE every horizon. A leg whose start is unknown cannot be shown to land inside one, and 'unknown' must not read as 'soon'
-PASS  a full UTC stamp is used as given, not padded
-PASS  et() carries the date, so two legs on different Saturdays cannot print identically
-PASS  and a post-midnight UTC start still prints as the previous ET evening
-PASS  ct() is the hour Ryan actually reads -- solve2, daily_report and ceiling print this, not Eastern
-PASS  Chicago at Golden State: 7:00 Pacific at Chase Center is 9:00 Central, and the board printed 10:00pm all day
-PASS  the two clocks are one hour apart and must never be used interchangeably
-PASS  the MAIN total is the balanced rung, not the deepest one posted (U15.5 is a ladder top, and quoting it as 'the total' is the 8/11 post-mortem's own error)
-PASS  no rungs -> None, not a crash
-PASS  the 8/11 slate's two 10+ adj-total games flag hot (['CHC@WSH', 'COL@ARI', 'PIT@MIA'])
-PASS  a model 2.4 runs above the market's main flags hot even under 10 (heat the market has not priced)
-PASS  a quiet game does not flag
-PASS  a STALE slate flags nothing on the model arms -- four-day-old heat is not tonight's heat
-PASS  with no slate at all, a market main of 10+ still flags
-  board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (RV-Sevilla) at -1600, 93.1%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 1 of 1262 candidate legs have ALREADY STARTED (now 2026-08-14T16:19Z, newest event on the board 2026-08-27T19:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
-  board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
-         also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
-         also: absent from the bookmakers list, so they return zero legs and look dark
-         also: Saudi Pro League returns fixtures with zero books attached
-         recheck: python3 socdiag.py  (runs on the Actions runner, ~90s)
-  board: MLB IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: doubleheader second games -- one game key per day, the nightcap is dropped upstream
-         recheck: compare times.py START against the day's schedule
-  board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
-         recheck: python3 socdiag.py lists every catalog key, not only soccer
-PASS  no Draw outcome survives into any pool
-PASS  every soccer offer is a derived Double Chance, never a 3-way side (340 soccer legs)
-PASS  derived DC probabilities are favourite-shaped, not draw-shaped
-PASS  the synthesized payout keeps LESS than fair -- the 80% shave is on, so a derived leg can under-promise but never over-promise
-PASS  coverage.json names what the soccer feed cannot see
-PASS  and names the two UEFA competitions that have NO catalog key at all -- the gap that produced 'there are five soccer matches today' three times in one morning while FanDuel priced about forty
-PASS  a board carrying soccer legs prints its blind spots beside the count
-PASS  and a board with no soccer on it is not lectured about soccer
-PASS  F5 U10.5 at -4500/+1100 de-vigs to 92.2%, next to the 93.78% that 1817 games actually produced (f5hist.py). 'power' put it at 97.1%, outside the 95% Wilson band and high at every rung
-PASS  Philadelphia Union DC derives to 87.7% under POWER. FanDuel's own DC quote de-vigged to 85.3%, but a quote is a SHADED number, not ground truth: 52710 matches with closing odds show mult understating the favourite DC in every reliability bin (sococalib.py)
-PASS  and NYCFC to 80.3% -- said-vs-happened error 0.68 points under power against 1.24 under mult, on the leg family actually bet
-PASS  the de-vig method rides with the MARKET FAMILY: two-way mult (1817 MLB games), N-way power (52710 soccer matches) -- each pinned to its own ground truth, because the global METHOD of 8/03 was wrong in both directions at once
-PASS  METHOD stays the two-way default; changing either family means re-running f5hist AND sococalib first, not editing a constant
-
-50/50 checks pass
-PASS  -200 is 1.50x
-PASS  +150 is 2.50x
-PASS  American round-trips
-PASS  mult de-vig sums to 1
-PASS  power de-vig sums to 1
-PASS  shin de-vig sums to 1
-PASS  power favours the heavy favourite over mult (0.9737>0.9363)
-PASS  a recorded opposite price is used instead of the assumption
-PASS  a prop leg gets the plain margin haircut
-PASS  a huge favourite stays below 1
-PASS  a slip is the product of its legs
-PASS  shared-leg union is exact, not 1-prod(1-p)
-PASS  sharing a leg makes at-least-one WORSE than independence implies
-PASS  two outcomes of one market cannot both happen
-PASS  the conflicting pair is reported
-PASS  a nested outcome absorbs its parent instead of multiplying by it
-PASS  a strict superset slip is flagged as dominated
-PASS  the shared leg's expected kill count is n*(1-p)
-PASS  MC matches exact for T1 (22.84% vs 22.83%)
-PASS  MC matches exact for T2 (41.65% vs 41.71%)
-PASS  MC matches exact for T3 (19.16% vs 19.07%)
-PASS  MC matches exact for at-least-one (65.73% vs 65.71%)
-PASS  opposite sides of the same fight are exclusive across slips
-PASS  the 2026-08-01 16-leg slip still grades 5.19% (got 5.19%)
-PASS  and still prices 14.19x (got 14.19x)
-PASS  with no same-game labels the band collapses to the point estimate
-PASS  and no same-game group is reported
-PASS  lower bound is max(0, p1+p2-1) (0.2341)
-PASS  upper bound is min(p1,p2) (0.5013)
-PASS  the middle value is still the product rule
-PASS  and the product sits strictly inside (0.2341 < 0.3674 < 0.5013)
-PASS  the same-game group is reported by name
-PASS  two sides of one market band to exactly [0,0], not a product
-PASS  the grade names the date of the file it read
-PASS  and a file older than today is called historical, not graded silently
-PASS  a file with no as_of is told to add one rather than passing as current
-PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
-
-37/37 checks pass
-  board: MLBTool's kprops.json is not readable here -- K lambdas off. Every leg still prices from the market; nothing else is affected.
-  board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
-  board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (RV-Sevilla) at -1600, 93.1%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 1 of 1262 candidate legs have ALREADY STARTED (now 2026-08-14T16:19Z, newest event on the board 2026-08-27T19:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
-  board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
-         also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
-         also: absent from the bookmakers list, so they return zero legs and look dark
-         also: Saudi Pro League returns fixtures with zero books attached
-         recheck: python3 socdiag.py  (runs on the Actions runner, ~90s)
-  board: MLB IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: doubleheader second games -- one game key per day, the nightcap is dropped upstream
-         recheck: compare times.py START against the day's schedule
-  board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
-         recheck: python3 socdiag.py lists every catalog key, not only soccer
-  board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (RV-Sevilla) at -1600, 93.1%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
-         also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
-         also: absent from the bookmakers list, so they return zero legs and look dark
-         also: Saudi Pro League returns fixtures with zero books attached
-         recheck: python3 socdiag.py  (runs on the Actions runner, ~90s)
-  board: MLB IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: doubleheader second games -- one game key per day, the nightcap is dropped upstream
-         recheck: compare times.py START against the day's schedule
-  board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
-         recheck: python3 socdiag.py lists every catalog key, not only soccer
-wrote BOARD.md
+  board selftest: 49/50 checks pass
+  FAIL  derived DC probabilities are favourite-shaped, not draw-shaped -- 1 outside (0.5, 0.995): TPS Turku DC (derived) p=0.9988 @ -102284
+board.py --selftest FAILED against the freshly written feeds — the files are on disk for inspection; do not trust this board until it passes.
   MIA@CIN    Sandy Alcantara        1.09 Chase Burns            0.34     5.1
   BOS@PIT    Jake Bennett           0.62 Bubba Chandler         0.00    5.45
   CWS@DET    Sean Newcomb            --  Jackson Jobe            --     4.65
@@ -243,16 +111,17 @@ wrote /home/runner/work/parlay/parlay/mlbform.json
   325 matched / 210 not. wrote /home/runner/work/parlay/parlay/socform.json
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
-  mlblines: 267 pregame leg(s) snapshotted, 331 row(s) total (0 new)
+  mlblines: 268 pregame leg(s) snapshotted, 332 row(s) total (1 new)
 
 7/7 checks pass
 MLB: 14 games on 2026-08-14
 soccer_concacaf_leagues_cup: 5 matches
 soccer_usa_mls: 45 matches
 wrote /home/runner/work/parlay/parlay/scores.json
+  STL@CHC    through5=  -  current=  0  inning=1  
   Santos Laguna    @ Philadelphia Uni goals=2  FT
   Necaxa           @ New York City FC goals=3  FT
   Austin FC        @ América          goals=2  FT
   Chicago Fire     @ Cruz Azul        goals=3  FT
   Tijuana          @ Portland Timbers goals=4  FT
-run conclusion: success at 2026-08-14 16:20
+run conclusion: failure at 2026-08-14 17:00
