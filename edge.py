@@ -42,6 +42,59 @@ FLOOR = -350
 
 
 # ------------------------------------------------------------------ lookups
+def _fc_league(lg_key):
+    """odds-API key -> formcond model league name (sococalib vocabulary
+    first, sochist second -- same join socbase makes, reused not re-guessed)."""
+    import socbase as SB
+    return SB.CALIB.get(lg_key) or SB.MAP.get(lg_key)
+
+
+def pace_of(match, socform):
+    """Mean of both clubs' last-5 match totals, or None if either side is
+    missing -- half a pace is not a pace."""
+    if not (match and socform):
+        return None
+    import socform as SF
+    means = []
+    for club in re.split(r'\s+v\s+', match)[:2]:
+        hit = SF.find(socform, club.strip())
+        f = hit[0] if isinstance(hit, tuple) else hit
+        tots = (f or {}).get('totals') or []
+        if len(tots) < 3:
+            return None
+        last = tots[-5:]
+        means.append(sum(last) / float(len(last)))
+    return sum(means) / 2.0 if len(means) == 2 else None
+
+
+def soc_conditioned(lg_key, rung, match, socform, fc):
+    """(p, src) with the TEAM-PACE delta applied, or None wherever the
+    derivation did not ship: rung refused on the tail, league off-model,
+    either club's form missing. formcond derived the deltas on train and
+    verified them on an untouched 2025-07+ tail with 20 feature-shuffles
+    as the bar; a rung that failed that stays on the league base here."""
+    if not fc:
+        return None
+    ship = (fc.get('ship') or {}).get(str(rung))
+    if not ship or not ship.get('ships'):
+        return None
+    name = _fc_league(lg_key)
+    if not name:
+        return None
+    pace = pace_of(match, socform)
+    if pace is None:
+        return None
+    import formcond as FC
+    p = FC.conditioned(fc['model'], name, rung, pace)
+    if p is None:
+        return None
+    mdl = fc['model']
+    d = p - mdl['base'][name][str(rung)]
+    return p, (f"form-conditioned: league base "
+               f"{mdl['base'][name][str(rung)] * 100:.1f} {d * 100:+.1f} "
+               f"(pace {pace:.2f} vs league {mdl['means'][name]:.2f})")
+
+
 def soc_measured(lg_key, rung, socbase=None):
     """(p_under, src_note, n) from the league's own history, or None."""
     import socbase as SB
@@ -89,7 +142,7 @@ def is_under(lab):
 
 # ------------------------------------------------------------------ the scan
 def scan(pool, now, f5hist=None, cflhist=None, parks=None, socform=None,
-         floor=FLOOR, socbase=None, hot=None):
+         floor=FLOOR, socbase=None, hot=None, fc=None):
     """(rows, refused, disq): scored legs, named refusals, and legs
     DISQUALIFIED because the model's own game read overrides the league
     base -- a league-average number has nothing to say about a game the
@@ -122,8 +175,17 @@ def scan(pool, now, f5hist=None, cflhist=None, parks=None, socform=None,
             disq.append((o['lab'], o['price'], hot[o['grp']]))
             continue
         got = None
+        cond_src = None
         if fam == 'SOCT':
-            got = soc_measured(o.get('lg', ''), rung, socbase)
+            c = soc_conditioned(o.get('lg', ''), rung, o.get('match'),
+                                socform, fc)
+            if c:
+                # conditioned rate must still invert for an Over below, so it
+                # enters the pipe as an UNDER rate exactly like the tables do
+                got = (c[0], c[1], None)
+                cond_src = c[1]
+            else:
+                got = soc_measured(o.get('lg', ''), rung, socbase)
             if not got:
                 import socbase as _sb
                 name, r, _ = (socbase or _sb).rates(o.get('lg', ''))
@@ -193,8 +255,17 @@ def main():
     except Exception:
         socform = None
     parks = preflight._parks()
+    try:
+        fc = json.load(open(os.path.join(HERE, 'formcond.json')))
+    except Exception:
+        fc = None
     rows, refused, disq = scan(pool, now, f5hist, cflhist, parks, socform,
-                               hot=board.hot_games('FanDuel'))
+                               hot=board.hot_games('FanDuel'), fc=fc)
+    if fc:
+        shipped = [k for k, v in (fc.get('ship') or {}).items() if v.get('ships')]
+        print(f"[formcond active: team-pace conditioning on rungs {shipped}]")
+    else:
+        print("[formcond absent -- league bases unconditioned; Actions builds it]")
 
     print(f"edge scan -- {len(rows)} totals legs scored against their own history")
     print(f"(floor {'OFF' if SCAN_ALL else FLOOR}; edge = measured - implied, points)\n")
@@ -243,7 +314,7 @@ def selftest():
                 return 'England Premier League', {'totals': [
                     {'rung': 3.5, 'p': 0.686, 'n': 5700}]}, None
             if key == 'soccer_usa_mls':
-                return 'USA MLS', {'under': {'4.5': 0.80},
+                return 'USA MLS', {'under': {'4.5': 0.80, '5.5': 0.926},
                                    'result': {'n': 6085}}, None
             return None, None, 'unmeasured'
 
@@ -331,6 +402,37 @@ def selftest():
     chk(is_under('U5.5 x') and is_under('Under 3.5 goals')
         and not is_under('Over 2.5 goals'),
         "under/over detection on both label shapes")
+
+    # ---- FORM CONDITIONING. The whole reason formcond exists is the
+    # Cincinnati case: league base 92.6 on a fixture whose clubs run hot.
+    _fc = {'ship': {'5.5': {'ships': True}, '4.5': {'ships': False}},
+           'model': {'means': {'USA MLS': 2.9},
+                     'base': {'USA MLS': {'5.5': 0.926, '4.5': 0.828}},
+                     'deltas': {'5.5': [0.03, 0.01, 0.0, -0.02, -0.06],
+                                '4.5': [0.05, 0.02, 0.0, -0.03, -0.08]}}}
+    _sf = {'orlando city sc': {'name': 'Orlando City SC',
+                               'totals': [1, 4, 8, 2, 7]},
+           'fc cincinnati': {'name': 'FC Cincinnati',
+                             'totals': [3, 7, 8, 6, 8]}}
+    _leg = L('Under 5.5 goals (Cincinnati-OC)', -480, 0.811, 'SOCT',
+             lg='soccer_usa_mls', match='Orlando City SC v FC Cincinnati')
+    rows, _, _ = scan([_leg], now, f5h, cfl, socform=_sf, socbase=SB, fc=_fc)
+    chk(rows and abs(rows[0]['measured'] - 0.866) < 1e-9,
+        f"the hot-pace fixture is CONDITIONED down: 92.6 league -> 86.6 "
+        f"(pace 5.9 lands in the fast bin, -6)")
+    chk(rows[0]['edge'] < 0.06,
+        f"and the +11.5 mirage shrinks to {rows[0]['edge']*100:+.1f}")
+    chk('form-conditioned' in rows[0]['src'],
+        "the src names the conditioning and both numbers")
+    rows, _, _ = scan([L('Under 4.5 goals (X-Y)', -400, 0.75, 'SOCT',
+                         lg='soccer_usa_mls',
+                         match='Orlando City SC v FC Cincinnati')],
+                      now, f5h, cfl, socform=_sf, socbase=SB, fc=_fc)
+    chk(rows and 'form-conditioned' not in rows[0]['src'],
+        "a rung whose derivation did NOT ship stays on the league base")
+    rows, _, _ = scan([_leg], now, f5h, cfl, socform=None, socbase=SB, fc=_fc)
+    chk(rows and 'form-conditioned' not in rows[0]['src'],
+        "no club form -> no conditioning, base rate stands")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
