@@ -109,25 +109,13 @@
   "lg": "soccer_portugal_primeira_liga"
  },
  {
-  "lab": "U5.5 FC Porto v Rio Ave",
-  "price": -3500,
-  "p": 0.956,
-  "d": 1.0285714285714285,
+  "lab": "SGP: Porto DC + U5.5 (app quote)",
+  "price": -739,
+  "d": 1.13531799729364,
+  "p": 0.857532,
   "fam": "SOCT",
-  "grp": "U5.5 FC Porto v Rio Ave",
-  "t": "2026-08-15T19:30Z",
-  "match": "FC Porto v Rio Ave",
-  "lg": "soccer_portugal_primeira_liga"
- },
- {
-  "lab": "FC Porto DC (derived)",
-  "price": -1089,
-  "p": 0.8970698319594481,
-  "d": 1.0917923348872174,
-  "fam": "SOC",
   "grp": "SOC Porto-RA",
   "t": "2026-08-15T19:30Z",
-  "match": "FC Porto v Rio Ave FC",
-  "lg": "soccer_portugal_primeira_liga"
+  "match": "FC Porto v Rio Ave FC"
  }
 ]
