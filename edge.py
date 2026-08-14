@@ -67,6 +67,49 @@ def pace_of(match, socform):
     return sum(means) / 2.0 if len(means) == 2 else None
 
 
+_IDNOISE = {'united', 'city', 'real', 'sporting', 'club', 'deportivo',
+            'atletico', 'athletic'}
+
+
+def _team_ident(club, table):
+    """Trailing-30 mean for one club out of formcond's persisted idents,
+    joined across two naming vocabularies. Exact, then containment, then a
+    single distinctive 6+ char token; TWO candidates is ambiguity and
+    ambiguity is None -- a wrong team's identity is worse than none."""
+    if not table:
+        return None
+    c = club.strip().lower()
+    for k, v in table.items():
+        if k.strip().lower() == c:
+            return v
+    hits = [v for k, v in table.items()
+            if c in k.strip().lower() or k.strip().lower() in c]
+    if len(hits) == 1:
+        return hits[0]
+    if hits:
+        return None
+    toks = {w for w in re.findall(r'[a-zà-ÿ]{6,}', c) if w not in _IDNOISE}
+    hits = [v for k, v in table.items()
+            if toks & {w for w in re.findall(r'[a-zà-ÿ]{6,}', k.lower())
+                       if w not in _IDNOISE}]
+    return hits[0] if len(hits) == 1 else None
+
+
+def pair_ident(match, league_name, fc):
+    """Mean of BOTH clubs' trailing-30s, or None -- half an identity is
+    not an identity (pace_of's rule, same reason)."""
+    table = (fc.get('idents') or {}).get(league_name)
+    if not (match and table):
+        return None
+    vals = []
+    for club in re.split(r'\s+v\s+', match)[:2]:
+        v = _team_ident(club, table)
+        if v is None:
+            return None
+        vals.append(v)
+    return sum(vals) / 2.0 if len(vals) == 2 else None
+
+
 def soc_conditioned(lg_key, rung, match, socform, fc):
     """(p, src) with the TEAM-PACE delta applied, or None wherever the
     derivation did not ship: rung refused on the tail, league off-model,
@@ -85,14 +128,20 @@ def soc_conditioned(lg_key, rung, match, socform, fc):
     if pace is None:
         return None
     import formcond as FC
-    p = FC.conditioned(fc['model'], name, rung, pace)
+    ident = None
+    ident_ok = isinstance(ship.get('ident'), dict) and ship['ident'].get('ships')
+    if ident_ok:
+        ident = pair_ident(match, name, fc)
+    p = FC.conditioned(fc['model'], name, rung, pace, ident)
     if p is None:
         return None
     mdl = fc['model']
     d = p - mdl['base'][name][str(rung)]
-    return p, (f"form-conditioned: league base "
+    tag = 'form+identity-conditioned' if ident is not None else 'form-conditioned'
+    extra = f", ident {ident:.2f}" if ident is not None else ''
+    return p, (f"{tag}: league base "
                f"{mdl['base'][name][str(rung)] * 100:.1f} {d * 100:+.1f} "
-               f"(pace {pace:.2f} vs league {mdl['means'][name]:.2f})")
+               f"(pace {pace:.2f}{extra} vs league {mdl['means'][name]:.2f})")
 
 
 def soc_measured(lg_key, rung, socbase=None):
@@ -433,6 +482,37 @@ def selftest():
     rows, _, _ = scan([_leg], now, f5h, cfl, socform=None, socbase=SB, fc=_fc)
     chk(rows and 'form-conditioned' not in rows[0]['src'],
         "no club form -> no conditioning, base rate stands")
+
+    # ---- IDENTITY join. Two vocabularies, one team.
+    _tbl = {'Orlando City': 4.1, 'FC Cincinnati': 4.3, 'Nashville': 2.2}
+    chk(_team_ident('Orlando City SC', _tbl) == 4.1,
+        "containment joins 'Orlando City SC' to football-data's 'Orlando City'")
+    chk(_team_ident('Inter Miami CF', {'Miami United': 3.0, 'Inter Miami': 3.9})
+        == 3.9,
+        "containment beats token overlap when exactly one candidate contains")
+    chk(_team_ident('San Lorenzo', {'CA San Lorenzo': 2.0, 'San Lorenzo SM': 2.5})
+        is None,
+        "TWO containment candidates is ambiguity and ambiguity is None -- "
+        "the 8/14 San Lorenzo wrong-fixture lesson, applied to identity")
+    chk(_team_ident('San Lorenzo', {'San Lorenzo': 2.0, 'San Lorenzo SM': 2.5})
+        == 2.0,
+        "but an EXACT key inside one league's table is that club, not a clash")
+    _fc2 = {'ship': {'5.5': {'ships': True,
+                             'ident': {'ships': True}}},
+            'model': {'means': {'USA MLS': 2.9},
+                      'base': {'USA MLS': {'5.5': 0.926}},
+                      'deltas': {'5.5': [0.03, 0.01, 0.0, -0.02, -0.06]},
+                      'ideltas': {'5.5': [0.0, 0.02, 0.0, -0.01, -0.03]}},
+            'idents': {'USA MLS': {'Orlando City': 4.1, 'FC Cincinnati': 4.3}}}
+    rows, _, _ = scan([_leg], now, f5h, cfl, socform=_sf, socbase=SB, fc=_fc2)
+    chk(rows and 'form+identity' in rows[0]['src']
+        and abs(rows[0]['measured'] - (0.926 - 0.06 - 0.03)) < 1e-9,
+        f"identity applies its own bin ON TOP of pace (92.6 -6 -3 = 83.6: "
+        f"{rows[0]['measured']*100:.1f})")
+    _fc2['idents']['USA MLS'].pop('FC Cincinnati')
+    rows, _, _ = scan([_leg], now, f5h, cfl, socform=_sf, socbase=SB, fc=_fc2)
+    chk(rows and 'form+identity' not in rows[0]['src'],
+        "one club off the identity table -> pace-only, never half an identity")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
