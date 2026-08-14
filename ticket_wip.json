@@ -129,10 +129,10 @@
   "lg": "soccer_portugal_primeira_liga"
  },
  {
-  "lab": "U5.5 San Lorenzo v Union Santa Fe",
-  "price": -5000,
-  "p": 0.971,
-  "d": 1.02,
+  "lab": "U4.5 San Lorenzo v Union Santa Fe",
+  "price": -1800,
+  "p": 0.921,
+  "d": 1.0555555555555556,
   "fam": "SOCT",
   "grp": "U5.5 San Lorenzo v Union Santa Fe",
   "t": "2026-08-15T17:30Z",
