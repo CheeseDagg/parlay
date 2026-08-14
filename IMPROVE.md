@@ -32,6 +32,19 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- Strength-of-schedule + activity as blend features: REFUSED, and the
+  refusal is the finding. Ryan called Orolbai-Wells (SoS +20.7 pct, 4
+  fights/24mo vs 1, Wells 287d idle) and every fact checks out -- but as a
+  model term across 8,439 age-complete bouts, career mean-opponent-Elo
+  scores +0.00056 holdout / 3-3 periods against a BEST-OF-24-PLACEBO of
+  +0.00051, and activity scores +0.00063 against a best placebo of
+  +0.00117 -- a shuffled column beating the real one outright. Last-5
+  opponent Elo was NULL before it got that far. The power probe shows why
+  the 3/3 meant little: with the effect genuinely planted at the fitted
+  strength, the pipeline recovers a robust win in 1 panel of 3. Elo
+  already pays for beating good fighters, so SoS is mostly priced before
+  the term sees it. Nothing shipped; the placebo harness is permanent and
+  carries the verdicts so neither gets re-proposed off one card.
 - Striking rates, measured: on 3,897 bouts with prior career on both sides,
   against prior win rate, on an untouched 2019+ tail -- strikes ABSORBED
   per minute ADDS (p=0.048, accuracy 57.2 -> 58.6%) and striking ACCURACY
