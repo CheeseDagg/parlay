@@ -1,103 +1,5 @@
 [
  {
-  "p": 0.9626639610662717,
-  "d": 1.0333333333333334,
-  "lab": "Claressa Shields",
-  "price": -3000,
-  "grp": "BOX Shields-Scott",
-  "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-16T05:00Z"
- },
- {
-  "p": 0.9379292350111015,
-  "d": 1.05,
-  "lab": "Atif Oberlton",
-  "price": -2000,
-  "grp": "BOX Oberlton-Angulo",
-  "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-15T23:20Z"
- },
- {
-  "p": 0.9017885068136843,
-  "d": 1.0869565217391304,
-  "lab": "Ashleyann Lozada",
-  "price": -1150,
-  "grp": "BOX Lozada-Cuesta",
-  "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-16T01:15Z"
- },
- {
-  "p": 0.8983704360898692,
-  "d": 1.0909090909090908,
-  "lab": "Danielle Perkins",
-  "price": -1100,
-  "grp": "BOX Perkins-Curry",
-  "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-15T22:40Z"
- },
- {
-  "p": 0.8476633152292541,
-  "d": 1.1538461538461537,
-  "lab": "Troy Isley",
-  "price": -650,
-  "grp": "BOX Hicks-Isley",
-  "fam": "BOX",
-  "sport": "OTHER",
-  "t": "2026-08-16T01:50Z"
- },
- {
-  "p": 0.8780487804878049,
-  "d": 1.0833333333333333,
-  "lab": "Myktybek Orolbai ML",
-  "price": -1200,
-  "grp": "MMA 08-15",
-  "fam": "MMA",
-  "sport": "FIGHT",
-  "t": "2026-08-15T21:45Z"
- },
- {
-  "p": 0.7153024911032029,
-  "d": 1.3333333333333333,
-  "lab": "Joel Alvarez ML",
-  "price": -300,
-  "grp": "MMA 08-15",
-  "fam": "MMA",
-  "sport": "FIGHT",
-  "t": "2026-08-16T00:45Z"
- },
- {
-  "p": 0.8329853862212943,
-  "d": 1.1428571428571428,
-  "lab": "Esteban Ribovics ML",
-  "price": -700,
-  "grp": "MMA 08-15",
-  "fam": "MMA",
-  "sport": "FIGHT",
-  "t": "2026-08-16T01:15Z"
- },
- {
-  "lab": "Islam Makhachev by Points",
-  "price": 120,
-  "p": 0.4025,
-  "d": 2.2,
-  "fam": "MMA",
-  "grp": "MMA 08-15",
-  "t": "2026-08-16T03:30Z"
- },
- {
-  "lab": "Kaue Fernandes by KO/TKO or Points",
-  "price": 150,
-  "p": 0.362,
-  "d": 2.5,
-  "fam": "MMA",
-  "grp": "MMA 08-15",
-  "t": "2026-08-16T02:15Z"
- },
- {
   "lab": "U5.5 Alverca v CF Estrela",
   "price": -8000,
   "p": 0.956,
@@ -117,5 +19,145 @@
   "grp": "SOC Porto-RA",
   "t": "2026-08-15T19:30Z",
   "match": "FC Porto v Rio Ave FC"
+ },
+ {
+  "lab": "Casey Dixon",
+  "opp": "v Michael Nelson",
+  "price": -1600,
+  "p": 0.9281284805314359,
+  "d": 1.0625,
+  "grp": "BOX Dixon-Nelson",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-15T21:00Z",
+  "book": "DraftKings",
+  "src": "UNVERIFIED \u2014 not a DK quote"
+ },
+ {
+  "lab": "Jaquan McElroy",
+  "opp": "v Alexander Thiel",
+  "price": -1600,
+  "p": 0.9266590859588407,
+  "d": 1.0625,
+  "grp": "BOX McElroy-Thiel",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-15T21:00Z",
+  "book": "DraftKings",
+  "src": "UNVERIFIED \u2014 not a DK quote"
+ },
+ {
+  "lab": "Shannel Butler",
+  "opp": "v Marianela Ramirez",
+  "price": -2000,
+  "p": 0.9384261924414742,
+  "d": 1.05,
+  "grp": "BOX Butler-Ramirez",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-15T21:00Z",
+  "book": "DraftKings",
+  "src": "UNVERIFIED \u2014 not a DK quote"
+ },
+ {
+  "p": 0.8780487804878049,
+  "d": 1.0833333333333333,
+  "lab": "Myktybek Orolbai ML",
+  "price": -1200,
+  "grp": "MMA 08-15",
+  "fam": "MMA",
+  "sport": "FIGHT",
+  "t": "2026-08-15T21:45Z"
+ },
+ {
+  "p": 0.9379292350111015,
+  "d": 1.05,
+  "lab": "Atif Oberlton",
+  "price": -2000,
+  "grp": "BOX Oberlton-Angulo",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-15T23:20Z"
+ },
+ {
+  "lab": "Ernesto Mercado",
+  "opp": "v Emmanuel Tagoe",
+  "price": -3000,
+  "p": 0.9562342983881312,
+  "d": 1.0333333333333334,
+  "grp": "BOX Tagoe-Mercado",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-16T00:00Z",
+  "book": "DraftKings",
+  "src": "UNVERIFIED \u2014 not a DK quote"
+ },
+ {
+  "p": 0.7153024911032029,
+  "d": 1.3333333333333333,
+  "lab": "Joel Alvarez ML",
+  "price": -300,
+  "grp": "MMA 08-15",
+  "fam": "MMA",
+  "sport": "FIGHT",
+  "t": "2026-08-16T00:45Z"
+ },
+ {
+  "p": 0.9017885068136843,
+  "d": 1.0869565217391304,
+  "lab": "Ashleyann Lozada",
+  "price": -1150,
+  "grp": "BOX Lozada-Cuesta",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-16T01:15Z"
+ },
+ {
+  "p": 0.8329853862212943,
+  "d": 1.1428571428571428,
+  "lab": "Esteban Ribovics ML",
+  "price": -700,
+  "grp": "MMA 08-15",
+  "fam": "MMA",
+  "sport": "FIGHT",
+  "t": "2026-08-16T01:15Z"
+ },
+ {
+  "p": 0.8476633152292541,
+  "d": 1.1538461538461537,
+  "lab": "Troy Isley",
+  "price": -650,
+  "grp": "BOX Hicks-Isley",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-16T01:50Z"
+ },
+ {
+  "lab": "Kaue Fernandes by KO/TKO or Points",
+  "price": 150,
+  "p": 0.362,
+  "d": 2.5,
+  "fam": "MMA",
+  "grp": "MMA 08-15",
+  "t": "2026-08-16T02:15Z"
+ },
+ {
+  "lab": "Islam Makhachev by Points",
+  "price": 120,
+  "p": 0.4025,
+  "d": 2.2,
+  "fam": "MMA",
+  "grp": "MMA 08-15",
+  "t": "2026-08-16T03:30Z"
+ },
+ {
+  "p": 0.9626639610662717,
+  "d": 1.0333333333333334,
+  "lab": "Claressa Shields",
+  "price": -3000,
+  "grp": "BOX Shields-Scott",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-16T05:00Z"
  }
 ]
