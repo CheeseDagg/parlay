@@ -44,6 +44,8 @@ OUT = os.path.join(HERE, 'formcond.json')
 SPLIT = '2025-07-01'          # tail = the season in progress + last completed
 MIN_PRIOR = 3                 # matches per side before pace is quotable
 LAST_N = 5
+IDENT_N = 30                  # trailing window for team IDENTITY
+IDENT_MIN = 15                # matches before identity is quotable
 RUNGS = (2.5, 3.5, 4.5, 5.5)
 BINS = ((None, -0.75), (-0.75, -0.25), (-0.25, 0.25), (0.25, 0.75), (0.75, None))
 PERMS = 20
@@ -119,15 +121,38 @@ def walk(per):
     out = []
     for lg, rows in per.items():
         hist = defaultdict(lambda: deque(maxlen=LAST_N))
+        long = defaultdict(lambda: deque(maxlen=IDENT_N))
         for r in rows:
             h, a = hist[r['home']], hist[r['away']]
+            hl, al = long[r['home']], long[r['away']]
             if len(h) >= MIN_PRIOR and len(a) >= MIN_PRIOR:
                 pace = (sum(h) / len(h) + sum(a) / len(a)) / 2.0
+                ident = ((sum(hl) / len(hl) + sum(al) / len(al)) / 2.0
+                         if len(hl) >= IDENT_MIN and len(al) >= IDENT_MIN
+                         else None)
                 out.append({'lg': lg, 'date': r['date'], 'tot': r['tot'],
-                            'pace': pace})
-            hist[r['home']].append(r['tot'])
-            hist[r['away']].append(r['tot'])
+                            'pace': pace, 'ident': ident})
+            for q in (hist[r['home']], hist[r['away']],
+                      long[r['home']], long[r['away']]):
+                q.append(r['tot'])
     out.sort(key=lambda r: r['date'])
+    return out
+
+
+def idents_now(per):
+    """{league: {team: trailing-30 mean total}} as of the last fetched
+    match -- the LIVE join for edge.py, computed on the runner because the
+    session container cannot reach the source. Only teams past IDENT_MIN."""
+    out = {}
+    for lg, rows in per.items():
+        long = defaultdict(lambda: deque(maxlen=IDENT_N))
+        for r in rows:
+            long[r['home']].append(r['tot'])
+            long[r['away']].append(r['tot'])
+        t = {tm: round(sum(q) / len(q), 3) for tm, q in long.items()
+             if len(q) >= IDENT_MIN}
+        if t:
+            out[lg] = t
     return out
 
 
@@ -163,18 +188,41 @@ def derive(rows, split=SPLIT):
             acc[b][1] += 1
         deltas[str(rg)] = [(s / n if n >= 200 else 0.0) for s, n in acc]
         counts[str(rg)] = [n for _, n in acc]
+    ideltas = {str(rg): [] for rg in RUNGS}
+    icounts = {str(rg): [] for rg in RUNGS}
+    for rg in RUNGS:
+        acc = [[0.0, 0] for _ in BINS]
+        for r in tr:
+            if r['lg'] not in means or r.get('ident') is None:
+                continue
+            # residual AFTER the pace delta: identity must add to pace,
+            # not restate it -- the exact 'second proxy' lesson from
+            # chinhist, enforced in the accumulator rather than argued
+            pb = _bin_of(r['pace'] - means[r['lg']])
+            pace_d = deltas[str(rg)][pb]
+            b = _bin_of(r['ident'] - means[r['lg']])
+            acc[b][0] += ((1.0 if r['tot'] < rg else 0.0)
+                          - base[r['lg']][str(rg)] - pace_d)
+            acc[b][1] += 1
+        ideltas[str(rg)] = [(s / n if n >= 200 else 0.0) for s, n in acc]
+        icounts[str(rg)] = [n for _, n in acc]
     return {'means': means, 'base': base, 'deltas': deltas, 'counts': counts,
-            'n_train': len(tr)}
+            'ideltas': ideltas, 'icounts': icounts, 'n_train': len(tr)}
 
 
-def conditioned(model, lg, rung, pace):
-    """League base + the pace bin's measured delta, or None off-model."""
+def conditioned(model, lg, rung, pace, ident=None):
+    """League base + pace delta [+ identity delta], or None off-model.
+    The identity term only applies when the caller HAS a trailing-30
+    number -- absence falls back to pace-only, never to a guess."""
     m = model['means'].get(lg)
     b = model['base'].get(lg, {}).get(str(rung))
     d = model['deltas'].get(str(rung))
     if m is None or b is None or not d:
         return None
     p = b + d[_bin_of(pace - m)]
+    idl = model.get('ideltas', {}).get(str(rung))
+    if ident is not None and idl:
+        p += idl[_bin_of(ident - m)]
     return min(max(p, EPS), 1 - EPS)
 
 
@@ -195,6 +243,41 @@ def score(rows, model, split=SPLIT):
             out[str(rg)] = {'base': lb / n, 'cond': lc / n,
                             'gain': (lb - lc) / n, 'n': int(n)}
     return out
+
+
+def score_ident(rows, model, split=SPLIT):
+    """Per-rung tail log loss on ident-covered rows: pace-only vs
+    pace+identity. Same-row comparison, or coverage would masquerade as
+    signal (defhist's adds() rule)."""
+    te = [r for r in rows if r['date'] >= split and r['lg'] in model['means']
+          and r.get('ident') is not None]
+    out = {}
+    for rg in RUNGS:
+        lp = li = n = 0.0
+        for r in te:
+            y = 1.0 if r['tot'] < rg else 0.0
+            pp = conditioned(model, r['lg'], rg, r['pace'])
+            pi = conditioned(model, r['lg'], rg, r['pace'], r['ident'])
+            lp -= y * math.log(pp) + (1 - y) * math.log(1 - pp)
+            li -= y * math.log(pi) + (1 - y) * math.log(1 - pi)
+            n += 1
+        if n:
+            out[str(rg)] = {'pace': lp / n, 'both': li / n,
+                            'gain': (lp - li) / n, 'n': int(n)}
+    return out
+
+
+def permute_ident(rows, seed):
+    st = seed
+    idx = list(range(len(rows)))
+    for i in range(len(idx) - 1, 0, -1):
+        st = (1103515245 * st + 12345) % (1 << 31)
+        j = st % (i + 1)
+        idx[i], idx[j] = idx[j], idx[i]
+    sh = [dict(r) for r in rows]
+    for r, k in zip(sh, idx):
+        r['ident'] = rows[k].get('ident')
+    return sh
 
 
 def permute(rows, seed):
@@ -236,6 +319,31 @@ def verdicts(rows, split=SPLIT, perms=PERMS, log=print):
         log(f"  U{k}: tail gain {g:+.5f} (n={real[k]['n']}), best of "
             f"{len(nulls[k])} shuffles {worst:+.5f}, p={ship[k]['p']:.3f} "
             f"-> {'SHIPS' if ok else 'refused'}")
+    # ---- identity: does trailing-30 team level add BEYOND last-5 pace?
+    ri = score_ident(rows, model, split)
+    inulls = {str(rg): [] for rg in RUNGS}
+    for s in range(perms):
+        sh = permute_ident(rows, 5000 + 7 * s)
+        msh = derive(sh, split)
+        ssh = score_ident(sh, msh, split)
+        for rg in RUNGS:
+            if str(rg) in ssh:
+                inulls[str(rg)].append(ssh[str(rg)]['gain'])
+    for rg in RUNGS:
+        k = str(rg)
+        if k not in ri:
+            continue
+        g = ri[k]['gain']
+        worst = max(inulls[k]) if inulls[k] else 0.0
+        beaten = sum(1 for x in inulls[k] if x >= g)
+        ok = g > 0 and beaten == 0
+        ship.setdefault(k, {})['ident'] = {
+            'gain': g, 'best_null': worst,
+            'p': (beaten + 1) / float(len(inulls[k]) + 1),
+            'ships': ok, 'n_test': ri[k]['n']}
+        log(f"  U{k} +identity: tail gain {g:+.5f} (n={ri[k]['n']}), best "
+            f"shuffle {worst:+.5f}, p={ship[k]['ident']['p']:.3f} "
+            f"-> {'SHIPS' if ok else 'refused'}")
     return model, ship
 
 
@@ -257,8 +365,9 @@ def main():
         return 1
     model, ship = verdicts(rows)
     doc = {'split': SPLIT, 'last_n': LAST_N, 'min_prior': MIN_PRIOR,
+           'ident_n': IDENT_N, 'ident_min': IDENT_MIN,
            'bins': [list(b) for b in BINS], 'rungs': list(RUNGS),
-           'model': model, 'ship': ship,
+           'model': model, 'ship': ship, 'idents': idents_now(per),
            'n_rows': len(rows), 'n_leagues': n_lg}
     import tempfile
     fd, tmp = tempfile.mkstemp(dir=HERE, suffix='.tmp')
@@ -346,12 +455,39 @@ def selftest():
         f"and the delta runs the right way: slow bin {d35[0]:+.3f} raises the "
         f"under, fast bin {d35[-1]:+.3f} lowers it")
 
+    # ---- identity: in a world of FIXED team levels, trailing-30 must ADD
+    # beyond noisy last-5 pace -- and the deltas must run the same way
+    shipped_i = [k for k, v in ship.items()
+                 if isinstance(v.get('ident'), dict) and v['ident']['ships']]
+    chk(len(shipped_i) >= 2,
+        f"persistent-team world ships IDENTITY beyond pace on 2+ rungs "
+        f"({shipped_i})")
+    # trailing-30 means COMPRESS toward the middle, so the outer bins sit
+    # under the n>=200 floor and zero out -- the direction pin reads the
+    # inner bins where the data actually lives
+    idl = model['ideltas'].get('3.5', [0] * 5)
+    chk(idl[1] > idl[3],
+        f"identity deltas run slow->fast the right way where measured "
+        f"({idl[1]:+.3f} .. {idl[3]:+.3f})")
+
+    # ---- idents_now snapshots the trailing window per team
+    per_fix = {'L': [{'date': f'2025-01-{d:02d}', 'home': 'A', 'away': 'B',
+                      'tot': t} for d, t in enumerate([2] * 20, 1)]}
+    iv = idents_now(per_fix)
+    chk(abs(iv['L']['A'] - 2.0) < 1e-9 and abs(iv['L']['B'] - 2.0) < 1e-9,
+        "idents_now carries each team's trailing mean once past IDENT_MIN")
+    chk('C' not in iv.get('L', {}),
+        "and a team below the floor is absent, not zeroed")
+
     # ---- a world where totals are iid: conditioning must refuse
     rows0 = walk(_world(7, cond=False))
     _, ship0 = verdicts(rows0, split='2024-01-01', perms=6,
                         log=lambda s: None)
-    chk(not any(v['ships'] for v in ship0.values()),
+    chk(not any(v.get('ships') for v in ship0.values()),
         "an iid world ships NOTHING -- the permutation bar holds")
+    chk(not any(isinstance(v.get('ident'), dict) and v['ident']['ships']
+                for v in ship0.values()),
+        "and identity refuses there too -- both features die together on noise")
 
     # ---- conditioned() respects its own coverage
     chk(conditioned({'means': {}, 'base': {}, 'deltas': {}}, 'X', 3.5, 2.0) is None,
