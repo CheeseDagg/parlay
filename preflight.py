@@ -27,6 +27,9 @@ can check and says out loud what it cannot:
   FORM     starter HR/9 and F5 form on MLB totals legs      (mlbform)
   OVERLAP  shared legs with every open slip, and the      (rule 28)
            chance one event kills them all
+  SHAPE    fewer legs at fixed price, as a bound           (8/13 16-legger)
+  SGPPAIR  same-game pairs named -- the book reprices them  (sgplog)
+  DH       doubleheader days, where the feed keys one game (coverage)
   LOG      calibration.csv and slips.json entries pending (rules 29, 31)
 
 FAIL blocks. WARN is a judgement call that must be spoken aloud, not
@@ -527,7 +530,125 @@ def top_rungs(m):
                 top[k] = o
     return {k: o['lab'] for k, o in top.items()}
 
-def run(legs, hot=None, open_slips=None):
+MLB_ABBR = {'Arizona Diamondbacks': 'ARI', 'Atlanta Braves': 'ATL',
+            'Baltimore Orioles': 'BAL', 'Boston Red Sox': 'BOS',
+            'Chicago Cubs': 'CHC', 'Chicago White Sox': 'CWS',
+            'Cincinnati Reds': 'CIN', 'Cleveland Guardians': 'CLE',
+            'Colorado Rockies': 'COL', 'Detroit Tigers': 'DET',
+            'Houston Astros': 'HOU', 'Kansas City Royals': 'KC',
+            'Los Angeles Angels': 'LAA', 'Los Angeles Dodgers': 'LAD',
+            'Miami Marlins': 'MIA', 'Milwaukee Brewers': 'MIL',
+            'Minnesota Twins': 'MIN', 'New York Mets': 'NYM',
+            'New York Yankees': 'NYY', 'Oakland Athletics': 'ATH',
+            'Athletics': 'ATH', 'Philadelphia Phillies': 'PHI',
+            'Pittsburgh Pirates': 'PIT', 'San Diego Padres': 'SD',
+            'San Francisco Giants': 'SF', 'Seattle Mariners': 'SEA',
+            'St. Louis Cardinals': 'STL', 'Tampa Bay Rays': 'TB',
+            'Texas Rangers': 'TEX', 'Toronto Blue Jays': 'TOR',
+            'Washington Nationals': 'WSH'}
+
+
+def gate_shape(legs, pool=None, floor=-350, slack=1.34):
+    """FEWER LEGS AT FIXED PRICE, enforced instead of remembered.
+
+    The 8/13 slip was sixteen legs at +116. The board that morning could
+    reach +116 with far fewer floor-legal legs, and every leg past that
+    bound was pure added risk bought for zero extra payout -- one of the
+    sixteen broke, as one of sixteen usually does. This gate computes the
+    heaviest-first bound: sort the pool's floor-eligible legs by decimal
+    descending, one per event, multiply until the ticket's price is
+    reached. A ticket carrying 34%+ more legs than the bound is WARNED
+    with both numbers. The bound is optimistic on purpose (it ignores
+    correlation and taste); a ticket that fails an optimistic bound has
+    no excuse."""
+    if not pool:
+        return 'PASS', 'no pool provided -- shape unchecked'
+    try:
+        want = 1.0
+        for l in legs:
+            want *= l['d'] if l.get('d') else (
+                1 + (l['price'] / 100 if l['price'] > 0 else 100 / -l['price']))
+    except (KeyError, TypeError):
+        return 'PASS', 'a leg has no price -- shape unchecked'
+    elig, seen = [], set()
+    for o in sorted(pool, key=lambda x: -(x.get('d') or 0)):
+        if not o.get('d') or o.get('price', 0) > floor:
+            continue
+        g = o.get('grp') or o.get('mkt') or o.get('lab')
+        if g in seen:
+            continue
+        seen.add(g)
+        elig.append(o['d'])
+    got, n_min = 1.0, 0
+    for d in elig:
+        if got >= want:
+            break
+        got *= d
+        n_min += 1
+    if got < want:
+        return 'PASS', (f"the board cannot reach {want:.2f}x inside the floor "
+                        f"at all -- this shape is as tight as available")
+    if len(legs) > n_min * slack:
+        return 'WARN', (f"{len(legs)} legs for {want:.2f}x, but the heaviest-"
+                        f"first bound reaches it with {n_min} -- every leg "
+                        f"past the bound is added risk for zero added payout "
+                        f"(the 8/13 sixteen-legger)")
+    return 'PASS', f"{len(legs)} legs vs heaviest-first bound {n_min}"
+
+
+def gate_sgppair(legs):
+    """Same-game pairs are priced by the BOOK, not by multiplication.
+
+    A slip's probability multiplies legs as if independent. Same-game
+    pairs are not, and the one SGP quote measured so far (8/13, DC + that
+    match's under) paid 4% ABOVE the naive product -- the book repricing
+    correlation, in the bettor's favour that day, direction unguaranteed.
+    This gate names every same-game pair so the app's own quote gets
+    fetched and logged (sgplog.py); the naive number is never the slip's
+    real price when this gate speaks."""
+    from collections import defaultdict
+    by = defaultdict(list)
+    for l in legs:
+        by[l.get('grp') or l.get('mkt') or l['lab']].append(l['lab'])
+    pairs = {g: ls for g, ls in by.items() if len(ls) > 1}
+    if not pairs:
+        return 'PASS', 'no same-game pairs'
+    named = '; '.join(f"{g}: {' + '.join(ls)}" for g, ls in sorted(pairs.items()))
+    return 'WARN', (f"{len(pairs)} same-game pair(s) priced naive-independent "
+                    f"-- {named} | get the app's SGP quote and sgplog it "
+                    f"(measured once: book paid +4% above naive; n=1 is not "
+                    f"a constant)")
+
+
+def gate_dh(legs, slate=None):
+    """Doubleheader days: the feed carries ONE game key per matchup per
+    day (coverage.json's own confession), so a total on a twin bill can
+    silently be the other game's line. The slate (statsapi) lists both
+    games; when a matchup appears twice, any leg on it is WARNED to
+    confirm which start time the price belongs to."""
+    if slate is None:
+        try:
+            import json as _j
+            p = os.environ.get('MLBTOOL') or os.path.join(HERE, '..', 'MLBTool')
+            slate = _j.load(open(os.path.join(p, 'mlb', 'data', 'slate.json')))
+        except Exception:
+            return 'PASS', 'slate unreadable -- doubleheaders unchecked today'
+    from collections import Counter
+    c = Counter((g['away'], g['home']) for g in slate.get('games', []))
+    dh = {f"{MLB_ABBR.get(a, a)}@{MLB_ABBR.get(h, h)}"
+          for (a, h), n in c.items() if n > 1}
+    if not dh:
+        return 'PASS', 'no doubleheaders on the slate'
+    hits = [l['lab'] for l in legs
+            if any(d in str(l.get('grp', '')) for d in dh)]
+    if not hits:
+        return 'PASS', f"doubleheader(s) today ({', '.join(sorted(dh))}), no leg on them"
+    return 'WARN', (f"leg(s) on a DOUBLEHEADER matchup: {'; '.join(hits)} -- "
+                    f"the feed keys ONE game per day; confirm the line is "
+                    f"this start time's game, not the nightcap")
+
+
+def run(legs, hot=None, open_slips=None, pool=None):
     hot = hot or {}
     gates = [("FLOOR", gate_floor(legs)), ("PLUS", gate_plus(legs)),
              ("SOCCER", gate_soccer(legs)), ("METHOD", gate_method(legs)),
@@ -536,7 +657,10 @@ def run(legs, hot=None, open_slips=None):
              ("PARK", gate_park(legs)),
              ("SOCBASE", gate_soccer_base(legs)),
              ("FORM", gate_form(legs)),
-             ("OVERLAP", gate_overlap(legs, open_slips or []))]
+             ("OVERLAP", gate_overlap(legs, open_slips or [])),
+             ("SHAPE", gate_shape(legs, pool)),
+             ("SGPPAIR", gate_sgppair(legs)),
+             ("DH", gate_dh(legs))]
     return gates, any(v == 'FAIL' for _, (v, _) in gates)
 
 def main():
@@ -596,7 +720,8 @@ def main():
             for o in sorted(amb[w], key=lambda o: o['t']):
                 mark = "  <- used" if o['t'] == idx[w]['t'] else ""
                 print(f"      {ct(o['t']):17} {o['grp']:20} {o['price']:+6d}{mark}")
-    gates, failed = run(legs, board.hot_games('FanDuel'))
+    pool = [o for v in m.values() for o in v]
+    gates, failed = run(legs, board.hot_games('FanDuel'), pool=pool)
     print()
     for name, (v, msg) in gates:
         print(f"  [{v:4}] {name:8} {msg}")
@@ -858,6 +983,61 @@ def selftest():
         f"U10.5 sits at {_h['rungs'][4]['p']*100:.2f}% over three seasons, "
         "against 93.78% over one -- the de-vig calibration is not a one-season "
         "artefact")
+
+    # ---- SHAPE: the 8/13 sixteen-legger, as a bound
+    _pool = [{'lab': f'g{i}', 'grp': f'G{i}', 'price': -400, 'd': 1.2}
+             for i in range(10)]
+    _fat = [{'lab': f't{i}', 'grp': f'T{i}', 'price': -2000, 'd': 1.05}
+            for i in range(8)]
+    _v, _m = gate_shape(_fat, _pool)
+    chk(_v == 'WARN' and 'heaviest-first bound' in _m and ' 3 ' in f' {_m} ',
+        "eight -2000 legs for 1.48x are WARNED: the board reaches that "
+        "price with 3 floor-legal legs -- the 8/13 shape, caught pregame")
+    _tight = [{'lab': f'w{i}', 'grp': f'W{i}', 'price': -530, 'd': 1.19}
+              for i in range(2)]
+    _v, _m = gate_shape(_tight, _pool)
+    chk(_v == 'PASS',
+        "two 1.19 legs for 1.42x pass -- the bound is also 2; the first "
+        "draft of this pin used legs so light that ONE pool leg covered "
+        "their whole price, and the gate rightly called even three of "
+        "them fat")
+    _v, _m = gate_shape(_fat, None)
+    chk(_v == 'PASS' and 'unchecked' in _m,
+        "no pool -> shape honestly unchecked, never guessed")
+    _huge = [{'lab': 'h', 'grp': 'H', 'price': -400, 'd': 9.0}]
+    _v, _m = gate_shape(_huge, _pool)
+    chk(_v == 'PASS' and 'cannot reach' in _m,
+        "a price the floor-legal board cannot reach passes -- the ticket "
+        "is as tight as available")
+
+    # ---- SGPPAIR: the book reprices same-game pairs; naming them is the gate
+    _sg = [{'lab': 'Union DC', 'grp': 'SOC PU-SL', 'price': -835},
+           {'lab': 'U6.5 PU-SL', 'grp': 'SOC PU-SL', 'price': -4000},
+           {'lab': 'CIN@CWS F5 U9.5', 'grp': 'CIN@CWS', 'price': -2000}]
+    _v, _m = gate_sgppair(_sg)
+    chk(_v == 'WARN' and 'Union DC + U6.5 PU-SL' in _m and 'sgplog' in _m,
+        "a same-game pair is NAMED and sent to sgplog -- the naive product "
+        "is not the slip's real price (book paid +4% above it once, n=1)")
+    _v, _m = gate_sgppair(_sg[1:])
+    chk(_v == 'PASS', "distinct games carry no pair warning")
+
+    # ---- DH: the feed keys one game per matchup per day
+    _slate = {'games': [{'away': 'St. Louis Cardinals', 'home': 'Chicago Cubs'},
+                        {'away': 'St. Louis Cardinals', 'home': 'Chicago Cubs'},
+                        {'away': 'New York Yankees', 'home': 'Toronto Blue Jays'}]}
+    _v, _m = gate_dh([{'lab': 'STL@CHC F5 U9.5', 'grp': 'STL@CHC', 'price': -500}],
+                     _slate)
+    chk(_v == 'WARN' and 'DOUBLEHEADER' in _m and 'nightcap' in _m,
+        "a leg on a twin-bill matchup is WARNED: the feed keys ONE game, "
+        "the line may belong to the other start")
+    _v, _m = gate_dh([{'lab': 'NYY@TOR F5 U8.5', 'grp': 'NYY@TOR', 'price': -500}],
+                     _slate)
+    chk(_v == 'PASS' and 'no leg on them' in _m,
+        "a doubleheader elsewhere is stated but does not warn this leg")
+    _v, _m = gate_dh([{'lab': 'x', 'grp': 'X', 'price': -500}],
+                     {'games': [{'away': 'A', 'home': 'B'}]})
+    chk(_v == 'PASS' and 'no doubleheaders' in _m,
+        "a single-game slate passes clean")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
