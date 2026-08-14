@@ -1,0 +1,150 @@
+[
+ {
+  "p": 0.9626639610662717,
+  "d": 1.0333333333333334,
+  "lab": "Claressa Shields",
+  "price": -3000,
+  "grp": "BOX Shields-Scott",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-16T05:00Z"
+ },
+ {
+  "p": 0.9562342983881312,
+  "d": 1.0333333333333334,
+  "lab": "Ernesto Mercado",
+  "price": -3000,
+  "grp": "BOX Tagoe-Mercado",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-16T00:00Z"
+ },
+ {
+  "p": 0.9379292350111015,
+  "d": 1.05,
+  "lab": "Atif Oberlton",
+  "price": -2000,
+  "grp": "BOX Oberlton-Angulo",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-15T23:20Z"
+ },
+ {
+  "p": 0.9017885068136843,
+  "d": 1.0869565217391304,
+  "lab": "Ashleyann Lozada",
+  "price": -1150,
+  "grp": "BOX Lozada-Cuesta",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-16T01:15Z"
+ },
+ {
+  "p": 0.8983704360898692,
+  "d": 1.0909090909090908,
+  "lab": "Danielle Perkins",
+  "price": -1100,
+  "grp": "BOX Perkins-Curry",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-15T22:40Z"
+ },
+ {
+  "p": 0.8476633152292541,
+  "d": 1.1538461538461537,
+  "lab": "Troy Isley",
+  "price": -650,
+  "grp": "BOX Hicks-Isley",
+  "fam": "BOX",
+  "sport": "OTHER",
+  "t": "2026-08-16T01:50Z"
+ },
+ {
+  "p": 0.8780487804878049,
+  "d": 1.0833333333333333,
+  "lab": "Myktybek Orolbai ML",
+  "price": -1200,
+  "grp": "MMA 08-15",
+  "fam": "MMA",
+  "sport": "FIGHT",
+  "t": "2026-08-15T21:45Z"
+ },
+ {
+  "p": 0.7153024911032029,
+  "d": 1.3333333333333333,
+  "lab": "Joel Alvarez ML",
+  "price": -300,
+  "grp": "MMA 08-15",
+  "fam": "MMA",
+  "sport": "FIGHT",
+  "t": "2026-08-16T00:45Z"
+ },
+ {
+  "p": 0.7153024911032029,
+  "d": 1.3333333333333333,
+  "lab": "Donte Johnson ML",
+  "price": -300,
+  "grp": "MMA 08-15",
+  "fam": "MMA",
+  "sport": "FIGHT",
+  "t": "2026-08-15T23:45Z"
+ },
+ {
+  "p": 0.823943661971831,
+  "d": 1.1538461538461537,
+  "lab": "Esteban Ribovics ML",
+  "price": -650,
+  "grp": "MMA 08-15",
+  "fam": "MMA",
+  "sport": "FIGHT",
+  "t": "2026-08-16T01:15Z"
+ },
+ {
+  "lab": "Islam Makhachev by Points",
+  "price": 120,
+  "p": 0.4025,
+  "d": 2.2,
+  "fam": "MMA",
+  "grp": "MMA 08-15",
+  "t": "2026-08-16T03:30Z"
+ },
+ {
+  "lab": "Kaue Fernandes ML",
+  "price": 122,
+  "p": 0.42881646655231564,
+  "d": 2.22,
+  "fam": "MMA",
+  "grp": "MMA 08-15",
+  "t": "2026-08-16T02:15Z"
+ },
+ {
+  "lab": "U6.5 goals Alverca-Estrela (est -4000)",
+  "price": -4000,
+  "p": 0.997,
+  "d": 1.025,
+  "fam": "SOCT",
+  "grp": "SOC Alverca-Estrela",
+  "t": "2026-08-15T14:30Z",
+  "lg": "soccer_portugal_primeira_liga"
+ },
+ {
+  "lab": "U6.5 goals San Lorenzo-USF (est -4000)",
+  "price": -4000,
+  "p": 0.9936,
+  "d": 1.025,
+  "fam": "SOCT",
+  "grp": "SOC SL-USF",
+  "t": "2026-08-15T17:30Z",
+  "lg": "soccer_portugal_primeira_liga"
+ },
+ {
+  "lab": "U6.5 goals FC Porto (est -4000)",
+  "price": -4000,
+  "p": 0.9936,
+  "d": 1.025,
+  "fam": "SOCT",
+  "grp": "SOC Porto",
+  "t": "2026-08-15T19:30Z",
+  "lg": "soccer_portugal_primeira_liga"
+ }
+]
