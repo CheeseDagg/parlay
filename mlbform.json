@@ -5,14 +5,14 @@
   "CWS@DET": {
    "away_sp": {
     "name": "Anthony Kay",
-    "hr9_5": 1.01,
-    "r_start": 1.8,
+    "hr9_5": 0.7,
+    "r_start": 1.6,
     "starts": 5
    },
    "home_sp": {
     "name": "Troy Melton",
-    "hr9_5": 0.29,
-    "r_start": 0.8,
+    "hr9_5": 0.32,
+    "r_start": 1.2,
     "starts": 5
    },
    "away_form": {

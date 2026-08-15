@@ -307,38 +307,21 @@
    "newest": "2026-08-09",
    "matched": "exact"
   },
-  "Alverca": {
-   "form": "LLLDLW",
+  "Sparta Rotterdam": {
+   "form": "LLLDLL",
    "n": 6,
-   "ppg": 0.67,
-   "gf": 0.5,
-   "ga": 1.33,
+   "ppg": 0.17,
+   "gf": 0.83,
+   "ga": 2.67,
    "totals": [
-    2,
-    2,
     1,
-    2,
-    1,
-    3
+    5,
+    4,
+    4,
+    5,
+    2
    ],
    "newest": "2026-08-09",
-   "matched": "exact"
-  },
-  "CF Estrela": {
-   "form": "DDDDLL",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 1.5,
-   "ga": 1.83,
-   "totals": [
-    4,
-    4,
-    4,
-    0,
-    5,
-    3
-   ],
-   "newest": "2026-08-08",
    "matched": "exact"
   },
   "Santa Clara": {
@@ -544,74 +527,6 @@
    ],
    "newest": "2026-08-08",
    "matched": "exact"
-  },
-  "Kasimpasa SK": {
-   "form": "WLDLWD",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 1.33,
-   "ga": 1.83,
-   "totals": [
-    1,
-    5,
-    2,
-    4,
-    1,
-    6
-   ],
-   "newest": "2026-05-17",
-   "matched": "exact"
-  },
-  "Trabzonspor": {
-   "form": "LWDLDD",
-   "n": 6,
-   "ppg": 1.0,
-   "gf": 1.0,
-   "ga": 1.5,
-   "totals": [
-    3,
-    3,
-    2,
-    3,
-    2,
-    2
-   ],
-   "newest": "2026-05-17",
-   "matched": "exact"
-  },
-  "Torku Konyaspor": {
-   "form": "LLLWWW",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 1.67,
-   "ga": 1.5,
-   "totals": [
-    3,
-    3,
-    5,
-    3,
-    2,
-    3
-   ],
-   "newest": "2026-05-17",
-   "matched": "via Konyaspor"
-  },
-  "\u00c7aykur Rizespor": {
-   "form": "DLWLDW",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 1.5,
-   "ga": 2.17,
-   "totals": [
-    4,
-    4,
-    5,
-    2,
-    4,
-    3
-   ],
-   "newest": "2026-05-15",
-   "matched": "via Rizespor"
   },
   "Alanyaspor": {
    "form": "LWDLLD",
@@ -1071,23 +986,6 @@
    ],
    "newest": "2026-08-09",
    "matched": "via Halmstad"
-  },
-  "IFK Mariehamn": {
-   "form": "LLDLLL",
-   "n": 6,
-   "ppg": 0.17,
-   "gf": 0.5,
-   "ga": 2.67,
-   "totals": [
-    2,
-    3,
-    2,
-    2,
-    6,
-    4
-   ],
-   "newest": "2026-08-09",
-   "matched": "via Mariehamn"
   },
   "Jaro": {
    "form": "LLWDWL",
@@ -4690,23 +4588,6 @@
    "newest": "2026-08-08",
    "matched": "exact"
   },
-  "Wolfsberger AC": {
-   "form": "DWWWWW",
-   "n": 6,
-   "ppg": 2.67,
-   "gf": 2.0,
-   "ga": 0.33,
-   "totals": [
-    2,
-    3,
-    2,
-    1,
-    5,
-    1
-   ],
-   "newest": "2026-08-09",
-   "matched": "exact"
-  },
   "Rheindorf Altach": {
    "form": "WLWDLL",
    "n": 6,
@@ -4956,23 +4837,6 @@
    "newest": "2026-08-07",
    "matched": "exact"
   },
-  "Piast Gliwice": {
-   "form": "LWLLLD",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 1.0,
-   "ga": 2.17,
-   "totals": [
-    3,
-    7,
-    2,
-    3,
-    4,
-    0
-   ],
-   "newest": "2026-08-09",
-   "matched": "exact"
-  },
   "Korona Kielce": {
    "form": "DLDWLD",
    "n": 6,
@@ -5105,6 +4969,23 @@
     4,
     4,
     2
+   ],
+   "newest": "2026-08-09",
+   "matched": "exact"
+  },
+  "Piast Gliwice": {
+   "form": "LWLLLD",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 1.0,
+   "ga": 2.17,
+   "totals": [
+    3,
+    7,
+    2,
+    3,
+    4,
+    0
    ],
    "newest": "2026-08-09",
    "matched": "exact"
@@ -13884,7 +13765,6 @@
   "Volos FC",
   "Levadiakos",
   "PAOK Thessaloniki",
-  "SJK Sein\u00e4joki",
   "HJK Helsinki",
   "KuPS Kuopio",
   "Ilves Tampere",
@@ -14002,8 +13882,6 @@
   "Virtus Entella",
   "US Catanzaro 1929",
   "Vicenza",
-  "AD Ceuta FC",
-  "Andorra CF",
   "C\u00e1diz CF",
   "Granada CF",
   "Real Valladolid CF",
@@ -14018,7 +13896,6 @@
   "Sporting Gij\u00f3n",
   "Almer\u00eda",
   "CD Eldense",
-  "Austria Lustenau",
   "Austria Wien",
   "WSG Tirol",
   "Rapid Wien",
@@ -14040,16 +13917,11 @@
   "Kawasaki Frontale",
   "Vissel Kobe",
   "Yokohama F Marinos",
-  "Wieczysta Krak\u00f3w",
   "Widzew \u0141\u00f3d\u017a",
   "Rak\u00f3w Cz\u0119stochowa",
   "Wis\u0142a Krak\u00f3w",
   "Wis\u0142a P\u0142ock",
   "Legia Warszawa",
-  "Falkenbergs FF",
-  "Norrby IF",
-  "IFK Norrkoping",
-  "Sandvikens IF",
   "IFK V\u00e4rnamo",
   "\u00d6stersunds FK"
  ]
