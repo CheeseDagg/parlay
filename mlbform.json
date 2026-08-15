@@ -5,13 +5,13 @@
   "CWS@DET": {
    "away_sp": {
     "name": "Anthony Kay",
-    "hr9_5": 0.7,
-    "r_start": 1.6,
+    "hr9_5": 0.96,
+    "r_start": 2.0,
     "starts": 5
    },
    "home_sp": {
     "name": "Troy Melton",
-    "hr9_5": 0.32,
+    "hr9_5": 0.31,
     "r_start": 1.2,
     "starts": 5
    },
@@ -30,14 +30,14 @@
   "STL@CHC": {
    "away_sp": {
     "name": "Michael McGreevy",
-    "hr9_5": 1.48,
-    "r_start": 3.6,
+    "hr9_5": 1.5,
+    "r_start": 3.8,
     "starts": 5
    },
    "home_sp": {
     "name": "Matthew Boyd",
-    "hr9_5": 1.07,
-    "r_start": 1.8,
+    "hr9_5": 1.91,
+    "r_start": 3.0,
     "starts": 5
    },
    "away_form": {
@@ -55,8 +55,8 @@
   "NYY@TOR": {
    "away_sp": {
     "name": "Cam Schlittler",
-    "hr9_5": 0.64,
-    "r_start": 1.8,
+    "hr9_5": 0.62,
+    "r_start": 1.4,
     "starts": 5
    },
    "home_sp": {
@@ -80,14 +80,14 @@
   "COL@SF": {
    "away_sp": {
     "name": "Michael Lorenzen",
-    "hr9_5": 1.8,
+    "hr9_5": 2.5,
     "r_start": 4.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Logan Webb",
-    "hr9_5": 0.28,
-    "r_start": 2.0,
+    "hr9_5": 0.0,
+    "r_start": 1.6,
     "starts": 5
    },
    "away_form": {
@@ -106,13 +106,13 @@
    "away_sp": {
     "name": "Brad Lord",
     "hr9_5": null,
-    "r_start": 0.5,
-    "starts": 2
+    "r_start": 1.0,
+    "starts": 3
    },
    "home_sp": {
     "name": "Sean Manaea",
-    "hr9_5": 1.21,
-    "r_start": 2.0,
+    "hr9_5": 0.64,
+    "r_start": 1.2,
     "starts": 5
    },
    "away_form": {
@@ -179,10 +179,10 @@
   },
   "SD@CLE": {
    "away_sp": {
-    "name": null,
+    "name": "Wandy Peralta",
     "hr9_5": null,
-    "r_start": null,
-    "note": "NO PROBABLE LISTED"
+    "r_start": 0.0,
+    "starts": 4
    },
    "home_sp": {
     "name": "Joey Cantillo",
