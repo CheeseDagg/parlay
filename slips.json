@@ -362,7 +362,7 @@
      "price": 217
     }
    ],
-   "note": "All-UFC 7-leg, pays $1,702.54. Model p per leg: Orolbai .882, D.Johnson .724, Alvarez .732, Ribovics .839, Abdul-Malik .838 (pin consensus), Kaue by KO .172, Islam by Sub .203 (cardread method mixes -- no posted ladder was logged, so mixes are the instrument, rule 27). True joint 4.68%, EV 1.59. Single-method legs by Ryan's explicit choice."
+   "note": "All-UFC 7-leg on DraftKings, pays $1,702.54. Model p: Orolbai .882, D.Johnson .724, Alvarez .732, Ribovics .839, Abdul-Malik .838 (pin consensus); Kaue by KO .172, Islam by Sub .203 (cardread mixes, no ladder logged, rule 27). TRUE JOINT 1.15% -- one in 87. EV 0.391 (-61%). CORRECTED 8/15: first write said 4.68%/EV 1.59, typed before the arithmetic ran; and the first correction attempt silently failed because placed.record skipped existing entries -- both bugs fixed."
   },
   {
    "name": "UFC330 7-leg D",
@@ -401,7 +401,7 @@
      "price": 211
     }
    ],
-   "note": "Same seven legs as slip C at later (shorter) prices, pays $741.11. True joint 4.68%, EV 1.39. Placed as a second look at the same shape."
+   "note": "Same seven legs at shorter prices, pays $741.11. TRUE JOINT 1.15%, EV 0.340 (-66%). CORRECTED 8/15 (same two-layer failure as slip C)."
   }
  ]
 }

@@ -70,18 +70,30 @@ def record(legs, name, price, stake, note, when, files=None):
             model_p *= p
     d = json.load(open(fs['slips'])) if os.path.exists(fs['slips']) else {'slips': []}
     d.setdefault('slips', [])
-    already = any(s.get('name') == name and str(s.get('placed', ''))[:10] == date
-                  for s in d['slips'])
-    if not already:
-        d['slips'].append({'name': name, 'book': 'FanDuel', 'price': price,
-                           'stake': stake, 'placed': when,
-                           'model_p': round(model_p, 4) if model_p else None,
-                           'legs': [{'lab': l['lab'], 'price': l['price'],
-                                     **({'p': round(l['p'], 4)} if l['p'] else {})}
-                                    for l in legs],
-                           'note': note})
-        d['as_of'] = date
-        json.dump(d, open(fs['slips'], 'w'), indent=1)
+    row = {'name': name, 'book': 'FanDuel', 'price': price,
+           'stake': stake, 'placed': when,
+           'model_p': round(model_p, 4) if model_p else None,
+           'legs': [{'lab': l['lab'], 'price': l['price'],
+                     **({'p': round(l['p'], 4)} if l['p'] else {})}
+                    for l in legs],
+           'note': note}
+    hit = next((i for i, s in enumerate(d['slips'])
+                if s.get('name') == name and str(s.get('placed', ''))[:10] == date),
+               None)
+    if hit is None:
+        d['slips'].append(row)
+    else:
+        # REPAIR means repair. Until 8/15 a re-run silently kept the OLD
+        # entry, so a correction run "succeeded" while the wrong numbers
+        # stayed on disk -- caught live when slips C/D's EV correction
+        # printed 'repaired' and changed nothing. Settlement flags someone
+        # added by hand survive the rewrite.
+        keep = {k: v for k, v in d['slips'][hit].items()
+                if k in ('settled', 'result', 'outcome')}
+        row.update(keep)
+        d['slips'][hit] = row
+    d['as_of'] = date
+    json.dump(d, open(fs['slips'], 'w'), indent=1)
     got = set()
     if os.path.exists(fs['calib']):
         got = {(r[0], r[1]) for r in csv.reader(open(fs['calib'])) if r}
@@ -95,14 +107,25 @@ def record(legs, name, price, stake, note, when, files=None):
     head = f"## {name} — {price:+d} — placed {when}"
     key = f"## {name} — {price:+d} — placed {date}"
     md = open(fs['tickets']).read() if os.path.exists(fs['tickets']) else ''
+    block = '\n'.join([f"\n{head}\n"]
+                      + [f"- [ ] {l['lab']} — {l['price']:+d}"
+                         + (f" (model {l['p']*100:.1f}%)" if l['p'] else '')
+                         for l in legs]) + '\n'
     if key not in md:
-        lines = [f"\n{head}\n"]
-        lines += [f"- [ ] {l['lab']} — {l['price']:+d}"
-                  + (f" (model {l['p']*100:.1f}%)" if l['p'] else '')
-                  for l in legs]
         with open(fs['tickets'], 'a') as fh:
-            fh.write('\n'.join(lines) + '\n')
-    return {'n': len(legs), 'model_p': model_p, 'was_new': not already}
+            fh.write(block)
+    else:
+        # same repair rule as slips.json: rewrite THIS section in place,
+        # leaving ticked checkboxes alone if nothing else changed them
+        import re as _re
+        pat = _re.compile(_re.escape(key.split(' — placed ')[0])
+                          + r'[^\n]*\n(?:- \[.\][^\n]*\n?)*')
+        m2 = pat.search(md)
+        if m2 and '- [x]' not in m2.group(0):
+            md = md[:m2.start()] + block.lstrip('\n') + md[m2.end():]
+            with open(fs['tickets'], 'w') as fh:
+                fh.write(md)
+    return {'n': len(legs), 'model_p': model_p, 'was_new': hit is None}
 
 
 def main():
@@ -169,6 +192,26 @@ def selftest():
     r3 = record(full, 'T2', -120, 50, '', '2026-08-13T19:00Z', fs)
     chk(abs(r3['model_p'] - 0.72) < 1e-9,
         "all legs carrying p= -> model_p is their product")
+    # ---- REPAIR MEANS REPAIR (8/15, caught live): the slips C/D EV
+    # correction printed 'repaired' while the old note stayed on disk,
+    # because a (name,date) hit was a silent no-op.
+    import tempfile as _tf; _t2 = _tf.mkdtemp()
+    _d2 = {'slips': _t2+'/s.json', 'calib': _t2+'/c.csv', 'tickets': _t2+'/t.md'}
+    _lg, _ = parse_legs("A Team ML -400\nB by KO/TKO +200")
+    record(_lg, name='X', price=1000, stake=10, when='2026-08-15T19:00Z',
+           note='WRONG 4.68', files=_d2)
+    record(_lg, name='X', price=1000, stake=10, when='2026-08-15T19:00Z',
+           note='CORRECTED 1.15', files=_d2)
+    _s = json.load(open(_d2['slips']))
+    chk(len(_s['slips']) == 1 and 'CORRECTED 1.15' in _s['slips'][0]['note'],
+        "a re-run REPLACES the note in place -- no duplicate, no stale text")
+    _s['slips'][0]['settled'] = 'won'
+    json.dump(_s, open(_d2['slips'], 'w'))
+    record(_lg, name='X', price=1000, stake=10, when='2026-08-15T19:00Z',
+           note='third', files=_d2)
+    chk(json.load(open(_d2['slips']))['slips'][0].get('settled') == 'won',
+        "hand-added settlement flags survive the rewrite")
+
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 
