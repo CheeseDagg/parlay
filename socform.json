@@ -868,40 +868,6 @@
    "newest": "2026-05-21",
    "matched": "via Panetolikos"
   },
-  "IK Sirius": {
-   "form": "DWWWWD",
-   "n": 6,
-   "ppg": 2.33,
-   "gf": 2.83,
-   "ga": 1.5,
-   "totals": [
-    4,
-    2,
-    5,
-    4,
-    3,
-    8
-   ],
-   "newest": "2026-08-10",
-   "matched": "via Sirius"
-  },
-  "Mj\u00e4llby AIF": {
-   "form": "LLDLDD",
-   "n": 6,
-   "ppg": 0.5,
-   "gf": 1.17,
-   "ga": 1.67,
-   "totals": [
-    1,
-    3,
-    0,
-    3,
-    8,
-    2
-   ],
-   "newest": "2026-08-08",
-   "matched": "via Mjallby"
-  },
   "AIK": {
    "form": "WLDWWW",
    "n": 6,
@@ -1208,23 +1174,6 @@
    "newest": "2026-08-07",
    "matched": "exact"
   },
-  "Lillestrom": {
-   "form": "LLLWWL",
-   "n": 6,
-   "ppg": 1.0,
-   "gf": 0.83,
-   "ga": 1.83,
-   "totals": [
-    2,
-    4,
-    3,
-    3,
-    2,
-    2
-   ],
-   "newest": "2026-08-09",
-   "matched": "exact"
-  },
   "Aalesund": {
    "form": "DLDLDD",
    "n": 6,
@@ -1395,19 +1344,19 @@
    "newest": "2026-08-09",
    "matched": "exact"
   },
-  "Liaoning Tieren FC": {
-   "form": "LWLDWL",
+  "Shanghai Shenhua FC": {
+   "form": "WLLLWW",
    "n": 6,
-   "ppg": 1.17,
-   "gf": 1.33,
+   "ppg": 1.5,
+   "gf": 1.5,
    "ga": 1.67,
    "totals": [
     1,
     4,
-    1,
     2,
-    4,
-    6
+    2,
+    5,
+    5
    ],
    "newest": "2026-08-08",
    "matched": "exact"
@@ -1429,72 +1378,38 @@
    "newest": "2026-08-09",
    "matched": "exact"
   },
-  "Chengdu Rongcheng FC": {
-   "form": "LDDDDD",
+  "Wuhan Three Towns": {
+   "form": "DWWLLD",
    "n": 6,
-   "ppg": 0.83,
-   "gf": 1.0,
-   "ga": 1.17,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.0,
    "totals": [
+    2,
     1,
     2,
-    4,
-    2,
-    2,
+    5,
+    1,
     2
    ],
-   "newest": "2026-08-08",
+   "newest": "2026-08-01",
    "matched": "exact"
   },
-  "Dalian Yingbo": {
-   "form": "WDLWWL",
+  "Qingdao West Coast FC": {
+   "form": "DWWDLW",
    "n": 6,
-   "ppg": 1.67,
-   "gf": 1.83,
-   "ga": 1.83,
+   "ppg": 1.83,
+   "gf": 1.0,
+   "ga": 0.83,
    "totals": [
+    0,
+    2,
     1,
     2,
-    5,
-    4,
-    5,
-    5
-   ],
-   "newest": "2026-08-08",
-   "matched": "exact"
-  },
-  "Yunnan Yukun": {
-   "form": "WLWDLW",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 2.33,
-   "ga": 2.17,
-   "totals": [
-    1,
-    5,
-    7,
-    4,
-    7,
+    3,
     3
    ],
-   "newest": "2026-08-08",
-   "matched": "exact"
-  },
-  "Shanghai Shenhua FC": {
-   "form": "WLLLWW",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 1.5,
-   "ga": 1.67,
-   "totals": [
-    1,
-    4,
-    2,
-    2,
-    5,
-    5
-   ],
-   "newest": "2026-08-08",
+   "newest": "2026-08-09",
    "matched": "exact"
   },
   "New York Red Bulls": {
@@ -3755,6 +3670,142 @@
    "newest": "2026-05-16",
    "matched": "via Stuttgart"
   },
+  "TSG Hoffenheim": {
+   "form": "LWDWWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.67,
+   "ga": 1.83,
+   "totals": [
+    4,
+    1,
+    6,
+    3,
+    3,
+    4
+   ],
+   "newest": "2026-05-16",
+   "matched": "via Hoffenheim"
+  },
+  "Bayer Leverkusen": {
+   "form": "DLWWLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.33,
+   "totals": [
+    2,
+    4,
+    5,
+    3,
+    3,
+    1
+   ],
+   "newest": "2026-05-16",
+   "matched": "via Leverkusen"
+  },
+  "Elversberg": {
+   "form": "WLWDWL",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.67,
+   "ga": 1.5,
+   "totals": [
+    3,
+    4,
+    6,
+    6,
+    3,
+    3
+   ],
+   "newest": "2026-05-17",
+   "matched": "exact"
+  },
+  "RB Leipzig": {
+   "form": "LWLWWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 1.83,
+   "ga": 1.83,
+   "totals": [
+    5,
+    3,
+    5,
+    4,
+    4,
+    1
+   ],
+   "newest": "2026-05-16",
+   "matched": "exact"
+  },
+  "Union Berlin": {
+   "form": "WWDLLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 2.0,
+   "ga": 1.83,
+   "totals": [
+    4,
+    4,
+    4,
+    4,
+    3,
+    4
+   ],
+   "newest": "2026-05-16",
+   "matched": "exact"
+  },
+  "SC Paderborn": {
+   "form": "WDLLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 2.0,
+   "ga": 2.33,
+   "totals": [
+    2,
+    4,
+    6,
+    5,
+    2,
+    7
+   ],
+   "newest": "2026-05-17",
+   "matched": "exact"
+  },
+  "Borussia Dortmund": {
+   "form": "WWLWLL",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.67,
+   "ga": 1.0,
+   "totals": [
+    2,
+    5,
+    1,
+    4,
+    3,
+    1
+   ],
+   "newest": "2026-05-16",
+   "matched": "via Dortmund"
+  },
+  "Hamburger SV": {
+   "form": "DWWLLL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 2.17,
+   "totals": [
+    2,
+    5,
+    3,
+    3,
+    4,
+    4
+   ],
+   "newest": "2026-05-16",
+   "matched": "via Hamburg"
+  },
   "Marseille": {
    "form": "WWLDLW",
    "n": 6,
@@ -4010,159 +4061,6 @@
    "newest": "2026-05-17",
    "matched": "exact"
   },
-  "Preston North End": {
-   "form": "LWLLWD",
-   "n": 6,
-   "ppg": 1.17,
-   "gf": 1.33,
-   "ga": 1.83,
-   "totals": [
-    4,
-    5,
-    3,
-    2,
-    3,
-    2
-   ],
-   "newest": "2026-05-02",
-   "matched": "via Preston"
-  },
-  "Bristol City": {
-   "form": "WLDLDW",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 1.33,
-   "ga": 1.33,
-   "totals": [
-    2,
-    3,
-    4,
-    6,
-    0,
-    1
-   ],
-   "newest": "2026-05-02",
-   "matched": "exact"
-  },
-  "Millwall": {
-   "form": "WDWWDL",
-   "n": 6,
-   "ppg": 1.83,
-   "gf": 1.5,
-   "ga": 0.67,
-   "totals": [
-    2,
-    2,
-    4,
-    2,
-    0,
-    3
-   ],
-   "newest": "2026-05-02",
-   "matched": "exact"
-  },
-  "Charlton Athletic": {
-   "form": "LWLDLD",
-   "n": 6,
-   "ppg": 0.83,
-   "gf": 1.17,
-   "ga": 1.67,
-   "totals": [
-    4,
-    3,
-    3,
-    2,
-    3,
-    2
-   ],
-   "newest": "2026-05-02",
-   "matched": "via Charlton"
-  },
-  "Middlesbrough": {
-   "form": "DWWDLD",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 2.0,
-   "ga": 1.33,
-   "totals": [
-    4,
-    6,
-    1,
-    4,
-    1,
-    4
-   ],
-   "newest": "2026-05-02",
-   "matched": "exact"
-  },
-  "Norwich City": {
-   "form": "LDWWLW",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 1.67,
-   "ga": 1.5,
-   "totals": [
-    3,
-    2,
-    3,
-    6,
-    2,
-    3
-   ],
-   "newest": "2026-05-02",
-   "matched": "via Norwich"
-  },
-  "West Bromwich Albion": {
-   "form": "LDWWDD",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 1.0,
-   "ga": 0.33,
-   "totals": [
-    3,
-    0,
-    3,
-    2,
-    0,
-    0
-   ],
-   "newest": "2026-05-02",
-   "matched": "via West Brom"
-  },
-  "Portsmouth": {
-   "form": "DWLWWW",
-   "n": 6,
-   "ppg": 2.17,
-   "gf": 1.5,
-   "ga": 1.17,
-   "totals": [
-    2,
-    4,
-    6,
-    1,
-    2,
-    1
-   ],
-   "newest": "2026-05-02",
-   "matched": "exact"
-  },
-  "Swansea City": {
-   "form": "WDWLWD",
-   "n": 6,
-   "ppg": 1.83,
-   "gf": 1.67,
-   "ga": 1.17,
-   "totals": [
-    4,
-    2,
-    3,
-    3,
-    1,
-    4
-   ],
-   "newest": "2026-05-02",
-   "matched": "via Swansea"
-  },
   "Birmingham City": {
    "form": "DWWDWL",
    "n": 6,
@@ -4282,6 +4180,74 @@
    "newest": "2026-05-02",
    "matched": "exact"
   },
+  "Bristol City": {
+   "form": "WLDLDW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.33,
+   "ga": 1.33,
+   "totals": [
+    2,
+    3,
+    4,
+    6,
+    0,
+    1
+   ],
+   "newest": "2026-05-02",
+   "matched": "exact"
+  },
+  "Portsmouth": {
+   "form": "DWLWWW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.5,
+   "ga": 1.17,
+   "totals": [
+    2,
+    4,
+    6,
+    1,
+    2,
+    1
+   ],
+   "newest": "2026-05-02",
+   "matched": "exact"
+  },
+  "Millwall": {
+   "form": "WDWWDL",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.5,
+   "ga": 0.67,
+   "totals": [
+    2,
+    2,
+    4,
+    2,
+    0,
+    3
+   ],
+   "newest": "2026-05-02",
+   "matched": "exact"
+  },
+  "Norwich City": {
+   "form": "LDWWLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.67,
+   "ga": 1.5,
+   "totals": [
+    3,
+    2,
+    3,
+    6,
+    2,
+    3
+   ],
+   "newest": "2026-05-02",
+   "matched": "via Norwich"
+  },
   "Blackburn Rovers": {
    "form": "LWDLDD",
    "n": 6,
@@ -4299,6 +4265,91 @@
    "newest": "2026-05-02",
    "matched": "via Blackburn"
   },
+  "Middlesbrough": {
+   "form": "DWWDLD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 2.0,
+   "ga": 1.33,
+   "totals": [
+    4,
+    6,
+    1,
+    4,
+    1,
+    4
+   ],
+   "newest": "2026-05-02",
+   "matched": "exact"
+  },
+  "Charlton Athletic": {
+   "form": "LWLDLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 1.17,
+   "ga": 1.67,
+   "totals": [
+    4,
+    3,
+    3,
+    2,
+    3,
+    2
+   ],
+   "newest": "2026-05-02",
+   "matched": "via Charlton"
+  },
+  "Preston North End": {
+   "form": "LWLLWD",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.33,
+   "ga": 1.83,
+   "totals": [
+    4,
+    5,
+    3,
+    2,
+    3,
+    2
+   ],
+   "newest": "2026-05-02",
+   "matched": "via Preston"
+  },
+  "Swansea City": {
+   "form": "WDWLWD",
+   "n": 6,
+   "ppg": 1.83,
+   "gf": 1.67,
+   "ga": 1.17,
+   "totals": [
+    4,
+    2,
+    3,
+    3,
+    1,
+    4
+   ],
+   "newest": "2026-05-02",
+   "matched": "via Swansea"
+  },
+  "West Bromwich Albion": {
+   "form": "LDWWDD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.0,
+   "ga": 0.33,
+   "totals": [
+    3,
+    0,
+    3,
+    2,
+    0,
+    0
+   ],
+   "newest": "2026-05-02",
+   "matched": "via West Brom"
+  },
   "Leicester City": {
    "form": "WDDLLD",
    "n": 6,
@@ -4315,91 +4366,6 @@
    ],
    "newest": "2026-05-02",
    "matched": "via Leicester"
-  },
-  "1. FC Heidenheim": {
-   "form": "WLWDWL",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 2.17,
-   "ga": 1.83,
-   "totals": [
-    7,
-    2,
-    4,
-    6,
-    2,
-    3
-   ],
-   "newest": "2026-08-08",
-   "matched": "via Heidenheim"
-  },
-  "Hertha Berlin": {
-   "form": "WLWLLD",
-   "n": 6,
-   "ppg": 1.17,
-   "gf": 0.83,
-   "ga": 1.67,
-   "totals": [
-    1,
-    7,
-    3,
-    1,
-    1,
-    2
-   ],
-   "newest": "2026-08-07",
-   "matched": "via Hertha"
-  },
-  "1. FC Magdeburg": {
-   "form": "LLWWLW",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 1.17,
-   "ga": 1.5,
-   "totals": [
-    7,
-    1,
-    4,
-    1,
-    1,
-    2
-   ],
-   "newest": "2026-08-08",
-   "matched": "via Magdeburg"
-  },
-  "1. FC N\u00fcrnberg": {
-   "form": "WDWDWD",
-   "n": 6,
-   "ppg": 2.0,
-   "gf": 2.0,
-   "ga": 0.83,
-   "totals": [
-    3,
-    6,
-    3,
-    2,
-    1,
-    2
-   ],
-   "newest": "2026-08-09",
-   "matched": "via Nurnberg"
-  },
-  "Greuther F\u00fcrth": {
-   "form": "DWLDLW",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 1.67,
-   "ga": 1.33,
-   "totals": [
-    2,
-    3,
-    3,
-    2,
-    3,
-    5
-   ],
-   "newest": "2026-08-09",
-   "matched": "exact"
   },
   "1. FC Kaiserslautern": {
    "form": "DWWLLL",
@@ -13905,7 +13871,6 @@
   "Sabah FK",
   "NK Celje",
   "\u0160K Slovan Bratislava",
-  "Willem II",
   "SC Cambuur",
   "ADO Den Haag",
   "Acad\u00e9mico de Viseu",
@@ -13923,11 +13888,10 @@
   "HJK Helsinki",
   "KuPS Kuopio",
   "Ilves Tampere",
-  "KFUM",
-  "Shenzhen Peng City FC",
   "Beijing FC",
+  "Shenzhen Peng City FC",
   "Zhejiang",
-  "Henan FC",
+  "Shandong Luneng Taishan FC",
   "Atlanta United FC",
   "D.C. United",
   "LA Galaxy",
@@ -13972,6 +13936,8 @@
   "O'Higgins",
   "Huachipato",
   "Palestino",
+  "La Serena",
+  "Universidad de Concepci\u00f3n",
   "Hull City",
   "Manchester United",
   "Leeds United",
@@ -13988,14 +13954,19 @@
   "Monza",
   "Frosinone",
   "Venezia",
+  "1. FC K\u00f6ln",
+  "Borussia Monchengladbach",
+  "Eintracht Frankfurt",
+  "FSV Mainz 05",
   "RC Lens",
   "Paris Saint Germain",
-  "Bolton Wanderers",
-  "Derby County",
-  "Lincoln City",
-  "Queens Park Rangers",
-  "Stoke City",
   "Cardiff City",
+  "Lincoln City",
+  "Bolton Wanderers",
+  "Queens Park Rangers",
+  "Derby County",
+  "Wolverhampton Wanderers",
+  "Stoke City",
   "Luton",
   "Wimbledon",
   "Doncaster Rovers",
@@ -14012,9 +13983,7 @@
   "Reading",
   "Stevenage",
   "Sheffield Wednesday",
-  "Wolverhampton Wanderers",
   "Bradford City",
-  "VfL Osnabr\u00fcck",
   "FC Energie Cottbus",
   "Arezzo",
   "Avellino",
@@ -14053,37 +14022,30 @@
   "Austria Wien",
   "WSG Tirol",
   "Rapid Wien",
-  "Gamba Osaka",
-  "Mito HollyHock",
-  "Kashima Antlers",
-  "Nagoya Grampus",
-  "Shimizu S Pulse",
-  "Yokohama F Marinos",
-  "Fagiano Okayama",
+  "Kashiwa Reysol",
   "V-Varen Nagasaki",
-  "Avispa Fukuoka",
-  "Cerezo Osaka",
-  "FC Machida Zelvia",
-  "JEF United Chiba",
   "FC Tokyo",
-  "Vissel Kobe",
-  "Hiroshima Sanfrecce FC",
-  "Urawa Red Diamonds",
-  "Kawasaki Frontale",
+  "JEF United Chiba",
+  "Avispa Fukuoka",
+  "Kashima Antlers",
+  "Fagiano Okayama",
+  "Tokyo Verdy",
+  "Cerezo Osaka",
+  "Shimizu S Pulse",
+  "Gamba Osaka",
+  "Nagoya Grampus",
   "Kyoto Purple Sanga",
-  "Zag\u0142\u0119bie Lubin",
-  "\u015al\u0105sk Wroc\u0142aw",
+  "Mito HollyHock",
+  "Hiroshima Sanfrecce FC",
+  "Kawasaki Frontale",
+  "Vissel Kobe",
+  "Yokohama F Marinos",
   "Wieczysta Krak\u00f3w",
   "Widzew \u0141\u00f3d\u017a",
   "Rak\u00f3w Cz\u0119stochowa",
   "Wis\u0142a Krak\u00f3w",
   "Wis\u0142a P\u0142ock",
-  "Ljungskile SK",
-  "\u00d6sters IF",
-  "GIF Sundsvall",
-  "Helsingborgs IF",
-  "Nordic United FC",
-  "Varbergs BoIS",
+  "Legia Warszawa",
   "Falkenbergs FF",
   "Norrby IF",
   "IFK Norrkoping",

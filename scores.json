@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-15T10:04Z",
+ "as_of": "2026-08-15T16:33Z",
  "date": "2026-08-15",
  "mlb": [
   {
@@ -7,8 +7,8 @@
    "home": "DET",
    "key": "CWS@DET",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -16,8 +16,8 @@
    "home": "CHC",
    "key": "STL@CHC",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -25,8 +25,8 @@
    "home": "TOR",
    "key": "NYY@TOR",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
