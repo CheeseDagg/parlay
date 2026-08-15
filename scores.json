@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-15T21:14Z",
+ "as_of": "2026-08-15T23:42Z",
  "date": "2026-08-15",
  "mlb": [
   {
@@ -25,35 +25,35 @@
    "home": "TOR",
    "key": "NYY@TOR",
    "through5": 2,
-   "current": 3,
-   "inning": 7,
-   "final": false
+   "current": 5,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "COL",
    "home": "SF",
    "key": "COL@SF",
-   "through5": null,
-   "current": 3,
-   "inning": 4,
-   "final": false
+   "through5": 8,
+   "current": 8,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "WSH",
    "home": "NYM",
    "key": "WSH@NYM",
-   "through5": null,
-   "current": 3,
-   "inning": 4,
-   "final": false
+   "through5": 3,
+   "current": 9,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "BAL",
    "home": "TB",
    "key": "BAL@TB",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
+   "through5": 3,
+   "current": 3,
+   "inning": 6,
    "final": false
   },
   {
@@ -61,8 +61,8 @@
    "home": "CIN",
    "key": "MIA@CIN",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 4,
+   "inning": 4,
    "final": false
   },
   {
@@ -70,8 +70,8 @@
    "home": "CLE",
    "key": "SD@CLE",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 2,
+   "inning": 2,
    "final": false
   },
   {
@@ -79,8 +79,8 @@
    "home": "HOU",
    "key": "SEA@HOU",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 5,
+   "inning": 2,
    "final": false
   },
   {
@@ -88,8 +88,8 @@
    "home": "MIN",
    "key": "PHI@MIN",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 1,
+   "inning": 2,
    "final": false
   },
   {
@@ -97,8 +97,8 @@
    "home": "PIT",
    "key": "BOS@PIT",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 1,
+   "inning": 2,
    "final": false
   },
   {
@@ -106,8 +106,8 @@
    "home": "ATL",
    "key": "AZ@ATL",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 4,
+   "inning": 2,
    "final": false
   },
   {
@@ -115,8 +115,8 @@
    "home": "LAD",
    "key": "MIL@LAD",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 2,
+   "inning": 2,
    "final": false
   },
   {
@@ -124,8 +124,8 @@
    "home": "LAA",
    "key": "KC@LAA",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -133,8 +133,8 @@
    "home": "ATH",
    "key": "TEX@ATH",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   }
  ],
@@ -142,37 +142,52 @@
   {
    "home": "Atlanta United FC",
    "away": "New York Red Bulls",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Atlanta United FC": 0,
+    "New York Red Bulls": 0
+   }
   },
   {
    "home": "CF Montreal",
    "away": "D.C. United",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "CF Montreal": 0,
+    "D.C. United": 0
+   }
   },
   {
    "home": "Charlotte FC",
    "away": "Columbus Crew SC",
-   "goals": null,
+   "goals": 1,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Charlotte FC": 1,
+    "Columbus Crew SC": 0
+   }
   },
   {
    "home": "Orlando City SC",
    "away": "FC Cincinnati",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Orlando City SC": 0,
+    "FC Cincinnati": 0
+   }
   },
   {
    "home": "Toronto FC",
    "away": "New England Revolution",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Toronto FC": 0,
+    "New England Revolution": 0
+   }
   },
   {
    "home": "Houston Dynamo",

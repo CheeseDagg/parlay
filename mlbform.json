@@ -80,8 +80,8 @@
   "COL@SF": {
    "away_sp": {
     "name": "Michael Lorenzen",
-    "hr9_5": 2.5,
-    "r_start": 4.2,
+    "hr9_5": 2.41,
+    "r_start": 5.2,
     "starts": 5
    },
    "home_sp": {
@@ -111,8 +111,8 @@
    },
    "home_sp": {
     "name": "Sean Manaea",
-    "hr9_5": 0.64,
-    "r_start": 1.2,
+    "hr9_5": 1.15,
+    "r_start": 2.0,
     "starts": 5
    },
    "away_form": {
@@ -130,14 +130,14 @@
   "BAL@TB": {
    "away_sp": {
     "name": "Kyle Bradish",
-    "hr9_5": 0.34,
+    "hr9_5": 0.37,
     "r_start": 2.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Ian Seymour",
-    "hr9_5": 1.9,
-    "r_start": 3.0,
+    "hr9_5": 1.93,
+    "r_start": 2.8,
     "starts": 5
    },
    "away_form": {
@@ -155,13 +155,13 @@
   "MIA@CIN": {
    "away_sp": {
     "name": "Ryan Gusto",
-    "hr9_5": 1.69,
-    "r_start": 2.6,
+    "hr9_5": 1.25,
+    "r_start": 2.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Brady Singer",
-    "hr9_5": 0.6,
+    "hr9_5": 1.0,
     "r_start": 3.0,
     "starts": 5
    },
@@ -181,13 +181,13 @@
    "away_sp": {
     "name": "Wandy Peralta",
     "hr9_5": null,
-    "r_start": 0.0,
-    "starts": 4
+    "r_start": 0.2,
+    "starts": 5
    },
    "home_sp": {
     "name": "Joey Cantillo",
-    "hr9_5": 1.45,
-    "r_start": 3.0,
+    "hr9_5": 1.72,
+    "r_start": 2.4,
     "starts": 5
    },
    "away_form": {
@@ -205,15 +205,15 @@
   "SEA@HOU": {
    "away_sp": {
     "name": "Emerson Hancock",
-    "hr9_5": 1.16,
-    "r_start": 2.2,
+    "hr9_5": 1.19,
+    "r_start": 2.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Hayden Wesneski",
-    "hr9_5": 0.96,
-    "r_start": 2.67,
-    "starts": 3
+    "hr9_5": 0.89,
+    "r_start": 3.0,
+    "starts": 4
    },
    "away_form": {
     "n": 10,
@@ -230,14 +230,14 @@
   "PHI@MIN": {
    "away_sp": {
     "name": "Jes\u00fas Luzardo",
-    "hr9_5": 0.81,
-    "r_start": 2.0,
+    "hr9_5": 0.61,
+    "r_start": 1.8,
     "starts": 5
    },
    "home_sp": {
     "name": "Connor Prielipp",
-    "hr9_5": 1.67,
-    "r_start": 2.4,
+    "hr9_5": 1.96,
+    "r_start": 2.2,
     "starts": 5
    },
    "away_form": {
@@ -255,13 +255,13 @@
   "BOS@PIT": {
    "away_sp": {
     "name": "Sonny Gray",
-    "hr9_5": 0.9,
-    "r_start": 2.4,
+    "hr9_5": 0.72,
+    "r_start": 2.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Jared Jones",
-    "hr9_5": 1.88,
+    "hr9_5": 2.57,
     "r_start": 3.2,
     "starts": 5
    },
@@ -280,14 +280,14 @@
   "AZ@ATL": {
    "away_sp": {
     "name": "Eduardo Rodriguez",
-    "hr9_5": 0.31,
-    "r_start": 3.2,
+    "hr9_5": 0.65,
+    "r_start": 2.6,
     "starts": 5
    },
    "home_sp": {
     "name": "Grant Holmes",
-    "hr9_5": 1.01,
-    "r_start": 1.8,
+    "hr9_5": 1.19,
+    "r_start": 1.2,
     "starts": 5
    },
    "away_form": {
@@ -305,14 +305,14 @@
   "MIL@LAD": {
    "away_sp": {
     "name": "Jacob Misiorowski",
-    "hr9_5": 1.86,
-    "r_start": 2.0,
+    "hr9_5": 1.57,
+    "r_start": 1.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Justin Wrobleski",
-    "hr9_5": 3.0,
-    "r_start": 3.6,
+    "hr9_5": 4.09,
+    "r_start": 3.8,
     "starts": 5
    },
    "away_form": {
