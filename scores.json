@@ -1,77 +1,23 @@
 {
- "as_of": "2026-08-14T23:46Z",
- "date": "2026-08-14",
+ "as_of": "2026-08-15T10:04Z",
+ "date": "2026-08-15",
  "mlb": [
-  {
-   "away": "STL",
-   "home": "CHC",
-   "key": "STL@CHC",
-   "through5": 0,
-   "current": 3,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "MIA",
-   "home": "CIN",
-   "key": "MIA@CIN",
-   "through5": 0,
-   "current": 1,
-   "inning": 6,
-   "final": false
-  },
-  {
-   "away": "BOS",
-   "home": "PIT",
-   "key": "BOS@PIT",
-   "through5": null,
-   "current": 4,
-   "inning": 4,
-   "final": false
-  },
   {
    "away": "CWS",
    "home": "DET",
    "key": "CWS@DET",
    "through5": null,
-   "current": 7,
-   "inning": 4,
+   "current": null,
+   "inning": null,
    "final": false
   },
   {
-   "away": "WSH",
-   "home": "NYM",
-   "key": "WSH@NYM",
+   "away": "STL",
+   "home": "CHC",
+   "key": "STL@CHC",
    "through5": null,
-   "current": 1,
-   "inning": 3,
-   "final": false
-  },
-  {
-   "away": "SD",
-   "home": "CLE",
-   "key": "SD@CLE",
-   "through5": null,
-   "current": 1,
-   "inning": 3,
-   "final": false
-  },
-  {
-   "away": "BAL",
-   "home": "TB",
-   "key": "BAL@TB",
-   "through5": null,
-   "current": 1,
-   "inning": 2,
-   "final": false
-  },
-  {
-   "away": "AZ",
-   "home": "ATL",
-   "key": "AZ@ATL",
-   "through5": null,
-   "current": 1,
-   "inning": 2,
+   "current": null,
+   "inning": null,
    "final": false
   },
   {
@@ -79,44 +25,8 @@
    "home": "TOR",
    "key": "NYY@TOR",
    "through5": null,
-   "current": 0,
-   "inning": 2,
-   "final": false
-  },
-  {
-   "away": "SEA",
-   "home": "HOU",
-   "key": "SEA@HOU",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
-  },
-  {
-   "away": "KC",
-   "home": "LAA",
-   "key": "KC@LAA",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
-  },
-  {
-   "away": "TEX",
-   "home": "ATH",
-   "key": "TEX@ATH",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
-  },
-  {
-   "away": "MIL",
-   "home": "LAD",
-   "key": "MIL@LAD",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": null,
+   "inning": null,
    "final": false
   },
   {
@@ -124,42 +34,111 @@
    "home": "SF",
    "key": "COL@SF",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "WSH",
+   "home": "NYM",
+   "key": "WSH@NYM",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "BAL",
+   "home": "TB",
+   "key": "BAL@TB",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "MIA",
+   "home": "CIN",
+   "key": "MIA@CIN",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "SD",
+   "home": "CLE",
+   "key": "SD@CLE",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "SEA",
+   "home": "HOU",
+   "key": "SEA@HOU",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "PHI",
+   "home": "MIN",
+   "key": "PHI@MIN",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "BOS",
+   "home": "PIT",
+   "key": "BOS@PIT",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "AZ",
+   "home": "ATL",
+   "key": "AZ@ATL",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "MIL",
+   "home": "LAD",
+   "key": "MIL@LAD",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "KC",
+   "home": "LAA",
+   "key": "KC@LAA",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "TEX",
+   "home": "ATH",
+   "key": "TEX@ATH",
+   "through5": null,
+   "current": null,
+   "inning": null,
    "final": false
   }
  ],
  "soccer": [
-  {
-   "home": "Am\u00e9rica",
-   "away": "Austin FC",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "Am\u00e9rica": 1,
-    "Austin FC": 1
-   }
-  },
-  {
-   "home": "Cruz Azul",
-   "away": "Chicago Fire",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "Cruz Azul": 1,
-    "Chicago Fire": 2
-   }
-  },
-  {
-   "home": "Portland Timbers",
-   "away": "Tijuana",
-   "goals": 4,
-   "completed": true,
-   "detail": {
-    "Portland Timbers": 3,
-    "Tijuana": 1
-   }
-  },
   {
    "home": "Atlanta United FC",
    "away": "New York Red Bulls",

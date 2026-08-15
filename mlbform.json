@@ -1,343 +1,93 @@
 {
- "date": "2026-08-14",
+ "date": "2026-08-15",
  "hr9_warn": 1.8,
  "games": {
-  "STL@CHC": {
-   "away_sp": {
-    "name": "Matthew Liberatore",
-    "hr9_5": 1.07,
-    "r_start": 3.0,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Clay Holmes",
-    "hr9_5": 0.33,
-    "r_start": 2.2,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 2.5,
-    "f5_ag": 1.7
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 3.4,
-    "f5_ag": 2.9
-   },
-   "f5_env": 5.25
-  },
-  "MIA@CIN": {
-   "away_sp": {
-    "name": "Sandy Alcantara",
-    "hr9_5": 0.83,
-    "r_start": 1.2,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Chase Burns",
-    "hr9_5": 0.33,
-    "r_start": 2.2,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 2.8,
-    "f5_ag": 1.4
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 3.2,
-    "f5_ag": 2.8
-   },
-   "f5_env": 5.1
-  },
-  "BOS@PIT": {
-   "away_sp": {
-    "name": "Jake Bennett",
-    "hr9_5": 1.01,
-    "r_start": 3.4,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Bubba Chandler",
-    "hr9_5": 0.0,
-    "r_start": 1.6,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 3.3,
-    "f5_ag": 1.9
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 2.1,
-    "f5_ag": 3.6
-   },
-   "f5_env": 5.45
-  },
   "CWS@DET": {
    "away_sp": {
-    "name": "Sean Newcomb",
-    "hr9_5": null,
-    "r_start": 0.0,
-    "starts": 2
-   },
-   "home_sp": {
-    "name": "Jackson Jobe",
-    "hr9_5": 2.08,
-    "r_start": 2.0,
-    "starts": 2
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 2.7,
-    "f5_ag": 3.2
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 2.4,
-    "f5_ag": 1.0
-   },
-   "f5_env": 4.65
-  },
-  "WSH@NYM": {
-   "away_sp": {
-    "name": "Andrew Alvarez",
-    "hr9_5": 0.0,
-    "r_start": 2.2,
+    "name": "Anthony Kay",
+    "hr9_5": 1.01,
+    "r_start": 1.8,
     "starts": 5
    },
    "home_sp": {
-    "name": "Robert Stock",
-    "hr9_5": 0.87,
-    "r_start": 3.0,
-    "starts": 3
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 3.0,
-    "f5_ag": 2.6
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 3.7,
-    "f5_ag": 2.9
-   },
-   "f5_env": 6.1
-  },
-  "SD@CLE": {
-   "away_sp": {
-    "name": "Michael King",
-    "hr9_5": 1.82,
-    "r_start": 2.0,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Gavin Williams",
-    "hr9_5": 0.66,
+    "name": "Troy Melton",
+    "hr9_5": 0.29,
     "r_start": 0.8,
     "starts": 5
    },
    "away_form": {
     "n": 10,
-    "f5_for": 2.9,
-    "f5_ag": 2.4
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 2.9,
-    "f5_ag": 2.8
-   },
-   "f5_env": 5.5
-  },
-  "BAL@TB": {
-   "away_sp": {
-    "name": "Chris Bassitt",
-    "hr9_5": 1.42,
-    "r_start": 2.4,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Steven Matz",
-    "hr9_5": 1.72,
-    "r_start": 2.6,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 2.5,
-    "f5_ag": 2.4
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 3.5,
-    "f5_ag": 2.1
-   },
-   "f5_env": 5.25
-  },
-  "AZ@ATL": {
-   "away_sp": {
-    "name": "Brandon Pfaadt",
-    "hr9_5": 0.0,
-    "r_start": 0.6,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Chris Sale",
-    "hr9_5": 0.0,
-    "r_start": 1.4,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 2.9,
-    "f5_ag": 1.6
+    "f5_for": 3.0,
+    "f5_ag": 3.5
    },
    "home_form": {
     "n": 10,
     "f5_for": 2.1,
-    "f5_ag": 1.3
+    "f5_ag": 1.6
    },
-   "f5_env": 3.95
+   "f5_env": 5.1
+  },
+  "STL@CHC": {
+   "away_sp": {
+    "name": "Michael McGreevy",
+    "hr9_5": 1.48,
+    "r_start": 3.6,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Matthew Boyd",
+    "hr9_5": 1.07,
+    "r_start": 1.8,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.4,
+    "f5_ag": 1.7
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.7,
+    "f5_ag": 2.5
+   },
+   "f5_env": 4.65
   },
   "NYY@TOR": {
    "away_sp": {
-    "name": "Gerrit Cole",
-    "hr9_5": 0.67,
-    "r_start": 1.2,
+    "name": "Cam Schlittler",
+    "hr9_5": 0.64,
+    "r_start": 1.8,
     "starts": 5
    },
    "home_sp": {
-    "name": "Shane Bieber",
-    "hr9_5": 0.86,
-    "r_start": 2.2,
+    "name": "Braydon Fisher",
+    "hr9_5": null,
+    "r_start": 0.2,
     "starts": 5
    },
    "away_form": {
     "n": 10,
-    "f5_for": 1.5,
-    "f5_ag": 1.8
+    "f5_for": 1.3,
+    "f5_ag": 1.7
    },
    "home_form": {
     "n": 10,
-    "f5_for": 1.5,
-    "f5_ag": 2.0
+    "f5_for": 1.3,
+    "f5_ag": 1.4
    },
-   "f5_env": 3.4
-  },
-  "SEA@HOU": {
-   "away_sp": {
-    "name": "George Kirby",
-    "hr9_5": 1.93,
-    "r_start": 2.0,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Peter Lambert",
-    "hr9_5": 0.33,
-    "r_start": 2.0,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 1.0,
-    "f5_ag": 1.8
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 2.1,
-    "f5_ag": 2.3
-   },
-   "f5_env": 3.6
-  },
-  "KC@LAA": {
-   "away_sp": {
-    "name": "Seth Lugo",
-    "hr9_5": 0.3,
-    "r_start": 2.8,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Grayson Rodriguez",
-    "hr9_5": 1.88,
-    "r_start": 3.8,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 2.3,
-    "f5_ag": 2.2
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 1.7,
-    "f5_ag": 2.8
-   },
-   "f5_env": 4.5
-  },
-  "TEX@ATH": {
-   "away_sp": {
-    "name": "Kumar Rocker",
-    "hr9_5": 2.36,
-    "r_start": 3.6,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Gage Jump",
-    "hr9_5": 1.12,
-    "r_start": 3.6,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 1.6,
-    "f5_ag": 2.3
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 2.0,
-    "f5_ag": 4.4
-   },
-   "f5_env": 5.15
-  },
-  "MIL@LAD": {
-   "away_sp": {
-    "name": "Robert Gasser",
-    "hr9_5": 1.14,
-    "r_start": 2.8,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Yoshinobu Yamamoto",
-    "hr9_5": 1.04,
-    "r_start": 2.4,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 3.0,
-    "f5_ag": 2.5
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 1.5,
-    "f5_ag": 2.8
-   },
-   "f5_env": 4.9
+   "f5_env": 2.85
   },
   "COL@SF": {
    "away_sp": {
-    "name": "Kyle Freeland",
-    "hr9_5": 1.17,
-    "r_start": 3.4,
+    "name": "Michael Lorenzen",
+    "hr9_5": 1.8,
+    "r_start": 4.2,
     "starts": 5
    },
    "home_sp": {
-    "name": "Landen Roupp",
-    "hr9_5": 0.68,
-    "r_start": 2.4,
+    "name": "Logan Webb",
+    "hr9_5": 0.28,
+    "r_start": 2.0,
     "starts": 5
    },
    "away_form": {
@@ -347,10 +97,285 @@
    },
    "home_form": {
     "n": 10,
-    "f5_for": 1.7,
+    "f5_for": 1.5,
+    "f5_ag": 1.3
+   },
+   "f5_env": 4.55
+  },
+  "WSH@NYM": {
+   "away_sp": {
+    "name": "Brad Lord",
+    "hr9_5": null,
+    "r_start": 0.5,
+    "starts": 2
+   },
+   "home_sp": {
+    "name": "Sean Manaea",
+    "hr9_5": 1.21,
+    "r_start": 2.0,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.8,
+    "f5_ag": 2.6
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 3.7,
+    "f5_ag": 2.9
+   },
+   "f5_env": 6.0
+  },
+  "BAL@TB": {
+   "away_sp": {
+    "name": "Kyle Bradish",
+    "hr9_5": 0.34,
+    "r_start": 2.2,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Ian Seymour",
+    "hr9_5": 1.9,
+    "r_start": 3.0,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.7,
+    "f5_ag": 2.1
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 3.7,
+    "f5_ag": 2.0
+   },
+   "f5_env": 5.25
+  },
+  "MIA@CIN": {
+   "away_sp": {
+    "name": "Ryan Gusto",
+    "hr9_5": 1.69,
+    "r_start": 2.6,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Brady Singer",
+    "hr9_5": 0.6,
+    "r_start": 3.0,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.7,
+    "f5_ag": 1.4
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.3,
+    "f5_ag": 2.7
+   },
+   "f5_env": 4.55
+  },
+  "SD@CLE": {
+   "away_sp": {
+    "name": null,
+    "hr9_5": null,
+    "r_start": null,
+    "note": "NO PROBABLE LISTED"
+   },
+   "home_sp": {
+    "name": "Joey Cantillo",
+    "hr9_5": 1.45,
+    "r_start": 3.0,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 3.4,
+    "f5_ag": 2.4
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.7,
+    "f5_ag": 3.3
+   },
+   "f5_env": 5.9
+  },
+  "SEA@HOU": {
+   "away_sp": {
+    "name": "Emerson Hancock",
+    "hr9_5": 1.16,
+    "r_start": 2.2,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Hayden Wesneski",
+    "hr9_5": 0.96,
+    "r_start": 2.67,
+    "starts": 3
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 1.0,
+    "f5_ag": 2.3
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.3,
+    "f5_ag": 2.3
+   },
+   "f5_env": 3.95
+  },
+  "PHI@MIN": {
+   "away_sp": {
+    "name": "Jes\u00fas Luzardo",
+    "hr9_5": 0.81,
+    "r_start": 2.0,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Connor Prielipp",
+    "hr9_5": 1.67,
+    "r_start": 2.4,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.7,
     "f5_ag": 1.6
    },
-   "f5_env": 4.8
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.5,
+    "f5_ag": 3.5
+   },
+   "f5_env": 5.15
+  },
+  "BOS@PIT": {
+   "away_sp": {
+    "name": "Sonny Gray",
+    "hr9_5": 0.9,
+    "r_start": 2.4,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Jared Jones",
+    "hr9_5": 1.88,
+    "r_start": 3.2,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.8,
+    "f5_ag": 2.5
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.4,
+    "f5_ag": 3.7
+   },
+   "f5_env": 5.7
+  },
+  "AZ@ATL": {
+   "away_sp": {
+    "name": "Eduardo Rodriguez",
+    "hr9_5": 0.31,
+    "r_start": 3.2,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Grant Holmes",
+    "hr9_5": 1.01,
+    "r_start": 1.8,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.7,
+    "f5_ag": 1.6
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 1.8,
+    "f5_ag": 1.2
+   },
+   "f5_env": 3.65
+  },
+  "MIL@LAD": {
+   "away_sp": {
+    "name": "Jacob Misiorowski",
+    "hr9_5": 1.86,
+    "r_start": 2.0,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Justin Wrobleski",
+    "hr9_5": 3.0,
+    "r_start": 3.6,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.7,
+    "f5_ag": 2.5
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 1.3,
+    "f5_ag": 2.2
+   },
+   "f5_env": 4.35
+  },
+  "KC@LAA": {
+   "away_sp": {
+    "name": "Randy Dobnak",
+    "hr9_5": 0.34,
+    "r_start": 1.2,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "Reid Detmers",
+    "hr9_5": 1.71,
+    "r_start": 1.4,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 2.7,
+    "f5_ag": 2.5
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.2,
+    "f5_ag": 3.1
+   },
+   "f5_env": 5.25
+  },
+  "TEX@ATH": {
+   "away_sp": {
+    "name": "MacKenzie Gore",
+    "hr9_5": 1.55,
+    "r_start": 2.4,
+    "starts": 5
+   },
+   "home_sp": {
+    "name": "J.T. Ginn",
+    "hr9_5": 1.01,
+    "r_start": 3.2,
+    "starts": 5
+   },
+   "away_form": {
+    "n": 10,
+    "f5_for": 1.6,
+    "f5_ag": 2.3
+   },
+   "home_form": {
+    "n": 10,
+    "f5_for": 2.3,
+    "f5_ag": 3.8
+   },
+   "f5_env": 5.0
   }
  }
 }
