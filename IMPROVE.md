@@ -6,16 +6,17 @@ DONE with the number that justified it, and re-sorts what remains. An item
 with no measurable payoff written next to it does not belong on this list.
 
 ## OPEN
-1. **Finish the 8/14 field audit** (fields carried, read by NO report):
-   fighter_bouts.csv's kd/kd_abs (chinhist) and sig_l/sig_a, td_l/td_a
-   (defhist) are now SHIPPED. STILL unused there: ctrl (control seconds)
-   and the sub column. ufc_ratings still hides
-   finish_rounds, finishes, best_wins, physical, style8, archetype,
-   legkick, strike_location/position, model_score, vs_avg_pct,
-   overall_pct, ranked/recent ratings. MLB slate raw_total is unused
-   (raw vs adj IS the park+weather adjustment). f5hist histogram unused.
-   Payoff: measured, not assumed -- the kd_abs pass found the audit's own
-   headline claim was WRONG, which is worth more than shipping it.
+1. **8/14 field audit -- REMAINDER** (most of it is now CLOSED: fighter_
+   bouts fully measured incl. ctrl; ratings' physical/legkick/strike_
+   location/finish_rounds/best_wins ship in cardread's matchup line;
+   raw_total ships in hot flags; f5hist histogram has NO consumer -- every
+   posted rung is already in the rungs table; revisit only if an off-table
+   rung ever posts). Still deliberately unshipped from ufc_ratings:
+   model_score, vs_avg_pct, overall_pct, style8, archetype, ranked/recent
+   ratings -- display-only scores whose semantics are the widget's own
+   model; printing them beside the pin's consensus would be a second
+   opinion wearing a number. Ship only if a use with a measurable payoff
+   appears.
 1. **Cross-market SGP correlation library**: FanDuel priced DC+under 4% ABOVE
    naive product once (n=1). Collect every SGP quote Ryan screenshots vs our
    naive product in a csv; after n>=20, fit the haircut per pairing type.

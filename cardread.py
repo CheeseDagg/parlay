@@ -347,6 +347,52 @@ def strike_line(a_name, b_name, tbl, lad=None):
     return out
 
 
+LEG_RELIANT = 20.0     # % of strikes to the leg before "leg-kicker" is said
+LEG_SOAK = 8.0         # absorbed/15 before the other side's exposure is said
+
+
+def matchup_line(a_name, b_name, idx):
+    """Physical + leg-kick + finish-round facts, both corners, one line.
+
+    Every field verified against the widget's own copy (8/15) before
+    printing -- the cardio_rounds rule:
+      legkick.abs_per15  leg kicks ABSORBED per 15 min
+      legkick.vuln       opponent-adjusted vulnerability; the widget flags
+                         only the vulnerable (positive) side
+      strike_location.leg_pct   share of the fighter's own strikes to legs
+      physical.reach_vs_div     reach minus division average
+      finish_rounds      the round of every career finish
+
+    Receipt: Ryan, 8/14 -- "kuae is a beast with leg kicks and turner
+    absorbs alot of leg kicks according to the tool." The tool knew
+    (Kaue 31.9%% legs; Turner 16.98/15 absorbed, vuln +4.79) and the card
+    report hid it. Thresholds below are PRESENTATION filters so quiet
+    matchups stay quiet; they claim nothing about probability."""
+    a, b = idx.get(a_name), idx.get(b_name)
+    if not a or not b:
+        return None
+    bits = []
+    pa, pb = a.get('physical') or {}, b.get('physical') or {}
+    if pa.get('reach_in') and pb.get('reach_in'):
+        st = lambda p: {'Southpaw': 'SP', 'Orthodox': 'O', 'Switch': 'SW'}.get(
+            p.get('stance'), '?')
+        bits.append(f"reach {pa['reach_in']}\" {st(pa)} v {pb['reach_in']}\" "
+                    f"{st(pb)} ({pa['reach_in'] - pb['reach_in']:+d})")
+    for me, him, mn, hn in ((a, b, a_name, b_name), (b, a, b_name, a_name)):
+        legs = (me.get('strike_location') or {}).get('leg_pct') or 0
+        soak = (him.get('legkick') or {}).get('abs_per15') or 0
+        vuln = (him.get('legkick') or {}).get('vuln')
+        if legs >= LEG_RELIANT and (soak >= LEG_SOAK or (vuln or 0) > 0):
+            v = f", vuln {vuln:+.1f}" if vuln is not None else ""
+            bits.append(f"{mn.split()[-1]} throws {legs:.0f}% legs -> "
+                        f"{hn.split()[-1]} absorbs {soak:.1f}/15{v}")
+    for s_, nm in ((a, a_name), (b, b_name)):
+        fr = s_.get('finish_rounds') or []
+        if len(fr) >= 3 and max(fr) <= 2:
+            bits.append(f"{nm.split()[-1]}: {len(fr)} finishes, ALL R1-R2")
+    return '  |  '.join(bits) if bits else None
+
+
 def durability(prof, name):
     lb = prof['lose_by'] if prof else None
     if not prof:
@@ -380,6 +426,9 @@ def print_read(r):
                       r.get('strklad'))
     if _st:
         print(f"  {_st}")
+    _mu = matchup_line(r['fav']['name'], r['dog']['name'], r.get('ridx') or {})
+    if _mu:
+        print(f"  {_mu}")
     for _s in (r['fav'], r['dog']):
         _sk = skill_line(_s['name'], r.get('ridx') or {})
         if _sk:
@@ -637,6 +686,42 @@ def selftest():
     chk(_l2 and 'absorbed/min' in _l2 and 'accuracy' not in _l2,
         f"under the attempt floor the rate is ABSENT, never a number nobody "
         f"measured ({_l2})")
+
+    # ---- MATCHUP LINE, the 8/15 audit ship. Receipt is Ryan reading the
+    # widget while the report hid it: "turner absorbs alot of leg kicks
+    # according to the tool."
+    _mx = {'Kaue Fernandes': {'physical': {'reach_in': 73, 'stance': 'Orthodox',
+                                           'reach_vs_div': 0.0},
+                              'strike_location': {'leg_pct': 31.9},
+                              'legkick': {'abs_per15': 2.76, 'vuln': -5.01},
+                              'finish_rounds': [1, 1]},
+           'Jalin Turner': {'physical': {'reach_in': 77, 'stance': 'Southpaw',
+                                         'reach_vs_div': 5.5},
+                            'strike_location': {'leg_pct': 6.3},
+                            'legkick': {'abs_per15': 16.98, 'vuln': 4.79},
+                            'finish_rounds': [1, 1, 1, 2, 1, 2, 2, 1]}}
+    _l = matchup_line('Kaue Fernandes', 'Jalin Turner', _mx)
+    chk(_l and 'throws 32% legs' in _l and 'absorbs 17.0/15' in _l
+        and 'vuln +4.8' in _l,
+        f"the Kaue-Turner leg-kick mismatch prints with all three numbers ({_l})")
+    chk('reach 73\" O v 77\" SP (-4)' in _l,
+        "reach and stance print for both corners with the differential")
+    chk('Turner: 8 finishes, ALL R1-R2' in _l and 'Fernandes: 2 finishes' not in _l,
+        "8 finishes all early is said; 2 finishes stays under the floor")
+    _q = matchup_line('Jalin Turner', 'Kaue Fernandes', _mx)
+    chk('throws 32% legs' in _q,
+        "the leg-kick line survives corner order -- it belongs to the BOUT")
+    _quiet = {'A': {'physical': {'reach_in': 72, 'stance': 'Orthodox'},
+                    'strike_location': {'leg_pct': 10},
+                    'legkick': {'abs_per15': 3.0, 'vuln': -2.0}},
+              'B': {'physical': {'reach_in': 72, 'stance': 'Orthodox'},
+                    'strike_location': {'leg_pct': 12},
+                    'legkick': {'abs_per15': 4.0, 'vuln': -1.0}}}
+    _ql = matchup_line('A', 'B', _quiet)
+    chk(_ql == 'reach 72\" O v 72\" O (+0)',
+        f"a quiet matchup prints ONLY the physicals -- no manufactured drama ({_ql})")
+    chk(matchup_line('A', 'Nobody', _quiet) is None,
+        "a missing corner prints nothing")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1

@@ -127,7 +127,7 @@ def _ties():
         return {}
 
 
-def gate_tie(legs):
+def gate_tie(legs, ties_doc=None):
     """A second-leg soccer market must have its FIRST LEG on file.
 
     Rule 40. A 90-minute Double Chance prices the day and is blind to the tie,
@@ -141,7 +141,7 @@ def gate_tie(legs):
     detect a tie nobody has listed -- that is what the WARN is for, and why
     ties.json is the thing to update, not this function.
     """
-    ties = _ties()
+    ties = ties_doc.get('ties') if ties_doc is not None else _ties()
     if not ties:
         return 'WARN', "ties.json unreadable -- no second-leg context checked"
     blind, ctx = [], []
@@ -1001,12 +1001,20 @@ def selftest():
 
     # ---- TIE. Rule 40: a second leg whose first leg is not written down is a
     # blind bet, and the way it hides is by looking like an ordinary favourite.
+    # Fixture tie table -- these pins read the LIVE ties.json until 8/15,
+    # when recording the real Besiktas result flipped two of them. A selftest
+    # that depends on production data is a clock bomb, and that one went off.
+    _TFIX = {'ties': {
+        'Rakow-Hammarby': {'first_leg': 'Rakow 0-0 Hammarby',
+                           'standing': 'level', 'note': 'x'},
+        'Besiktas-Hradec Kralove': {'first_leg': None, 'standing': None,
+                                    'note': 'x'}}}
     v, m_ = gate_tie([L('Hammarby DC (derived)', -647, fam='SOC',
-                        grp='SOC Rakow-Hammarby')])
+                        grp='SOC Rakow-Hammarby')], ties_doc=_TFIX)
     chk(v == 'PASS' and 'level' in m_,
         "a second leg WITH its first leg on file passes, and says the standing")
     v, _ = gate_tie([L('Besiktas to advance', -6000, fam='SOC',
-                       grp='SOC Besiktas-Hradec Kralove')])
+                       grp='SOC Besiktas-Hradec Kralove')], ties_doc=_TFIX)
     chk(v == 'FAIL',
         "a listed tie with first_leg still null FAILS -- silence is the failure "
         "mode this gate exists to remove, so it cannot be a warning")
@@ -1167,7 +1175,7 @@ def selftest():
     chk(_v == 'WARN' and 'kickoff token' in _m,
         "and one with NO token warns by name instead of passing silently -- "
         "unknown start is unknown, not fine")
-    _v, _m = gate_tie([_hl[0]])
+    _v, _m = gate_tie([_hl[0]], ties_doc=_TFIX)
     chk(_v == 'FAIL' and 'first leg NOT on file' in _m,
         "a hand-entered Besiktas leg still hits rule 40: ties.json has no "
         "first leg recorded, so the TIE gate blocks it -- app-quoted does "
