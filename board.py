@@ -139,6 +139,7 @@ FEED_DEAD = False
 
 MODEL_P = {}
 ADJ_TOTAL = {}
+RAW_TOTAL = {}     # pre-park/weather total: (adj - raw) IS the venue+wx effect
 _unmapped = set()
 for _g in _SL.get('games', []):
     _h, _a = TEAM3.get(_g['home']), TEAM3.get(_g['away'])
@@ -159,6 +160,11 @@ for _g in _SL.get('games', []):
         # two full runs above the market's main total -- and the board never
         # saw it, because this number was parsed for nothing.
         ADJ_TOTAL[_key] = float(_g['adj_total'])
+        if _g.get('raw_total') is not None:
+            # The 8/14 field audit: raw_total was parsed for nothing, so a
+            # hot flag could never say WHY a game was hot. adj-raw is the
+            # park+weather share of the heat; the rest is the teams.
+            RAW_TOTAL[_key] = float(_g['raw_total'])
     if _g.get('p_home') is None:
         continue
     MODEL_P[_key] = _g['p_home'] / 100.0
@@ -224,10 +230,19 @@ def _hot(main, adj, slate_fresh):
 
 
 def hot_games(book='FanDuel'):
-    """{ grp: reason } for games whose F5 ladder should be top-rung-only."""
+    """{ grp: reason } for games whose F5 ladder should be top-rung-only.
+    The reason now splits the heat: park+weather share (adj - raw) vs the
+    teams themselves, so 'hot at Sutter Health' and 'hot because these two
+    lineups' stop reading identically."""
     fresh = bool(_SL) and SLATE_DATE == _et_date(_utcnow())
     adj = {g: t for (d, g), t in ADJ_TOTAL.items() if d == SLATE_DATE}
-    return _hot(main_totals(book), adj, fresh)
+    out = _hot(main_totals(book), adj, fresh)
+    for g in list(out):
+        raw = RAW_TOTAL.get((SLATE_DATE, g))
+        if raw is not None and g in adj:
+            d = adj[g] - raw
+            out[g] += f" (raw {raw:.2f}; park/wx {d:+.2f})"
+    return out
 
 
 def model_p(code, game, utc):
@@ -814,6 +829,31 @@ def selftest():
                ('2026-08-02', 'STL@NYY'): 0.400}
 
     # 23:08Z is 7:08pm ET the SAME day; 01:41Z is 9:41pm ET the PREVIOUS day.
+    # ---- raw vs adj split in hot reasons (8/14 field audit: raw_total
+    # was parsed for nothing, so a hot flag could never say WHY)
+    _h = _hot({'X@Y': 8.5}, {'X@Y': 10.2}, True)
+    chk('X@Y' in _h and 'adj_total' in _h['X@Y'],
+        "the pure hot rule is unchanged by the raw split")
+    RAW_TOTAL[(SLATE_DATE, 'X@Y')] = 9.1
+    ADJ_TOTAL[(SLATE_DATE, 'X@Y')] = 10.2
+    try:
+        _mt = main_totals
+        globals()['main_totals'] = lambda b: {'X@Y': 8.5}
+        _fresh = bool(_SL) and SLATE_DATE == _et_date(_utcnow())
+        _hg = hot_games('FanDuel')
+        if _fresh:
+            chk('X@Y' in _hg and 'park/wx +1.10' in _hg['X@Y'],
+                f"a hot reason names the park/weather share (adj-raw): {_hg.get('X@Y')}")
+        else:
+            # after midnight ET the slate is honestly stale and the model arm
+            # is off; the pin asserts the DEGRADED path instead of failing on
+            # the clock -- a time-dependent selftest is its own bug class
+            chk('X@Y' not in _hg,
+                "stale slate: the model arm stays off and the raw split with it")
+    finally:
+        globals()['main_totals'] = _mt
+        RAW_TOTAL.pop((SLATE_DATE, 'X@Y'), None)
+        ADJ_TOTAL.pop((SLATE_DATE, 'X@Y'), None)
     chk(_et_date("2026-08-03T23:08Z") == "2026-08-03", "an evening UTC start keeps its ET date")
     chk(_et_date("2026-08-04T01:41Z") == "2026-08-03",
         "a post-midnight UTC start belongs to the PREVIOUS ET slate date")
