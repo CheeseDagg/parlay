@@ -255,3 +255,23 @@ again.
 - [ ] Troy Isley — -650
 - [ ] Claressa Shields — -3000
 - [ ] Ian Machado Garry ML — +285
+
+## UFC330 7-leg C — +3305 — placed 2026-08-15T19:37Z
+
+- [ ] Myktybek Orolbai ML (v Wells) — -687
+- [ ] Donte Johnson ML (v McConico) — -251
+- [ ] Joel Alvarez ML (v Njokuani) — -241
+- [ ] Esteban Ribovics ML (v Barboza) — -504
+- [ ] Mansur Abdul Malik ML (v Stoltzfus) — -490
+- [ ] Kaue Fernandes by KO/TKO (v Turner) — +227
+- [ ] Islam Makhachev by Submission (v Garry) — +217
+
+## UFC330 7-leg D — +2864 — placed 2026-08-15T19:37Z
+
+- [ ] Myktybek Orolbai ML (v Wells) — -813
+- [ ] Donte Johnson ML (v McConico) — -270
+- [ ] Joel Alvarez ML (v Njokuani) — -258
+- [ ] Esteban Ribovics ML (v Barboza) — -572
+- [ ] Mansur Abdul Malik ML (v Stoltzfus) — -554
+- [ ] Kaue Fernandes by KO/TKO (v Turner) — +221
+- [ ] Islam Makhachev by Submission (v Garry) — +211
