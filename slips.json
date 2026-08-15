@@ -252,7 +252,9 @@
      "price": 120
     }
    ],
-   "note": "DraftKings SGPx, 16 picks (the 2-Pick SGP counts 2). Both slips pay $5,801.20; $550 staked across the pair. The two differ ONLY on Islam-by-Decision vs Garry ML, which are mutually exclusive, so at most one can land. Model true 3.70%. Pair: P(either)=5.90%, one in 17, EV -38%. Kaue +150 and (slip A) Islam +120 break rules 2 and 3 knowingly. Daniel Mercado is the 4-round prospect at -10000, NOT Ernesto Mercado whose bout FanDuel pulled."
+   "note": "DEAD 8/15 ~4:50p CT: Jeremiah Wells beat Orolbai (reported live by Ryan; leg lost). DraftKings SGPx, 16 picks (the 2-Pick SGP counts 2). Both slips pay $5,801.20; $550 staked across the pair. The two differ ONLY on Islam-by-Decision vs Garry ML, which are mutually exclusive, so at most one can land. Model true 3.70%. Pair: P(either)=5.90%, one in 17, EV -38%. Kaue +150 and (slip A) Islam +120 break rules 2 and 3 knowingly. Daniel Mercado is the 4-round prospect at -10000, NOT Ernesto Mercado whose bout FanDuel pulled.",
+   "settled": "lost",
+   "dead_leg": "Myktybek Orolbai ML"
   },
   {
    "name": "UFC330+boxing 16-leg SGPx B",
@@ -323,7 +325,9 @@
      "price": 285
     }
    ],
-   "note": "DraftKings SGPx, 16 picks (the 2-Pick SGP counts 2). Both slips pay $5,801.20; $550 staked across the pair. The two differ ONLY on Islam-by-Decision vs Garry ML, which are mutually exclusive, so at most one can land. Model true 2.20%. Pair: P(either)=5.90%, one in 17, EV -38%. Kaue +150 and (slip A) Islam +120 break rules 2 and 3 knowingly. Daniel Mercado is the 4-round prospect at -10000, NOT Ernesto Mercado whose bout FanDuel pulled."
+   "note": "DEAD 8/15 ~4:50p CT: Jeremiah Wells beat Orolbai (reported live by Ryan; leg lost). DraftKings SGPx, 16 picks (the 2-Pick SGP counts 2). Both slips pay $5,801.20; $550 staked across the pair. The two differ ONLY on Islam-by-Decision vs Garry ML, which are mutually exclusive, so at most one can land. Model true 2.20%. Pair: P(either)=5.90%, one in 17, EV -38%. Kaue +150 and (slip A) Islam +120 break rules 2 and 3 knowingly. Daniel Mercado is the 4-round prospect at -10000, NOT Ernesto Mercado whose bout FanDuel pulled.",
+   "settled": "lost",
+   "dead_leg": "Myktybek Orolbai ML"
   },
   {
    "name": "UFC330 7-leg C",
@@ -362,7 +366,9 @@
      "price": 217
     }
    ],
-   "note": "All-UFC 7-leg on DraftKings, pays $1,702.54. Model p: Orolbai .882, D.Johnson .724, Alvarez .732, Ribovics .839, Abdul-Malik .838 (pin consensus); Kaue by KO .172, Islam by Sub .203 (cardread mixes, no ladder logged, rule 27). TRUE JOINT 1.15% -- one in 87. EV 0.391 (-61%). CORRECTED 8/15: first write said 4.68%/EV 1.59, typed before the arithmetic ran; and the first correction attempt silently failed because placed.record skipped existing entries -- both bugs fixed."
+   "note": "DEAD 8/15 ~4:50p CT: Jeremiah Wells beat Orolbai (reported live by Ryan; leg lost). All-UFC 7-leg on DraftKings, pays $1,702.54. Model p: Orolbai .882, D.Johnson .724, Alvarez .732, Ribovics .839, Abdul-Malik .838 (pin consensus); Kaue by KO .172, Islam by Sub .203 (cardread mixes, no ladder logged, rule 27). TRUE JOINT 1.15% -- one in 87. EV 0.391 (-61%). CORRECTED 8/15: first write said 4.68%/EV 1.59, typed before the arithmetic ran; and the first correction attempt silently failed because placed.record skipped existing entries -- both bugs fixed.",
+   "settled": "lost",
+   "dead_leg": "Myktybek Orolbai ML"
   },
   {
    "name": "UFC330 7-leg D",
@@ -401,7 +407,9 @@
      "price": 211
     }
    ],
-   "note": "Same seven legs at shorter prices, pays $741.11. TRUE JOINT 1.15%, EV 0.340 (-66%). CORRECTED 8/15 (same two-layer failure as slip C)."
+   "note": "DEAD 8/15 ~4:50p CT: Jeremiah Wells beat Orolbai (reported live by Ryan; leg lost). Same seven legs at shorter prices, pays $741.11. TRUE JOINT 1.15%, EV 0.340 (-66%). CORRECTED 8/15 (same two-layer failure as slip C).",
+   "settled": "lost",
+   "dead_leg": "Myktybek Orolbai ML"
   }
  ]
 }
