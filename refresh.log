@@ -60,7 +60,7 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_champs_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  legs representable: ~1991 · API credits remaining 12913
+  legs representable: ~1991 · API credits remaining 12811
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -277,7 +277,7 @@ wrote /home/runner/work/parlay/parlay/mlbform.json
   292 matched / 180 not. wrote /home/runner/work/parlay/parlay/socform.json
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
-  mlblines: 284 pregame leg(s) snapshotted, 905 row(s) total (284 new)
+  mlblines: 284 pregame leg(s) snapshotted, 905 row(s) total (0 new)
 
 7/7 checks pass
 MLB: 15 games on 2026-08-16
@@ -295,4 +295,4 @@ wrote /home/runner/work/parlay/parlay/scores.json
   Sporting Kansas  @ Colorado Rapids  goals=2  FT
   San Diego FC     @ Los Angeles FC   goals=1  FT
   St. Louis City S @ San Jose Earthqu goals=4  FT
-run conclusion: success at 2026-08-16 10:04
+run conclusion: success at 2026-08-16 10:08
