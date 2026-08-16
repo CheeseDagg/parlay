@@ -307,176 +307,6 @@
    "newest": "2026-08-09",
    "matched": "exact"
   },
-  "Arouca": {
-   "form": "WWWWDL",
-   "n": 6,
-   "ppg": 2.17,
-   "gf": 1.83,
-   "ga": 1.0,
-   "totals": [
-    1,
-    1,
-    4,
-    4,
-    4,
-    3
-   ],
-   "newest": "2026-08-08",
-   "matched": "exact"
-  },
-  "Moreirense FC": {
-   "form": "DDDLWL",
-   "n": 6,
-   "ppg": 1.0,
-   "gf": 1.33,
-   "ga": 2.0,
-   "totals": [
-    4,
-    4,
-    0,
-    2,
-    5,
-    5
-   ],
-   "newest": "2026-08-09",
-   "matched": "exact"
-  },
-  "Famalic\u00e3o": {
-   "form": "DDWDDW",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 1.0,
-   "ga": 0.67,
-   "totals": [
-    2,
-    2,
-    1,
-    0,
-    4,
-    1
-   ],
-   "newest": "2026-08-07",
-   "matched": "exact"
-  },
-  "Benfica": {
-   "form": "DDWDDW",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 2.5,
-   "ga": 1.67,
-   "totals": [
-    4,
-    4,
-    4,
-    4,
-    4,
-    5
-   ],
-   "newest": "2026-08-09",
-   "matched": "exact"
-  },
-  "Casa Pia": {
-   "form": "LLDWLL",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 0.5,
-   "ga": 1.0,
-   "totals": [
-    1,
-    1,
-    2,
-    1,
-    1,
-    3
-   ],
-   "newest": "2026-08-08",
-   "matched": "exact"
-  },
-  "Estoril": {
-   "form": "DDLDDL",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 0.83,
-   "ga": 1.33,
-   "totals": [
-    2,
-    2,
-    4,
-    2,
-    2,
-    1
-   ],
-   "newest": "2026-08-07",
-   "matched": "exact"
-  },
-  "Rio Ave FC": {
-   "form": "LLDLDL",
-   "n": 6,
-   "ppg": 0.33,
-   "gf": 0.33,
-   "ga": 1.5,
-   "totals": [
-    1,
-    1,
-    2,
-    5,
-    0,
-    2
-   ],
-   "newest": "2026-08-09",
-   "matched": "exact"
-  },
-  "Alverca": {
-   "form": "LLLDLW",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 0.5,
-   "ga": 1.33,
-   "totals": [
-    2,
-    2,
-    1,
-    2,
-    1,
-    3
-   ],
-   "newest": "2026-08-09",
-   "matched": "exact"
-  },
-  "Sporting Lisbon": {
-   "form": "DDWWWD",
-   "n": 6,
-   "ppg": 2.0,
-   "gf": 3.0,
-   "ga": 1.33,
-   "totals": [
-    4,
-    4,
-    3,
-    5,
-    6,
-    4
-   ],
-   "newest": "2026-08-08",
-   "matched": "exact"
-  },
-  "Nacional": {
-   "form": "DDWLLW",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 1.5,
-   "ga": 1.33,
-   "totals": [
-    4,
-    4,
-    2,
-    2,
-    3,
-    2
-   ],
-   "newest": "2026-08-10",
-   "matched": "exact"
-  },
   "Vit\u00f3ria SC": {
    "form": "LLLDWL",
    "n": 6,
@@ -5060,278 +4890,6 @@
   }
  },
  "all": {
-  "estoril": {
-   "form": "DDLDDL",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 0.83,
-   "ga": 1.33,
-   "totals": [
-    2,
-    2,
-    4,
-    2,
-    2,
-    1
-   ],
-   "newest": "2026-08-07",
-   "name": "Estoril"
-  },
-  "famalicao": {
-   "form": "DDWDDW",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 1.0,
-   "ga": 0.67,
-   "totals": [
-    2,
-    2,
-    1,
-    0,
-    4,
-    1
-   ],
-   "newest": "2026-08-07",
-   "name": "Famalicao"
-  },
-  "casa pia": {
-   "form": "LLDWLL",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 0.5,
-   "ga": 1.0,
-   "totals": [
-    1,
-    1,
-    2,
-    1,
-    1,
-    3
-   ],
-   "newest": "2026-08-08",
-   "name": "Casa Pia"
-  },
-  "guimaraes": {
-   "form": "LLLLLW",
-   "n": 6,
-   "ppg": 0.5,
-   "gf": 0.5,
-   "ga": 1.67,
-   "totals": [
-    1,
-    1,
-    2,
-    1,
-    6,
-    2
-   ],
-   "newest": "2026-08-08",
-   "name": "Guimaraes"
-  },
-  "arouca": {
-   "form": "WWWWDL",
-   "n": 6,
-   "ppg": 2.17,
-   "gf": 1.83,
-   "ga": 1.0,
-   "totals": [
-    1,
-    1,
-    4,
-    4,
-    4,
-    3
-   ],
-   "newest": "2026-08-08",
-   "name": "Arouca"
-  },
-  "estrela": {
-   "form": "DDDDLL",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 1.5,
-   "ga": 1.83,
-   "totals": [
-    4,
-    4,
-    4,
-    0,
-    5,
-    3
-   ],
-   "newest": "2026-08-08",
-   "name": "Estrela"
-  },
-  "sp lisbon": {
-   "form": "DDWWWD",
-   "n": 6,
-   "ppg": 2.0,
-   "gf": 3.0,
-   "ga": 1.33,
-   "totals": [
-    4,
-    4,
-    3,
-    5,
-    6,
-    4
-   ],
-   "newest": "2026-08-08",
-   "name": "Sp Lisbon"
-  },
-  "porto": {
-   "form": "WWWLWW",
-   "n": 6,
-   "ppg": 2.5,
-   "gf": 1.5,
-   "ga": 0.67,
-   "totals": [
-    2,
-    2,
-    1,
-    4,
-    1,
-    3
-   ],
-   "newest": "2026-08-09",
-   "name": "Porto"
-  },
-  "alverca": {
-   "form": "LLLDLW",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 0.5,
-   "ga": 1.33,
-   "totals": [
-    2,
-    2,
-    1,
-    2,
-    1,
-    3
-   ],
-   "newest": "2026-08-09",
-   "name": "Alverca"
-  },
-  "benfica": {
-   "form": "DDWDDW",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 2.5,
-   "ga": 1.67,
-   "totals": [
-    4,
-    4,
-    4,
-    4,
-    4,
-    5
-   ],
-   "newest": "2026-08-09",
-   "name": "Benfica"
-  },
-  "gil vicente": {
-   "form": "WWLLDW",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 0.83,
-   "ga": 1.17,
-   "totals": [
-    1,
-    1,
-    3,
-    4,
-    0,
-    3
-   ],
-   "newest": "2026-08-09",
-   "name": "Gil Vicente"
-  },
-  "rio ave": {
-   "form": "LLDLDL",
-   "n": 6,
-   "ppg": 0.33,
-   "gf": 0.33,
-   "ga": 1.5,
-   "totals": [
-    1,
-    1,
-    2,
-    5,
-    0,
-    2
-   ],
-   "newest": "2026-08-09",
-   "name": "Rio Ave"
-  },
-  "moreirense": {
-   "form": "DDDLWL",
-   "n": 6,
-   "ppg": 1.0,
-   "gf": 1.33,
-   "ga": 2.0,
-   "totals": [
-    4,
-    4,
-    0,
-    2,
-    5,
-    5
-   ],
-   "newest": "2026-08-09",
-   "name": "Moreirense"
-  },
-  "sp braga": {
-   "form": "DDDDDL",
-   "n": 6,
-   "ppg": 0.83,
-   "gf": 1.67,
-   "ga": 1.83,
-   "totals": [
-    4,
-    4,
-    4,
-    4,
-    2,
-    3
-   ],
-   "newest": "2026-08-09",
-   "name": "Sp Braga"
-  },
-  "santa clara": {
-   "form": "DDLWDW",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 1.67,
-   "ga": 1.33,
-   "totals": [
-    4,
-    4,
-    1,
-    2,
-    4,
-    3
-   ],
-   "newest": "2026-08-10",
-   "name": "Santa Clara"
-  },
-  "nacional": {
-   "form": "DDWLLW",
-   "n": 6,
-   "ppg": 1.33,
-   "gf": 1.5,
-   "ga": 1.33,
-   "totals": [
-    4,
-    4,
-    2,
-    2,
-    3,
-    2
-   ],
-   "newest": "2026-08-10",
-   "name": "Nacional"
-  },
   "excelsior": {
    "form": "WWDWWD",
    "n": 6,
@@ -5347,7 +4905,8 @@
     4
    ],
    "newest": "2026-08-07",
-   "name": "Excelsior"
+   "name": "Excelsior",
+   "src": "N1"
   },
   "nijmegen": {
    "form": "LWLDDD",
@@ -5364,7 +4923,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Nijmegen"
+   "name": "Nijmegen",
+   "src": "N1"
   },
   "telstar": {
    "form": "WWWDWL",
@@ -5381,7 +4941,8 @@
     5
    ],
    "newest": "2026-08-08",
-   "name": "Telstar"
+   "name": "Telstar",
+   "src": "N1"
   },
   "go ahead eagles": {
    "form": "WLLDDD",
@@ -5398,7 +4959,8 @@
     0
    ],
    "newest": "2026-08-08",
-   "name": "Go Ahead Eagles"
+   "name": "Go Ahead Eagles",
+   "src": "N1"
   },
   "psv eindhoven": {
    "form": "DWWDWW",
@@ -5415,7 +4977,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "PSV Eindhoven"
+   "name": "PSV Eindhoven",
+   "src": "N1"
   },
   "for sittard": {
    "form": "DLWLLD",
@@ -5432,7 +4995,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "For Sittard"
+   "name": "For Sittard",
+   "src": "N1"
   },
   "az alkmaar": {
    "form": "WDDDDW",
@@ -5449,7 +5013,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "AZ Alkmaar"
+   "name": "AZ Alkmaar",
+   "src": "N1"
   },
   "sparta rotterdam": {
    "form": "LLLDLL",
@@ -5466,7 +5031,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Sparta Rotterdam"
+   "name": "Sparta Rotterdam",
+   "src": "N1"
   },
   "feyenoord": {
    "form": "WWDWWD",
@@ -5483,7 +5049,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Feyenoord"
+   "name": "Feyenoord",
+   "src": "N1"
   },
   "groningen": {
    "form": "WWWLLD",
@@ -5500,7 +5067,8 @@
     0
    ],
    "newest": "2026-08-09",
-   "name": "Groningen"
+   "name": "Groningen",
+   "src": "N1"
   },
   "utrecht": {
    "form": "LWWWLW",
@@ -5517,7 +5085,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Utrecht"
+   "name": "Utrecht",
+   "src": "N1"
   },
   "zwolle": {
    "form": "LLLWLD",
@@ -5534,7 +5103,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Zwolle"
+   "name": "Zwolle",
+   "src": "N1"
   },
   "ajax": {
    "form": "WDLDWW",
@@ -5551,7 +5121,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Ajax"
+   "name": "Ajax",
+   "src": "N1"
   },
   "heerenveen": {
    "form": "WDLWWL",
@@ -5568,7 +5139,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Heerenveen"
+   "name": "Heerenveen",
+   "src": "N1"
   },
   "twente": {
    "form": "LLWDDW",
@@ -5585,7 +5157,296 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Twente"
+   "name": "Twente",
+   "src": "N1"
+  },
+  "estoril": {
+   "form": "DLDDLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 1.33,
+   "totals": [
+    2,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "newest": "2026-08-07",
+   "name": "Estoril",
+   "src": "P1"
+  },
+  "famalicao": {
+   "form": "DWDDWD",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.17,
+   "ga": 0.83,
+   "totals": [
+    2,
+    1,
+    0,
+    4,
+    1,
+    4
+   ],
+   "newest": "2026-08-07",
+   "name": "Famalicao",
+   "src": "P1"
+  },
+  "casa pia": {
+   "form": "LDWLLL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.5,
+   "ga": 1.0,
+   "totals": [
+    1,
+    2,
+    1,
+    1,
+    3,
+    1
+   ],
+   "newest": "2026-08-08",
+   "name": "Casa Pia",
+   "src": "P1"
+  },
+  "guimaraes": {
+   "form": "LLLLWW",
+   "n": 6,
+   "ppg": 1.0,
+   "gf": 0.67,
+   "ga": 1.5,
+   "totals": [
+    1,
+    2,
+    1,
+    6,
+    2,
+    1
+   ],
+   "newest": "2026-08-08",
+   "name": "Guimaraes",
+   "src": "P1"
+  },
+  "arouca": {
+   "form": "WWWDLW",
+   "n": 6,
+   "ppg": 2.17,
+   "gf": 1.83,
+   "ga": 1.0,
+   "totals": [
+    1,
+    4,
+    4,
+    4,
+    3,
+    1
+   ],
+   "newest": "2026-08-08",
+   "name": "Arouca",
+   "src": "P1"
+  },
+  "estrela": {
+   "form": "DDDLLL",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 1.17,
+   "ga": 1.67,
+   "totals": [
+    4,
+    4,
+    0,
+    5,
+    3,
+    1
+   ],
+   "newest": "2026-08-08",
+   "name": "Estrela",
+   "src": "P1"
+  },
+  "sp lisbon": {
+   "form": "DWWWDD",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.83,
+   "ga": 1.17,
+   "totals": [
+    4,
+    3,
+    5,
+    6,
+    4,
+    2
+   ],
+   "newest": "2026-08-08",
+   "name": "Sp Lisbon",
+   "src": "P1"
+  },
+  "porto": {
+   "form": "WWLWWW",
+   "n": 6,
+   "ppg": 2.5,
+   "gf": 1.5,
+   "ga": 0.67,
+   "totals": [
+    2,
+    1,
+    4,
+    1,
+    3,
+    2
+   ],
+   "newest": "2026-08-09",
+   "name": "Porto",
+   "src": "P1"
+  },
+  "alverca": {
+   "form": "LLDLWL",
+   "n": 6,
+   "ppg": 0.67,
+   "gf": 0.5,
+   "ga": 1.17,
+   "totals": [
+    2,
+    1,
+    2,
+    1,
+    3,
+    1
+   ],
+   "newest": "2026-08-09",
+   "name": "Alverca",
+   "src": "P1"
+  },
+  "benfica": {
+   "form": "DWDDWW",
+   "n": 6,
+   "ppg": 2.0,
+   "gf": 2.5,
+   "ga": 1.5,
+   "totals": [
+    4,
+    4,
+    4,
+    4,
+    5,
+    3
+   ],
+   "newest": "2026-08-09",
+   "name": "Benfica",
+   "src": "P1"
+  },
+  "gil vicente": {
+   "form": "WLLDWL",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 0.67,
+   "ga": 1.33,
+   "totals": [
+    1,
+    3,
+    4,
+    0,
+    3,
+    1
+   ],
+   "newest": "2026-08-09",
+   "name": "Gil Vicente",
+   "src": "P1"
+  },
+  "rio ave": {
+   "form": "LDLDLD",
+   "n": 6,
+   "ppg": 0.5,
+   "gf": 0.67,
+   "ga": 1.67,
+   "totals": [
+    1,
+    2,
+    5,
+    0,
+    2,
+    4
+   ],
+   "newest": "2026-08-09",
+   "name": "Rio Ave",
+   "src": "P1"
+  },
+  "moreirense": {
+   "form": "DDLWLW",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.67,
+   "totals": [
+    4,
+    0,
+    2,
+    5,
+    5,
+    1
+   ],
+   "newest": "2026-08-09",
+   "name": "Moreirense",
+   "src": "P1"
+  },
+  "sp braga": {
+   "form": "DDDDLW",
+   "n": 6,
+   "ppg": 1.17,
+   "gf": 1.5,
+   "ga": 1.5,
+   "totals": [
+    4,
+    4,
+    4,
+    2,
+    3,
+    1
+   ],
+   "newest": "2026-08-09",
+   "name": "Sp Braga",
+   "src": "P1"
+  },
+  "santa clara": {
+   "form": "DLWDWD",
+   "n": 6,
+   "ppg": 1.5,
+   "gf": 1.33,
+   "ga": 1.0,
+   "totals": [
+    4,
+    1,
+    2,
+    4,
+    3,
+    0
+   ],
+   "newest": "2026-08-10",
+   "name": "Santa Clara",
+   "src": "P1"
+  },
+  "nacional": {
+   "form": "DWLLWW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 1.33,
+   "ga": 1.0,
+   "totals": [
+    4,
+    2,
+    2,
+    3,
+    2,
+    1
+   ],
+   "newest": "2026-08-10",
+   "name": "Nacional",
+   "src": "P1"
   },
   "brugge": {
    "form": "WWDWWW",
@@ -5602,7 +5463,8 @@
     4
    ],
    "newest": "2026-08-07",
-   "name": "Club Brugge"
+   "name": "Club Brugge",
+   "src": "B1"
   },
   "standard": {
    "form": "DLWDWW",
@@ -5619,7 +5481,8 @@
     5
    ],
    "newest": "2026-08-08",
-   "name": "Standard"
+   "name": "Standard",
+   "src": "B1"
   },
   "cercle brugge": {
    "form": "DLLWWW",
@@ -5636,7 +5499,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Cercle Brugge"
+   "name": "Cercle Brugge",
+   "src": "B1"
   },
   "st truiden": {
    "form": "DWLDLW",
@@ -5653,7 +5517,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "St Truiden"
+   "name": "St Truiden",
+   "src": "B1"
   },
   "westerlo": {
    "form": "LLLWLD",
@@ -5670,7 +5535,8 @@
     6
    ],
    "newest": "2026-08-08",
-   "name": "Westerlo"
+   "name": "Westerlo",
+   "src": "B1"
   },
   "st gilloise": {
    "form": "WWDLWL",
@@ -5687,7 +5553,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "St. Gilloise"
+   "name": "St. Gilloise",
+   "src": "B1"
   },
   "gent": {
    "form": "WLDDDL",
@@ -5704,7 +5571,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Gent"
+   "name": "Gent",
+   "src": "B1"
   },
   "mechelen": {
    "form": "LLDDLW",
@@ -5721,7 +5589,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Mechelen"
+   "name": "Mechelen",
+   "src": "B1"
   },
   "charleroi": {
    "form": "WWDLWW",
@@ -5738,7 +5607,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Charleroi"
+   "name": "Charleroi",
+   "src": "B1"
   },
   "oud heverlee leuven": {
    "form": "LLDWLD",
@@ -5755,7 +5625,8 @@
     6
    ],
    "newest": "2026-08-09",
-   "name": "Oud-Heverlee Leuven"
+   "name": "Oud-Heverlee Leuven",
+   "src": "B1"
   },
   "waregem": {
    "form": "WWWWWW",
@@ -5772,7 +5643,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Waregem"
+   "name": "Waregem",
+   "src": "B1"
   },
   "genk": {
    "form": "LWDDWL",
@@ -5789,7 +5661,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Genk"
+   "name": "Genk",
+   "src": "B1"
   },
   "anderlecht": {
    "form": "WLWDDL",
@@ -5806,7 +5679,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Anderlecht"
+   "name": "Anderlecht",
+   "src": "B1"
   },
   "raal la louviere": {
    "form": "LWLLLL",
@@ -5823,7 +5697,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "RAAL La Louviere"
+   "name": "RAAL La Louviere",
+   "src": "B1"
   },
   "antwerp": {
    "form": "WWDLLL",
@@ -5840,7 +5715,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Antwerp"
+   "name": "Antwerp",
+   "src": "B1"
   },
   "dundee united": {
    "form": "LDDDLL",
@@ -5857,7 +5733,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Dundee United"
+   "name": "Dundee United",
+   "src": "SC0"
   },
   "rangers": {
    "form": "LDWLLL",
@@ -5874,7 +5751,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Rangers"
+   "name": "Rangers",
+   "src": "SC0"
   },
   "falkirk": {
    "form": "DLLLLW",
@@ -5891,7 +5769,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Falkirk"
+   "name": "Falkirk",
+   "src": "SC0"
   },
   "st mirren": {
    "form": "WWDWLL",
@@ -5908,7 +5787,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "St Mirren"
+   "name": "St Mirren",
+   "src": "SC0"
   },
   "aberdeen": {
    "form": "LWLLWD",
@@ -5925,7 +5805,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Aberdeen"
+   "name": "Aberdeen",
+   "src": "SC0"
   },
   "hearts": {
    "form": "WLLWDW",
@@ -5942,7 +5823,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Hearts"
+   "name": "Hearts",
+   "src": "SC0"
   },
   "kilmarnock": {
    "form": "LLWWWW",
@@ -5959,7 +5841,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Kilmarnock"
+   "name": "Kilmarnock",
+   "src": "SC0"
   },
   "hibernian": {
    "form": "WLLWWL",
@@ -5976,7 +5859,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Hibernian"
+   "name": "Hibernian",
+   "src": "SC0"
   },
   "motherwell": {
    "form": "DWWLDL",
@@ -5993,7 +5877,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Motherwell"
+   "name": "Motherwell",
+   "src": "SC0"
   },
   "celtic": {
    "form": "WWWWWW",
@@ -6010,7 +5895,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Celtic"
+   "name": "Celtic",
+   "src": "SC0"
   },
   "dundee": {
    "form": "WLWLWW",
@@ -6027,7 +5913,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Dundee"
+   "name": "Dundee",
+   "src": "SC0"
   },
   "boulogne": {
    "form": "DLLLLD",
@@ -6044,7 +5931,8 @@
     0
    ],
    "newest": "2026-08-08",
-   "name": "Boulogne"
+   "name": "Boulogne",
+   "src": "F2"
   },
   "nancy": {
    "form": "DWWDLD",
@@ -6061,7 +5949,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Nancy"
+   "name": "Nancy",
+   "src": "F2"
   },
   "clermont": {
    "form": "DWWDLD",
@@ -6078,7 +5967,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Clermont"
+   "name": "Clermont",
+   "src": "F2"
   },
   "reims": {
    "form": "DWDDWD",
@@ -6095,7 +5985,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Reims"
+   "name": "Reims",
+   "src": "F2"
   },
   "dunkerque": {
    "form": "WLLWLL",
@@ -6112,7 +6003,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Dunkerque"
+   "name": "Dunkerque",
+   "src": "F2"
   },
   "grenoble": {
    "form": "LWWDLD",
@@ -6129,24 +6021,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Grenoble"
-  },
-  "metz": {
-   "form": "WDLLDL",
-   "n": 6,
-   "ppg": 0.83,
-   "gf": 1.33,
-   "ga": 2.33,
-   "totals": [
-    3,
-    0,
-    4,
-    3,
-    8,
-    4
-   ],
-   "newest": "2026-08-08",
-   "name": "Metz"
+   "name": "Grenoble",
+   "src": "F2"
   },
   "guingamp": {
    "form": "LLLLLD",
@@ -6163,7 +6039,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Guingamp"
+   "name": "Guingamp",
+   "src": "F2"
   },
   "montpellier": {
    "form": "DDLWWD",
@@ -6180,24 +6057,8 @@
     0
    ],
    "newest": "2026-08-08",
-   "name": "Montpellier"
-  },
-  "nantes": {
-   "form": "LDLWLL",
-   "n": 6,
-   "ppg": 0.67,
-   "gf": 0.67,
-   "ga": 1.17,
-   "totals": [
-    1,
-    0,
-    1,
-    3,
-    3,
-    3
-   ],
-   "newest": "2026-08-08",
-   "name": "Nantes"
+   "name": "Montpellier",
+   "src": "F2"
   },
   "red star": {
    "form": "WDWWLW",
@@ -6214,7 +6075,8 @@
     7
    ],
    "newest": "2026-08-08",
-   "name": "Red Star"
+   "name": "Red Star",
+   "src": "F2"
   },
   "pau": {
    "form": "LLLLWW",
@@ -6231,7 +6093,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Pau FC"
+   "name": "Pau FC",
+   "src": "F2"
   },
   "annecy": {
    "form": "WLWWWD",
@@ -6248,7 +6111,8 @@
     0
    ],
    "newest": "2026-08-08",
-   "name": "Annecy"
+   "name": "Annecy",
+   "src": "F2"
   },
   "rodez": {
    "form": "WWWDWW",
@@ -6265,7 +6129,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Rodez"
+   "name": "Rodez",
+   "src": "F2"
   },
   "laval": {
    "form": "LWLDWD",
@@ -6282,7 +6147,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Laval"
+   "name": "Laval",
+   "src": "F2"
   },
   "st etienne": {
    "form": "WWLLLW",
@@ -6299,7 +6165,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "St Etienne"
+   "name": "St Etienne",
+   "src": "F2"
   },
   "bochum": {
    "form": "LWDDWL",
@@ -6316,7 +6183,8 @@
     2
    ],
    "newest": "2026-08-07",
-   "name": "Bochum"
+   "name": "Bochum",
+   "src": "D2"
   },
   "hertha": {
    "form": "WLWLLD",
@@ -6333,7 +6201,8 @@
     2
    ],
    "newest": "2026-08-07",
-   "name": "Hertha"
+   "name": "Hertha",
+   "src": "D2"
   },
   "darmstadt": {
    "form": "DLDLDL",
@@ -6350,7 +6219,8 @@
     5
    ],
    "newest": "2026-08-08",
-   "name": "Darmstadt"
+   "name": "Darmstadt",
+   "src": "D2"
   },
   "holstein kiel": {
    "form": "DLLWWW",
@@ -6367,24 +6237,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Holstein Kiel"
-  },
-  "heidenheim": {
-   "form": "WLWDWL",
-   "n": 6,
-   "ppg": 1.67,
-   "gf": 2.17,
-   "ga": 1.83,
-   "totals": [
-    7,
-    2,
-    4,
-    6,
-    2,
-    3
-   ],
-   "newest": "2026-08-08",
-   "name": "Heidenheim"
+   "name": "Holstein Kiel",
+   "src": "D2"
   },
   "karlsruhe": {
    "form": "WLDWLL",
@@ -6401,7 +6255,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Karlsruhe"
+   "name": "Karlsruhe",
+   "src": "D2"
   },
   "bielefeld": {
    "form": "LWLDWD",
@@ -6418,7 +6273,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Bielefeld"
+   "name": "Bielefeld",
+   "src": "D2"
   },
   "magdeburg": {
    "form": "LLWWLW",
@@ -6435,7 +6291,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Magdeburg"
+   "name": "Magdeburg",
+   "src": "D2"
   },
   "braunschweig": {
    "form": "WLWLWD",
@@ -6452,24 +6309,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Braunschweig"
-  },
-  "wolfsburg": {
-   "form": "DWLDDW",
-   "n": 6,
-   "ppg": 1.5,
-   "gf": 1.0,
-   "ga": 0.67,
-   "totals": [
-    0,
-    4,
-    1,
-    2,
-    0,
-    3
-   ],
-   "newest": "2026-08-08",
-   "name": "Wolfsburg"
+   "name": "Braunschweig",
+   "src": "D2"
   },
   "kaiserslautern": {
    "form": "DWWLLL",
@@ -6486,7 +6327,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Kaiserslautern"
+   "name": "Kaiserslautern",
+   "src": "D2"
   },
   "hannover": {
    "form": "LDDDWD",
@@ -6503,7 +6345,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Hannover"
+   "name": "Hannover",
+   "src": "D2"
   },
   "nurnberg": {
    "form": "WDWDWD",
@@ -6520,7 +6363,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Nurnberg"
+   "name": "Nurnberg",
+   "src": "D2"
   },
   "dresden": {
    "form": "LWLWLW",
@@ -6537,24 +6381,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Dresden"
-  },
-  "st pauli": {
-   "form": "DLLLLD",
-   "n": 6,
-   "ppg": 0.33,
-   "gf": 0.83,
-   "ga": 1.83,
-   "totals": [
-    2,
-    4,
-    3,
-    3,
-    2,
-    2
-   ],
-   "newest": "2026-08-09",
-   "name": "St Pauli"
+   "name": "Dresden",
+   "src": "D2"
   },
   "greuther furth": {
    "form": "DWLDLW",
@@ -6571,7 +6399,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Greuther Furth"
+   "name": "Greuther Furth",
+   "src": "D2"
   },
   "liverpool": {
    "form": "DLDLWW",
@@ -6588,7 +6417,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Liverpool"
+   "name": "Liverpool",
+   "src": "E0"
   },
   "bournemouth": {
    "form": "DDWWDW",
@@ -6605,7 +6435,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Bournemouth"
+   "name": "Bournemouth",
+   "src": "E0"
   },
   "aston villa": {
    "form": "WWDLLW",
@@ -6622,7 +6453,8 @@
     7
    ],
    "newest": "2026-05-24",
-   "name": "Aston Villa"
+   "name": "Aston Villa",
+   "src": "E0"
   },
   "newcastle": {
    "form": "LWDWLL",
@@ -6639,7 +6471,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Newcastle"
+   "name": "Newcastle",
+   "src": "E0"
   },
   "brighton": {
    "form": "LLWLWD",
@@ -6656,7 +6489,8 @@
     4
    ],
    "newest": "2026-05-24",
-   "name": "Brighton"
+   "name": "Brighton",
+   "src": "E0"
   },
   "fulham": {
    "form": "WDLLWD",
@@ -6673,7 +6507,8 @@
     0
    ],
    "newest": "2026-05-24",
-   "name": "Fulham"
+   "name": "Fulham",
+   "src": "E0"
   },
   "sunderland": {
    "form": "WWDDLL",
@@ -6690,7 +6525,8 @@
     7
    ],
    "newest": "2026-05-24",
-   "name": "Sunderland"
+   "name": "Sunderland",
+   "src": "E0"
   },
   "west ham": {
    "form": "WLLLWD",
@@ -6707,7 +6543,8 @@
     0
    ],
    "newest": "2026-05-24",
-   "name": "West Ham"
+   "name": "West Ham",
+   "src": "E0"
   },
   "tottenham": {
    "form": "WLDWWD",
@@ -6724,7 +6561,8 @@
     4
    ],
    "newest": "2026-05-24",
-   "name": "Tottenham"
+   "name": "Tottenham",
+   "src": "E0"
   },
   "burnley": {
    "form": "DLDLLL",
@@ -6741,7 +6579,8 @@
     5
    ],
    "newest": "2026-05-24",
-   "name": "Burnley"
+   "name": "Burnley",
+   "src": "E0"
   },
   "wolves": {
    "form": "DDLDLL",
@@ -6758,7 +6597,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Wolves"
+   "name": "Wolves",
+   "src": "E0"
   },
   "man city": {
    "form": "LDWWDW",
@@ -6775,7 +6615,8 @@
     1
    ],
    "newest": "2026-05-24",
-   "name": "Man City"
+   "name": "Man City",
+   "src": "E0"
   },
   "chelsea": {
    "form": "LWDLLL",
@@ -6792,7 +6633,8 @@
     1
    ],
    "newest": "2026-05-24",
-   "name": "Chelsea"
+   "name": "Chelsea",
+   "src": "E0"
   },
   "crystal palace": {
    "form": "LDLDLL",
@@ -6809,7 +6651,8 @@
     4
    ],
    "newest": "2026-05-24",
-   "name": "Crystal Palace"
+   "name": "Crystal Palace",
+   "src": "E0"
   },
   "nott m forest": {
    "form": "DLDWWW",
@@ -6826,7 +6669,8 @@
     5
    ],
    "newest": "2026-05-24",
-   "name": "Nott'm Forest"
+   "name": "Nott'm Forest",
+   "src": "E0"
   },
   "brentford": {
    "form": "DDLWLD",
@@ -6843,7 +6687,8 @@
     0
    ],
    "newest": "2026-05-24",
-   "name": "Brentford"
+   "name": "Brentford",
+   "src": "E0"
   },
   "man united": {
    "form": "WWDWWW",
@@ -6860,7 +6705,8 @@
     1
    ],
    "newest": "2026-05-24",
-   "name": "Man United"
+   "name": "Man United",
+   "src": "E0"
   },
   "arsenal": {
    "form": "WWWWWL",
@@ -6877,7 +6723,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Arsenal"
+   "name": "Arsenal",
+   "src": "E0"
   },
   "leeds": {
    "form": "LWDWDW",
@@ -6894,7 +6741,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Leeds"
+   "name": "Leeds",
+   "src": "E0"
   },
   "everton": {
    "form": "LLDDLL",
@@ -6911,7 +6759,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Everton"
+   "name": "Everton",
+   "src": "E0"
   },
   "birmingham": {
    "form": "DWWDWL",
@@ -6928,7 +6777,8 @@
     3
    ],
    "newest": "2026-05-02",
-   "name": "Birmingham"
+   "name": "Birmingham",
+   "src": "E1"
   },
   "ipswich": {
    "form": "WDDWDL",
@@ -6945,7 +6795,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "Ipswich"
+   "name": "Ipswich",
+   "src": "E1"
   },
   "charlton": {
    "form": "LWLDLD",
@@ -6962,7 +6813,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "Charlton"
+   "name": "Charlton",
+   "src": "E1"
   },
   "watford": {
    "form": "LLLLLD",
@@ -6979,7 +6831,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "Watford"
+   "name": "Watford",
+   "src": "E1"
   },
   "coventry": {
    "form": "WWWDDD",
@@ -6996,7 +6849,8 @@
     0
    ],
    "newest": "2026-05-02",
-   "name": "Coventry"
+   "name": "Coventry",
+   "src": "E1"
   },
   "hull": {
    "form": "WLDDLD",
@@ -7013,7 +6867,8 @@
     0
    ],
    "newest": "2026-05-02",
-   "name": "Hull"
+   "name": "Hull",
+   "src": "E1"
   },
   "southampton": {
    "form": "WDDWWW",
@@ -7030,7 +6885,8 @@
     3
    ],
    "newest": "2026-05-02",
-   "name": "Southampton"
+   "name": "Southampton",
+   "src": "E1"
   },
   "wrexham": {
    "form": "DLWWLL",
@@ -7047,7 +6903,8 @@
     6
    ],
    "newest": "2026-05-02",
-   "name": "Wrexham"
+   "name": "Wrexham",
+   "src": "E1"
   },
   "middlesbrough": {
    "form": "DWWDLD",
@@ -7064,7 +6921,8 @@
     4
    ],
    "newest": "2026-05-02",
-   "name": "Middlesbrough"
+   "name": "Middlesbrough",
+   "src": "E1"
   },
   "swansea": {
    "form": "WDWLWD",
@@ -7081,7 +6939,8 @@
     4
    ],
    "newest": "2026-05-02",
-   "name": "Swansea"
+   "name": "Swansea",
+   "src": "E1"
   },
   "norwich": {
    "form": "LDWWLW",
@@ -7098,7 +6957,8 @@
     3
    ],
    "newest": "2026-05-02",
-   "name": "Norwich"
+   "name": "Norwich",
+   "src": "E1"
   },
   "millwall": {
    "form": "WDWWDL",
@@ -7115,7 +6975,8 @@
     3
    ],
    "newest": "2026-05-02",
-   "name": "Millwall"
+   "name": "Millwall",
+   "src": "E1"
   },
   "oxford": {
    "form": "LWLLWD",
@@ -7132,7 +6993,8 @@
     4
    ],
    "newest": "2026-05-02",
-   "name": "Oxford"
+   "name": "Oxford",
+   "src": "E1"
   },
   "portsmouth": {
    "form": "DWLWWW",
@@ -7149,7 +7011,8 @@
     1
    ],
    "newest": "2026-05-02",
-   "name": "Portsmouth"
+   "name": "Portsmouth",
+   "src": "E1"
   },
   "qpr": {
    "form": "LLLLDD",
@@ -7166,7 +7029,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "QPR"
+   "name": "QPR",
+   "src": "E1"
   },
   "preston": {
    "form": "LWLLWD",
@@ -7183,7 +7047,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "Preston"
+   "name": "Preston",
+   "src": "E1"
   },
   "stoke": {
    "form": "LLLLDL",
@@ -7200,7 +7065,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "Stoke"
+   "name": "Stoke",
+   "src": "E1"
   },
   "derby": {
    "form": "LWLWLW",
@@ -7217,7 +7083,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "Derby"
+   "name": "Derby",
+   "src": "E1"
   },
   "west brom": {
    "form": "LDWWDD",
@@ -7234,7 +7101,8 @@
     0
    ],
    "newest": "2026-05-02",
-   "name": "West Brom"
+   "name": "West Brom",
+   "src": "E1"
   },
   "blackburn": {
    "form": "LWDLDD",
@@ -7251,7 +7119,8 @@
     0
    ],
    "newest": "2026-05-02",
-   "name": "Blackburn"
+   "name": "Blackburn",
+   "src": "E1"
   },
   "sheffield united": {
    "form": "WLLWWL",
@@ -7268,7 +7137,8 @@
     1
    ],
    "newest": "2026-05-02",
-   "name": "Sheffield United"
+   "name": "Sheffield United",
+   "src": "E1"
   },
   "bristol city": {
    "form": "WLDLDW",
@@ -7285,7 +7155,8 @@
     1
    ],
    "newest": "2026-05-02",
-   "name": "Bristol City"
+   "name": "Bristol City",
+   "src": "E1"
   },
   "leicester": {
    "form": "WDDLLD",
@@ -7302,7 +7173,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "Leicester"
+   "name": "Leicester",
+   "src": "E1"
   },
   "sheffield weds": {
    "form": "WLLDDD",
@@ -7319,7 +7191,8 @@
     2
    ],
    "newest": "2026-05-02",
-   "name": "Sheffield Weds"
+   "name": "Sheffield Weds",
+   "src": "E1"
   },
   "girona": {
    "form": "DLDDLL",
@@ -7336,7 +7209,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Girona"
+   "name": "Girona",
+   "src": "SP1"
   },
   "vallecano": {
    "form": "WWDDWD",
@@ -7353,7 +7227,8 @@
     6
    ],
    "newest": "2026-05-23",
-   "name": "Vallecano"
+   "name": "Vallecano",
+   "src": "SP1"
   },
   "villarreal": {
    "form": "WLLDWW",
@@ -7370,7 +7245,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Villarreal"
+   "name": "Villarreal",
+   "src": "SP1"
   },
   "oviedo": {
    "form": "LLLDLL",
@@ -7387,7 +7263,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Oviedo"
+   "name": "Oviedo",
+   "src": "SP1"
   },
   "mallorca": {
    "form": "WLLDWL",
@@ -7404,7 +7281,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Mallorca"
+   "name": "Mallorca",
+   "src": "SP1"
   },
   "barcelona": {
    "form": "LWLWWW",
@@ -7421,7 +7299,8 @@
     2
    ],
    "newest": "2026-05-23",
-   "name": "Barcelona"
+   "name": "Barcelona",
+   "src": "SP1"
   },
   "alaves": {
    "form": "LWWDLW",
@@ -7438,7 +7317,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Alaves"
+   "name": "Alaves",
+   "src": "SP1"
   },
   "levante": {
    "form": "LWWWLD",
@@ -7455,7 +7335,8 @@
     0
    ],
    "newest": "2026-05-23",
-   "name": "Levante"
+   "name": "Levante",
+   "src": "SP1"
   },
   "valencia": {
    "form": "WWDWLW",
@@ -7472,7 +7353,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Valencia"
+   "name": "Valencia",
+   "src": "SP1"
   },
   "sociedad": {
    "form": "DLDDLD",
@@ -7489,7 +7371,8 @@
     6
    ],
    "newest": "2026-05-23",
-   "name": "Sociedad"
+   "name": "Sociedad",
+   "src": "SP1"
   },
   "celta": {
    "form": "WDLWWL",
@@ -7506,7 +7389,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Celta"
+   "name": "Celta",
+   "src": "SP1"
   },
   "getafe": {
    "form": "WLWDLL",
@@ -7523,7 +7407,8 @@
     2
    ],
    "newest": "2026-05-23",
-   "name": "Getafe"
+   "name": "Getafe",
+   "src": "SP1"
   },
   "ath bilbao": {
    "form": "LDLLWL",
@@ -7540,7 +7425,8 @@
     5
    ],
    "newest": "2026-05-23",
-   "name": "Ath Bilbao"
+   "name": "Ath Bilbao",
+   "src": "SP1"
   },
   "sevilla": {
    "form": "LLWWWL",
@@ -7557,7 +7443,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Sevilla"
+   "name": "Sevilla",
+   "src": "SP1"
   },
   "espanol": {
    "form": "DWWLLD",
@@ -7574,7 +7461,8 @@
     0
    ],
    "newest": "2026-05-23",
-   "name": "Espanol"
+   "name": "Espanol",
+   "src": "SP1"
   },
   "ath madrid": {
    "form": "LWWLWW",
@@ -7591,7 +7479,8 @@
     5
    ],
    "newest": "2026-05-24",
-   "name": "Ath Madrid"
+   "name": "Ath Madrid",
+   "src": "SP1"
   },
   "elche": {
    "form": "DWLDLW",
@@ -7608,7 +7497,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Elche"
+   "name": "Elche",
+   "src": "SP1"
   },
   "betis": {
    "form": "WLWDWD",
@@ -7625,7 +7515,8 @@
     2
    ],
    "newest": "2026-05-23",
-   "name": "Betis"
+   "name": "Betis",
+   "src": "SP1"
   },
   "real madrid": {
    "form": "WWWLWD",
@@ -7642,7 +7533,8 @@
     2
    ],
    "newest": "2026-05-23",
-   "name": "Real Madrid"
+   "name": "Real Madrid",
+   "src": "SP1"
   },
   "osasuna": {
    "form": "LLLLLW",
@@ -7659,7 +7551,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Osasuna"
+   "name": "Osasuna",
+   "src": "SP1"
   },
   "genoa": {
    "form": "LLDDLW",
@@ -7676,7 +7569,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Genoa"
+   "name": "Genoa",
+   "src": "I1"
   },
   "lecce": {
    "form": "WWLWDD",
@@ -7693,7 +7587,8 @@
     2
    ],
    "newest": "2026-05-24",
-   "name": "Lecce"
+   "name": "Lecce",
+   "src": "I1"
   },
   "sassuolo": {
    "form": "LLLWDW",
@@ -7710,7 +7605,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Sassuolo"
+   "name": "Sassuolo",
+   "src": "I1"
   },
   "napoli": {
    "form": "WWLDWL",
@@ -7727,7 +7623,8 @@
     2
    ],
    "newest": "2026-05-24",
-   "name": "Napoli"
+   "name": "Napoli",
+   "src": "I1"
   },
   "milan": {
    "form": "LWLLDW",
@@ -7744,7 +7641,8 @@
     1
    ],
    "newest": "2026-05-24",
-   "name": "Milan"
+   "name": "Milan",
+   "src": "I1"
   },
   "cremonese": {
    "form": "LWWLLD",
@@ -7761,7 +7659,8 @@
     0
    ],
    "newest": "2026-05-24",
-   "name": "Cremonese"
+   "name": "Cremonese",
+   "src": "I1"
   },
   "roma": {
    "form": "WWWWWD",
@@ -7778,7 +7677,8 @@
     2
    ],
    "newest": "2026-05-24",
-   "name": "Roma"
+   "name": "Roma",
+   "src": "I1"
   },
   "bologna": {
    "form": "DWWDLL",
@@ -7795,7 +7695,8 @@
     2
    ],
    "newest": "2026-05-23",
-   "name": "Bologna"
+   "name": "Bologna",
+   "src": "I1"
   },
   "cagliari": {
    "form": "WWLDWL",
@@ -7812,7 +7713,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Cagliari"
+   "name": "Cagliari",
+   "src": "I1"
   },
   "fiorentina": {
    "form": "DWDLDD",
@@ -7829,7 +7731,8 @@
     2
    ],
    "newest": "2026-05-22",
-   "name": "Fiorentina"
+   "name": "Fiorentina",
+   "src": "I1"
   },
   "como": {
    "form": "WWWDWL",
@@ -7846,7 +7749,8 @@
     3
    ],
    "newest": "2026-05-24",
-   "name": "Como"
+   "name": "Como",
+   "src": "I1"
   },
   "lazio": {
    "form": "WLLWDW",
@@ -7863,7 +7767,8 @@
     2
    ],
    "newest": "2026-05-23",
-   "name": "Lazio"
+   "name": "Lazio",
+   "src": "I1"
   },
   "atalanta": {
    "form": "DLWDLD",
@@ -7880,7 +7785,8 @@
     2
    ],
    "newest": "2026-05-22",
-   "name": "Atalanta"
+   "name": "Atalanta",
+   "src": "I1"
   },
   "pisa": {
    "form": "LLLLLL",
@@ -7897,7 +7803,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Pisa"
+   "name": "Pisa",
+   "src": "I1"
   },
   "juventus": {
    "form": "DLWDDW",
@@ -7914,7 +7821,8 @@
     2
    ],
    "newest": "2026-05-24",
-   "name": "Juventus"
+   "name": "Juventus",
+   "src": "I1"
   },
   "parma": {
    "form": "WLLLWW",
@@ -7931,7 +7839,8 @@
     1
    ],
    "newest": "2026-05-24",
-   "name": "Parma"
+   "name": "Parma",
+   "src": "I1"
   },
   "udinese": {
    "form": "LLWWDL",
@@ -7948,7 +7857,8 @@
     1
    ],
    "newest": "2026-05-24",
-   "name": "Udinese"
+   "name": "Udinese",
+   "src": "I1"
   },
   "verona": {
    "form": "LDLDDL",
@@ -7965,7 +7875,8 @@
     1
    ],
    "newest": "2026-05-24",
-   "name": "Verona"
+   "name": "Verona",
+   "src": "I1"
   },
   "inter": {
    "form": "DDWWDW",
@@ -7982,7 +7893,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Inter"
+   "name": "Inter",
+   "src": "I1"
   },
   "torino": {
    "form": "DLWLDD",
@@ -7999,7 +7911,8 @@
     0
    ],
    "newest": "2026-05-24",
-   "name": "Torino"
+   "name": "Torino",
+   "src": "I1"
   },
   "bayern munich": {
    "form": "WWDWWW",
@@ -8016,7 +7929,8 @@
     5
    ],
    "newest": "2026-05-16",
-   "name": "Bayern Munich"
+   "name": "Bayern Munich",
+   "src": "D1"
   },
   "rb leipzig": {
    "form": "LWLWWW",
@@ -8033,7 +7947,8 @@
     1
    ],
    "newest": "2026-05-16",
-   "name": "RB Leipzig"
+   "name": "RB Leipzig",
+   "src": "D1"
   },
   "ein frankfurt": {
    "form": "DLLDLW",
@@ -8050,7 +7965,8 @@
     3
    ],
    "newest": "2026-05-16",
-   "name": "Ein Frankfurt"
+   "name": "Ein Frankfurt",
+   "src": "D1"
   },
   "werder bremen": {
    "form": "LLLDWL",
@@ -8067,7 +7983,8 @@
     4
    ],
    "newest": "2026-05-16",
-   "name": "Werder Bremen"
+   "name": "Werder Bremen",
+   "src": "D1"
   },
   "freiburg": {
    "form": "WLDLWW",
@@ -8084,7 +8001,8 @@
     1
    ],
    "newest": "2026-05-16",
-   "name": "Freiburg"
+   "name": "Freiburg",
+   "src": "D1"
   },
   "augsburg": {
    "form": "LWWDWD",
@@ -8101,7 +8019,44 @@
     4
    ],
    "newest": "2026-05-16",
-   "name": "Augsburg"
+   "name": "Augsburg",
+   "src": "D1"
+  },
+  "heidenheim": {
+   "form": "LWDWLW",
+   "n": 6,
+   "ppg": 1.67,
+   "gf": 2.0,
+   "ga": 1.5,
+   "totals": [
+    2,
+    4,
+    6,
+    2,
+    3,
+    4
+   ],
+   "newest": "2026-05-16",
+   "name": "Heidenheim",
+   "src": "D1"
+  },
+  "wolfsburg": {
+   "form": "WLDDWL",
+   "n": 6,
+   "ppg": 1.33,
+   "gf": 1.17,
+   "ga": 1.0,
+   "totals": [
+    4,
+    1,
+    2,
+    0,
+    3,
+    3
+   ],
+   "newest": "2026-05-16",
+   "name": "Wolfsburg",
+   "src": "D1"
   },
   "leverkusen": {
    "form": "DLWWLW",
@@ -8118,7 +8073,8 @@
     1
    ],
    "newest": "2026-05-16",
-   "name": "Leverkusen"
+   "name": "Leverkusen",
+   "src": "D1"
   },
   "hoffenheim": {
    "form": "LWDWWD",
@@ -8135,7 +8091,8 @@
     4
    ],
    "newest": "2026-05-16",
-   "name": "Hoffenheim"
+   "name": "Hoffenheim",
+   "src": "D1"
   },
   "union berlin": {
    "form": "WWDLLL",
@@ -8152,7 +8109,8 @@
     4
    ],
    "newest": "2026-05-16",
-   "name": "Union Berlin"
+   "name": "Union Berlin",
+   "src": "D1"
   },
   "stuttgart": {
    "form": "DWDDLW",
@@ -8169,7 +8127,26 @@
     4
    ],
    "newest": "2026-05-16",
-   "name": "Stuttgart"
+   "name": "Stuttgart",
+   "src": "D1"
+  },
+  "st pauli": {
+   "form": "LLLLDL",
+   "n": 6,
+   "ppg": 0.17,
+   "gf": 0.67,
+   "ga": 2.5,
+   "totals": [
+    4,
+    3,
+    3,
+    2,
+    2,
+    5
+   ],
+   "newest": "2026-05-16",
+   "name": "St Pauli",
+   "src": "D1"
   },
   "dortmund": {
    "form": "WWLWLL",
@@ -8186,7 +8163,8 @@
     1
    ],
    "newest": "2026-05-16",
-   "name": "Dortmund"
+   "name": "Dortmund",
+   "src": "D1"
   },
   "mainz": {
    "form": "WLWLDL",
@@ -8203,7 +8181,8 @@
     1
    ],
    "newest": "2026-05-16",
-   "name": "Mainz"
+   "name": "Mainz",
+   "src": "D1"
   },
   "koln": {
    "form": "LLDLDW",
@@ -8220,7 +8199,8 @@
     4
    ],
    "newest": "2026-05-16",
-   "name": "FC Koln"
+   "name": "FC Koln",
+   "src": "D1"
   },
   "m gladbach": {
    "form": "WLWDDL",
@@ -8237,7 +8217,8 @@
     1
    ],
    "newest": "2026-05-16",
-   "name": "M'gladbach"
+   "name": "M'gladbach",
+   "src": "D1"
   },
   "hamburg": {
    "form": "DWWLLL",
@@ -8254,7 +8235,8 @@
     4
    ],
    "newest": "2026-05-16",
-   "name": "Hamburg"
+   "name": "Hamburg",
+   "src": "D1"
   },
   "rennes": {
    "form": "LWLWWW",
@@ -8271,7 +8253,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Rennes"
+   "name": "Rennes",
+   "src": "F1"
   },
   "marseille": {
    "form": "WWLDLW",
@@ -8288,7 +8271,8 @@
     4
    ],
    "newest": "2026-05-17",
-   "name": "Marseille"
+   "name": "Marseille",
+   "src": "F1"
   },
   "lens": {
    "form": "WLWDDW",
@@ -8305,7 +8289,8 @@
     5
    ],
    "newest": "2026-05-17",
-   "name": "Lens"
+   "name": "Lens",
+   "src": "F1"
   },
   "lyon": {
    "form": "LLWWWW",
@@ -8322,7 +8307,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Lyon"
+   "name": "Lyon",
+   "src": "F1"
   },
   "monaco": {
    "form": "LLWDDL",
@@ -8339,7 +8325,8 @@
     5
    ],
    "newest": "2026-05-17",
-   "name": "Monaco"
+   "name": "Monaco",
+   "src": "F1"
   },
   "le havre": {
    "form": "WLDDDD",
@@ -8356,7 +8343,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Le Havre"
+   "name": "Le Havre",
+   "src": "F1"
   },
   "nice": {
    "form": "DLDDDD",
@@ -8373,7 +8361,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Nice"
+   "name": "Nice",
+   "src": "F1"
   },
   "toulouse": {
    "form": "DWWDLL",
@@ -8390,7 +8379,8 @@
     4
    ],
    "newest": "2026-05-17",
-   "name": "Toulouse"
+   "name": "Toulouse",
+   "src": "F1"
   },
   "brest": {
    "form": "DLLLDD",
@@ -8407,7 +8397,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Brest"
+   "name": "Brest",
+   "src": "F1"
   },
   "lille": {
    "form": "LWDWDW",
@@ -8424,7 +8415,8 @@
     4
    ],
    "newest": "2026-05-17",
-   "name": "Lille"
+   "name": "Lille",
+   "src": "F1"
   },
   "angers": {
    "form": "DDLLDL",
@@ -8441,7 +8433,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Angers"
+   "name": "Angers",
+   "src": "F1"
   },
   "paris": {
    "form": "WLWLWW",
@@ -8458,7 +8451,8 @@
     5
    ],
    "newest": "2026-05-17",
-   "name": "Paris FC"
+   "name": "Paris FC",
+   "src": "F1"
   },
   "auxerre": {
    "form": "WWWLDD",
@@ -8475,7 +8469,8 @@
     0
    ],
    "newest": "2026-05-17",
-   "name": "Auxerre"
+   "name": "Auxerre",
+   "src": "F1"
   },
   "lorient": {
    "form": "LWDLWL",
@@ -8492,7 +8487,26 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Lorient"
+   "name": "Lorient",
+   "src": "F1"
+  },
+  "metz": {
+   "form": "DLLDLL",
+   "n": 6,
+   "ppg": 0.33,
+   "gf": 1.17,
+   "ga": 2.67,
+   "totals": [
+    0,
+    4,
+    3,
+    8,
+    4,
+    4
+   ],
+   "newest": "2026-05-17",
+   "name": "Metz",
+   "src": "F1"
   },
   "strasbourg": {
    "form": "WWDLWL",
@@ -8509,7 +8523,26 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Strasbourg"
+   "name": "Strasbourg",
+   "src": "F1"
+  },
+  "nantes": {
+   "form": "DLWLLD",
+   "n": 6,
+   "ppg": 0.83,
+   "gf": 0.83,
+   "ga": 1.17,
+   "totals": [
+    0,
+    1,
+    3,
+    3,
+    3,
+    2
+   ],
+   "newest": "2026-05-17",
+   "name": "Nantes",
+   "src": "F1"
   },
   "paris sg": {
    "form": "LWWDWW",
@@ -8526,7 +8559,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Paris SG"
+   "name": "Paris SG",
+   "src": "F1"
   },
   "nac breda": {
    "form": "DWLLDD",
@@ -8543,7 +8577,8 @@
     0
    ],
    "newest": "2026-05-17",
-   "name": "NAC Breda"
+   "name": "NAC Breda",
+   "src": "N1"
   },
   "volendam": {
    "form": "LDLWLD",
@@ -8560,7 +8595,8 @@
     0
    ],
    "newest": "2026-05-17",
-   "name": "Volendam"
+   "name": "Volendam",
+   "src": "N1"
   },
   "heracles": {
    "form": "LLLLLL",
@@ -8577,7 +8613,8 @@
     5
    ],
    "newest": "2026-05-17",
-   "name": "Heracles"
+   "name": "Heracles",
+   "src": "N1"
   },
   "avs": {
    "form": "DWWDDD",
@@ -8594,7 +8631,8 @@
     2
    ],
    "newest": "2026-05-16",
-   "name": "AVS"
+   "name": "AVS",
+   "src": "P1"
   },
   "tondela": {
    "form": "LWWDLL",
@@ -8611,7 +8649,8 @@
     2
    ],
    "newest": "2026-05-16",
-   "name": "Tondela"
+   "name": "Tondela",
+   "src": "P1"
   },
   "dender": {
    "form": "LLLLWL",
@@ -8628,7 +8667,8 @@
     4
    ],
    "newest": "2026-05-09",
-   "name": "Dender"
+   "name": "Dender",
+   "src": "B1"
   },
   "gaziantep": {
    "form": "LLLLWL",
@@ -8645,7 +8685,8 @@
     3
    ],
    "newest": "2026-05-16",
-   "name": "Gaziantep"
+   "name": "Gaziantep",
+   "src": "T1"
   },
   "galatasaray": {
    "form": "LWLWWD",
@@ -8662,7 +8703,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Galatasaray"
+   "name": "Galatasaray",
+   "src": "T1"
   },
   "samsunspor": {
    "form": "WLWWWW",
@@ -8679,7 +8721,8 @@
     3
    ],
    "newest": "2026-05-16",
-   "name": "Samsunspor"
+   "name": "Samsunspor",
+   "src": "T1"
   },
   "genclerbirligi": {
    "form": "WWLWLL",
@@ -8696,7 +8739,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Genclerbirligi"
+   "name": "Genclerbirligi",
+   "src": "T1"
   },
   "antalyaspor": {
    "form": "WLDLLL",
@@ -8713,7 +8757,8 @@
     6
    ],
    "newest": "2026-05-17",
-   "name": "Antalyaspor"
+   "name": "Antalyaspor",
+   "src": "T1"
   },
   "kasimpasa": {
    "form": "WLDLWD",
@@ -8730,7 +8775,8 @@
     6
    ],
    "newest": "2026-05-17",
-   "name": "Kasimpasa"
+   "name": "Kasimpasa",
+   "src": "T1"
   },
   "rizespor": {
    "form": "DLWLDW",
@@ -8747,7 +8793,8 @@
     3
    ],
    "newest": "2026-05-15",
-   "name": "Rizespor"
+   "name": "Rizespor",
+   "src": "T1"
   },
   "goztep": {
    "form": "LWDWDD",
@@ -8764,7 +8811,8 @@
     6
    ],
    "newest": "2026-05-16",
-   "name": "Goztep"
+   "name": "Goztep",
+   "src": "T1"
   },
   "eyupspor": {
    "form": "DWDWWL",
@@ -8781,7 +8829,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Eyupspor"
+   "name": "Eyupspor",
+   "src": "T1"
   },
   "konyaspor": {
    "form": "LLLWWW",
@@ -8798,7 +8847,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Konyaspor"
+   "name": "Konyaspor",
+   "src": "T1"
   },
   "trabzonspor": {
    "form": "LWDLDD",
@@ -8815,7 +8865,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Trabzonspor"
+   "name": "Trabzonspor",
+   "src": "T1"
   },
   "kocaelispor": {
    "form": "LLDLDD",
@@ -8832,7 +8883,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Kocaelispor"
+   "name": "Kocaelispor",
+   "src": "T1"
   },
   "karagumruk": {
    "form": "WWWDLL",
@@ -8849,7 +8901,8 @@
     3
    ],
    "newest": "2026-05-16",
-   "name": "Karagumruk"
+   "name": "Karagumruk",
+   "src": "T1"
   },
   "alanyaspor": {
    "form": "LWDLLD",
@@ -8866,7 +8919,8 @@
     2
    ],
    "newest": "2026-05-16",
-   "name": "Alanyaspor"
+   "name": "Alanyaspor",
+   "src": "T1"
   },
   "fenerbahce": {
    "form": "DWWLDW",
@@ -8883,7 +8937,8 @@
     4
    ],
    "newest": "2026-05-17",
-   "name": "Fenerbahce"
+   "name": "Fenerbahce",
+   "src": "T1"
   },
   "besiktas": {
    "form": "DLWDLW",
@@ -8900,7 +8955,8 @@
     6
    ],
    "newest": "2026-05-15",
-   "name": "Besiktas"
+   "name": "Besiktas",
+   "src": "T1"
   },
   "buyuksehyr": {
    "form": "WWLWDW",
@@ -8917,7 +8973,8 @@
     3
    ],
    "newest": "2026-05-16",
-   "name": "Buyuksehyr"
+   "name": "Buyuksehyr",
+   "src": "T1"
   },
   "kayserispor": {
    "form": "WLDWLL",
@@ -8934,7 +8991,8 @@
     4
    ],
    "newest": "2026-05-17",
-   "name": "Kayserispor"
+   "name": "Kayserispor",
+   "src": "T1"
   },
   "aris": {
    "form": "WWWWWD",
@@ -8951,7 +9009,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Aris"
+   "name": "Aris",
+   "src": "G1"
   },
   "volos nfc": {
    "form": "LLLLLD",
@@ -8968,7 +9027,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Volos NFC"
+   "name": "Volos NFC",
+   "src": "G1"
   },
   "olympiakos": {
    "form": "DWDLWL",
@@ -8985,7 +9045,8 @@
     1
    ],
    "newest": "2026-05-17",
-   "name": "Olympiakos"
+   "name": "Olympiakos",
+   "src": "G1"
   },
   "asteras tripolis": {
    "form": "WDWDWL",
@@ -9002,7 +9063,8 @@
     3
    ],
    "newest": "2026-05-21",
-   "name": "Asteras Tripolis"
+   "name": "Asteras Tripolis",
+   "src": "G1"
   },
   "panetolikos": {
    "form": "LDDWLD",
@@ -9019,7 +9081,8 @@
     0
    ],
    "newest": "2026-05-21",
-   "name": "Panetolikos"
+   "name": "Panetolikos",
+   "src": "G1"
   },
   "atromitos": {
    "form": "WLWLLW",
@@ -9036,7 +9099,8 @@
     3
    ],
    "newest": "2026-05-21",
-   "name": "Atromitos"
+   "name": "Atromitos",
+   "src": "G1"
   },
   "aek": {
    "form": "DDWDWW",
@@ -9053,7 +9117,8 @@
     1
    ],
    "newest": "2026-05-17",
-   "name": "AEK"
+   "name": "AEK",
+   "src": "G1"
   },
   "panserraikos": {
    "form": "LDLLDW",
@@ -9070,7 +9135,8 @@
     1
    ],
    "newest": "2026-05-21",
-   "name": "Panserraikos"
+   "name": "Panserraikos",
+   "src": "G1"
   },
   "paok": {
    "form": "DDDWLD",
@@ -9087,7 +9153,8 @@
     0
    ],
    "newest": "2026-05-17",
-   "name": "PAOK"
+   "name": "PAOK",
+   "src": "G1"
   },
   "larisa": {
    "form": "LWDDDL",
@@ -9104,7 +9171,8 @@
     1
    ],
    "newest": "2026-05-21",
-   "name": "Larisa"
+   "name": "Larisa",
+   "src": "G1"
   },
   "levadeiakos": {
    "form": "LWWWLD",
@@ -9121,7 +9189,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Levadeiakos"
+   "name": "Levadeiakos",
+   "src": "G1"
   },
   "kifisia": {
    "form": "WDLWWD",
@@ -9138,7 +9207,8 @@
     0
    ],
    "newest": "2026-05-21",
-   "name": "Kifisia"
+   "name": "Kifisia",
+   "src": "G1"
   },
   "ofi crete": {
    "form": "WLLLWD",
@@ -9155,7 +9225,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "OFI Crete"
+   "name": "OFI Crete",
+   "src": "G1"
   },
   "panathinaikos": {
    "form": "DLLDLD",
@@ -9172,7 +9243,8 @@
     0
    ],
    "newest": "2026-05-17",
-   "name": "Panathinaikos"
+   "name": "Panathinaikos",
+   "src": "G1"
   },
   "livingston": {
    "form": "LDLDWL",
@@ -9189,7 +9261,8 @@
     5
    ],
    "newest": "2026-05-17",
-   "name": "Livingston"
+   "name": "Livingston",
+   "src": "SC0"
   },
   "le mans": {
    "form": "WDDWDW",
@@ -9206,7 +9279,8 @@
     4
    ],
    "newest": "2026-05-09",
-   "name": "Le Mans"
+   "name": "Le Mans",
+   "src": "F2"
   },
   "troyes": {
    "form": "LWWWLD",
@@ -9223,7 +9297,8 @@
     4
    ],
    "newest": "2026-05-09",
-   "name": "Troyes"
+   "name": "Troyes",
+   "src": "F2"
   },
   "amiens": {
    "form": "LLLLLD",
@@ -9240,7 +9315,8 @@
     2
    ],
    "newest": "2026-05-09",
-   "name": "Amiens"
+   "name": "Amiens",
+   "src": "F2"
   },
   "bastia": {
    "form": "LWDWLD",
@@ -9257,7 +9333,8 @@
     2
    ],
    "newest": "2026-05-09",
-   "name": "Bastia"
+   "name": "Bastia",
+   "src": "F2"
   },
   "schalke 04": {
    "form": "WLWWWW",
@@ -9274,7 +9351,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Schalke 04"
+   "name": "Schalke 04",
+   "src": "D2"
   },
   "elversberg": {
    "form": "WLWDWL",
@@ -9291,7 +9369,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Elversberg"
+   "name": "Elversberg",
+   "src": "D2"
   },
   "preu\u00dfen munster": {
    "form": "LDDLLD",
@@ -9308,7 +9387,8 @@
     0
    ],
    "newest": "2026-05-17",
-   "name": "Preu\u00dfen M\u00fcnster"
+   "name": "Preu\u00dfen M\u00fcnster",
+   "src": "D2"
   },
   "paderborn": {
    "form": "WDLLDW",
@@ -9325,7 +9405,8 @@
     7
    ],
    "newest": "2026-05-17",
-   "name": "Paderborn"
+   "name": "Paderborn",
+   "src": "D2"
   },
   "fortuna dusseldorf": {
    "form": "LWLWLL",
@@ -9342,7 +9423,8 @@
     3
    ],
    "newest": "2026-05-17",
-   "name": "Fortuna Dusseldorf"
+   "name": "Fortuna Dusseldorf",
+   "src": "D2"
   },
   "colorado rapids": {
    "form": "WLWLLW",
@@ -9359,7 +9441,8 @@
     1
    ],
    "newest": "2026-08-02",
-   "name": "Colorado Rapids"
+   "name": "Colorado Rapids",
+   "src": "USA"
   },
   "columbus crew": {
    "form": "DWLWDL",
@@ -9376,7 +9459,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "Columbus Crew"
+   "name": "Columbus Crew",
+   "src": "USA"
   },
   "vancouver whitecaps": {
    "form": "DDLWLW",
@@ -9393,7 +9477,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "Vancouver Whitecaps"
+   "name": "Vancouver Whitecaps",
+   "src": "USA"
   },
   "montreal": {
    "form": "DLLDDL",
@@ -9410,7 +9495,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "CF Montreal"
+   "name": "CF Montreal",
+   "src": "USA"
   },
   "dc united": {
    "form": "DWDDDL",
@@ -9427,7 +9513,8 @@
     4
    ],
    "newest": "2026-08-02",
-   "name": "DC United"
+   "name": "DC United",
+   "src": "USA"
   },
   "sporting kansas city": {
    "form": "LLWLLW",
@@ -9444,7 +9531,8 @@
     3
    ],
    "newest": "2026-08-02",
-   "name": "Sporting Kansas City"
+   "name": "Sporting Kansas City",
+   "src": "USA"
   },
   "los angeles galaxy": {
    "form": "DDLLDW",
@@ -9461,7 +9549,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Los Angeles Galaxy"
+   "name": "Los Angeles Galaxy",
+   "src": "USA"
   },
   "real salt lake": {
    "form": "DLLDWW",
@@ -9478,7 +9567,8 @@
     3
    ],
    "newest": "2026-08-02",
-   "name": "Real Salt Lake"
+   "name": "Real Salt Lake",
+   "src": "USA"
   },
   "san jose earthquakes": {
    "form": "LDLWLL",
@@ -9495,7 +9585,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "San Jose Earthquakes"
+   "name": "San Jose Earthquakes",
+   "src": "USA"
   },
   "new england revolution": {
    "form": "LDWDLW",
@@ -9512,7 +9603,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "New England Revolution"
+   "name": "New England Revolution",
+   "src": "USA"
   },
   "dallas": {
    "form": "DLDWWL",
@@ -9529,7 +9621,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "FC Dallas"
+   "name": "FC Dallas",
+   "src": "USA"
   },
   "new york red bulls": {
    "form": "WLLWDW",
@@ -9546,7 +9639,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "New York Red Bulls"
+   "name": "New York Red Bulls",
+   "src": "USA"
   },
   "houston dynamo": {
    "form": "WWWDDW",
@@ -9563,7 +9657,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Houston Dynamo"
+   "name": "Houston Dynamo",
+   "src": "USA"
   },
   "portland timbers": {
    "form": "WWDWLL",
@@ -9580,7 +9675,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Portland Timbers"
+   "name": "Portland Timbers",
+   "src": "USA"
   },
   "philadelphia union": {
    "form": "WWWLDL",
@@ -9597,7 +9693,8 @@
     7
    ],
    "newest": "2026-08-02",
-   "name": "Philadelphia Union"
+   "name": "Philadelphia Union",
+   "src": "USA"
   },
   "chicago fire": {
    "form": "WLLWWW",
@@ -9614,7 +9711,8 @@
     4
    ],
    "newest": "2026-08-02",
-   "name": "Chicago Fire"
+   "name": "Chicago Fire",
+   "src": "USA"
   },
   "seattle sounders": {
    "form": "LLLLLL",
@@ -9631,7 +9729,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Seattle Sounders"
+   "name": "Seattle Sounders",
+   "src": "USA"
   },
   "toronto": {
    "form": "DLDDLL",
@@ -9648,7 +9747,8 @@
     4
    ],
    "newest": "2026-08-01",
-   "name": "Toronto FC"
+   "name": "Toronto FC",
+   "src": "USA"
   },
   "orlando city": {
    "form": "LWWLDW",
@@ -9665,7 +9765,8 @@
     7
    ],
    "newest": "2026-08-02",
-   "name": "Orlando City"
+   "name": "Orlando City",
+   "src": "USA"
   },
   "new york city": {
    "form": "DWWLDW",
@@ -9682,7 +9783,8 @@
     1
    ],
    "newest": "2026-08-01",
-   "name": "New York City"
+   "name": "New York City",
+   "src": "USA"
   },
   "minnesota united": {
    "form": "DDLDLL",
@@ -9699,7 +9801,8 @@
     1
    ],
    "newest": "2026-08-02",
-   "name": "Minnesota United"
+   "name": "Minnesota United",
+   "src": "USA"
   },
   "atlanta utd": {
    "form": "LLDLLD",
@@ -9716,7 +9819,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Atlanta Utd"
+   "name": "Atlanta Utd",
+   "src": "USA"
   },
   "los angeles": {
    "form": "DWWWWL",
@@ -9733,7 +9837,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "Los Angeles FC"
+   "name": "Los Angeles FC",
+   "src": "USA"
   },
   "cincinnati": {
    "form": "WLWWDL",
@@ -9750,7 +9855,8 @@
     8
    ],
    "newest": "2026-08-02",
-   "name": "FC Cincinnati"
+   "name": "FC Cincinnati",
+   "src": "USA"
   },
   "nashville": {
    "form": "DLWWWW",
@@ -9767,7 +9873,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "Nashville SC"
+   "name": "Nashville SC",
+   "src": "USA"
   },
   "inter miami": {
    "form": "DWWWWW",
@@ -9784,7 +9891,8 @@
     8
    ],
    "newest": "2026-08-02",
-   "name": "Inter Miami"
+   "name": "Inter Miami",
+   "src": "USA"
   },
   "austin": {
    "form": "LLWLLL",
@@ -9801,7 +9909,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "Austin FC"
+   "name": "Austin FC",
+   "src": "USA"
   },
   "charlotte": {
    "form": "LWDWWL",
@@ -9818,7 +9927,8 @@
     1
    ],
    "newest": "2026-08-02",
-   "name": "Charlotte"
+   "name": "Charlotte",
+   "src": "USA"
   },
   "st louis city": {
    "form": "DWWWWD",
@@ -9835,7 +9945,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "St. Louis City"
+   "name": "St. Louis City",
+   "src": "USA"
   },
   "san diego": {
    "form": "DWLLDW",
@@ -9852,7 +9963,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "San Diego FC"
+   "name": "San Diego FC",
+   "src": "USA"
   },
   "tigres uanl": {
    "form": "LDLLWW",
@@ -9869,7 +9981,8 @@
     6
    ],
    "newest": "2026-08-02",
-   "name": "Tigres UANL"
+   "name": "Tigres UANL",
+   "src": "MEX"
   },
   "tijuana": {
    "form": "DWWDWD",
@@ -9886,7 +9999,8 @@
     2
    ],
    "newest": "2026-08-01",
-   "name": "Club Tijuana"
+   "name": "Club Tijuana",
+   "src": "MEX"
   },
   "puebla": {
    "form": "DLWLLL",
@@ -9903,7 +10017,8 @@
     5
    ],
    "newest": "2026-08-01",
-   "name": "Puebla"
+   "name": "Puebla",
+   "src": "MEX"
   },
   "cruz azul": {
    "form": "LWWWDW",
@@ -9920,7 +10035,8 @@
     3
    ],
    "newest": "2026-08-02",
-   "name": "Cruz Azul"
+   "name": "Cruz Azul",
+   "src": "MEX"
   },
   "queretaro": {
    "form": "WWLWDD",
@@ -9937,7 +10053,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Queretaro"
+   "name": "Queretaro",
+   "src": "MEX"
   },
   "leon": {
    "form": "WLLLLW",
@@ -9954,7 +10071,8 @@
     4
    ],
    "newest": "2026-08-02",
-   "name": "Club Leon"
+   "name": "Club Leon",
+   "src": "MEX"
   },
   "monterrey": {
    "form": "WLWLWL",
@@ -9971,7 +10089,8 @@
     4
    ],
    "newest": "2026-08-02",
-   "name": "Monterrey"
+   "name": "Monterrey",
+   "src": "MEX"
   },
   "america": {
    "form": "WDWDDL",
@@ -9988,7 +10107,8 @@
     1
    ],
    "newest": "2026-08-03",
-   "name": "Club America"
+   "name": "Club America",
+   "src": "MEX"
   },
   "santos laguna": {
    "form": "LLLWLL",
@@ -10005,7 +10125,8 @@
     1
    ],
    "newest": "2026-08-03",
-   "name": "Santos Laguna"
+   "name": "Santos Laguna",
+   "src": "MEX"
   },
   "atl san luis": {
    "form": "DDLLWL",
@@ -10022,7 +10143,8 @@
     2
    ],
    "newest": "2026-08-01",
-   "name": "Atl. San Luis"
+   "name": "Atl. San Luis",
+   "src": "MEX"
   },
   "atlas": {
    "form": "LWWLLW",
@@ -10039,7 +10161,8 @@
     1
    ],
    "newest": "2026-08-02",
-   "name": "Atlas"
+   "name": "Atlas",
+   "src": "MEX"
   },
   "unam pumas": {
    "form": "WWLLDW",
@@ -10056,7 +10179,8 @@
     1
    ],
    "newest": "2026-08-01",
-   "name": "UNAM Pumas"
+   "name": "UNAM Pumas",
+   "src": "MEX"
   },
   "toluca": {
    "form": "WLWLLW",
@@ -10073,7 +10197,8 @@
     5
    ],
    "newest": "2026-08-03",
-   "name": "Toluca"
+   "name": "Toluca",
+   "src": "MEX"
   },
   "guadalajara chivas": {
    "form": "DWLLDW",
@@ -10090,7 +10215,8 @@
     2
    ],
    "newest": "2026-08-01",
-   "name": "Guadalajara Chivas"
+   "name": "Guadalajara Chivas",
+   "src": "MEX"
   },
   "atlante": {
    "form": "WDL",
@@ -10104,7 +10230,8 @@
     3
    ],
    "newest": "2026-08-02",
-   "name": "Atlante"
+   "name": "Atlante",
+   "src": "MEX"
   },
   "pachuca": {
    "form": "LLWLWW",
@@ -10121,7 +10248,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Pachuca"
+   "name": "Pachuca",
+   "src": "MEX"
   },
   "necaxa": {
    "form": "LWWLDD",
@@ -10138,7 +10266,8 @@
     2
    ],
    "newest": "2026-08-03",
-   "name": "Necaxa"
+   "name": "Necaxa",
+   "src": "MEX"
   },
   "juarez": {
    "form": "LLLWLL",
@@ -10155,7 +10284,8 @@
     4
    ],
    "newest": "2026-08-01",
-   "name": "Juarez"
+   "name": "Juarez",
+   "src": "MEX"
   },
   "mazatlan": {
    "form": "LWDLLD",
@@ -10172,7 +10302,8 @@
     2
    ],
    "newest": "2026-04-26",
-   "name": "Mazatlan FC"
+   "name": "Mazatlan FC",
+   "src": "MEX"
   },
   "union santa fe": {
    "form": "LWLDLW",
@@ -10189,7 +10320,8 @@
     3
    ],
    "newest": "2026-08-11",
-   "name": "Union de Santa Fe"
+   "name": "Union de Santa Fe",
+   "src": "ARG"
   },
   "velez sarsfield": {
    "form": "DWWWLD",
@@ -10206,7 +10338,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Velez Sarsfield"
+   "name": "Velez Sarsfield",
+   "src": "ARG"
   },
   "argentinos jrs": {
    "form": "WWWWDD",
@@ -10223,7 +10356,8 @@
     0
    ],
    "newest": "2026-08-10",
-   "name": "Argentinos Jrs"
+   "name": "Argentinos Jrs",
+   "src": "ARG"
   },
   "racing": {
    "form": "LLDWDW",
@@ -10240,7 +10374,8 @@
     1
    ],
    "newest": "2026-08-10",
-   "name": "Racing Club"
+   "name": "Racing Club",
+   "src": "ARG"
   },
   "lanus": {
    "form": "WLLWLD",
@@ -10257,7 +10392,8 @@
     0
    ],
    "newest": "2026-08-12",
-   "name": "Lanus"
+   "name": "Lanus",
+   "src": "ARG"
   },
   "boca juniors": {
    "form": "DWDLDW",
@@ -10274,7 +10410,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Boca Juniors"
+   "name": "Boca Juniors",
+   "src": "ARG"
   },
   "newells old boys": {
    "form": "LDLWDD",
@@ -10291,7 +10428,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Newells Old Boys"
+   "name": "Newells Old Boys",
+   "src": "ARG"
   },
   "independiente": {
    "form": "LLWWLW",
@@ -10308,7 +10446,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Independiente"
+   "name": "Independiente",
+   "src": "ARG"
   },
   "san lorenzo": {
    "form": "LLWLDL",
@@ -10325,7 +10464,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "San Lorenzo"
+   "name": "San Lorenzo",
+   "src": "ARG"
   },
   "river plate": {
    "form": "LLLLLW",
@@ -10342,7 +10482,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "River Plate"
+   "name": "River Plate",
+   "src": "ARG"
   },
   "belgrano": {
    "form": "WDLWWD",
@@ -10359,7 +10500,8 @@
     2
    ],
    "newest": "2026-08-10",
-   "name": "Belgrano"
+   "name": "Belgrano",
+   "src": "ARG"
   },
   "tigre": {
    "form": "WDWLDL",
@@ -10376,7 +10518,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Tigre"
+   "name": "Tigre",
+   "src": "ARG"
   },
   "estudiantes l p": {
    "form": "LLWLLW",
@@ -10393,7 +10536,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Estudiantes L.P."
+   "name": "Estudiantes L.P.",
+   "src": "ARG"
   },
   "gimnasia l p": {
    "form": "WWWLLW",
@@ -10410,7 +10554,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Gimnasia L.P."
+   "name": "Gimnasia L.P.",
+   "src": "ARG"
   },
   "rosario central": {
    "form": "WWDLLD",
@@ -10427,7 +10572,8 @@
     2
    ],
    "newest": "2026-08-07",
-   "name": "Rosario Central"
+   "name": "Rosario Central",
+   "src": "ARG"
   },
   "banfield": {
    "form": "LDWLWD",
@@ -10444,7 +10590,8 @@
     2
    ],
    "newest": "2026-08-10",
-   "name": "Banfield"
+   "name": "Banfield",
+   "src": "ARG"
   },
   "defensa y justicia": {
    "form": "WLWDLL",
@@ -10461,7 +10608,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Defensa y Justicia"
+   "name": "Defensa y Justicia",
+   "src": "ARG"
   },
   "aldosivi": {
    "form": "LLLDDL",
@@ -10478,7 +10626,8 @@
     4
    ],
    "newest": "2026-08-07",
-   "name": "Aldosivi"
+   "name": "Aldosivi",
+   "src": "ARG"
   },
   "huracan": {
    "form": "WDLWDD",
@@ -10495,7 +10644,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Huracan"
+   "name": "Huracan",
+   "src": "ARG"
   },
   "sarmiento junin": {
    "form": "WWLLLW",
@@ -10512,7 +10662,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Sarmiento Junin"
+   "name": "Sarmiento Junin",
+   "src": "ARG"
   },
   "atl tucuman": {
    "form": "LDWDWD",
@@ -10529,7 +10680,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Atl. Tucuman"
+   "name": "Atl. Tucuman",
+   "src": "ARG"
   },
   "talleres cordoba": {
    "form": "LWLLLD",
@@ -10546,7 +10698,8 @@
     2
    ],
    "newest": "2026-08-12",
-   "name": "Talleres Cordoba"
+   "name": "Talleres Cordoba",
+   "src": "ARG"
   },
   "central cordoba": {
    "form": "WWLLLD",
@@ -10563,7 +10716,8 @@
     0
    ],
    "newest": "2026-08-11",
-   "name": "Central Cordoba"
+   "name": "Central Cordoba",
+   "src": "ARG"
   },
   "platense": {
    "form": "WLLDLL",
@@ -10580,7 +10734,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Platense"
+   "name": "Platense",
+   "src": "ARG"
   },
   "barracas central": {
    "form": "LWWWLD",
@@ -10597,7 +10752,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Barracas Central"
+   "name": "Barracas Central",
+   "src": "ARG"
   },
   "instituto": {
    "form": "WWWLWD",
@@ -10614,7 +10770,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Instituto"
+   "name": "Instituto",
+   "src": "ARG"
   },
   "dep riestra": {
    "form": "WLLWDW",
@@ -10631,7 +10788,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Dep. Riestra"
+   "name": "Dep. Riestra",
+   "src": "ARG"
   },
   "ind rivadavia": {
    "form": "WLWDLD",
@@ -10648,7 +10806,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Ind. Rivadavia"
+   "name": "Ind. Rivadavia",
+   "src": "ARG"
   },
   "gimnasia mendoza": {
    "form": "LWLWWL",
@@ -10665,7 +10824,8 @@
     6
    ],
    "newest": "2026-08-09",
-   "name": "Gimnasia Mendoza"
+   "name": "Gimnasia Mendoza",
+   "src": "ARG"
   },
   "estudiantes rio cuarto": {
    "form": "LDLWLL",
@@ -10682,7 +10842,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Estudiantes Rio Cuarto"
+   "name": "Estudiantes Rio Cuarto",
+   "src": "ARG"
   },
   "palmeiras": {
    "form": "DWLWWW",
@@ -10699,7 +10860,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Palmeiras"
+   "name": "Palmeiras",
+   "src": "BRA"
   },
   "flamengo rj": {
    "form": "WDDWWL",
@@ -10716,7 +10878,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Flamengo RJ"
+   "name": "Flamengo RJ",
+   "src": "BRA"
   },
   "botafogo rj": {
    "form": "DWDWLD",
@@ -10733,7 +10896,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Botafogo RJ"
+   "name": "Botafogo RJ",
+   "src": "BRA"
   },
   "sao paulo": {
    "form": "LDLLDL",
@@ -10750,7 +10914,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Sao Paulo"
+   "name": "Sao Paulo",
+   "src": "BRA"
   },
   "corinthians": {
    "form": "WDDWWW",
@@ -10767,7 +10932,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Corinthians"
+   "name": "Corinthians",
+   "src": "BRA"
   },
   "fluminense": {
    "form": "DDDDDL",
@@ -10784,7 +10950,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Fluminense"
+   "name": "Fluminense",
+   "src": "BRA"
   },
   "internacional": {
    "form": "DDLLLL",
@@ -10801,7 +10968,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Internacional"
+   "name": "Internacional",
+   "src": "BRA"
   },
   "coritiba": {
    "form": "WLDLLW",
@@ -10818,7 +10986,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Coritiba"
+   "name": "Coritiba",
+   "src": "BRA"
   },
   "atletico mg": {
    "form": "DWDWLW",
@@ -10835,7 +11004,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Atletico-MG"
+   "name": "Atletico-MG",
+   "src": "BRA"
   },
   "bahia": {
    "form": "DDDDWW",
@@ -10852,7 +11022,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Bahia"
+   "name": "Bahia",
+   "src": "BRA"
   },
   "santos": {
    "form": "LDLWLL",
@@ -10869,7 +11040,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Santos"
+   "name": "Santos",
+   "src": "BRA"
   },
   "cruzeiro": {
    "form": "WWLWDW",
@@ -10886,7 +11058,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Cruzeiro"
+   "name": "Cruzeiro",
+   "src": "BRA"
   },
   "vasco": {
    "form": "DDLLLL",
@@ -10903,7 +11076,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Vasco"
+   "name": "Vasco",
+   "src": "BRA"
   },
   "gremio": {
    "form": "WDLLWD",
@@ -10920,7 +11094,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Gremio"
+   "name": "Gremio",
+   "src": "BRA"
   },
   "vitoria": {
    "form": "LLLDWL",
@@ -10937,7 +11112,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Vitoria"
+   "name": "Vitoria",
+   "src": "BRA"
   },
   "athletico pr": {
    "form": "WDWWWW",
@@ -10954,7 +11130,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Athletico-PR"
+   "name": "Athletico-PR",
+   "src": "BRA"
   },
   "chapecoense": {
    "form": "LDLLLL",
@@ -10971,7 +11148,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Chapecoense-SC"
+   "name": "Chapecoense-SC",
+   "src": "BRA"
   },
   "bragantino": {
    "form": "LDDWWW",
@@ -10988,7 +11166,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Bragantino"
+   "name": "Bragantino",
+   "src": "BRA"
   },
   "mirassol": {
    "form": "LWDWLW",
@@ -11005,7 +11184,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Mirassol"
+   "name": "Mirassol",
+   "src": "BRA"
   },
   "remo": {
    "form": "DLWLWL",
@@ -11022,7 +11202,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Remo"
+   "name": "Remo",
+   "src": "BRA"
   },
   "henan songshan longmen": {
    "form": "DDWWLL",
@@ -11039,7 +11220,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Henan Songshan Longmen"
+   "name": "Henan Songshan Longmen",
+   "src": "CHN"
   },
   "beijing guoan": {
    "form": "WWDDWW",
@@ -11056,7 +11238,8 @@
     1
    ],
    "newest": "2026-08-07",
-   "name": "Beijing Guoan"
+   "name": "Beijing Guoan",
+   "src": "CHN"
   },
   "shanghai shenhua": {
    "form": "WLLLWW",
@@ -11073,7 +11256,8 @@
     5
    ],
    "newest": "2026-08-08",
-   "name": "Shanghai Shenhua"
+   "name": "Shanghai Shenhua",
+   "src": "CHN"
   },
   "tianjin jinmen tiger": {
    "form": "LWWWWL",
@@ -11090,7 +11274,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Tianjin Jinmen Tiger"
+   "name": "Tianjin Jinmen Tiger",
+   "src": "CHN"
   },
   "shandong taishan": {
    "form": "WWLLWL",
@@ -11107,7 +11292,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Shandong Taishan"
+   "name": "Shandong Taishan",
+   "src": "CHN"
   },
   "shanghai port": {
    "form": "WLWDLW",
@@ -11124,7 +11310,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Shanghai Port"
+   "name": "Shanghai Port",
+   "src": "CHN"
   },
   "chengdu rongcheng": {
    "form": "LDDDDD",
@@ -11141,7 +11328,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Chengdu Rongcheng"
+   "name": "Chengdu Rongcheng",
+   "src": "CHN"
   },
   "zhejiang professional": {
    "form": "LWDWLL",
@@ -11158,7 +11346,8 @@
     4
    ],
    "newest": "2026-08-01",
-   "name": "Zhejiang Professional"
+   "name": "Zhejiang Professional",
+   "src": "CHN"
   },
   "wuhan three towns": {
    "form": "DWWLLD",
@@ -11175,7 +11364,8 @@
     2
    ],
    "newest": "2026-08-01",
-   "name": "Wuhan Three Towns"
+   "name": "Wuhan Three Towns",
+   "src": "CHN"
   },
   "qingdao hainiu": {
    "form": "LLLLLD",
@@ -11192,7 +11382,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Qingdao Hainiu"
+   "name": "Qingdao Hainiu",
+   "src": "CHN"
   },
   "qingdao west coast": {
    "form": "DWWDLW",
@@ -11209,7 +11400,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Qingdao West Coast"
+   "name": "Qingdao West Coast",
+   "src": "CHN"
   },
   "shenzhen xinpengcheng": {
    "form": "LWLLWL",
@@ -11226,7 +11418,8 @@
     3
    ],
    "newest": "2026-08-07",
-   "name": "Shenzhen Xinpengcheng"
+   "name": "Shenzhen Xinpengcheng",
+   "src": "CHN"
   },
   "yunnan yukun": {
    "form": "WLWDLW",
@@ -11243,7 +11436,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Yunnan Yukun"
+   "name": "Yunnan Yukun",
+   "src": "CHN"
   },
   "dalian yingbo": {
    "form": "WDLWWL",
@@ -11260,7 +11454,8 @@
     5
    ],
    "newest": "2026-08-08",
-   "name": "Dalian Yingbo"
+   "name": "Dalian Yingbo",
+   "src": "CHN"
   },
   "liaoning tieren": {
    "form": "LWLDWL",
@@ -11277,7 +11472,8 @@
     6
    ],
    "newest": "2026-08-08",
-   "name": "Liaoning Tieren"
+   "name": "Liaoning Tieren",
+   "src": "CHN"
   },
   "chongqing tonglianglong": {
    "form": "LLLDDL",
@@ -11294,7 +11490,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Chongqing Tonglianglong"
+   "name": "Chongqing Tonglianglong",
+   "src": "CHN"
   },
   "aarhus": {
    "form": "DDWWWD",
@@ -11311,7 +11508,8 @@
     0
    ],
    "newest": "2026-08-01",
-   "name": "Aarhus"
+   "name": "Aarhus",
+   "src": "DNK"
   },
   "sonderjyske": {
    "form": "DLLLWL",
@@ -11328,7 +11526,8 @@
     3
    ],
    "newest": "2026-08-07",
-   "name": "Sonderjyske"
+   "name": "Sonderjyske",
+   "src": "DNK"
   },
   "randers": {
    "form": "WLDLDW",
@@ -11345,7 +11544,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Randers FC"
+   "name": "Randers FC",
+   "src": "DNK"
   },
   "silkeborg": {
    "form": "WLDLLW",
@@ -11362,7 +11562,8 @@
     5
    ],
    "newest": "2026-08-10",
-   "name": "Silkeborg"
+   "name": "Silkeborg",
+   "src": "DNK"
   },
   "brondby": {
    "form": "WWDWLD",
@@ -11379,7 +11580,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Brondby"
+   "name": "Brondby",
+   "src": "DNK"
   },
   "odense": {
    "form": "LWLLDL",
@@ -11396,7 +11598,8 @@
     5
    ],
    "newest": "2026-08-10",
-   "name": "Odense"
+   "name": "Odense",
+   "src": "DNK"
   },
   "copenhagen": {
    "form": "WWWWDW",
@@ -11413,7 +11616,8 @@
     3
    ],
    "newest": "2026-08-02",
-   "name": "FC Copenhagen"
+   "name": "FC Copenhagen",
+   "src": "DNK"
   },
   "midtjylland": {
    "form": "WWLDDD",
@@ -11430,7 +11634,8 @@
     0
    ],
    "newest": "2026-08-02",
-   "name": "Midtjylland"
+   "name": "Midtjylland",
+   "src": "DNK"
   },
   "horsens": {
    "form": "LLD",
@@ -11444,7 +11649,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Horsens"
+   "name": "Horsens",
+   "src": "DNK"
   },
   "nordsjaelland": {
    "form": "WDWDDL",
@@ -11461,7 +11667,8 @@
     1
    ],
    "newest": "2026-08-02",
-   "name": "Nordsjaelland"
+   "name": "Nordsjaelland",
+   "src": "DNK"
   },
   "viborg": {
    "form": "DLWLLD",
@@ -11478,7 +11685,8 @@
     6
    ],
    "newest": "2026-08-07",
-   "name": "Viborg"
+   "name": "Viborg",
+   "src": "DNK"
   },
   "lyngby": {
    "form": "LDL",
@@ -11492,7 +11700,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Lyngby"
+   "name": "Lyngby",
+   "src": "DNK"
   },
   "vejle": {
    "form": "WWLLLL",
@@ -11509,7 +11718,8 @@
     5
    ],
    "newest": "2026-05-17",
-   "name": "Vejle"
+   "name": "Vejle",
+   "src": "DNK"
   },
   "fredericia": {
    "form": "WLDLDD",
@@ -11526,7 +11736,8 @@
     4
    ],
    "newest": "2026-05-17",
-   "name": "Fredericia"
+   "name": "Fredericia",
+   "src": "DNK"
   },
   "hjk": {
    "form": "WLWWLL",
@@ -11543,7 +11754,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "HJK"
+   "name": "HJK",
+   "src": "FIN"
   },
   "mariehamn": {
    "form": "LLDLLL",
@@ -11560,7 +11772,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Mariehamn"
+   "name": "Mariehamn",
+   "src": "FIN"
   },
   "vps": {
    "form": "WLLLWW",
@@ -11577,7 +11790,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "VPS"
+   "name": "VPS",
+   "src": "FIN"
   },
   "kups": {
    "form": "DWWWWW",
@@ -11594,7 +11808,8 @@
     7
    ],
    "newest": "2026-08-09",
-   "name": "KuPS"
+   "name": "KuPS",
+   "src": "FIN"
   },
   "lahti": {
    "form": "DWLWWW",
@@ -11611,7 +11826,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Lahti"
+   "name": "Lahti",
+   "src": "FIN"
   },
   "tps": {
    "form": "DWLLWL",
@@ -11628,7 +11844,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "TPS"
+   "name": "TPS",
+   "src": "FIN"
   },
   "jaro": {
    "form": "LLWDWL",
@@ -11645,7 +11862,8 @@
     5
    ],
    "newest": "2026-08-08",
-   "name": "Jaro"
+   "name": "Jaro",
+   "src": "FIN"
   },
   "inter turku": {
    "form": "DWLDWD",
@@ -11662,7 +11880,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Inter Turku"
+   "name": "Inter Turku",
+   "src": "FIN"
   },
   "sjk": {
    "form": "DWLLLW",
@@ -11679,7 +11898,8 @@
     4
    ],
    "newest": "2026-08-07",
-   "name": "SJK"
+   "name": "SJK",
+   "src": "FIN"
   },
   "ilves": {
    "form": "WLWWLD",
@@ -11696,7 +11916,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Ilves"
+   "name": "Ilves",
+   "src": "FIN"
   },
   "oulu": {
    "form": "LWDLLD",
@@ -11713,7 +11934,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "AC Oulu"
+   "name": "AC Oulu",
+   "src": "FIN"
   },
   "gnistan": {
    "form": "DLWWWL",
@@ -11730,7 +11952,8 @@
     1
    ],
    "newest": "2026-08-07",
-   "name": "Gnistan"
+   "name": "Gnistan",
+   "src": "FIN"
   },
   "molde": {
    "form": "LDWLDW",
@@ -11747,7 +11970,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Molde"
+   "name": "Molde",
+   "src": "NOR"
   },
   "lillestrom": {
    "form": "LLLWWL",
@@ -11764,7 +11988,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Lillestrom"
+   "name": "Lillestrom",
+   "src": "NOR"
   },
   "aalesund": {
    "form": "DLDLDD",
@@ -11781,7 +12006,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Aalesund"
+   "name": "Aalesund",
+   "src": "NOR"
   },
   "tromso": {
    "form": "WWWDDL",
@@ -11798,7 +12024,8 @@
     5
    ],
    "newest": "2026-08-02",
-   "name": "Tromso"
+   "name": "Tromso",
+   "src": "NOR"
   },
   "fredrikstad": {
    "form": "WWLLLW",
@@ -11815,7 +12042,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Fredrikstad"
+   "name": "Fredrikstad",
+   "src": "NOR"
   },
   "valerenga": {
    "form": "LLWWLW",
@@ -11832,7 +12060,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Valerenga"
+   "name": "Valerenga",
+   "src": "NOR"
   },
   "rosenborg": {
    "form": "WLWWWD",
@@ -11849,7 +12078,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Rosenborg"
+   "name": "Rosenborg",
+   "src": "NOR"
   },
   "brann": {
    "form": "WLWWLL",
@@ -11866,7 +12096,8 @@
     4
    ],
    "newest": "2026-08-02",
-   "name": "Brann"
+   "name": "Brann",
+   "src": "NOR"
   },
   "viking": {
    "form": "WWDWWL",
@@ -11883,7 +12114,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Viking"
+   "name": "Viking",
+   "src": "NOR"
   },
   "sarpsborg 08": {
    "form": "LDWDWW",
@@ -11900,7 +12132,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Sarpsborg 08"
+   "name": "Sarpsborg 08",
+   "src": "NOR"
   },
   "start": {
    "form": "LLWLLL",
@@ -11917,7 +12150,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Start"
+   "name": "Start",
+   "src": "NOR"
   },
   "bodo glimt": {
    "form": "WWWWWW",
@@ -11934,7 +12168,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Bodo/Glimt"
+   "name": "Bodo/Glimt",
+   "src": "NOR"
   },
   "sandefjord": {
    "form": "LLLLDL",
@@ -11951,7 +12186,8 @@
     3
    ],
    "newest": "2026-08-07",
-   "name": "Sandefjord"
+   "name": "Sandefjord",
+   "src": "NOR"
   },
   "kristiansund": {
    "form": "WLLDLL",
@@ -11968,7 +12204,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Kristiansund"
+   "name": "Kristiansund",
+   "src": "NOR"
   },
   "hamkam": {
    "form": "DWLLLD",
@@ -11985,7 +12222,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "HamKam"
+   "name": "HamKam",
+   "src": "NOR"
   },
   "kfum oslo": {
    "form": "WWLLLD",
@@ -12002,7 +12240,8 @@
     0
    ],
    "newest": "2026-08-07",
-   "name": "KFUM Oslo"
+   "name": "KFUM Oslo",
+   "src": "NOR"
   },
   "pogon szczecin": {
    "form": "WWLDWL",
@@ -12019,7 +12258,8 @@
     5
    ],
    "newest": "2026-08-08",
-   "name": "Pogon Szczecin"
+   "name": "Pogon Szczecin",
+   "src": "POL"
   },
   "zaglebie": {
    "form": "LWLLWD",
@@ -12036,7 +12276,8 @@
     0
    ],
    "newest": "2026-08-02",
-   "name": "Zaglebie"
+   "name": "Zaglebie",
+   "src": "POL"
   },
   "piast gliwice": {
    "form": "LWLLLD",
@@ -12053,7 +12294,8 @@
     0
    ],
    "newest": "2026-08-09",
-   "name": "Piast Gliwice"
+   "name": "Piast Gliwice",
+   "src": "POL"
   },
   "jagiellonia": {
    "form": "LWWWDW",
@@ -12070,7 +12312,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Jagiellonia"
+   "name": "Jagiellonia",
+   "src": "POL"
   },
   "widzew lodz": {
    "form": "WDDWLW",
@@ -12087,7 +12330,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Widzew Lodz"
+   "name": "Widzew Lodz",
+   "src": "POL"
   },
   "slask wroclaw": {
    "form": "DWL",
@@ -12101,7 +12345,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Slask Wroclaw"
+   "name": "Slask Wroclaw",
+   "src": "POL"
   },
   "lech poznan": {
    "form": "WWDDWD",
@@ -12118,7 +12363,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Lech Poznan"
+   "name": "Lech Poznan",
+   "src": "POL"
   },
   "wisla": {
    "form": "WLW",
@@ -12132,7 +12378,8 @@
     3
    ],
    "newest": "2026-08-07",
-   "name": "Wisla"
+   "name": "Wisla",
+   "src": "POL"
   },
   "legia": {
    "form": "DWWWWW",
@@ -12149,7 +12396,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Legia"
+   "name": "Legia",
+   "src": "POL"
   },
   "korona kielce": {
    "form": "DLDWLD",
@@ -12166,7 +12414,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Korona Kielce"
+   "name": "Korona Kielce",
+   "src": "POL"
   },
   "lechia gdansk": {
    "form": "LLLLLD",
@@ -12183,7 +12432,8 @@
     2
    ],
    "newest": "2026-05-23",
-   "name": "Lechia Gdansk"
+   "name": "Lechia Gdansk",
+   "src": "POL"
   },
   "cracovia": {
    "form": "DLDDDD",
@@ -12200,7 +12450,8 @@
     0
    ],
    "newest": "2026-08-09",
-   "name": "Cracovia"
+   "name": "Cracovia",
+   "src": "POL"
   },
   "termalica b b": {
    "form": "WWLLWL",
@@ -12217,7 +12468,8 @@
     4
    ],
    "newest": "2026-05-23",
-   "name": "Termalica B-B."
+   "name": "Termalica B-B.",
+   "src": "POL"
   },
   "wisla plock": {
    "form": "LDWDLL",
@@ -12234,7 +12486,8 @@
     4
    ],
    "newest": "2026-08-07",
-   "name": "Wisla Plock"
+   "name": "Wisla Plock",
+   "src": "POL"
   },
   "arka gdynia": {
    "form": "LLDDLL",
@@ -12251,7 +12504,8 @@
     3
    ],
    "newest": "2026-05-23",
-   "name": "Arka Gdynia"
+   "name": "Arka Gdynia",
+   "src": "POL"
   },
   "rakow": {
    "form": "LLWWLW",
@@ -12268,7 +12522,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Rakow"
+   "name": "Rakow",
+   "src": "POL"
   },
   "radomiak radom": {
    "form": "LLWLLD",
@@ -12285,7 +12540,8 @@
     0
    ],
    "newest": "2026-08-08",
-   "name": "Radomiak Radom"
+   "name": "Radomiak Radom",
+   "src": "POL"
   },
   "gornik zabrze": {
    "form": "WWWWDL",
@@ -12302,7 +12558,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Gornik Zabrze"
+   "name": "Gornik Zabrze",
+   "src": "POL"
   },
   "gks katowice": {
    "form": "WLDDDW",
@@ -12319,7 +12576,8 @@
     6
    ],
    "newest": "2026-08-02",
-   "name": "GKS Katowice"
+   "name": "GKS Katowice",
+   "src": "POL"
   },
   "motor lublin": {
    "form": "LLDLDW",
@@ -12336,7 +12594,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Motor Lublin"
+   "name": "Motor Lublin",
+   "src": "POL"
   },
   "lokomotiv moscow": {
    "form": "LDLWDL",
@@ -12353,7 +12612,8 @@
     2
    ],
    "newest": "2026-08-01",
-   "name": "Lokomotiv Moscow"
+   "name": "Lokomotiv Moscow",
+   "src": "RUS"
   },
   "cska moscow": {
    "form": "DWWWLD",
@@ -12370,7 +12630,8 @@
     0
    ],
    "newest": "2026-08-01",
-   "name": "CSKA Moscow"
+   "name": "CSKA Moscow",
+   "src": "RUS"
   },
   "rostov": {
    "form": "WLLWWL",
@@ -12387,7 +12648,8 @@
     1
    ],
    "newest": "2026-07-31",
-   "name": "FK Rostov"
+   "name": "FK Rostov",
+   "src": "RUS"
   },
   "dynamo moscow": {
    "form": "LDWWDW",
@@ -12404,7 +12666,8 @@
     2
    ],
    "newest": "2026-08-01",
-   "name": "Dynamo Moscow"
+   "name": "Dynamo Moscow",
+   "src": "RUS"
   },
   "spartak moscow": {
    "form": "WWDWLW",
@@ -12421,7 +12684,8 @@
     3
    ],
    "newest": "2026-08-02",
-   "name": "Spartak Moscow"
+   "name": "Spartak Moscow",
+   "src": "RUS"
   },
   "zenit": {
    "form": "WWWWWW",
@@ -12438,7 +12702,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Zenit"
+   "name": "Zenit",
+   "src": "RUS"
   },
   "krylya sovetov": {
    "form": "DDWLWW",
@@ -12455,7 +12720,8 @@
     2
    ],
    "newest": "2026-08-01",
-   "name": "Krylya Sovetov"
+   "name": "Krylya Sovetov",
+   "src": "RUS"
   },
   "akhmat grozny": {
    "form": "LDDDWL",
@@ -12472,7 +12738,8 @@
     2
    ],
    "newest": "2026-08-02",
-   "name": "Akhmat Grozny"
+   "name": "Akhmat Grozny",
+   "src": "RUS"
   },
   "krasnodar": {
    "form": "WWWLWW",
@@ -12489,7 +12756,8 @@
     3
    ],
    "newest": "2026-08-02",
-   "name": "Krasnodar"
+   "name": "Krasnodar",
+   "src": "RUS"
   },
   "rubin kazan": {
    "form": "WLDLWD",
@@ -12506,7 +12774,8 @@
     0
    ],
    "newest": "2026-08-01",
-   "name": "Rubin Kazan"
+   "name": "Rubin Kazan",
+   "src": "RUS"
   },
   "orenburg": {
    "form": "LWLWLW",
@@ -12523,7 +12792,8 @@
     1
    ],
    "newest": "2026-08-02",
-   "name": "Orenburg"
+   "name": "Orenburg",
+   "src": "RUS"
   },
   "pari nn": {
    "form": "DLLLLD",
@@ -12540,7 +12810,8 @@
     2
    ],
    "newest": "2026-05-17",
-   "name": "Pari NN"
+   "name": "Pari NN",
+   "src": "RUS"
   },
   "sochi": {
    "form": "DLWLWW",
@@ -12557,7 +12828,8 @@
     1
    ],
    "newest": "2026-05-17",
-   "name": "Sochi"
+   "name": "Sochi",
+   "src": "RUS"
   },
   "baltika": {
    "form": "WLLLLL",
@@ -12574,7 +12846,8 @@
     1
    ],
    "newest": "2026-08-01",
-   "name": "Baltika"
+   "name": "Baltika",
+   "src": "RUS"
   },
   "akron togliatti": {
    "form": "LLLLLW",
@@ -12591,7 +12864,8 @@
     1
    ],
    "newest": "2026-08-01",
-   "name": "Akron Togliatti"
+   "name": "Akron Togliatti",
+   "src": "RUS"
   },
   "dynamo makhachkala": {
    "form": "WWDDLL",
@@ -12608,7 +12882,8 @@
     3
    ],
    "newest": "2026-08-01",
-   "name": "Dynamo Makhachkala"
+   "name": "Dynamo Makhachkala",
+   "src": "RUS"
   },
   "elfsborg": {
    "form": "WWLLLD",
@@ -12625,7 +12900,8 @@
     4
    ],
    "newest": "2026-08-08",
-   "name": "Elfsborg"
+   "name": "Elfsborg",
+   "src": "SWE"
   },
   "djurgarden": {
    "form": "LWWDWW",
@@ -12642,7 +12918,8 @@
     6
    ],
    "newest": "2026-08-10",
-   "name": "Djurgarden"
+   "name": "Djurgarden",
+   "src": "SWE"
   },
   "gais": {
    "form": "WDLWDW",
@@ -12659,7 +12936,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "GAIS"
+   "name": "GAIS",
+   "src": "SWE"
   },
   "hacken": {
    "form": "LDDWLL",
@@ -12676,7 +12954,8 @@
     6
    ],
    "newest": "2026-08-09",
-   "name": "Hacken"
+   "name": "Hacken",
+   "src": "SWE"
   },
   "kalmar": {
    "form": "LDWDLW",
@@ -12693,7 +12972,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Kalmar"
+   "name": "Kalmar",
+   "src": "SWE"
   },
   "aik": {
    "form": "WLDWWW",
@@ -12710,7 +12990,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "AIK"
+   "name": "AIK",
+   "src": "SWE"
   },
   "mjallby": {
    "form": "LLDLDD",
@@ -12727,7 +13008,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Mjallby"
+   "name": "Mjallby",
+   "src": "SWE"
   },
   "goteborg": {
    "form": "WWLWLL",
@@ -12744,7 +13026,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Goteborg"
+   "name": "Goteborg",
+   "src": "SWE"
   },
   "malmo ff": {
    "form": "LWLDWW",
@@ -12761,7 +13044,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Malmo FF"
+   "name": "Malmo FF",
+   "src": "SWE"
   },
   "halmstad": {
    "form": "LLDLLL",
@@ -12778,7 +13062,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Halmstad"
+   "name": "Halmstad",
+   "src": "SWE"
   },
   "brommapojkarna": {
    "form": "DLDLLD",
@@ -12795,7 +13080,8 @@
     2
    ],
    "newest": "2026-08-10",
-   "name": "Brommapojkarna"
+   "name": "Brommapojkarna",
+   "src": "SWE"
   },
   "hammarby": {
    "form": "WDWWWL",
@@ -12812,7 +13098,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Hammarby"
+   "name": "Hammarby",
+   "src": "SWE"
   },
   "sirius": {
    "form": "DWWWWD",
@@ -12829,7 +13116,8 @@
     8
    ],
    "newest": "2026-08-10",
-   "name": "Sirius"
+   "name": "Sirius",
+   "src": "SWE"
   },
   "degerfors": {
    "form": "WLLLLL",
@@ -12846,7 +13134,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Degerfors"
+   "name": "Degerfors",
+   "src": "SWE"
   },
   "vasteras": {
    "form": "WLWDWW",
@@ -12863,7 +13152,8 @@
     4
    ],
    "newest": "2026-08-10",
-   "name": "Vasteras SK"
+   "name": "Vasteras SK",
+   "src": "SWE"
   },
   "orgryte": {
    "form": "LWLDWL",
@@ -12880,7 +13170,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Orgryte"
+   "name": "Orgryte",
+   "src": "SWE"
   },
   "sturm graz": {
    "form": "WDWWDD",
@@ -12897,7 +13188,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Sturm Graz"
+   "name": "Sturm Graz",
+   "src": "AUT"
   },
   "salzburg": {
    "form": "DWLLDL",
@@ -12914,7 +13206,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Salzburg"
+   "name": "Salzburg",
+   "src": "AUT"
   },
   "rapid": {
    "form": "WWLLLW",
@@ -12931,7 +13224,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "SK Rapid"
+   "name": "SK Rapid",
+   "src": "AUT"
   },
   "ried": {
    "form": "LDLLWL",
@@ -12948,7 +13242,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Ried"
+   "name": "Ried",
+   "src": "AUT"
   },
   "wolfsberger": {
    "form": "DWWWWW",
@@ -12965,7 +13260,8 @@
     1
    ],
    "newest": "2026-08-09",
-   "name": "Wolfsberger AC"
+   "name": "Wolfsberger AC",
+   "src": "AUT"
   },
   "austria vienna": {
    "form": "LLLWWD",
@@ -12982,7 +13278,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Austria Vienna"
+   "name": "Austria Vienna",
+   "src": "AUT"
   },
   "altach": {
    "form": "WLWDLL",
@@ -12999,7 +13296,8 @@
     3
    ],
    "newest": "2026-08-07",
-   "name": "Altach"
+   "name": "Altach",
+   "src": "AUT"
   },
   "lask": {
    "form": "WWWWWW",
@@ -13016,7 +13314,8 @@
     6
    ],
    "newest": "2026-08-09",
-   "name": "LASK"
+   "name": "LASK",
+   "src": "AUT"
   },
   "hartberg": {
    "form": "LLWLLL",
@@ -13033,7 +13332,8 @@
     6
    ],
    "newest": "2026-08-08",
-   "name": "Hartberg"
+   "name": "Hartberg",
+   "src": "AUT"
   },
   "tirol": {
    "form": "LDLDLW",
@@ -13050,7 +13350,8 @@
     1
    ],
    "newest": "2026-08-07",
-   "name": "Tirol"
+   "name": "Tirol",
+   "src": "AUT"
   },
   "bw linz": {
    "form": "LDLWWD",
@@ -13067,7 +13368,8 @@
     0
    ],
    "newest": "2026-05-16",
-   "name": "BW Linz"
+   "name": "BW Linz",
+   "src": "AUT"
   },
   "grazer ak": {
    "form": "WLWDWL",
@@ -13084,7 +13386,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Grazer AK"
+   "name": "Grazer AK",
+   "src": "AUT"
   },
   "u cluj": {
    "form": "WLWDLW",
@@ -13101,7 +13404,8 @@
     1
    ],
    "newest": "2026-08-03",
-   "name": "U. Cluj"
+   "name": "U. Cluj",
+   "src": "ROU"
   },
   "din bucuresti": {
    "form": "LWDWDW",
@@ -13118,7 +13422,8 @@
     3
    ],
    "newest": "2026-02-21",
-   "name": "Din. Bucuresti"
+   "name": "Din. Bucuresti",
+   "src": "ROU"
   },
   "petrolul": {
    "form": "WLLWLD",
@@ -13135,7 +13440,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Petrolul"
+   "name": "Petrolul",
+   "src": "ROU"
   },
   "cfr cluj": {
    "form": "LWLDDD",
@@ -13152,7 +13458,8 @@
     0
    ],
    "newest": "2026-08-02",
-   "name": "CFR Cluj"
+   "name": "CFR Cluj",
+   "src": "ROU"
   },
   "otelul": {
    "form": "LDDWWW",
@@ -13169,7 +13476,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Otelul"
+   "name": "Otelul",
+   "src": "ROU"
   },
   "rapid bucuresti": {
    "form": "DWDWDD",
@@ -13186,7 +13494,8 @@
     4
    ],
    "newest": "2026-08-07",
-   "name": "FC Rapid Bucuresti"
+   "name": "FC Rapid Bucuresti",
+   "src": "ROU"
   },
   "fcsb": {
    "form": "DDWWDD",
@@ -13203,7 +13512,8 @@
     6
    ],
    "newest": "2026-08-10",
-   "name": "FCSB"
+   "name": "FCSB",
+   "src": "ROU"
   },
   "botosani": {
    "form": "DLDDDL",
@@ -13220,7 +13530,8 @@
     2
    ],
    "newest": "2026-08-10",
-   "name": "FC Botosani"
+   "name": "FC Botosani",
+   "src": "ROU"
   },
   "voluntari": {
    "form": "LWLDWL",
@@ -13237,7 +13548,8 @@
     5
    ],
    "newest": "2026-08-08",
-   "name": "FC Voluntari"
+   "name": "FC Voluntari",
+   "src": "ROU"
   },
   "uta arad": {
    "form": "DLDLWW",
@@ -13254,7 +13566,8 @@
     1
    ],
    "newest": "2026-08-07",
-   "name": "UTA Arad"
+   "name": "UTA Arad",
+   "src": "ROU"
   },
   "sepsi sf gheorghe": {
    "form": "DDWL",
@@ -13269,7 +13582,8 @@
     1
    ],
    "newest": "2026-08-10",
-   "name": "Sepsi Sf. Gheorghe"
+   "name": "Sepsi Sf. Gheorghe",
+   "src": "ROU"
   },
   "hermannstadt": {
    "form": "LWWDDD",
@@ -13286,7 +13600,8 @@
     0
    ],
    "newest": "2026-06-01",
-   "name": "FC Hermannstadt"
+   "name": "FC Hermannstadt",
+   "src": "ROU"
   },
   "arges": {
    "form": "WWWLDD",
@@ -13303,7 +13618,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "FC Arges"
+   "name": "FC Arges",
+   "src": "ROU"
   },
   "univ craiova": {
    "form": "LWLWDW",
@@ -13320,7 +13636,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Univ. Craiova"
+   "name": "Univ. Craiova",
+   "src": "ROU"
   },
   "farul constanta": {
    "form": "WDWLDD",
@@ -13337,7 +13654,8 @@
     6
    ],
    "newest": "2026-08-08",
-   "name": "Farul Constanta"
+   "name": "Farul Constanta",
+   "src": "ROU"
   },
   "csikszereda m ciuc": {
    "form": "LLLLWL",
@@ -13354,7 +13672,8 @@
     1
    ],
    "newest": "2026-08-08",
-   "name": "Csikszereda M. Ciuc"
+   "name": "Csikszereda M. Ciuc",
+   "src": "ROU"
   },
   "unirea slobozia": {
    "form": "LDDDLL",
@@ -13371,7 +13690,8 @@
     3
    ],
    "newest": "2026-05-18",
-   "name": "Unirea Slobozia"
+   "name": "Unirea Slobozia",
+   "src": "ROU"
   },
   "metaloglobus bucharest": {
    "form": "WDDDLL",
@@ -13388,7 +13708,8 @@
     1
    ],
    "newest": "2026-05-18",
-   "name": "Metaloglobus Bucharest"
+   "name": "Metaloglobus Bucharest",
+   "src": "ROU"
   },
   "dinamo bucuresti": {
    "form": "WDWLDD",
@@ -13405,7 +13726,8 @@
     2
    ],
    "newest": "2026-08-08",
-   "name": "Dinamo Bucuresti"
+   "name": "Dinamo Bucuresti",
+   "src": "ROU"
   },
   "corvinul": {
    "form": "DDLW",
@@ -13420,7 +13742,8 @@
     3
    ],
    "newest": "2026-08-10",
-   "name": "Corvinul"
+   "name": "Corvinul",
+   "src": "ROU"
   },
   "servette": {
    "form": "WLLWWD",
@@ -13437,7 +13760,8 @@
     6
    ],
    "newest": "2026-08-08",
-   "name": "Servette"
+   "name": "Servette",
+   "src": "SWZ"
   },
   "basel": {
    "form": "WLWLLL",
@@ -13454,7 +13778,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Basel"
+   "name": "Basel",
+   "src": "SWZ"
   },
   "thun": {
    "form": "LLWDLL",
@@ -13471,7 +13796,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Thun"
+   "name": "Thun",
+   "src": "SWZ"
   },
   "lausanne": {
    "form": "DWDLLL",
@@ -13488,7 +13814,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Lausanne"
+   "name": "Lausanne",
+   "src": "SWZ"
   },
   "grasshoppers": {
    "form": "LLDWWL",
@@ -13505,7 +13832,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Grasshoppers"
+   "name": "Grasshoppers",
+   "src": "SWZ"
   },
   "sion": {
    "form": "WWLDDW",
@@ -13522,7 +13850,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "Sion"
+   "name": "Sion",
+   "src": "SWZ"
   },
   "luzern": {
    "form": "DLLWWD",
@@ -13539,7 +13868,8 @@
     6
    ],
    "newest": "2026-08-09",
-   "name": "Luzern"
+   "name": "Luzern",
+   "src": "SWZ"
   },
   "zurich": {
    "form": "LWLLLW",
@@ -13556,7 +13886,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Zurich"
+   "name": "Zurich",
+   "src": "SWZ"
   },
   "st gallen": {
    "form": "DWWDWW",
@@ -13573,7 +13904,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "St. Gallen"
+   "name": "St. Gallen",
+   "src": "SWZ"
   },
   "young boys": {
    "form": "DWWDWW",
@@ -13590,7 +13922,8 @@
     3
    ],
    "newest": "2026-08-08",
-   "name": "Young Boys"
+   "name": "Young Boys",
+   "src": "SWZ"
   },
   "vaduz": {
    "form": "LLL",
@@ -13604,7 +13937,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Vaduz"
+   "name": "Vaduz",
+   "src": "SWZ"
   },
   "lugano": {
    "form": "WWWWDL",
@@ -13621,7 +13955,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Lugano"
+   "name": "Lugano",
+   "src": "SWZ"
   },
   "winterthur": {
    "form": "LLWDLL",
@@ -13638,7 +13973,8 @@
     2
    ],
    "newest": "2026-05-16",
-   "name": "Winterthur"
+   "name": "Winterthur",
+   "src": "SWZ"
   },
   "drogheda": {
    "form": "DDDWLL",
@@ -13655,7 +13991,8 @@
     2
    ],
    "newest": "2026-08-07",
-   "name": "Drogheda"
+   "name": "Drogheda",
+   "src": "IRL"
   },
   "shamrock rovers": {
    "form": "WDWWDW",
@@ -13672,7 +14009,8 @@
     2
    ],
    "newest": "2026-08-07",
-   "name": "Shamrock Rovers"
+   "name": "Shamrock Rovers",
+   "src": "IRL"
   },
   "derry city": {
    "form": "WDLWDL",
@@ -13689,7 +14027,8 @@
     3
    ],
    "newest": "2026-08-07",
-   "name": "Derry City"
+   "name": "Derry City",
+   "src": "IRL"
   },
   "bohemians": {
    "form": "LDWWWL",
@@ -13706,7 +14045,8 @@
     3
    ],
    "newest": "2026-08-09",
-   "name": "Bohemians"
+   "name": "Bohemians",
+   "src": "IRL"
   },
   "st patricks": {
    "form": "WDDDWL",
@@ -13723,7 +14063,8 @@
     2
    ],
    "newest": "2026-08-09",
-   "name": "St. Patricks"
+   "name": "St. Patricks",
+   "src": "IRL"
   },
   "dundalk": {
    "form": "LDDLLL",
@@ -13740,7 +14081,8 @@
     5
    ],
    "newest": "2026-08-07",
-   "name": "Dundalk"
+   "name": "Dundalk",
+   "src": "IRL"
   },
   "shelbourne": {
    "form": "LLWDLD",
@@ -13757,7 +14099,8 @@
     4
    ],
    "newest": "2026-08-09",
-   "name": "Shelbourne"
+   "name": "Shelbourne",
+   "src": "IRL"
   },
   "sligo rovers": {
    "form": "LDDLLD",
@@ -13774,7 +14117,8 @@
     4
    ],
    "newest": "2026-08-07",
-   "name": "Sligo Rovers"
+   "name": "Sligo Rovers",
+   "src": "IRL"
   },
   "waterford": {
    "form": "WWDDWW",
@@ -13791,7 +14135,8 @@
     5
    ],
    "newest": "2026-08-09",
-   "name": "Waterford"
+   "name": "Waterford",
+   "src": "IRL"
   },
   "galway": {
    "form": "DDDWLL",
@@ -13808,7 +14153,8 @@
     4
    ],
    "newest": "2026-08-07",
-   "name": "Galway"
+   "name": "Galway",
+   "src": "IRL"
   }
  },
  "unmatched": [
@@ -13822,7 +14168,17 @@
   "\u0160K Slovan Bratislava",
   "ADO Den Haag",
   "SC Cambuur",
+  "Arouca",
+  "Moreirense FC",
   "CS Maritimo",
+  "Famalic\u00e3o",
+  "Benfica",
+  "Casa Pia",
+  "Estoril",
+  "Rio Ave FC",
+  "Alverca",
+  "Sporting Lisbon",
+  "Nacional",
   "Basaksehir",
   "Amed SK",
   "Erzurum BB",
