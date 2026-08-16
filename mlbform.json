@@ -5,14 +5,14 @@
   "BAL@TB": {
    "away_sp": {
     "name": "Trevor Rogers",
-    "hr9_5": 0.61,
-    "r_start": 2.8,
+    "hr9_5": 0.75,
+    "r_start": 2.6,
     "starts": 5
    },
    "home_sp": {
     "name": "Freddy Peralta",
-    "hr9_5": 2.31,
-    "r_start": 4.4,
+    "hr9_5": 2.25,
+    "r_start": 4.0,
     "starts": 5
    },
    "away_form": {

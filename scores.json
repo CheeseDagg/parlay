@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-16T10:08Z",
+ "as_of": "2026-08-16T16:32Z",
  "date": "2026-08-16",
  "mlb": [
   {
@@ -7,8 +7,8 @@
    "home": "TB",
    "key": "BAL@TB",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 2,
    "final": false
   },
   {
@@ -16,8 +16,8 @@
    "home": "PIT",
    "key": "BOS@PIT",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -25,8 +25,8 @@
    "home": "ATL",
    "key": "AZ@ATL",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -34,8 +34,8 @@
    "home": "TOR",
    "key": "NYY@TOR",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -43,8 +43,8 @@
    "home": "NYM",
    "key": "WSH@NYM",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -52,8 +52,8 @@
    "home": "CLE",
    "key": "SD@CLE",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -61,8 +61,8 @@
    "home": "DET",
    "key": "CWS@DET",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -70,8 +70,8 @@
    "home": "CIN",
    "key": "MIA@CIN",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -79,8 +79,8 @@
    "home": "MIN",
    "key": "PHI@MIN",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
