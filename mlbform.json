@@ -5,14 +5,14 @@
   "BAL@TB": {
    "away_sp": {
     "name": "Trevor Rogers",
-    "hr9_5": 0.75,
-    "r_start": 2.6,
+    "hr9_5": 0.93,
+    "r_start": 3.0,
     "starts": 5
    },
    "home_sp": {
     "name": "Freddy Peralta",
-    "hr9_5": 2.25,
-    "r_start": 4.0,
+    "hr9_5": 1.9,
+    "r_start": 4.4,
     "starts": 5
    },
    "away_form": {
@@ -30,15 +30,15 @@
   "BOS@PIT": {
    "away_sp": {
     "name": "Patrick Sandoval",
-    "hr9_5": 1.05,
-    "r_start": 2.6,
+    "hr9_5": 0.73,
+    "r_start": 3.0,
     "starts": 5
    },
    "home_sp": {
     "name": "Lake Bachar",
     "hr9_5": 0.0,
-    "r_start": 0.5,
-    "starts": 4
+    "r_start": 0.4,
+    "starts": 5
    },
    "away_form": {
     "n": 10,
@@ -55,14 +55,14 @@
   "AZ@ATL": {
    "away_sp": {
     "name": "Michael Soroka",
-    "hr9_5": 0.71,
-    "r_start": 1.2,
+    "hr9_5": 0.36,
+    "r_start": 0.8,
     "starts": 5
    },
    "home_sp": {
     "name": "Bryce Elder",
-    "hr9_5": 1.86,
-    "r_start": 2.6,
+    "hr9_5": 1.55,
+    "r_start": 2.4,
     "starts": 5
    },
    "away_form": {
@@ -80,14 +80,14 @@
   "NYY@TOR": {
    "away_sp": {
     "name": "Ryan Weathers",
-    "hr9_5": 0.62,
-    "r_start": 1.4,
+    "hr9_5": 0.28,
+    "r_start": 0.6,
     "starts": 5
    },
    "home_sp": {
     "name": "Dylan Cease",
-    "hr9_5": 1.09,
-    "r_start": 1.8,
+    "hr9_5": 0.54,
+    "r_start": 1.2,
     "starts": 5
    },
    "away_form": {
@@ -105,14 +105,14 @@
   "WSH@NYM": {
    "away_sp": {
     "name": "Jake Irvin",
-    "hr9_5": 1.99,
-    "r_start": 3.0,
+    "hr9_5": 1.82,
+    "r_start": 3.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Christian Scott",
-    "hr9_5": 0.0,
-    "r_start": 2.2,
+    "hr9_5": 0.36,
+    "r_start": 2.8,
     "starts": 5
    },
    "away_form": {
@@ -130,14 +130,14 @@
   "SD@CLE": {
    "away_sp": {
     "name": "Casey Mize",
-    "hr9_5": 0.74,
-    "r_start": 3.2,
+    "hr9_5": 0.92,
+    "r_start": 2.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Tanner Bibee",
-    "hr9_5": 0.86,
-    "r_start": 3.4,
+    "hr9_5": 1.0,
+    "r_start": 3.0,
     "starts": 5
    },
    "away_form": {
@@ -155,15 +155,15 @@
   "CWS@DET": {
    "away_sp": {
     "name": "Sean Burke",
-    "hr9_5": 0.6,
-    "r_start": 1.2,
+    "hr9_5": 0.98,
+    "r_start": 2.0,
     "starts": 5
    },
    "home_sp": {
     "name": "Drew Anderson",
-    "hr9_5": 0.6,
-    "r_start": 0.5,
-    "starts": 4
+    "hr9_5": 0.9,
+    "r_start": 1.0,
+    "starts": 5
    },
    "away_form": {
     "n": 10,
@@ -186,7 +186,7 @@
    },
    "home_sp": {
     "name": "Nick Lodolo",
-    "hr9_5": 1.5,
+    "hr9_5": 1.44,
     "r_start": 1.4,
     "starts": 5
    },
@@ -205,14 +205,14 @@
   "PHI@MIN": {
    "away_sp": {
     "name": "Andrew Painter",
-    "hr9_5": 2.05,
-    "r_start": 3.4,
+    "hr9_5": 2.01,
+    "r_start": 3.2,
     "starts": 5
    },
    "home_sp": {
     "name": "Dean Kremer",
-    "hr9_5": 1.04,
-    "r_start": 3.6,
+    "hr9_5": 1.32,
+    "r_start": 4.0,
     "starts": 5
    },
    "away_form": {
@@ -230,14 +230,14 @@
   "STL@CHC": {
    "away_sp": {
     "name": "Hunter Dobbins",
-    "hr9_5": 1.35,
-    "r_start": 2.2,
+    "hr9_5": 0.99,
+    "r_start": 2.0,
     "starts": 5
    },
    "home_sp": {
     "name": "Edward Cabrera",
-    "hr9_5": 2.53,
-    "r_start": 4.2,
+    "hr9_5": 2.86,
+    "r_start": 4.8,
     "starts": 5
    },
    "away_form": {
@@ -255,15 +255,15 @@
   "COL@SF": {
    "away_sp": {
     "name": "Gabriel Hughes",
-    "hr9_5": 0.73,
-    "r_start": 3.6,
+    "hr9_5": 1.21,
+    "r_start": 4.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Blade Tidwell",
-    "hr9_5": 0.0,
-    "r_start": 1.5,
-    "starts": 2
+    "hr9_5": 0.61,
+    "r_start": 2.33,
+    "starts": 3
    },
    "away_form": {
     "n": 10,
@@ -280,13 +280,13 @@
   "TEX@ATH": {
    "away_sp": {
     "name": "Cody Bradford",
-    "hr9_5": 0.0,
-    "r_start": 1.5,
-    "starts": 2
+    "hr9_5": 0.63,
+    "r_start": 1.67,
+    "starts": 3
    },
    "home_sp": {
     "name": "Jacob Lopez",
-    "hr9_5": 1.01,
+    "hr9_5": 1.38,
     "r_start": 1.6,
     "starts": 5
    },
@@ -305,14 +305,14 @@
   "KC@LAA": {
    "away_sp": {
     "name": "Noah Cameron",
-    "hr9_5": 1.07,
-    "r_start": 3.4,
+    "hr9_5": 0.29,
+    "r_start": 2.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Ryan Johnson",
-    "hr9_5": 2.08,
-    "r_start": 3.2,
+    "hr9_5": 2.49,
+    "r_start": 3.4,
     "starts": 5
    },
    "away_form": {
@@ -330,14 +330,14 @@
   "MIL@LAD": {
    "away_sp": {
     "name": "Logan Henderson",
-    "hr9_5": 2.25,
-    "r_start": 1.6,
+    "hr9_5": 2.05,
+    "r_start": 1.4,
     "starts": 5
    },
    "home_sp": {
     "name": "Tarik Skubal",
-    "hr9_5": 0.56,
-    "r_start": 1.8,
+    "hr9_5": 0.62,
+    "r_start": 2.0,
     "starts": 5
    },
    "away_form": {

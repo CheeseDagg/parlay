@@ -1,95 +1,95 @@
 {
- "as_of": "2026-08-16T16:32Z",
+ "as_of": "2026-08-16T21:13Z",
  "date": "2026-08-16",
  "mlb": [
   {
    "away": "BAL",
    "home": "TB",
    "key": "BAL@TB",
-   "through5": null,
-   "current": 0,
-   "inning": 2,
-   "final": false
+   "through5": 4,
+   "current": 12,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "BOS",
    "home": "PIT",
    "key": "BOS@PIT",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
+   "through5": 10,
+   "current": 10,
+   "inning": 7,
    "final": false
   },
   {
    "away": "AZ",
    "home": "ATL",
    "key": "AZ@ATL",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
+   "through5": 3,
+   "current": 8,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "NYY",
    "home": "TOR",
    "key": "NYY@TOR",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
+   "through5": 2,
+   "current": 7,
+   "inning": 10,
+   "final": true
   },
   {
    "away": "WSH",
    "home": "NYM",
    "key": "WSH@NYM",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
+   "through5": 6,
+   "current": 7,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "SD",
    "home": "CLE",
    "key": "SD@CLE",
    "through5": null,
-   "current": 0,
-   "inning": 1,
+   "current": 2,
+   "inning": 2,
    "final": false
   },
   {
    "away": "CWS",
    "home": "DET",
    "key": "CWS@DET",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
+   "through5": 7,
+   "current": 12,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "MIA",
    "home": "CIN",
    "key": "MIA@CIN",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
+   "through5": 0,
+   "current": 8,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "PHI",
    "home": "MIN",
    "key": "PHI@MIN",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
+   "through5": 5,
+   "current": 12,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "STL",
    "home": "CHC",
    "key": "STL@CHC",
-   "through5": null,
-   "current": null,
-   "inning": null,
+   "through5": 11,
+   "current": 11,
+   "inning": 6,
    "final": false
   },
   {
@@ -97,8 +97,8 @@
    "home": "SF",
    "key": "COL@SF",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 10,
+   "inning": 4,
    "final": false
   },
   {
@@ -106,17 +106,17 @@
    "home": "ATH",
    "key": "TEX@ATH",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 4,
+   "inning": 4,
    "final": false
   },
   {
    "away": "KC",
    "home": "LAA",
    "key": "KC@LAA",
-   "through5": null,
-   "current": null,
-   "inning": null,
+   "through5": 2,
+   "current": 2,
+   "inning": 5,
    "final": false
   },
   {
@@ -124,8 +124,8 @@
    "home": "LAD",
    "key": "MIL@LAD",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 1,
+   "inning": 4,
    "final": false
   },
   {
