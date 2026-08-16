@@ -95,12 +95,19 @@ def parse_date(d):
     return None
 
 
-def add_rows(text, kind, acc):
-    """Fold one CSV into acc: {norm_team: [(date, gf, ga)]}. Unplayed rows and
-    unparseable dates are skipped -- a missing score is not a 0-0 here either.
-    Returns (rows_added, newest_date) so a stale or empty source file is
-    VISIBLE: on 8/13 every J-League team was silently absent and nothing in
-    the output could say whether the join failed or the file was dead."""
+def add_rows(text, kind, acc, src='?'):
+    """Fold one CSV into acc: {(src, norm_team): [(date, gf, ga)]}. Unplayed
+    rows and unparseable dates are skipped -- a missing score is not a 0-0
+    here either. Returns (rows_added, newest_date) so a stale or empty source
+    file is VISIBLE (the 8/13 J-League lesson).
+
+    THE KEY CARRIES ITS SOURCE as of 8/16, because a name is not an identity:
+    the Argentine River Plate spent two days wearing a Uruguayan minnow's
+    LLLLLW / 0.5 goals-per-game -- both clubs normalise to 'river plate', and
+    a nameonly key let whichever file parsed last own the row. The wrong-club
+    form then flowed into the COLD flag, the SOCBASE gate and edge.py's form
+    column, all wearing decimals. Ten clubs share a name (Ryan, 8/14); now
+    ten keys hold them."""
     hk, ak = ('HomeTeam', 'AwayTeam') if kind == 'mmz' else ('Home', 'Away')
     gk, qk = ('FTHG', 'FTAG') if kind == 'mmz' else ('HG', 'AG')
     n, mx = 0, None
@@ -113,8 +120,10 @@ def add_rows(text, kind, acc):
             continue
         if not (d and h and a):
             continue
-        acc.setdefault(norm(h), {'name': h, 'rows': []})['rows'].append((d, hg, ag))
-        acc.setdefault(norm(a), {'name': a, 'rows': []})['rows'].append((d, ag, hg))
+        acc.setdefault((src, norm(h)), {'name': h, 'src': src,
+                                        'rows': []})['rows'].append((d, hg, ag))
+        acc.setdefault((src, norm(a)), {'name': a, 'src': src,
+                                        'rows': []})['rows'].append((d, ag, hg))
         n += 1
         mx = d if (mx is None or d > mx) else mx
     return n, mx
@@ -152,12 +161,19 @@ def lookup(acc, name):
     letters. A refused join prints as unmatched, which is honest; a false
     join prints as form, which is a lie with decimals."""
     q = ALIAS.get(norm(name), norm(name))
-    if q in acc:
-        return acc[q], 'exact'
+    exact = [k for k in acc if k[1] == q]
+    if len(exact) == 1:
+        return acc[exact[0]], 'exact'
+    if len(exact) > 1:
+        # the River Plate case: same name, multiple leagues. A coin flip
+        # dressed as 'exact' is the worst join in the file; refuse it.
+        return None, 'AMBIGUOUS: ' + '+'.join(sorted(k[0] for k in exact))
     hits = [k for k in acc
-            if (q in k or k in q) and min(len(q), len(k)) >= 6]
+            if (q in k[1] or k[1] in q) and min(len(q), len(k[1])) >= 6]
     if len(hits) == 1:
         return acc[hits[0]], f'via {acc[hits[0]]["name"]}'
+    if len(hits) > 1 and len({k[1] for k in hits}) == 1:
+        return None, 'AMBIGUOUS: ' + '+'.join(sorted(k[0] for k in hits))
     return None, 'unmatched'
 
 
@@ -172,12 +188,17 @@ def find(table, name):
     persisted full table, under the same >=6 containment floor -- the Inter
     Turku lesson applies to this path identically."""
     q = ALIAS.get(norm(name), norm(name))
+    def _resolve(row, how):
+        if 'srcs' in row:
+            return None, ('AMBIGUOUS: ' + '+'.join(sorted(row['srcs'])))
+        return row, how
     if q in table:
-        return table[q], 'exact'
+        return _resolve(table[q], 'exact')
     hits = [k for k in table
             if (q in k or k in q) and min(len(q), len(k)) >= 6]
     if len(hits) == 1:
-        return table[hits[0]], f"via {table[hits[0]].get('name', hits[0])}"
+        return _resolve(table[hits[0]],
+                        f"via {table[hits[0]].get('name', hits[0])}")
     return None, 'unmatched'
 
 
@@ -201,14 +222,15 @@ def main():
     for ssn in MMZ_CUR:
         for div in MMZ_DIVS:
             try:
-                n, mx = add_rows(get(f"{BASE}/mmz4281/{ssn}/{div}.csv"), 'mmz', acc)
+                n, mx = add_rows(get(f"{BASE}/mmz4281/{ssn}/{div}.csv"), 'mmz',
+                                 acc, src=div)
             except Exception:
                 continue
             o = got.get(div, (0, None))
             got[div] = (o[0] + n, max(x for x in (o[1], mx) if x) if (o[1] or mx) else None)
     for code in NEW:
         try:
-            n, mx = add_rows(get(f"{BASE}/new/{code}.csv"), 'new', acc)
+            n, mx = add_rows(get(f"{BASE}/new/{code}.csv"), 'new', acc, src=code)
             got[code] = (n, mx)
         except Exception as e:
             print(f"  {code}: FETCH {type(e).__name__}")
@@ -249,13 +271,26 @@ def main():
               "not read absence as bad form.")
     # EVERY accumulated team persists, not only the board-joined view --
     # hand-pasted legs join against 'all' at ticket time (find() above).
-    alltab = {}
-    for k, e in acc.items():
+    from collections import defaultdict as _dd
+    byname = _dd(dict)
+    for (src, nm), e in acc.items():
         f = form_of(e['rows'])
         if f:
-            alltab[k] = {**f, 'name': e['name']}
+            byname[nm][src] = {**f, 'name': e['name'], 'src': src}
+    alltab, collided = {}, []
+    for nm, srcs in byname.items():
+        if len(srcs) == 1:
+            alltab[nm] = next(iter(srcs.values()))
+        else:
+            alltab[nm] = {'srcs': srcs}
+            collided.append(f"{nm} ({'+'.join(sorted(srcs))})")
     print(f"  persisted {len(alltab)} teams with form into 'all' "
           f"({len(table)} of them board-joined)")
+    if collided:
+        # the measured census this fix exists for: every one of these was a
+        # silent last-file-wins coin flip until 8/16
+        print(f"  NAME COLLISIONS across leagues ({len(collided)}): "
+              + '; '.join(sorted(collided)))
     with open(OUT, 'w') as fh:
         json.dump({'built': date.today().isoformat(), 'teams': table,
                    'all': alltab,
@@ -281,10 +316,10 @@ def selftest():
            "E0,08/08/2026,Chelsea,Arsenal,1,1\n"
            "E0,bad,Chelsea,Arsenal,1,1\n"
            "E0,09/08/2026,Wolves,,2,1\n")
-    n, _mx = add_rows(mmz, 'mmz', acc)
-    chk(n == 2 and len(acc['arsenal']['rows']) == 2,
-        "each match lands on BOTH teams; junk dates and blank names are dropped")
-    chk(acc['chelsea']['rows'][0] == (date(2026, 8, 1), 0, 2),
+    n, _mx = add_rows(mmz, 'mmz', acc, src='E0')
+    chk(n == 2 and len(acc[('E0', 'arsenal')]['rows']) == 2,
+        "each match lands on BOTH teams under its SOURCE key; junk dropped")
+    chk(acc[('E0', 'chelsea')]['rows'][0] == (date(2026, 8, 1), 0, 2),
         "goals are oriented per team -- Chelsea away 0-2 is gf 0 ga 2")
     chk(_mx == date(2026, 8, 8),
         "add_rows reports the newest KEPT row's date (the 09/08 row has a "
@@ -304,25 +339,59 @@ def selftest():
     chk(form_of(rows[:2], today=today) is None,
         "two matches is below the floor for calling anything form")
 
-    acc2 = {norm('Union Berlin'): {'name': 'Union Berlin', 'rows': rows},
-            norm('Philadelphia Union'): {'name': 'Philadelphia Union', 'rows': rows}}
+    acc2 = {('D1', norm('Union Berlin')): {'name': 'Union Berlin', 'src': 'D1',
+                                           'rows': rows},
+            ('USA', norm('Philadelphia Union')): {'name': 'Philadelphia Union',
+                                                  'src': 'USA', 'rows': rows}}
     e, how = lookup(acc2, 'Philadelphia Union')
     chk(e and e['name'] == 'Philadelphia Union', "exact wins before fuzzy")
     e2, how2 = lookup(acc2, 'Union')
     chk(e2 is None and how2 == 'unmatched',
         "an ambiguous or too-short name refuses to guess between two Unions")
 
-    acc3 = {'inter': {'name': 'Inter', 'rows': rows},
-            'lille': {'name': 'Lille', 'rows': rows}}
+    acc3 = {('I1', 'inter'): {'name': 'Inter', 'src': 'I1', 'rows': rows},
+            ('F1', 'lille'): {'name': 'Lille', 'src': 'F1', 'rows': rows}}
     chk(lookup(acc3, 'FC Inter Turku')[0] is None,
         "Inter Turku does NOT join to Inter Milan -- the first live run made "
         "exactly this false join and printed Serie A form as Finnish form")
     chk(lookup(acc3, 'Lillestrom')[0] is None,
         "and Lillestrom does not join to Lille: containment needs the SHORTER "
         "name at six-plus characters, whichever side it is on")
-    acc4 = {'nijmegen': {'name': 'Nijmegen', 'rows': rows}}
+    acc4 = {('N1', 'nijmegen'): {'name': 'Nijmegen', 'src': 'N1', 'rows': rows}}
     chk(lookup(acc4, 'NEC Nijmegen')[0] is not None,
         "while NEC Nijmegen still reaches Nijmegen, which is a real join")
+
+    # ---- THE RIVER PLATE CASE (8/16): same name, two leagues. For two days
+    # the Argentine club wore a minnow's 0.5 goals a game because a name-only
+    # key let the last file win, and the wrong form reached the COLD flag,
+    # the SOCBASE gate and edge.py -- all as an 'exact' match.
+    acc5 = {('ARG', 'river plate'): {'name': 'River Plate', 'src': 'ARG',
+                                     'rows': rows},
+            ('URU', 'river plate'): {'name': 'River Plate', 'src': 'URU',
+                                     'rows': old}}
+    _e, _how = lookup(acc5, 'River Plate')
+    chk(_e is None and _how.startswith('AMBIGUOUS') and 'ARG' in _how
+        and 'URU' in _how,
+        f"two leagues sharing a name is AMBIGUOUS by name, refused with both "
+        f"sources listed -- never a coin flip wearing 'exact' ({_how})")
+    _e, _ = lookup({('ARG', 'river plate'): acc5[('ARG', 'river plate')]},
+                   'River Plate')
+    chk(_e is not None and _e['src'] == 'ARG',
+        "a single-league name still joins cleanly, with its source attached")
+
+    _tbl5 = {'river plate': {'srcs': {'ARG': {'form': 'WWWWWW', 'name': 'River Plate',
+                                              'src': 'ARG', 'totals': [2]*6,
+                                              'ppg': 3.0, 'n': 6, 'gf': 2, 'ga': 0,
+                                              'newest': '2026-08-08'},
+                                      'URU': {'form': 'LLLLLW', 'name': 'River Plate',
+                                              'src': 'URU', 'totals': [1]*6,
+                                              'ppg': 0.5, 'n': 6, 'gf': 0.5, 'ga': 1,
+                                              'newest': '2026-08-08'}}}}
+    _f, _how = find(_tbl5, 'River Plate')
+    chk(_f is None and 'AMBIGUOUS' in _how and 'ARG' in _how,
+        "the persisted 'all' table refuses a collided name the same way -- "
+        "every caller (COLD flag, SOCBASE, edge form column) now sees the "
+        "ambiguity instead of a minnow's form wearing a giant's name")
 
     # find(): the same discipline over the persisted 'all' table -- the path
     # a hand-pasted (screenshot) leg takes, since the feed never priced it

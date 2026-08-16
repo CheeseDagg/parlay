@@ -33,6 +33,15 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- socform keys carry their LEAGUE: the Argentine River Plate spent two days
+  wearing a Uruguayan minnow's LLLLLW / 0.5 gf (both normalise to 'river
+  plate'; last file parsed owned the name-only key), and the wrong club's
+  form reached the COLD flag, the SOCBASE gate and edge.py's form column as
+  an 'exact' match. acc keys are now (source, name); a name held by two
+  leagues is AMBIGUOUS and refused with both sources printed, at lookup()
+  and find() alike -- the ten-clubs-one-name rule, enforced at the join
+  instead of remembered at the ticket. Collision census prints at every
+  build. 20/20 + downstream suites green.
 - Team IDENTITY conditions soccer unders BEYOND recent pace: trailing-30
   team level, measured on the residual after the pace delta, ships on all
   four rungs (tail gains +0.0015..+0.0022 on 7,851 untouched matches,
