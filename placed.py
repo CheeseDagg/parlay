@@ -97,11 +97,18 @@ def record(legs, name, price, stake, note, when, files=None):
     got = set()
     if os.path.exists(fs['calib']):
         got = {(r[0], r[1]) for r in csv.reader(open(fs['calib'])) if r}
+    nop = [l['lab'] for l in legs if l['p'] is None]
     with open(fs['calib'], 'a', newline='') as fh:
         w = csv.writer(fh)
         for l in legs:
             if l['p'] is not None and (date, l['lab']) not in got:
                 w.writerow([date, l['lab'], round(l['p'], 4), round(l['p'], 4), 'open'])
+    if nop:
+        # 8/16: every leg of slips A-D bypassed the Brier ledger because the
+        # placement calls omitted p= and this skip was SILENT. Rule 29 exists
+        # so results grade the model; a quiet exemption defeats the ledger.
+        print(f"  !! {len(nop)} leg(s) carry NO p= and are NOT in calibration: "
+              + ', '.join(nop[:4]) + (' ...' if len(nop) > 4 else ''))
     # the idempotency key is name+price+DATE -- a repair run an hour later
     # must find the section, and the same window name next week must not
     head = f"## {name} — {price:+d} — placed {when}"

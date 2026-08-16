@@ -26,7 +26,30 @@ date,leg,market_p,my_p,outcome
 2026-08-12,Under 6.5 goals (IM-León),0.9796,0.9796,won
 2026-08-12,Under 6.5 goals (Guadalajar-SS),0.9818,0.9818,won
 2026-08-12,Under 6.5 goals (LA-Querétaro),0.9660,0.9660,won
-2026-08-14,Joel Alvarez by KO/TKO or Submission (v Njokuani),0.47,0.47,open
-2026-08-14,Mansur Abdul Malik by KO/TKO (v Stoltzfus),0.4,0.4,open
-2026-08-14,Kaue Fernandes by KO/TKO (v Turner),0.2,0.2,open
-2026-08-14,Islam Makhachev by Points (v Garry),0.35,0.35,open
+2026-08-14,Joel Alvarez by KO/TKO or Submission (v Njokuani),0.47,0.47,lost
+2026-08-14,Mansur Abdul Malik by KO/TKO (v Stoltzfus),0.4,0.4,lost
+2026-08-14,Kaue Fernandes by KO/TKO (v Turner),0.2,0.2,lost
+2026-08-14,Islam Makhachev by Points (v Garry),0.35,0.35,won
+2026-08-14,U5.5 Alverca v Estrela (A/B),0.981,0.981,won
+2026-08-14,SGP U5.5+Tie-or-Porto DC (A/B),0.88,0.88,won
+2026-08-14,Ashleyann Lozada (A/B),0.909,0.909,won
+2026-08-14,Casey Dixon (A/B),0.939,0.939,open
+2026-08-14,Jaquan McElroy (A/B),0.927,0.927,won
+2026-08-14,Daniel Mercado (A/B),0.976,0.976,won
+2026-08-14,Shannel Butler (A/B),0.927,0.927,won
+2026-08-14,Myktybek Orolbai ML (A/B),0.899,0.899,lost
+2026-08-14,Atif Oberlton (A/B),0.938,0.938,won
+2026-08-14,Joel Alvarez ML (A/B),0.715,0.715,lost
+2026-08-14,Esteban Ribovics ML (A/B),0.833,0.833,won
+2026-08-14,Kaue Fernandes KO/DQ/Dec (A/B),0.362,0.362,lost
+2026-08-14,Troy Isley (A/B),0.848,0.848,won
+2026-08-14,Claressa Shields (A/B),0.963,0.963,won
+2026-08-14,Islam Makhachev by Decision (A),0.403,0.403,won
+2026-08-14,Ian Machado Garry ML (B),0.24,0.24,lost
+2026-08-15,Myktybek Orolbai ML (C/D),0.882,0.882,lost
+2026-08-15,Donte Johnson ML (C/D),0.724,0.724,won
+2026-08-15,Joel Alvarez ML (C/D),0.732,0.732,lost
+2026-08-15,Esteban Ribovics ML (C/D),0.839,0.839,won
+2026-08-15,Mansur Abdul-Malik ML (C/D),0.838,0.838,lost
+2026-08-15,Kaue Fernandes by KO/TKO (C/D),0.172,0.172,lost
+2026-08-15,Islam Makhachev by Submission (C/D),0.203,0.203,lost
