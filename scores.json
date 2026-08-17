@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-17T20:23Z",
+ "as_of": "2026-08-17T21:05Z",
  "date": "2026-08-17",
  "mlb": [
   {
@@ -9,7 +9,7 @@
    "through5": 3,
    "current": 3,
    "inning": 9,
-   "final": false
+   "final": true
   },
   {
    "away": "STL",
@@ -25,8 +25,8 @@
    "home": "TB",
    "key": "BAL@TB",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -70,8 +70,8 @@
    "home": "KC",
    "key": "ATH@KC",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -554,10 +554,10 @@
   {
    "home": "Deportivo La Coru\u00f1a",
    "away": "Elche CF",
-   "goals": 1,
-   "completed": false,
+   "goals": 2,
+   "completed": true,
    "detail": {
-    "Elche CF": 0,
+    "Elche CF": 1,
     "Deportivo La Coru\u00f1a": 1
    }
   },
@@ -669,10 +669,10 @@
   {
    "home": "Cardiff City",
    "away": "Wrexham AFC",
-   "goals": 1,
-   "completed": false,
+   "goals": 2,
+   "completed": true,
    "detail": {
-    "Cardiff City": 0,
+    "Cardiff City": 1,
     "Wrexham AFC": 1
    }
   },
@@ -763,10 +763,10 @@
   {
    "home": "Casa Pia",
    "away": "Benfica",
-   "goals": 3,
+   "goals": 7,
    "completed": false,
    "detail": {
-    "Benfica": 3,
+    "Benfica": 7,
     "Casa Pia": 0
    }
   },
@@ -827,16 +827,6 @@
    "detail": {}
   },
   {
-   "home": "River Plate",
-   "away": "Argentinos Juniors",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "River Plate": 2,
-    "Argentinos Juniors": 0
-   }
-  },
-  {
    "home": "Barracas Central",
    "away": "Rosario Central",
    "goals": 1,
@@ -869,10 +859,10 @@
   {
    "home": "Lanus",
    "away": "Independiente",
-   "goals": 0,
+   "goals": 1,
    "completed": false,
    "detail": {
-    "Independiente": 0,
+    "Independiente": 1,
     "Lanus": 0
    }
   },
