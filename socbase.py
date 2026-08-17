@@ -58,6 +58,17 @@ PROXY = {
 # of the time (pooled Europe: 25.2%) at 2.23 goals a game -- a DC and an under
 # are structurally STRONGER there than anywhere else on the board.
 CALIB = {
+    # second tiers + Turkey/Greece (8/17): three of the five unmeasured legs
+    # on that afternoon's live slip were Segunda; the league was one dict
+    # entry away from measured the whole time.
+    'soccer_spain_segunda_division': 'Spain Segunda',
+    'soccer_turkey_super_league': 'Turkey Super Lig',
+    'soccer_greece_super_league': 'Greece Super League',
+    'soccer_germany_bundesliga2': 'Germany Bundesliga 2',
+    'soccer_italy_serie_b': 'Italy Serie B',
+    'soccer_france_ligue_two': 'France Ligue 2',
+    'soccer_england_league1': 'England League One',
+    'soccer_england_league2': 'England League Two',
     'soccer_usa_mls': 'USA MLS',
     'soccer_mexico_ligamx': 'Mexico Liga MX',
     'soccer_argentina_primera_division': 'Argentina Primera',

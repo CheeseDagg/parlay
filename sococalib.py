@@ -42,7 +42,18 @@ DIVS = {'E0': 'England Premier League', 'E1': 'England Championship',
         'SP1': 'Spain La Liga', 'I1': 'Italy Serie A',
         'D1': 'Germany Bundesliga', 'F1': 'France Ligue 1',
         'N1': 'Netherlands Eredivisie', 'P1': 'Portugal Primeira Liga',
-        'B1': 'Belgium Pro League'}
+        'B1': 'Belgium Pro League',
+        # SECOND TIERS + TURKEY + GREECE, added 8/17. The receipt: Ryan's
+        # live 25-legger that afternoon carried five legs no table could
+        # price, and three were Spain Segunda -- a league football-data has
+        # carried all along (SP2) and this dict simply never asked for.
+        # Almeria, Sporting Gijon, Depor and the Turkish Super Lig are on
+        # the board more days than not; 'unmeasured' was a choice made by
+        # omission, not a fact about the world.
+        'SP2': 'Spain Segunda', 'T1': 'Turkey Super Lig',
+        'G1': 'Greece Super League', 'D2': 'Germany Bundesliga 2',
+        'I2': 'Italy Serie B', 'F2': 'France Ligue 2',
+        'E2': 'England League One', 'E3': 'England League Two'}
 # new/ = one file per country, full history, different column names.
 EXTRA = {'USA': 'USA MLS', 'MEX': 'Mexico Liga MX',
          'ARG': 'Argentina Primera', 'BRA': 'Brazil Serie A',
