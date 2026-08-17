@@ -5,3 +5,4 @@ scores 2026-08-13T18:19Z
 2026-08-17T20:21Z on-demand: grade Mon slip noon batch
 2026-08-17T20:23Z re-pull with slip leagues
 2026-08-17T21:04Z which game went over
+2026-08-17T21:11Z evening grade for the ledger
