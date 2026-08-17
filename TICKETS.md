@@ -1,3 +1,9 @@
+> **ON HOLD 2026-08-17**: Ryan: "put anything gambling related on hold for now."
+> All three daily Routines disabled (5am research+settle, 7am build, 1pm toolchain
+> improvement). No check-ins armed. No picks, tickets, grading, or toolchain passes
+> until he says otherwise. Every file and Routine is preserved as-is; re-enabling the
+> Routines is the whole restart.
+
 # Live slips
 
 ## Week ledger (running)
