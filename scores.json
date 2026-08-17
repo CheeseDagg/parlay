@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-17T20:22Z",
+ "as_of": "2026-08-17T20:23Z",
  "date": "2026-08-17",
  "mlb": [
   {
@@ -349,6 +349,1037 @@
   {
    "home": "Atlanta United FC",
    "away": "Sporting Kansas City",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "BK Hacken",
+   "away": "Halmstads BK",
+   "goals": 1,
+   "completed": true,
+   "detail": {
+    "BK Hacken": 1,
+    "Halmstads BK": 0
+   }
+  },
+  {
+   "home": "IK Sirius",
+   "away": "BK Hacken",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "\u00d6rgryte IS",
+   "away": "Halmstads BK",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "IFK Goteborg",
+   "away": "IF Elfsborg",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "V\u00e4ster\u00e5s SK",
+   "away": "Kalmar FF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "IF Brommapojkarna",
+   "away": "Degerfors IF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Hammarby IF",
+   "away": "GAIS",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Malmo FF",
+   "away": "Djurgardens IF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Brondby IF",
+   "away": "SonderjyskE",
+   "goals": 5,
+   "completed": true,
+   "detail": {
+    "SonderjyskE": 2,
+    "Brondby IF": 3
+   }
+  },
+  {
+   "home": "SonderjyskE",
+   "away": "FC Nordsjaelland",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "AGF Aarhus",
+   "away": "OB Odense BK",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "FC Midtjylland",
+   "away": "Randers FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "AC Horsens",
+   "away": "Lyngby",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Viborg FF",
+   "away": "FC Copenhagen",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Brondby IF",
+   "away": "Silkeborg IF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Almer\u00eda",
+   "away": "CD Eldense",
+   "goals": 3,
+   "completed": false,
+   "detail": {
+    "CD Eldense": 0,
+    "Almer\u00eda": 3
+   }
+  },
+  {
+   "home": "C\u00f3rdoba",
+   "away": "Girona FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Oviedo",
+   "away": "Legan\u00e9s",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "AD Ceuta FC",
+   "away": "Las Palmas",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Albacete",
+   "away": "Real Sociedad B",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "CD Eldense",
+   "away": "C\u00e1diz CF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "SD Eibar",
+   "away": "Real Valladolid CF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Sporting Gij\u00f3n",
+   "away": "Burgos CF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "CD Castell\u00f3n",
+   "away": "Sabadell FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Tenerife",
+   "away": "Almer\u00eda",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Celta Vigo",
+   "away": "Andorra CF",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Granada CF",
+   "away": "Mallorca",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Deportivo La Coru\u00f1a",
+   "away": "Elche CF",
+   "goals": 1,
+   "completed": false,
+   "detail": {
+    "Elche CF": 0,
+    "Deportivo La Coru\u00f1a": 1
+   }
+  },
+  {
+   "home": "Atl\u00e9tico Madrid",
+   "away": "M\u00e1laga",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Rayo Vallecano",
+   "away": "Alav\u00e9s",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Real Betis",
+   "away": "Real Sociedad",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Athletic Bilbao",
+   "away": "Sevilla",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Valencia",
+   "away": "Celta Vigo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Espanyol",
+   "away": "Real Madrid",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atl\u00e9tico Madrid",
+   "away": "Villarreal",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Getafe",
+   "away": "Real Racing Club de Santander",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Elche CF",
+   "away": "Barcelona",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "CA Osasuna",
+   "away": "Levante",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "M\u00e1laga",
+   "away": "Deportivo La Coru\u00f1a",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Valencia",
+   "away": "Real Betis",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Real Madrid",
+   "away": "Real Sociedad",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Celta Vigo",
+   "away": "CA Osasuna",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Barcelona",
+   "away": "Athletic Bilbao",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Cardiff City",
+   "away": "Wrexham AFC",
+   "goals": 1,
+   "completed": false,
+   "detail": {
+    "Cardiff City": 0,
+    "Wrexham AFC": 1
+   }
+  },
+  {
+   "home": "Birmingham City",
+   "away": "Bristol City",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Lincoln City",
+   "away": "Portsmouth",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Millwall",
+   "away": "Norwich City",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Blackburn Rovers",
+   "away": "Middlesbrough",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Queens Park Rangers",
+   "away": "Bolton Wanderers",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Derby County",
+   "away": "Cardiff City",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "West Ham United",
+   "away": "Charlton Athletic",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Preston North End",
+   "away": "Wolverhampton Wanderers",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Swansea City",
+   "away": "Sheffield United",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Southampton",
+   "away": "Stoke City",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Wrexham AFC",
+   "away": "Watford",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "West Bromwich Albion",
+   "away": "Burnley",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Casa Pia",
+   "away": "Benfica",
+   "goals": 3,
+   "completed": false,
+   "detail": {
+    "Benfica": 3,
+    "Casa Pia": 0
+   }
+  },
+  {
+   "home": "Moreirense FC",
+   "away": "Benfica",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "CS Maritimo",
+   "away": "Acad\u00e9mico de Viseu",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Estoril",
+   "away": "Rio Ave FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Sporting Lisbon",
+   "away": "Alverca",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Vit\u00f3ria SC",
+   "away": "Nacional",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Santa Clara",
+   "away": "Famalic\u00e3o",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "FC Porto",
+   "away": "Arouca",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Gil Vicente",
+   "away": "Casa Pia",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "River Plate",
+   "away": "Argentinos Juniors",
+   "goals": 2,
+   "completed": true,
+   "detail": {
+    "River Plate": 2,
+    "Argentinos Juniors": 0
+   }
+  },
+  {
+   "home": "Barracas Central",
+   "away": "Rosario Central",
+   "goals": 1,
+   "completed": true,
+   "detail": {
+    "Barracas Central": 0,
+    "Rosario Central": 1
+   }
+  },
+  {
+   "home": "Central C\u00f3rdoba",
+   "away": "Instituto de C\u00f3rdoba",
+   "goals": 1,
+   "completed": true,
+   "detail": {
+    "Central C\u00f3rdoba": 0,
+    "Instituto de C\u00f3rdoba": 1
+   }
+  },
+  {
+   "home": "Estudiantes de R\u00edo Cuarto",
+   "away": "Atl\u00e9tico Tucuman",
+   "goals": 1,
+   "completed": true,
+   "detail": {
+    "Atl\u00e9tico Tucuman": 1,
+    "Estudiantes de R\u00edo Cuarto": 0
+   }
+  },
+  {
+   "home": "Lanus",
+   "away": "Independiente",
+   "goals": 0,
+   "completed": false,
+   "detail": {
+    "Independiente": 0,
+    "Lanus": 0
+   }
+  },
+  {
+   "home": "Velez Sarsfield BA",
+   "away": "Defensa y Justicia",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Gimnasia Mendoza",
+   "away": "Talleres",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Aldosivi Mar del Plata",
+   "away": "Union Santa Fe",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Estudiantes de R\u00edo Cuarto",
+   "away": "San Lorenzo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atl\u00e9tico Tucuman",
+   "away": "Instituto de C\u00f3rdoba",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Gimnasia La Plata",
+   "away": "Gimnasia Mendoza",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Independiente",
+   "away": "Independiente Rivadavia",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atl\u00e9tico Hurac\u00e1n",
+   "away": "Deportivo Riestra",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Newells Old Boys",
+   "away": "Banfield",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Barracas Central",
+   "away": "Platense",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Sarmiento de Junin",
+   "away": "Estudiantes",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Belgrano de Cordoba",
+   "away": "Defensa y Justicia",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "River Plate",
+   "away": "Velez Sarsfield BA",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Racing Club",
+   "away": "Boca Juniors",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "CA Tigre BA",
+   "away": "Central C\u00f3rdoba",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Lanus",
+   "away": "Argentinos Juniors",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Talleres",
+   "away": "Rosario Central",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atl\u00e9tico Hurac\u00e1n",
+   "away": "Estudiantes de R\u00edo Cuarto",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Union Santa Fe",
+   "away": "Sarmiento de Junin",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Deportivo Riestra",
+   "away": "Velez Sarsfield BA",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Rosario Central",
+   "away": "Gimnasia La Plata",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Boca Juniors",
+   "away": "Lanus",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atl\u00e9tico Tucuman",
+   "away": "Belgrano de Cordoba",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Talleres",
+   "away": "Central C\u00f3rdoba",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Banfield",
+   "away": "River Plate",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Argentinos Juniors",
+   "away": "Aldosivi Mar del Plata",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Independiente",
+   "away": "Gimnasia Mendoza",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Independiente Rivadavia",
+   "away": "Racing Club",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Defensa y Justicia",
+   "away": "Platense",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Estudiantes",
+   "away": "Newells Old Boys",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "CA Tigre BA",
+   "away": "Barracas Central",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Instituto de C\u00f3rdoba",
+   "away": "San Lorenzo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Am\u00e9rica",
+   "away": "Atl\u00e9tico San Luis",
+   "goals": 3,
+   "completed": true,
+   "detail": {
+    "Am\u00e9rica": 3,
+    "Atl\u00e9tico San Luis": 0
+   }
+  },
+  {
+   "home": "Santos Laguna",
+   "away": "Guadalajara",
+   "goals": 1,
+   "completed": true,
+   "detail": {
+    "Santos Laguna": 0,
+    "Guadalajara": 1
+   }
+  },
+  {
+   "home": "Tijuana",
+   "away": "Cruz Azul",
+   "goals": 3,
+   "completed": true,
+   "detail": {
+    "Tijuana": 2,
+    "Cruz Azul": 1
+   }
+  },
+  {
+   "home": "Necaxa",
+   "away": "Le\u00f3n",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Pachuca",
+   "away": "Puebla",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Tigres",
+   "away": "Atlante FC",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Le\u00f3n",
+   "away": "Monterrey",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "FC Ju\u00e1rez",
+   "away": "Am\u00e9rica",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Quer\u00e9taro",
+   "away": "Toluca",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Guadalajara",
+   "away": "Tijuana",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Puebla",
+   "away": "Santos Laguna",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Cruz Azul",
+   "away": "Atlas",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atl\u00e9tico San Luis",
+   "away": "Pachuca",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Pumas",
+   "away": "Necaxa",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Vitoria",
+   "away": "Botafogo",
+   "goals": 1,
+   "completed": true,
+   "detail": {
+    "Vitoria": 1,
+    "Botafogo": 0
+   }
+  },
+  {
+   "home": "Mirassol",
+   "away": "Flamengo",
+   "goals": 6,
+   "completed": true,
+   "detail": {
+    "Mirassol": 1,
+    "Flamengo": 5
+   }
+  },
+  {
+   "home": "Corinthians",
+   "away": "Cruzeiro",
+   "goals": 3,
+   "completed": true,
+   "detail": {
+    "Corinthians": 1,
+    "Cruzeiro": 2
+   }
+  },
+  {
+   "home": "Internacional",
+   "away": "Remo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Fluminense",
+   "away": "Remo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Internacional",
+   "away": "Atletico Mineiro",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Cruzeiro",
+   "away": "Flamengo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Vitoria",
+   "away": "Bahia",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Bragantino-SP",
+   "away": "Gr\u00eamio",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Palmeiras",
+   "away": "Vasco da Gama",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Chapecoense",
+   "away": "Sao Paulo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Santos",
+   "away": "Mirassol",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Coritiba",
+   "away": "Corinthians",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Botafogo",
+   "away": "Atletico Paranaense",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atletico Mineiro",
+   "away": "Vitoria",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Sao Paulo",
+   "away": "Bragantino-SP",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Vasco da Gama",
+   "away": "Cruzeiro",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atletico Paranaense",
+   "away": "Fluminense",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Flamengo",
+   "away": "Botafogo",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Corinthians",
+   "away": "Santos",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Bahia",
+   "away": "Internacional",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Gr\u00eamio",
+   "away": "Chapecoense",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Mirassol",
+   "away": "Palmeiras",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Remo",
+   "away": "Coritiba",
    "goals": null,
    "completed": false,
    "detail": {}
