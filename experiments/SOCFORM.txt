@@ -1,1 +1,2 @@
 rebuild 1814
+2026-08-17T18:18Z socform: +SP2 I2 E2 E3 (Segunda slip legs unmatched)

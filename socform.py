@@ -38,9 +38,14 @@ UA = "Mozilla/5.0 (compatible; parlay-research/1.0)"
 MMZ_CUR = ['2627', '2526']            # current European season, plus the tail
 MMZ_DIVS = ['E0', 'E1', 'SP1', 'I1', 'D1', 'F1', 'N1', 'P1', 'B1',
             'T1', 'G1', 'SC0',    # Turkey, Greece, Scotland -- all on the board
-            'F2', 'D2']           # Ligue 2 / 2.Bundesliga: Friday-board staples
+            'F2', 'D2',           # Ligue 2 / 2.Bundesliga: Friday-board staples
                                   # (Guingamp was a live DC candidate on 8/14
                                   #  with its entire league never pulled)
+            'SP2', 'I2', 'E2', 'E3']
+                                  # Segunda / Serie B / League One+Two: the
+                                  # 8/17 live slip carried Almeria and Gijon
+                                  # with NO form rows -- same hole as sococalib,
+                                  # second file. unmatched 192 -> 218 that day.
 # The unmatched tail on 8/13 was 329 names and MOST were not join failures
 # at all -- they were whole leagues never pulled. football-data's new/ folder
 # carries sixteen countries; six were being read. Every one below has
