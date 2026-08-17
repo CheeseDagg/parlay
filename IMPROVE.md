@@ -33,6 +33,32 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- Eight leagues join the measured universe (the Segunda lesson): Ryan's LIVE
+  25-leg slip carried five legs no table could price. Segunda, Serie B,
+  League One, League Two, Bundesliga 2, Ligue 2, Turkey, Greece -- 22,023
+  closing-odds matches -- now resolve through sococalib -> socbase (all
+  eight odds-API keys verified returning n/mean/draw + under ladders;
+  Segunda U5.5 = 96.9%). Same hole existed in TWO files: sococalib.DIVS and
+  socform.MMZ_DIVS each kept their own list; both patched, socform unmatched
+  fell 218 -> 175 and almeria / sp gijon / burgos now carry form. formcond
+  re-derived over the wider pool: tail n 7,851 -> 11,157, all four pace
+  rungs and all four identity layers still ship (gains +0.00105..+0.00194,
+  every one beating all 20 shuffles). Of the slip's five dark legs, TWO
+  (Almeria, Gijon -- both Segunda) are now measured; the other three
+  (Felgueiras/POR-2, AB Argir/Faroe, Decic/Montenegro) have no source file
+  anywhere -- a boundary, not a cut corner. Two claims died on verification:
+  Depor-Elche is keyed La Liga and Cardiff-Wrexham Championship (summer
+  division changes), so neither "upgraded" -- they were already measured.
+  Found en route, fixed structurally: the branch-sync push double-fired
+  every runner workflow; cancel-in-progress killed the main run MID-BUILD,
+  if:always() published its tee-truncated EMPTY txt, and the survivor's
+  real build died in rebase conflicts with the retry loop exiting 0. All
+  three workflows now fire on main only, install output only if the build
+  step succeeded AND produced bytes, and FAIL when five pushes cannot land.
+  API boundary stands: FanDuel's API posts alt-total ladders for almost no
+  soccer game (1 of 253 groups on the 16:35Z board) -- Segunda rungs score
+  in edge the moment the API carries them; app-only SGP ladders stay out of
+  reach.
 - socform keys carry their LEAGUE: the Argentine River Plate spent two days
   wearing a Uruguayan minnow's LLLLLW / 0.5 gf (both normalise to 'river
   plate'; last file parsed owned the name-only key), and the wrong club's
