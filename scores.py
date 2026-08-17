@@ -115,7 +115,18 @@ def main():
         print(f"MLB scores unavailable ({type(e).__name__}: {e})")
     key = os.environ.get("ODDS_API_KEY", "")
     if key:
-        for sp in ("soccer_concacaf_leagues_cup", "soccer_usa_mls"):
+        # The third file to learn the 8/17 lesson (sococalib.DIVS, then
+        # socform.MMZ_DIVS): this list is a COVERAGE statement, and a league
+        # missing from it makes a live slip ungradeable in silence. The 8/17
+        # 25-legger sat across NINE leagues while this pulled two. Every
+        # league with a leg on an open slip belongs here; ~1 API credit per
+        # league per pull is nothing beside an ungraded live ticket.
+        for sp in ("soccer_concacaf_leagues_cup", "soccer_usa_mls",
+                   "soccer_sweden_allsvenskan", "soccer_denmark_superliga",
+                   "soccer_spain_segunda_division", "soccer_spain_la_liga",
+                   "soccer_efl_champ", "soccer_portugal_primeira_liga",
+                   "soccer_argentina_primera_division", "soccer_mexico_ligamx",
+                   "soccer_brazil_campeonato"):
             try:
                 got = soccer_scores(key, sp)
                 doc["soccer"].extend(got)
