@@ -34,7 +34,11 @@ SLIPS = os.path.join(HERE, 'slips.json')
 CALIB = os.path.join(HERE, 'calibration.csv')
 TICKETS = os.path.join(HERE, 'TICKETS.md')
 
-LEG = re.compile(r'^(?P<lab>.*?)\s+(?P<price>[+-]\d{3,5})(?:\s+p=(?P<p>0?\.\d+))?\s*$')
+# price accepts +0 as "HIDDEN BY THE APP": FanDuel SGP+ shows no per-leg
+# prices, and 8/17's 25-legger could not be logged at all -- rules 29/31
+# blocked by a regex. A hidden price is a fact about the app, not a reason
+# the ledger goes empty; model p still rides in via p=.
+LEG = re.compile(r'^(?P<lab>.*?)\s+(?P<price>[+-]\d{1,5})(?:\s+p=(?P<p>0?\.\d+))?\s*$')
 
 
 def parse_legs(text):
@@ -218,6 +222,11 @@ def selftest():
            note='third', files=_d2)
     chk(json.load(open(_d2['slips']))['slips'][0].get('settled') == 'won',
         "hand-added settlement flags survive the rewrite")
+
+    _l, _w = parse_legs("Hidden SGP Leg +0 p=0.93")
+    chk(_l and _l[0]['price'] == 0 and _l[0]['p'] == 0.93,
+        "an SGP+ leg with the price HIDDEN logs at +0 with its model p -- "
+        "the 8/17 25-legger was unloggable before this")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1

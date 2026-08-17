@@ -291,3 +291,31 @@ again.
 - [ ] Mansur Abdul Malik ML (v Stoltzfus) — -554
 - [ ] Kaue Fernandes by KO/TKO (v Turner) — +221
 - [ ] Islam Makhachev by Submission (v Garry) — +211
+
+## Mon 25-leg soccer SGPx — +535 — placed 2026-08-17T17:10Z
+
+- [ ] U5.5 Hacken v Halmstads (SGP) — +0 (model 93.4%)
+- [ ] Hacken And Draw DC (SGP) — +0 (model 89.8%)
+- [ ] U5.5 Brondby v Sonderjyske (SGP) — +0 (model 95.2%)
+- [ ] Brondby And Draw DC (SGP) — +0 (model 89.5%)
+- [ ] U5.5 Casa Pia v Benfica (SGP) — +0 (model 95.6%)
+- [ ] Benfica And Draw DC (SGP) — +0 (model 94.6%)
+- [ ] U5.5 Almeria v Eldense (SGP) — +0
+- [ ] Almeria And Draw DC (SGP) — +0 (model 88.9%)
+- [ ] U5.5 Velez v Defensa y Justicia (SGP) — +0 (model 96.9%)
+- [ ] Velez And Draw DC (SGP) — +0 (model 80.4%)
+- [ ] U5.5 Pachuca v Puebla (SGP) — +0 (model 95.3%)
+- [ ] Pachuca And Draw DC (SGP) — +0 (model 84.5%)
+- [ ] U5.5 Internacional v Remo (SGP) — +0 (model 94.7%)
+- [ ] Internacional And Draw DC (SGP) — +0 (model 85.6%)
+- [ ] U4.5 Felgueiras v AVS Futebol — +0
+- [ ] U5.5 Arka Gdynia v Puszcza Niepolomice — +0 (model 94.8%)
+- [ ] U5.5 AB Argir v Klaksvikar Itrottarfelag — +0
+- [ ] U4.5 FK Decic v FK Bokelj — +0
+- [ ] U4.5 Deportivo v Elche — +0 (model 86.2%)
+- [ ] U5.5 Cardiff v Wrexham — +0 (model 95.4%)
+- [ ] U4.5 Lanus v CA Independiente — +0 (model 93.5%)
+- [ ] U4.5 Gimnasia Mendoza v Talleres — +0 (model 93.5%)
+- [ ] U5.5 Necaxa v Leon — +0 (model 94.6%)
+- [ ] U5.5 Atl Tucuman v Instituto (SATURDAY) — +0 (model 97.1%)
+- [ ] U5.5 Sporting Gijon v Burgos (SUNDAY) — +0
