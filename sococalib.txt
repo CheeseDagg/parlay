@@ -7,11 +7,19 @@
   Netherlands Eredivisie: 2068 matches with closing odds
   Portugal Primeira Liga: 2142 matches with closing odds
   Belgium Pro League: 2085 matches with closing odds
+  Spain Segunda: 3234 matches with closing odds
+  Turkey Super Lig: 2447 matches with closing odds
+  Greece Super League: 1669 matches with closing odds
+  Germany Bundesliga 2: 2142 matches with closing odds
+  Italy Serie B: 2657 matches with closing odds
+  France Ligue 2: 2410 matches with closing odds
+  England League One: 3712 matches with closing odds
+  England League Two: 3752 matches with closing odds
   USA MLS: 6085 matches with closing odds
   Mexico Liga MX: 4682 matches with closing odds
   Argentina Primera: 6295 matches with closing odds
   Brazil Serie A: 5534 matches with closing odds
-  Japan J-League: 4523 matches with closing odds
+  Japan J-League: 4533 matches with closing odds
   China Super League: 2973 matches with closing odds
   Denmark Superliga: 2968 matches with closing odds
   Finland Veikkausliiga: 2658 matches with closing odds
@@ -24,29 +32,29 @@
   Switzerland Super League: 2692 matches with closing odds
   Ireland Premier: 2697 matches with closing odds
 
-  85130 matches with closing odds and results
+  107163 matches with closing odds and results
 
   DE-VIG RELIABILITY -- n-weighted mean |predicted - actual|
-    3-way mult    0.86 points   |  favourite DC mult    1.06 points
-    3-way power   0.32 points   |  favourite DC power   0.57 points
-    under 2.5 (2-way mult)   1.25 points over 22617 matches
+    3-way mult    0.93 points   |  favourite DC mult    1.12 points
+    3-way power   0.31 points   |  favourite DC power   0.60 points
+    under 2.5 (2-way mult)   0.73 points over 44640 matches
 
   favourite-DC reliability by bin (mult):
-    said  64.3%  happened  64.9%   n=2335
-    said  67.7%  happened  67.3%   n=19703
-    said  72.4%  happened  73.7%   n=20509
-    said  77.4%  happened  79.0%   n=16554
-    said  82.3%  happened  83.2%   n=13479
-    said  87.3%  happened  88.6%   n=8518
-    said  92.0%  happened  93.7%   n=3592
-    said  96.1%  happened  97.5%   n=440
+    said  64.3%  happened  64.4%   n=2868
+    said  67.7%  happened  67.5%   n=25664
+    said  72.4%  happened  74.1%   n=26825
+    said  77.4%  happened  79.0%   n=21209
+    said  82.3%  happened  83.2%   n=16332
+    said  87.3%  happened  88.7%   n=9754
+    said  92.0%  happened  93.9%   n=4026
+    said  96.0%  happened  97.5%   n=485
 
   BASE RATES for the leagues openfootball lacks:
     USA MLS                n=6085   draw 25.1%  goals 2.91  U2.5 43.3%
     Mexico Liga MX         n=4682   draw 27.1%  goals 2.66  U2.5 49.5%
     Argentina Primera      n=6295   draw 30.2%  goals 2.23  U2.5 61.1%
     Brazil Serie A         n=5534   draw 26.9%  goals 2.39  U2.5 56.5%
-    Japan J-League         n=4523   draw 24.9%  goals 2.62  U2.5 51.5%
+    Japan J-League         n=4533   draw 24.8%  goals 2.62  U2.5 51.4%
     China Super League     n=2973   draw 25.3%  goals 2.92  U2.5 44.0%
     Denmark Superliga      n=2968   draw 26.1%  goals 2.79  U2.5 46.5%
     Finland Veikkausliiga  n=2658   draw 25.5%  goals 2.64  U2.5 50.9%
@@ -59,5 +67,5 @@
     Switzerland Super League n=2692   draw 25.6%  goals 3.01  U2.5 42.0%
     Ireland Premier        n=2697   draw 24.8%  goals 2.58  U2.5 52.1%
 
-  rows from the CURRENT (2026-27 / 2026) season: 3302 -- form exists here
+  rows from the CURRENT (2026-27 / 2026) season: 4917 -- form exists here
 wrote /home/runner/work/parlay/parlay/sococalib.json
