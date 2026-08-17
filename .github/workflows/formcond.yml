@@ -1,7 +1,9 @@
 name: Soccer form conditioning
 on:
   workflow_dispatch: {}
-  push: { paths: ['experiments/FORMCOND.txt'] }
+  push: { branches: [main], paths: ['experiments/FORMCOND.txt'] }
+# branches: [main] is load-bearing -- see socform.yml for the 8/17 race that
+# published an empty file and lost the real build. Same three rules here.
 permissions: { contents: write }
 concurrency: { group: parlay-formcond, cancel-in-progress: true }
 jobs:
@@ -15,15 +17,21 @@ jobs:
       - run: |
           set -o pipefail
           python3 formcond.py --selftest | tail -2
-          python3 formcond.py 2>&1 | tee formcond.txt
-      - if: always()
-        run: |
+          python3 formcond.py 2>&1 | tee formcond.new
+          test -s formcond.new
+          mv formcond.new formcond.txt
+      - run: |
           git config user.name  "parlay-bot"
           git config user.email "parlay-bot@users.noreply.github.com"
-          git add formcond.json formcond.txt 2>/dev/null || git add formcond.txt
-          git diff --cached --quiet && exit 0
+          mkdir -p /tmp/pub
+          cp formcond.txt formcond.json /tmp/pub/
           for a in 1 2 3 4 5; do
-            git commit -m "soccer form conditioning $(date -u +%F)" || true
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/pub/formcond.txt /tmp/pub/formcond.json .
+            git add formcond.txt formcond.json
+            git diff --cached --quiet && exit 0
+            git commit -m "soccer form conditioning $(date -u +%F)"
             git push origin HEAD:main && exit 0
-            git fetch origin main && git rebase origin/main || git rebase --abort
           done
+          exit 1

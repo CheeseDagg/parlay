@@ -1,7 +1,11 @@
 name: Soccer de-vig calibration
 on:
   workflow_dispatch: {}
-  push: { paths: ['experiments/SOCOCALIB.txt'] }
+  push: { branches: [main], paths: ['experiments/SOCOCALIB.txt'] }
+# branches: [main] is load-bearing -- see socform.yml for the 8/17 race that
+# published an empty file and lost the real build. This workflow survived the
+# same double-fire only because its output is deterministic (the second run's
+# commit was an empty diff). Same three rules here anyway.
 permissions: { contents: write }
 concurrency: { group: parlay-sococalib, cancel-in-progress: true }
 jobs:
@@ -15,15 +19,21 @@ jobs:
       - run: |
           set -o pipefail
           python3 sococalib.py --selftest | tail -2
-          python3 sococalib.py 2>&1 | tee sococalib.txt
-      - if: always()
-        run: |
+          python3 sococalib.py 2>&1 | tee sococalib.new
+          test -s sococalib.new
+          mv sococalib.new sococalib.txt
+      - run: |
           git config user.name  "parlay-bot"
           git config user.email "parlay-bot@users.noreply.github.com"
-          git add sococalib.json sococalib.txt 2>/dev/null || git add sococalib.txt
-          git diff --cached --quiet && exit 0
+          mkdir -p /tmp/pub
+          cp sococalib.txt sococalib.json /tmp/pub/
           for a in 1 2 3 4 5; do
-            git commit -m "soccer de-vig calibration $(date -u +%F)" || true
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/pub/sococalib.txt /tmp/pub/sococalib.json .
+            git add sococalib.txt sococalib.json
+            git diff --cached --quiet && exit 0
+            git commit -m "soccer de-vig calibration $(date -u +%F)"
             git push origin HEAD:main && exit 0
-            git fetch origin main && git rebase origin/main || git rebase --abort
           done
+          exit 1

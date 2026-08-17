@@ -1,7 +1,14 @@
 name: Soccer team form
 on:
   workflow_dispatch: {}
-  push: { paths: ['experiments/SOCFORM.txt'] }
+  push: { branches: [main], paths: ['experiments/SOCFORM.txt'] }
+# branches: [main] is load-bearing. On 8/17 the branch-sync push re-fired
+# this workflow on the claude branch 8s after the main run; cancel-in-progress
+# killed the main run MID-BUILD and its `if: always()` publish step committed
+# the tee-truncated EMPTY socform.txt to main, then the survivor's real output
+# died in rebase conflicts against that wipe and the retry loop exited 0.
+# Three rules now: fire on main only; never publish unless the build step
+# succeeded AND produced bytes; a publish that cannot land after 5 tries FAILS.
 permissions: { contents: write }
 concurrency: { group: parlay-socform, cancel-in-progress: true }
 jobs:
@@ -15,15 +22,21 @@ jobs:
       - run: |
           set -o pipefail
           python3 socform.py --selftest | tail -2
-          python3 socform.py 2>&1 | tee socform.txt
-      - if: always()
-        run: |
+          python3 socform.py 2>&1 | tee socform.new
+          test -s socform.new
+          mv socform.new socform.txt
+      - run: |
           git config user.name  "parlay-bot"
           git config user.email "parlay-bot@users.noreply.github.com"
-          git add socform.json socform.txt 2>/dev/null || git add socform.txt
-          git diff --cached --quiet && exit 0
+          mkdir -p /tmp/pub
+          cp socform.txt socform.json /tmp/pub/
           for a in 1 2 3 4 5; do
-            git commit -m "soccer team form $(date -u +%F\ %H:%M)" || true
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/pub/socform.txt /tmp/pub/socform.json .
+            git add socform.txt socform.json
+            git diff --cached --quiet && exit 0
+            git commit -m "soccer team form $(date -u +%F\ %H:%M)"
             git push origin HEAD:main && exit 0
-            git fetch origin main && git rebase origin/main || git rebase --abort
           done
+          exit 1

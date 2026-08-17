@@ -1,1 +1,2 @@
 2026-08-17T18:18Z formcond: re-derive over 8 new sococalib leagues
+2026-08-17T18:24Z retrigger: first attempt lost to double-fire race
