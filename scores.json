@@ -1,237 +1,147 @@
 {
- "as_of": "2026-08-16T23:42Z",
- "date": "2026-08-16",
+ "as_of": "2026-08-17T10:06Z",
+ "date": "2026-08-17",
  "mlb": [
+  {
+   "away": "STL",
+   "home": "CIN",
+   "key": "STL@CIN",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "STL",
+   "home": "CIN",
+   "key": "STL@CIN",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
   {
    "away": "BAL",
    "home": "TB",
    "key": "BAL@TB",
-   "through5": 4,
-   "current": 12,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "BOS",
-   "home": "PIT",
-   "key": "BOS@PIT",
-   "through5": 10,
-   "current": 11,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "AZ",
-   "home": "ATL",
-   "key": "AZ@ATL",
-   "through5": 3,
-   "current": 8,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "NYY",
-   "home": "TOR",
-   "key": "NYY@TOR",
-   "through5": 2,
-   "current": 7,
-   "inning": 10,
-   "final": true
-  },
-  {
-   "away": "WSH",
-   "home": "NYM",
-   "key": "WSH@NYM",
-   "through5": 6,
-   "current": 7,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "SD",
-   "home": "CLE",
-   "key": "SD@CLE",
-   "through5": 3,
-   "current": 5,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "CWS",
-   "home": "DET",
-   "key": "CWS@DET",
-   "through5": 7,
-   "current": 12,
-   "inning": 9,
-   "final": true
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
   },
   {
    "away": "MIA",
-   "home": "CIN",
-   "key": "MIA@CIN",
-   "through5": 0,
-   "current": 8,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "PHI",
-   "home": "MIN",
-   "key": "PHI@MIN",
-   "through5": 5,
-   "current": 12,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "STL",
-   "home": "CHC",
-   "key": "STL@CHC",
-   "through5": 11,
-   "current": 15,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "COL",
-   "home": "SF",
-   "key": "COL@SF",
-   "through5": 13,
-   "current": 20,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "TEX",
-   "home": "ATH",
-   "key": "TEX@ATH",
-   "through5": 4,
-   "current": 7,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "KC",
-   "home": "LAA",
-   "key": "KC@LAA",
-   "through5": 2,
-   "current": 3,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "MIL",
-   "home": "LAD",
-   "key": "MIL@LAD",
-   "through5": 3,
-   "current": 8,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "SEA",
-   "home": "HOU",
-   "key": "SEA@HOU",
+   "home": "PHI",
+   "key": "MIA@PHI",
    "through5": null,
-   "current": 1,
-   "inning": 2,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "DET",
+   "home": "PIT",
+   "key": "DET@PIT",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "AZ",
+   "home": "BOS",
+   "key": "AZ@BOS",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "SD",
+   "home": "NYM",
+   "key": "SD@NYM",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "ATH",
+   "home": "KC",
+   "key": "ATH@KC",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "ATL",
+   "home": "MIN",
+   "key": "ATL@MIN",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "CWS",
+   "home": "CHC",
+   "key": "CWS@CHC",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "LAD",
+   "home": "COL",
+   "key": "LAD@COL",
+   "through5": null,
+   "current": null,
+   "inning": null,
    "final": false
   }
  ],
  "soccer": [
   {
-   "home": "Houston Dynamo",
-   "away": "LA Galaxy",
-   "goals": 1,
-   "completed": true,
-   "detail": {
-    "Houston Dynamo": 1,
-    "LA Galaxy": 0
-   }
-  },
-  {
-   "home": "Nashville SC",
-   "away": "Inter Miami CF",
-   "goals": 5,
-   "completed": true,
-   "detail": {
-    "Nashville SC": 4,
-    "Inter Miami CF": 1
-   }
-  },
-  {
-   "home": "Real Salt Lake",
-   "away": "Minnesota United FC",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "Real Salt Lake": 1,
-    "Minnesota United FC": 1
-   }
-  },
-  {
-   "home": "Colorado Rapids",
-   "away": "Sporting Kansas City",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "Colorado Rapids": 2,
-    "Sporting Kansas City": 0
-   }
-  },
-  {
-   "home": "Los Angeles FC",
-   "away": "San Diego FC",
-   "goals": 1,
-   "completed": true,
-   "detail": {
-    "Los Angeles FC": 0,
-    "San Diego FC": 1
-   }
-  },
-  {
-   "home": "San Jose Earthquakes",
-   "away": "St. Louis City SC",
-   "goals": 4,
-   "completed": true,
-   "detail": {
-    "San Jose Earthquakes": 1,
-    "St. Louis City SC": 3
-   }
-  },
-  {
    "home": "Chicago Fire",
    "away": "Portland Timbers",
-   "goals": 2,
-   "completed": false,
+   "goals": 3,
+   "completed": true,
    "detail": {
     "Chicago Fire": 2,
-    "Portland Timbers": 0
+    "Portland Timbers": 1
    }
   },
   {
    "home": "New York City FC",
    "away": "Philadelphia Union",
-   "goals": 3,
-   "completed": false,
+   "goals": 5,
+   "completed": true,
    "detail": {
     "New York City FC": 2,
-    "Philadelphia Union": 1
+    "Philadelphia Union": 3
    }
   },
   {
    "home": "Austin FC",
    "away": "FC Dallas",
-   "goals": null,
-   "completed": false,
-   "detail": {}
+   "goals": 3,
+   "completed": true,
+   "detail": {
+    "Austin FC": 1,
+    "FC Dallas": 2
+   }
   },
   {
    "home": "Seattle Sounders FC",
    "away": "Vancouver Whitecaps FC",
-   "goals": null,
-   "completed": false,
-   "detail": {}
+   "goals": 2,
+   "completed": true,
+   "detail": {
+    "Seattle Sounders FC": 0,
+    "Vancouver Whitecaps FC": 2
+   }
   },
   {
    "home": "Columbus Crew SC",
