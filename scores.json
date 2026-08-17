@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-17T10:06Z",
+ "as_of": "2026-08-17T15:31Z",
  "date": "2026-08-17",
  "mlb": [
   {
@@ -7,8 +7,8 @@
    "home": "CIN",
    "key": "STL@CIN",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {

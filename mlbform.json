@@ -4,10 +4,10 @@
  "games": {
   "STL@CIN": {
    "away_sp": {
-    "name": null,
-    "hr9_5": null,
-    "r_start": null,
-    "note": "NO PROBABLE LISTED"
+    "name": "Andre Pallante",
+    "hr9_5": 0.0,
+    "r_start": 1.2,
+    "starts": 5
    },
    "home_sp": {
     "name": "Rhett Lowder",
@@ -110,10 +110,10 @@
     "starts": 5
    },
    "home_sp": {
-    "name": null,
+    "name": "Alec Gamboa",
     "hr9_5": null,
     "r_start": null,
-    "note": "NO PROBABLE LISTED"
+    "starts": 0
    },
    "away_form": {
     "n": 10,
