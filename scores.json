@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-17T21:05Z",
+ "as_of": "2026-08-17T21:11Z",
  "date": "2026-08-17",
  "mlb": [
   {
@@ -764,7 +764,7 @@
    "home": "Casa Pia",
    "away": "Benfica",
    "goals": 7,
-   "completed": false,
+   "completed": true,
    "detail": {
     "Benfica": 7,
     "Casa Pia": 0
@@ -859,11 +859,11 @@
   {
    "home": "Lanus",
    "away": "Independiente",
-   "goals": 1,
+   "goals": 3,
    "completed": false,
    "detail": {
-    "Independiente": 1,
-    "Lanus": 0
+    "Independiente": 2,
+    "Lanus": 1
    }
   },
   {
