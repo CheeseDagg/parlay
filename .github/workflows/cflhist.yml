@@ -7,8 +7,7 @@ name: CFL history (Wikipedia per-team pages)
 # runs find nothing new and commit nothing.
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: "17 12 * * 1"   # Mondays 12:17 UTC, after CFL weekends
+  # ON HOLD 2026-08-17 -- schedule was: cron "17 12 * * 1" (Mondays after CFL weekends)
 permissions: { contents: write }
 concurrency: { group: parlay-cflhist, cancel-in-progress: true }
 jobs:
