@@ -22,17 +22,6 @@
   "src": "board"
  },
  {
-  "lab": "Sporting Gij\u00f3n DC (derived)",
-  "match": "Sporting Gij\u00f3n v Sabadell FC",
-  "price": -565,
-  "p": 0.8187772896465809,
-  "d": 1.1770666701629133,
-  "t": "2026-08-17T17:00Z",
-  "fam": "SOC",
-  "lg": "soccer_spain_segunda_division",
-  "src": "board"
- },
- {
   "lab": "U5.5 BK Hacken v Halmstads BK (APP RUNG -- price needed)",
   "match": "BK Hacken v Halmstads BK",
   "price": null,
