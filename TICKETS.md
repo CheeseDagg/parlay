@@ -311,7 +311,7 @@ DEAD ~3:50p CT: U5.5 Casa Pia v Benfica went over at 0–7 (~65'). Six legs had 
 - [ ] U5.5 Internacional v Remo (SGP) — +0 (model 94.7%)
 - [ ] Internacional And Draw DC (SGP) — +0 (model 85.6%)
 - [ ] U4.5 Felgueiras v AVS Futebol — +0
-- [ ] U5.5 Arka Gdynia v Puszcza Niepolomice — +0 (model 94.8%)
+- [x] U5.5 Arka Gdynia v Puszcza Niepolomice — +0 (model 94.8%)
 - [ ] U5.5 AB Argir v Klaksvikar Itrottarfelag — +0
 - [ ] U4.5 FK Decic v FK Bokelj — +0
 - [x] U4.5 Deportivo v Elche — +0 (model 86.2%)
