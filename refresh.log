@@ -14,7 +14,7 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_uefa_champs_league_qualification: 7 fixtures
   SOC soccer_netherlands_eredivisie: 7 fixtures
   SOC soccer_portugal_primeira_liga: 8 fixtures
-  SOC soccer_turkey_super_league: 10 fixtures
+  SOC soccer_turkey_super_league: 8 fixtures
   SOC soccer_greece_super_league: 7 fixtures
   SOC soccer_sweden_allsvenskan: 8 fixtures
   SOC soccer_finland_veikkausliiga: 7 fixtures
@@ -27,7 +27,7 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_conmebol_copa_libertadores: 0 fixtures — queried, 8 event(s) returned, none priced by fanduel
   SOC soccer_conmebol_copa_sudamericana: 0 fixtures — queried, 8 event(s) returned, none priced by fanduel
   SOC soccer_argentina_primera_division: 30 fixtures
-  SOC soccer_brazil_serie_b: 10 fixtures
+  SOC soccer_brazil_serie_b: 12 fixtures
   SOC soccer_chile_campeonato: 10 fixtures
   SOC soccer_epl: 10 fixtures
   SOC soccer_spain_la_liga: 16 fixtures
@@ -60,7 +60,7 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_champs_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  legs representable: ~1560 · API credits remaining 12215
+  legs representable: ~1560 · API credits remaining 12135
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -112,7 +112,7 @@ PASS  with no slate at all, a market main of 10+ still flags
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
   board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (DLC-Elche) at -1600, 93.0%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 1 of 906 candidate legs have ALREADY STARTED (now 2026-08-17T15:30Z, newest event on the board 2026-08-31T00:30Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 1 of 906 candidate legs have ALREADY STARTED (now 2026-08-17T16:06Z, newest event on the board 2026-08-31T00:30Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -129,7 +129,7 @@ PASS  the synthesized payout keeps LESS than fair -- the 80% shave is on, so a d
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
   board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (DLC-Elche) at -1600, 93.0%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 1 of 906 candidate legs have ALREADY STARTED (now 2026-08-17T15:30Z, newest event on the board 2026-08-31T00:30Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 1 of 906 candidate legs have ALREADY STARTED (now 2026-08-17T16:06Z, newest event on the board 2026-08-31T00:30Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -145,7 +145,7 @@ PASS  a 99.88% derived DC is outside the sane band -- that exact value (TPS Turk
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
   board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (DLC-Elche) at -1600, 93.0%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 1 of 906 candidate legs have ALREADY STARTED (now 2026-08-17T15:30Z, newest event on the board 2026-08-31T00:30Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 1 of 906 candidate legs have ALREADY STARTED (now 2026-08-17T16:06Z, newest event on the board 2026-08-31T00:30Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -211,7 +211,7 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
   board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (DLC-Elche) at -1600, 93.0%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 1 of 906 candidate legs have ALREADY STARTED (now 2026-08-17T15:30Z, newest event on the board 2026-08-31T00:30Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 1 of 906 candidate legs have ALREADY STARTED (now 2026-08-17T16:06Z, newest event on the board 2026-08-31T00:30Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -269,14 +269,14 @@ wrote /home/runner/work/parlay/parlay/mlbform.json
   GKS Katowice                WLDDDW  ppg 1.5   gf 2.0   ga 1.17  (last 2026-08-02)
   Pogoń Szczecin              WWLDWL  ppg 1.67  gf 1.5   ga 1.0   (last 2026-08-08)
 
-  UNMATCHED OR THIN (218): AEK Athens; PFC Levski Sofia; Dinamo Zagreb; Bodø/Glimt; Hapoel Be'er Sheva; Sabah FK; NK Celje; ŠK Slovan Bratislava; ADO Den Haag; SC Cambuur; Benfica; Casa Pia; Académico de Viseu; CS Maritimo; Estoril; Rio Ave FC; Alverca; Sporting Lisbon; Nacional; Famalicão
+  UNMATCHED OR THIN (217): AEK Athens; PFC Levski Sofia; Dinamo Zagreb; Bodø/Glimt; Hapoel Be'er Sheva; Sabah FK; NK Celje; ŠK Slovan Bratislava; ADO Den Haag; SC Cambuur; Benfica; Casa Pia; Académico de Viseu; CS Maritimo; Estoril; Rio Ave FC; Alverca; Sporting Lisbon; Nacional; Famalicão
   -- unmatched is a statement about the JOIN, not the team. Do not read absence as bad form.
-  persisted 516 teams with form into 'all' (300 of them board-joined)
+  persisted 516 teams with form into 'all' (297 of them board-joined)
 
-  300 matched / 218 not. wrote /home/runner/work/parlay/parlay/socform.json
+  297 matched / 217 not. wrote /home/runner/work/parlay/parlay/socform.json
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
-  mlblines: 189 pregame leg(s) snapshotted, 1102 row(s) total (20 new)
+  mlblines: 191 pregame leg(s) snapshotted, 1104 row(s) total (2 new)
 
 7/7 checks pass
 MLB: 11 games on 2026-08-17
@@ -288,4 +288,4 @@ wrote /home/runner/work/parlay/parlay/scores.json
   Philadelphia Uni @ New York City FC goals=5  FT
   FC Dallas        @ Austin FC        goals=3  FT
   Vancouver Whitec @ Seattle Sounders goals=2  FT
-run conclusion: success at 2026-08-17 15:31
+run conclusion: success at 2026-08-17 16:06

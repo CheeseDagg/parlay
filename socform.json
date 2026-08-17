@@ -409,57 +409,6 @@
    "newest": "2026-05-17",
    "matched": "via Konyaspor"
   },
-  "Trabzonspor": {
-   "form": "LWDLDD",
-   "n": 6,
-   "ppg": 1.0,
-   "gf": 1.0,
-   "ga": 1.5,
-   "totals": [
-    3,
-    3,
-    2,
-    3,
-    2,
-    2
-   ],
-   "newest": "2026-05-17",
-   "matched": "exact"
-  },
-  "Ey\u00fcpspor": {
-   "form": "DWDWWL",
-   "n": 6,
-   "ppg": 1.83,
-   "gf": 2.33,
-   "ga": 1.17,
-   "totals": [
-    6,
-    4,
-    2,
-    3,
-    3,
-    3
-   ],
-   "newest": "2026-05-17",
-   "matched": "exact"
-  },
-  "Gazi\u015fehir Gaziantep": {
-   "form": "LLLLWL",
-   "n": 6,
-   "ppg": 0.5,
-   "gf": 1.0,
-   "ga": 1.83,
-   "totals": [
-    3,
-    3,
-    2,
-    3,
-    3,
-    3
-   ],
-   "newest": "2026-05-16",
-   "matched": "via Gaziantep"
-  },
   "Alanyaspor": {
    "form": "LWDLLD",
    "n": 6,
@@ -14388,7 +14337,6 @@
   "Gil Vicente",
   "Erzurum BB",
   "\u00c7orum FK",
-  "Basaksehir",
   "Amed SK",
   "Iraklis FC",
   "Aris Thessaloniki",
