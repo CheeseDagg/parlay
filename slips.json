@@ -541,7 +541,9 @@
      "price": 0
     }
    ],
-   "note": "FanDuel SGP+, 7 SGP pairs + 11 singles, pays $635 total. Stake INFERRED from Ryan: \"if it hits that's an extra 500 toward the credit card\" -> $100 at +535; correct if different. Per-leg prices hidden by the app (SGP+), logged +0. 20 measured legs joint 18.3%; five UNMEASURED (Almeria U5.5, Felgueiras P2, AB Argir Faroe, Decic Montenegro, Gijon U5.5) put the honest band at 6-10%. Two legs settle NEXT WEEKEND: Tucuman v INSTITUTO Sat, Gijon v Burgos Sun -- slip cannot fully settle before Sunday. DISPOSAL RULE (Ryan's): a win goes to the credit card."
+   "note": "FanDuel SGP+, 7 SGP pairs + 11 singles, pays $635 total. Stake INFERRED from Ryan: \"if it hits that's an extra 500 toward the credit card\" -> $100 at +535; correct if different. Per-leg prices hidden by the app (SGP+), logged +0. 20 measured legs joint 18.3%; five UNMEASURED (Almeria U5.5, Felgueiras P2, AB Argir Faroe, Decic Montenegro, Gijon U5.5) put the honest band at 6-10%. Two legs settle NEXT WEEKEND: Tucuman v INSTITUTO Sat, Gijon v Burgos Sun -- slip cannot fully settle before Sunday. DISPOSAL RULE (Ryan's): a win goes to the credit card.",
+   "settled": "lost",
+   "result": "DEAD 2026-08-17 ~20:50Z: U5.5 Casa Pia v Benfica died at 0-7 (~65min, still live). p=0.956 leg -- a 4.4% event, and with 23 legs at ~.95 avg the modal outcome was exactly one such death. At time of death: 6 legs banked (Hacken U+DC, Brondby U+DC 5g!, Depor-Elche U4.5 2g FT, Cardiff-Wrexham U5.5 2g FT), Benfica DC itself banked, Almeria 3-0 live, Lanus 0-1 live; 4 micro-league legs ungradeable (no feed); 5 not kicked + 2 next weekend. WIN->CARD $500 disposal rule moot. Remaining legs still graded individually for the calibration ledger as they finish."
   }
  ]
 }

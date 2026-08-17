@@ -292,14 +292,16 @@ again.
 - [ ] Kaue Fernandes by KO/TKO (v Turner) — +221
 - [ ] Islam Makhachev by Submission (v Garry) — +211
 
-## Mon 25-leg soccer SGPx — +535 — placed 2026-08-17T17:10Z
+## Mon 25-leg soccer SGPx — +535 — placed 2026-08-17T17:10Z — **LOST 8/17**
 
-- [ ] U5.5 Hacken v Halmstads (SGP) — +0 (model 93.4%)
-- [ ] Hacken And Draw DC (SGP) — +0 (model 89.8%)
-- [ ] U5.5 Brondby v Sonderjyske (SGP) — +0 (model 95.2%)
-- [ ] Brondby And Draw DC (SGP) — +0 (model 89.5%)
-- [ ] U5.5 Casa Pia v Benfica (SGP) — +0 (model 95.6%)
-- [ ] Benfica And Draw DC (SGP) — +0 (model 94.6%)
+DEAD ~3:50p CT: U5.5 Casa Pia v Benfica went over at 0–7 (~65'). Six legs had banked, Benfica's own DC included. Remaining legs still graded individually for calibration.
+
+- [x] U5.5 Hacken v Halmstads (SGP) — +0 (model 93.4%)
+- [x] Hacken And Draw DC (SGP) — +0 (model 89.8%)
+- [x] U5.5 Brondby v Sonderjyske (SGP) — +0 (model 95.2%)
+- [x] Brondby And Draw DC (SGP) — +0 (model 89.5%)
+- [ ] U5.5 Casa Pia v Benfica (SGP) — +0 (model 95.6%)  **<< DEAD 0-7**
+- [x] Benfica And Draw DC (SGP) — +0 (model 94.6%)
 - [ ] U5.5 Almeria v Eldense (SGP) — +0
 - [ ] Almeria And Draw DC (SGP) — +0 (model 88.9%)
 - [ ] U5.5 Velez v Defensa y Justicia (SGP) — +0 (model 96.9%)
@@ -312,8 +314,8 @@ again.
 - [ ] U5.5 Arka Gdynia v Puszcza Niepolomice — +0 (model 94.8%)
 - [ ] U5.5 AB Argir v Klaksvikar Itrottarfelag — +0
 - [ ] U4.5 FK Decic v FK Bokelj — +0
-- [ ] U4.5 Deportivo v Elche — +0 (model 86.2%)
-- [ ] U5.5 Cardiff v Wrexham — +0 (model 95.4%)
+- [x] U4.5 Deportivo v Elche — +0 (model 86.2%)
+- [x] U5.5 Cardiff v Wrexham — +0 (model 95.4%)
 - [ ] U4.5 Lanus v CA Independiente — +0 (model 93.5%)
 - [ ] U4.5 Gimnasia Mendoza v Talleres — +0 (model 93.5%)
 - [ ] U5.5 Necaxa v Leon — +0 (model 94.6%)

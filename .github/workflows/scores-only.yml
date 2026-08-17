@@ -10,7 +10,8 @@ name: Scores only
 on:
   workflow_dispatch: {}
   push:
-    paths: ['experiments/SCORES.txt']   # touch this file to pull scores on demand
+    branches: [main]                    # main only -- the branch-sync push must
+    paths: ['experiments/SCORES.txt']   # not double-fire this (see socform.yml)
 permissions:
   contents: write
 concurrency:
