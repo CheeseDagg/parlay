@@ -1,0 +1,51 @@
+formcond: fetching per-match rows (same routes sococalib audited)
+  England Premier League: 2660
+  England Championship: 3864
+  Spain La Liga: 2660
+  Italy Serie A: 2660
+  Germany Bundesliga: 2142
+  France Ligue 1: 2337
+  Netherlands Eredivisie: 2068
+  Portugal Primeira Liga: 2142
+  Belgium Pro League: 2085
+  Spain Segunda: 3234
+  Turkey Super Lig: 2476
+  Greece Super League: 1669
+  Germany Bundesliga 2: 2142
+  Italy Serie B: 2660
+  France Ligue 2: 2410
+  England League One: 3712
+  England League Two: 3752
+  USA MLS: 6085
+  Mexico Liga MX: 4682
+  Argentina Primera: 6295
+  Brazil Serie A: 5534
+  Japan J-League: 4533
+  China Super League: 2979
+  Denmark Superliga: 2968
+  Finland Veikkausliiga: 2658
+  Norway Eliteserien: 3511
+  Poland Ekstraklasa: 4106
+  Russia Premier League: 3416
+  Sweden Allsvenskan: 3511
+  Austria Bundesliga (odds): 2650
+  Romania Liga 1: 4213
+  Switzerland Super League: 2693
+  Ireland Premier: 2697
+
+  104895 matches with 3+ prior games both sides, 33 leagues
+
+  U2.5: tail gain +0.00151 (n=11157), best of 20 shuffles +0.00008, p=0.048 -> SHIPS
+  U3.5: tail gain +0.00131 (n=11157), best of 20 shuffles +0.00009, p=0.048 -> SHIPS
+  U4.5: tail gain +0.00105 (n=11157), best of 20 shuffles +0.00019, p=0.048 -> SHIPS
+  U5.5: tail gain +0.00134 (n=11157), best of 20 shuffles +0.00008, p=0.048 -> SHIPS
+  U2.5 +identity: tail gain +0.00194 (n=10772), best shuffle +0.00006, p=0.048 -> SHIPS
+  U3.5 +identity: tail gain +0.00153 (n=10772), best shuffle +0.00007, p=0.048 -> SHIPS
+  U4.5 +identity: tail gain +0.00169 (n=10772), best shuffle +0.00002, p=0.048 -> SHIPS
+  U5.5 +identity: tail gain +0.00148 (n=10772), best shuffle +0.00009, p=0.048 -> SHIPS
+
+  wrote formcond.json -- shipped rungs: ['2.5', '3.5', '4.5', '5.5']
+  U2.5 deltas by pace bin (slow->fast): +3.8  +2.2  +0.0  -2.0  -5.3
+  U3.5 deltas by pace bin (slow->fast): +3.5  +2.0  -0.1  -1.5  -5.2
+  U4.5 deltas by pace bin (slow->fast): +2.0  +1.3  -0.1  -0.9  -3.4
+  U5.5 deltas by pace bin (slow->fast): +0.9  +0.9  -0.1  -0.6  -1.7
