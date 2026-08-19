@@ -1,8 +1,7 @@
 
 Successfully installed numpy-2.5.2 scipy-1.18.0
 PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: SD@NYM alternate_totals_1st_5_innings 3.5 vig-sum 1.1208 out of band — rung dropped
-  MLB: 15 games, 15 moneylines, 134 total rungs, 127 F5 rungs
+  MLB: 15 games, 15 moneylines, 134 total rungs, 126 F5 rungs
   MMA: 14 bouts
   WNBA: 5 markets
   WNBA: 102 alternate-total rungs
@@ -61,7 +60,7 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_champs_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  legs representable: ~2223 · API credits remaining 11274
+  legs representable: ~2221 · API credits remaining 11140
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -113,7 +112,7 @@ PASS  with no slate at all, a market main of 10+ still flags
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
   board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 58 of 1543 candidate legs have ALREADY STARTED (now 2026-08-19T17:37Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 56 of 1541 candidate legs have ALREADY STARTED (now 2026-08-19T17:39Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -130,7 +129,7 @@ PASS  the synthesized payout keeps LESS than fair -- the 80% shave is on, so a d
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
   board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 58 of 1543 candidate legs have ALREADY STARTED (now 2026-08-19T17:37Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 56 of 1541 candidate legs have ALREADY STARTED (now 2026-08-19T17:39Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -146,7 +145,7 @@ PASS  a 99.88% derived DC is outside the sane band -- that exact value (TPS Turk
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
   board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 58 of 1543 candidate legs have ALREADY STARTED (now 2026-08-19T17:37Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 56 of 1541 candidate legs have ALREADY STARTED (now 2026-08-19T17:39Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -212,7 +211,7 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
   board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
   board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 58 of 1543 candidate legs have ALREADY STARTED (now 2026-08-19T17:37Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 56 of 1541 candidate legs have ALREADY STARTED (now 2026-08-19T17:39Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -277,7 +276,7 @@ wrote /home/runner/work/parlay/parlay/mlbform.json
   361 matched / 182 not. wrote /home/runner/work/parlay/parlay/socform.json
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
-  mlblines: 245 pregame leg(s) snapshotted, 1350 row(s) total (245 new)
+  mlblines: 245 pregame leg(s) snapshotted, 1350 row(s) total (0 new)
 
 7/7 checks pass
 MLB: 15 games on 2026-08-19
@@ -297,4 +296,4 @@ wrote /home/runner/work/parlay/parlay/scores.json
   SD@NYM     through5=  -  current=  0  inning=2  
   ATL@MIN    through5=  -  current=  0  inning=1  
   CWS@CHC    through5=  -  current=  0  inning=1  
-run conclusion: success at 2026-08-19 17:38
+run conclusion: success at 2026-08-19 17:40
