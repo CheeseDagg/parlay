@@ -4,7 +4,8 @@ name: WNBA route probe (monthly)
 # Blocks change without notice; a monthly re-probe keeps the declaration
 # honest instead of eternal. First Monday of each month, or on demand.
 on:
-  # ON HOLD 2026-08-17 -- schedule was: cron "23 14 * * 1" (first Monday monthly)
+  schedule:
+    - cron: "23 14 * * 1"     # Mondays 14:23 UTC; the job exits unless week 1
   workflow_dispatch: {}
   push: { paths: ['experiments/WNBAPROBE.txt'] }
 permissions: { contents: write }
