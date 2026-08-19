@@ -48,28 +48,42 @@ def today_window_ct(now_utc):
 
 
 def pull(key):
+    """Every layer that can drop a game gets COUNTED AND NAMED. The first run
+    swallowed per-league and per-event errors with bare continues, and 'FD
+    quoted 16' was indistinguishable from 'the pull half-failed' -- Ryan was
+    looking at ~100 games in the app while this reported 31. Never again:
+    a game leaves this census only with its exit written down."""
     sports = _get(f"{ODDS_BASE}/sports/?apiKey={key}")
     soccer = [s['key'] for s in sports
               if s.get('group') == 'Soccer' and s.get('active')]
     now = datetime.now(timezone.utc)
     lo, hi = today_window_ct(now)
-    rows, quoted, seen = [], 0, 0
+    rows, unquoted, league_errs, event_errs = [], [], [], 0
+    seen = future = 0
     for sp in soccer:
         try:
             evs = _get(f"{ODDS_BASE}/sports/{sp}/events?apiKey={key}")
-        except Exception:
+        except Exception as e:
+            league_errs.append(f"{sp}: {type(e).__name__}")
             continue
         for ev in evs:
             t = datetime.fromisoformat(ev['commence_time'].replace('Z', '+00:00'))
-            if not (lo <= t <= hi):
+            if t > hi:
+                future += 1
+                continue
+            if t < lo:
                 continue
             seen += 1
+            name = f"{ev.get('home_team')} v {ev.get('away_team')}"
             try:
                 od = _get(f"{ODDS_BASE}/sports/{sp}/events/{ev['id']}/odds"
                           f"?apiKey={key}&bookmakers=fanduel&markets=btts"
                           f"&oddsFormat=american")
-            except Exception:
+            except Exception as e:
+                event_errs += 1
+                unquoted.append(f"{name} [{sp}] -- FETCH {type(e).__name__}")
                 continue
+            got = False
             for bk in od.get('bookmakers') or []:
                 for mk in bk.get('markets') or []:
                     if mk.get('key') != 'btts':
@@ -77,16 +91,21 @@ def pull(key):
                     px = {o.get('name'): o.get('price') for o in mk.get('outcomes') or []}
                     if 'Yes' not in px or 'No' not in px:
                         continue
-                    quoted += 1
+                    got = True
                     rows.append({
                         'sport': sp, 'league': od.get('sport_title', sp),
                         'home': ev.get('home_team'), 'away': ev.get('away_team'),
                         't': ev['commence_time'],
                         'yes': int(px['Yes']), 'no': int(px['No']),
                         'p_no': round(devig_no(px['No'], px['Yes']), 4)})
+            if not got:
+                unquoted.append(f"{name} [{od.get('sport_title', sp)}] {ev['commence_time']}")
     rows.sort(key=lambda r: r['t'])
     return {'as_of': now.strftime('%Y-%m-%dT%H:%MZ'),
-            'seen_today': seen, 'fd_quoted': quoted, 'rows': rows}
+            'leagues_active': len(soccer), 'league_errors': league_errs,
+            'seen_today': seen, 'seen_future': future,
+            'event_fetch_errors': event_errs,
+            'fd_quoted': len(rows), 'fd_unquoted': unquoted, 'rows': rows}
 
 
 def selftest():
@@ -125,8 +144,17 @@ def main():
         return 1
     doc = pull(key)
     json.dump(doc, open(OUT, 'w'), indent=1)
-    print(f"as_of {doc['as_of']} -- {doc['seen_today']} soccer events today, "
-          f"FanDuel quoted btts on {doc['fd_quoted']}")
+    print(f"as_of {doc['as_of']} -- {doc['leagues_active']} active soccer leagues on "
+          f"the API; {doc['seen_today']} events in today's CT window "
+          f"({doc['seen_future']} later this week), FanDuel quoted btts on "
+          f"{doc['fd_quoted']}, {len(doc['fd_unquoted'])} unquoted, "
+          f"{doc['event_fetch_errors']} fetch errors")
+    for le in doc['league_errors']:
+        print(f"  !! league fetch failed: {le}")
+    if doc['fd_unquoted']:
+        print("  -- in-window but NO FanDuel btts quote via the API:")
+        for u in doc['fd_unquoted']:
+            print(f"     {u}")
     for r in doc['rows']:
         print(f"  {r['t']}  {r['home']} v {r['away']}  "
               f"No {r['no']:+d} / Yes {r['yes']:+d}  pNo={r['p_no']:.3f}  ({r['league']})")
