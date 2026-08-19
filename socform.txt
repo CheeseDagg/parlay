@@ -1,70 +1,81 @@
-  ARG   6295 rows, newest 2026-08-12
-  AUT   2650 rows, newest 2026-08-09
-  B1     320 rows, newest 2026-08-09
-  BRA   5534 rows, newest 2026-08-09
-  CHN   2979 rows, newest 2026-08-09
+  ARG   6310 rows, newest 2026-08-18
+  AUT   2656 rows, newest 2026-08-16
+  B1     329 rows, newest 2026-08-16
+  BRA   5544 rows, newest 2026-08-18
+  CHN   2987 rows, newest 2026-08-15
   D1     306 rows, newest 2026-05-16  << STALE FILE (nothing since 2026-05-16)
-  D2     315 rows, newest 2026-08-09
-  DNK   2968 rows, newest 2026-08-10
-  E0     392 rows, newest 2026-08-08
-  E1     552 rows, newest 2026-05-02  << STALE FILE (nothing since 2026-05-02)
-  E2     552 rows, newest 2026-05-02  << STALE FILE (nothing since 2026-05-02)
-  E3     564 rows, newest 2026-08-08
+  D2     324 rows, newest 2026-08-16
+  DNK   2974 rows, newest 2026-08-17
+  E0     380 rows, newest 2026-05-24  << STALE FILE (nothing since 2026-05-24)
+  E1     564 rows, newest 2026-08-17
+  E2     564 rows, newest 2026-08-15
+  E3     564 rows, newest 2026-08-15
   F1     306 rows, newest 2026-05-17  << STALE FILE (nothing since 2026-05-17)
-  F2     314 rows, newest 2026-08-08
+  F2     323 rows, newest 2026-08-14
   FIN   2658 rows, newest 2026-08-09
   G1     236 rows, newest 2026-05-21  << STALE FILE (nothing since 2026-05-21)
   I1     380 rows, newest 2026-05-24  << STALE FILE (nothing since 2026-05-24)
   I2     380 rows, newest 2026-05-08  << STALE FILE (nothing since 2026-05-08)
   IRL   2697 rows, newest 2026-08-09
-  JPN   4533 rows, newest 2026-08-09
-  MEX   4682 rows, newest 2026-08-03
-  N1     315 rows, newest 2026-08-09
-  NOR   3511 rows, newest 2026-08-09
-  P1     315 rows, newest 2026-08-10
-  POL   4106 rows, newest 2026-08-09
-  ROU   4213 rows, newest 2026-08-10
+  JPN   4543 rows, newest 2026-08-15
+  MEX   4691 rows, newest 2026-08-18
+  N1     324 rows, newest 2026-08-16
+  NOR   3518 rows, newest 2026-08-16
+  P1     323 rows, newest 2026-08-17
+  POL   4113 rows, newest 2026-08-16
+  ROU   4221 rows, newest 2026-08-17
   RUS   3416 rows, newest 2026-08-02
   SC0    240 rows, newest 2026-08-09
-  SP1    389 rows, newest 2026-08-10
-  SP2    472 rows, newest 2026-08-08
-  SWE   3511 rows, newest 2026-08-10
+  SP1    385 rows, newest 2026-08-17
+  SP2    473 rows, newest 2026-08-17
+  SWE   3519 rows, newest 2026-08-17
   SWZ   2693 rows, newest 2026-08-09
-  T1     306 rows, newest 2026-05-17  << STALE FILE (nothing since 2026-05-17)
-  USA   6085 rows, newest 2026-08-08
-  940 teams accumulated
+  T1     315 rows, newest 2026-08-17
+  USA   6100 rows, newest 2026-08-17
+  897 teams accumulated
 
-  Viking FK                   WWDWWL  ppg 2.17  gf 1.67  ga 0.83  (last 2026-08-08)
-  Fenerbahce                  DWWLDW  ppg 1.83  gf 2.5   ga 1.5   (last 2026-05-17)
+  Viking FK                   LWWDWW  ppg 2.17  gf 1.83  ga 1.0   (last 2026-08-14)
+  Fenerbahce                  LDWWLD  ppg 1.33  gf 2.0   ga 1.83  (last 2026-08-15)
   Lyon                        LLWWWW  ppg 2.0   gf 2.0   ga 1.83  (last 2026-05-17)
-  NEC Nijmegen                LWLDDD  ppg 1.0   gf 1.17  ga 1.33  (last 2026-08-08)  [via Nijmegen]
+  NEC Nijmegen                WLWLDD  ppg 1.33  gf 1.67  ga 1.33  (last 2026-08-15)  [via Nijmegen]
   Celtic                      WWWWWW  ppg 3.0   gf 2.83  ga 1.0   (last 2026-08-09)
-  LASK                        WWWWWW  ppg 3.0   gf 3.0   ga 0.5   (last 2026-08-09)
-  AZ Alkmaar                  WDDDDW  ppg 1.67  gf 1.83  ga 1.0   (last 2026-08-08)
-  Fortuna Sittard             DLWLLD  ppg 0.83  gf 1.33  ga 1.83  (last 2026-08-08)
-  FC Utrecht                  LWWWLW  ppg 2.0   gf 1.83  ga 1.5   (last 2026-08-09)
-  Sparta Rotterdam            LLLDLL  ppg 0.17  gf 0.83  ga 2.67  (last 2026-08-09)
-  Excelsior                   WWDWWD  ppg 2.33  gf 3.0   ga 1.17  (last 2026-08-07)
-  FC Zwolle                   LLLWLD  ppg 0.67  gf 1.0   ga 2.5   (last 2026-08-09)
-  Heerenveen                  WDLWWL  ppg 1.67  gf 0.83  ga 1.0   (last 2026-08-09)
-  Go Ahead Eagles             WLLDDD  ppg 1.0   gf 1.33  ga 1.5   (last 2026-08-08)
-  Groningen                   WWWLLD  ppg 1.67  gf 1.5   ga 1.5   (last 2026-08-09)
-  PSV Eindhoven               DWWDWW  ppg 2.33  gf 3.5   ga 1.17  (last 2026-08-08)
-  Feyenoord                   WWDWWD  ppg 2.33  gf 1.67  ga 0.67  (last 2026-08-09)
-  Vitória SC                  LLLDWL  ppg 0.67  gf 0.33  ga 1.83  (last 2026-08-09)
-  Goztepe                     LWDWDD  ppg 1.5   gf 1.5   ga 1.5   (last 2026-05-16)  [via Goztep]
-  Samsunspor                  WLWWWW  ppg 2.5   gf 2.33  ga 1.33  (last 2026-05-16)
-  Galatasaray                 LWLWWD  ppg 1.67  gf 1.83  ga 1.5   (last 2026-05-17)
-  Kasimpasa SK                WLDLWD  ppg 1.33  gf 1.33  ga 1.83  (last 2026-05-17)
-  Çaykur Rizespor             DLWLDW  ppg 1.33  gf 1.5   ga 2.17  (last 2026-05-15)  [via Rizespor]
-  Torku Konyaspor             LLLWWW  ppg 1.5   gf 1.67  ga 1.5   (last 2026-05-17)  [via Konyaspor]
-  Trabzonspor                 LWDLDD  ppg 1.0   gf 1.0   ga 1.5   (last 2026-05-17)
-  Eyüpspor                    DWDWWL  ppg 1.83  gf 2.33  ga 1.17  (last 2026-05-17)
-  Gazişehir Gaziantep         LLLLWL  ppg 0.5   gf 1.0   ga 1.83  (last 2026-05-16)  [via Gaziantep]
-  Alanyaspor                  LWDLLD  ppg 0.83  gf 1.17  ga 1.33  (last 2026-05-16)
-  Besiktas JK                 DLWDLW  ppg 1.33  gf 1.67  ga 1.33  (last 2026-05-15)
-  Genclerbirligi SK           WWLWLL  ppg 1.5   gf 1.33  ga 1.33  (last 2026-05-17)
-  Kocaelispor                 LLDLDD  ppg 0.5   gf 0.5   ga 1.0   (last 2026-05-17)
+  LASK                        WWWWWW  ppg 3.0   gf 2.83  ga 0.5   (last 2026-08-14)
+  AZ Alkmaar                  WWDDDD  ppg 1.67  gf 2.0   ga 1.17  (last 2026-08-15)
+  Fortuna Sittard             WDLWLL  ppg 1.17  gf 1.67  ga 1.83  (last 2026-08-15)
+  FC Utrecht                  LLWWWL  ppg 1.5   gf 1.33  ga 2.0   (last 2026-08-15)
+  Sparta Rotterdam            WLLLDL  ppg 0.67  gf 1.33  ga 2.5   (last 2026-08-14)
+  Excelsior                   LWWDWW  ppg 2.17  gf 2.83  ga 1.17  (last 2026-08-15)
+  FC Zwolle                   LLLLWL  ppg 0.5   gf 0.83  ga 2.67  (last 2026-08-16)
+  Heerenveen                  DWDLWW  ppg 1.83  gf 1.17  ga 0.83  (last 2026-08-16)
+  Go Ahead Eagles             DWLLDD  ppg 1.0   gf 1.67  ga 1.83  (last 2026-08-16)
+  Groningen                   WWWWLL  ppg 2.0   gf 2.17  ga 1.67  (last 2026-08-16)
+  PSV Eindhoven               WDWWDW  ppg 2.33  gf 3.5   ga 1.33  (last 2026-08-15)
+  Feyenoord                   DWWDWW  ppg 2.33  gf 1.83  ga 0.83  (last 2026-08-16)
+  Estoril                     LDLDDL  ppg 0.5   gf 0.67  ga 1.5   (last 2026-08-16)
+  Rio Ave FC                  LLDLDL  ppg 0.33  gf 0.33  ga 1.67  (last 2026-08-15)
+  Alverca                     DLLDLW  ppg 0.83  gf 0.83  ga 1.33  (last 2026-08-15)
+  Sporting Lisbon             WDWWWD  ppg 2.33  gf 3.17  ga 1.33  (last 2026-08-14)
+  Nacional                    WDWLLW  ppg 1.67  gf 1.5   ga 1.0   (last 2026-08-16)
+  Vitória SC                  WLLLDW  ppg 1.17  gf 0.33  ga 1.33  (last 2026-08-16)
+  Famalicão                   LDWDDW  ppg 1.5   gf 1.0   ga 0.83  (last 2026-08-16)
+  Santa Clara                 WDLWDW  ppg 1.83  gf 1.5   ga 1.0   (last 2026-08-15)
+  Arouca                      WWWWDL  ppg 2.17  gf 2.33  ga 1.0   (last 2026-08-16)
+  FC Porto                    WWWLWW  ppg 2.5   gf 1.5   ga 0.67  (last 2026-08-15)
+  Casa Pia                    LLDWLL  ppg 0.67  gf 0.5   ga 2.0   (last 2026-08-17)
+  Gil Vicente                 WLLDWL  ppg 1.17  gf 0.67  ga 1.33  (last 2026-08-09)
+  Galatasaray                 DLWLWW  ppg 1.67  gf 2.0   ga 1.67  (last 2026-08-14)
+  Kasimpasa SK                DWLDLW  ppg 1.33  gf 1.0   ga 1.5   (last 2026-08-15)
+  Samsunspor                  DWLWWW  ppg 2.17  gf 2.5   ga 1.67  (last 2026-08-17)
+  Çaykur Rizespor             WDLWLD  ppg 1.33  gf 1.33  ga 2.0   (last 2026-08-15)  [via Rizespor]
+  Torku Konyaspor             LLLLWW  ppg 1.0   gf 1.17  ga 1.67  (last 2026-08-15)  [via Konyaspor]
+  Trabzonspor                 DLWDLD  ppg 1.0   gf 1.0   ga 1.5   (last 2026-08-15)
+  Eyüpspor                    LDWDWW  ppg 1.83  gf 2.17  ga 1.0   (last 2026-08-16)
+  Gazişehir Gaziantep         DLLLLW  ppg 0.67  gf 1.0   ga 1.67  (last 2026-08-15)  [via Gaziantep]
+  Alanyaspor                  DLWDLL  ppg 0.83  gf 1.17  ga 1.33  (last 2026-08-15)
+  Besiktas JK                 WDLWDL  ppg 1.33  gf 1.17  ga 1.0   (last 2026-08-16)
+  Genclerbirligi SK           WWWLWL  ppg 2.0   gf 1.67  ga 1.0   (last 2026-08-15)
+  Goztepe                     DLWDWD  ppg 1.5   gf 1.5   ga 1.5   (last 2026-08-17)  [via Goztep]
+  Kocaelispor                 LLLDLD  ppg 0.33  gf 0.33  ga 1.17  (last 2026-08-16)
   Atromitos Athens            WLWLLW  ppg 1.5   gf 2.5   ga 1.5   (last 2026-05-21)  [via Atromitos]
   Olympiakos Piraeus          DWDLWL  ppg 1.33  gf 1.0   ga 1.0   (last 2026-05-17)  [via Olympiakos]
   OFI Crete                   WLLLWD  ppg 1.17  gf 1.5   ga 1.67  (last 2026-05-17)
@@ -72,121 +83,121 @@
   Panathinaikos               DLLDLD  ppg 0.5   gf 0.5   ga 1.17  (last 2026-05-17)
   Asteras Tripolis            WDWDWL  ppg 1.83  gf 1.5   ga 1.0   (last 2026-05-21)
   Panetolikos Agrinio         LDDWLD  ppg 1.0   gf 0.83  ga 1.0   (last 2026-05-21)  [via Panetolikos]
-  BK Hacken                   LDDWLL  ppg 0.83  gf 1.33  ga 2.0   (last 2026-08-09)
-  Halmstads BK                LLDLLL  ppg 0.17  gf 0.33  ga 2.17  (last 2026-08-09)  [via Halmstad]
-  IK Sirius                   DWWWWD  ppg 2.33  gf 2.83  ga 1.5   (last 2026-08-10)  [via Sirius]
-  Örgryte IS                  LWLDWL  ppg 1.17  gf 1.67  ga 2.0   (last 2026-08-08)  [via Orgryte]
-  IF Elfsborg                 WWLLLD  ppg 1.17  gf 1.17  ga 1.5   (last 2026-08-08)
-  IFK Goteborg                WWLWLL  ppg 1.5   gf 1.5   ga 2.17  (last 2026-08-09)  [via Goteborg]
-  Kalmar FF                   LDWDLW  ppg 1.33  gf 1.67  ga 1.5   (last 2026-08-09)  [via Kalmar]
-  Västerås SK                 WLWDWW  ppg 2.17  gf 1.33  ga 1.17  (last 2026-08-10)
-  Degerfors IF                WLLLLL  ppg 0.5   gf 0.33  ga 1.83  (last 2026-08-09)
-  IF Brommapojkarna           DLDLLD  ppg 0.5   gf 1.17  ga 1.67  (last 2026-08-10)
-  GAIS                        WDLWDW  ppg 1.83  gf 1.33  ga 0.67  (last 2026-08-09)
-  Hammarby IF                 WDWWWL  ppg 2.17  gf 2.33  ga 0.83  (last 2026-08-09)
-  Djurgardens IF              LWWDWW  ppg 2.17  gf 2.33  ga 0.5   (last 2026-08-10)  [via Djurgarden]
-  Malmo FF                    LWLDWW  ppg 1.67  gf 1.83  ga 1.17  (last 2026-08-09)
-  IF Gnistan                  DLWWWL  ppg 1.67  gf 1.67  ga 1.17  (last 2026-08-07)
+  BK Hacken                   WLDDWL  ppg 1.33  gf 1.17  ga 1.33  (last 2026-08-17)
+  IK Sirius                   LDWWWW  ppg 2.17  gf 2.67  ga 1.5   (last 2026-08-15)  [via Sirius]
+  Halmstads BK                LLLDLL  ppg 0.17  gf 0.17  ga 1.83  (last 2026-08-17)  [via Halmstad]
+  Örgryte IS                  LLWLDW  ppg 1.17  gf 1.83  ga 2.0   (last 2026-08-16)  [via Orgryte]
+  IF Elfsborg                 WWWLLL  ppg 1.5   gf 1.33  ga 1.17  (last 2026-08-14)
+  IFK Goteborg                LWWLWL  ppg 1.5   gf 1.33  ga 2.33  (last 2026-08-16)  [via Goteborg]
+  Kalmar FF                   LLDWDL  ppg 0.83  gf 1.17  ga 2.17  (last 2026-08-16)  [via Kalmar]
+  Västerås SK                 LWLWDW  ppg 1.67  gf 0.83  ga 1.5   (last 2026-08-14)
+  Degerfors IF                WWLLLL  ppg 1.0   gf 0.83  ga 1.67  (last 2026-08-16)
+  IF Brommapojkarna           WDLDLL  ppg 0.83  gf 1.5   ga 1.67  (last 2026-08-16)
+  GAIS                        LWDLWD  ppg 1.33  gf 0.83  ga 0.83  (last 2026-08-16)
+  Hammarby IF                 WWDWWW  ppg 2.67  gf 2.67  ga 0.33  (last 2026-08-16)
+  Djurgardens IF              LLWWDW  ppg 1.67  gf 1.83  ga 0.67  (last 2026-08-16)  [via Djurgarden]
+  Malmo FF                    WLWLDW  ppg 1.67  gf 1.83  ga 1.17  (last 2026-08-16)
   FC Lahti                    DWLWWW  ppg 2.17  gf 1.17  ga 0.17  (last 2026-08-09)
   AC Oulu                     LWDLLD  ppg 0.83  gf 0.5   ga 1.33  (last 2026-08-09)
   Jaro                        LLWDWL  ppg 1.17  gf 1.17  ga 1.67  (last 2026-08-08)
   VPS Vaasa                   WLLLWW  ppg 1.5   gf 1.67  ga 1.17  (last 2026-08-08)
+  IF Gnistan                  DLWWWL  ppg 1.67  gf 1.67  ga 1.17  (last 2026-08-07)
   IFK Mariehamn               LLDLLL  ppg 0.17  gf 0.5   ga 2.67  (last 2026-08-09)  [via Mariehamn]
   FC Inter Turku              DWLDWD  ppg 1.5   gf 0.83  ga 0.5   (last 2026-08-09)
-  Shanghai Shenhua FC         WLLLWW  ppg 1.5   gf 1.5   ga 1.67  (last 2026-08-08)
-  Dalian Yingbo               WDLWWL  ppg 1.67  gf 1.83  ga 1.83  (last 2026-08-08)
-  Tianjin Jinmen Tiger FC     LWWWWL  ppg 2.0   gf 1.83  ga 0.83  (last 2026-08-09)
-  Wuhan Three Towns           DWWLLD  ppg 1.33  gf 1.17  ga 1.0   (last 2026-08-01)
-  Chengdu Rongcheng FC        LDDDDD  ppg 0.83  gf 1.0   ga 1.17  (last 2026-08-08)
-  Yunnan Yukun                WLWDLW  ppg 1.67  gf 2.33  ga 2.17  (last 2026-08-08)
-  Qingdao West Coast FC       DWWDLW  ppg 1.83  gf 1.0   ga 0.83  (last 2026-08-09)
-  Liaoning Tieren FC          LWLDWL  ppg 1.17  gf 1.33  ga 1.67  (last 2026-08-08)
-  Qingdao Hainiu FC           LLLLLD  ppg 0.17  gf 0.67  ga 2.33  (last 2026-08-08)
-  Chongqing Tonglianglong FC  LLLDDL  ppg 0.33  gf 0.83  ga 1.83  (last 2026-08-09)
-  CF Montreal                 DLLDDL  ppg 0.5   gf 1.0   ga 1.67  (last 2026-08-02)
-  Columbus Crew SC            DWLWDL  ppg 1.33  gf 1.67  ga 1.5   (last 2026-08-02)
-  Charlotte FC                LWDWWL  ppg 1.67  gf 1.5   ga 1.0   (last 2026-08-02)
-  Toronto FC                  DLDDLL  ppg 0.5   gf 0.67  ga 1.33  (last 2026-08-01)
-  Chicago Fire                WLLWWW  ppg 2.0   gf 2.0   ga 1.5   (last 2026-08-02)
-  Orlando City SC             LWWLDW  ppg 1.67  gf 2.33  ga 2.17  (last 2026-08-02)
-  New England Revolution      LDWDLW  ppg 1.33  gf 1.33  ga 1.17  (last 2026-08-08)
-  FC Cincinnati               WLWWDL  ppg 1.67  gf 3.5   ga 2.83  (last 2026-08-02)
-  New York City FC            DWWLDW  ppg 1.83  gf 1.5   ga 1.0   (last 2026-08-01)
-  Inter Miami CF              DWWWWW  ppg 2.67  gf 3.17  ga 1.83  (last 2026-08-02)
-  Philadelphia Union          WWWLDL  ppg 1.67  gf 2.5   ga 2.33  (last 2026-08-02)
-  Nashville SC                DLWWWW  ppg 2.17  gf 1.5   ga 1.0   (last 2026-08-02)
-  New York Red Bulls          WLLWDW  ppg 1.67  gf 1.67  ga 1.83  (last 2026-08-02)
-  Sporting Kansas City        LLWLLW  ppg 1.0   gf 1.17  ga 2.17  (last 2026-08-02)
-  St. Louis City SC           DWWWWD  ppg 2.33  gf 2.0   ga 0.83  (last 2026-08-02)
-  Minnesota United FC         DDLDLL  ppg 0.5   gf 0.67  ga 1.17  (last 2026-08-02)
-  Austin FC                   LLWLLL  ppg 0.5   gf 0.67  ga 2.5   (last 2026-08-02)
-  Seattle Sounders FC         LLLLLL  ppg 0.0   gf 0.5   ga 2.33  (last 2026-08-02)
-  Colorado Rapids             WLWLLW  ppg 1.5   gf 0.83  ga 0.83  (last 2026-08-02)
-  Los Angeles FC              DWWWWL  ppg 2.17  gf 2.33  ga 0.83  (last 2026-08-02)
-  FC Dallas                   DLDWWL  ppg 1.33  gf 1.5   ga 1.5   (last 2026-08-02)
-  Real Salt Lake              DLLDWW  ppg 1.33  gf 1.5   ga 1.33  (last 2026-08-02)
-  Houston Dynamo              WWWDDW  ppg 2.33  gf 1.67  ga 0.33  (last 2026-08-08)
-  Vancouver Whitecaps FC      DDLWLW  ppg 1.33  gf 1.83  ga 1.67  (last 2026-08-02)
-  San Jose Earthquakes        LDLWLL  ppg 0.67  gf 1.67  ga 2.67  (last 2026-08-02)
-  Portland Timbers            WWDWLL  ppg 1.67  gf 2.0   ga 1.67  (last 2026-08-02)
-  San Diego FC                DWLLDW  ppg 1.33  gf 2.0   ga 1.5   (last 2026-08-02)
-  Internacional               DDLLLL  ppg 0.33  gf 0.5   ga 1.67  (last 2026-08-09)
-  Remo                        DLWLWL  ppg 1.17  gf 1.17  ga 1.5   (last 2026-08-08)
-  Fluminense                  DDDDDL  ppg 0.83  gf 0.67  ga 0.83  (last 2026-08-09)
-  Cruzeiro                    WWLWDW  ppg 2.17  gf 1.5   ga 0.83  (last 2026-08-09)
-  Flamengo                    WDDWWL  ppg 1.83  gf 1.83  ga 0.83  (last 2026-08-09)  [via Flamengo RJ]
-  Bahia                       DDDDWW  ppg 1.67  gf 1.0   ga 0.5   (last 2026-08-09)
-  Vitoria                     LLLDWL  ppg 0.67  gf 0.33  ga 1.83  (last 2026-08-09)
-  Bragantino-SP               LDDWWW  ppg 1.83  gf 1.5   ga 0.67  (last 2026-08-09)  [via Bragantino]
-  Grêmio                      WDLLWD  ppg 1.33  gf 1.5   ga 1.67  (last 2026-08-08)
-  Palmeiras                   DWLWWW  ppg 2.17  gf 2.0   ga 0.5   (last 2026-08-09)
-  Chapecoense                 LDLLLL  ppg 0.17  gf 0.67  ga 2.17  (last 2026-08-09)
-  Sao Paulo                   LDLLDL  ppg 0.33  gf 0.83  ga 1.5   (last 2026-08-08)
-  Mirassol                    LWDWLW  ppg 1.67  gf 1.17  ga 1.17  (last 2026-08-09)
-  Santos                      LDLWLL  ppg 0.67  gf 1.33  ga 2.17  (last 2026-08-09)
-  Corinthians                 WDDWWW  ppg 2.33  gf 1.67  ga 0.33  (last 2026-08-09)
-  Coritiba                    WLDLLW  ppg 1.17  gf 1.0   ga 1.67  (last 2026-08-09)
-  Botafogo                    DWDWLD  ppg 1.5   gf 1.0   ga 0.83  (last 2026-08-09)  [via Botafogo RJ]
-  León                        WLLLLW  ppg 1.0   gf 1.5   ga 2.0   (last 2026-08-02)
-  Necaxa                      LWWLDD  ppg 1.33  gf 1.17  ga 1.67  (last 2026-08-03)
-  Pachuca                     LLWLWW  ppg 1.5   gf 1.17  ga 0.67  (last 2026-08-02)
-  Puebla                      DLWLLL  ppg 0.67  gf 0.83  ga 2.0   (last 2026-08-01)
-  Atlante FC                  WDL     ppg 1.33  gf 1.67  ga 1.67  (last 2026-08-02)
-  Tigres                      LDLLWW  ppg 1.17  gf 2.17  ga 2.0   (last 2026-08-02)  [via Tigres UANL]
-  Monterrey                   WLWLWL  ppg 1.5   gf 1.5   ga 1.83  (last 2026-08-02)
-  América                     WDWDDL  ppg 1.5   gf 1.83  ga 1.33  (last 2026-08-03)
-  FC Juárez                   LLLWLL  ppg 0.5   gf 1.0   ga 2.5   (last 2026-08-01)
-  Querétaro                   WWLWDD  ppg 1.83  gf 1.5   ga 1.17  (last 2026-08-02)
-  Toluca                      WLWLLW  ppg 1.5   gf 1.67  ga 1.17  (last 2026-08-03)
-  Guadalajara                 DWLLDW  ppg 1.33  gf 1.17  ga 1.17  (last 2026-08-01)  [via Guadalajara Chivas]
-  Tijuana                     DWWDWD  ppg 2.0   gf 1.33  ga 0.5   (last 2026-08-01)
-  Santos Laguna               LLLWLL  ppg 0.5   gf 0.83  ga 1.67  (last 2026-08-03)
-  Atlas                       LWWLLW  ppg 1.5   gf 1.17  ga 1.33  (last 2026-08-02)
-  Cruz Azul                   LWWWDW  ppg 2.17  gf 1.83  ga 1.33  (last 2026-08-02)
-  Estudiantes de Río Cuarto   LDLWLL  ppg 0.67  gf 0.5   ga 1.5   (last 2026-08-08)
-  Independiente               LLWWLW  ppg 1.5   gf 1.0   ga 1.0   (last 2026-08-09)
-  Lanus                       WLLWLD  ppg 1.17  gf 0.83  ga 0.83  (last 2026-08-12)
-  Defensa y Justicia          WLWDLL  ppg 1.17  gf 1.0   ga 2.0   (last 2026-08-09)
-  Velez Sarsfield BA          DWWWLD  ppg 1.83  gf 1.17  ga 0.67  (last 2026-08-08)  [via Velez Sarsfield]
-  Gimnasia Mendoza            LWLWWL  ppg 1.5   gf 1.0   ga 1.33  (last 2026-08-09)
-  Talleres                    LWLLLD  ppg 0.67  gf 1.0   ga 1.5   (last 2026-08-12)  [via Talleres Cordoba]
-  Aldosivi Mar del Plata      LLLDDL  ppg 0.33  gf 0.83  ga 1.67  (last 2026-08-07)  [via Aldosivi]
-  Union Santa Fe              LWLDLW  ppg 1.17  gf 1.17  ga 1.67  (last 2026-08-11)
-  San Lorenzo                 LLWLDL  ppg 0.67  gf 0.5   ga 1.17  (last 2026-08-09)
-  Independiente Rivadavia     LLWWLW  ppg 1.5   gf 1.0   ga 1.0   (last 2026-08-09)  [via Independiente]
-  Atlético Huracán            WDLWDD  ppg 1.5   gf 0.83  ga 0.5   (last 2026-08-09)  [via Huracan]
-  Banfield                    LDWLWD  ppg 1.33  gf 1.0   ga 1.17  (last 2026-08-10)
-  Newells Old Boys            LDLWDD  ppg 1.0   gf 1.0   ga 1.17  (last 2026-08-09)
-  Barracas Central            LWWWLD  ppg 1.67  gf 0.83  ga 0.83  (last 2026-08-09)
-  Platense                    WLLDLL  ppg 0.67  gf 0.67  ga 1.83  (last 2026-08-09)
-  Sarmiento de Junin          WWLLLW  ppg 1.5   gf 1.5   ga 2.0   (last 2026-08-08)
-  River Plate                 LLLLLW  ppg 0.5   gf 0.5   ga 1.17  (last 2026-08-08)
-  Boca Juniors                DWDLDW  ppg 1.5   gf 1.17  ga 1.33  (last 2026-08-08)
-  Racing Club                 LLDWDW  ppg 1.33  gf 1.0   ga 1.17  (last 2026-08-10)
-  Central Córdoba             WWLLLD  ppg 1.17  gf 0.67  ga 1.0   (last 2026-08-11)
-  Rosario Central             WWDLLD  ppg 1.33  gf 0.83  ga 0.83  (last 2026-08-07)
-  América Mineiro             WDWDDL  ppg 1.5   gf 1.83  ga 1.33  (last 2026-08-03)  [via Club America]
-  Grêmio Novorizontino        WDLLWD  ppg 1.33  gf 1.5   ga 1.67  (last 2026-08-08)  [via Gremio]
+  Shanghai Shenhua FC         WWLLLW  ppg 1.5   gf 1.5   ga 1.67  (last 2026-08-15)
+  Dalian Yingbo               LWDLWW  ppg 1.67  gf 1.83  ga 1.67  (last 2026-08-15)
+  Tianjin Jinmen Tiger FC     LLWWWW  ppg 2.0   gf 2.17  ga 1.33  (last 2026-08-15)
+  Wuhan Three Towns           LDWWLL  ppg 1.17  gf 1.33  ga 1.33  (last 2026-08-14)
+  Chengdu Rongcheng FC        WLDDDD  ppg 1.17  gf 1.33  ga 1.33  (last 2026-08-15)
+  Yunnan Yukun                WWLWDL  ppg 1.67  gf 2.5   ga 2.17  (last 2026-08-15)
+  Qingdao West Coast FC       DDWWDL  ppg 1.5   gf 0.67  ga 0.67  (last 2026-08-14)
+  Liaoning Tieren FC          LLWLDW  ppg 1.17  gf 1.33  ga 1.17  (last 2026-08-15)
+  Qingdao Hainiu FC           LLLLLL  ppg 0.0   gf 0.67  ga 2.67  (last 2026-08-14)
+  Chongqing Tonglianglong FC  DLLLDD  ppg 0.5   gf 0.67  ga 1.33  (last 2026-08-14)
+  CF Montreal                 DDLLDD  ppg 0.67  gf 1.17  ga 1.5   (last 2026-08-16)
+  Columbus Crew SC            LDWLWD  ppg 1.33  gf 1.5   ga 1.5   (last 2026-08-16)
+  Charlotte FC                WLWDWW  ppg 2.17  gf 2.0   ga 1.0   (last 2026-08-16)
+  Toronto FC                  WDLDDL  ppg 1.0   gf 0.83  ga 1.0   (last 2026-08-16)
+  Chicago Fire                WWLLWW  ppg 2.0   gf 1.83  ga 1.5   (last 2026-08-16)
+  Orlando City SC             DLWWLD  ppg 1.33  gf 1.83  ga 1.83  (last 2026-08-16)
+  New England Revolution      LLDWDL  ppg 0.83  gf 1.17  ga 1.33  (last 2026-08-16)
+  FC Cincinnati               DWLWWD  ppg 1.83  gf 3.17  ga 2.17  (last 2026-08-16)
+  New York City FC            LDWWLD  ppg 1.33  gf 1.67  ga 1.5   (last 2026-08-16)
+  Inter Miami CF              LDWWWW  ppg 2.17  gf 2.5   ga 2.0   (last 2026-08-16)
+  Philadelphia Union          WWWWLD  ppg 2.17  gf 2.5   ga 2.0   (last 2026-08-16)
+  Nashville SC                WDLWWW  ppg 2.17  gf 1.67  ga 0.83  (last 2026-08-16)
+  New York Red Bulls          LWLLWD  ppg 1.17  gf 1.33  ga 1.83  (last 2026-08-16)
+  Sporting Kansas City        LLLWLL  ppg 0.5   gf 0.83  ga 2.33  (last 2026-08-16)
+  St. Louis City SC           WDWWWW  ppg 2.67  gf 2.33  ga 0.83  (last 2026-08-16)
+  Minnesota United FC         DDDLDL  ppg 0.67  gf 0.83  ga 1.17  (last 2026-08-16)
+  Austin FC                   LLLWLL  ppg 0.5   gf 0.83  ga 2.0   (last 2026-08-17)
+  Seattle Sounders FC         LLLLLL  ppg 0.0   gf 0.5   ga 2.33  (last 2026-08-17)
+  Colorado Rapids             WWLWLL  ppg 1.5   gf 1.0   ga 0.83  (last 2026-08-16)
+  Los Angeles FC              LDWWWW  ppg 2.17  gf 2.0   ga 0.5   (last 2026-08-16)
+  FC Dallas                   WDLDWW  ppg 1.83  gf 1.5   ga 1.17  (last 2026-08-17)
+  Real Salt Lake              DDLLDW  ppg 1.0   gf 1.17  ga 1.5   (last 2026-08-16)
+  Houston Dynamo              WWWWDD  ppg 2.33  gf 1.67  ga 0.33  (last 2026-08-16)
+  Vancouver Whitecaps FC      WDDLWL  ppg 1.33  gf 1.67  ga 1.33  (last 2026-08-17)
+  San Jose Earthquakes        LLDLWL  ppg 0.67  gf 1.5   ga 2.67  (last 2026-08-16)
+  Portland Timbers            LWWDWL  ppg 1.67  gf 2.17  ga 1.67  (last 2026-08-16)
+  San Diego FC                WDWLLD  ppg 1.33  gf 1.33  ga 1.5   (last 2026-08-16)
+  Internacional               DDDLLL  ppg 0.5   gf 0.67  ga 1.5   (last 2026-08-18)
+  Remo                        DDLWLW  ppg 1.33  gf 1.17  ga 1.33  (last 2026-08-18)
+  Fluminense                  WDDDDD  ppg 1.33  gf 1.17  ga 1.0   (last 2026-08-15)
+  Cruzeiro                    WWWLWD  ppg 2.17  gf 1.5   ga 0.83  (last 2026-08-16)
+  Flamengo                    WWDDWW  ppg 2.33  gf 2.67  ga 0.5   (last 2026-08-16)  [via Flamengo RJ]
+  Bahia                       DDDDDW  ppg 1.33  gf 1.17  ga 0.83  (last 2026-08-16)
+  Vitoria                     WLLLDW  ppg 1.17  gf 0.33  ga 1.33  (last 2026-08-16)
+  Bragantino-SP               DLDDWW  ppg 1.5   gf 1.33  ga 0.83  (last 2026-08-15)  [via Bragantino]
+  Grêmio                      LWDLLW  ppg 1.17  gf 1.33  ga 2.0   (last 2026-08-16)
+  Palmeiras                   LDWLWW  ppg 1.67  gf 1.83  ga 1.0   (last 2026-08-15)
+  Chapecoense                 DLDLLL  ppg 0.33  gf 1.0   ga 2.33  (last 2026-08-16)
+  Sao Paulo                   DLDLLD  ppg 0.5   gf 0.83  ga 1.33  (last 2026-08-16)
+  Mirassol                    LLWDWL  ppg 1.17  gf 1.17  ga 2.0   (last 2026-08-16)
+  Santos                      WLDLWL  ppg 1.17  gf 1.83  ga 1.67  (last 2026-08-16)
+  Corinthians                 LWDDWW  ppg 1.83  gf 1.67  ga 0.67  (last 2026-08-16)
+  Coritiba                    DWLDLL  ppg 0.83  gf 0.67  ga 1.5   (last 2026-08-16)
+  Botafogo                    LDWDWL  ppg 1.33  gf 0.83  ga 0.83  (last 2026-08-16)  [via Botafogo RJ]
+  León                        WWLLLL  ppg 1.0   gf 1.33  ga 2.0   (last 2026-08-18)
+  Necaxa                      LLWWLD  ppg 1.17  gf 1.17  ga 1.83  (last 2026-08-18)
+  Pachuca                     LLLWLW  ppg 1.0   gf 1.17  ga 1.17  (last 2026-08-18)
+  Puebla                      WDLWLL  ppg 1.17  gf 1.33  ga 1.5   (last 2026-08-18)
+  Atlante FC                  DWDL    ppg 1.25  gf 1.25  ga 1.25  (last 2026-08-16)
+  Tigres                      LLDLLW  ppg 0.67  gf 1.5   ga 2.17  (last 2026-08-16)  [via Tigres UANL]
+  Monterrey                   WWLWLW  ppg 2.0   gf 2.33  ga 1.5   (last 2026-08-16)
+  América                     WWDWDD  ppg 2.0   gf 2.33  ga 1.17  (last 2026-08-17)
+  FC Juárez                   LLLLWL  ppg 0.5   gf 1.0   ga 3.0   (last 2026-08-16)
+  Querétaro                   DWWLWD  ppg 1.83  gf 1.33  ga 1.0   (last 2026-08-16)
+  Toluca                      DWLWLL  ppg 1.17  gf 1.0   ga 1.0   (last 2026-08-16)
+  Guadalajara                 WDWLLD  ppg 1.33  gf 1.0   ga 1.17  (last 2026-08-17)  [via Guadalajara Chivas]
+  Tijuana                     WDWWDW  ppg 2.33  gf 1.5   ga 0.5   (last 2026-08-17)
+  Santos Laguna               LLLLWL  ppg 0.5   gf 0.83  ga 1.67  (last 2026-08-17)
+  Atlas                       WLWWLL  ppg 1.5   gf 1.33  ga 1.5   (last 2026-08-16)
+  Cruz Azul                   LLWWWD  ppg 1.67  gf 1.67  ga 1.5   (last 2026-08-17)
+  Independiente               WLLWWL  ppg 1.5   gf 1.17  ga 1.0   (last 2026-08-17)
+  Lanus                       LWLLWL  ppg 1.0   gf 1.0   ga 1.33  (last 2026-08-17)
+  Defensa y Justicia          DWLWDL  ppg 1.33  gf 1.17  ga 1.5   (last 2026-08-17)
+  Velez Sarsfield BA          DDWWWL  ppg 1.83  gf 1.17  ga 0.67  (last 2026-08-17)  [via Velez Sarsfield]
+  Gimnasia Mendoza            WLWLWW  ppg 2.0   gf 1.33  ga 0.67  (last 2026-08-18)
+  Talleres                    LLWLLL  ppg 0.5   gf 1.0   ga 1.83  (last 2026-08-18)  [via Talleres Cordoba]
+  Aldosivi Mar del Plata      DLLLDD  ppg 0.5   gf 0.67  ga 1.17  (last 2026-08-15)  [via Aldosivi]
+  Union Santa Fe              LLWLDL  ppg 0.67  gf 0.83  ga 1.67  (last 2026-08-15)
+  Estudiantes de Río Cuarto   LLDLWL  ppg 0.67  gf 0.33  ga 1.33  (last 2026-08-17)
+  San Lorenzo                 WLLWLD  ppg 1.17  gf 0.5   ga 0.83  (last 2026-08-15)
+  Independiente Rivadavia     WLLWWL  ppg 1.5   gf 1.17  ga 1.0   (last 2026-08-17)  [via Independiente]
+  Atlético Huracán            LWDLWD  ppg 1.33  gf 0.67  ga 0.67  (last 2026-08-16)  [via Huracan]
+  Banfield                    WLDWLW  ppg 1.67  gf 1.0   ga 1.0   (last 2026-08-15)
+  Newells Old Boys            WLDLWD  ppg 1.33  gf 1.17  ga 1.0   (last 2026-08-15)
+  Barracas Central            LLWWWL  ppg 1.5   gf 0.67  ga 0.83  (last 2026-08-17)
+  Platense                    DWLLDL  ppg 0.83  gf 0.83  ga 1.83  (last 2026-08-16)
+  Sarmiento de Junin          WWWLLL  ppg 1.5   gf 1.67  ga 2.0   (last 2026-08-16)
+  River Plate                 WLLLLL  ppg 0.5   gf 0.67  ga 1.17  (last 2026-08-16)
+  Boca Juniors                DDWDLD  ppg 1.17  gf 1.0   ga 1.33  (last 2026-08-16)
+  Racing Club                 LLLDWD  ppg 0.83  gf 0.83  ga 1.33  (last 2026-08-15)
+  Central Córdoba             LWWLLL  ppg 1.0   gf 0.67  ga 1.17  (last 2026-08-17)
+  Rosario Central             WWWDLL  ppg 1.67  gf 0.83  ga 0.67  (last 2026-08-17)
+  América Mineiro             WWDWDD  ppg 2.0   gf 2.33  ga 1.17  (last 2026-08-17)  [via Club America]
+  Grêmio Novorizontino        LWDLLW  ppg 1.17  gf 1.33  ga 2.0   (last 2026-08-16)  [via Gremio]
   Everton de Viña del Mar     LLDDLL  ppg 0.33  gf 1.33  ga 2.17  (last 2026-05-24)  [via Everton]
   Arsenal                     WWWWWL  ppg 2.5   gf 1.5   ga 0.5   (last 2026-05-24)
   Coventry City               WWWDDD  ppg 2.0   gf 2.17  ga 0.5   (last 2026-05-02)  [via Coventry]
@@ -203,20 +214,20 @@
   Newcastle United            LWDWLL  ppg 1.17  gf 1.33  ga 1.33  (last 2026-05-24)  [via Newcastle]
   Chelsea                     LWDLLL  ppg 0.67  gf 0.83  ga 1.83  (last 2026-05-24)
   Fulham                      WDLLWD  ppg 1.33  gf 0.67  ga 0.83  (last 2026-05-24)
-  Deportivo La Coruña         LWWWWD  ppg 2.17  gf 1.5   ga 0.83  (last 2026-05-31)  [via La Coruna]
-  Elche CF                    DWLDLW  ppg 1.33  gf 1.17  ga 1.33  (last 2026-05-23)
   Málaga                      WDWWWL  ppg 2.17  gf 2.5   ga 1.33  (last 2026-05-31)
-  Alavés                      LWWDLW  ppg 1.67  gf 1.33  ga 1.33  (last 2026-05-23)
-  Rayo Vallecano              WWDDWD  ppg 2.0   gf 1.83  ga 1.0   (last 2026-05-23)  [via Vallecano]
+  Alavés                      WLWWDL  ppg 1.67  gf 1.5   ga 1.17  (last 2026-08-15)
+  Rayo Vallecano              LWWDDW  ppg 1.83  gf 1.5   ga 0.83  (last 2026-08-15)  [via Vallecano]
   Real Sociedad               DLDDLD  ppg 0.67  gf 1.67  ga 2.0   (last 2026-05-23)  [via Sociedad]
-  Sevilla                     LLWWWL  ppg 1.5   gf 1.17  ga 1.17  (last 2026-05-23)
+  Sevilla                     WLLWWW  ppg 2.0   gf 1.33  ga 1.0   (last 2026-08-15)
   Valencia                    WWDWLW  ppg 2.17  gf 1.83  ga 1.33  (last 2026-05-23)
   Real Madrid                 WWWLWD  ppg 2.17  gf 1.67  ga 0.83  (last 2026-05-23)
-  Villarreal                  WLLDWW  ppg 1.67  gf 2.5   ga 1.5   (last 2026-05-24)
-  Getafe                      WLWDLL  ppg 1.17  gf 0.67  ga 1.0   (last 2026-05-23)
+  Villarreal                  DWLLDW  ppg 1.33  gf 2.5   ga 1.67  (last 2026-08-16)
+  Getafe                      LWLWDL  ppg 1.17  gf 0.67  ga 1.17  (last 2026-08-15)
   Barcelona                   LWLWWW  ppg 2.0   gf 1.67  ga 1.0   (last 2026-05-23)
+  Elche CF                    DDWLDL  ppg 1.0   gf 1.0   ga 1.33  (last 2026-08-17)
   CA Osasuna                  LLLLLW  ppg 0.5   gf 1.17  ga 1.83  (last 2026-05-23)
-  Levante                     LWWWLD  ppg 1.67  gf 1.67  ga 1.83  (last 2026-05-23)
+  Levante                     LLWWWL  ppg 1.5   gf 1.67  ga 2.33  (last 2026-08-16)
+  Deportivo La Coruña         LWWWWD  ppg 2.17  gf 1.5   ga 0.83  (last 2026-05-31)  [via La Coruna]
   Como                        WWWDWL  ppg 2.17  gf 1.5   ga 0.5   (last 2026-05-24)
   Udinese                     LLWWDL  ppg 1.17  gf 1.17  ga 1.0   (last 2026-05-24)
   Monza                       DLWWWD  ppg 1.83  gf 1.83  ga 1.0   (last 2026-05-08)
@@ -265,55 +276,48 @@
   AS Monaco                   LLWDDL  ppg 0.83  gf 1.83  ga 2.5   (last 2026-05-17)
   Le Havre                    WLDDDD  ppg 1.17  gf 1.5   ga 1.33  (last 2026-05-17)
   Rennes                      LWLWWW  ppg 2.0   gf 2.0   ga 1.67  (last 2026-05-17)
-  Cardiff City                LWWWDW  ppg 2.17  gf 2.67  ga 1.33  (last 2026-05-02)  [via Cardiff]
-  Wrexham AFC                 DLWWLL  ppg 1.17  gf 1.17  ga 2.0   (last 2026-05-02)
-  Birmingham City             DWWDWL  ppg 1.83  gf 1.5   ga 1.0   (last 2026-05-02)  [via Birmingham]
-  Bristol City                WLDLDW  ppg 1.33  gf 1.33  ga 1.33  (last 2026-05-02)
-  Lincoln City                WWWDWW  ppg 2.67  gf 2.33  ga 1.17  (last 2026-05-02)  [via Lincoln]
-  Portsmouth                  DWLWWW  ppg 2.17  gf 1.5   ga 1.17  (last 2026-05-02)
-  Millwall                    WDWWDL  ppg 1.83  gf 1.5   ga 0.67  (last 2026-05-02)
-  Norwich City                LDWWLW  ppg 1.67  gf 1.67  ga 1.5   (last 2026-05-02)  [via Norwich]
-  Blackburn Rovers            LWDLDD  ppg 1.0   gf 0.83  ga 1.17  (last 2026-05-02)  [via Blackburn]
-  Middlesbrough               DWWDLD  ppg 1.5   gf 2.0   ga 1.33  (last 2026-05-02)
-  Bolton Wanderers            LDDWLD  ppg 1.0   gf 2.17  ga 2.0   (last 2026-05-02)  [via Bolton]
-  Charlton Athletic           LWLDLD  ppg 0.83  gf 1.17  ga 1.67  (last 2026-05-02)  [via Charlton]
-  West Ham United             WLLLWD  ppg 1.17  gf 1.0   ga 1.33  (last 2026-05-24)  [via West Ham]
-  Preston North End           LWLLWD  ppg 1.17  gf 1.33  ga 1.83  (last 2026-05-02)  [via Preston]
-  Sheffield United            WLLWWL  ppg 1.5   gf 1.5   ga 1.5   (last 2026-05-02)
-  Swansea City                WDWLWD  ppg 1.83  gf 1.67  ga 1.17  (last 2026-05-02)  [via Swansea]
-  Southampton                 WDDWWW  ppg 2.33  gf 2.33  ga 1.17  (last 2026-05-02)
-  Watford                     LLLLLD  ppg 0.17  gf 0.33  ga 2.83  (last 2026-05-02)
-  Burnley                     DLDLLL  ppg 0.33  gf 0.83  ga 2.0   (last 2026-05-24)
-  West Bromwich Albion        LDWWDD  ppg 1.5   gf 1.0   ga 0.33  (last 2026-05-02)  [via West Brom]
-  Doncaster Rovers            WDLWWL  ppg 1.67  gf 1.33  ga 1.33  (last 2026-05-02)  [via Doncaster]
-  Barnsley                    LWLLDD  ppg 0.83  gf 0.83  ga 1.33  (last 2026-05-02)
-  Blackpool                   WWWWLW  ppg 2.5   gf 1.17  ga 0.33  (last 2026-05-02)
-  Cambridge United            DWLDWD  ppg 1.5   gf 1.5   ga 0.5   (last 2026-05-02)  [via Cambridge]
-  Plymouth Argyle             WWDWDW  ppg 2.33  gf 2.33  ga 1.17  (last 2026-05-02)  [via Plymouth]
-  Fleetwood Town              DDDWLL  ppg 1.0   gf 1.33  ga 1.83  (last 2026-05-02)
-  Shrewsbury Town             LDDWLW  ppg 1.33  gf 0.83  ga 0.83  (last 2026-05-02)  [via Shrewsbury]
-  Leicester City              WDDLLD  ppg 1.0   gf 0.83  ga 1.0   (last 2026-05-02)  [via Leicester]
-  Leyton Orient               DLLDLL  ppg 0.33  gf 0.67  ga 1.5   (last 2026-05-02)
-  Walsall                     LLWLLD  ppg 0.67  gf 1.17  ga 2.33  (last 2026-05-02)
-  Peterborough United         LDLDLL  ppg 0.33  gf 0.83  ga 2.17  (last 2026-05-02)  [via Peterboro]
-  Reading                     LDLLLD  ppg 0.33  gf 0.67  ga 1.5   (last 2026-05-02)
-  Stevenage                   WDWDLW  ppg 1.83  gf 1.17  ga 1.33  (last 2026-05-02)
-  Bradford City               WDDDLW  ppg 1.5   gf 1.33  ga 1.17  (last 2026-05-02)  [via Bradford]
-  Luton                       WWWDWW  ppg 2.67  gf 2.33  ga 1.0   (last 2026-05-02)
-  Wimbledon                   LWLLLL  ppg 0.5   gf 0.33  ga 2.17  (last 2026-05-02)
-  Eintracht Braunschweig      WLWLWD  ppg 1.67  gf 1.83  ga 1.0   (last 2026-08-08)  [via Braunschweig]
-  Hertha Berlin               WLWLLD  ppg 1.17  gf 0.83  ga 1.67  (last 2026-08-07)  [via Hertha]
-  VfL Bochum                  LWDDWL  ppg 1.33  gf 1.0   ga 1.17  (last 2026-08-07)  [via Bochum]
-  Dynamo Dresden              LWLWLW  ppg 1.5   gf 1.17  ga 1.5   (last 2026-08-09)  [via Dresden]
-  Greuther Fürth              DWLDLW  ppg 1.33  gf 1.67  ga 1.33  (last 2026-08-09)
-  Karlsruher SC               WLDWLL  ppg 1.17  gf 1.33  ga 2.0   (last 2026-08-08)  [via Karlsruhe]
-  1. FC Nürnberg              WDWDWD  ppg 2.0   gf 2.0   ga 0.83  (last 2026-08-09)  [via Nurnberg]
-  Arminia Bielefeld           LWLDWD  ppg 1.33  gf 2.0   ga 1.5   (last 2026-08-08)  [via Bielefeld]
-  1. FC Kaiserslautern        DWWLLL  ppg 1.17  gf 0.5   ga 1.0   (last 2026-08-08)  [via Kaiserslautern]
-  1. FC Magdeburg             LLWWLW  ppg 1.5   gf 1.17  ga 1.5   (last 2026-08-08)  [via Magdeburg]
-  Holstein Kiel               DLLWWW  ppg 1.67  gf 1.67  ga 1.17  (last 2026-08-08)
-  Hannover 96                 LDDDWD  ppg 1.17  gf 2.0   ga 2.0   (last 2026-08-09)  [via Hannover]
-  SV Darmstadt 98             DLDLDL  ppg 0.5   gf 1.5   ga 2.17  (last 2026-08-08)  [via Darmstadt]
+  Birmingham City             DDWWDW  ppg 2.0   gf 1.33  ga 0.67  (last 2026-08-15)  [via Birmingham]
+  Bristol City                LWLDLD  ppg 0.83  gf 1.17  ga 1.67  (last 2026-08-15)
+  Portsmouth                  LDWLWW  ppg 1.67  gf 1.5   ga 1.67  (last 2026-08-15)
+  Millwall                    WWDWWD  ppg 2.33  gf 1.67  ga 0.33  (last 2026-08-15)
+  Norwich City                LLDWWL  ppg 1.17  gf 1.5   ga 1.67  (last 2026-08-15)  [via Norwich]
+  Blackburn Rovers            DLWDLD  ppg 1.0   gf 1.17  ga 1.5   (last 2026-08-14)  [via Blackburn]
+  Middlesbrough               WDWWDL  ppg 1.83  gf 2.0   ga 1.17  (last 2026-08-15)
+  Charlton Athletic           WLWLDL  ppg 1.17  gf 1.33  ga 1.67  (last 2026-08-15)  [via Charlton]
+  Preston North End           LLWLLW  ppg 1.0   gf 1.33  ga 2.0   (last 2026-08-15)  [via Preston]
+  Sheffield United            DWLLWW  ppg 1.67  gf 1.5   ga 1.33  (last 2026-08-15)
+  Swansea City                WWDWLW  ppg 2.17  gf 1.67  ga 1.0   (last 2026-08-15)  [via Swansea]
+  Southampton                 LWDDWW  ppg 1.83  gf 2.17  ga 1.33  (last 2026-08-16)
+  Watford                     WLLLLL  ppg 0.5   gf 0.5   ga 2.83  (last 2026-08-16)
+  Wrexham AFC                 DDLWWL  ppg 1.33  gf 1.17  ga 1.33  (last 2026-08-17)
+  West Bromwich Albion        WLDWWD  ppg 1.83  gf 1.33  ga 0.5   (last 2026-08-15)  [via West Brom]
+  Doncaster Rovers            LWDLWW  ppg 1.67  gf 1.5   ga 1.17  (last 2026-08-15)  [via Doncaster]
+  Barnsley                    LLWLLD  ppg 0.67  gf 0.83  ga 1.5   (last 2026-08-15)
+  Blackpool                   DWWWWL  ppg 2.17  gf 1.17  ga 0.5   (last 2026-08-15)
+  Plymouth Argyle             LWWDWD  ppg 1.83  gf 2.0   ga 1.67  (last 2026-08-15)  [via Plymouth]
+  Fleetwood Town              WDDDWL  ppg 1.5   gf 1.5   ga 1.67  (last 2026-08-15)
+  Shrewsbury Town             LLDDWL  ppg 0.83  gf 0.67  ga 1.17  (last 2026-08-15)  [via Shrewsbury]
+  Leyton Orient               LDLLDL  ppg 0.33  gf 0.67  ga 1.5   (last 2026-08-15)
+  Walsall                     WLLWLL  ppg 1.0   gf 1.33  ga 2.0   (last 2026-08-15)
+  Peterborough United         LLDLDL  ppg 0.33  gf 0.67  ga 2.0   (last 2026-08-15)  [via Peterboro]
+  Reading                     LLDLLL  ppg 0.17  gf 1.0   ga 2.0   (last 2026-08-15)
+  Stevenage                   DWDWDL  ppg 1.5   gf 1.17  ga 1.5   (last 2026-08-15)
+  Bradford City               WWDDDL  ppg 1.5   gf 1.33  ga 1.0   (last 2026-08-15)  [via Bradford]
+  Luton                       WWWWDW  ppg 2.67  gf 2.5   ga 1.5   (last 2026-08-15)
+  Wimbledon                   LLWLLL  ppg 0.5   gf 0.33  ga 2.17  (last 2026-08-15)
+  Eintracht Braunschweig      LWLWLW  ppg 1.5   gf 1.67  ga 1.0   (last 2026-08-14)  [via Braunschweig]
+  Hertha Berlin               WWLWLL  ppg 1.5   gf 1.33  ga 1.67  (last 2026-08-15)  [via Hertha]
+  VfL Bochum                  WLWDDW  ppg 1.83  gf 1.17  ga 0.83  (last 2026-08-14)  [via Bochum]
+  Dynamo Dresden              WLWLWL  ppg 1.5   gf 1.0   ga 1.5   (last 2026-08-16)  [via Dresden]
+  Greuther Fürth              LDWLDL  ppg 0.83  gf 1.5   ga 1.67  (last 2026-08-15)
+  Karlsruher SC               DWLDWL  ppg 1.33  gf 1.33  ga 1.5   (last 2026-08-15)  [via Karlsruhe]
+  1. FC Nürnberg              WWDWDW  ppg 2.33  gf 2.5   ga 1.0   (last 2026-08-15)  [via Nurnberg]
+  Arminia Bielefeld           WLWLDW  ppg 1.67  gf 2.33  ga 1.33  (last 2026-08-16)  [via Bielefeld]
+  1. FC Kaiserslautern        DDWWLL  ppg 1.33  gf 0.5   ga 0.5   (last 2026-08-15)  [via Kaiserslautern]
+  1. FC Magdeburg             WLLWWL  ppg 1.5   gf 1.33  ga 1.5   (last 2026-08-15)  [via Magdeburg]
+  Holstein Kiel               DDLLWW  ppg 1.33  gf 1.5   ga 1.5   (last 2026-08-14)
+  Hannover 96                 LLDDDW  ppg 1.0   gf 1.83  ga 2.0   (last 2026-08-16)  [via Hannover]
+  SV Darmstadt 98             LDLDLD  ppg 0.5   gf 1.17  ga 1.83  (last 2026-08-16)  [via Darmstadt]
   Avellino                    WLWWDL  ppg 1.67  gf 1.0   ga 0.67  (last 2026-05-08)
   Hellas Verona               LDLDDL  ppg 0.5   gf 0.33  ga 1.0   (last 2026-05-24)  [via Verona]
   Modena                      LWLLDD  ppg 0.83  gf 1.0   ga 1.33  (last 2026-05-08)
@@ -330,56 +334,54 @@
   Südtirol                    DLLLDD  ppg 0.5   gf 0.67  ga 2.17  (last 2026-05-08)
   Virtus Entella              WLWDDL  ppg 1.33  gf 0.83  ga 1.0   (last 2026-05-08)
   US Catanzaro 1929           LLWDDD  ppg 1.0   gf 2.0   ga 2.0   (last 2026-05-08)  [via Catanzaro]
-  Almería                     WLLDWW  ppg 1.67  gf 1.83  ga 1.5   (last 2026-05-31)
-  Córdoba                     DLLWWW  ppg 1.67  gf 1.33  ga 1.33  (last 2026-05-31)
-  Girona FC                   DLDDLL  ppg 0.5   gf 0.67  ga 1.17  (last 2026-05-23)
-  Leganés                     WLDLLL  ppg 0.67  gf 0.5   ga 1.83  (last 2026-05-31)
-  Oviedo                      LLLDLL  ppg 0.17  gf 0.17  ga 1.83  (last 2026-05-23)
-  Las Palmas                  WDWLWW  ppg 2.17  gf 1.67  ga 1.67  (last 2026-05-31)
-  Albacete                    LWWWWL  ppg 2.0   gf 1.33  ga 1.17  (last 2026-05-30)
-  Cádiz CF                    LWDLDL  ppg 0.83  gf 1.33  ga 1.67  (last 2026-05-31)
-  Real Valladolid CF          LLLWLW  ppg 1.0   gf 0.83  ga 1.5   (last 2026-05-31)  [via Valladolid]
-  Burgos CF                   WWWDDD  ppg 2.0   gf 0.83  ga 0.17  (last 2026-05-31)
-  CD Castellón                WWDDLW  ppg 1.83  gf 1.5   ga 1.17  (last 2026-05-31)
-  Andorra CF                  LLLWLW  ppg 1.0   gf 1.67  ga 1.17  (last 2026-05-31)
-  Granada CF                  LLLLWL  ppg 0.5   gf 0.83  ga 1.83  (last 2026-05-30)
-  Mallorca                    WLLDWL  ppg 1.17  gf 1.17  ga 1.33  (last 2026-05-23)
-  Boulogne                    DLLLLD  ppg 0.33  gf 0.67  ga 1.83  (last 2026-08-08)
-  Red Star                    WDWWLW  ppg 2.17  gf 2.33  ga 1.67  (last 2026-08-08)
-  Clermont                    DWWDLD  ppg 1.5   gf 1.0   ga 0.83  (last 2026-08-08)
-  Guingamp                    LLLLLD  ppg 0.17  gf 0.83  ga 1.67  (last 2026-08-08)
-  Montpellier                 DDLWWD  ppg 1.5   gf 1.17  ga 0.83  (last 2026-08-08)
-  USL Dunkerque               WLLWLL  ppg 1.0   gf 2.17  ga 2.0   (last 2026-08-08)  [via Dunkerque]
-  Nancy                       DWWDLD  ppg 1.5   gf 1.67  ga 1.83  (last 2026-08-08)
-  Pau FC                      LLLLWW  ppg 1.0   gf 1.33  ga 2.5   (last 2026-08-08)
-  Grenoble                    LWWDLD  ppg 1.33  gf 1.17  ga 1.33  (last 2026-08-08)
-  Annecy FC                   WLWWWD  ppg 2.17  gf 2.33  ga 0.83  (last 2026-08-08)
-  Grazer AK                   WLWDWL  ppg 1.67  gf 1.83  ga 1.17  (last 2026-08-08)
-  Ried                        LDLLWL  ppg 0.67  gf 0.67  ga 1.17  (last 2026-08-09)
-  Hartberg                    LLWLLL  ppg 0.5   gf 1.0   ga 2.33  (last 2026-08-08)
-  Rheindorf Altach            WLWDLL  ppg 1.17  gf 1.33  ga 1.83  (last 2026-08-07)  [via Altach]
-  Sturm Graz                  WDWWDD  ppg 2.0   gf 1.83  ga 0.83  (last 2026-08-08)
-  Brondby IF                  WWDWLD  ppg 1.83  gf 1.33  ga 1.0   (last 2026-08-09)
-  SonderjyskE                 DLLLWL  ppg 0.67  gf 0.83  ga 1.67  (last 2026-08-07)
-  FC Nordsjaelland            WDWDDL  ppg 1.5   gf 1.17  ga 0.67  (last 2026-08-02)
-  AGF Aarhus                  DDWWWD  ppg 2.0   gf 2.17  ga 1.0   (last 2026-08-01)  [via Aarhus]
-  OB Odense BK                LWLLDL  ppg 0.67  gf 0.83  ga 1.33  (last 2026-08-10)  [via Odense]
-  FC Midtjylland              WWLDDD  ppg 1.5   gf 1.67  ga 1.5   (last 2026-08-02)
-  Randers FC                  WLDLDW  ppg 1.33  gf 1.0   ga 1.5   (last 2026-08-09)
-  AC Horsens                  LLD     ppg 0.33  gf 0.67  ga 1.67  (last 2026-08-09)
-  Lyngby                      LDL     ppg 0.33  gf 1.33  ga 2.33  (last 2026-08-09)
-  FC Copenhagen               WWWWDW  ppg 2.67  gf 3.5   ga 1.0   (last 2026-08-02)
-  Viborg FF                   DLWLLD  ppg 0.83  gf 1.0   ga 1.83  (last 2026-08-07)  [via Viborg]
-  Silkeborg IF                WLDLLW  ppg 1.17  gf 1.17  ga 2.33  (last 2026-08-10)
-  Korona Kielce               DLDWLD  ppg 1.0   gf 0.67  ga 1.0   (last 2026-08-08)
-  Motor Lublin                LLDLDW  ppg 0.83  gf 1.83  ga 2.33  (last 2026-08-08)
-  Piast Gliwice               LWLLLD  ppg 0.67  gf 1.0   ga 2.17  (last 2026-08-09)
-  Radomiak Radom              LLWLLD  ppg 0.67  gf 1.17  ga 2.67  (last 2026-08-08)
-  GKS Katowice                WLDDDW  ppg 1.5   gf 2.0   ga 1.17  (last 2026-08-02)
+  Córdoba                     LDLLWW  ppg 1.17  gf 1.17  ga 1.5   (last 2026-08-16)
+  Leganés                     DWLDLL  ppg 0.83  gf 0.67  ga 1.33  (last 2026-08-16)
+  Las Palmas                  WWDWLW  ppg 2.17  gf 1.67  ga 1.67  (last 2026-08-16)
+  Albacete                    LLWWWW  ppg 2.0   gf 1.5   ga 1.0   (last 2026-08-16)
+  Cádiz CF                    DLWDLD  ppg 1.0   gf 1.17  ga 1.33  (last 2026-08-15)
+  Real Valladolid CF          LLLLWL  ppg 0.5   gf 0.67  ga 1.83  (last 2026-08-15)  [via Valladolid]
+  Burgos CF                   WWWWDD  ppg 2.33  gf 1.17  ga 0.33  (last 2026-08-16)
+  CD Castellón                WWWDDL  ppg 1.83  gf 1.17  ga 0.83  (last 2026-08-14)
+  Almería                     WWLLDW  ppg 1.67  gf 1.67  ga 1.17  (last 2026-08-17)
+  Andorra CF                  WLLLWL  ppg 1.0   gf 1.83  ga 1.33  (last 2026-08-15)
+  Granada CF                  DLLLLW  ppg 0.67  gf 0.5   ga 1.17  (last 2026-08-15)
+  Boulogne                    LDLLLL  ppg 0.17  gf 0.67  ga 2.0   (last 2026-08-14)
+  Red Star                    DWDWWL  ppg 1.83  gf 1.67  ga 1.17  (last 2026-08-14)
+  Clermont                    LDWWDL  ppg 1.33  gf 0.83  ga 1.0   (last 2026-08-14)
+  Guingamp                    WLLLLL  ppg 0.5   gf 0.83  ga 1.5   (last 2026-08-14)
+  Montpellier                 WDDLWW  ppg 1.83  gf 1.33  ga 0.83  (last 2026-08-14)
+  USL Dunkerque               DWLLWL  ppg 1.17  gf 2.5   ga 2.17  (last 2026-08-14)  [via Dunkerque]
+  Nancy                       LDWWDL  ppg 1.33  gf 1.33  ga 1.67  (last 2026-08-14)
+  Pau FC                      WLLLLW  ppg 1.0   gf 1.33  ga 2.5   (last 2026-08-14)
+  Grenoble                    DLWWDL  ppg 1.33  gf 1.0   ga 1.17  (last 2026-08-14)
+  Annecy FC                   WWLWWW  ppg 2.5   gf 2.67  ga 0.83  (last 2026-08-14)
+  Grazer AK                   LWLWDW  ppg 1.67  gf 1.83  ga 2.33  (last 2026-08-16)
+  Ried                        LLDLLW  ppg 0.67  gf 0.83  ga 1.67  (last 2026-08-14)
+  Hartberg                    LLLWLL  ppg 0.5   gf 0.83  ga 1.83  (last 2026-08-16)
+  Rheindorf Altach            LWLWDL  ppg 1.17  gf 1.33  ga 1.5   (last 2026-08-15)  [via Altach]
+  Austria Lustenau            WLD     ppg 1.33  gf 1.33  ga 1.33  (last 2026-08-15)  [via A. Lustenau]
+  Sturm Graz                  WWDWWD  ppg 2.33  gf 1.83  ga 0.67  (last 2026-08-15)
+  FC Nordsjaelland            WWDWDD  ppg 2.0   gf 1.33  ga 0.5   (last 2026-08-16)
+  SonderjyskE                 LDLLLW  ppg 0.67  gf 1.0   ga 1.83  (last 2026-08-17)
+  AGF Aarhus                  LDDWWW  ppg 1.83  gf 2.33  ga 1.33  (last 2026-08-14)  [via Aarhus]
+  OB Odense BK                LLWLLD  ppg 0.67  gf 0.67  ga 1.17  (last 2026-08-16)  [via Odense]
+  FC Midtjylland              DWWLDD  ppg 1.5   gf 1.83  ga 1.67  (last 2026-08-16)
+  Randers FC                  LWLDLD  ppg 0.83  gf 0.83  ga 2.17  (last 2026-08-16)
+  AC Horsens                  WLLD    ppg 1.0   gf 1.0   ga 1.5   (last 2026-08-16)
+  Lyngby                      DLDL    ppg 0.5   gf 1.25  ga 2.0   (last 2026-08-16)
+  FC Copenhagen               WWWWWD  ppg 2.67  gf 3.67  ga 1.0   (last 2026-08-16)
+  Viborg FF                   WDLWLL  ppg 1.17  gf 0.83  ga 1.5   (last 2026-08-14)  [via Viborg]
+  Brondby IF                  WWWDWL  ppg 2.17  gf 1.67  ga 1.17  (last 2026-08-17)
+  Silkeborg IF                LWLDLL  ppg 0.67  gf 0.67  ga 2.17  (last 2026-08-16)
+  Korona Kielce               WDLDWL  ppg 1.33  gf 0.83  ga 1.0   (last 2026-08-15)
+  Motor Lublin                WLLDLD  ppg 0.83  gf 1.33  ga 2.33  (last 2026-08-16)
+  Piast Gliwice               LLWLLL  ppg 0.5   gf 1.5   ga 2.83  (last 2026-08-15)
+  Radomiak Radom              LLLWLL  ppg 0.5   gf 1.17  ga 3.5   (last 2026-08-14)
+  GKS Katowice                LWLDDD  ppg 1.0   gf 1.17  ga 1.17  (last 2026-08-16)
   Pogoń Szczecin              WWLDWL  ppg 1.67  gf 1.5   ga 1.0   (last 2026-08-08)
 
-  UNMATCHED OR THIN (175): AEK Athens; PFC Levski Sofia; Dinamo Zagreb; Bodø/Glimt; Hapoel Be'er Sheva; Sabah FK; NK Celje; ŠK Slovan Bratislava; ADO Den Haag; SC Cambuur; Benfica; Casa Pia; Académico de Viseu; CS Maritimo; Estoril; Rio Ave FC; Alverca; Sporting Lisbon; Nacional; Famalicão
+  UNMATCHED OR THIN (178): AEK Athens; PFC Levski Sofia; Dinamo Zagreb; Bodø/Glimt; Hapoel Be'er Sheva; Sabah FK; NK Celje; ŠK Slovan Bratislava; ADO Den Haag; SC Cambuur; Académico de Viseu; CS Maritimo; Erzurum BB; Çorum FK; Basaksehir; Amed SK; Iraklis FC; Aris Thessaloniki; Kalamata FC; Volos FC
   -- unmatched is a statement about the JOIN, not the team. Do not read absence as bad form.
-  persisted 606 teams with form into 'all' (343 of them board-joined)
+  persisted 608 teams with form into 'all' (345 of them board-joined)
 
-  343 matched / 175 not. wrote /home/runner/work/parlay/parlay/socform.json
+  345 matched / 178 not. wrote /home/runner/work/parlay/parlay/socform.json
