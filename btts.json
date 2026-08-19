@@ -1,7 +1,28 @@
 {
- "as_of": "2026-08-19T14:52Z",
+ "as_of": "2026-08-19T14:57Z",
+ "leagues_active": 45,
+ "league_errors": [],
  "seen_today": 31,
+ "seen_future": 454,
+ "event_fetch_errors": 0,
  "fd_quoted": 16,
+ "fd_unquoted": [
+  "Avai v Sport Recife [Brazil S\u00e9rie B] 2026-08-19T22:30:00Z",
+  "Fortaleza v S\u00e3o Bernardo [Brazil S\u00e9rie B] 2026-08-19T22:30:00Z",
+  "Cuiab\u00e1 v Operario PR [Brazil S\u00e9rie B] 2026-08-19T23:30:00Z",
+  "Vila Nova v Ponte Preta [Brazil S\u00e9rie B] 2026-08-19T23:30:00Z",
+  "Botafogo-SP v Criciuma [Brazil S\u00e9rie B] 2026-08-20T00:30:00Z",
+  "Cerro Porte\u00f1o v Palmeiras-SP [Copa Libertadores] 2026-08-19T22:00:00Z",
+  "Coquimbo Unido v Platense [Copa Libertadores] 2026-08-19T22:00:00Z",
+  "Flamengo-RJ v Cruzeiro [Copa Libertadores] 2026-08-20T00:30:00Z",
+  "Clube Atl\u00e9tico Mineiro v Bragantino-SP [Copa Sudamericana] 2026-08-19T22:00:00Z",
+  "Montevideo City Torque v CA Tigre BA [Copa Sudamericana] 2026-08-20T00:30:00Z",
+  "Independiente Santa Fe v River Plate [Copa Sudamericana] 2026-08-20T00:30:00Z",
+  "NEC Nijmegen v Bod\u00f8/Glimt [UEFA Champions League Qualification] 2026-08-19T19:00:00Z",
+  "Celtic v LASK [UEFA Champions League Qualification] 2026-08-19T19:00:00Z",
+  "Hapoel Be'er Sheva v Sabah FK [UEFA Champions League Qualification] 2026-08-19T19:00:00Z",
+  "\u0160K Slovan Bratislava v NK Celje [UEFA Champions League Qualification] 2026-08-19T19:00:00Z"
+ ],
  "rows": [
   {
    "sport": "soccer_spain_la_liga",
@@ -139,9 +160,9 @@
    "home": "Vancouver Whitecaps FC",
    "away": "Houston Dynamo",
    "t": "2026-08-20T02:30:00Z",
-   "yes": -144,
+   "yes": -142,
    "no": 112,
-   "p_no": 0.4442
+   "p_no": 0.4456
   },
   {
    "sport": "soccer_usa_mls",

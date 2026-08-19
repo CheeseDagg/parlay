@@ -1,4 +1,20 @@
-as_of 2026-08-19T14:52Z -- 31 soccer events today, FanDuel quoted btts on 16
+as_of 2026-08-19T14:57Z -- 45 active soccer leagues on the API; 31 events in today's CT window (454 later this week), FanDuel quoted btts on 16, 15 unquoted, 0 fetch errors
+  -- in-window but NO FanDuel btts quote via the API:
+     Avai v Sport Recife [Brazil Série B] 2026-08-19T22:30:00Z
+     Fortaleza v São Bernardo [Brazil Série B] 2026-08-19T22:30:00Z
+     Cuiabá v Operario PR [Brazil Série B] 2026-08-19T23:30:00Z
+     Vila Nova v Ponte Preta [Brazil Série B] 2026-08-19T23:30:00Z
+     Botafogo-SP v Criciuma [Brazil Série B] 2026-08-20T00:30:00Z
+     Cerro Porteño v Palmeiras-SP [Copa Libertadores] 2026-08-19T22:00:00Z
+     Coquimbo Unido v Platense [Copa Libertadores] 2026-08-19T22:00:00Z
+     Flamengo-RJ v Cruzeiro [Copa Libertadores] 2026-08-20T00:30:00Z
+     Clube Atlético Mineiro v Bragantino-SP [Copa Sudamericana] 2026-08-19T22:00:00Z
+     Montevideo City Torque v CA Tigre BA [Copa Sudamericana] 2026-08-20T00:30:00Z
+     Independiente Santa Fe v River Plate [Copa Sudamericana] 2026-08-20T00:30:00Z
+     NEC Nijmegen v Bodø/Glimt [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
+     Celtic v LASK [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
+     Hapoel Be'er Sheva v Sabah FK [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
+     ŠK Slovan Bratislava v NK Celje [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
   2026-08-19T19:00:00Z  Atlético Madrid v Málaga  No -118 / Yes -108  pNo=0.510  (La Liga - Spain)
   2026-08-19T23:30:00Z  Columbus Crew SC v CF Montreal  No +138 / Yes -176  pNo=0.397  (MLS)
   2026-08-19T23:30:00Z  Toronto FC v Charlotte FC  No +140 / Yes -180  pNo=0.393  (MLS)
@@ -12,6 +28,6 @@ as_of 2026-08-19T14:52Z -- 31 soccer events today, FanDuel quoted btts on 16
   2026-08-20T01:30:00Z  Seattle Sounders FC v Austin FC  No +136 / Yes -174  pNo=0.400  (MLS)
   2026-08-20T01:30:00Z  Colorado Rapids v Los Angeles FC  No +144 / Yes -182  pNo=0.388  (MLS)
   2026-08-20T01:30:00Z  Real Salt Lake v FC Dallas  No +164 / Yes -215  pNo=0.357  (MLS)
-  2026-08-20T02:30:00Z  Vancouver Whitecaps FC v Houston Dynamo  No +112 / Yes -144  pNo=0.444  (MLS)
+  2026-08-20T02:30:00Z  Vancouver Whitecaps FC v Houston Dynamo  No +112 / Yes -142  pNo=0.446  (MLS)
   2026-08-20T02:30:00Z  LA Galaxy v San Jose Earthquakes  No +184 / Yes -240  pNo=0.333  (MLS)
   2026-08-20T02:30:00Z  Portland Timbers v San Diego FC  No +215 / Yes -290  pNo=0.299  (MLS)
