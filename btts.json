@@ -1,0 +1,167 @@
+{
+ "as_of": "2026-08-19T14:52Z",
+ "seen_today": 31,
+ "fd_quoted": 16,
+ "rows": [
+  {
+   "sport": "soccer_spain_la_liga",
+   "league": "La Liga - Spain",
+   "home": "Atl\u00e9tico Madrid",
+   "away": "M\u00e1laga",
+   "t": "2026-08-19T19:00:00Z",
+   "yes": -108,
+   "no": -118,
+   "p_no": 0.5104
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Columbus Crew SC",
+   "away": "CF Montreal",
+   "t": "2026-08-19T23:30:00Z",
+   "yes": -176,
+   "no": 138,
+   "p_no": 0.3972
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Toronto FC",
+   "away": "Charlotte FC",
+   "t": "2026-08-19T23:30:00Z",
+   "yes": -180,
+   "no": 140,
+   "p_no": 0.3933
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Orlando City SC",
+   "away": "Chicago Fire",
+   "t": "2026-08-19T23:30:00Z",
+   "yes": -320,
+   "no": 230,
+   "p_no": 0.2846
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "D.C. United",
+   "away": "New England Revolution",
+   "t": "2026-08-19T23:30:00Z",
+   "yes": -174,
+   "no": 138,
+   "p_no": 0.3982
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "FC Cincinnati",
+   "away": "New York City FC",
+   "t": "2026-08-19T23:30:00Z",
+   "yes": -240,
+   "no": 182,
+   "p_no": 0.3344
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Philadelphia Union",
+   "away": "Inter Miami CF",
+   "t": "2026-08-19T23:30:00Z",
+   "yes": -320,
+   "no": 230,
+   "p_no": 0.2846
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "New York Red Bulls",
+   "away": "Nashville SC",
+   "t": "2026-08-19T23:30:00Z",
+   "yes": -230,
+   "no": 178,
+   "p_no": 0.3404
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Sporting Kansas City",
+   "away": "St. Louis City SC",
+   "t": "2026-08-20T00:00:00Z",
+   "yes": -215,
+   "no": 164,
+   "p_no": 0.3569
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Minnesota United FC",
+   "away": "Atlanta United FC",
+   "t": "2026-08-20T00:30:00Z",
+   "yes": -158,
+   "no": 124,
+   "p_no": 0.4216
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Seattle Sounders FC",
+   "away": "Austin FC",
+   "t": "2026-08-20T01:30:00Z",
+   "yes": -174,
+   "no": 136,
+   "p_no": 0.4002
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Colorado Rapids",
+   "away": "Los Angeles FC",
+   "t": "2026-08-20T01:30:00Z",
+   "yes": -182,
+   "no": 144,
+   "p_no": 0.3884
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Real Salt Lake",
+   "away": "FC Dallas",
+   "t": "2026-08-20T01:30:00Z",
+   "yes": -215,
+   "no": 164,
+   "p_no": 0.3569
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Vancouver Whitecaps FC",
+   "away": "Houston Dynamo",
+   "t": "2026-08-20T02:30:00Z",
+   "yes": -144,
+   "no": 112,
+   "p_no": 0.4442
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "LA Galaxy",
+   "away": "San Jose Earthquakes",
+   "t": "2026-08-20T02:30:00Z",
+   "yes": -240,
+   "no": 184,
+   "p_no": 0.3328
+  },
+  {
+   "sport": "soccer_usa_mls",
+   "league": "MLS",
+   "home": "Portland Timbers",
+   "away": "San Diego FC",
+   "t": "2026-08-20T02:30:00Z",
+   "yes": -290,
+   "no": 215,
+   "p_no": 0.2992
+  }
+ ]
+}
