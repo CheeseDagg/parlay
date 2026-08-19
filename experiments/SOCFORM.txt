@@ -1,3 +1,4 @@
 rebuild 1814
 2026-08-17T18:18Z socform: +SP2 I2 E2 E3 (Segunda slip legs unmatched)
 2026-08-17T18:24Z retrigger: first attempt lost to double-fire race
+2026-08-19T15:04Z fresh form for X-0 research
