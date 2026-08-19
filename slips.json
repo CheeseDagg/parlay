@@ -1,5 +1,5 @@
 {
- "as_of": "2026-08-17",
+ "as_of": "2026-08-19",
  "note": "Open slips. Add one object per ticket. Minimum per leg: lab, price, sport. Add mkt/out when two legs settle in the same event (so the tool can see they conflict or nest), implies when one outcome entails another, opp when you know the other side's price, t for sequencing. See slips_2026-08-01.json for a worked example.",
  "slips": [
   {
@@ -544,6 +544,42 @@
    "note": "FanDuel SGP+, 7 SGP pairs + 11 singles, pays $635 total. Stake INFERRED from Ryan: \"if it hits that's an extra 500 toward the credit card\" -> $100 at +535; correct if different. Per-leg prices hidden by the app (SGP+), logged +0. 20 measured legs joint 18.3%; five UNMEASURED (Almeria U5.5, Felgueiras P2, AB Argir Faroe, Decic Montenegro, Gijon U5.5) put the honest band at 6-10%. Two legs settle NEXT WEEKEND: Tucuman v INSTITUTO Sat, Gijon v Burgos Sun -- slip cannot fully settle before Sunday. DISPOSAL RULE (Ryan's): a win goes to the credit card.",
    "settled": "lost",
    "result": "DEAD 2026-08-17 ~20:50Z: U5.5 Casa Pia v Benfica died at 0-7 (~65min, still live). p=0.956 leg -- a 4.4% event, and with 23 legs at ~.95 avg the modal outcome was exactly one such death. At time of death: 6 legs banked (Hacken U+DC, Brondby U+DC 5g!, Depor-Elche U4.5 2g FT, Cardiff-Wrexham U5.5 2g FT), Benfica DC itself banked, Almeria 3-0 live, Lanus 0-1 live; 4 micro-league legs ungradeable (no feed); 5 not kicked + 2 next weekend. WIN->CARD $500 disposal rule moot. Remaining legs still graded individually for the calibration ledger as they finish."
+  },
+  {
+   "name": "Wed X-0/draw 5-leg",
+   "book": "FanDuel",
+   "price": 11045,
+   "stake": 50,
+   "placed": "2026-08-19T21:04Z",
+   "model_p": 0.0084,
+   "legs": [
+    {
+     "lab": "Atletico Madrid to win 1-0 2-0 or 3-0 (v Malaga)",
+     "price": 200,
+     "p": 0.33
+    },
+    {
+     "lab": "Draw ML Cerro Porteno v Palmeiras",
+     "price": 220,
+     "p": 0.33
+    },
+    {
+     "lab": "Atletico-MG And Draw DC (v Bragantino)",
+     "price": -280,
+     "p": 0.73
+    },
+    {
+     "lab": "Draw ML Santa Fe v River Plate",
+     "price": 190,
+     "p": 0.32
+    },
+    {
+     "lab": "Draw ML Torque v Tigre",
+     "price": 195,
+     "p": 0.33
+    }
+   ],
+   "note": ""
   }
  ]
 }

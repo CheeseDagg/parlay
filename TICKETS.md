@@ -327,3 +327,11 @@ DEAD ~3:50p CT: U5.5 Casa Pia v Benfica went over at 0–7 (~65'). Six legs had 
 - [ ] U5.5 Necaxa v Leon — +0 (model 94.6%)
 - [ ] U5.5 Atl Tucuman v Instituto (SATURDAY) — +0 (model 97.1%)
 - [ ] U5.5 Sporting Gijon v Burgos (SUNDAY) — +0
+
+## Wed X-0/draw 5-leg — +11045 — placed 2026-08-19T21:04Z
+
+- [ ] Atletico Madrid to win 1-0 2-0 or 3-0 (v Malaga) — +200 (model 33.0%)
+- [ ] Draw ML Cerro Porteno v Palmeiras — +220 (model 33.0%)
+- [ ] Atletico-MG And Draw DC (v Bragantino) — -280 (model 73.0%)
+- [ ] Draw ML Santa Fe v River Plate — +190 (model 32.0%)
+- [ ] Draw ML Torque v Tigre — +195 (model 33.0%)
