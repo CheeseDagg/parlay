@@ -1,6 +1,8 @@
-> **HOLD LIFTED 2026-08-19** at Ryan's explicit word ("lift the hold"), after a
-> direct check-in. Routines re-enabled, workflow schedules reverted. The 8/17
-> hold and its reason stay in the git history.
+> **ON-DEMAND MODE since 2026-08-19** (Ryan: "have everything pull when i ask,
+> not automatically"). Daily Routines and all workflow cron schedules are OFF.
+> Every pull (board, scores, btts, form) fires only from an explicit ask, via
+> trigger-file touch or workflow_dispatch. The 8/17 hold and 8/19 lift remain
+> in git history.
 
 # Live slips
 

@@ -1,14 +1,11 @@
 name: Parlay board refresh
 on:
-  schedule:
-    # 16:00 UTC = noon ET: MLB slates and props are posted, nothing has started.
-    # A second pull at 21:00 UTC (~5pm ET) catches line moves before first pitch.
-    - cron: "0 16 * * *"
-    - cron: "0 21 * * *"
-    # 23:30Z = 6:30pm CT: the last look before the main evening slate. The
-    # 21:00Z run left linelog's "closing" line 2.5-5.5 hours stale for
-    # 7pm-9pm CT first pitches; this one lands 30-90 minutes out.
-    - cron: "30 23 * * *"
+  # ON-DEMAND ONLY (Ryan 2026-08-19: "have everything pull when i ask, not
+  # automatically"). Pulls fire via REBUILD.txt or workflow_dispatch when he
+  # asks. The old schedule, for whenever he wants it back:
+  #   - cron: "0 16 * * *"   # noon ET slate pull
+  #   - cron: "0 21 * * *"   # ~5pm ET line moves
+  #   - cron: "30 23 * * *"  # 6:30pm CT last look
   workflow_dispatch: {}
   push:
     paths: ['experiments/REBUILD.txt']   # touch to refresh on demand, same as the other repos
