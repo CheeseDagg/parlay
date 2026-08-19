@@ -1,59 +1,14 @@
 {
- "as_of": "2026-08-17T21:19Z",
- "date": "2026-08-17",
+ "as_of": "2026-08-19T17:38Z",
+ "date": "2026-08-19",
  "mlb": [
-  {
-   "away": "STL",
-   "home": "CIN",
-   "key": "STL@CIN",
-   "through5": 3,
-   "current": 3,
-   "inning": 9,
-   "final": true
-  },
-  {
-   "away": "STL",
-   "home": "CIN",
-   "key": "STL@CIN",
-   "through5": null,
-   "current": null,
-   "inning": null,
-   "final": false
-  },
-  {
-   "away": "BAL",
-   "home": "TB",
-   "key": "BAL@TB",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
-  },
-  {
-   "away": "MIA",
-   "home": "PHI",
-   "key": "MIA@PHI",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
-  },
   {
    "away": "DET",
    "home": "PIT",
    "key": "DET@PIT",
    "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
-  },
-  {
-   "away": "AZ",
-   "home": "BOS",
-   "key": "AZ@BOS",
-   "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 2,
+   "inning": 4,
    "final": false
   },
   {
@@ -61,17 +16,8 @@
    "home": "NYM",
    "key": "SD@NYM",
    "through5": null,
-   "current": null,
-   "inning": null,
-   "final": false
-  },
-  {
-   "away": "ATH",
-   "home": "KC",
-   "key": "ATH@KC",
-   "through5": null,
    "current": 0,
-   "inning": 1,
+   "inning": 2,
    "final": false
   },
   {
@@ -88,6 +34,96 @@
    "home": "CHC",
    "key": "CWS@CHC",
    "through5": null,
+   "current": 0,
+   "inning": 1,
+   "final": false
+  },
+  {
+   "away": "AZ",
+   "home": "BOS",
+   "key": "AZ@BOS",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "MIA",
+   "home": "PHI",
+   "key": "MIA@PHI",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "NYY",
+   "home": "BAL",
+   "key": "NYY@BAL",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "SF",
+   "home": "CLE",
+   "key": "SF@CLE",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "STL",
+   "home": "CIN",
+   "key": "STL@CIN",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "TOR",
+   "home": "TB",
+   "key": "TOR@TB",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "ATH",
+   "home": "KC",
+   "key": "ATH@KC",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "SEA",
+   "home": "MIL",
+   "key": "SEA@MIL",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "WSH",
+   "home": "TEX",
+   "key": "WSH@TEX",
+   "through5": null,
+   "current": null,
+   "inning": null,
+   "final": false
+  },
+  {
+   "away": "LAA",
+   "home": "HOU",
+   "key": "LAA@HOU",
+   "through5": null,
    "current": null,
    "inning": null,
    "final": false
@@ -103,46 +139,6 @@
   }
  ],
  "soccer": [
-  {
-   "home": "Chicago Fire",
-   "away": "Portland Timbers",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "Chicago Fire": 2,
-    "Portland Timbers": 1
-   }
-  },
-  {
-   "home": "New York City FC",
-   "away": "Philadelphia Union",
-   "goals": 5,
-   "completed": true,
-   "detail": {
-    "New York City FC": 2,
-    "Philadelphia Union": 3
-   }
-  },
-  {
-   "home": "Austin FC",
-   "away": "FC Dallas",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "Austin FC": 1,
-    "FC Dallas": 2
-   }
-  },
-  {
-   "home": "Seattle Sounders FC",
-   "away": "Vancouver Whitecaps FC",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "Seattle Sounders FC": 0,
-    "Vancouver Whitecaps FC": 2
-   }
-  },
   {
    "home": "Columbus Crew SC",
    "away": "CF Montreal",
@@ -354,16 +350,6 @@
    "detail": {}
   },
   {
-   "home": "BK Hacken",
-   "away": "Halmstads BK",
-   "goals": 1,
-   "completed": true,
-   "detail": {
-    "BK Hacken": 1,
-    "Halmstads BK": 0
-   }
-  },
-  {
    "home": "IK Sirius",
    "away": "BK Hacken",
    "goals": null,
@@ -413,16 +399,6 @@
    "detail": {}
   },
   {
-   "home": "Brondby IF",
-   "away": "SonderjyskE",
-   "goals": 5,
-   "completed": true,
-   "detail": {
-    "SonderjyskE": 2,
-    "Brondby IF": 3
-   }
-  },
-  {
    "home": "SonderjyskE",
    "away": "FC Nordsjaelland",
    "goals": null,
@@ -463,16 +439,6 @@
    "goals": null,
    "completed": false,
    "detail": {}
-  },
-  {
-   "home": "Almer\u00eda",
-   "away": "CD Eldense",
-   "goals": 3,
-   "completed": false,
-   "detail": {
-    "CD Eldense": 0,
-    "Almer\u00eda": 3
-   }
   },
   {
    "home": "C\u00f3rdoba",
@@ -538,7 +504,7 @@
    "detail": {}
   },
   {
-   "home": "Celta Vigo",
+   "home": "Celta Fortuna",
    "away": "Andorra CF",
    "goals": null,
    "completed": false,
@@ -550,16 +516,6 @@
    "goals": null,
    "completed": false,
    "detail": {}
-  },
-  {
-   "home": "Deportivo La Coru\u00f1a",
-   "away": "Elche CF",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "Elche CF": 1,
-    "Deportivo La Coru\u00f1a": 1
-   }
   },
   {
    "home": "Atl\u00e9tico Madrid",
@@ -667,16 +623,6 @@
    "detail": {}
   },
   {
-   "home": "Cardiff City",
-   "away": "Wrexham AFC",
-   "goals": 2,
-   "completed": true,
-   "detail": {
-    "Cardiff City": 1,
-    "Wrexham AFC": 1
-   }
-  },
-  {
    "home": "Birmingham City",
    "away": "Bristol City",
    "goals": null,
@@ -761,16 +707,6 @@
    "detail": {}
   },
   {
-   "home": "Casa Pia",
-   "away": "Benfica",
-   "goals": 7,
-   "completed": true,
-   "detail": {
-    "Benfica": 7,
-    "Casa Pia": 0
-   }
-  },
-  {
    "home": "Moreirense FC",
    "away": "Benfica",
    "goals": null,
@@ -822,60 +758,6 @@
   {
    "home": "Gil Vicente",
    "away": "Casa Pia",
-   "goals": null,
-   "completed": false,
-   "detail": {}
-  },
-  {
-   "home": "Barracas Central",
-   "away": "Rosario Central",
-   "goals": 1,
-   "completed": true,
-   "detail": {
-    "Barracas Central": 0,
-    "Rosario Central": 1
-   }
-  },
-  {
-   "home": "Central C\u00f3rdoba",
-   "away": "Instituto de C\u00f3rdoba",
-   "goals": 1,
-   "completed": true,
-   "detail": {
-    "Central C\u00f3rdoba": 0,
-    "Instituto de C\u00f3rdoba": 1
-   }
-  },
-  {
-   "home": "Estudiantes de R\u00edo Cuarto",
-   "away": "Atl\u00e9tico Tucuman",
-   "goals": 1,
-   "completed": true,
-   "detail": {
-    "Atl\u00e9tico Tucuman": 1,
-    "Estudiantes de R\u00edo Cuarto": 0
-   }
-  },
-  {
-   "home": "Lanus",
-   "away": "Independiente",
-   "goals": 3,
-   "completed": false,
-   "detail": {
-    "Independiente": 2,
-    "Lanus": 1
-   }
-  },
-  {
-   "home": "Velez Sarsfield BA",
-   "away": "Defensa y Justicia",
-   "goals": null,
-   "completed": false,
-   "detail": {}
-  },
-  {
-   "home": "Gimnasia Mendoza",
-   "away": "Talleres",
    "goals": null,
    "completed": false,
    "detail": {}
@@ -1091,50 +973,6 @@
    "detail": {}
   },
   {
-   "home": "Am\u00e9rica",
-   "away": "Atl\u00e9tico San Luis",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "Am\u00e9rica": 3,
-    "Atl\u00e9tico San Luis": 0
-   }
-  },
-  {
-   "home": "Santos Laguna",
-   "away": "Guadalajara",
-   "goals": 1,
-   "completed": true,
-   "detail": {
-    "Santos Laguna": 0,
-    "Guadalajara": 1
-   }
-  },
-  {
-   "home": "Tijuana",
-   "away": "Cruz Azul",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "Tijuana": 2,
-    "Cruz Azul": 1
-   }
-  },
-  {
-   "home": "Necaxa",
-   "away": "Le\u00f3n",
-   "goals": null,
-   "completed": false,
-   "detail": {}
-  },
-  {
-   "home": "Pachuca",
-   "away": "Puebla",
-   "goals": null,
-   "completed": false,
-   "detail": {}
-  },
-  {
    "home": "Tigres",
    "away": "Atlante FC",
    "goals": null,
@@ -1198,38 +1036,22 @@
    "detail": {}
   },
   {
-   "home": "Vitoria",
-   "away": "Botafogo",
-   "goals": 1,
-   "completed": true,
-   "detail": {
-    "Vitoria": 1,
-    "Botafogo": 0
-   }
+   "home": "Atlante FC",
+   "away": "Le\u00f3n",
+   "goals": null,
+   "completed": false,
+   "detail": {}
   },
   {
-   "home": "Mirassol",
-   "away": "Flamengo",
-   "goals": 6,
-   "completed": true,
-   "detail": {
-    "Mirassol": 1,
-    "Flamengo": 5
-   }
+   "home": "Necaxa",
+   "away": "Cruz Azul",
+   "goals": null,
+   "completed": false,
+   "detail": {}
   },
   {
-   "home": "Corinthians",
-   "away": "Cruzeiro",
-   "goals": 3,
-   "completed": true,
-   "detail": {
-    "Corinthians": 1,
-    "Cruzeiro": 2
-   }
-  },
-  {
-   "home": "Internacional",
-   "away": "Remo",
+   "home": "Tijuana",
+   "away": "Pumas",
    "goals": null,
    "completed": false,
    "detail": {}
@@ -1347,15 +1169,15 @@
    "detail": {}
   },
   {
-   "home": "Bahia",
-   "away": "Internacional",
+   "home": "Gr\u00eamio",
+   "away": "Chapecoense",
    "goals": null,
    "completed": false,
    "detail": {}
   },
   {
-   "home": "Gr\u00eamio",
-   "away": "Chapecoense",
+   "home": "Bahia",
+   "away": "Internacional",
    "goals": null,
    "completed": false,
    "detail": {}
