@@ -106,21 +106,30 @@ jobs:
           fi
           cp /tmp/refresh.log refresh.log 2>/dev/null || echo "(no log captured — failed before the first step wrote)" > refresh.log
           echo "run conclusion: ${{ job.status }} at $(date -u +%F\ %H:%M)" >> refresh.log
-          git add -A
-          git diff --cached --quiet && echo "no changes" && exit 0
-          git commit -m "board refresh $(date -u +%F\ %H:%M) [${{ job.status }}]"
-          # RETRY THE PUSH. This was a bare `git push` until 8/13, when a clean
-          # pull -- 45 leagues, 1223 lines, the whole point of the run -- was
-          # thrown away because scores-only.yml committed to main in the same
-          # minute and this push was rejected as non-fast-forward. Two workflows
-          # both push to main and are both triggered by pushes to main, so the
-          # race is routine, not exotic; scores-only has carried this exact loop
-          # since it was written. Rebase rather than merge: the board files are
-          # generated wholesale, so there is nothing to reconcile, and scores
-          # are written by the other job alone.
+          # (No commit here: the loop below commits per attempt. A commit at
+          # this point would empty the snapshot and the loop would publish
+          # nothing -- the exact silent-wipe class this step exists to kill.)
+          # RETRY THE PUSH -- by REBUILDING THE COMMIT, not rebasing it. The
+          # 8/13 lesson added a rebase loop; 8/19 proved rebase is the wrong
+          # tool: socform.yml (fired by the same push that fired this) landed
+          # its socform.json first, the rebase hit a content conflict in a
+          # generated file five times, and a fully built Wednesday board was
+          # thrown away while the scanner read Monday's. Generated files have
+          # no history worth reconciling -- the newest build wins by
+          # construction. So: snapshot everything this run produced, then per
+          # attempt reset to FRESH origin/main, lay the snapshot on top,
+          # commit, push. A collision costs one loop, never the board.
+          git add -A && git reset -q HEAD
+          { git diff --name-only; git ls-files --others --exclude-standard; } | sort -u > /tmp/publist
+          tar -cf /tmp/pub.tar -T /tmp/publist 2>/dev/null || true
           for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            tar -xf /tmp/pub.tar 2>/dev/null || true
+            git add -A
+            git diff --cached --quiet && { echo "no changes vs main"; exit 0; }
+            git commit -m "board refresh $(date -u +%F\ %H:%M) [${{ job.status }}]"
             git push origin HEAD:main && exit 0
-            echo "push rejected (attempt $attempt) -- rebasing onto origin/main"
-            git fetch origin main && git rebase origin/main || git rebase --abort
+            echo "push rejected (attempt $attempt) -- rebuilding on fresh main"
           done
           exit 1
