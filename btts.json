@@ -1,9 +1,9 @@
 {
- "as_of": "2026-08-19T14:57Z",
+ "as_of": "2026-08-19T15:49Z",
  "leagues_active": 45,
  "league_errors": [],
  "seen_today": 31,
- "seen_future": 454,
+ "seen_future": 455,
  "event_fetch_errors": 0,
  "fd_quoted": 16,
  "fd_unquoted": [
@@ -50,9 +50,9 @@
    "home": "Toronto FC",
    "away": "Charlotte FC",
    "t": "2026-08-19T23:30:00Z",
-   "yes": -180,
-   "no": 140,
-   "p_no": 0.3933
+   "yes": -190,
+   "no": 148,
+   "p_no": 0.381
   },
   {
    "sport": "soccer_usa_mls",
@@ -60,9 +60,9 @@
    "home": "Orlando City SC",
    "away": "Chicago Fire",
    "t": "2026-08-19T23:30:00Z",
-   "yes": -320,
-   "no": 230,
-   "p_no": 0.2846
+   "yes": -330,
+   "no": 240,
+   "p_no": 0.2771
   },
   {
    "sport": "soccer_usa_mls",
@@ -80,9 +80,9 @@
    "home": "FC Cincinnati",
    "away": "New York City FC",
    "t": "2026-08-19T23:30:00Z",
-   "yes": -240,
-   "no": 182,
-   "p_no": 0.3344
+   "yes": -270,
+   "no": 200,
+   "p_no": 0.3136
   },
   {
    "sport": "soccer_usa_mls",
@@ -90,9 +90,9 @@
    "home": "Philadelphia Union",
    "away": "Inter Miami CF",
    "t": "2026-08-19T23:30:00Z",
-   "yes": -320,
-   "no": 230,
-   "p_no": 0.2846
+   "yes": -310,
+   "no": 225,
+   "p_no": 0.2892
   },
   {
    "sport": "soccer_usa_mls",
@@ -110,9 +110,9 @@
    "home": "Sporting Kansas City",
    "away": "St. Louis City SC",
    "t": "2026-08-20T00:00:00Z",
-   "yes": -215,
-   "no": 164,
-   "p_no": 0.3569
+   "yes": -205,
+   "no": 158,
+   "p_no": 0.3658
   },
   {
    "sport": "soccer_usa_mls",
@@ -120,9 +120,9 @@
    "home": "Minnesota United FC",
    "away": "Atlanta United FC",
    "t": "2026-08-20T00:30:00Z",
-   "yes": -158,
-   "no": 124,
-   "p_no": 0.4216
+   "yes": -156,
+   "no": 122,
+   "p_no": 0.425
   },
   {
    "sport": "soccer_usa_mls",
@@ -130,9 +130,9 @@
    "home": "Seattle Sounders FC",
    "away": "Austin FC",
    "t": "2026-08-20T01:30:00Z",
-   "yes": -174,
-   "no": 136,
-   "p_no": 0.4002
+   "yes": -168,
+   "no": 132,
+   "p_no": 0.4074
   },
   {
    "sport": "soccer_usa_mls",
@@ -150,9 +150,9 @@
    "home": "Real Salt Lake",
    "away": "FC Dallas",
    "t": "2026-08-20T01:30:00Z",
-   "yes": -215,
-   "no": 164,
-   "p_no": 0.3569
+   "yes": -220,
+   "no": 172,
+   "p_no": 0.3484
   },
   {
    "sport": "soccer_usa_mls",
@@ -170,9 +170,9 @@
    "home": "LA Galaxy",
    "away": "San Jose Earthquakes",
    "t": "2026-08-20T02:30:00Z",
-   "yes": -240,
-   "no": 184,
-   "p_no": 0.3328
+   "yes": -280,
+   "no": 210,
+   "p_no": 0.3045
   },
   {
    "sport": "soccer_usa_mls",
@@ -180,9 +180,9 @@
    "home": "Portland Timbers",
    "away": "San Diego FC",
    "t": "2026-08-20T02:30:00Z",
-   "yes": -290,
-   "no": 215,
-   "p_no": 0.2992
+   "yes": -300,
+   "no": 220,
+   "p_no": 0.2941
   }
  ]
 }

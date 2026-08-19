@@ -1,4 +1,4 @@
-as_of 2026-08-19T14:57Z -- 45 active soccer leagues on the API; 31 events in today's CT window (454 later this week), FanDuel quoted btts on 16, 15 unquoted, 0 fetch errors
+as_of 2026-08-19T15:49Z -- 45 active soccer leagues on the API; 31 events in today's CT window (455 later this week), FanDuel quoted btts on 16, 15 unquoted, 0 fetch errors
   -- in-window but NO FanDuel btts quote via the API:
      Avai v Sport Recife [Brazil Série B] 2026-08-19T22:30:00Z
      Fortaleza v São Bernardo [Brazil Série B] 2026-08-19T22:30:00Z
@@ -17,17 +17,17 @@ as_of 2026-08-19T14:57Z -- 45 active soccer leagues on the API; 31 events in tod
      ŠK Slovan Bratislava v NK Celje [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
   2026-08-19T19:00:00Z  Atlético Madrid v Málaga  No -118 / Yes -108  pNo=0.510  (La Liga - Spain)
   2026-08-19T23:30:00Z  Columbus Crew SC v CF Montreal  No +138 / Yes -176  pNo=0.397  (MLS)
-  2026-08-19T23:30:00Z  Toronto FC v Charlotte FC  No +140 / Yes -180  pNo=0.393  (MLS)
-  2026-08-19T23:30:00Z  Orlando City SC v Chicago Fire  No +230 / Yes -320  pNo=0.285  (MLS)
+  2026-08-19T23:30:00Z  Toronto FC v Charlotte FC  No +148 / Yes -190  pNo=0.381  (MLS)
+  2026-08-19T23:30:00Z  Orlando City SC v Chicago Fire  No +240 / Yes -330  pNo=0.277  (MLS)
   2026-08-19T23:30:00Z  D.C. United v New England Revolution  No +138 / Yes -174  pNo=0.398  (MLS)
-  2026-08-19T23:30:00Z  FC Cincinnati v New York City FC  No +182 / Yes -240  pNo=0.334  (MLS)
-  2026-08-19T23:30:00Z  Philadelphia Union v Inter Miami CF  No +230 / Yes -320  pNo=0.285  (MLS)
+  2026-08-19T23:30:00Z  FC Cincinnati v New York City FC  No +200 / Yes -270  pNo=0.314  (MLS)
+  2026-08-19T23:30:00Z  Philadelphia Union v Inter Miami CF  No +225 / Yes -310  pNo=0.289  (MLS)
   2026-08-19T23:30:00Z  New York Red Bulls v Nashville SC  No +178 / Yes -230  pNo=0.340  (MLS)
-  2026-08-20T00:00:00Z  Sporting Kansas City v St. Louis City SC  No +164 / Yes -215  pNo=0.357  (MLS)
-  2026-08-20T00:30:00Z  Minnesota United FC v Atlanta United FC  No +124 / Yes -158  pNo=0.422  (MLS)
-  2026-08-20T01:30:00Z  Seattle Sounders FC v Austin FC  No +136 / Yes -174  pNo=0.400  (MLS)
+  2026-08-20T00:00:00Z  Sporting Kansas City v St. Louis City SC  No +158 / Yes -205  pNo=0.366  (MLS)
+  2026-08-20T00:30:00Z  Minnesota United FC v Atlanta United FC  No +122 / Yes -156  pNo=0.425  (MLS)
+  2026-08-20T01:30:00Z  Seattle Sounders FC v Austin FC  No +132 / Yes -168  pNo=0.407  (MLS)
   2026-08-20T01:30:00Z  Colorado Rapids v Los Angeles FC  No +144 / Yes -182  pNo=0.388  (MLS)
-  2026-08-20T01:30:00Z  Real Salt Lake v FC Dallas  No +164 / Yes -215  pNo=0.357  (MLS)
+  2026-08-20T01:30:00Z  Real Salt Lake v FC Dallas  No +172 / Yes -220  pNo=0.348  (MLS)
   2026-08-20T02:30:00Z  Vancouver Whitecaps FC v Houston Dynamo  No +112 / Yes -142  pNo=0.446  (MLS)
-  2026-08-20T02:30:00Z  LA Galaxy v San Jose Earthquakes  No +184 / Yes -240  pNo=0.333  (MLS)
-  2026-08-20T02:30:00Z  Portland Timbers v San Diego FC  No +215 / Yes -290  pNo=0.299  (MLS)
+  2026-08-20T02:30:00Z  LA Galaxy v San Jose Earthquakes  No +210 / Yes -280  pNo=0.304  (MLS)
+  2026-08-20T02:30:00Z  Portland Timbers v San Diego FC  No +220 / Yes -300  pNo=0.294  (MLS)
