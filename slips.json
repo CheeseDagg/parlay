@@ -579,7 +579,9 @@
      "p": 0.33
     }
    ],
-   "note": ""
+   "note": "",
+   "settled": "lost",
+   "result": "DEAD 2026-08-19 ~19:50 CT, TWO legs in the same window. Cerro-Palmeiras Draw: 0-1 Palmeiras (Cerro never threatened after conceding; Ryan watching live called it dead before FT). Mineiro DC: Bragantino won 2-1 in BH after Mineiro had levelled -- the -280 leg, 73%, was the anchor and it broke. Atleti X-0 BANKED (2-0). The two 7:30p draws (Santa Fe-River, Torque-Tigre) were moot by then and are ungraded here. SCORES ARE FROM RYAN LIVE, not yet confirmed by feed -- the odds API carries no Libertadores/Sudamericana scores and every score site is egress-blocked; confirm at the next pass. Process note for the record: this was the best-built slip on file (every leg news-swept, Flamengo cut on the leg-1 1-1 fact, Mineiro taken as DC not X-0, model 0.84% vs implied 0.90%) and it still lost. Good process, bad outcome, fair price -- that is the whole lesson and it does not need repeating at him."
   }
  ]
 }
