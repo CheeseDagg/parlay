@@ -126,7 +126,13 @@ def main():
                    "soccer_spain_segunda_division", "soccer_spain_la_liga",
                    "soccer_efl_champ", "soccer_portugal_primeira_liga",
                    "soccer_argentina_primera_division", "soccer_mexico_ligamx",
-                   "soccer_brazil_campeonato"):
+                   "soccer_brazil_campeonato",
+                   # Added 8/19: BOTH of tonight's dead legs were in these two
+                   # competitions and NEITHER could be graded from the feed --
+                   # the scores endpoint does not care that FanDuel is absent
+                   # from their bookmakers list, so this was pure omission.
+                   "soccer_conmebol_copa_libertadores",
+                   "soccer_conmebol_copa_sudamericana"):
             try:
                 got = soccer_scores(key, sp)
                 doc["soccer"].extend(got)
