@@ -1,59 +1,59 @@
 {
- "as_of": "2026-08-19T17:40Z",
+ "as_of": "2026-08-20T00:01Z",
  "date": "2026-08-19",
  "mlb": [
   {
    "away": "DET",
    "home": "PIT",
    "key": "DET@PIT",
-   "through5": null,
-   "current": 2,
-   "inning": 4,
-   "final": false
+   "through5": 4,
+   "current": 7,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "SD",
    "home": "NYM",
    "key": "SD@NYM",
-   "through5": null,
-   "current": 0,
-   "inning": 2,
-   "final": false
+   "through5": 3,
+   "current": 6,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "ATL",
    "home": "MIN",
    "key": "ATL@MIN",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
+   "through5": 5,
+   "current": 10,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "CWS",
    "home": "CHC",
    "key": "CWS@CHC",
-   "through5": null,
-   "current": 0,
-   "inning": 1,
-   "final": false
+   "through5": 0,
+   "current": 3,
+   "inning": 9,
+   "final": true
   },
   {
    "away": "AZ",
    "home": "BOS",
    "key": "AZ@BOS",
-   "through5": null,
-   "current": null,
-   "inning": null,
-   "final": false
+   "through5": 5,
+   "current": 13,
+   "inning": 10,
+   "final": true
   },
   {
    "away": "MIA",
    "home": "PHI",
    "key": "MIA@PHI",
-   "through5": null,
-   "current": null,
-   "inning": null,
+   "through5": 3,
+   "current": 4,
+   "inning": 7,
    "final": false
   },
   {
@@ -61,35 +61,35 @@
    "home": "BAL",
    "key": "NYY@BAL",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 5,
+   "inning": 4,
    "final": false
   },
   {
    "away": "SF",
    "home": "CLE",
    "key": "SF@CLE",
-   "through5": null,
-   "current": null,
-   "inning": null,
+   "through5": 1,
+   "current": 1,
+   "inning": 6,
    "final": false
   },
   {
    "away": "STL",
    "home": "CIN",
    "key": "STL@CIN",
-   "through5": null,
-   "current": null,
-   "inning": null,
+   "through5": 2,
+   "current": 2,
+   "inning": 5,
    "final": false
   },
   {
    "away": "TOR",
    "home": "TB",
    "key": "TOR@TB",
-   "through5": null,
-   "current": null,
-   "inning": null,
+   "through5": 9,
+   "current": 9,
+   "inning": 5,
    "final": false
   },
   {
@@ -97,8 +97,8 @@
    "home": "KC",
    "key": "ATH@KC",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 2,
+   "inning": 2,
    "final": false
   },
   {
@@ -106,8 +106,8 @@
    "home": "MIL",
    "key": "SEA@MIL",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 4,
+   "inning": 1,
    "final": false
   },
   {
@@ -115,8 +115,8 @@
    "home": "TEX",
    "key": "WSH@TEX",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -124,8 +124,8 @@
    "home": "HOU",
    "key": "LAA@HOU",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   },
   {
@@ -133,8 +133,8 @@
    "home": "COL",
    "key": "LAD@COL",
    "through5": null,
-   "current": null,
-   "inning": null,
+   "current": 0,
+   "inning": 1,
    "final": false
   }
  ],
@@ -142,58 +142,82 @@
   {
    "home": "Columbus Crew SC",
    "away": "CF Montreal",
-   "goals": null,
+   "goals": 1,
    "completed": false,
-   "detail": {}
-  },
-  {
-   "home": "Toronto FC",
-   "away": "Charlotte FC",
-   "goals": null,
-   "completed": false,
-   "detail": {}
-  },
-  {
-   "home": "Orlando City SC",
-   "away": "Chicago Fire",
-   "goals": null,
-   "completed": false,
-   "detail": {}
-  },
-  {
-   "home": "D.C. United",
-   "away": "New England Revolution",
-   "goals": null,
-   "completed": false,
-   "detail": {}
-  },
-  {
-   "home": "FC Cincinnati",
-   "away": "New York City FC",
-   "goals": null,
-   "completed": false,
-   "detail": {}
-  },
-  {
-   "home": "Philadelphia Union",
-   "away": "Inter Miami CF",
-   "goals": null,
-   "completed": false,
-   "detail": {}
+   "detail": {
+    "Columbus Crew SC": 0,
+    "CF Montreal": 1
+   }
   },
   {
    "home": "New York Red Bulls",
    "away": "Nashville SC",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "New York Red Bulls": 0,
+    "Nashville SC": 0
+   }
+  },
+  {
+   "home": "Toronto FC",
+   "away": "Charlotte FC",
+   "goals": 2,
+   "completed": false,
+   "detail": {
+    "Toronto FC": 1,
+    "Charlotte FC": 1
+   }
+  },
+  {
+   "home": "Orlando City SC",
+   "away": "Chicago Fire",
+   "goals": 1,
+   "completed": false,
+   "detail": {
+    "Orlando City SC": 0,
+    "Chicago Fire": 1
+   }
+  },
+  {
+   "home": "D.C. United",
+   "away": "New England Revolution",
+   "goals": 0,
+   "completed": false,
+   "detail": {
+    "D.C. United": 0,
+    "New England Revolution": 0
+   }
+  },
+  {
+   "home": "FC Cincinnati",
+   "away": "New York City FC",
+   "goals": 1,
+   "completed": false,
+   "detail": {
+    "FC Cincinnati": 1,
+    "New York City FC": 0
+   }
+  },
+  {
+   "home": "Philadelphia Union",
+   "away": "Inter Miami CF",
+   "goals": 1,
+   "completed": false,
+   "detail": {
+    "Philadelphia Union": 1,
+    "Inter Miami CF": 0
+   }
   },
   {
    "home": "Sporting Kansas City",
    "away": "St. Louis City SC",
-   "goals": null,
+   "goals": 0,
    "completed": false,
-   "detail": {}
+   "detail": {
+    "Sporting Kansas City": 0,
+    "St. Louis City SC": 0
+   }
   },
   {
    "home": "Minnesota United FC",
@@ -345,6 +369,27 @@
   {
    "home": "Atlanta United FC",
    "away": "Sporting Kansas City",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Seattle Sounders FC",
+   "away": "Chicago Fire",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Columbus Crew SC",
+   "away": "New England Revolution",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Toronto FC",
+   "away": "New York City FC",
    "goals": null,
    "completed": false,
    "detail": {}
@@ -520,9 +565,12 @@
   {
    "home": "Atl\u00e9tico Madrid",
    "away": "M\u00e1laga",
-   "goals": null,
-   "completed": false,
-   "detail": {}
+   "goals": 2,
+   "completed": true,
+   "detail": {
+    "M\u00e1laga": 0,
+    "Atl\u00e9tico Madrid": 2
+   }
   },
   {
    "home": "Rayo Vallecano",
@@ -1052,6 +1100,20 @@
   {
    "home": "Tijuana",
    "away": "Pumas",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Atlas",
+   "away": "Quer\u00e9taro",
+   "goals": null,
+   "completed": false,
+   "detail": {}
+  },
+  {
+   "home": "Pachuca",
+   "away": "Guadalajara",
    "goals": null,
    "completed": false,
    "detail": {}
