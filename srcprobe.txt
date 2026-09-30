@@ -1,8 +1,11 @@
-=== ROUND 15: is understat's 200 a real page or a challenge? ===
-  OK       18,698b  understat EPL 2026  
-     18,698 chars
-     CHALLENGE MARKER: 'cloudflare'
-     --- first 400 chars ---
-     <!DOCTYPE html> <html lang="en">     <head> 		<base href="https://understat.com/"> 		<title>EPL xG Table and Scorers for the 2026/2027 season | Understat.com</title>         <meta charset="UTF-8" /> 		<meta name="description" content="xG table of EPL standings and top scorers for the 2026/2027 season, also tables from past seasons and other European football leagues."> 		<meta name="Keywords" cont
-     --- title ---
-     EPL xG Table and Scorers for the 2026/2027 season | Understat.com
+=== ROUND 16: understat POST routes -- is there a PER-MATCH one? ===
+  OK       28,386b  getPlayersStats (EPL 2026)  
+     decoded 141,888 chars
+     players: 421
+     fields: ['assists', 'games', 'goals', 'id', 'key_passes', 'npg', 'npxG', 'player_name', 'position', 'red_cards', 'shots', 'team_title', 'time', 'xA']
+     sample: {'id': '8260', 'player_name': 'Erling Haaland', 'games': '5', 'time': '450', 'goals': '5', 'xG': '4.760757207870483', 'assists': '0'}
+  FAIL  HTTPError 404  /main/getPlayerStats/ for player 8260  
+  OK           42b  /main/getPlayerMatches/ for player 8260  
+       keys: ['response']
+       sample: {"response": {"success": true, "matches": []}}
+  FAIL  HTTPError 404  /main/getPlayerShots/ for player 8260  
