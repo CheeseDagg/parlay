@@ -1,9 +1,8 @@
-=== ROUND 14: can understat give CURRENT-season per-player per-match? ===
-openfootball's 2026-27 file carries results but ZERO goal events (0 minute
-markers); its scorers stop with 2025-26, which ended 2026-05-24.
-
-  OK       18,698b  understat EPL 2026 league page  
-     decoded 18,698 chars
-     datesData: absent
-     playersData: absent
-     teamsData: absent
+=== ROUND 15: is understat's 200 a real page or a challenge? ===
+  OK       18,698b  understat EPL 2026  
+     18,698 chars
+     CHALLENGE MARKER: 'cloudflare'
+     --- first 400 chars ---
+     <!DOCTYPE html> <html lang="en">     <head> 		<base href="https://understat.com/"> 		<title>EPL xG Table and Scorers for the 2026/2027 season | Understat.com</title>         <meta charset="UTF-8" /> 		<meta name="description" content="xG table of EPL standings and top scorers for the 2026/2027 season, also tables from past seasons and other European football leagues."> 		<meta name="Keywords" cont
+     --- title ---
+     EPL xG Table and Scorers for the 2026/2027 season | Understat.com
