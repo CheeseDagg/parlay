@@ -28814,14 +28814,14 @@
      "ga": 6,
      "ppg": 1.909
     },
-    "Bolivar": {
-     "p": 1,
-     "w": 1,
-     "d": 0,
-     "l": 0,
-     "gf": 5,
-     "ga": 2,
-     "ppg": 3.0
+    "Bol\u00edvar": {
+     "p": 10,
+     "w": 8,
+     "d": 1,
+     "l": 1,
+     "gf": 33,
+     "ga": 11,
+     "ppg": 2.5
     },
     "Independiente Petrolero": {
      "p": 11,
@@ -28948,15 +28948,6 @@
      "gf": 8,
      "ga": 12,
      "ppg": 1.0
-    },
-    "Bol\u00edvar": {
-     "p": 9,
-     "w": 7,
-     "d": 1,
-     "l": 1,
-     "gf": 28,
-     "ga": 9,
-     "ppg": 2.444
     }
    },
    "away": {
@@ -29120,12 +29111,18 @@
       "ag": 1
      }
     ],
-    "Bolivar|Real Oruro": [
+    "Bol\u00edvar|Real Oruro": [
      {
-      "home": "Bolivar",
+      "home": "Bol\u00edvar",
       "away": "Real Oruro",
       "hg": 5,
       "ag": 2
+     },
+     {
+      "home": "Real Oruro",
+      "away": "Bol\u00edvar",
+      "hg": 2,
+      "ag": 4
      }
     ],
     "Independiente Petrolero|Nacional Potos\u00ed": [
@@ -30299,14 +30296,6 @@
       "hg": 2,
       "ag": 0
      }
-    ],
-    "Bol\u00edvar|Real Oruro": [
-     {
-      "home": "Real Oruro",
-      "away": "Bol\u00edvar",
-      "hg": 2,
-      "ag": 4
-     }
     ]
    }
   },
@@ -30318,7 +30307,7 @@
     0
    ],
    [
-    "Bolivar",
+    "Bol\u00edvar",
     "Real Oruro",
     5,
     2
@@ -31273,6 +31262,12 @@
    ]
   ],
   "refused_matrices": [],
+  "merged_names": {
+   "Bol\u00edvar": [
+    "Bolivar",
+    "Bol\u00edvar"
+   ]
+  },
   "dated": [
    [
     "2026-04-03",
@@ -31283,7 +31278,7 @@
    ],
    [
     "2026-04-03",
-    "Bolivar",
+    "Bol\u00edvar",
     "Real Oruro",
     5,
     2
@@ -32494,20 +32489,52 @@
      }
     ]
    },
-   "Bolivar": {
-    "form": "W",
-    "n": 1,
-    "gf": 5,
-    "ga": 2,
-    "newest": "2026-04-03",
+   "Bol\u00edvar": {
+    "form": "WWWWW",
+    "n": 5,
+    "gf": 18,
+    "ga": 6,
+    "newest": "2026-09-17",
     "matches": [
      {
-      "date": "2026-04-03",
+      "date": "2026-09-17",
       "res": "W",
-      "gf": 5,
+      "gf": 4,
+      "ga": 2,
+      "opp": "GV San Jos\u00e9",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Real Tomayapo",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 4,
+      "ga": 0,
+      "opp": "Independiente Petrolero",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-27",
+      "res": "W",
+      "gf": 4,
+      "ga": 1,
+      "opp": "ABB",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "W",
+      "gf": 4,
       "ga": 2,
       "opp": "Real Oruro",
-      "side": "H"
+      "side": "A"
      }
     ]
    },
@@ -33145,55 +33172,6 @@
       "ga": 3,
       "opp": "Universitario de Vinto",
       "side": "H"
-     }
-    ]
-   },
-   "Bol\u00edvar": {
-    "form": "WWWWW",
-    "n": 5,
-    "gf": 18,
-    "ga": 6,
-    "newest": "2026-09-17",
-    "matches": [
-     {
-      "date": "2026-09-17",
-      "res": "W",
-      "gf": 4,
-      "ga": 2,
-      "opp": "GV San Jos\u00e9",
-      "side": "H"
-     },
-     {
-      "date": "2026-09-13",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Real Tomayapo",
-      "side": "A"
-     },
-     {
-      "date": "2026-09-06",
-      "res": "W",
-      "gf": 4,
-      "ga": 0,
-      "opp": "Independiente Petrolero",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-27",
-      "res": "W",
-      "gf": 4,
-      "ga": 1,
-      "opp": "ABB",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-23",
-      "res": "W",
-      "gf": 4,
-      "ga": 2,
-      "opp": "Real Oruro",
-      "side": "A"
      }
     ]
    }

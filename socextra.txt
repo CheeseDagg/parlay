@@ -13,6 +13,7 @@ socextra -- leagues football-data does not publish
   OK      Chile Liga de Primera: 181 matches  home 0.464 draw 0.210 away 0.326 goals 2.845
     es-rounds Uruguay Primera: 239 dated results across 3 page(s), newest 2026-09-28 [NO GRID -- dated rounds are the only source]
   OK      Uruguay Primera: 239 matches  home 0.410 draw 0.259 away 0.331 goals 2.356
+    merged spellings Bolivia Profesional: ['Bolivar', 'Bolívar'] -> 'Bolívar'
     cross-check Bolivia Profesional: 160 fixture pairs agree across both readers, 0 disagree; same count; names join on 100% of grid pairs
     es-rounds Bolivia Profesional: 160 dated results across 1 page(s), newest 2026-09-18
   OK      Bolivia Profesional: 160 matches  home 0.487 draw 0.244 away 0.269 goals 3.119
