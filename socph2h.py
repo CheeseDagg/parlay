@@ -1,29 +1,49 @@
 #!/usr/bin/env python3
 """
-socph2h.py -- PLAYER head-to-head records, the thing socplayers could not do.
+socph2h.py -- PLAYER head-to-head records: who scores against whom.
 
-WHY THIS FILE EXISTS. socplayers builds player splits from openfootball's
-per-match goal feed, and that feed carries scorers for ONE season only -- a
-sweep of 2019-20 through 2024-25 across all four leagues found 0 scorer blocks
-in every file, and only 2025-26 has them. Inside one season two clubs meet
-exactly twice, which is below any honest head-to-head floor, so the head-to-head
-list had nothing in it and said so. Ryan asked for player props in head-to-head
-five times and got that explanation five times, which is not an answer.
+Ryan asked for player props in head-to-head five times. The first four answers
+were explanations of why it could not be done, which is not an answer. The fifth
+question was "you can't look at box scores?" and that was the right question.
 
-understat is the source that answers it. Its PLAYER pages carry a matchesData
-block: every match that player has appeared in, across every season understat
-covers, with goals, date, both team names and which side he was on. That is
-exactly a head-to-head record, and it spans seasons rather than one.
+EVERY SOURCE I PROBED WAS INDEXED BY PLAYER, and they are all dead ends. Kept
+here so nobody re-walks them -- which is exactly what I did, three runner round
+trips rediscovering findings already written in socplayers.py:
 
-    https://understat.com/player/{id}   ->  var matchesData = JSON.parse('...')
+  fbref                     403 to the runner
+  sofascore                 403
+  fotmob                    404
+  understat player pages    served with NO embedded JSON at all: 19KB, right
+                            title, zero data blocks, and core.js contains no
+                            reference to /main/, getPlayer*, ajax or $.post
+  understat /main/ routes    12 of 13 are 404; getPlayerMatches is real and
+                            answers {"success":true,"matches":[]} for every
+                            parameter shape tried -- a live route serving nothing
+  ESPN site.api summary     403 to the runner
+  openfootball              scorers for ONE season only (0 goal events in every
+                            file 2019-20..2024-25), and one season is two
+                            meetings per pair
 
-The season-totals POST route already used by socplayers supplies the player ids,
-so nothing new has to be discovered to enumerate them.
+A BOX SCORE IS INDEXED BY MATCH. Walk the fixtures, read who scored in each, and
+the player histories fall out of the pile. One such archive has been on
+raw.githubusercontent.com the whole time -- a host reachable from the dev
+container, so this needs no runner at all:
 
-COST CONTROL. One page per player, and a league has ~450 of them. Fetching all
-of them four times over is both slow and rude, so only players who could carry a
-prop are fetched: ranked by goals this season, capped per league. The cap is
-reported so a thin run is visible rather than looking like a quiet source.
+  vaastav/Fantasy-Premier-League  data/<season>/gws/merged_gw.csv
+
+Every player, every fixture: goals_scored, opponent_team, was_home,
+kickoff_time, minutes, starts. ~11,500 appearances a season, and seven seasons
+carry both that file and the teams.csv needed to read it. A pair meets twice a
+season, so seven seasons is up to fourteen meetings.
+
+It also carries minutes and starts, which nothing else did. That makes the
+denominator a real appearance record instead of the club's fixture list, so the
+sentence says "scored in 5 of HIS 6" and means it. openfootball can only ever
+say "of the club's last 6", because a goal feed knows who scored and not who
+played.
+
+Premier League only. That is a real limit, stated rather than hidden, and it is
+also the biggest player-prop market by a wide margin.
 """
 import datetime as dt, gzip, json, os, re, sys, time, urllib.parse, urllib.request
 from collections import defaultdict
@@ -32,16 +52,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, 'socph2h.json')
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
-POST = 'https://understat.com/main/getPlayersStats/'
-PLAYER = 'https://understat.com/player/{pid}'
-LEAGUES = {'EPL': 'England Premier League', 'La_liga': 'Spain La Liga',
-           'Bundesliga': 'Germany Bundesliga', 'Serie_A': 'Italy Serie A'}
-SEASON = '2026'
 
-PER_LEAGUE = 45       # players fetched per league, by goals scored this season
 MIN_MEET = 3          # meetings before a head-to-head record is a record
 MIN_HITS = 2          # scored in at least this many of them
-SLEEP = 0.4           # between player pages
 
 
 def http(url, post=None, referer=None, timeout=40):
@@ -58,145 +71,218 @@ def http(url, post=None, referer=None, timeout=40):
     return b.decode('utf-8', 'replace')
 
 
-def season_players(league, season=SEASON):
-    body = urllib.parse.urlencode({'league': league, 'season': season}).encode()
-    d = json.loads(http(POST, post=body,
-                        referer=f'https://understat.com/league/{league}/{season}'))
-    return (d.get('response') or {}).get('players') or d.get('players') or []
+# THE FPL PER-MATCH ARCHIVE. Ryan asked why I could not look at box scores, and
+# he was right that the axis was wrong. Everything I had probed was indexed BY
+# PLAYER -- fbref player pages, understat's getPlayerMatches, sofascore, fotmob,
+# all rejected and all already written down in socplayers.py. ESPN's summary API
+# 403s the runner too. A box score is indexed BY MATCH, and one has been sitting
+# on raw.githubusercontent.com the whole time, which is a host this container can
+# reach without a runner at all:
+#
+#   vaastav/Fantasy-Premier-League  data/<season>/gws/merged_gw.csv
+#
+# Every player, every fixture, with goals_scored, opponent_team, was_home,
+# kickoff_time, minutes and starts. 29,757 rows for 2025-26 alone, and EIGHT
+# seasons carry both that file and the teams.csv needed to read it -- 2019-20
+# through 2026-27. A pair meets twice a season, so eight seasons is up to sixteen
+# meetings: head-to-head with something actually in it.
+#
+# It also carries `starts` and `minutes`, which no other source did. That makes
+# the denominator a genuine appearance record rather than the club's fixture
+# list, so the sentence can say "his", and it opens the one signal Ryan named
+# that nothing could answer before: scored as a STARTER.
+#
+# Premier League only. That is a real limit and it is stated rather than hidden;
+# it is also the biggest prop market by a distance.
+FPL = ('https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/'
+       'master/data/{season}/{path}')
+# 2019-20 AND EARLIER ARE EXCLUDED ON PURPOSE. Those files have no `team`
+# column and no `starts`, and their `name` is written "Aaron_Cresswell_376"
+# rather than "Aaron Cresswell" -- so a player would not join to himself across
+# the boundary and one real record would become two thin ones. Ingesting half of
+# it silently dropped 22,560 rows and reported them only as "unmapped"; naming
+# the reason is better than a number nobody can act on. Seven seasons is up to
+# fourteen meetings per pair, which is more than the floor needs.
+FPL_SEASONS = ['2026-27', '2025-26', '2024-25', '2023-24',
+               '2022-23', '2021-22', '2020-21']
+FPL_LEAGUE = 'England Premier League'
 
 
-def embedded(html, name):
-    """Pull one `var <name> = JSON.parse('...')` block out of an understat page.
+def fpl_csv(season, path, fetch=None):
+    fetch = fetch or (lambda u: http(u))
+    import csv, io
+    txt = fetch(FPL.format(season=season, path=path))
+    return list(csv.DictReader(io.StringIO(txt)))
 
-    understat hex-escapes the payload (\\x7B for '{'), so the captured string is
-    decoded as a unicode-escape before it is valid JSON. Returning None rather
-    than raising keeps one reshaped page from taking the whole run down -- the
-    caller counts the misses.
+
+def fpl_season(season, fetch=None):
+    """[(date, own_team, opponent, goals, venue, started, minutes)] for a season.
+
+    THE OPPONENT IS A NUMERIC ID AND THE IDS ARE PER-SEASON. FPL numbers the
+    twenty clubs alphabetically within each season, so 20 is Wolves in 2025-26
+    and something else the year Wolves were not in the division. Mapping with one
+    global table would file records against the wrong club in every season but
+    one -- the exact failure the club-matching work in socplayers kept producing.
+    So teams.csv is read per season, and a season without one is skipped rather
+    than guessed (2016-17 through 2018-19 have no teams.csv).
     """
-    m = re.search(name + r"\s*=\s*JSON\.parse\('((?:[^'\\]|\\.)*)'\)", html)
-    if not m:
-        return None
-    try:
-        return json.loads(m.group(1).encode().decode('unicode_escape'))
-    except Exception:
-        return None
-
-
-def player_matches(pid, fetch=None):
-    """[(date, own_team, opponent, goals, venue)] oldest first, all seasons."""
-    fetch = fetch or (lambda u: http(u, referer='https://understat.com/'))
-    data = embedded(fetch(PLAYER.format(pid=pid)), 'matchesData')
-    if not data:
-        return None
-    out = []
-    for r in data:
+    teams = {r['id']: r['name'] for r in fpl_csv(season, 'teams.csv', fetch)
+             if r.get('id') and r.get('name')}
+    if len(teams) < 10:
+        return [], f'{season}: teams.csv carried {len(teams)} clubs -- refusing to map'
+    out, unmapped = [], 0
+    for r in fpl_csv(season, 'gws/merged_gw.csv', fetch):
+        opp = teams.get((r.get('opponent_team') or '').strip())
+        own, ko = (r.get('team') or '').strip(), (r.get('kickoff_time') or '')[:10]
+        if not (opp and own and ko):
+            unmapped += 1
+            continue
         try:
-            h, a = r.get('h_team'), r.get('a_team')
-            date = (r.get('date') or '')[:10]
-            goals = int(r.get('goals') or 0)
-            # understat marks the side the player was on. Fall back to nothing
-            # rather than guessing: a wrong side inverts the opponent and files
-            # the record against the wrong club.
-            side = r.get('h_a') or r.get('side')
-            if not (h and a and date and side in ('h', 'a')):
-                continue
-            own, opp = (h, a) if side == 'h' else (a, h)
-            out.append((date, own, opp, goals, 'home' if side == 'h' else 'away'))
+            goals, mins = int(r.get('goals_scored') or 0), int(r.get('minutes') or 0)
+            started = (r.get('starts') or '0').strip() in ('1', 'True', 'true')
         except (TypeError, ValueError):
+            unmapped += 1
             continue
+        # A player who did not come on was not in the match. Counting him would
+        # put zeroes in a denominator that is supposed to mean appearances.
+        if mins <= 0:
+            continue
+        out.append((ko, own, opp, goals, 'home' if (r.get('was_home') or '').strip()
+                    in ('True', 'true', '1') else 'away', started, mins,
+                    (r.get('name') or '').strip()))
     out.sort()
-    return out
+    note = f'{season}: {len(out)} appearances, {len(teams)} clubs'
+    if unmapped:
+        note += f', {unmapped} rows unmapped'
+    return out, note
 
 
-def h2h_signals(name, team, rows, min_meet=MIN_MEET, min_hits=MIN_HITS):
-    """'scored in 4 of his 6 against X' -- and here the denominator is HIS.
+def mirror_check(rows):
+    """Does every fixture appear from BOTH clubs' sides?
 
-    This is the one place a player denominator is honest. openfootball knows who
-    scored and not who played, so socplayers has to say "of the club's last 6".
-    understat's matchesData is an APPEARANCE record: every row is a match he was
-    actually in. So the sentence can say "his", and the count means what it says.
+    The opponent is a per-season numeric id, and a wrong mapping is the one
+    error that would silently file every record against the wrong club. This
+    catches it without comparing club NAMES across sources -- which is where
+    this kind of check has gone wrong every previous time.
+
+    The archive lists one row per player per match, so a fixture appears once
+    for each side. If (date, A, B) exists then (date, B, A) must too. Under a
+    broken mapping A's opponent and B's opponent disagree and the mirrors stop
+    lining up, which shows as a mismatch rate rather than as a strange row
+    somebody happens to notice.
+
+    Returns (matched, orphaned) fixture counts.
     """
-    by_opp = defaultdict(list)
-    for date, _own, opp, goals, venue in rows:
-        by_opp[opp].append((date, goals, venue))
+    fixtures = {(d, own, opp) for d, own, opp, _g, _v, _s, _m, _n in rows}
+    matched = sum(1 for d, a, b in fixtures if (d, b, a) in fixtures)
+    return matched, len(fixtures) - matched
+
+
+def h2h_from_fpl(rows, min_meet=MIN_MEET, min_hits=MIN_HITS):
+    """Player head-to-head out of the per-match archive.
+
+    KEYED ON THE PLAYER, NOT ON PLAYER-AND-CLUB. "scored in 4 of his 6 against
+    Wolves" is a fact about him and them; splitting it by the shirt he wore
+    would turn one real record into two thin ones every time somebody
+    transferred. The club shown beside his name is the one from his LATEST
+    appearance, so the row says where he is now.
+
+    The denominator is his own appearances -- rows where he actually played,
+    filtered upstream on minutes. That is what this archive adds over every
+    other source tried: openfootball knows who scored and not who played, so
+    socplayers has to say "of the club's last 6". Here it can say "his".
+    """
+    by_player = defaultdict(list)
+    for date, own, opp, goals, venue, started, _mins, name in rows:
+        if name:
+            by_player[name].append((date, own, opp, goals, venue, started))
     out = []
-    for opp, met in by_opp.items():
-        if len(met) < min_meet:
-            continue
-        hits = sum(1 for _d, g, _v in met if g)
-        goals = sum(g for _d, g, _v in met)
-        if hits < min_hits or hits / len(met) < 0.5:
-            continue
-        met.sort()
-        span = f'{met[0][0][:7]} to {met[-1][0][:7]}'
-        text = (f'scored in all {len(met)} of his meetings with {opp}'
-                if hits == len(met) else
-                f'scored in {hits} of his {len(met)} against {opp}')
-        if goals > hits:
-            text += f' — {goals} goals'
-        out.append({'player': name, 'team': team, 'category': 'Head-to-head',
-                    'split': 'h2h', 'opp': opp, 'text': text,
-                    'hits': hits, 'n': len(met), 'goals': goals, 'span': span,
-                    'source': 'understat per-match appearances',
-                    'evidence': [{'date': d, 'opp': opp, 'goals': g, 'venue': v}
-                                 for d, g, v in met if g][::-1][:6]})
+    for name, apps in by_player.items():
+        apps.sort()
+        club = apps[-1][1]
+        by_opp = defaultdict(list)
+        for date, _own, opp, goals, venue, started in apps:
+            by_opp[opp].append((date, goals, venue, started))
+        for opp, met in by_opp.items():
+            if len(met) < min_meet:
+                continue
+            met.sort()
+            hits = sum(1 for _d, g, _v, _s in met if g)
+            goals = sum(g for _d, g, _v, _s in met)
+            if hits < min_hits or hits / len(met) < 0.5:
+                continue
+            text = (f'scored in all {len(met)} of his meetings with {opp}'
+                    if hits == len(met) else
+                    f'scored in {hits} of his {len(met)} against {opp}')
+            if goals > hits:
+                text += f' — {goals} goals'
+            starts = sum(1 for _d, _g, _v, st in met if st)
+            row = {'player': name, 'team': club, 'league': FPL_LEAGUE,
+                   'category': 'Head-to-head', 'split': 'h2h', 'opp': opp,
+                   'text': text, 'hits': hits, 'n': len(met), 'goals': goals,
+                   'starts': starts,
+                   'span': f'{met[0][0][:7]} to {met[-1][0][:7]}',
+                   'source': 'FPL per-match appearances',
+                   'evidence': [{'date': d, 'opp': opp, 'goals': g, 'venue': v}
+                                for d, g, v, _s in met if g][::-1][:6]}
+            out.append(row)
     out.sort(key=lambda r: (-(r['hits'] / r['n']), -r['goals'], -r['n']))
     return out
 
 
-def build(season=SEASON, per_league=PER_LEAGUE, sleep=SLEEP,
-          list_fetch=None, page_fetch=None):
-    list_fetch = list_fetch or (lambda lg: season_players(lg, season))
-    report, rows, misses = [], [], 0
-    for slug, label in LEAGUES.items():
+def build_fpl(seasons=None, fetch=None):
+    rows, report = [], []
+    for season in (seasons or FPL_SEASONS):
         try:
-            players = list_fetch(slug)
+            got, note = fpl_season(season, fetch=fetch)
         except Exception as e:
-            report.append(f'  {label}: player list failed ({type(e).__name__})')
+            report.append(f'  {season}: FAILED {type(e).__name__}')
             continue
+        report.append('  ' + note)
+        rows.extend(got)
+    if not rows:
+        return {'h2h': [], 'report': report + ['  no seasons read -- nothing built']}
+    matched, orphaned = mirror_check(rows)
+    rate = matched / (matched + orphaned) if (matched + orphaned) else 0
+    report.append(f'  mirror check: {matched} fixtures seen from both sides, '
+                  f'{orphaned} from one only ({rate:.1%} paired)')
+    # A wrong opponent mapping shows up here and nowhere else until it is on the
+    # page. Below 90% paired, something is wrong with the ids and publishing the
+    # records would mean publishing misattributions.
+    if rate < 0.90:
+        return {'h2h': [], 'report': report +
+                ['  REFUSING to build: too many fixtures appear from one side only, '
+                 'which is what a wrong opponent-id mapping looks like']}
+    h2h = h2h_from_fpl(rows)
+    # ONLY PLAYERS WHO ARE STILL IN THE LEAGUE. Seven seasons of history means
+    # the strongest records belong to players who left years ago: the first run
+    # led with Diogo Jota, Sadio Mane and Emmanuel Dennis, none of whom can
+    # appear on a teamsheet this weekend. A record nobody can bet is not a
+    # signal, and in Jota's case it is worse than useless.
+    current = (seasons or FPL_SEASONS)[0]
+    active = {n for d, _o, _p, _g, _v, _s, _m, n in rows
+              if n and d[:4] >= current[:4]}
+    if not active:
+        report.append(f'  {current} has no appearances yet -- keeping every record '
+                      f'rather than emptying the list, so some name players who '
+                      f'have left')
+    else:
+        before = len(h2h)
+        h2h = [r for r in h2h if r['player'] in active]
+        report.append(f'  {before - len(h2h)} records dropped: the player has not '
+                      f'appeared in {current} ({len(active)} players active)')
+    report.append(f'  {len(h2h)} head-to-head records from {len(rows)} appearances')
+    return {'h2h': h2h, 'report': report}
 
-        def goals_of(p):
-            try:
-                return int(p.get('goals') or 0)
-            except (TypeError, ValueError):
-                return 0
 
-        ranked = sorted(players, key=goals_of, reverse=True)[:per_league]
-        got = 0
-        for p in ranked:
-            pid = p.get('id') or p.get('player_id')
-            name = p.get('player_name')
-            if not pid or not name:
-                continue
-            try:
-                ms = player_matches(pid, fetch=page_fetch)
-            except Exception:
-                ms = None
-            if not ms:
-                misses += 1
-                if sleep:
-                    time.sleep(sleep)
-                continue
-            # The club to name is the one he plays for NOW, which is the club on
-            # his most recent appearance -- not the season-totals team_title,
-            # which is a season aggregate and lags a January move.
-            team = ms[-1][1]
-            sig = h2h_signals(name, team, ms)
-            for r in sig:
-                r['league'] = label
-            rows.extend(sig)
-            got += 1
-            if sleep:
-                time.sleep(sleep)
-        seasons = sorted({m[0][:4] for p in () for m in ()})   # filled below
-        report.append(f'  {label}: {got}/{len(ranked)} player pages read '
-                      f'(of {len(players)} in the league), '
-                      f'{sum(1 for r in rows if r.get("league") == label)} records')
-    rows.sort(key=lambda r: (-(r['hits'] / r['n']), -r['goals'], -r['n']))
-    if misses:
-        report.append(f'  {misses} player pages carried no matchesData '
-                      f'-- reshaped or empty, counted not swallowed')
-    return {'h2h': rows, 'report': report}
+def probe():
+    res = build_fpl()
+    for line in res['report']:
+        print(line)
+    print()
+    for r in res['h2h'][:20]:
+        print(f"  {r['player'][:24]:24} {r['text'][:58]:58} {r['span']}")
+    return 0
 
 
 def selftest():
@@ -207,200 +293,129 @@ def selftest():
         ok[0] += bool(c)
         print(('PASS  ' if c else 'FAIL  ') + m)
 
-    # understat hex-escapes its embedded JSON.
-    page = ("junk var matchesData = JSON.parse('[\\x7B\\x22goals\\x22:\\x222\\x22,"
-            "\\x22date\\x22:\\x222026-03-01\\x22,\\x22h_team\\x22:\\x22Arsenal\\x22,"
-            "\\x22a_team\\x22:\\x22Chelsea\\x22,\\x22h_a\\x22:\\x22h\\x22\\x7D]') more")
-    d = embedded(page, 'matchesData')
-    chk(d and d[0]['h_team'] == 'Arsenal' and d[0]['goals'] == '2',
-        'the hex-escaped matchesData block decodes to JSON')
-    chk(embedded('nothing here', 'matchesData') is None,
-        'a page without the block returns None rather than raising')
-    chk(embedded("var matchesData = JSON.parse('not json')", 'matchesData') is None,
-        'and a block that is not JSON returns None too')
+    TEAMS = 'id,name\n' + '\n'.join(f'{i},Club{i}' for i in range(1, 21))
+
+    def gw(rows):
+        cols = ['name', 'team', 'opponent_team', 'was_home', 'kickoff_time',
+                'goals_scored', 'minutes', 'starts']
+        out = [','.join(cols)]
+        for r in rows:
+            out.append(','.join(str(r.get(c, '')) for c in cols))
+        return '\n'.join(out)
 
     ROWS = [
-        {'date': '2024-09-01', 'h_team': 'Arsenal', 'a_team': 'Wolves', 'h_a': 'h', 'goals': '1'},
-        {'date': '2025-02-01', 'h_team': 'Wolves', 'a_team': 'Arsenal', 'h_a': 'a', 'goals': '2'},
-        {'date': '2025-09-01', 'h_team': 'Arsenal', 'a_team': 'Wolves', 'h_a': 'h', 'goals': '0'},
-        {'date': '2026-02-01', 'h_team': 'Wolves', 'a_team': 'Arsenal', 'h_a': 'a', 'goals': '1'},
-        {'date': '2026-03-01', 'h_team': 'Arsenal', 'a_team': 'Spurs', 'h_a': 'h', 'goals': '3'},
-        {'date': '2026-04-01', 'h_team': 'Spurs', 'a_team': 'Arsenal', 'h_a': 'a', 'goals': '0'},
+        {'name': 'A Striker', 'team': 'Club1', 'opponent_team': 20, 'was_home': 'True',
+         'kickoff_time': '2025-08-16T14:00:00Z', 'goals_scored': 2, 'minutes': 90, 'starts': 1},
+        {'name': 'B Sub', 'team': 'Club1', 'opponent_team': 20, 'was_home': 'True',
+         'kickoff_time': '2025-08-16T14:00:00Z', 'goals_scored': 0, 'minutes': 0, 'starts': 0},
+        {'name': 'C Keeper', 'team': 'Club20', 'opponent_team': 1, 'was_home': 'False',
+         'kickoff_time': '2025-08-16T14:00:00Z', 'goals_scored': 0, 'minutes': 90, 'starts': 1},
     ]
-    esc = json.dumps(ROWS).replace('{', '\\x7B').replace('}', '\\x7D')
-    fake = f"var matchesData = JSON.parse('{esc}')"
-    ms = player_matches('1', fetch=lambda u: fake)
-    chk(len(ms) == 6 and ms[0][0] == '2024-09-01',
-        'player matches come back oldest first')
-    chk(ms[0][1] == 'Arsenal' and ms[0][2] == 'Wolves' and ms[0][4] == 'home',
-        'a home row names his club and the opponent the right way round')
-    chk(ms[1][1] == 'Arsenal' and ms[1][2] == 'Wolves' and ms[1][4] == 'away',
-        'and an away row does NOT invert them -- that would file the record '
-        'against his own club')
-    # Build the broken variant from the data, not by string-replacing the
-    # escaped page: the first version's replace pattern did not match anything,
-    # so the check passed while testing nothing at all.
-    def page_of(rows):
-        e = json.dumps(rows).replace('{', '\\x7B').replace('}', '\\x7D')
-        return f"var matchesData = JSON.parse('{e}')"
-    sideless = [dict(r, h_a='?') if r['h_a'] == 'a' else dict(r) for r in ROWS]
-    half = player_matches('1', fetch=lambda u: page_of(sideless))
-    chk(len(half) == 3 and all(m[4] == 'home' for m in half),
-        'a row with no usable side is dropped, never guessed')
-    noteam = player_matches('1', fetch=lambda u: page_of(
-        [dict(r, a_team=None) for r in ROWS]))
-    chk(noteam == [], 'a row missing a team name is dropped as well')
 
-    sig = h2h_signals('P', 'Arsenal', ms)
-    wolves = [r for r in sig if r['opp'] == 'Wolves']
-    chk(len(wolves) == 1, 'an opponent met four times is eligible')
-    chk(wolves[0]['text'] == 'scored in 3 of his 4 against Wolves — 4 goals',
-        f"the sentence says HIS four, not the club's: {wolves[0]['text']!r}")
-    chk('2024-09 to 2026-02' == wolves[0]['span'],
-        'and it carries the span, which crosses seasons -- the whole point')
-    chk(not [r for r in sig if r['opp'] == 'Spurs'],
-        'an opponent met twice is below the floor, however many goals were in it')
-    chk(wolves[0]['source'] == 'understat per-match appearances',
-        'the source names an APPEARANCE record, which is why "his" is honest')
-    chk(len(wolves[0]['evidence']) == 3,
-        'evidence lists only the meetings he actually scored in')
+    def fetch(url):
+        return TEAMS if url.endswith('teams.csv') else gw(ROWS)
 
-    # A 2-FROM-2 IS THE SHAPE TO REFUSE. The Spurs pair above is blocked by the
-    # hits floor rather than the meeting floor, so it does not test the meeting
-    # floor at all -- this pair is perfect and must still be refused, the same
-    # rule the club head-to-head already follows.
-    two = [('2025-09-01', 'A', 'B', 1, 'home'), ('2026-02-01', 'A', 'B', 2, 'away')]
-    chk(not h2h_signals('R', 'A', two),
+    got, note = fpl_season('2025-26', fetch=fetch)
+    chk(len(got) == 2, f'a player with zero minutes was not in the match: {note}')
+    chk(got[0][2] == 'Club20' or got[1][2] == 'Club20',
+        'the numeric opponent id is mapped through THAT season\'s teams.csv')
+    chk(all(r[1] != r[2] for r in got),
+        'nobody is recorded as playing against his own club')
+    thin, tnote = fpl_season('2025-26',
+                             fetch=lambda u: ('id,name\n1,Only' if u.endswith('teams.csv')
+                                              else gw(ROWS)))
+    chk(thin == [] and 'refusing to map' in tnote,
+        'a teams.csv too small to be a division is refused, not partially applied')
+
+    # THE MIRROR CHECK is the only thing standing between a wrong per-season id
+    # map and a page full of records filed against the wrong clubs.
+    good = [('2025-08-16', 'A', 'B', 0, 'home', True, 90, 'p'),
+            ('2025-08-16', 'B', 'A', 0, 'away', True, 90, 'q')]
+    chk(mirror_check(good) == (2, 0), 'a fixture seen from both sides is paired')
+    chk(mirror_check(good[:1]) == (0, 1),
+        'a fixture seen from one side only is counted as orphaned')
+
+    # h2h: keyed on the PLAYER across a transfer, club shown is the latest.
+    apps = []
+    for i, (d, own, opp, g) in enumerate([
+            ('2023-09-01', 'Old', 'Rival', 1), ('2024-02-01', 'Old', 'Rival', 2),
+            ('2024-09-01', 'New', 'Rival', 1), ('2025-02-01', 'New', 'Rival', 0),
+            ('2025-09-01', 'New', 'Other', 1), ('2026-02-01', 'New', 'Other', 1)]):
+        apps.append((d, own, opp, g, 'home', True, 90, 'Mover'))
+    h = h2h_from_fpl(apps)
+    riv = [r for r in h if r['opp'] == 'Rival']
+    chk(len(riv) == 1 and riv[0]['n'] == 4,
+        'a transfer does not split one head-to-head record into two thin ones')
+    chk(riv[0]['team'] == 'New',
+        'the club beside his name is the one from his LATEST appearance')
+    chk(riv[0]['text'] == 'scored in 3 of his 4 against Rival — 4 goals',
+        f"the denominator is HIS appearances, not the club's: {riv[0]['text']!r}")
+    chk(riv[0]['span'] == '2023-09 to 2025-02',
+        'the span crosses seasons, which is the whole reason this source was used')
+    chk(not [r for r in h if r['opp'] == 'Other'],
         'two meetings is not a head-to-head record even when he scored in both')
 
-    quiet = [('2025-01-01', 'A', 'B', 0, 'home'), ('2025-06-01', 'A', 'B', 0, 'away'),
-             ('2026-01-01', 'A', 'B', 0, 'home'), ('2026-06-01', 'A', 'B', 1, 'away')]
-    chk(not h2h_signals('Q', 'A', quiet),
-        'one goal in four meetings is not a head-to-head record')
+    # build_fpl: the mirror gate, and the active-player filter.
+    def seasons_fetch(rows_by_season):
+        def f(url):
+            season = url.split('/data/')[1].split('/')[0]
+            if url.endswith('teams.csv'):
+                return TEAMS
+            return gw(rows_by_season.get(season, []))
+        return f
 
-    # build(): the club named is the CURRENT one, not the season aggregate
-    B = build(per_league=2, sleep=0,
-              list_fetch=lambda lg: ([{'id': '9', 'player_name': 'Mover',
-                                       'team_title': 'Old Club', 'goals': '9'}]
-                                     if lg == 'EPL' else []),
-              page_fetch=lambda u: fake)
-    chk(B['h2h'] and B['h2h'][0]['team'] == 'Arsenal',
-        "the club on the row is the one from his latest appearance, not the "
-        "season-totals team_title that lags a January move")
-    chk(any('player pages read' in l for l in B['report']),
-        'the report states how many pages were actually read')
-    B2 = build(per_league=2, sleep=0,
-               list_fetch=lambda lg: ([{'id': '9', 'player_name': 'X', 'goals': '1'}]
-                                      if lg == 'EPL' else []),
-               page_fetch=lambda u: 'no block here')
-    chk(not B2['h2h'] and any('no matchesData' in l for l in B2['report']),
-        'pages with no data are COUNTED in the report, not silently dropped')
+    BROKEN = [{'name': 'X', 'team': 'Club1', 'opponent_team': 20, 'was_home': 'True',
+               'kickoff_time': '2025-08-16T14:00:00Z', 'goals_scored': 1,
+               'minutes': 90, 'starts': 1}]
+    b = build_fpl(seasons=['2025-26'], fetch=seasons_fetch({'2025-26': BROKEN}))
+    chk(b['h2h'] == [] and any('REFUSING' in l for l in b['report']),
+        'fixtures that appear from one side only stop the build -- that is what a '
+        'wrong opponent-id map looks like')
+
+    PAIR = []
+    for d in ('2024-09-01', '2025-02-01', '2025-09-01'):
+        PAIR += [{'name': 'Live Guy', 'team': 'Club1', 'opponent_team': 20,
+                  'was_home': 'True', 'kickoff_time': d + 'T14:00:00Z',
+                  'goals_scored': 1, 'minutes': 90, 'starts': 1},
+                 {'name': 'Gone Guy', 'team': 'Club20', 'opponent_team': 1,
+                  'was_home': 'False', 'kickoff_time': d + 'T14:00:00Z',
+                  'goals_scored': 1, 'minutes': 90, 'starts': 1}]
+    NOW = [{'name': 'Live Guy', 'team': 'Club1', 'opponent_team': 5,
+            'was_home': 'True', 'kickoff_time': '2026-08-16T14:00:00Z',
+            'goals_scored': 0, 'minutes': 90, 'starts': 1},
+           {'name': 'Someone', 'team': 'Club5', 'opponent_team': 1,
+            'was_home': 'False', 'kickoff_time': '2026-08-16T14:00:00Z',
+            'goals_scored': 0, 'minutes': 90, 'starts': 1}]
+    b2 = build_fpl(seasons=['2026-27', '2025-26'],
+                   fetch=seasons_fetch({'2026-27': NOW, '2025-26': PAIR}))
+    names = {r['player'] for r in b2['h2h']}
+    chk('Live Guy' in names,
+        'a player who appears in the current season keeps his record')
+    chk('Gone Guy' not in names,
+        'a player who has left the league does NOT -- the first run led with '
+        'records belonging to players who cannot be on a teamsheet')
+    chk(any('has not appeared in 2026-27' in l for l in b2['report']),
+        'and the drop is reported rather than being a silent shrink')
+    b3 = build_fpl(seasons=['2026-27', '2025-26'],
+                   fetch=seasons_fetch({'2026-27': [], '2025-26': PAIR}))
+    chk(b3['h2h'] and any('no appearances yet' in l for l in b3['report']),
+        'an empty current season keeps every record and says so, rather than '
+        'emptying the list in August')
 
     print(f'\n{ok[0]}/{ok[1]} checks pass')
     return 0 if ok[0] == ok[1] else 1
 
 
-# ESPN'S BOX SCORES. Ryan's question -- "you can't look at box scores?" -- is
-# the right axis and I had the wrong one. Every source I probed was indexed BY
-# PLAYER: fbref player pages, understat's getPlayerMatches, sofascore, fotmob.
-# All rejected, and the rejection is recorded in socplayers.py so nobody
-# re-walks it, which I then re-walked three times.
-#
-# A box score is indexed BY MATCH. Walk the fixtures, read who scored in each,
-# and the player histories fall out of the pile. It is the same shape
-# openfootball already provides for one season -- there is just no reason the
-# only source of that shape has to be openfootball.
-#
-# nethunt.py already establishes that site.api.espn.com answers from the runner
-# and that its scoreboard parses as JSON with an `events` list. What it never
-# asked is whether the SUMMARY endpoint carries scorers. That is this probe.
-ESPN = 'https://site.api.espn.com/apis/site/v2/sports/soccer/{lg}/{path}'
-ESPN_LEAGUES = {'eng.1': 'England Premier League', 'esp.1': 'Spain La Liga',
-                'ger.1': 'Germany Bundesliga', 'ita.1': 'Italy Serie A'}
-
-
-def espn(lg, path, **q):
-    url = ESPN.format(lg=lg, path=path)
-    if q:
-        url += '?' + urllib.parse.urlencode(q)
-    return json.loads(http(url, referer='https://www.espn.com/'))
-
-
-def probe():
-    """Does ESPN's summary endpoint name the scorers, and how far back?"""
-    lg = 'eng.1'
-    # A date in the middle of last season, so the fixtures are finished.
-    for dates in ('20260214-20260216', '20250214-20250216', '20230214-20230216',
-                  '20190214-20190216'):
-        try:
-            d = espn(lg, 'scoreboard', dates=dates)
-        except Exception as e:
-            print(f'  scoreboard {dates}: ERR {type(e).__name__} '
-                  f'{getattr(e, "code", "")}')
-            continue
-        evs = d.get('events') or []
-        print(f'  scoreboard {dates}: {len(evs)} events')
-        for e in evs[:2]:
-            print(f"      {e.get('id')}  {e.get('date','')[:10]}  {e.get('name')}")
-    print()
-
-    d = espn(lg, 'scoreboard', dates='20260214-20260216')
-    evs = d.get('events') or []
-    if not evs:
-        print('no events to summarise -- stopping')
-        return 1
-    eid = evs[0].get('id')
-    try:
-        sm = espn(lg, 'summary', event=eid)
-    except Exception as e:
-        print(f'summary {eid}: ERR {type(e).__name__} {getattr(e, "code", "")}')
-        return 1
-    print(f'summary {eid}: top-level keys {sorted(sm.keys())}')
-
-    # Which of these carries "who scored"? Report each candidate's shape.
-    for k in ('scoringPlays', 'keyEvents', 'plays', 'boxscore', 'rosters',
-              'header', 'commentary'):
-        v = sm.get(k)
-        if v is None:
-            continue
-        if isinstance(v, list):
-            print(f'  {k}: [{len(v)}]' + (f' first keys {sorted(v[0].keys())[:12]}'
-                                          if v and isinstance(v[0], dict) else ''))
-        elif isinstance(v, dict):
-            print(f'  {k}: {{{",".join(sorted(v.keys())[:10])}}}')
-
-    for sp in (sm.get('scoringPlays') or [])[:4]:
-        who = (sp.get('athletesInvolved') or [{}])
-        print(f"    scoringPlay: {sp.get('clock', {}).get('displayValue')} "
-              f"{(sp.get('team') or {}).get('displayName')} "
-              f"{[a.get('displayName') for a in who]} "
-              f"type={(sp.get('type') or {}).get('text')}")
-
-    ros = sm.get('rosters') or []
-    if ros:
-        print(f'  rosters: {len(ros)} teams')
-        t0 = ros[0]
-        print(f"    team {(t0.get('team') or {}).get('displayName')} "
-              f"keys {sorted(t0.keys())}")
-        pl = (t0.get('roster') or [])[:1]
-        if pl:
-            print(f'    a roster entry: {sorted(pl[0].keys())[:14]}')
-            st = pl[0].get('stats')
-            if isinstance(st, list) and st:
-                print(f'      stats sample: {st[:6]}')
-    return 0
-
-
 def main():
-    res = build()
+    res = build_fpl()
     print('socph2h')
     for line in res['report']:
         print(line)
     json.dump({'h2h': res['h2h']}, open(OUT, 'w'), ensure_ascii=False,
               separators=(',', ':'))
     print(f"\nwrote {OUT} -- {len(res['h2h'])} player head-to-head records")
-    for r in res['h2h'][:14]:
-        print(f"  {r['player'][:22]:22} {r['text'][:62]:62} {r['span']}")
+    for r in res['h2h'][:16]:
+        print(f"  {r['player'][:24]:24} {r['text'][:58]:58} {r['span']}")
     return 0
 
 
