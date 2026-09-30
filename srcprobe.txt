@@ -1,30 +1,22 @@
-=== ROUND 10a: WHY do half the scored rows have no date? ===
-  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
-     ROW(5): ['Universidad de Concepción', '1-0', 'Coquimbo Unido', 'Huachipato - CAP', '15:30']
-  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
-     ROW(5): ['Cobresal', '1-0', 'Huachipato', 'El Cobre', '18:00']
-  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
-     ROW(5): ['Palestino', '1-1', 'Ñublense', 'La Cisterna', '20:30']
-  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
-     ROW(5): ["O'Higgins", '2-1', 'Deportes Concepción', 'El Teniente', '20:30']
-  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
-     ROW(5): ["O'Higgins", '1-0', 'Deportes La Serena', 'El Teniente', '18:00']
-  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
-     ROW(5): ['Colo-Colo', '2-0', 'Everton', 'Monumental', '20:30']
-  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
-     ROW(5): ['Ñublense', '1-1', 'Deportes Limache', 'Nelson Oyarzún', '18:00']
-  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
-     ROW(5): ['Universidad Católica', '2-0', 'Deportes Concepción', 'Claro Arena', '20:30']
-  Colombia: HTTPError
-
-=== ROUND 10b: Colombia Finalizacion + Peru round pages ===
-  'Torneo Finalizacion 2026 Colombia': ['Torneo Finalización 2002 (Colombia)', 'Torneo Finalización 2013 (Colombia)', 'Torneo Finalización 2026 (Colombia)', 'Torneo Finalización 2007 (Colombia)', 'Torneo de Apertura y Clausura', 'Superliga de Colombia']
-  'Categoria Primera A 2026 Colombia': ['Categoría Primera B', 'Categoría Primera C', 'Categoría Primera A', 'Primera C 2026 (Colombia)', 'Selección de fútbol de Colombia', 'Superliga de Colombia']
-  'Liga1 2026 Peru Torneo Clausura': ['Liga1 2026 (Perú)', 'Liga1 (Perú)', 'Torneo Clausura 2026 (Perú)', 'Liga1 2025 (Perú)', 'Liga de Fútbol Profesional Peruana', 'Liga1 2027 (Perú)']
-  'Liga1 2026 Peru': ['Liga1 2026 (Perú)', 'Liga1 (Perú)', 'Liga1 2025 (Perú)', 'Torneo Clausura 2026 (Perú)', 'Liga1 2027 (Perú)', 'Liga de Fútbol Profesional Peruana']
-
-=== ROUND 10c: do those pages carry Local/Resultado tables? ===
-  Torneo_Finalizaci%C3%B3n_2026_(Colombia): 24 tables, 19 round-tables, 94 rows with a date
-  Torneo_Apertura_2026_(Colombia): 27 tables, 20 round-tables, 88 rows with a date
-  Liga1_2026_(Per%C3%BA): 5 tables, 0 round-tables, 0 rows with a date
-  Categor%C3%ADa_Primera_A_2026: HTTPError
+=== ROUND 11: USL, Uruguay, El Salvador with the ROWSPAN-AWARE parser ===
+-- USL (its 2025 page had a results table the flat parser mangled)
+  USL 2026: 15 tables | 0 matrix | 0 dated rows (0 scored-but-undated)
+  USL 2025: 20 tables | 1 matrix | 0 dated rows (0 scored-but-undated)
+      matrix [Results table] 51x1 diagonal_ok=False
+-- Uruguay per-tournament pages
+   search 'Torneo Apertura 2026 Uruguay': ['Torneo Apertura 2026 (Uruguay)', 'Torneo de Apertura y Clausura', 'Torneo Apertura 2026', 'Torneos cortos de la Primera División de Uruguay', 'Torneo Intermedio']
+   search 'Torneo Clausura 2026 Uruguay': ['Torneo Clausura 2026 (Uruguay)', 'Torneo Clausura 2026', 'Torneo de Apertura y Clausura', 'Torneos cortos de la Primera División de Uruguay', 'Torneo Intermedio']
+   search 'Torneo Intermedio 2026 Uruguay': ['Torneo Intermedio', 'Torneo Intermedio 2026', 'Torneos cortos de la Primera División de Uruguay', 'Torneo Clausura 2026 (Uruguay)', 'Supercopa Uruguaya']
+  Torneo_Apertura_2026_(Uruguay): 22 tables | 0 matrix | 120 dated rows (0 scored-but-undated)
+      dated: ('2026-02-06', 'Albion', 'Liverpool', 1, 2)
+      dated: ('2026-02-06', 'Montevideo Wanderers', 'Defensor Sporting', 1, 1)
+  Torneo_Clausura_2026_(Uruguay): 22 tables | 0 matrix | 63 dated rows (0 scored-but-undated)
+      dated: ('2026-08-07', 'Cerro Largo', 'Juventud', 1, 1)
+      dated: ('2026-08-08', 'Central Español', 'Progreso', 1, 0)
+  Torneo_Intermedio_2026: 8 tables | 0 matrix | 56 dated rows (0 scored-but-undated)
+      dated: ('2026-05-15', 'Montevideo City Torque', 'Nacional', 1, 2)
+      dated: ('2026-05-16', 'Boston River', 'Cerro', 4, 1)
+-- El Salvador
+   search 'Primera Division de El Salvador 2026 Apertura': ['Primera División de El Salvador', 'Liga de Ascenso de El Salvador', 'Torneo de Apertura y Clausura', 'Primera División de Paraguay', 'Primera División de Argentina', 'Liga de Primera']
+  Torneo_Apertura_2026_(El_Salvador): HTTPError
+  Primera_Divisi%C3%B3n_de_F%C3%BAtbol_de_El_Salvador: HTTPError
