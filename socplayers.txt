@@ -19,22 +19,23 @@ socplayers
   understat Spain La Liga: 461 players, 53 rate signals
   understat Germany Bundesliga: 367 players, 5 rate signals
   understat Italy Serie A: 448 players, 46 rate signals
-  current-club check: 118 splits -> 105 (13 dropped, the player has left that club; 53 kept unverified; 1 resolved on one name rather than the full one)
-      28 current club matches no club in the source data
+  current-club universe: 90 clubs, from the CURRENT season
+  current-club check: 118 splits -> 107 (11 dropped, the player has left that club; 55 kept unverified; 1 resolved on one name rather than the full one)
+      30 row's club is not in the current season
       24 name not found in the current season
        1 listed at several clubs in the current season
 
-wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 105 splits, 164 rates
+wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 107 splits, 164 rates
   Antoine SEMENYO          scored in 5 of Manchester City's 8 home matches since joining, Manchester City
   Jean-Philippe MATETA     scored in 7 of Crystal Palace's 19 home matches, 2 of 19 away  Crystal Palace
-  Zian Flemming            scored in 3 of Burnley's 19 home matches, 7 of 19 away         Burnley
-  CASEMIRO                 scored in 7 of Manchester United's 19 home matches, 2 of 19 aw Manchester United
-  Nick WOLTEMADE           scored in 5 of Newcastle United's 19 home matches, 2 of 19 awa Newcastle United
   William Osula            scored in 5 of Newcastle United's 19 home matches, 1 of 19 awa Newcastle United
   IGOR JESUS               scored in 1 of Nottingham Forest's 19 home matches, 5 of 19 aw Nottingham Forest
   Kevin SCHADE             scored in 4 of Brentford's 19 home matches, 2 of 19 away       Brentford
   Dango OUATTARA           scored in 4 of Brentford's 19 home matches, 2 of 19 away       Brentford
   Virgil VAN DIJK          scored in 1 of Liverpool's 19 home matches, 4 of 19 away       Liverpool
+  Francisco Evanilson de L scored in 4 of Bournemouth's 19 home matches, 2 of 19 away     Bournemouth
+  Emiliano BUENDIA         scored in 4 of Aston Villa's 19 home matches, 2 of 19 away     Aston Villa
+  Iliman NDIAYE            scored in 4 of Everton's 19 home matches, 2 of 19 away         Everton
   Erling Haaland           leads the league with 5 goals in 5 games             Manchester City
   Alexander Isak           is among the top scorers with 4 goals in 5 games     Liverpool
   Pascal Groß              is among the top scorers with 3 goals in 5 games     Brighton
