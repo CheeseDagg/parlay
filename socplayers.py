@@ -30,7 +30,7 @@ embedded JSON, so the POST route is the only way in. The long-standing note
 in SoccerTool that understat Cloudflare-walls the runner is STALE: the POST
 route works, which is why player_shares_pin.json could be live again.
 """
-import datetime as dt, gzip, json, math, os, re, sys, urllib.parse, urllib.request
+import datetime as dt, gzip, json, math, os, re, sys, urllib.parse, urllib.request, unicodedata
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -245,6 +245,71 @@ def team_matches_venue(games):
     for k in by:
         by[k].sort()
     return by
+
+
+def norm_name(s):
+    """Lowercase alphanumerics only. openfootball shouts surnames ("Harry
+    WILSON"); understat does not."""
+    return re.sub(r'[^a-z0-9]', '',
+                  unicodedata.normalize('NFKD', (s or '').lower())
+                  .encode('ascii', 'ignore').decode())
+
+
+def club_match(a, b, floor=4):
+    """Do these two club names denote the same club?
+
+    understat abbreviates where openfootball does not -- Tottenham vs
+    Tottenham Hotspur, Brighton vs Brighton & Hove Albion, West Ham vs West Ham
+    United, Leeds vs Leeds United, Chelsea vs Chelsea FC. Every one of those is
+    a prefix, so prefix matching on the normalised string catches them all
+    while Manchester City and Manchester United stay distinct (neither is a
+    prefix of the other).
+
+    The floor keeps a two-letter fragment from matching half a division.
+    """
+    x, y = norm_name(a), norm_name(b)
+    if not x or not y or min(len(x), len(y)) < floor:
+        return False
+    return x.startswith(y) or y.startswith(x)
+
+
+def drop_moved_players(splits, roster, clubs):
+    """Remove split rows for players who have since left the club.
+
+    THE SPLITS COME FROM A FINISHED SEASON AND THE TRANSFER WINDOW HAS RUN.
+    "Harry Wilson, Fulham: scored in 8 of Fulham's 19 home matches" is a true
+    statement about last season and a misleading one to put in front of someone
+    betting today if he now plays somewhere else. The span on the row says when
+    the record was set, but nobody reads a date as "and he has moved".
+
+    understat's CURRENT season says where each player is now, so it can answer
+    this -- but only when both halves resolve. A row is dropped only when:
+      - the player is found in the current season by name, AND
+      - the club he is at now resolves to exactly one club in the source data,
+        AND
+      - that club is not the one the row is about.
+    Anything else -- name unmatched, club unresolvable, club ambiguous between
+    two entries -- keeps the row, because "I could not check" is not the same
+    finding as "he moved", and acting on the first would quietly delete good
+    rows over a naming mismatch.
+    """
+    kept, moved, unchecked = [], 0, 0
+    for r in splits:
+        now = roster.get(norm_name(r.get('player')))
+        if not now:
+            unchecked += 1
+            kept.append(r)
+            continue
+        hits = {c for c in clubs if any(club_match(c, t) for t in now)}
+        if len(hits) != 1:
+            unchecked += 1
+            kept.append(r)
+            continue
+        if club_match(next(iter(hits)), r.get('team')):
+            kept.append(r)
+        else:
+            moved += 1
+    return kept, moved, unchecked
 
 
 def poss(name):
@@ -627,6 +692,7 @@ def build(of_fetch=None, us_fetch=None, today=None):
             line += ' (no pair has met 3+ times in the seasons that carry scorers)'
         report.append(line)
 
+    roster = defaultdict(set)
     for slug, name in UNDERSTAT_LEAGUES.items():
         try:
             rows = us_fetch(slug)
@@ -635,7 +701,27 @@ def build(of_fetch=None, us_fetch=None, today=None):
             continue
         got = rate_signals(rows, name)
         rates.extend(got)
+        # THE CURRENT SEASON KNOWS WHERE EVERYONE IS NOW. The splits are built
+        # from a finished season, so without this the page offers a player's
+        # home record at a club he left in the summer.
+        for r in rows:
+            if r.get('player_name') and r.get('team_title'):
+                roster[norm_name(r['player_name'])].add(r['team_title'])
         report.append(f'  understat {name}: {len(rows)} players, {len(got)} rate signals')
+
+    if roster:
+        clubs = {g[1] for gs in pooled.values() for g in gs} | \
+                {g[2] for gs in pooled.values() for g in gs}
+        before = len(splits)
+        splits, moved, unchecked = drop_moved_players(splits, roster, clubs)
+        report.append(f'  current-club check: {before} splits -> {len(splits)} '
+                      f'({moved} dropped, the player has left that club; '
+                      f'{unchecked} could not be checked and were kept)')
+    else:
+        # Say it. A silent skip here means the page shows last season's clubs
+        # and looks exactly like a page that checked and found nothing wrong.
+        report.append('  current-club check: SKIPPED, understat gave no current '
+                      'season -- split rows may name a club the player has left')
 
     return {'streaks': streaks, 'rates': rates, 'splits': splits, 'report': report}
 
@@ -874,6 +960,33 @@ Fri Aug 15 2025
     two = [(d, 'Cats', 'Rival', 1, 0, [('Flash', 1)], []) for d in ('2025-09-01', '2026-02-01')]
     sp2, _ = split_signals(two, min_venue=99, min_h2h=3, min_hits=4)
     chk(not sp2, 'a two-from-two is never a head-to-head signal')
+
+    # ------------------------------------------------ the current-club check
+    chk(club_match('Tottenham Hotspur', 'Tottenham') and
+        club_match('Brighton & Hove Albion', 'Brighton') and
+        club_match('West Ham United', 'West Ham') and club_match('Chelsea FC', 'Chelsea'),
+        'understat\'s abbreviated club names resolve to openfootball\'s full ones')
+    chk(not club_match('Manchester City', 'Manchester United'),
+        'and the two Manchesters stay distinct')
+    chk(not club_match('Ajax', 'AZ') and not club_match('A', 'Arsenal'),
+        'a fragment shorter than the floor never matches')
+    CLUBS = {'Fulham', 'Manchester City', 'Tottenham Hotspur', 'Bournemouth'}
+    rows_ = [{'player': 'Harry WILSON', 'team': 'Fulham', 'text': 't'},
+             {'player': 'Antoine SEMENYO', 'team': 'Bournemouth', 'text': 't'},
+             {'player': 'Unknown GUY', 'team': 'Fulham', 'text': 't'}]
+    keep, moved_, unch = drop_moved_players(
+        rows_, {'harrywilson': {'Fulham'},
+                'antoinesemenyo': {'Manchester City'}}, CLUBS)
+    chk(moved_ == 1 and {r['player'] for r in keep} == {'Harry WILSON', 'Unknown GUY'},
+        'a player now at another club loses his split; one still there keeps it')
+    chk(unch == 1, 'a player absent from the current season is COUNTED as unchecked, not dropped')
+    keep2, moved2, unch2 = drop_moved_players(
+        [{'player': 'X', 'team': 'Fulham'}], {'x': {'Real'}},
+        {'Fulham', 'Real Madrid', 'Real Sociedad'})
+    chk(moved2 == 0 and unch2 == 1 and len(keep2) == 1,
+        'a club name that matches two entries is ambiguous, so the row is kept, not guessed')
+    chk(drop_moved_players([{'player': 'X', 'team': 'Fulham'}], {}, CLUBS)[0],
+        'no roster at all keeps every row rather than emptying the list')
 
     # ------------------------------------------- every family reaches the file
     built = {k for k in build(of_fetch=lambda u: '= empty\n',
