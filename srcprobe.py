@@ -164,51 +164,19 @@ def body_text(b):
     return b.decode('utf-8', 'replace')
 
 
-print("=== ROUND 14: can understat give CURRENT-season per-player per-match? ===")
-print("openfootball's 2026-27 file carries results but ZERO goal events (0 minute")
-print("markers); its scorers stop with 2025-26, which ended 2026-05-24.\n")
-
-b = probe("https://understat.com/league/EPL/2026", "understat EPL 2026 league page")
-if not b:
-    raise SystemExit(0)
-t = body_text(b)
-print(f"     decoded {len(t):,} chars")
-for key in ('datesData', 'playersData', 'teamsData'):
-    i = t.find(key)
-    print(f"     {key}: {'FOUND' if i > 0 else 'absent'}")
-
-import re as _re, json as _j
-m = _re.search(r"datesData\s*=\s*JSON\.parse\('([^']+)'\)", t)
-ids = []
-if m:
-    raw = m.group(1).encode().decode('unicode_escape')
-    try:
-        games = _j.loads(raw)
-        played = [g for g in games if g.get('isResult')]
-        ids = [g['id'] for g in played][-3:]
-        print(f"     datesData parsed: {len(games)} fixtures, {len(played)} played")
-        if played:
-            g = played[-1]
-            print(f"     newest played: id={g['id']} {g['datetime'][:10]} "
-                  f"{g['h']['title']} {g['goals']['h']}-{g['goals']['a']} {g['a']['title']}")
-    except Exception as e:
-        print("     datesData parse failed:", type(e).__name__)
-
-for mid in ids[-1:]:
-    mb = probe(f"https://understat.com/match/{mid}", f"understat match {mid}")
-    if not mb:
-        continue
-    mt = body_text(mb)
-    i = mt.find('rostersData')
-    print(f"     rostersData: {'FOUND' if i > 0 else 'absent'}")
-    if i > 0:
-        mm = _re.search(r"rostersData\s*=\s*JSON\.parse\('([^']+)'\)", mt)
-        if mm:
-            r = _j.loads(mm.group(1).encode().decode('unicode_escape'))
-            side = r.get('h') or {}
-            pl = list(side.values())[:3]
-            print(f"     home roster: {len(side)} players; sample fields: "
-                  f"{sorted(pl[0])[:12] if pl else 'none'}")
-            for p in pl:
-                print(f"       {p.get('player')}: goals={p.get('goals')} "
-                      f"time={p.get('time')} position={p.get('position')}")
+print("=== ROUND 15: is understat's 200 a real page or a challenge? ===")
+b = probe("https://understat.com/league/EPL/2026", "understat EPL 2026")
+if b:
+    t = body_text(b)
+    print(f"     {len(t):,} chars")
+    low = t.lower()
+    for marker in ('cloudflare', 'just a moment', 'challenge', 'cf-', 'captcha',
+                   'enable javascript', 'ray id'):
+        if marker in low:
+            print(f"     CHALLENGE MARKER: {marker!r}")
+    print("     --- first 400 chars ---")
+    print("     " + t[:400].replace('\n', ' ')[:400])
+    print("     --- title ---")
+    import re as _re
+    ti = _re.search(r'<title[^>]*>(.*?)</title>', t, _re.S | _re.I)
+    print("     " + (ti.group(1).strip()[:120] if ti else 'no title'))
