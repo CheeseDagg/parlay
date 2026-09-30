@@ -1,4 +1,4 @@
-socpatterns: 1186 live records across five leagues
+socpatterns: 250 live records across five leagues
   Bolívar                won in 9 of last 10 (8 in a row)                       Bolivia Profesional
   Colo-Colo              avoided defeat in all of the last 10 — 14 in a row     Chile Liga de Primer
   Real Potosí            under 2.5 in 8 of last 10                              Bolivia Profesional
@@ -17,7 +17,7 @@ socpatterns: 1186 live records across five leagues
   Albion                 conceded in all of the last 10 — 14 in a row           Uruguay Primera
   Universidad de Chile   scored in all of the last 10 — 11 in a row             Chile Liga de Primer
   Águilas Doradas        conceded in all of the last 10 — 16 in a row           Colombia Primera A
-  Nacional Potosí        kept a clean sheet in all 2 meetings with Independient Bolivia Profesional
-  Aurora                 kept a clean sheet in all 2 meetings with Real Potosí  Bolivia Profesional
-  Real Potosí            kept a clean sheet in all 2 meetings with Aurora       Bolivia Profesional
   Huachipato             failed to win in 9 of last 10                          Chile Liga de Primer
+  Universidad de Concepc failed to win in 9 of last 10                          Chile Liga de Primer
+  Unión La Calera        failed to win in 9 of last 10                          Chile Liga de Primer
+  América de Cali        takes 1.09 more points per game at home (2.40 home vs  Colombia Primera A
