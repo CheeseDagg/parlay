@@ -18519,6 +18519,5928 @@
   },
   "rates_source": "dated rounds (superset of the grid)"
  },
+ "Uruguay Primera": {
+  "slug": null,
+  "refused_matrices": [],
+  "rates_source": "dated rounds only (this league publishes no grid)",
+  "dated": [
+   [
+    "2026-02-06",
+    "Albion",
+    "Liverpool",
+    1,
+    2
+   ],
+   [
+    "2026-02-06",
+    "Montevideo Wanderers",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "2026-02-07",
+    "Pe\u00f1arol",
+    "Montevideo City Torque",
+    3,
+    1
+   ],
+   [
+    "2026-02-07",
+    "Progreso",
+    "Central Espa\u00f1ol",
+    0,
+    3
+   ],
+   [
+    "2026-02-08",
+    "Boston River",
+    "Nacional",
+    1,
+    2
+   ],
+   [
+    "2026-02-08",
+    "Juventud",
+    "Cerro Largo",
+    0,
+    1
+   ],
+   [
+    "2026-02-08",
+    "Racing",
+    "Deportivo Maldonado",
+    2,
+    4
+   ],
+   [
+    "2026-02-09",
+    "Cerro",
+    "Danubio",
+    0,
+    1
+   ],
+   [
+    "2026-02-13",
+    "Cerro Largo",
+    "Montevideo Wanderers",
+    1,
+    2
+   ],
+   [
+    "2026-02-13",
+    "Liverpool",
+    "Defensor Sporting",
+    1,
+    2
+   ],
+   [
+    "2026-02-14",
+    "Deportivo Maldonado",
+    "Progreso",
+    2,
+    0
+   ],
+   [
+    "2026-02-14",
+    "Nacional",
+    "Racing",
+    1,
+    1
+   ],
+   [
+    "2026-02-15",
+    "Central Espa\u00f1ol",
+    "Pe\u00f1arol",
+    2,
+    1
+   ],
+   [
+    "2026-02-15",
+    "Danubio",
+    "Boston River",
+    2,
+    0
+   ],
+   [
+    "2026-02-16",
+    "Albion",
+    "Cerro",
+    3,
+    0
+   ],
+   [
+    "2026-02-16",
+    "Montevideo City Torque",
+    "Juventud",
+    2,
+    2
+   ],
+   [
+    "2026-02-20",
+    "Cerro",
+    "Liverpool",
+    1,
+    1
+   ],
+   [
+    "2026-02-20",
+    "Defensor Sporting",
+    "Cerro Largo",
+    1,
+    0
+   ],
+   [
+    "2026-02-21",
+    "Boston River",
+    "Albion",
+    0,
+    0
+   ],
+   [
+    "2026-02-21",
+    "Progreso",
+    "Nacional",
+    0,
+    1
+   ],
+   [
+    "2026-02-21",
+    "Racing",
+    "Danubio",
+    4,
+    0
+   ],
+   [
+    "2026-02-22",
+    "Juventud",
+    "Central Espa\u00f1ol",
+    0,
+    1
+   ],
+   [
+    "2026-02-22",
+    "Montevideo Wanderers",
+    "Montevideo City Torque",
+    0,
+    4
+   ],
+   [
+    "2026-02-22",
+    "Pe\u00f1arol",
+    "Deportivo Maldonado",
+    2,
+    1
+   ],
+   [
+    "2026-02-26",
+    "Montevideo City Torque",
+    "Defensor Sporting",
+    1,
+    0
+   ],
+   [
+    "2026-02-27",
+    "Cerro",
+    "Boston River",
+    1,
+    1
+   ],
+   [
+    "2026-02-28",
+    "Albion",
+    "Racing",
+    1,
+    3
+   ],
+   [
+    "2026-02-28",
+    "Central Espa\u00f1ol",
+    "Montevideo Wanderers",
+    0,
+    1
+   ],
+   [
+    "2026-02-28",
+    "Danubio",
+    "Progreso",
+    2,
+    2
+   ],
+   [
+    "2026-03-01",
+    "Liverpool",
+    "Cerro Largo",
+    2,
+    0
+   ],
+   [
+    "2026-03-01",
+    "Nacional",
+    "Pe\u00f1arol",
+    0,
+    1
+   ],
+   [
+    "2026-03-02",
+    "Deportivo Maldonado",
+    "Juventud",
+    2,
+    1
+   ],
+   [
+    "2026-03-06",
+    "Montevideo Wanderers",
+    "Deportivo Maldonado",
+    0,
+    0
+   ],
+   [
+    "2026-03-07",
+    "Pe\u00f1arol",
+    "Danubio",
+    1,
+    1
+   ],
+   [
+    "2026-03-07",
+    "Progreso",
+    "Albion",
+    2,
+    2
+   ],
+   [
+    "2026-03-08",
+    "Defensor Sporting",
+    "Central Espa\u00f1ol",
+    0,
+    0
+   ],
+   [
+    "2026-03-08",
+    "Juventud",
+    "Nacional",
+    3,
+    1
+   ],
+   [
+    "2026-03-08",
+    "Racing",
+    "Cerro",
+    1,
+    0
+   ],
+   [
+    "2026-03-09",
+    "Boston River",
+    "Liverpool",
+    0,
+    1
+   ],
+   [
+    "2026-03-09",
+    "Cerro Largo",
+    "Montevideo City Torque",
+    0,
+    1
+   ],
+   [
+    "2026-03-13",
+    "Nacional",
+    "Montevideo Wanderers",
+    2,
+    0
+   ],
+   [
+    "2026-03-14",
+    "Albion",
+    "Pe\u00f1arol",
+    0,
+    1
+   ],
+   [
+    "2026-03-14",
+    "Boston River",
+    "Racing",
+    0,
+    1
+   ],
+   [
+    "2026-03-14",
+    "Cerro",
+    "Progreso",
+    0,
+    1
+   ],
+   [
+    "2026-03-15",
+    "Central Espa\u00f1ol",
+    "Cerro Largo",
+    1,
+    3
+   ],
+   [
+    "2026-03-15",
+    "Deportivo Maldonado",
+    "Defensor Sporting",
+    1,
+    0
+   ],
+   [
+    "2026-03-16",
+    "Danubio",
+    "Juventud",
+    4,
+    1
+   ],
+   [
+    "2026-03-16",
+    "Liverpool",
+    "Montevideo City Torque",
+    0,
+    0
+   ],
+   [
+    "2026-03-20",
+    "Cerro Largo",
+    "Deportivo Maldonado",
+    3,
+    1
+   ],
+   [
+    "2026-03-20",
+    "Defensor Sporting",
+    "Nacional",
+    2,
+    1
+   ],
+   [
+    "2026-03-21",
+    "Montevideo City Torque",
+    "Central Espa\u00f1ol",
+    2,
+    1
+   ],
+   [
+    "2026-03-21",
+    "Montevideo Wanderers",
+    "Danubio",
+    2,
+    1
+   ],
+   [
+    "2026-03-21",
+    "Pe\u00f1arol",
+    "Cerro",
+    3,
+    1
+   ],
+   [
+    "2026-03-21",
+    "Racing",
+    "Liverpool",
+    1,
+    0
+   ],
+   [
+    "2026-03-22",
+    "Juventud",
+    "Albion",
+    0,
+    1
+   ],
+   [
+    "2026-03-22",
+    "Progreso",
+    "Boston River",
+    0,
+    1
+   ],
+   [
+    "2026-03-24",
+    "Deportivo Maldonado",
+    "Montevideo City Torque",
+    1,
+    0
+   ],
+   [
+    "2026-03-24",
+    "Liverpool",
+    "Central Espa\u00f1ol",
+    3,
+    3
+   ],
+   [
+    "2026-03-24",
+    "Nacional",
+    "Cerro Largo",
+    3,
+    0
+   ],
+   [
+    "2026-03-25",
+    "Albion",
+    "Montevideo Wanderers",
+    2,
+    1
+   ],
+   [
+    "2026-03-25",
+    "Boston River",
+    "Pe\u00f1arol",
+    0,
+    2
+   ],
+   [
+    "2026-03-25",
+    "Cerro",
+    "Juventud",
+    1,
+    0
+   ],
+   [
+    "2026-03-26",
+    "Danubio",
+    "Defensor Sporting",
+    0,
+    0
+   ],
+   [
+    "2026-03-26",
+    "Racing",
+    "Progreso",
+    1,
+    1
+   ],
+   [
+    "2026-03-28",
+    "Montevideo City Torque",
+    "Nacional",
+    2,
+    3
+   ],
+   [
+    "2026-03-28",
+    "Montevideo Wanderers",
+    "Cerro",
+    3,
+    0
+   ],
+   [
+    "2026-03-29",
+    "Pe\u00f1arol",
+    "Racing",
+    1,
+    2
+   ],
+   [
+    "2026-03-30",
+    "Central Espa\u00f1ol",
+    "Deportivo Maldonado",
+    2,
+    1
+   ],
+   [
+    "2026-03-30",
+    "Cerro Largo",
+    "Danubio",
+    2,
+    0
+   ],
+   [
+    "2026-03-30",
+    "Juventud",
+    "Boston River",
+    1,
+    2
+   ],
+   [
+    "2026-03-31",
+    "Defensor Sporting",
+    "Albion",
+    1,
+    1
+   ],
+   [
+    "2026-03-31",
+    "Progreso",
+    "Liverpool",
+    3,
+    3
+   ],
+   [
+    "2026-04-03",
+    "Boston River",
+    "Montevideo Wanderers",
+    4,
+    1
+   ],
+   [
+    "2026-04-03",
+    "Nacional",
+    "Central Espa\u00f1ol",
+    0,
+    1
+   ],
+   [
+    "2026-04-04",
+    "Danubio",
+    "Montevideo City Torque",
+    1,
+    1
+   ],
+   [
+    "2026-04-04",
+    "Progreso",
+    "Pe\u00f1arol",
+    0,
+    2
+   ],
+   [
+    "2026-04-04",
+    "Racing",
+    "Juventud",
+    2,
+    1
+   ],
+   [
+    "2026-04-05",
+    "Albion",
+    "Cerro Largo",
+    2,
+    2
+   ],
+   [
+    "2026-04-05",
+    "Cerro",
+    "Defensor Sporting",
+    1,
+    0
+   ],
+   [
+    "2026-04-05",
+    "Liverpool",
+    "Deportivo Maldonado",
+    0,
+    2
+   ],
+   [
+    "2026-04-10",
+    "Cerro Largo",
+    "Cerro",
+    1,
+    1
+   ],
+   [
+    "2026-04-11",
+    "Defensor Sporting",
+    "Boston River",
+    2,
+    0
+   ],
+   [
+    "2026-04-11",
+    "Deportivo Maldonado",
+    "Nacional",
+    4,
+    2
+   ],
+   [
+    "2026-04-11",
+    "Montevideo City Torque",
+    "Albion",
+    0,
+    1
+   ],
+   [
+    "2026-04-12",
+    "Central Espa\u00f1ol",
+    "Danubio",
+    2,
+    2
+   ],
+   [
+    "2026-04-12",
+    "Juventud",
+    "Progreso",
+    1,
+    0
+   ],
+   [
+    "2026-04-12",
+    "Montevideo Wanderers",
+    "Racing",
+    1,
+    2
+   ],
+   [
+    "2026-04-13",
+    "Pe\u00f1arol",
+    "Liverpool",
+    0,
+    2
+   ],
+   [
+    "2026-04-17",
+    "Albion",
+    "Central Espa\u00f1ol",
+    6,
+    1
+   ],
+   [
+    "2026-04-18",
+    "Progreso",
+    "Montevideo Wanderers",
+    2,
+    1
+   ],
+   [
+    "2026-04-18",
+    "Racing",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "2026-04-19",
+    "Cerro",
+    "Montevideo City Torque",
+    1,
+    1
+   ],
+   [
+    "2026-04-19",
+    "Danubio",
+    "Deportivo Maldonado",
+    1,
+    1
+   ],
+   [
+    "2026-04-19",
+    "Liverpool",
+    "Nacional",
+    1,
+    3
+   ],
+   [
+    "2026-04-20",
+    "Boston River",
+    "Cerro Largo",
+    1,
+    0
+   ],
+   [
+    "2026-04-20",
+    "Pe\u00f1arol",
+    "Juventud",
+    2,
+    2
+   ],
+   [
+    "2026-04-24",
+    "Montevideo City Torque",
+    "Boston River",
+    4,
+    1
+   ],
+   [
+    "2026-04-25",
+    "Deportivo Maldonado",
+    "Albion",
+    1,
+    2
+   ],
+   [
+    "2026-04-25",
+    "Juventud",
+    "Liverpool",
+    1,
+    1
+   ],
+   [
+    "2026-04-25",
+    "Nacional",
+    "Danubio",
+    1,
+    2
+   ],
+   [
+    "2026-04-26",
+    "Central Espa\u00f1ol",
+    "Cerro",
+    3,
+    1
+   ],
+   [
+    "2026-04-26",
+    "Cerro Largo",
+    "Racing (C)",
+    0,
+    1
+   ],
+   [
+    "2026-04-26",
+    "Montevideo Wanderers",
+    "Pe\u00f1arol",
+    1,
+    0
+   ],
+   [
+    "2026-04-27",
+    "Defensor Sporting",
+    "Progreso",
+    1,
+    0
+   ],
+   [
+    "2026-05-02",
+    "Cerro",
+    "Deportivo Maldonado",
+    0,
+    1
+   ],
+   [
+    "2026-05-02",
+    "Juventud",
+    "Montevideo Wanderers",
+    2,
+    1
+   ],
+   [
+    "2026-05-02",
+    "Liverpool",
+    "Danubio",
+    3,
+    0
+   ],
+   [
+    "2026-05-03",
+    "Albion",
+    "Nacional",
+    3,
+    2
+   ],
+   [
+    "2026-05-03",
+    "Boston River",
+    "Central Espa\u00f1ol",
+    2,
+    1
+   ],
+   [
+    "2026-05-03",
+    "Progreso",
+    "Cerro Largo",
+    0,
+    1
+   ],
+   [
+    "2026-05-03",
+    "Racing",
+    "Montevideo City Torque",
+    1,
+    1
+   ],
+   [
+    "2026-05-04",
+    "Pe\u00f1arol",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "2026-05-08",
+    "Montevideo Wanderers",
+    "Liverpool",
+    1,
+    0
+   ],
+   [
+    "2026-05-09",
+    "Central Espa\u00f1ol",
+    "Racing",
+    2,
+    0
+   ],
+   [
+    "2026-05-09",
+    "Danubio",
+    "Albion",
+    0,
+    1
+   ],
+   [
+    "2026-05-10",
+    "Defensor Sporting",
+    "Juventud",
+    1,
+    2
+   ],
+   [
+    "2026-05-10",
+    "Montevideo City Torque",
+    "Progreso",
+    2,
+    1
+   ],
+   [
+    "2026-05-10",
+    "Nacional",
+    "Cerro",
+    4,
+    0
+   ],
+   [
+    "2026-05-11",
+    "Cerro Largo",
+    "Pe\u00f1arol",
+    2,
+    3
+   ],
+   [
+    "2026-05-11",
+    "Deportivo Maldonado",
+    "Boston River",
+    2,
+    1
+   ],
+   [
+    "2026-05-15",
+    "Montevideo City Torque",
+    "Nacional",
+    1,
+    2
+   ],
+   [
+    "2026-05-16",
+    "Boston River",
+    "Cerro",
+    4,
+    1
+   ],
+   [
+    "2026-05-16",
+    "Juventud",
+    "Progreso",
+    2,
+    0
+   ],
+   [
+    "2026-05-16",
+    "Pe\u00f1arol",
+    "Liverpool",
+    2,
+    1
+   ],
+   [
+    "2026-05-17",
+    "Albion",
+    "Montevideo Wanderers",
+    0,
+    0
+   ],
+   [
+    "2026-05-17",
+    "Central Espa\u00f1ol",
+    "Defensor Sporting",
+    2,
+    1
+   ],
+   [
+    "2026-05-17",
+    "Racing",
+    "Cerro Largo",
+    1,
+    0
+   ],
+   [
+    "2026-05-18",
+    "Deportivo Maldonado",
+    "Danubio",
+    3,
+    1
+   ],
+   [
+    "2026-05-22",
+    "Liverpool",
+    "Racing",
+    0,
+    0
+   ],
+   [
+    "2026-05-23",
+    "Cerro Largo",
+    "Boston River",
+    3,
+    0
+   ],
+   [
+    "2026-05-23",
+    "Nacional",
+    "Albion",
+    1,
+    0
+   ],
+   [
+    "2026-05-23",
+    "Progreso",
+    "Montevideo City Torque",
+    1,
+    2
+   ],
+   [
+    "2026-05-24",
+    "Cerro",
+    "Central Espa\u00f1ol",
+    1,
+    0
+   ],
+   [
+    "2026-05-24",
+    "Defensor Sporting",
+    "Pe\u00f1arol",
+    0,
+    2
+   ],
+   [
+    "2026-05-24",
+    "Montevideo Wanderers",
+    "Deportivo Maldonado",
+    1,
+    1
+   ],
+   [
+    "2026-05-29",
+    "Cerro Largo",
+    "Cerro",
+    2,
+    0
+   ],
+   [
+    "2026-05-30",
+    "Danubio",
+    "Progreso",
+    1,
+    2
+   ],
+   [
+    "2026-05-30",
+    "Racing",
+    "Defensor Sporting",
+    0,
+    0
+   ],
+   [
+    "2026-05-31",
+    "Albion",
+    "Montevideo City Torque",
+    1,
+    2
+   ],
+   [
+    "2026-05-31",
+    "Deportivo Maldonado",
+    "Nacional",
+    3,
+    0
+   ],
+   [
+    "2026-05-31",
+    "Juventud",
+    "Montevideo Wanderers",
+    2,
+    5
+   ],
+   [
+    "2026-06-01",
+    "Boston River",
+    "Liverpool",
+    0,
+    1
+   ],
+   [
+    "2026-06-01",
+    "Pe\u00f1arol",
+    "Central Espa\u00f1ol",
+    0,
+    1
+   ],
+   [
+    "2026-06-05",
+    "Montevideo Wanderers",
+    "Danubio",
+    0,
+    0
+   ],
+   [
+    "2026-06-06",
+    "Central Espa\u00f1ol",
+    "Racing",
+    1,
+    1
+   ],
+   [
+    "2026-06-06",
+    "Montevideo City Torque",
+    "Deportivo Maldonado",
+    2,
+    4
+   ],
+   [
+    "2026-06-06",
+    "Nacional",
+    "Juventud",
+    2,
+    1
+   ],
+   [
+    "2026-06-07",
+    "Cerro",
+    "Pe\u00f1arol",
+    0,
+    1
+   ],
+   [
+    "2026-06-07",
+    "Defensor Sporting",
+    "Boston River",
+    1,
+    1
+   ],
+   [
+    "2026-06-07",
+    "Progreso",
+    "Albion",
+    1,
+    2
+   ],
+   [
+    "2026-06-08",
+    "Liverpool",
+    "Cerro Largo",
+    0,
+    0
+   ],
+   [
+    "2026-07-05",
+    "Danubio",
+    "Juventud",
+    1,
+    1
+   ],
+   [
+    "2026-07-10",
+    "Deportivo Maldonado",
+    "Albion",
+    1,
+    1
+   ],
+   [
+    "2026-07-11",
+    "Danubio",
+    "Nacional",
+    0,
+    0
+   ],
+   [
+    "2026-07-11",
+    "Juventud",
+    "Montevideo City Torque",
+    1,
+    3
+   ],
+   [
+    "2026-07-11",
+    "Montevideo Wanderers",
+    "Progreso",
+    2,
+    0
+   ],
+   [
+    "2026-07-12",
+    "Boston River",
+    "Central Espa\u00f1ol",
+    0,
+    0
+   ],
+   [
+    "2026-07-12",
+    "Liverpool",
+    "Cerro",
+    1,
+    2
+   ],
+   [
+    "2026-07-12",
+    "Racing",
+    "Pe\u00f1arol",
+    1,
+    1
+   ],
+   [
+    "2026-07-13",
+    "Cerro Largo",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "2026-07-17",
+    "Albion",
+    "Juventud",
+    0,
+    1
+   ],
+   [
+    "2026-07-17",
+    "Nacional",
+    "Montevideo Wanderers",
+    1,
+    2
+   ],
+   [
+    "2026-07-18",
+    "Pe\u00f1arol",
+    "Boston River",
+    3,
+    0
+   ],
+   [
+    "2026-07-18",
+    "Progreso",
+    "Deportivo Maldonado",
+    1,
+    0
+   ],
+   [
+    "2026-07-24",
+    "Montevideo City Torque",
+    "Danubio",
+    1,
+    0
+   ],
+   [
+    "2026-07-25",
+    "Central Espa\u00f1ol",
+    "Cerro Largo",
+    0,
+    1
+   ],
+   [
+    "2026-07-25",
+    "Defensor Sporting",
+    "Liverpool",
+    1,
+    2
+   ],
+   [
+    "2026-07-26",
+    "Cerro",
+    "Racing",
+    1,
+    0
+   ],
+   [
+    "2026-07-31",
+    "Montevideo City Torque",
+    "Montevideo Wanderers",
+    0,
+    2
+   ],
+   [
+    "2026-08-01",
+    "Albion",
+    "Danubio",
+    2,
+    2
+   ],
+   [
+    "2026-08-01",
+    "Deportivo Maldonado",
+    "Juventud",
+    0,
+    0
+   ],
+   [
+    "2026-08-01",
+    "Pe\u00f1arol",
+    "Cerro Largo",
+    3,
+    0
+   ],
+   [
+    "2026-08-02",
+    "Central Espa\u00f1ol",
+    "Liverpool",
+    0,
+    0
+   ],
+   [
+    "2026-08-02",
+    "Nacional",
+    "Progreso",
+    2,
+    1
+   ],
+   [
+    "2026-08-02",
+    "Racing",
+    "Boston River",
+    1,
+    0
+   ],
+   [
+    "2026-08-03",
+    "Defensor Sporting",
+    "Cerro",
+    2,
+    1
+   ],
+   [
+    "2026-08-07",
+    "Cerro Largo",
+    "Juventud",
+    1,
+    1
+   ],
+   [
+    "2026-08-08",
+    "Central Espa\u00f1ol",
+    "Progreso",
+    1,
+    0
+   ],
+   [
+    "2026-08-08",
+    "Liverpool",
+    "Albion",
+    1,
+    0
+   ],
+   [
+    "2026-08-09",
+    "Danubio",
+    "Cerro",
+    0,
+    1
+   ],
+   [
+    "2026-08-09",
+    "Defensor Sporting",
+    "Montevideo Wanderers",
+    0,
+    1
+   ],
+   [
+    "2026-08-09",
+    "Nacional",
+    "Boston River",
+    1,
+    2
+   ],
+   [
+    "2026-08-10",
+    "Deportivo Maldonado",
+    "Racing",
+    2,
+    2
+   ],
+   [
+    "2026-08-14",
+    "Boston River",
+    "Danubio",
+    0,
+    0
+   ],
+   [
+    "2026-08-15",
+    "Cerro",
+    "Albion",
+    2,
+    1
+   ],
+   [
+    "2026-08-15",
+    "Juventud",
+    "Montevideo City Torque",
+    0,
+    1
+   ],
+   [
+    "2026-08-15",
+    "Montevideo Wanderers",
+    "Cerro Largo",
+    1,
+    1
+   ],
+   [
+    "2026-08-15",
+    "Racing",
+    "Nacional",
+    2,
+    0
+   ],
+   [
+    "2026-08-16",
+    "Defensor Sporting",
+    "Liverpool",
+    0,
+    4
+   ],
+   [
+    "2026-08-16",
+    "Pe\u00f1arol",
+    "Central Espa\u00f1ol",
+    2,
+    1
+   ],
+   [
+    "2026-08-16",
+    "Progreso",
+    "Deportivo Maldonado",
+    0,
+    2
+   ],
+   [
+    "2026-08-21",
+    "Albion",
+    "Boston River",
+    2,
+    3
+   ],
+   [
+    "2026-08-21",
+    "Liverpool",
+    "Cerro",
+    4,
+    0
+   ],
+   [
+    "2026-08-22",
+    "Central Espa\u00f1ol",
+    "Juventud",
+    0,
+    1
+   ],
+   [
+    "2026-08-22",
+    "Cerro Largo",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "2026-08-22",
+    "Deportivo Maldonado",
+    "Pe\u00f1arol",
+    0,
+    0
+   ],
+   [
+    "2026-08-23",
+    "Danubio",
+    "Racing",
+    0,
+    0
+   ],
+   [
+    "2026-08-23",
+    "Montevideo City Torque",
+    "Montevideo Wanderers",
+    5,
+    1
+   ],
+   [
+    "2026-08-23",
+    "Nacional",
+    "Progreso",
+    1,
+    0
+   ],
+   [
+    "2026-08-28",
+    "Montevideo Wanderers",
+    "Central Espa\u00f1ol",
+    3,
+    0
+   ],
+   [
+    "2026-08-29",
+    "Boston River",
+    "Cerro",
+    1,
+    1
+   ],
+   [
+    "2026-08-29",
+    "Defensor Sporting",
+    "Montevideo City Torque",
+    1,
+    3
+   ],
+   [
+    "2026-08-29",
+    "Juventud",
+    "Deportivo Maldonado",
+    2,
+    0
+   ],
+   [
+    "2026-08-29",
+    "Progreso",
+    "Danubio",
+    1,
+    0
+   ],
+   [
+    "2026-08-30",
+    "Cerro Largo",
+    "Liverpool",
+    1,
+    1
+   ],
+   [
+    "2026-08-30",
+    "Pe\u00f1arol",
+    "Nacional",
+    0,
+    1
+   ],
+   [
+    "2026-08-31",
+    "Racing",
+    "Albion",
+    1,
+    0
+   ],
+   [
+    "2026-09-04",
+    "Montevideo City Torque",
+    "Cerro Largo",
+    2,
+    1
+   ],
+   [
+    "2026-09-05",
+    "Danubio",
+    "Pe\u00f1arol",
+    0,
+    4
+   ],
+   [
+    "2026-09-05",
+    "Deportivo Maldonado",
+    "Montevideo Wanderers",
+    2,
+    0
+   ],
+   [
+    "2026-09-06",
+    "Central Espa\u00f1ol",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "2026-09-06",
+    "Cerro",
+    "Racing",
+    1,
+    0
+   ],
+   [
+    "2026-09-06",
+    "Liverpool",
+    "Boston River",
+    1,
+    0
+   ],
+   [
+    "2026-09-06",
+    "Nacional",
+    "Juventud",
+    2,
+    2
+   ],
+   [
+    "2026-09-07",
+    "Albion",
+    "Progreso",
+    0,
+    1
+   ],
+   [
+    "2026-09-12",
+    "Cerro Largo",
+    "Central Espa\u00f1ol",
+    0,
+    0
+   ],
+   [
+    "2026-09-12",
+    "Montevideo Wanderers",
+    "Nacional",
+    1,
+    1
+   ],
+   [
+    "2026-09-12",
+    "Racing",
+    "Boston River",
+    3,
+    2
+   ],
+   [
+    "2026-09-13",
+    "Defensor Sporting",
+    "Deportivo Maldonado",
+    1,
+    0
+   ],
+   [
+    "2026-09-13",
+    "Juventud",
+    "Danubio",
+    1,
+    1
+   ],
+   [
+    "2026-09-13",
+    "Pe\u00f1arol",
+    "Albion",
+    3,
+    1
+   ],
+   [
+    "2026-09-13",
+    "Progreso",
+    "Cerro",
+    1,
+    3
+   ],
+   [
+    "2026-09-14",
+    "Montevideo City Torque",
+    "Liverpool",
+    3,
+    1
+   ],
+   [
+    "2026-09-19",
+    "Boston River",
+    "Progreso",
+    1,
+    2
+   ],
+   [
+    "2026-09-19",
+    "Cerro",
+    "Pe\u00f1arol",
+    1,
+    2
+   ],
+   [
+    "2026-09-19",
+    "Deportivo Maldonado",
+    "Cerro Largo",
+    2,
+    0
+   ],
+   [
+    "2026-09-20",
+    "Albion",
+    "Juventud",
+    1,
+    3
+   ],
+   [
+    "2026-09-20",
+    "Danubio",
+    "Montevideo Wanderers",
+    1,
+    1
+   ],
+   [
+    "2026-09-20",
+    "Liverpool",
+    "Racing",
+    0,
+    0
+   ],
+   [
+    "2026-09-20",
+    "Nacional",
+    "Defensor Sporting",
+    3,
+    2
+   ],
+   [
+    "2026-09-21",
+    "Central Espa\u00f1ol",
+    "Montevideo City Torque",
+    1,
+    4
+   ],
+   [
+    "2026-09-26",
+    "Cerro Largo",
+    "Nacional",
+    0,
+    2
+   ],
+   [
+    "2026-09-26",
+    "Montevideo City Torque",
+    "Deportivo Maldonado",
+    0,
+    2
+   ],
+   [
+    "2026-09-26",
+    "Pe\u00f1arol",
+    "Boston River",
+    2,
+    1
+   ],
+   [
+    "2026-09-26",
+    "Progreso",
+    "Racing",
+    2,
+    1
+   ],
+   [
+    "2026-09-27",
+    "Central Espa\u00f1ol",
+    "Liverpool",
+    1,
+    2
+   ],
+   [
+    "2026-09-27",
+    "Defensor Sporting",
+    "Danubio",
+    1,
+    0
+   ],
+   [
+    "2026-09-27",
+    "Juventud",
+    "Cerro",
+    0,
+    0
+   ],
+   [
+    "2026-09-28",
+    "Montevideo Wanderers",
+    "Albion",
+    2,
+    1
+   ]
+  ],
+  "form": {
+   "Albion": {
+    "form": "LLLLL",
+    "n": 5,
+    "gf": 3,
+    "ga": 10,
+    "newest": "2026-09-28",
+    "matches": [
+     {
+      "date": "2026-09-28",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Montevideo Wanderers",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Juventud",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Pe\u00f1arol",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-07",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Progreso",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-31",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Racing",
+      "side": "A"
+     }
+    ]
+   },
+   "Liverpool": {
+    "form": "WDLWD",
+    "n": 5,
+    "gf": 5,
+    "ga": 5,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Central Espa\u00f1ol",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Racing",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-14",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Montevideo City Torque",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Boston River",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Cerro Largo",
+      "side": "A"
+     }
+    ]
+   },
+   "Montevideo Wanderers": {
+    "form": "WDDLW",
+    "n": 5,
+    "gf": 7,
+    "ga": 5,
+    "newest": "2026-09-28",
+    "matches": [
+     {
+      "date": "2026-09-28",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Albion",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Danubio",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Nacional",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Deportivo Maldonado",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-28",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "Central Espa\u00f1ol",
+      "side": "H"
+     }
+    ]
+   },
+   "Defensor Sporting": {
+    "form": "WLWDL",
+    "n": 5,
+    "gf": 6,
+    "ga": 7,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Danubio",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "L",
+      "gf": 2,
+      "ga": 3,
+      "opp": "Nacional",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Deportivo Maldonado",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Central Espa\u00f1ol",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Montevideo City Torque",
+      "side": "H"
+     }
+    ]
+   },
+   "Pe\u00f1arol": {
+    "form": "WWWWL",
+    "n": 5,
+    "gf": 11,
+    "ga": 4,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Boston River",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Cerro",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Albion",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "W",
+      "gf": 4,
+      "ga": 0,
+      "opp": "Danubio",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Nacional",
+      "side": "H"
+     }
+    ]
+   },
+   "Montevideo City Torque": {
+    "form": "LWWWW",
+    "n": 5,
+    "gf": 12,
+    "ga": 6,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Deportivo Maldonado",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-21",
+      "res": "W",
+      "gf": 4,
+      "ga": 1,
+      "opp": "Central Espa\u00f1ol",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-14",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Liverpool",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Cerro Largo",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Defensor Sporting",
+      "side": "A"
+     }
+    ]
+   },
+   "Progreso": {
+    "form": "WWLWW",
+    "n": 5,
+    "gf": 7,
+    "ga": 5,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Racing",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Boston River",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Cerro",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-07",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Albion",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Danubio",
+      "side": "H"
+     }
+    ]
+   },
+   "Central Espa\u00f1ol": {
+    "form": "LLDDL",
+    "n": 5,
+    "gf": 3,
+    "ga": 10,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Liverpool",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-21",
+      "res": "L",
+      "gf": 1,
+      "ga": 4,
+      "opp": "Montevideo City Torque",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Cerro Largo",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Defensor Sporting",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-28",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Montevideo Wanderers",
+      "side": "A"
+     }
+    ]
+   },
+   "Boston River": {
+    "form": "LLLLD",
+    "n": 5,
+    "gf": 5,
+    "ga": 9,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Pe\u00f1arol",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Progreso",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 2,
+      "ga": 3,
+      "opp": "Racing",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Liverpool",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Cerro",
+      "side": "H"
+     }
+    ]
+   },
+   "Nacional": {
+    "form": "WWDDW",
+    "n": 5,
+    "gf": 9,
+    "ga": 5,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Cerro Largo",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "Defensor Sporting",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Montevideo Wanderers",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Juventud",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Pe\u00f1arol",
+      "side": "A"
+     }
+    ]
+   },
+   "Juventud": {
+    "form": "DWDDW",
+    "n": 5,
+    "gf": 8,
+    "ga": 4,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Cerro",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Albion",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Danubio",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Nacional",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Deportivo Maldonado",
+      "side": "H"
+     }
+    ]
+   },
+   "Cerro Largo": {
+    "form": "LLDLD",
+    "n": 5,
+    "gf": 2,
+    "ga": 7,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Nacional",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Deportivo Maldonado",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Central Espa\u00f1ol",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Montevideo City Torque",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Liverpool",
+      "side": "H"
+     }
+    ]
+   },
+   "Racing": {
+    "form": "LDWLW",
+    "n": 5,
+    "gf": 5,
+    "ga": 5,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Progreso",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Liverpool",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "Boston River",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Cerro",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-31",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Albion",
+      "side": "H"
+     }
+    ]
+   },
+   "Deportivo Maldonado": {
+    "form": "WWLWL",
+    "n": 5,
+    "gf": 6,
+    "ga": 3,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Montevideo City Torque",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Cerro Largo",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Defensor Sporting",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Montevideo Wanderers",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Juventud",
+      "side": "A"
+     }
+    ]
+   },
+   "Cerro": {
+    "form": "DLWWD",
+    "n": 5,
+    "gf": 6,
+    "ga": 4,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Juventud",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Pe\u00f1arol",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Progreso",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Racing",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Boston River",
+      "side": "A"
+     }
+    ]
+   },
+   "Danubio": {
+    "form": "LDDLL",
+    "n": 5,
+    "gf": 2,
+    "ga": 8,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Defensor Sporting",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Montevideo Wanderers",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Juventud",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "L",
+      "gf": 0,
+      "ga": 4,
+      "opp": "Pe\u00f1arol",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Progreso",
+      "side": "A"
+     }
+    ]
+   },
+   "Racing (C)": {
+    "form": "W",
+    "n": 1,
+    "gf": 1,
+    "ga": 0,
+    "newest": "2026-04-26",
+    "matches": [
+     {
+      "date": "2026-04-26",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Cerro Largo",
+      "side": "A"
+     }
+    ]
+   }
+  },
+  "es_pages": [
+   "Torneo_Apertura_2026_(Uruguay)",
+   "Torneo_Intermedio_2026",
+   "Torneo_Clausura_2026_(Uruguay)"
+  ],
+  "rates": {
+   "result": {
+    "n": 239,
+    "home": 0.41004,
+    "draw": 0.25941,
+    "away": 0.33054,
+    "mean_goals": 2.356
+   },
+   "under": {
+    "1.5": 0.33054,
+    "2.5": 0.55649,
+    "3.5": 0.79498,
+    "4.5": 0.9205,
+    "5.5": 0.96653
+   },
+   "src": "wikipedia-matrix"
+  },
+  "splits": {
+   "home": {
+    "Albion": {
+     "p": 15,
+     "w": 4,
+     "d": 3,
+     "l": 8,
+     "gf": 24,
+     "ga": 24,
+     "ppg": 1.0
+    },
+    "Montevideo Wanderers": {
+     "p": 15,
+     "w": 7,
+     "d": 6,
+     "l": 2,
+     "gf": 19,
+     "ga": 12,
+     "ppg": 1.8
+    },
+    "Pe\u00f1arol": {
+     "p": 16,
+     "w": 9,
+     "d": 3,
+     "l": 4,
+     "gf": 28,
+     "ga": 17,
+     "ppg": 1.875
+    },
+    "Progreso": {
+     "p": 15,
+     "w": 4,
+     "d": 2,
+     "l": 9,
+     "gf": 14,
+     "ga": 24,
+     "ppg": 0.933
+    },
+    "Boston River": {
+     "p": 14,
+     "w": 4,
+     "d": 4,
+     "l": 6,
+     "gf": 14,
+     "ga": 13,
+     "ppg": 1.143
+    },
+    "Juventud": {
+     "p": 15,
+     "w": 5,
+     "d": 3,
+     "l": 7,
+     "gf": 16,
+     "ga": 18,
+     "ppg": 1.2
+    },
+    "Racing": {
+     "p": 15,
+     "w": 9,
+     "d": 5,
+     "l": 1,
+     "gf": 22,
+     "ga": 11,
+     "ppg": 2.133
+    },
+    "Cerro": {
+     "p": 14,
+     "w": 6,
+     "d": 3,
+     "l": 5,
+     "gf": 11,
+     "ga": 10,
+     "ppg": 1.5
+    },
+    "Cerro Largo": {
+     "p": 15,
+     "w": 4,
+     "d": 6,
+     "l": 5,
+     "gf": 18,
+     "ga": 15,
+     "ppg": 1.2
+    },
+    "Liverpool": {
+     "p": 14,
+     "w": 5,
+     "d": 5,
+     "l": 4,
+     "gf": 17,
+     "ga": 12,
+     "ppg": 1.429
+    },
+    "Deportivo Maldonado": {
+     "p": 15,
+     "w": 10,
+     "d": 4,
+     "l": 1,
+     "gf": 26,
+     "ga": 10,
+     "ppg": 2.267
+    },
+    "Nacional": {
+     "p": 15,
+     "w": 8,
+     "d": 2,
+     "l": 5,
+     "gf": 24,
+     "ga": 15,
+     "ppg": 1.733
+    },
+    "Central Espa\u00f1ol": {
+     "p": 16,
+     "w": 6,
+     "d": 4,
+     "l": 6,
+     "gf": 19,
+     "ga": 20,
+     "ppg": 1.375
+    },
+    "Danubio": {
+     "p": 14,
+     "w": 2,
+     "d": 8,
+     "l": 4,
+     "gf": 13,
+     "ga": 15,
+     "ppg": 1.0
+    },
+    "Montevideo City Torque": {
+     "p": 15,
+     "w": 8,
+     "d": 1,
+     "l": 6,
+     "gf": 27,
+     "ga": 22,
+     "ppg": 1.667
+    },
+    "Defensor Sporting": {
+     "p": 16,
+     "w": 7,
+     "d": 3,
+     "l": 6,
+     "gf": 15,
+     "ga": 18,
+     "ppg": 1.5
+    }
+   },
+   "away": {
+    "Liverpool": {
+     "p": 16,
+     "w": 7,
+     "d": 5,
+     "l": 4,
+     "gf": 22,
+     "ga": 16,
+     "ppg": 1.625
+    },
+    "Defensor Sporting": {
+     "p": 14,
+     "w": 1,
+     "d": 8,
+     "l": 5,
+     "gf": 11,
+     "ga": 15,
+     "ppg": 0.786
+    },
+    "Montevideo City Torque": {
+     "p": 14,
+     "w": 8,
+     "d": 4,
+     "l": 2,
+     "gf": 24,
+     "ga": 12,
+     "ppg": 2.0
+    },
+    "Central Espa\u00f1ol": {
+     "p": 14,
+     "w": 4,
+     "d": 4,
+     "l": 6,
+     "gf": 13,
+     "ga": 19,
+     "ppg": 1.143
+    },
+    "Nacional": {
+     "p": 15,
+     "w": 7,
+     "d": 2,
+     "l": 6,
+     "gf": 21,
+     "ga": 23,
+     "ppg": 1.533
+    },
+    "Cerro Largo": {
+     "p": 15,
+     "w": 4,
+     "d": 3,
+     "l": 8,
+     "gf": 10,
+     "ga": 19,
+     "ppg": 1.0
+    },
+    "Deportivo Maldonado": {
+     "p": 15,
+     "w": 6,
+     "d": 3,
+     "l": 6,
+     "gf": 20,
+     "ga": 17,
+     "ppg": 1.4
+    },
+    "Danubio": {
+     "p": 16,
+     "w": 2,
+     "d": 6,
+     "l": 8,
+     "gf": 11,
+     "ga": 24,
+     "ppg": 0.75
+    },
+    "Montevideo Wanderers": {
+     "p": 15,
+     "w": 6,
+     "d": 2,
+     "l": 7,
+     "gf": 19,
+     "ga": 24,
+     "ppg": 1.333
+    },
+    "Progreso": {
+     "p": 15,
+     "w": 4,
+     "d": 2,
+     "l": 9,
+     "gf": 11,
+     "ga": 19,
+     "ppg": 0.933
+    },
+    "Racing": {
+     "p": 14,
+     "w": 4,
+     "d": 6,
+     "l": 4,
+     "gf": 13,
+     "ga": 13,
+     "ppg": 1.286
+    },
+    "Pe\u00f1arol": {
+     "p": 13,
+     "w": 9,
+     "d": 2,
+     "l": 2,
+     "gf": 20,
+     "ga": 7,
+     "ppg": 2.231
+    },
+    "Boston River": {
+     "p": 16,
+     "w": 4,
+     "d": 2,
+     "l": 10,
+     "gf": 15,
+     "ga": 29,
+     "ppg": 0.875
+    },
+    "Cerro": {
+     "p": 16,
+     "w": 3,
+     "d": 3,
+     "l": 10,
+     "gf": 12,
+     "ga": 33,
+     "ppg": 0.75
+    },
+    "Juventud": {
+     "p": 15,
+     "w": 4,
+     "d": 6,
+     "l": 5,
+     "gf": 19,
+     "ga": 21,
+     "ppg": 1.2
+    },
+    "Albion": {
+     "p": 15,
+     "w": 5,
+     "d": 4,
+     "l": 6,
+     "gf": 14,
+     "ga": 16,
+     "ppg": 1.267
+    },
+    "Racing (C)": {
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gf": 1,
+     "ga": 0,
+     "ppg": 3.0
+    }
+   },
+   "h2h": {
+    "Albion|Liverpool": [
+     {
+      "home": "Albion",
+      "away": "Liverpool",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Liverpool",
+      "away": "Albion",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Defensor Sporting|Montevideo Wanderers": [
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Montevideo Wanderers",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Montevideo City Torque|Pe\u00f1arol": [
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Montevideo City Torque",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Central Espa\u00f1ol|Progreso": [
+     {
+      "home": "Progreso",
+      "away": "Central Espa\u00f1ol",
+      "hg": 0,
+      "ag": 3
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Progreso",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Boston River|Nacional": [
+     {
+      "home": "Boston River",
+      "away": "Nacional",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Nacional",
+      "away": "Boston River",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Cerro Largo|Juventud": [
+     {
+      "home": "Juventud",
+      "away": "Cerro Largo",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Cerro Largo",
+      "away": "Juventud",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportivo Maldonado|Racing": [
+     {
+      "home": "Racing",
+      "away": "Deportivo Maldonado",
+      "hg": 2,
+      "ag": 4
+     },
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Racing",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Cerro|Danubio": [
+     {
+      "home": "Cerro",
+      "away": "Danubio",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Danubio",
+      "away": "Cerro",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Cerro Largo|Montevideo Wanderers": [
+     {
+      "home": "Cerro Largo",
+      "away": "Montevideo Wanderers",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Cerro Largo",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Defensor Sporting|Liverpool": [
+     {
+      "home": "Liverpool",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Liverpool",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Liverpool",
+      "hg": 0,
+      "ag": 4
+     }
+    ],
+    "Deportivo Maldonado|Progreso": [
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Progreso",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Progreso",
+      "away": "Deportivo Maldonado",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Progreso",
+      "away": "Deportivo Maldonado",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Nacional|Racing": [
+     {
+      "home": "Nacional",
+      "away": "Racing",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Racing",
+      "away": "Nacional",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Central Espa\u00f1ol|Pe\u00f1arol": [
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Pe\u00f1arol",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Central Espa\u00f1ol",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Central Espa\u00f1ol",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Boston River|Danubio": [
+     {
+      "home": "Danubio",
+      "away": "Boston River",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Boston River",
+      "away": "Danubio",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Albion|Cerro": [
+     {
+      "home": "Albion",
+      "away": "Cerro",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Cerro",
+      "away": "Albion",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Juventud|Montevideo City Torque": [
+     {
+      "home": "Montevideo City Torque",
+      "away": "Juventud",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Juventud",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 3
+     },
+     {
+      "home": "Juventud",
+      "away": "Montevideo City Torque",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Cerro|Liverpool": [
+     {
+      "home": "Cerro",
+      "away": "Liverpool",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Liverpool",
+      "away": "Cerro",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Liverpool",
+      "away": "Cerro",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "Cerro Largo|Defensor Sporting": [
+     {
+      "home": "Defensor Sporting",
+      "away": "Cerro Largo",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cerro Largo",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Cerro Largo",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Albion|Boston River": [
+     {
+      "home": "Boston River",
+      "away": "Albion",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Albion",
+      "away": "Boston River",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Nacional|Progreso": [
+     {
+      "home": "Progreso",
+      "away": "Nacional",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Nacional",
+      "away": "Progreso",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Nacional",
+      "away": "Progreso",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Danubio|Racing": [
+     {
+      "home": "Racing",
+      "away": "Danubio",
+      "hg": 4,
+      "ag": 0
+     },
+     {
+      "home": "Danubio",
+      "away": "Racing",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Central Espa\u00f1ol|Juventud": [
+     {
+      "home": "Juventud",
+      "away": "Central Espa\u00f1ol",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Juventud",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Montevideo City Torque|Montevideo Wanderers": [
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Montevideo City Torque",
+      "hg": 0,
+      "ag": 4
+     },
+     {
+      "home": "Montevideo City Torque",
+      "away": "Montevideo Wanderers",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Montevideo City Torque",
+      "away": "Montevideo Wanderers",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Deportivo Maldonado|Pe\u00f1arol": [
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Deportivo Maldonado",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Pe\u00f1arol",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Defensor Sporting|Montevideo City Torque": [
+     {
+      "home": "Montevideo City Torque",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Boston River|Cerro": [
+     {
+      "home": "Cerro",
+      "away": "Boston River",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Boston River",
+      "away": "Cerro",
+      "hg": 4,
+      "ag": 1
+     },
+     {
+      "home": "Boston River",
+      "away": "Cerro",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Albion|Racing": [
+     {
+      "home": "Albion",
+      "away": "Racing",
+      "hg": 1,
+      "ag": 3
+     },
+     {
+      "home": "Racing",
+      "away": "Albion",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Central Espa\u00f1ol|Montevideo Wanderers": [
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Montevideo Wanderers",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Central Espa\u00f1ol",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Danubio|Progreso": [
+     {
+      "home": "Danubio",
+      "away": "Progreso",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Danubio",
+      "away": "Progreso",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Progreso",
+      "away": "Danubio",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cerro Largo|Liverpool": [
+     {
+      "home": "Liverpool",
+      "away": "Cerro Largo",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Liverpool",
+      "away": "Cerro Largo",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Cerro Largo",
+      "away": "Liverpool",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Nacional|Pe\u00f1arol": [
+     {
+      "home": "Nacional",
+      "away": "Pe\u00f1arol",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Nacional",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Deportivo Maldonado|Juventud": [
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Juventud",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Juventud",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Juventud",
+      "away": "Deportivo Maldonado",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Maldonado|Montevideo Wanderers": [
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Deportivo Maldonado",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Deportivo Maldonado",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Montevideo Wanderers",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Danubio|Pe\u00f1arol": [
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Danubio",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Danubio",
+      "away": "Pe\u00f1arol",
+      "hg": 0,
+      "ag": 4
+     }
+    ],
+    "Albion|Progreso": [
+     {
+      "home": "Progreso",
+      "away": "Albion",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Progreso",
+      "away": "Albion",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Albion",
+      "away": "Progreso",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Central Espa\u00f1ol|Defensor Sporting": [
+     {
+      "home": "Defensor Sporting",
+      "away": "Central Espa\u00f1ol",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Defensor Sporting",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Juventud|Nacional": [
+     {
+      "home": "Juventud",
+      "away": "Nacional",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Nacional",
+      "away": "Juventud",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Nacional",
+      "away": "Juventud",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Cerro|Racing": [
+     {
+      "home": "Racing",
+      "away": "Cerro",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cerro",
+      "away": "Racing",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cerro",
+      "away": "Racing",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Boston River|Liverpool": [
+     {
+      "home": "Boston River",
+      "away": "Liverpool",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Boston River",
+      "away": "Liverpool",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Liverpool",
+      "away": "Boston River",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cerro Largo|Montevideo City Torque": [
+     {
+      "home": "Cerro Largo",
+      "away": "Montevideo City Torque",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Montevideo City Torque",
+      "away": "Cerro Largo",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Montevideo Wanderers|Nacional": [
+     {
+      "home": "Nacional",
+      "away": "Montevideo Wanderers",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Nacional",
+      "away": "Montevideo Wanderers",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Nacional",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Albion|Pe\u00f1arol": [
+     {
+      "home": "Albion",
+      "away": "Pe\u00f1arol",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Albion",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Boston River|Racing": [
+     {
+      "home": "Boston River",
+      "away": "Racing",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Racing",
+      "away": "Boston River",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Racing",
+      "away": "Boston River",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Cerro|Progreso": [
+     {
+      "home": "Cerro",
+      "away": "Progreso",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Progreso",
+      "away": "Cerro",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Central Espa\u00f1ol|Cerro Largo": [
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Cerro Largo",
+      "hg": 1,
+      "ag": 3
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Cerro Largo",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Cerro Largo",
+      "away": "Central Espa\u00f1ol",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Defensor Sporting|Deportivo Maldonado": [
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Deportivo Maldonado",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Danubio|Juventud": [
+     {
+      "home": "Danubio",
+      "away": "Juventud",
+      "hg": 4,
+      "ag": 1
+     },
+     {
+      "home": "Danubio",
+      "away": "Juventud",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Juventud",
+      "away": "Danubio",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Liverpool|Montevideo City Torque": [
+     {
+      "home": "Liverpool",
+      "away": "Montevideo City Torque",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Montevideo City Torque",
+      "away": "Liverpool",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Cerro Largo|Deportivo Maldonado": [
+     {
+      "home": "Cerro Largo",
+      "away": "Deportivo Maldonado",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Cerro Largo",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Defensor Sporting|Nacional": [
+     {
+      "home": "Defensor Sporting",
+      "away": "Nacional",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Nacional",
+      "away": "Defensor Sporting",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Central Espa\u00f1ol|Montevideo City Torque": [
+     {
+      "home": "Montevideo City Torque",
+      "away": "Central Espa\u00f1ol",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Danubio|Montevideo Wanderers": [
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Danubio",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Danubio",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Danubio",
+      "away": "Montevideo Wanderers",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cerro|Pe\u00f1arol": [
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Cerro",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Cerro",
+      "away": "Pe\u00f1arol",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Cerro",
+      "away": "Pe\u00f1arol",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Liverpool|Racing": [
+     {
+      "home": "Racing",
+      "away": "Liverpool",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Liverpool",
+      "away": "Racing",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Liverpool",
+      "away": "Racing",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Albion|Juventud": [
+     {
+      "home": "Juventud",
+      "away": "Albion",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Albion",
+      "away": "Juventud",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Albion",
+      "away": "Juventud",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Boston River|Progreso": [
+     {
+      "home": "Progreso",
+      "away": "Boston River",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Boston River",
+      "away": "Progreso",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportivo Maldonado|Montevideo City Torque": [
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Montevideo City Torque",
+      "away": "Deportivo Maldonado",
+      "hg": 2,
+      "ag": 4
+     },
+     {
+      "home": "Montevideo City Torque",
+      "away": "Deportivo Maldonado",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Central Espa\u00f1ol|Liverpool": [
+     {
+      "home": "Liverpool",
+      "away": "Central Espa\u00f1ol",
+      "hg": 3,
+      "ag": 3
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Liverpool",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Liverpool",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Cerro Largo|Nacional": [
+     {
+      "home": "Nacional",
+      "away": "Cerro Largo",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Cerro Largo",
+      "away": "Nacional",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Albion|Montevideo Wanderers": [
+     {
+      "home": "Albion",
+      "away": "Montevideo Wanderers",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Albion",
+      "away": "Montevideo Wanderers",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Albion",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Boston River|Pe\u00f1arol": [
+     {
+      "home": "Boston River",
+      "away": "Pe\u00f1arol",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Boston River",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Boston River",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cerro|Juventud": [
+     {
+      "home": "Cerro",
+      "away": "Juventud",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Juventud",
+      "away": "Cerro",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Danubio|Defensor Sporting": [
+     {
+      "home": "Danubio",
+      "away": "Defensor Sporting",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Danubio",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Progreso|Racing": [
+     {
+      "home": "Racing",
+      "away": "Progreso",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Progreso",
+      "away": "Racing",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Montevideo City Torque|Nacional": [
+     {
+      "home": "Montevideo City Torque",
+      "away": "Nacional",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "Montevideo City Torque",
+      "away": "Nacional",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Cerro|Montevideo Wanderers": [
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Cerro",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Pe\u00f1arol|Racing": [
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Racing",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Racing",
+      "away": "Pe\u00f1arol",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Central Espa\u00f1ol|Deportivo Maldonado": [
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Deportivo Maldonado",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cerro Largo|Danubio": [
+     {
+      "home": "Cerro Largo",
+      "away": "Danubio",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Boston River|Juventud": [
+     {
+      "home": "Juventud",
+      "away": "Boston River",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Albion|Defensor Sporting": [
+     {
+      "home": "Defensor Sporting",
+      "away": "Albion",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Liverpool|Progreso": [
+     {
+      "home": "Progreso",
+      "away": "Liverpool",
+      "hg": 3,
+      "ag": 3
+     }
+    ],
+    "Boston River|Montevideo Wanderers": [
+     {
+      "home": "Boston River",
+      "away": "Montevideo Wanderers",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Central Espa\u00f1ol|Nacional": [
+     {
+      "home": "Nacional",
+      "away": "Central Espa\u00f1ol",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Danubio|Montevideo City Torque": [
+     {
+      "home": "Danubio",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Montevideo City Torque",
+      "away": "Danubio",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Pe\u00f1arol|Progreso": [
+     {
+      "home": "Progreso",
+      "away": "Pe\u00f1arol",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Juventud|Racing": [
+     {
+      "home": "Racing",
+      "away": "Juventud",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Albion|Cerro Largo": [
+     {
+      "home": "Albion",
+      "away": "Cerro Largo",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Cerro|Defensor Sporting": [
+     {
+      "home": "Cerro",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Cerro",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Deportivo Maldonado|Liverpool": [
+     {
+      "home": "Liverpool",
+      "away": "Deportivo Maldonado",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Cerro|Cerro Largo": [
+     {
+      "home": "Cerro Largo",
+      "away": "Cerro",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Cerro Largo",
+      "away": "Cerro",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Boston River|Defensor Sporting": [
+     {
+      "home": "Defensor Sporting",
+      "away": "Boston River",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Boston River",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportivo Maldonado|Nacional": [
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Nacional",
+      "hg": 4,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Nacional",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Albion|Montevideo City Torque": [
+     {
+      "home": "Montevideo City Torque",
+      "away": "Albion",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Albion",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Central Espa\u00f1ol|Danubio": [
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Danubio",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Juventud|Progreso": [
+     {
+      "home": "Juventud",
+      "away": "Progreso",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Juventud",
+      "away": "Progreso",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Montevideo Wanderers|Racing": [
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Racing",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Liverpool|Pe\u00f1arol": [
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Liverpool",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Liverpool",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Albion|Central Espa\u00f1ol": [
+     {
+      "home": "Albion",
+      "away": "Central Espa\u00f1ol",
+      "hg": 6,
+      "ag": 1
+     }
+    ],
+    "Montevideo Wanderers|Progreso": [
+     {
+      "home": "Progreso",
+      "away": "Montevideo Wanderers",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Progreso",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Defensor Sporting|Racing": [
+     {
+      "home": "Racing",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Racing",
+      "away": "Defensor Sporting",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Cerro|Montevideo City Torque": [
+     {
+      "home": "Cerro",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Danubio|Deportivo Maldonado": [
+     {
+      "home": "Danubio",
+      "away": "Deportivo Maldonado",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Danubio",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Liverpool|Nacional": [
+     {
+      "home": "Liverpool",
+      "away": "Nacional",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Boston River|Cerro Largo": [
+     {
+      "home": "Boston River",
+      "away": "Cerro Largo",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cerro Largo",
+      "away": "Boston River",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Juventud|Pe\u00f1arol": [
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Juventud",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Boston River|Montevideo City Torque": [
+     {
+      "home": "Montevideo City Torque",
+      "away": "Boston River",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Albion|Deportivo Maldonado": [
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Albion",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Albion",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Juventud|Liverpool": [
+     {
+      "home": "Juventud",
+      "away": "Liverpool",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Danubio|Nacional": [
+     {
+      "home": "Nacional",
+      "away": "Danubio",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Danubio",
+      "away": "Nacional",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Central Espa\u00f1ol|Cerro": [
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Cerro",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Cerro",
+      "away": "Central Espa\u00f1ol",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cerro Largo|Racing (C)": [
+     {
+      "home": "Cerro Largo",
+      "away": "Racing (C)",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Montevideo Wanderers|Pe\u00f1arol": [
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Pe\u00f1arol",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Defensor Sporting|Progreso": [
+     {
+      "home": "Defensor Sporting",
+      "away": "Progreso",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cerro|Deportivo Maldonado": [
+     {
+      "home": "Cerro",
+      "away": "Deportivo Maldonado",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Juventud|Montevideo Wanderers": [
+     {
+      "home": "Juventud",
+      "away": "Montevideo Wanderers",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Juventud",
+      "away": "Montevideo Wanderers",
+      "hg": 2,
+      "ag": 5
+     }
+    ],
+    "Danubio|Liverpool": [
+     {
+      "home": "Liverpool",
+      "away": "Danubio",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Albion|Nacional": [
+     {
+      "home": "Albion",
+      "away": "Nacional",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Nacional",
+      "away": "Albion",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Boston River|Central Espa\u00f1ol": [
+     {
+      "home": "Boston River",
+      "away": "Central Espa\u00f1ol",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Boston River",
+      "away": "Central Espa\u00f1ol",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Cerro Largo|Progreso": [
+     {
+      "home": "Progreso",
+      "away": "Cerro Largo",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Montevideo City Torque|Racing": [
+     {
+      "home": "Racing",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Defensor Sporting|Pe\u00f1arol": [
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Defensor Sporting",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Defensor Sporting",
+      "away": "Pe\u00f1arol",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Liverpool|Montevideo Wanderers": [
+     {
+      "home": "Montevideo Wanderers",
+      "away": "Liverpool",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Central Espa\u00f1ol|Racing": [
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Racing",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Central Espa\u00f1ol",
+      "away": "Racing",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Albion|Danubio": [
+     {
+      "home": "Danubio",
+      "away": "Albion",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Albion",
+      "away": "Danubio",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Defensor Sporting|Juventud": [
+     {
+      "home": "Defensor Sporting",
+      "away": "Juventud",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Montevideo City Torque|Progreso": [
+     {
+      "home": "Montevideo City Torque",
+      "away": "Progreso",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Progreso",
+      "away": "Montevideo City Torque",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Cerro|Nacional": [
+     {
+      "home": "Nacional",
+      "away": "Cerro",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "Cerro Largo|Pe\u00f1arol": [
+     {
+      "home": "Cerro Largo",
+      "away": "Pe\u00f1arol",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "Pe\u00f1arol",
+      "away": "Cerro Largo",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Boston River|Deportivo Maldonado": [
+     {
+      "home": "Deportivo Maldonado",
+      "away": "Boston River",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cerro Largo|Racing": [
+     {
+      "home": "Racing",
+      "away": "Cerro Largo",
+      "hg": 1,
+      "ag": 0
+     }
+    ]
+   }
+  },
+  "matches": [
+   [
+    "Albion",
+    "Liverpool",
+    1,
+    2
+   ],
+   [
+    "Montevideo Wanderers",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "Pe\u00f1arol",
+    "Montevideo City Torque",
+    3,
+    1
+   ],
+   [
+    "Progreso",
+    "Central Espa\u00f1ol",
+    0,
+    3
+   ],
+   [
+    "Boston River",
+    "Nacional",
+    1,
+    2
+   ],
+   [
+    "Juventud",
+    "Cerro Largo",
+    0,
+    1
+   ],
+   [
+    "Racing",
+    "Deportivo Maldonado",
+    2,
+    4
+   ],
+   [
+    "Cerro",
+    "Danubio",
+    0,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Montevideo Wanderers",
+    1,
+    2
+   ],
+   [
+    "Liverpool",
+    "Defensor Sporting",
+    1,
+    2
+   ],
+   [
+    "Deportivo Maldonado",
+    "Progreso",
+    2,
+    0
+   ],
+   [
+    "Nacional",
+    "Racing",
+    1,
+    1
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Pe\u00f1arol",
+    2,
+    1
+   ],
+   [
+    "Danubio",
+    "Boston River",
+    2,
+    0
+   ],
+   [
+    "Albion",
+    "Cerro",
+    3,
+    0
+   ],
+   [
+    "Montevideo City Torque",
+    "Juventud",
+    2,
+    2
+   ],
+   [
+    "Cerro",
+    "Liverpool",
+    1,
+    1
+   ],
+   [
+    "Defensor Sporting",
+    "Cerro Largo",
+    1,
+    0
+   ],
+   [
+    "Boston River",
+    "Albion",
+    0,
+    0
+   ],
+   [
+    "Progreso",
+    "Nacional",
+    0,
+    1
+   ],
+   [
+    "Racing",
+    "Danubio",
+    4,
+    0
+   ],
+   [
+    "Juventud",
+    "Central Espa\u00f1ol",
+    0,
+    1
+   ],
+   [
+    "Montevideo Wanderers",
+    "Montevideo City Torque",
+    0,
+    4
+   ],
+   [
+    "Pe\u00f1arol",
+    "Deportivo Maldonado",
+    2,
+    1
+   ],
+   [
+    "Montevideo City Torque",
+    "Defensor Sporting",
+    1,
+    0
+   ],
+   [
+    "Cerro",
+    "Boston River",
+    1,
+    1
+   ],
+   [
+    "Albion",
+    "Racing",
+    1,
+    3
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Montevideo Wanderers",
+    0,
+    1
+   ],
+   [
+    "Danubio",
+    "Progreso",
+    2,
+    2
+   ],
+   [
+    "Liverpool",
+    "Cerro Largo",
+    2,
+    0
+   ],
+   [
+    "Nacional",
+    "Pe\u00f1arol",
+    0,
+    1
+   ],
+   [
+    "Deportivo Maldonado",
+    "Juventud",
+    2,
+    1
+   ],
+   [
+    "Montevideo Wanderers",
+    "Deportivo Maldonado",
+    0,
+    0
+   ],
+   [
+    "Pe\u00f1arol",
+    "Danubio",
+    1,
+    1
+   ],
+   [
+    "Progreso",
+    "Albion",
+    2,
+    2
+   ],
+   [
+    "Defensor Sporting",
+    "Central Espa\u00f1ol",
+    0,
+    0
+   ],
+   [
+    "Juventud",
+    "Nacional",
+    3,
+    1
+   ],
+   [
+    "Racing",
+    "Cerro",
+    1,
+    0
+   ],
+   [
+    "Boston River",
+    "Liverpool",
+    0,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Montevideo City Torque",
+    0,
+    1
+   ],
+   [
+    "Nacional",
+    "Montevideo Wanderers",
+    2,
+    0
+   ],
+   [
+    "Albion",
+    "Pe\u00f1arol",
+    0,
+    1
+   ],
+   [
+    "Boston River",
+    "Racing",
+    0,
+    1
+   ],
+   [
+    "Cerro",
+    "Progreso",
+    0,
+    1
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Cerro Largo",
+    1,
+    3
+   ],
+   [
+    "Deportivo Maldonado",
+    "Defensor Sporting",
+    1,
+    0
+   ],
+   [
+    "Danubio",
+    "Juventud",
+    4,
+    1
+   ],
+   [
+    "Liverpool",
+    "Montevideo City Torque",
+    0,
+    0
+   ],
+   [
+    "Cerro Largo",
+    "Deportivo Maldonado",
+    3,
+    1
+   ],
+   [
+    "Defensor Sporting",
+    "Nacional",
+    2,
+    1
+   ],
+   [
+    "Montevideo City Torque",
+    "Central Espa\u00f1ol",
+    2,
+    1
+   ],
+   [
+    "Montevideo Wanderers",
+    "Danubio",
+    2,
+    1
+   ],
+   [
+    "Pe\u00f1arol",
+    "Cerro",
+    3,
+    1
+   ],
+   [
+    "Racing",
+    "Liverpool",
+    1,
+    0
+   ],
+   [
+    "Juventud",
+    "Albion",
+    0,
+    1
+   ],
+   [
+    "Progreso",
+    "Boston River",
+    0,
+    1
+   ],
+   [
+    "Deportivo Maldonado",
+    "Montevideo City Torque",
+    1,
+    0
+   ],
+   [
+    "Liverpool",
+    "Central Espa\u00f1ol",
+    3,
+    3
+   ],
+   [
+    "Nacional",
+    "Cerro Largo",
+    3,
+    0
+   ],
+   [
+    "Albion",
+    "Montevideo Wanderers",
+    2,
+    1
+   ],
+   [
+    "Boston River",
+    "Pe\u00f1arol",
+    0,
+    2
+   ],
+   [
+    "Cerro",
+    "Juventud",
+    1,
+    0
+   ],
+   [
+    "Danubio",
+    "Defensor Sporting",
+    0,
+    0
+   ],
+   [
+    "Racing",
+    "Progreso",
+    1,
+    1
+   ],
+   [
+    "Montevideo City Torque",
+    "Nacional",
+    2,
+    3
+   ],
+   [
+    "Montevideo Wanderers",
+    "Cerro",
+    3,
+    0
+   ],
+   [
+    "Pe\u00f1arol",
+    "Racing",
+    1,
+    2
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Deportivo Maldonado",
+    2,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Danubio",
+    2,
+    0
+   ],
+   [
+    "Juventud",
+    "Boston River",
+    1,
+    2
+   ],
+   [
+    "Defensor Sporting",
+    "Albion",
+    1,
+    1
+   ],
+   [
+    "Progreso",
+    "Liverpool",
+    3,
+    3
+   ],
+   [
+    "Boston River",
+    "Montevideo Wanderers",
+    4,
+    1
+   ],
+   [
+    "Nacional",
+    "Central Espa\u00f1ol",
+    0,
+    1
+   ],
+   [
+    "Danubio",
+    "Montevideo City Torque",
+    1,
+    1
+   ],
+   [
+    "Progreso",
+    "Pe\u00f1arol",
+    0,
+    2
+   ],
+   [
+    "Racing",
+    "Juventud",
+    2,
+    1
+   ],
+   [
+    "Albion",
+    "Cerro Largo",
+    2,
+    2
+   ],
+   [
+    "Cerro",
+    "Defensor Sporting",
+    1,
+    0
+   ],
+   [
+    "Liverpool",
+    "Deportivo Maldonado",
+    0,
+    2
+   ],
+   [
+    "Cerro Largo",
+    "Cerro",
+    1,
+    1
+   ],
+   [
+    "Defensor Sporting",
+    "Boston River",
+    2,
+    0
+   ],
+   [
+    "Deportivo Maldonado",
+    "Nacional",
+    4,
+    2
+   ],
+   [
+    "Montevideo City Torque",
+    "Albion",
+    0,
+    1
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Danubio",
+    2,
+    2
+   ],
+   [
+    "Juventud",
+    "Progreso",
+    1,
+    0
+   ],
+   [
+    "Montevideo Wanderers",
+    "Racing",
+    1,
+    2
+   ],
+   [
+    "Pe\u00f1arol",
+    "Liverpool",
+    0,
+    2
+   ],
+   [
+    "Albion",
+    "Central Espa\u00f1ol",
+    6,
+    1
+   ],
+   [
+    "Progreso",
+    "Montevideo Wanderers",
+    2,
+    1
+   ],
+   [
+    "Racing",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "Cerro",
+    "Montevideo City Torque",
+    1,
+    1
+   ],
+   [
+    "Danubio",
+    "Deportivo Maldonado",
+    1,
+    1
+   ],
+   [
+    "Liverpool",
+    "Nacional",
+    1,
+    3
+   ],
+   [
+    "Boston River",
+    "Cerro Largo",
+    1,
+    0
+   ],
+   [
+    "Pe\u00f1arol",
+    "Juventud",
+    2,
+    2
+   ],
+   [
+    "Montevideo City Torque",
+    "Boston River",
+    4,
+    1
+   ],
+   [
+    "Deportivo Maldonado",
+    "Albion",
+    1,
+    2
+   ],
+   [
+    "Juventud",
+    "Liverpool",
+    1,
+    1
+   ],
+   [
+    "Nacional",
+    "Danubio",
+    1,
+    2
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Cerro",
+    3,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Racing (C)",
+    0,
+    1
+   ],
+   [
+    "Montevideo Wanderers",
+    "Pe\u00f1arol",
+    1,
+    0
+   ],
+   [
+    "Defensor Sporting",
+    "Progreso",
+    1,
+    0
+   ],
+   [
+    "Cerro",
+    "Deportivo Maldonado",
+    0,
+    1
+   ],
+   [
+    "Juventud",
+    "Montevideo Wanderers",
+    2,
+    1
+   ],
+   [
+    "Liverpool",
+    "Danubio",
+    3,
+    0
+   ],
+   [
+    "Albion",
+    "Nacional",
+    3,
+    2
+   ],
+   [
+    "Boston River",
+    "Central Espa\u00f1ol",
+    2,
+    1
+   ],
+   [
+    "Progreso",
+    "Cerro Largo",
+    0,
+    1
+   ],
+   [
+    "Racing",
+    "Montevideo City Torque",
+    1,
+    1
+   ],
+   [
+    "Pe\u00f1arol",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "Montevideo Wanderers",
+    "Liverpool",
+    1,
+    0
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Racing",
+    2,
+    0
+   ],
+   [
+    "Danubio",
+    "Albion",
+    0,
+    1
+   ],
+   [
+    "Defensor Sporting",
+    "Juventud",
+    1,
+    2
+   ],
+   [
+    "Montevideo City Torque",
+    "Progreso",
+    2,
+    1
+   ],
+   [
+    "Nacional",
+    "Cerro",
+    4,
+    0
+   ],
+   [
+    "Cerro Largo",
+    "Pe\u00f1arol",
+    2,
+    3
+   ],
+   [
+    "Deportivo Maldonado",
+    "Boston River",
+    2,
+    1
+   ],
+   [
+    "Montevideo City Torque",
+    "Nacional",
+    1,
+    2
+   ],
+   [
+    "Boston River",
+    "Cerro",
+    4,
+    1
+   ],
+   [
+    "Juventud",
+    "Progreso",
+    2,
+    0
+   ],
+   [
+    "Pe\u00f1arol",
+    "Liverpool",
+    2,
+    1
+   ],
+   [
+    "Albion",
+    "Montevideo Wanderers",
+    0,
+    0
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Defensor Sporting",
+    2,
+    1
+   ],
+   [
+    "Racing",
+    "Cerro Largo",
+    1,
+    0
+   ],
+   [
+    "Deportivo Maldonado",
+    "Danubio",
+    3,
+    1
+   ],
+   [
+    "Liverpool",
+    "Racing",
+    0,
+    0
+   ],
+   [
+    "Cerro Largo",
+    "Boston River",
+    3,
+    0
+   ],
+   [
+    "Nacional",
+    "Albion",
+    1,
+    0
+   ],
+   [
+    "Progreso",
+    "Montevideo City Torque",
+    1,
+    2
+   ],
+   [
+    "Cerro",
+    "Central Espa\u00f1ol",
+    1,
+    0
+   ],
+   [
+    "Defensor Sporting",
+    "Pe\u00f1arol",
+    0,
+    2
+   ],
+   [
+    "Montevideo Wanderers",
+    "Deportivo Maldonado",
+    1,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Cerro",
+    2,
+    0
+   ],
+   [
+    "Danubio",
+    "Progreso",
+    1,
+    2
+   ],
+   [
+    "Racing",
+    "Defensor Sporting",
+    0,
+    0
+   ],
+   [
+    "Albion",
+    "Montevideo City Torque",
+    1,
+    2
+   ],
+   [
+    "Deportivo Maldonado",
+    "Nacional",
+    3,
+    0
+   ],
+   [
+    "Juventud",
+    "Montevideo Wanderers",
+    2,
+    5
+   ],
+   [
+    "Boston River",
+    "Liverpool",
+    0,
+    1
+   ],
+   [
+    "Pe\u00f1arol",
+    "Central Espa\u00f1ol",
+    0,
+    1
+   ],
+   [
+    "Montevideo Wanderers",
+    "Danubio",
+    0,
+    0
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Racing",
+    1,
+    1
+   ],
+   [
+    "Montevideo City Torque",
+    "Deportivo Maldonado",
+    2,
+    4
+   ],
+   [
+    "Nacional",
+    "Juventud",
+    2,
+    1
+   ],
+   [
+    "Cerro",
+    "Pe\u00f1arol",
+    0,
+    1
+   ],
+   [
+    "Defensor Sporting",
+    "Boston River",
+    1,
+    1
+   ],
+   [
+    "Progreso",
+    "Albion",
+    1,
+    2
+   ],
+   [
+    "Liverpool",
+    "Cerro Largo",
+    0,
+    0
+   ],
+   [
+    "Danubio",
+    "Juventud",
+    1,
+    1
+   ],
+   [
+    "Deportivo Maldonado",
+    "Albion",
+    1,
+    1
+   ],
+   [
+    "Danubio",
+    "Nacional",
+    0,
+    0
+   ],
+   [
+    "Juventud",
+    "Montevideo City Torque",
+    1,
+    3
+   ],
+   [
+    "Montevideo Wanderers",
+    "Progreso",
+    2,
+    0
+   ],
+   [
+    "Boston River",
+    "Central Espa\u00f1ol",
+    0,
+    0
+   ],
+   [
+    "Liverpool",
+    "Cerro",
+    1,
+    2
+   ],
+   [
+    "Racing",
+    "Pe\u00f1arol",
+    1,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "Albion",
+    "Juventud",
+    0,
+    1
+   ],
+   [
+    "Nacional",
+    "Montevideo Wanderers",
+    1,
+    2
+   ],
+   [
+    "Pe\u00f1arol",
+    "Boston River",
+    3,
+    0
+   ],
+   [
+    "Progreso",
+    "Deportivo Maldonado",
+    1,
+    0
+   ],
+   [
+    "Montevideo City Torque",
+    "Danubio",
+    1,
+    0
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Cerro Largo",
+    0,
+    1
+   ],
+   [
+    "Defensor Sporting",
+    "Liverpool",
+    1,
+    2
+   ],
+   [
+    "Cerro",
+    "Racing",
+    1,
+    0
+   ],
+   [
+    "Montevideo City Torque",
+    "Montevideo Wanderers",
+    0,
+    2
+   ],
+   [
+    "Albion",
+    "Danubio",
+    2,
+    2
+   ],
+   [
+    "Deportivo Maldonado",
+    "Juventud",
+    0,
+    0
+   ],
+   [
+    "Pe\u00f1arol",
+    "Cerro Largo",
+    3,
+    0
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Liverpool",
+    0,
+    0
+   ],
+   [
+    "Nacional",
+    "Progreso",
+    2,
+    1
+   ],
+   [
+    "Racing",
+    "Boston River",
+    1,
+    0
+   ],
+   [
+    "Defensor Sporting",
+    "Cerro",
+    2,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Juventud",
+    1,
+    1
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Progreso",
+    1,
+    0
+   ],
+   [
+    "Liverpool",
+    "Albion",
+    1,
+    0
+   ],
+   [
+    "Danubio",
+    "Cerro",
+    0,
+    1
+   ],
+   [
+    "Defensor Sporting",
+    "Montevideo Wanderers",
+    0,
+    1
+   ],
+   [
+    "Nacional",
+    "Boston River",
+    1,
+    2
+   ],
+   [
+    "Deportivo Maldonado",
+    "Racing",
+    2,
+    2
+   ],
+   [
+    "Boston River",
+    "Danubio",
+    0,
+    0
+   ],
+   [
+    "Cerro",
+    "Albion",
+    2,
+    1
+   ],
+   [
+    "Juventud",
+    "Montevideo City Torque",
+    0,
+    1
+   ],
+   [
+    "Montevideo Wanderers",
+    "Cerro Largo",
+    1,
+    1
+   ],
+   [
+    "Racing",
+    "Nacional",
+    2,
+    0
+   ],
+   [
+    "Defensor Sporting",
+    "Liverpool",
+    0,
+    4
+   ],
+   [
+    "Pe\u00f1arol",
+    "Central Espa\u00f1ol",
+    2,
+    1
+   ],
+   [
+    "Progreso",
+    "Deportivo Maldonado",
+    0,
+    2
+   ],
+   [
+    "Albion",
+    "Boston River",
+    2,
+    3
+   ],
+   [
+    "Liverpool",
+    "Cerro",
+    4,
+    0
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Juventud",
+    0,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "Deportivo Maldonado",
+    "Pe\u00f1arol",
+    0,
+    0
+   ],
+   [
+    "Danubio",
+    "Racing",
+    0,
+    0
+   ],
+   [
+    "Montevideo City Torque",
+    "Montevideo Wanderers",
+    5,
+    1
+   ],
+   [
+    "Nacional",
+    "Progreso",
+    1,
+    0
+   ],
+   [
+    "Montevideo Wanderers",
+    "Central Espa\u00f1ol",
+    3,
+    0
+   ],
+   [
+    "Boston River",
+    "Cerro",
+    1,
+    1
+   ],
+   [
+    "Defensor Sporting",
+    "Montevideo City Torque",
+    1,
+    3
+   ],
+   [
+    "Juventud",
+    "Deportivo Maldonado",
+    2,
+    0
+   ],
+   [
+    "Progreso",
+    "Danubio",
+    1,
+    0
+   ],
+   [
+    "Cerro Largo",
+    "Liverpool",
+    1,
+    1
+   ],
+   [
+    "Pe\u00f1arol",
+    "Nacional",
+    0,
+    1
+   ],
+   [
+    "Racing",
+    "Albion",
+    1,
+    0
+   ],
+   [
+    "Montevideo City Torque",
+    "Cerro Largo",
+    2,
+    1
+   ],
+   [
+    "Danubio",
+    "Pe\u00f1arol",
+    0,
+    4
+   ],
+   [
+    "Deportivo Maldonado",
+    "Montevideo Wanderers",
+    2,
+    0
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Defensor Sporting",
+    1,
+    1
+   ],
+   [
+    "Cerro",
+    "Racing",
+    1,
+    0
+   ],
+   [
+    "Liverpool",
+    "Boston River",
+    1,
+    0
+   ],
+   [
+    "Nacional",
+    "Juventud",
+    2,
+    2
+   ],
+   [
+    "Albion",
+    "Progreso",
+    0,
+    1
+   ],
+   [
+    "Cerro Largo",
+    "Central Espa\u00f1ol",
+    0,
+    0
+   ],
+   [
+    "Montevideo Wanderers",
+    "Nacional",
+    1,
+    1
+   ],
+   [
+    "Racing",
+    "Boston River",
+    3,
+    2
+   ],
+   [
+    "Defensor Sporting",
+    "Deportivo Maldonado",
+    1,
+    0
+   ],
+   [
+    "Juventud",
+    "Danubio",
+    1,
+    1
+   ],
+   [
+    "Pe\u00f1arol",
+    "Albion",
+    3,
+    1
+   ],
+   [
+    "Progreso",
+    "Cerro",
+    1,
+    3
+   ],
+   [
+    "Montevideo City Torque",
+    "Liverpool",
+    3,
+    1
+   ],
+   [
+    "Boston River",
+    "Progreso",
+    1,
+    2
+   ],
+   [
+    "Cerro",
+    "Pe\u00f1arol",
+    1,
+    2
+   ],
+   [
+    "Deportivo Maldonado",
+    "Cerro Largo",
+    2,
+    0
+   ],
+   [
+    "Albion",
+    "Juventud",
+    1,
+    3
+   ],
+   [
+    "Danubio",
+    "Montevideo Wanderers",
+    1,
+    1
+   ],
+   [
+    "Liverpool",
+    "Racing",
+    0,
+    0
+   ],
+   [
+    "Nacional",
+    "Defensor Sporting",
+    3,
+    2
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Montevideo City Torque",
+    1,
+    4
+   ],
+   [
+    "Cerro Largo",
+    "Nacional",
+    0,
+    2
+   ],
+   [
+    "Montevideo City Torque",
+    "Deportivo Maldonado",
+    0,
+    2
+   ],
+   [
+    "Pe\u00f1arol",
+    "Boston River",
+    2,
+    1
+   ],
+   [
+    "Progreso",
+    "Racing",
+    2,
+    1
+   ],
+   [
+    "Central Espa\u00f1ol",
+    "Liverpool",
+    1,
+    2
+   ],
+   [
+    "Defensor Sporting",
+    "Danubio",
+    1,
+    0
+   ],
+   [
+    "Juventud",
+    "Cerro",
+    0,
+    0
+   ],
+   [
+    "Montevideo Wanderers",
+    "Albion",
+    2,
+    1
+   ]
+  ]
+ },
  "Bolivia Profesional": {
   "slug": "https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional",
   "rates": {
