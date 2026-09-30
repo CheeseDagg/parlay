@@ -1,0 +1,34 @@
+name: Extra soccer leagues
+on:
+  workflow_dispatch: {}
+  push: { branches: [main], paths: ['experiments/SOCEXTRA.txt'] }
+permissions: { contents: write }
+concurrency: { group: parlay-socextra, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          set -o pipefail
+          python3 socextra.py --selftest | tail -2
+          python3 socextra.py 2>&1 | tee socextra.new
+          test -s socextra.new
+          mv socextra.new socextra.txt
+      - run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          mkdir -p /tmp/pub && cp socextra.txt socextra.json /tmp/pub/
+          for a in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/pub/socextra.txt /tmp/pub/socextra.json .
+            git add socextra.txt socextra.json
+            git diff --cached --quiet && exit 0
+            git commit -m "extra soccer leagues $(date -u +%F\ %H:%M)"
+            git push origin HEAD:main && exit 0
+          done
+          exit 1
