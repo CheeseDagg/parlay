@@ -1,0 +1,8 @@
+socph2h
+  England Premier League: 0/45 player pages read (of 421 in the league), 0 records
+  Spain La Liga: 0/45 player pages read (of 461 in the league), 0 records
+  Germany Bundesliga: 0/45 player pages read (of 367 in the league), 0 records
+  Italy Serie A: 0/45 player pages read (of 448 in the league), 0 records
+  180 player pages carried no matchesData -- reshaped or empty, counted not swallowed
+
+wrote /home/runner/work/parlay/parlay/socph2h.json -- 0 player head-to-head records
