@@ -7448,6 +7448,1790 @@
    "dated_is_superset": true,
    "name_coverage": 0.899
   },
+  "grid_matches": [
+   [
+    "\u00c1guilas Doradas",
+    "Alianza",
+    1,
+    0
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Am\u00e9rica de Cali",
+    0,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "C\u00facuta Deportivo",
+    3,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Deportivo Cali",
+    2,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Deportivo Pasto",
+    1,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Junior",
+    0,
+    3
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Once Caldas",
+    2,
+    2
+   ],
+   [
+    "Alianza",
+    "Am\u00e9rica de Cali",
+    0,
+    3
+   ],
+   [
+    "Alianza",
+    "Boyac\u00e1 Chic\u00f3",
+    1,
+    1
+   ],
+   [
+    "Alianza",
+    "C\u00facuta Deportivo",
+    1,
+    1
+   ],
+   [
+    "Alianza",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "Alianza",
+    "Deportivo Pasto",
+    0,
+    0
+   ],
+   [
+    "Alianza",
+    "Independiente Medell\u00edn",
+    0,
+    1
+   ],
+   [
+    "Alianza",
+    "Jaguares",
+    1,
+    0
+   ],
+   [
+    "Alianza",
+    "Millonarios",
+    2,
+    2
+   ],
+   [
+    "Alianza",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Deportes Tolima",
+    1,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Internacional de Bogot\u00e1",
+    3,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Jaguares",
+    3,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Llaneros",
+    0,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Millonarios",
+    3,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Santa Fe",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Alianza",
+    5,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Boyac\u00e1 Chic\u00f3",
+    5,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Deportes Tolima",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Deportivo Cali",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Deportivo Pereira",
+    3,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Jaguares",
+    2,
+    2
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Santa Fe",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Alianza",
+    3,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Am\u00e9rica de Cali",
+    2,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Boyac\u00e1 Chic\u00f3",
+    4,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "C\u00facuta Deportivo",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Fortaleza",
+    4,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Internacional de Bogot\u00e1",
+    3,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Jaguares",
+    2,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Llaneros",
+    2,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "\u00c1guilas Doradas",
+    0,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Am\u00e9rica de Cali",
+    0,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportes Tolima",
+    1,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Jaguares",
+    5,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Llaneros",
+    3,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Santa Fe",
+    0,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Am\u00e9rica de Cali",
+    2,
+    0
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    2
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Boyac\u00e1 Chic\u00f3",
+    1,
+    0
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Deportes Tolima",
+    3,
+    2
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Deportivo Cali",
+    0,
+    2
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Fortaleza",
+    1,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Independiente Medell\u00edn",
+    1,
+    3
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Junior",
+    1,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Once Caldas",
+    1,
+    2
+   ],
+   [
+    "Deportes Tolima",
+    "\u00c1guilas Doradas",
+    4,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Alianza",
+    2,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "Deportivo Cali",
+    1,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Deportivo Pereira",
+    2,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "Fortaleza",
+    2,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "Jaguares",
+    3,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Once Caldas",
+    2,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Santa Fe",
+    2,
+    2
+   ],
+   [
+    "Deportivo Cali",
+    "Am\u00e9rica de Cali",
+    1,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Deportivo Pasto",
+    3,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Fortaleza",
+    1,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "Independiente Medell\u00edn",
+    3,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "Millonarios",
+    0,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Once Caldas",
+    0,
+    2
+   ],
+   [
+    "Deportivo Cali",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Deportivo Pasto",
+    "Am\u00e9rica de Cali",
+    2,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "C\u00facuta Deportivo",
+    3,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Deportes Tolima",
+    1,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "Independiente Medell\u00edn",
+    1,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "Deportivo Pasto",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "Deportivo Pasto",
+    "Santa Fe",
+    1,
+    2
+   ],
+   [
+    "Deportivo Pereira",
+    "\u00c1guilas Doradas",
+    0,
+    1
+   ],
+   [
+    "Deportivo Pereira",
+    "Alianza",
+    2,
+    3
+   ],
+   [
+    "Deportivo Pereira",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Deportivo Pereira",
+    "C\u00facuta Deportivo",
+    2,
+    2
+   ],
+   [
+    "Deportivo Pereira",
+    "Deportivo Pasto",
+    2,
+    2
+   ],
+   [
+    "Deportivo Pereira",
+    "Fortaleza",
+    0,
+    0
+   ],
+   [
+    "Deportivo Pereira",
+    "Junior",
+    2,
+    3
+   ],
+   [
+    "Deportivo Pereira",
+    "Llaneros",
+    0,
+    2
+   ],
+   [
+    "Deportivo Pereira",
+    "Once Caldas",
+    0,
+    0
+   ],
+   [
+    "Fortaleza",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "Fortaleza",
+    "Alianza",
+    1,
+    0
+   ],
+   [
+    "Fortaleza",
+    "Am\u00e9rica de Cali",
+    1,
+    2
+   ],
+   [
+    "Fortaleza",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Deportivo Pasto",
+    1,
+    2
+   ],
+   [
+    "Fortaleza",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Jaguares",
+    2,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "\u00c1guilas Doradas",
+    1,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Am\u00e9rica de Cali",
+    2,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Atl\u00e9tico Nacional",
+    2,
+    3
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    0
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Deportes Tolima",
+    2,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Deportivo Pereira",
+    1,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Fortaleza",
+    1,
+    0
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Internacional de Bogot\u00e1",
+    1,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Junior",
+    2,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Alianza",
+    2,
+    1
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Boyac\u00e1 Chic\u00f3",
+    4,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "C\u00facuta Deportivo",
+    2,
+    1
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Deportes Tolima",
+    0,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Deportivo Cali",
+    3,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Deportivo Pereira",
+    2,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Junior",
+    0,
+    1
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Millonarios",
+    3,
+    2
+   ],
+   [
+    "Jaguares",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
+    "Jaguares",
+    "C\u00facuta Deportivo",
+    2,
+    0
+   ],
+   [
+    "Jaguares",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "Jaguares",
+    "Deportivo Pasto",
+    2,
+    3
+   ],
+   [
+    "Jaguares",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Jaguares",
+    "Independiente Medell\u00edn",
+    1,
+    2
+   ],
+   [
+    "Jaguares",
+    "Internacional de Bogot\u00e1",
+    2,
+    3
+   ],
+   [
+    "Jaguares",
+    "Junior",
+    0,
+    2
+   ],
+   [
+    "Jaguares",
+    "Millonarios",
+    1,
+    0
+   ],
+   [
+    "Jaguares",
+    "Santa Fe",
+    3,
+    1
+   ],
+   [
+    "Junior",
+    "Alianza",
+    1,
+    1
+   ],
+   [
+    "Junior",
+    "Am\u00e9rica de Cali",
+    2,
+    1
+   ],
+   [
+    "Junior",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    0
+   ],
+   [
+    "Junior",
+    "Atl\u00e9tico Nacional",
+    0,
+    4
+   ],
+   [
+    "Junior",
+    "Boyac\u00e1 Chic\u00f3",
+    3,
+    0
+   ],
+   [
+    "Junior",
+    "Deportes Tolima",
+    0,
+    2
+   ],
+   [
+    "Junior",
+    "Deportivo Cali",
+    1,
+    2
+   ],
+   [
+    "Junior",
+    "Deportivo Pasto",
+    4,
+    3
+   ],
+   [
+    "Junior",
+    "Fortaleza",
+    2,
+    1
+   ],
+   [
+    "Junior",
+    "Llaneros",
+    2,
+    0
+   ],
+   [
+    "Llaneros",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
+    "Llaneros",
+    "Alianza",
+    0,
+    0
+   ],
+   [
+    "Llaneros",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    1
+   ],
+   [
+    "Llaneros",
+    "C\u00facuta Deportivo",
+    2,
+    2
+   ],
+   [
+    "Llaneros",
+    "Deportivo Pasto",
+    0,
+    1
+   ],
+   [
+    "Llaneros",
+    "Independiente Medell\u00edn",
+    2,
+    2
+   ],
+   [
+    "Llaneros",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "Llaneros",
+    "Jaguares",
+    2,
+    0
+   ],
+   [
+    "Llaneros",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Millonarios",
+    "\u00c1guilas Doradas",
+    1,
+    0
+   ],
+   [
+    "Millonarios",
+    "Atl\u00e9tico Nacional",
+    3,
+    0
+   ],
+   [
+    "Millonarios",
+    "C\u00facuta Deportivo",
+    2,
+    0
+   ],
+   [
+    "Millonarios",
+    "Deportes Tolima",
+    2,
+    0
+   ],
+   [
+    "Millonarios",
+    "Deportivo Pereira",
+    5,
+    1
+   ],
+   [
+    "Millonarios",
+    "Fortaleza",
+    2,
+    2
+   ],
+   [
+    "Millonarios",
+    "Independiente Medell\u00edn",
+    0,
+    0
+   ],
+   [
+    "Millonarios",
+    "Junior",
+    1,
+    2
+   ],
+   [
+    "Millonarios",
+    "Llaneros",
+    2,
+    1
+   ],
+   [
+    "Millonarios",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Once Caldas",
+    "Boyac\u00e1 Chic\u00f3",
+    3,
+    0
+   ],
+   [
+    "Once Caldas",
+    "Deportivo Pasto",
+    4,
+    2
+   ],
+   [
+    "Once Caldas",
+    "Fortaleza",
+    4,
+    2
+   ],
+   [
+    "Once Caldas",
+    "Independiente Medell\u00edn",
+    1,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Internacional de Bogot\u00e1",
+    2,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Jaguares",
+    1,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Junior",
+    2,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Millonarios",
+    1,
+    4
+   ],
+   [
+    "Once Caldas",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Santa Fe",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Alianza",
+    1,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "Santa Fe",
+    "C\u00facuta Deportivo",
+    5,
+    0
+   ],
+   [
+    "Santa Fe",
+    "Deportivo Pereira",
+    2,
+    2
+   ],
+   [
+    "Santa Fe",
+    "Independiente Medell\u00edn",
+    2,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Internacional de Bogot\u00e1",
+    3,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Junior",
+    2,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Deportivo Pereira",
+    2,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Santa Fe",
+    2,
+    1
+   ],
+   [
+    "Alianza",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    3
+   ],
+   [
+    "Alianza",
+    "Atl\u00e9tico Nacional",
+    1,
+    5
+   ],
+   [
+    "Alianza",
+    "Deportes Tolima",
+    1,
+    2
+   ],
+   [
+    "Alianza",
+    "Deportivo Pereira",
+    0,
+    0
+   ],
+   [
+    "Alianza",
+    "Fortaleza",
+    1,
+    1
+   ],
+   [
+    "Alianza",
+    "Junior",
+    1,
+    0
+   ],
+   [
+    "Alianza",
+    "Santa Fe",
+    1,
+    4
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "\u00c1guilas Doradas",
+    1,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Alianza",
+    3,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Boyac\u00e1 Chic\u00f3",
+    7,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Deportivo Pasto",
+    0,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Junior",
+    4,
+    2
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "C\u00facuta Deportivo",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Independiente Medell\u00edn",
+    2,
+    2
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Internacional de Bogot\u00e1",
+    2,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Deportivo Cali",
+    2,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Alianza",
+    1,
+    2
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportivo Pasto",
+    3,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Fortaleza",
+    0,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Independiente Medell\u00edn",
+    2,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Once Caldas",
+    2,
+    0
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Alianza",
+    1,
+    0
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Deportivo Pasto",
+    2,
+    2
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Llaneros",
+    2,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Millonarios",
+    1,
+    2
+   ],
+   [
+    "Deportes Tolima",
+    "Am\u00e9rica de Cali",
+    1,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "C\u00facuta Deportivo",
+    2,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Independiente Medell\u00edn",
+    2,
+    3
+   ],
+   [
+    "Deportes Tolima",
+    "Internacional de Bogot\u00e1",
+    2,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Junior",
+    2,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "C\u00facuta Deportivo",
+    3,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Internacional de Bogot\u00e1",
+    2,
+    2
+   ],
+   [
+    "Deportivo Cali",
+    "Jaguares",
+    2,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "\u00c1guilas Doradas",
+    1,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Deportivo Cali",
+    0,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Deportivo Pereira",
+    1,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "Deportivo Pasto",
+    "Once Caldas",
+    1,
+    0
+   ],
+   [
+    "Deportivo Pereira",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    3
+   ],
+   [
+    "Deportivo Pereira",
+    "Independiente Medell\u00edn",
+    0,
+    3
+   ],
+   [
+    "Deportivo Pereira",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
+   ],
+   [
+    "Deportivo Pereira",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "Deportivo Pereira",
+    "Santa Fe",
+    1,
+    2
+   ],
+   [
+    "Fortaleza",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "Fortaleza",
+    "C\u00facuta Deportivo",
+    2,
+    0
+   ],
+   [
+    "Fortaleza",
+    "Deportes Tolima",
+    2,
+    2
+   ],
+   [
+    "Fortaleza",
+    "Deportivo Pereira",
+    0,
+    0
+   ],
+   [
+    "Fortaleza",
+    "Junior",
+    1,
+    4
+   ],
+   [
+    "Fortaleza",
+    "Once Caldas",
+    1,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "C\u00facuta Deportivo",
+    0,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Deportivo Pasto",
+    3,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Jaguares",
+    2,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Llaneros",
+    2,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Millonarios",
+    2,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "\u00c1guilas Doradas",
+    2,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Am\u00e9rica de Cali",
+    0,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Atl\u00e9tico Nacional",
+    2,
+    3
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Deportivo Pasto",
+    1,
+    1
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Jaguares",
+    1,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Llaneros",
+    3,
+    2
+   ],
+   [
+    "Jaguares",
+    "Alianza",
+    1,
+    2
+   ],
+   [
+    "Jaguares",
+    "Am\u00e9rica de Cali",
+    2,
+    2
+   ],
+   [
+    "Jaguares",
+    "Atl\u00e9tico Nacional",
+    0,
+    3
+   ],
+   [
+    "Jaguares",
+    "Boyac\u00e1 Chic\u00f3",
+    1,
+    0
+   ],
+   [
+    "Jaguares",
+    "Fortaleza",
+    2,
+    2
+   ],
+   [
+    "Jaguares",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Junior",
+    "Independiente Medell\u00edn",
+    2,
+    0
+   ],
+   [
+    "Junior",
+    "Jaguares",
+    3,
+    3
+   ],
+   [
+    "Junior",
+    "Millonarios",
+    0,
+    1
+   ],
+   [
+    "Junior",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Junior",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Llaneros",
+    "Atl\u00e9tico Nacional",
+    2,
+    0
+   ],
+   [
+    "Llaneros",
+    "Deportes Tolima",
+    1,
+    2
+   ],
+   [
+    "Llaneros",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Llaneros",
+    "Fortaleza",
+    3,
+    1
+   ],
+   [
+    "Llaneros",
+    "Millonarios",
+    0,
+    2
+   ],
+   [
+    "Millonarios",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    1
+   ],
+   [
+    "Millonarios",
+    "Boyac\u00e1 Chic\u00f3",
+    3,
+    0
+   ],
+   [
+    "Millonarios",
+    "Deportivo Cali",
+    1,
+    1
+   ],
+   [
+    "Millonarios",
+    "Deportivo Pasto",
+    2,
+    0
+   ],
+   [
+    "Millonarios",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
+   ],
+   [
+    "Once Caldas",
+    "Am\u00e9rica de Cali",
+    0,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    3
+   ],
+   [
+    "Once Caldas",
+    "C\u00facuta Deportivo",
+    5,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Deportes Tolima",
+    1,
+    0
+   ],
+   [
+    "Once Caldas",
+    "Deportivo Cali",
+    1,
+    2
+   ],
+   [
+    "Santa Fe",
+    "Am\u00e9rica de Cali",
+    0,
+    0
+   ],
+   [
+    "Santa Fe",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    0
+   ],
+   [
+    "Santa Fe",
+    "Deportes Tolima",
+    1,
+    0
+   ],
+   [
+    "Santa Fe",
+    "Deportivo Cali",
+    0,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Fortaleza",
+    2,
+    2
+   ],
+   [
+    "Santa Fe",
+    "Millonarios",
+    3,
+    2
+   ],
+   [
+    "Santa Fe",
+    "Once Caldas",
+    2,
+    2
+   ]
+  ],
   "rates_source": "dated rounds (superset of the grid)"
  },
  "Peru Liga 1": {
@@ -13719,6 +15503,1460 @@
    "dated_is_superset": true,
    "name_coverage": 0.649
   },
+  "grid_matches": [
+   [
+    "ADT",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "ADT",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "ADT",
+    "Comerciantes Unidos",
+    2,
+    0
+   ],
+   [
+    "ADT",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "ADT",
+    "Juan Pablo II College",
+    2,
+    3
+   ],
+   [
+    "ADT",
+    "Los Chankas",
+    4,
+    0
+   ],
+   [
+    "ADT",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "ADT",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "ADT",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "ADT",
+    0,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Alianza Lima",
+    0,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Atl\u00e9tico Grau",
+    2,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cajamarca",
+    1,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Deportivo Moquegua",
+    3,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sport Boys",
+    0,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Comerciantes Unidos",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Cusco",
+    8,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Melgar",
+    3,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Juan Pablo II College",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sport Huancayo",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sporting Cristal",
+    4,
+    1
+   ],
+   [
+    "Cajamarca",
+    "ADT",
+    2,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Comerciantes Unidos",
+    3,
+    4
+   ],
+   [
+    "Cajamarca",
+    "Deportivo Garcilaso",
+    1,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Los Chankas",
+    0,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Melgar",
+    3,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "Cienciano",
+    "ADT",
+    3,
+    2
+   ],
+   [
+    "Cienciano",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "Cienciano",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "Cienciano",
+    "Cajamarca",
+    3,
+    0
+   ],
+   [
+    "Cienciano",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Cienciano",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "Cienciano",
+    "Juan Pablo II College",
+    6,
+    1
+   ],
+   [
+    "Cienciano",
+    "Sport Boys",
+    3,
+    1
+   ],
+   [
+    "Cienciano",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "Comerciantes Unidos",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "UTC",
+    1,
+    2
+   ],
+   [
+    "Cusco",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "Cusco",
+    "Comerciantes Unidos",
+    3,
+    1
+   ],
+   [
+    "Cusco",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Cusco",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Cusco",
+    "Universitario",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "ADT",
+    1,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Alianza Atl\u00e9tico",
+    2,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cienciano",
+    2,
+    3
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Juan Pablo II College",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Melgar",
+    1,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "ADT",
+    2,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Cajamarca",
+    2,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Juan Pablo II College",
+    3,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "UTC",
+    2,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Alianza Atl\u00e9tico",
+    0,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Cajamarca",
+    3,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Los Chankas",
+    2,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Sporting Cristal",
+    0,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Universitario",
+    1,
+    4
+   ],
+   [
+    "Juan Pablo II College",
+    "UTC",
+    2,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Sport Huancayo",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Universitario",
+    3,
+    1
+   ],
+   [
+    "Los Chankas",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "Melgar",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Melgar",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "Melgar",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "Melgar",
+    "Cusco",
+    1,
+    3
+   ],
+   [
+    "Melgar",
+    "Deportivo Moquegua",
+    4,
+    0
+   ],
+   [
+    "Melgar",
+    "Los Chankas",
+    1,
+    2
+   ],
+   [
+    "Melgar",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Melgar",
+    "Universitario",
+    2,
+    1
+   ],
+   [
+    "Melgar",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Juan Pablo II College",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Melgar",
+    1,
+    3
+   ],
+   [
+    "Sport Boys",
+    "Sport Huancayo",
+    3,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "ADT",
+    0,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Alianza Lima",
+    1,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Cajamarca",
+    2,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Cienciano",
+    2,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Comerciantes Unidos",
+    1,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Deportivo Garcilaso",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Juan Pablo II College",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "ADT",
+    2,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Cusco",
+    2,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Deportivo Moquegua",
+    1,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Melgar",
+    1,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Sport Boys",
+    3,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Universitario",
+    2,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Universitario",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Universitario",
+    "Alianza Atl\u00e9tico",
+    1,
+    2
+   ],
+   [
+    "Universitario",
+    "Alianza Lima",
+    1,
+    0
+   ],
+   [
+    "Universitario",
+    "Atl\u00e9tico Grau",
+    0,
+    1
+   ],
+   [
+    "Universitario",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Universitario",
+    "Cienciano",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "Deportivo Garcilaso",
+    4,
+    1
+   ],
+   [
+    "Universitario",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "UTC",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "UTC",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "UTC",
+    "Cajamarca",
+    1,
+    2
+   ],
+   [
+    "UTC",
+    "Cienciano",
+    2,
+    2
+   ],
+   [
+    "UTC",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "UTC",
+    "Sport Boys",
+    0,
+    0
+   ],
+   [
+    "UTC",
+    "Sport Huancayo",
+    2,
+    2
+   ],
+   [
+    "ADT",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "ADT",
+    "Cienciano",
+    2,
+    1
+   ],
+   [
+    "ADT",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "ADT",
+    "Sport Huancayo",
+    1,
+    3
+   ],
+   [
+    "ADT",
+    "Universitario",
+    1,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Comerciantes Unidos",
+    2,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Los Chankas",
+    3,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Universitario",
+    1,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "UTC",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Melgar",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sport Boys",
+    0,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "UTC",
+    3,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Atl\u00e9tico Grau",
+    1,
+    3
+   ],
+   [
+    "Cajamarca",
+    "Cienciano",
+    2,
+    5
+   ],
+   [
+    "Cajamarca",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Juan Pablo II College",
+    2,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Sport Huancayo",
+    0,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Universitario",
+    2,
+    3
+   ],
+   [
+    "Cienciano",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "Cienciano",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Cienciano",
+    "Melgar",
+    1,
+    3
+   ],
+   [
+    "Cienciano",
+    "Universitario",
+    2,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Alianza Lima",
+    2,
+    2
+   ],
+   [
+    "Comerciantes Unidos",
+    "Cajamarca",
+    2,
+    3
+   ],
+   [
+    "Comerciantes Unidos",
+    "Cusco",
+    3,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Sport Huancayo",
+    0,
+    1
+   ],
+   [
+    "Cusco",
+    "Alianza Atl\u00e9tico",
+    4,
+    1
+   ],
+   [
+    "Cusco",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "Cusco",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Cusco",
+    "Melgar",
+    0,
+    1
+   ],
+   [
+    "Cusco",
+    "UTC",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Atl\u00e9tico Grau",
+    4,
+    2
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cajamarca",
+    2,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cusco",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Universitario",
+    4,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Alianza Atl\u00e9tico",
+    1,
+    4
+   ],
+   [
+    "Deportivo Moquegua",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Melgar",
+    0,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sporting Cristal",
+    1,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "ADT",
+    5,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "Deportivo Moquegua",
+    4,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Cajamarca",
+    1,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Comerciantes Unidos",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Juan Pablo II College",
+    3,
+    4
+   ],
+   [
+    "Los Chankas",
+    "Melgar",
+    0,
+    3
+   ],
+   [
+    "Los Chankas",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "Melgar",
+    "ADT",
+    3,
+    0
+   ],
+   [
+    "Melgar",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Melgar",
+    "Cajamarca",
+    2,
+    4
+   ],
+   [
+    "Melgar",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "Melgar",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "Sport Boys",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Cienciano",
+    5,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Deportivo Moquegua",
+    0,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Sport Boys",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Los Chankas",
+    5,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Universitario",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Universitario",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "Universitario",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "ADT",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "Comerciantes Unidos",
+    1,
+    3
+   ],
+   [
+    "UTC",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "UTC",
+    "Juan Pablo II College",
+    1,
+    2
+   ],
+   [
+    "UTC",
+    "Universitario",
+    2,
+    4
+   ]
+  ],
   "rates_source": "dated rounds (superset of the grid)"
  },
  "Chile Liga de Primera": {
@@ -18517,6 +21755,1094 @@
    "dated_is_superset": true,
    "name_coverage": 1.0
   },
+  "grid_matches": [
+   [
+    "Audax Italiano",
+    "Cobresal",
+    2,
+    1
+   ],
+   [
+    "Audax Italiano",
+    "Colo-Colo",
+    0,
+    1
+   ],
+   [
+    "Audax Italiano",
+    "Deportes Concepci\u00f3n",
+    3,
+    0
+   ],
+   [
+    "Audax Italiano",
+    "Deportes La Serena",
+    1,
+    1
+   ],
+   [
+    "Audax Italiano",
+    "Deportes Limache",
+    2,
+    2
+   ],
+   [
+    "Audax Italiano",
+    "Everton",
+    1,
+    0
+   ],
+   [
+    "Audax Italiano",
+    "\u00d1ublense",
+    2,
+    2
+   ],
+   [
+    "Audax Italiano",
+    "O'Higgins",
+    1,
+    0
+   ],
+   [
+    "Audax Italiano",
+    "Uni\u00f3n La Calera",
+    0,
+    0
+   ],
+   [
+    "Audax Italiano",
+    "Universidad Cat\u00f3lica",
+    3,
+    4
+   ],
+   [
+    "Audax Italiano",
+    "Universidad de Chile",
+    1,
+    2
+   ],
+   [
+    "Audax Italiano",
+    "Universidad de Concepci\u00f3n",
+    3,
+    0
+   ],
+   [
+    "Cobresal",
+    "Coquimbo Unido",
+    3,
+    2
+   ],
+   [
+    "Cobresal",
+    "Deportes Concepci\u00f3n",
+    0,
+    2
+   ],
+   [
+    "Cobresal",
+    "Deportes La Serena",
+    0,
+    1
+   ],
+   [
+    "Cobresal",
+    "Deportes Limache",
+    2,
+    5
+   ],
+   [
+    "Cobresal",
+    "Huachipato",
+    1,
+    0
+   ],
+   [
+    "Cobresal",
+    "\u00d1ublense",
+    0,
+    1
+   ],
+   [
+    "Cobresal",
+    "O'Higgins",
+    2,
+    3
+   ],
+   [
+    "Cobresal",
+    "Palestino",
+    2,
+    0
+   ],
+   [
+    "Cobresal",
+    "Uni\u00f3n La Calera",
+    4,
+    0
+   ],
+   [
+    "Cobresal",
+    "Universidad Cat\u00f3lica",
+    3,
+    2
+   ],
+   [
+    "Cobresal",
+    "Universidad de Chile",
+    1,
+    0
+   ],
+   [
+    "Colo-Colo",
+    "Audax Italiano",
+    5,
+    1
+   ],
+   [
+    "Colo-Colo",
+    "Cobresal",
+    3,
+    0
+   ],
+   [
+    "Colo-Colo",
+    "Coquimbo Unido",
+    3,
+    1
+   ],
+   [
+    "Colo-Colo",
+    "Deportes Concepci\u00f3n",
+    1,
+    1
+   ],
+   [
+    "Colo-Colo",
+    "Deportes Limache",
+    3,
+    1
+   ],
+   [
+    "Colo-Colo",
+    "Everton",
+    2,
+    0
+   ],
+   [
+    "Colo-Colo",
+    "Huachipato",
+    2,
+    0
+   ],
+   [
+    "Colo-Colo",
+    "\u00d1ublense",
+    6,
+    2
+   ],
+   [
+    "Colo-Colo",
+    "O'Higgins",
+    2,
+    2
+   ],
+   [
+    "Colo-Colo",
+    "Palestino",
+    0,
+    1
+   ],
+   [
+    "Colo-Colo",
+    "Uni\u00f3n La Calera",
+    1,
+    0
+   ],
+   [
+    "Colo-Colo",
+    "Universidad de Chile",
+    0,
+    1
+   ],
+   [
+    "Coquimbo Unido",
+    "Audax Italiano",
+    3,
+    0
+   ],
+   [
+    "Coquimbo Unido",
+    "Cobresal",
+    3,
+    2
+   ],
+   [
+    "Coquimbo Unido",
+    "Deportes Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "Coquimbo Unido",
+    "Deportes La Serena",
+    1,
+    1
+   ],
+   [
+    "Coquimbo Unido",
+    "Huachipato",
+    0,
+    1
+   ],
+   [
+    "Coquimbo Unido",
+    "\u00d1ublense",
+    1,
+    1
+   ],
+   [
+    "Coquimbo Unido",
+    "O'Higgins",
+    0,
+    0
+   ],
+   [
+    "Coquimbo Unido",
+    "Palestino",
+    3,
+    1
+   ],
+   [
+    "Coquimbo Unido",
+    "Universidad Cat\u00f3lica",
+    1,
+    2
+   ],
+   [
+    "Coquimbo Unido",
+    "Universidad de Chile",
+    0,
+    1
+   ],
+   [
+    "Coquimbo Unido",
+    "Universidad de Concepci\u00f3n",
+    1,
+    0
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Audax Italiano",
+    0,
+    1
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Cobresal",
+    1,
+    1
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Colo-Colo",
+    0,
+    1
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Coquimbo Unido",
+    1,
+    1
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Deportes La Serena",
+    3,
+    3
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Deportes Limache",
+    3,
+    2
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Everton",
+    0,
+    2
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Huachipato",
+    2,
+    0
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "\u00d1ublense",
+    0,
+    2
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "O'Higgins",
+    2,
+    0
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Universidad Cat\u00f3lica",
+    3,
+    0
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Universidad de Concepci\u00f3n",
+    1,
+    0
+   ],
+   [
+    "Deportes La Serena",
+    "Cobresal",
+    3,
+    3
+   ],
+   [
+    "Deportes La Serena",
+    "Colo-Colo",
+    2,
+    4
+   ],
+   [
+    "Deportes La Serena",
+    "Coquimbo Unido",
+    0,
+    1
+   ],
+   [
+    "Deportes La Serena",
+    "Deportes Limache",
+    4,
+    1
+   ],
+   [
+    "Deportes La Serena",
+    "Everton",
+    1,
+    0
+   ],
+   [
+    "Deportes La Serena",
+    "Huachipato",
+    0,
+    0
+   ],
+   [
+    "Deportes La Serena",
+    "\u00d1ublense",
+    2,
+    1
+   ],
+   [
+    "Deportes La Serena",
+    "O'Higgins",
+    1,
+    2
+   ],
+   [
+    "Deportes La Serena",
+    "Uni\u00f3n La Calera",
+    3,
+    0
+   ],
+   [
+    "Deportes La Serena",
+    "Universidad Cat\u00f3lica",
+    2,
+    2
+   ],
+   [
+    "Deportes La Serena",
+    "Universidad de Chile",
+    0,
+    3
+   ],
+   [
+    "Deportes La Serena",
+    "Universidad de Concepci\u00f3n",
+    1,
+    1
+   ],
+   [
+    "Deportes Limache",
+    "Cobresal",
+    3,
+    0
+   ],
+   [
+    "Deportes Limache",
+    "Colo-Colo",
+    3,
+    1
+   ],
+   [
+    "Deportes Limache",
+    "Coquimbo Unido",
+    2,
+    3
+   ],
+   [
+    "Deportes Limache",
+    "Everton",
+    0,
+    3
+   ],
+   [
+    "Deportes Limache",
+    "Huachipato",
+    3,
+    0
+   ],
+   [
+    "Deportes Limache",
+    "\u00d1ublense",
+    2,
+    0
+   ],
+   [
+    "Deportes Limache",
+    "O'Higgins",
+    2,
+    1
+   ],
+   [
+    "Deportes Limache",
+    "Uni\u00f3n La Calera",
+    4,
+    0
+   ],
+   [
+    "Deportes Limache",
+    "Universidad Cat\u00f3lica",
+    0,
+    2
+   ],
+   [
+    "Deportes Limache",
+    "Universidad de Chile",
+    1,
+    3
+   ],
+   [
+    "Deportes Limache",
+    "Universidad de Concepci\u00f3n",
+    3,
+    0
+   ],
+   [
+    "Everton",
+    "Audax Italiano",
+    1,
+    1
+   ],
+   [
+    "Everton",
+    "Cobresal",
+    3,
+    1
+   ],
+   [
+    "Everton",
+    "Colo-Colo",
+    3,
+    4
+   ],
+   [
+    "Everton",
+    "Coquimbo Unido",
+    1,
+    1
+   ],
+   [
+    "Everton",
+    "Deportes Limache",
+    1,
+    0
+   ],
+   [
+    "Everton",
+    "Huachipato",
+    0,
+    3
+   ],
+   [
+    "Everton",
+    "\u00d1ublense",
+    0,
+    0
+   ],
+   [
+    "Everton",
+    "Palestino",
+    1,
+    2
+   ],
+   [
+    "Everton",
+    "Universidad Cat\u00f3lica",
+    0,
+    1
+   ],
+   [
+    "Everton",
+    "Universidad de Chile",
+    0,
+    0
+   ],
+   [
+    "Everton",
+    "Universidad de Concepci\u00f3n",
+    3,
+    1
+   ],
+   [
+    "Huachipato",
+    "Audax Italiano",
+    3,
+    2
+   ],
+   [
+    "Huachipato",
+    "Cobresal",
+    3,
+    3
+   ],
+   [
+    "Huachipato",
+    "Colo-Colo",
+    0,
+    0
+   ],
+   [
+    "Huachipato",
+    "Coquimbo Unido",
+    1,
+    3
+   ],
+   [
+    "Huachipato",
+    "Deportes Limache",
+    1,
+    3
+   ],
+   [
+    "Huachipato",
+    "Everton",
+    1,
+    4
+   ],
+   [
+    "Huachipato",
+    "Palestino",
+    2,
+    1
+   ],
+   [
+    "Huachipato",
+    "Uni\u00f3n La Calera",
+    3,
+    1
+   ],
+   [
+    "Huachipato",
+    "Universidad Cat\u00f3lica",
+    0,
+    3
+   ],
+   [
+    "Huachipato",
+    "Universidad de Chile",
+    2,
+    1
+   ],
+   [
+    "Huachipato",
+    "Universidad de Concepci\u00f3n",
+    5,
+    1
+   ],
+   [
+    "\u00d1ublense",
+    "Audax Italiano",
+    1,
+    0
+   ],
+   [
+    "\u00d1ublense",
+    "Deportes Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "\u00d1ublense",
+    "Deportes La Serena",
+    2,
+    2
+   ],
+   [
+    "\u00d1ublense",
+    "Deportes Limache",
+    1,
+    1
+   ],
+   [
+    "\u00d1ublense",
+    "Everton",
+    1,
+    3
+   ],
+   [
+    "\u00d1ublense",
+    "Huachipato",
+    2,
+    2
+   ],
+   [
+    "\u00d1ublense",
+    "O'Higgins",
+    0,
+    2
+   ],
+   [
+    "\u00d1ublense",
+    "Palestino",
+    2,
+    0
+   ],
+   [
+    "\u00d1ublense",
+    "Uni\u00f3n La Calera",
+    2,
+    1
+   ],
+   [
+    "\u00d1ublense",
+    "Universidad Cat\u00f3lica",
+    1,
+    2
+   ],
+   [
+    "\u00d1ublense",
+    "Universidad de Chile",
+    1,
+    0
+   ],
+   [
+    "\u00d1ublense",
+    "Universidad de Concepci\u00f3n",
+    2,
+    2
+   ],
+   [
+    "O'Higgins",
+    "Audax Italiano",
+    2,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Colo-Colo",
+    0,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Deportes Concepci\u00f3n",
+    2,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Deportes La Serena",
+    1,
+    0
+   ],
+   [
+    "O'Higgins",
+    "Deportes Limache",
+    1,
+    3
+   ],
+   [
+    "O'Higgins",
+    "Everton",
+    2,
+    3
+   ],
+   [
+    "O'Higgins",
+    "Huachipato",
+    0,
+    2
+   ],
+   [
+    "O'Higgins",
+    "Palestino",
+    0,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Uni\u00f3n La Calera",
+    2,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Universidad Cat\u00f3lica",
+    1,
+    0
+   ],
+   [
+    "O'Higgins",
+    "Universidad de Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "Palestino",
+    "Audax Italiano",
+    0,
+    0
+   ],
+   [
+    "Palestino",
+    "Cobresal",
+    4,
+    2
+   ],
+   [
+    "Palestino",
+    "Coquimbo Unido",
+    2,
+    1
+   ],
+   [
+    "Palestino",
+    "Deportes Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "Palestino",
+    "Deportes La Serena",
+    5,
+    1
+   ],
+   [
+    "Palestino",
+    "Deportes Limache",
+    1,
+    0
+   ],
+   [
+    "Palestino",
+    "Huachipato",
+    5,
+    1
+   ],
+   [
+    "Palestino",
+    "\u00d1ublense",
+    1,
+    1
+   ],
+   [
+    "Palestino",
+    "O'Higgins",
+    4,
+    2
+   ],
+   [
+    "Palestino",
+    "Universidad Cat\u00f3lica",
+    2,
+    3
+   ],
+   [
+    "Palestino",
+    "Universidad de Chile",
+    0,
+    0
+   ],
+   [
+    "Palestino",
+    "Universidad de Concepci\u00f3n",
+    2,
+    1
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Audax Italiano",
+    3,
+    0
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Colo-Colo",
+    1,
+    2
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Coquimbo Unido",
+    1,
+    2
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Deportes Concepci\u00f3n",
+    1,
+    0
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Deportes La Serena",
+    0,
+    1
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Deportes Limache",
+    1,
+    0
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Everton",
+    1,
+    1
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "\u00d1ublense",
+    0,
+    1
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "O'Higgins",
+    3,
+    3
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Palestino",
+    1,
+    2
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Universidad de Chile",
+    2,
+    2
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Cobresal",
+    2,
+    0
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Colo-Colo",
+    1,
+    2
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Coquimbo Unido",
+    3,
+    1
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Deportes Concepci\u00f3n",
+    2,
+    0
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Deportes La Serena",
+    3,
+    3
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Everton",
+    2,
+    2
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "\u00d1ublense",
+    1,
+    2
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "O'Higgins",
+    3,
+    2
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Palestino",
+    6,
+    1
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Uni\u00f3n La Calera",
+    1,
+    2
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Universidad de Concepci\u00f3n",
+    5,
+    1
+   ],
+   [
+    "Universidad de Chile",
+    "Audax Italiano",
+    0,
+    0
+   ],
+   [
+    "Universidad de Chile",
+    "Colo-Colo",
+    1,
+    2
+   ],
+   [
+    "Universidad de Chile",
+    "Coquimbo Unido",
+    4,
+    2
+   ],
+   [
+    "Universidad de Chile",
+    "Deportes Concepci\u00f3n",
+    2,
+    1
+   ],
+   [
+    "Universidad de Chile",
+    "Deportes La Serena",
+    4,
+    0
+   ],
+   [
+    "Universidad de Chile",
+    "Deportes Limache",
+    2,
+    2
+   ],
+   [
+    "Universidad de Chile",
+    "Huachipato",
+    2,
+    0
+   ],
+   [
+    "Universidad de Chile",
+    "O'Higgins",
+    2,
+    0
+   ],
+   [
+    "Universidad de Chile",
+    "Palestino",
+    2,
+    1
+   ],
+   [
+    "Universidad de Chile",
+    "Universidad Cat\u00f3lica",
+    1,
+    0
+   ],
+   [
+    "Universidad de Chile",
+    "Universidad de Concepci\u00f3n",
+    1,
+    1
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Audax Italiano",
+    0,
+    1
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Cobresal",
+    1,
+    0
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Colo-Colo",
+    1,
+    2
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Coquimbo Unido",
+    1,
+    0
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Deportes Concepci\u00f3n",
+    2,
+    1
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Deportes La Serena",
+    0,
+    2
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Everton",
+    0,
+    3
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Palestino",
+    1,
+    0
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Uni\u00f3n La Calera",
+    0,
+    0
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Universidad de Chile",
+    2,
+    1
+   ]
+  ],
   "rates_source": "dated rounds (superset of the grid)"
  },
  "Uruguay Primera": {
@@ -28866,6 +33192,968 @@
    "dated_is_superset": true,
    "name_coverage": 1.0
   },
+  "grid_matches": [
+   [
+    "ABB",
+    "Always Ready",
+    1,
+    3
+   ],
+   [
+    "ABB",
+    "Blooming",
+    3,
+    2
+   ],
+   [
+    "ABB",
+    "Bol\u00edvar",
+    0,
+    2
+   ],
+   [
+    "ABB",
+    "Guabir\u00e1",
+    0,
+    1
+   ],
+   [
+    "ABB",
+    "GV San Jos\u00e9",
+    2,
+    2
+   ],
+   [
+    "ABB",
+    "Independiente Petrolero",
+    3,
+    1
+   ],
+   [
+    "ABB",
+    "Oriente Petrolero",
+    3,
+    1
+   ],
+   [
+    "ABB",
+    "Real Oruro",
+    4,
+    1
+   ],
+   [
+    "ABB",
+    "The Strongest",
+    1,
+    2
+   ],
+   [
+    "ABB",
+    "Universitario de Vinto",
+    2,
+    0
+   ],
+   [
+    "Always Ready",
+    "Aurora",
+    2,
+    2
+   ],
+   [
+    "Always Ready",
+    "Bol\u00edvar",
+    1,
+    0
+   ],
+   [
+    "Always Ready",
+    "Guabir\u00e1",
+    6,
+    0
+   ],
+   [
+    "Always Ready",
+    "Nacional Potos\u00ed",
+    3,
+    1
+   ],
+   [
+    "Always Ready",
+    "Oriente Petrolero",
+    1,
+    0
+   ],
+   [
+    "Always Ready",
+    "Real Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Always Ready",
+    "Real Tomayapo",
+    4,
+    0
+   ],
+   [
+    "Always Ready",
+    "San Antonio Bulo Bulo",
+    3,
+    1
+   ],
+   [
+    "Always Ready",
+    "The Strongest",
+    0,
+    1
+   ],
+   [
+    "Always Ready",
+    "Universitario de Vinto",
+    4,
+    0
+   ],
+   [
+    "Aurora",
+    "ABB",
+    3,
+    2
+   ],
+   [
+    "Aurora",
+    "Always Ready",
+    1,
+    1
+   ],
+   [
+    "Aurora",
+    "Bol\u00edvar",
+    2,
+    4
+   ],
+   [
+    "Aurora",
+    "Guabir\u00e1",
+    4,
+    2
+   ],
+   [
+    "Aurora",
+    "GV San Jos\u00e9",
+    3,
+    0
+   ],
+   [
+    "Aurora",
+    "Oriente Petrolero",
+    2,
+    2
+   ],
+   [
+    "Aurora",
+    "Real Oruro",
+    1,
+    1
+   ],
+   [
+    "Aurora",
+    "Real Potos\u00ed",
+    0,
+    0
+   ],
+   [
+    "Aurora",
+    "San Antonio Bulo Bulo",
+    3,
+    1
+   ],
+   [
+    "Blooming",
+    "ABB",
+    6,
+    1
+   ],
+   [
+    "Blooming",
+    "Always Ready",
+    0,
+    0
+   ],
+   [
+    "Blooming",
+    "Aurora",
+    3,
+    0
+   ],
+   [
+    "Blooming",
+    "Bol\u00edvar",
+    0,
+    0
+   ],
+   [
+    "Blooming",
+    "Guabir\u00e1",
+    5,
+    0
+   ],
+   [
+    "Blooming",
+    "GV San Jos\u00e9",
+    1,
+    1
+   ],
+   [
+    "Blooming",
+    "Nacional Potos\u00ed",
+    2,
+    1
+   ],
+   [
+    "Blooming",
+    "Real Oruro",
+    1,
+    1
+   ],
+   [
+    "Blooming",
+    "Real Tomayapo",
+    1,
+    0
+   ],
+   [
+    "Blooming",
+    "The Strongest",
+    1,
+    1
+   ],
+   [
+    "Blooming",
+    "Universitario de Vinto",
+    1,
+    1
+   ],
+   [
+    "Bol\u00edvar",
+    "ABB",
+    4,
+    1
+   ],
+   [
+    "Bol\u00edvar",
+    "Guabir\u00e1",
+    4,
+    0
+   ],
+   [
+    "Bol\u00edvar",
+    "GV San Jos\u00e9",
+    4,
+    2
+   ],
+   [
+    "Bol\u00edvar",
+    "Independiente Petrolero",
+    1,
+    2
+   ],
+   [
+    "Bol\u00edvar",
+    "Nacional Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Bol\u00edvar",
+    "Oriente Petrolero",
+    2,
+    1
+   ],
+   [
+    "Bol\u00edvar",
+    "Real Oruro",
+    5,
+    2
+   ],
+   [
+    "Bol\u00edvar",
+    "Real Potos\u00ed",
+    2,
+    1
+   ],
+   [
+    "Bol\u00edvar",
+    "Real Tomayapo",
+    6,
+    0
+   ],
+   [
+    "Bol\u00edvar",
+    "San Antonio Bulo Bulo",
+    4,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "Always Ready",
+    1,
+    2
+   ],
+   [
+    "Guabir\u00e1",
+    "Aurora",
+    3,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "Blooming",
+    1,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "GV San Jos\u00e9",
+    3,
+    0
+   ],
+   [
+    "Guabir\u00e1",
+    "Independiente Petrolero",
+    2,
+    2
+   ],
+   [
+    "Guabir\u00e1",
+    "Nacional Potos\u00ed",
+    2,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "Real Oruro",
+    4,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "Real Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "Real Tomayapo",
+    3,
+    0
+   ],
+   [
+    "Guabir\u00e1",
+    "The Strongest",
+    3,
+    1
+   ],
+   [
+    "GV San Jos\u00e9",
+    "ABB",
+    1,
+    2
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Always Ready",
+    2,
+    3
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Aurora",
+    1,
+    1
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Bol\u00edvar",
+    1,
+    2
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Nacional Potos\u00ed",
+    0,
+    3
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Oriente Petrolero",
+    3,
+    3
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Real Tomayapo",
+    3,
+    2
+   ],
+   [
+    "GV San Jos\u00e9",
+    "San Antonio Bulo Bulo",
+    0,
+    0
+   ],
+   [
+    "GV San Jos\u00e9",
+    "The Strongest",
+    0,
+    0
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Universitario de Vinto",
+    2,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "Always Ready",
+    0,
+    0
+   ],
+   [
+    "Independiente Petrolero",
+    "Aurora",
+    1,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "Blooming",
+    3,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "Bol\u00edvar",
+    0,
+    4
+   ],
+   [
+    "Independiente Petrolero",
+    "Guabir\u00e1",
+    3,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "GV San Jos\u00e9",
+    1,
+    0
+   ],
+   [
+    "Independiente Petrolero",
+    "Nacional Potos\u00ed",
+    0,
+    3
+   ],
+   [
+    "Independiente Petrolero",
+    "Oriente Petrolero",
+    1,
+    2
+   ],
+   [
+    "Independiente Petrolero",
+    "Real Potos\u00ed",
+    1,
+    2
+   ],
+   [
+    "Independiente Petrolero",
+    "San Antonio Bulo Bulo",
+    1,
+    3
+   ],
+   [
+    "Independiente Petrolero",
+    "Universitario de Vinto",
+    2,
+    1
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "ABB",
+    2,
+    0
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Always Ready",
+    0,
+    4
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Aurora",
+    2,
+    0
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Blooming",
+    2,
+    1
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "GV San Jos\u00e9",
+    1,
+    1
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Independiente Petrolero",
+    3,
+    0
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Real Oruro",
+    1,
+    4
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Real Tomayapo",
+    4,
+    1
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "The Strongest",
+    2,
+    3
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Universitario de Vinto",
+    1,
+    0
+   ],
+   [
+    "Oriente Petrolero",
+    "Always Ready",
+    1,
+    2
+   ],
+   [
+    "Oriente Petrolero",
+    "Blooming",
+    0,
+    1
+   ],
+   [
+    "Oriente Petrolero",
+    "Guabir\u00e1",
+    2,
+    2
+   ],
+   [
+    "Oriente Petrolero",
+    "GV San Jos\u00e9",
+    2,
+    1
+   ],
+   [
+    "Oriente Petrolero",
+    "Nacional Potos\u00ed",
+    1,
+    0
+   ],
+   [
+    "Oriente Petrolero",
+    "Real Potos\u00ed",
+    2,
+    0
+   ],
+   [
+    "Oriente Petrolero",
+    "Real Tomayapo",
+    3,
+    1
+   ],
+   [
+    "Oriente Petrolero",
+    "San Antonio Bulo Bulo",
+    4,
+    0
+   ],
+   [
+    "Oriente Petrolero",
+    "Universitario de Vinto",
+    5,
+    0
+   ],
+   [
+    "Real Oruro",
+    "Always Ready",
+    0,
+    6
+   ],
+   [
+    "Real Oruro",
+    "Blooming",
+    2,
+    2
+   ],
+   [
+    "Real Oruro",
+    "Bol\u00edvar",
+    2,
+    4
+   ],
+   [
+    "Real Oruro",
+    "GV San Jos\u00e9",
+    3,
+    1
+   ],
+   [
+    "Real Oruro",
+    "Independiente Petrolero",
+    0,
+    3
+   ],
+   [
+    "Real Oruro",
+    "Oriente Petrolero",
+    2,
+    3
+   ],
+   [
+    "Real Oruro",
+    "Real Potos\u00ed",
+    0,
+    2
+   ],
+   [
+    "Real Oruro",
+    "San Antonio Bulo Bulo",
+    2,
+    0
+   ],
+   [
+    "Real Oruro",
+    "The Strongest",
+    2,
+    3
+   ],
+   [
+    "Real Oruro",
+    "Universitario de Vinto",
+    4,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "ABB",
+    3,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "Aurora",
+    0,
+    0
+   ],
+   [
+    "Real Potos\u00ed",
+    "Blooming",
+    2,
+    0
+   ],
+   [
+    "Real Potos\u00ed",
+    "Guabir\u00e1",
+    3,
+    0
+   ],
+   [
+    "Real Potos\u00ed",
+    "GV San Jos\u00e9",
+    0,
+    0
+   ],
+   [
+    "Real Potos\u00ed",
+    "Nacional Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "Oriente Petrolero",
+    2,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "Real Oruro",
+    1,
+    2
+   ],
+   [
+    "Real Potos\u00ed",
+    "Real Tomayapo",
+    0,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "San Antonio Bulo Bulo",
+    5,
+    0
+   ],
+   [
+    "Real Tomayapo",
+    "ABB",
+    1,
+    1
+   ],
+   [
+    "Real Tomayapo",
+    "Always Ready",
+    1,
+    1
+   ],
+   [
+    "Real Tomayapo",
+    "Aurora",
+    0,
+    2
+   ],
+   [
+    "Real Tomayapo",
+    "Bol\u00edvar",
+    1,
+    2
+   ],
+   [
+    "Real Tomayapo",
+    "Independiente Petrolero",
+    2,
+    1
+   ],
+   [
+    "Real Tomayapo",
+    "Oriente Petrolero",
+    0,
+    2
+   ],
+   [
+    "Real Tomayapo",
+    "Real Oruro",
+    1,
+    2
+   ],
+   [
+    "Real Tomayapo",
+    "Real Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Real Tomayapo",
+    "San Antonio Bulo Bulo",
+    1,
+    0
+   ],
+   [
+    "Real Tomayapo",
+    "The Strongest",
+    0,
+    0
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "ABB",
+    2,
+    1
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Aurora",
+    0,
+    2
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Blooming",
+    2,
+    0
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Guabir\u00e1",
+    1,
+    2
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Independiente Petrolero",
+    2,
+    2
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Nacional Potos\u00ed",
+    2,
+    1
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Oriente Petrolero",
+    2,
+    0
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Real Oruro",
+    2,
+    1
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "The Strongest",
+    0,
+    3
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Universitario de Vinto",
+    0,
+    2
+   ],
+   [
+    "The Strongest",
+    "ABB",
+    3,
+    1
+   ],
+   [
+    "The Strongest",
+    "Aurora",
+    1,
+    1
+   ],
+   [
+    "The Strongest",
+    "Bol\u00edvar",
+    1,
+    1
+   ],
+   [
+    "The Strongest",
+    "Independiente Petrolero",
+    1,
+    2
+   ],
+   [
+    "The Strongest",
+    "Oriente Petrolero",
+    2,
+    1
+   ],
+   [
+    "The Strongest",
+    "Real Oruro",
+    5,
+    0
+   ],
+   [
+    "The Strongest",
+    "Real Potos\u00ed",
+    0,
+    0
+   ],
+   [
+    "The Strongest",
+    "Real Tomayapo",
+    3,
+    1
+   ],
+   [
+    "The Strongest",
+    "San Antonio Bulo Bulo",
+    3,
+    2
+   ],
+   [
+    "The Strongest",
+    "Universitario de Vinto",
+    4,
+    3
+   ],
+   [
+    "Universitario de Vinto",
+    "ABB",
+    5,
+    2
+   ],
+   [
+    "Universitario de Vinto",
+    "Aurora",
+    1,
+    2
+   ],
+   [
+    "Universitario de Vinto",
+    "Blooming",
+    1,
+    1
+   ],
+   [
+    "Universitario de Vinto",
+    "Bol\u00edvar",
+    3,
+    2
+   ],
+   [
+    "Universitario de Vinto",
+    "Guabir\u00e1",
+    1,
+    1
+   ],
+   [
+    "Universitario de Vinto",
+    "Independiente Petrolero",
+    3,
+    1
+   ],
+   [
+    "Universitario de Vinto",
+    "Nacional Potos\u00ed",
+    2,
+    0
+   ],
+   [
+    "Universitario de Vinto",
+    "Real Potos\u00ed",
+    0,
+    2
+   ],
+   [
+    "Universitario de Vinto",
+    "Real Tomayapo",
+    0,
+    1
+   ],
+   [
+    "Universitario de Vinto",
+    "The Strongest",
+    1,
+    2
+   ]
+  ],
   "rates_source": "dated rounds (superset of the grid)"
  }
 }
