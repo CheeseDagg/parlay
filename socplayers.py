@@ -284,18 +284,40 @@ def drop_moved_players(splits, roster, clubs):
 
     understat's CURRENT season says where each player is now, so it can answer
     this -- but only when both halves resolve. A row is dropped only when:
-      - the player is found in the current season by name, AND
+      - the player is found in the current season, AND
       - the club he is at now resolves to exactly one club in the source data,
         AND
       - that club is not the one the row is about.
     Anything else -- name unmatched, club unresolvable, club ambiguous between
-    two entries -- keeps the row, because "I could not check" is not the same
-    finding as "he moved", and acting on the first would quietly delete good
-    rows over a naming mismatch.
+    two entries -- keeps the row and is COUNTED as unchecked, because "I could
+    not check" is not the same finding as "he moved", and acting on the first
+    would quietly delete good rows over a naming mismatch.
+
+    `roster` is {normalised full name: {club, ...}}.
     """
-    kept, moved, unchecked = [], 0, 0
+    # NAME FALLBACK, WITH A COLLISION GUARD. The two sources write the same
+    # player differently often enough that an exact-name check left 54 of 118
+    # rows unverified: openfootball writes "Francisco Evanilson de Lima Barbosa"
+    # where understat writes "Evanilson", and "Jean-Philippe MATETA" for
+    # "Mateta". Note the shape of that first one -- the understat name is a
+    # MIDDLE token, not the last, so matching on the trailing word alone gets it
+    # wrong in both directions. The test is whether the whole understat name
+    # appears as one of the tokens of the openfootball name.
+    #
+    # A single name is not an identity, though, and two current players sharing
+    # one is the ordinary case in football. So a token matching more than one
+    # current player resolves to NOTHING rather than to whichever came first.
+    kept, moved, unchecked, by_sur = [], 0, 0, 0
     for r in splits:
-        now = roster.get(norm_name(r.get('player')))
+        player = r.get('player') or ''
+        now = roster.get(norm_name(player))
+        if not now:
+            toks = {norm_name(t) for t in re.split(r'[^0-9A-Za-z\u00c0-\u024f]+', player)}
+            toks = {t for t in toks if len(t) >= 4}
+            cands = {k for k in roster if k in toks}
+            if len(cands) == 1:
+                now = roster[next(iter(cands))]
+                by_sur += 1
         if not now:
             unchecked += 1
             kept.append(r)
@@ -309,7 +331,7 @@ def drop_moved_players(splits, roster, clubs):
             kept.append(r)
         else:
             moved += 1
-    return kept, moved, unchecked
+    return kept, moved, unchecked, by_sur
 
 
 def poss(name):
@@ -713,10 +735,11 @@ def build(of_fetch=None, us_fetch=None, today=None):
         clubs = {g[1] for gs in pooled.values() for g in gs} | \
                 {g[2] for gs in pooled.values() for g in gs}
         before = len(splits)
-        splits, moved, unchecked = drop_moved_players(splits, roster, clubs)
+        splits, moved, unchecked, by_tok = drop_moved_players(splits, roster, clubs)
         report.append(f'  current-club check: {before} splits -> {len(splits)} '
                       f'({moved} dropped, the player has left that club; '
-                      f'{unchecked} could not be checked and were kept)')
+                      f'{unchecked} could not be checked and were kept; '
+                      f'{by_tok} resolved on a single name rather than the full one)')
     else:
         # Say it. A silent skip here means the page shows last season's clubs
         # and looks exactly like a page that checked and found nothing wrong.
@@ -974,19 +997,38 @@ Fri Aug 15 2025
     rows_ = [{'player': 'Harry WILSON', 'team': 'Fulham', 'text': 't'},
              {'player': 'Antoine SEMENYO', 'team': 'Bournemouth', 'text': 't'},
              {'player': 'Unknown GUY', 'team': 'Fulham', 'text': 't'}]
-    keep, moved_, unch = drop_moved_players(
+    keep, moved_, unch, _bt = drop_moved_players(
         rows_, {'harrywilson': {'Fulham'},
                 'antoinesemenyo': {'Manchester City'}}, CLUBS)
     chk(moved_ == 1 and {r['player'] for r in keep} == {'Harry WILSON', 'Unknown GUY'},
         'a player now at another club loses his split; one still there keeps it')
     chk(unch == 1, 'a player absent from the current season is COUNTED as unchecked, not dropped')
-    keep2, moved2, unch2 = drop_moved_players(
-        [{'player': 'X', 'team': 'Fulham'}], {'x': {'Real'}},
+    keep2, moved2, unch2, _ = drop_moved_players(
+        [{'player': 'Xavier', 'team': 'Fulham'}], {'xavier': {'Real'}},
         {'Fulham', 'Real Madrid', 'Real Sociedad'})
     chk(moved2 == 0 and unch2 == 1 and len(keep2) == 1,
         'a club name that matches two entries is ambiguous, so the row is kept, not guessed')
     chk(drop_moved_players([{'player': 'X', 'team': 'Fulham'}], {}, CLUBS)[0],
         'no roster at all keeps every row rather than emptying the list')
+    # The two sources spell the same player differently; a MIDDLE token is the
+    # understat name in the Brazilian-style case, so a trailing-word match fails.
+    long_roster = {'evanilson': {'Bournemouth'}, 'mateta': {'Crystal Palace'}}
+    k3, m3, u3, bt3 = drop_moved_players(
+        [{'player': 'Francisco Evanilson de Lima Barbosa', 'team': 'Bournemouth'},
+         {'player': 'Jean-Philippe MATETA', 'team': 'Crystal Palace'}],
+        long_roster, {'Bournemouth', 'Crystal Palace'})
+    chk(len(k3) == 2 and m3 == 0 and u3 == 0 and bt3 == 2,
+        'a one-word understat name resolves against a middle token of the full one')
+    k4, m4, u4, bt4 = drop_moved_players(
+        [{'player': 'Evanilson Mateta', 'team': 'Bournemouth'}],
+        long_roster, {'Bournemouth', 'Crystal Palace'})
+    chk(len(k4) == 1 and m4 == 0 and u4 == 1 and bt4 == 0,
+        'a name whose tokens match TWO current players resolves to neither')
+    k5, m5, u5, _ = drop_moved_players(
+        [{'player': 'Evanilson', 'team': 'Crystal Palace'}],
+        long_roster, {'Bournemouth', 'Crystal Palace'})
+    chk(not k5 and m5 == 1 and u5 == 0,
+        'and the fallback still drops a row when the club it resolves to is a different one')
 
     # ------------------------------------------- every family reaches the file
     built = {k for k in build(of_fetch=lambda u: '= empty\n',
