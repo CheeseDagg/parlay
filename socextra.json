@@ -1,0 +1,7902 @@
+{
+ "Colombia Primera A": {
+  "slug": "2026_Categor%C3%ADa_Primera_A_season",
+  "rates": {
+   "result": {
+    "n": 297,
+    "home": 0.45118,
+    "draw": 0.30976,
+    "away": 0.23906,
+    "mean_goals": 2.569
+   },
+   "under": {
+    "1.5": 0.23906,
+    "2.5": 0.51178,
+    "3.5": 0.76094,
+    "4.5": 0.88552,
+    "5.5": 0.9697
+   },
+   "src": "wikipedia-matrix"
+  },
+  "splits": {
+   "home": {
+    "\u00c1guilas Doradas": {
+     "p": 15,
+     "w": 5,
+     "d": 6,
+     "l": 4,
+     "gf": 20,
+     "ga": 21,
+     "ppg": 1.4
+    },
+    "Alianza": {
+     "p": 16,
+     "w": 3,
+     "d": 7,
+     "l": 6,
+     "gf": 14,
+     "ga": 24,
+     "ppg": 1.0
+    },
+    "Am\u00e9rica de Cali": {
+     "p": 15,
+     "w": 11,
+     "d": 3,
+     "l": 1,
+     "gf": 31,
+     "ga": 6,
+     "ppg": 2.4
+    },
+    "Atl\u00e9tico Bucaramanga": {
+     "p": 13,
+     "w": 5,
+     "d": 7,
+     "l": 1,
+     "gf": 25,
+     "ga": 10,
+     "ppg": 1.692
+    },
+    "Atl\u00e9tico Nacional": {
+     "p": 12,
+     "w": 10,
+     "d": 2,
+     "l": 0,
+     "gf": 27,
+     "ga": 5,
+     "ppg": 2.667
+    },
+    "Boyac\u00e1 Chic\u00f3": {
+     "p": 14,
+     "w": 8,
+     "d": 2,
+     "l": 4,
+     "gf": 21,
+     "ga": 8,
+     "ppg": 1.857
+    },
+    "C\u00facuta Deportivo": {
+     "p": 14,
+     "w": 5,
+     "d": 5,
+     "l": 4,
+     "gf": 19,
+     "ga": 19,
+     "ppg": 1.429
+    },
+    "Deportes Tolima": {
+     "p": 16,
+     "w": 10,
+     "d": 4,
+     "l": 2,
+     "gf": 28,
+     "ga": 14,
+     "ppg": 2.125
+    },
+    "Deportivo Cali": {
+     "p": 15,
+     "w": 8,
+     "d": 6,
+     "l": 1,
+     "gf": 22,
+     "ga": 9,
+     "ppg": 2.0
+    },
+    "Deportivo Pasto": {
+     "p": 15,
+     "w": 7,
+     "d": 2,
+     "l": 6,
+     "gf": 17,
+     "ga": 15,
+     "ppg": 1.533
+    },
+    "Deportivo Pereira": {
+     "p": 14,
+     "w": 1,
+     "d": 6,
+     "l": 7,
+     "gf": 12,
+     "ga": 22,
+     "ppg": 0.643
+    },
+    "Fortaleza": {
+     "p": 16,
+     "w": 6,
+     "d": 5,
+     "l": 5,
+     "gf": 21,
+     "ga": 20,
+     "ppg": 1.438
+    },
+    "Independiente Medell\u00edn": {
+     "p": 16,
+     "w": 8,
+     "d": 3,
+     "l": 5,
+     "gf": 25,
+     "ga": 20,
+     "ppg": 1.688
+    },
+    "Internacional de Bogot\u00e1": {
+     "p": 15,
+     "w": 7,
+     "d": 5,
+     "l": 3,
+     "gf": 25,
+     "ga": 19,
+     "ppg": 1.733
+    },
+    "Jaguares": {
+     "p": 16,
+     "w": 6,
+     "d": 4,
+     "l": 6,
+     "gf": 21,
+     "ga": 22,
+     "ppg": 1.375
+    },
+    "Junior": {
+     "p": 15,
+     "w": 7,
+     "d": 4,
+     "l": 4,
+     "gf": 24,
+     "ga": 20,
+     "ppg": 1.667
+    },
+    "Llaneros": {
+     "p": 14,
+     "w": 4,
+     "d": 7,
+     "l": 3,
+     "gf": 17,
+     "ga": 14,
+     "ppg": 1.357
+    },
+    "Millonarios": {
+     "p": 15,
+     "w": 8,
+     "d": 5,
+     "l": 2,
+     "gf": 25,
+     "ga": 9,
+     "ppg": 1.933
+    },
+    "Once Caldas": {
+     "p": 15,
+     "w": 8,
+     "d": 3,
+     "l": 4,
+     "gf": 28,
+     "ga": 20,
+     "ppg": 1.8
+    },
+    "Santa Fe": {
+     "p": 16,
+     "w": 7,
+     "d": 6,
+     "l": 3,
+     "gf": 27,
+     "ga": 17,
+     "ppg": 1.688
+    }
+   },
+   "away": {
+    "Alianza": {
+     "p": 14,
+     "w": 3,
+     "d": 3,
+     "l": 8,
+     "gf": 10,
+     "ga": 24,
+     "ppg": 0.857
+    },
+    "Am\u00e9rica de Cali": {
+     "p": 15,
+     "w": 6,
+     "d": 3,
+     "l": 6,
+     "gf": 16,
+     "ga": 15,
+     "ppg": 1.4
+    },
+    "Atl\u00e9tico Bucaramanga": {
+     "p": 16,
+     "w": 5,
+     "d": 6,
+     "l": 5,
+     "gf": 18,
+     "ga": 19,
+     "ppg": 1.312
+    },
+    "Atl\u00e9tico Nacional": {
+     "p": 16,
+     "w": 9,
+     "d": 0,
+     "l": 7,
+     "gf": 26,
+     "ga": 19,
+     "ppg": 1.688
+    },
+    "C\u00facuta Deportivo": {
+     "p": 16,
+     "w": 1,
+     "d": 5,
+     "l": 10,
+     "gf": 14,
+     "ga": 35,
+     "ppg": 0.5
+    },
+    "Deportivo Cali": {
+     "p": 15,
+     "w": 5,
+     "d": 3,
+     "l": 7,
+     "gf": 15,
+     "ga": 15,
+     "ppg": 1.2
+    },
+    "Deportivo Pasto": {
+     "p": 15,
+     "w": 5,
+     "d": 4,
+     "l": 6,
+     "gf": 21,
+     "ga": 28,
+     "ppg": 1.267
+    },
+    "Internacional de Bogot\u00e1": {
+     "p": 16,
+     "w": 2,
+     "d": 8,
+     "l": 6,
+     "gf": 14,
+     "ga": 24,
+     "ppg": 0.875
+    },
+    "Junior": {
+     "p": 13,
+     "w": 6,
+     "d": 1,
+     "l": 6,
+     "gf": 21,
+     "ga": 18,
+     "ppg": 1.462
+    },
+    "Once Caldas": {
+     "p": 15,
+     "w": 3,
+     "d": 9,
+     "l": 3,
+     "gf": 17,
+     "ga": 17,
+     "ppg": 1.2
+    },
+    "Boyac\u00e1 Chic\u00f3": {
+     "p": 15,
+     "w": 0,
+     "d": 2,
+     "l": 13,
+     "gf": 4,
+     "ga": 42,
+     "ppg": 0.133
+    },
+    "Independiente Medell\u00edn": {
+     "p": 14,
+     "w": 5,
+     "d": 4,
+     "l": 5,
+     "gf": 20,
+     "ga": 19,
+     "ppg": 1.357
+    },
+    "Jaguares": {
+     "p": 13,
+     "w": 0,
+     "d": 3,
+     "l": 10,
+     "gf": 10,
+     "ga": 29,
+     "ppg": 0.231
+    },
+    "Millonarios": {
+     "p": 17,
+     "w": 4,
+     "d": 6,
+     "l": 7,
+     "gf": 24,
+     "ga": 25,
+     "ppg": 1.059
+    },
+    "Deportes Tolima": {
+     "p": 14,
+     "w": 3,
+     "d": 6,
+     "l": 5,
+     "gf": 14,
+     "ga": 16,
+     "ppg": 1.071
+    },
+    "Deportivo Pereira": {
+     "p": 15,
+     "w": 1,
+     "d": 6,
+     "l": 8,
+     "gf": 10,
+     "ga": 23,
+     "ppg": 0.6
+    },
+    "Llaneros": {
+     "p": 16,
+     "w": 4,
+     "d": 5,
+     "l": 7,
+     "gf": 14,
+     "ga": 20,
+     "ppg": 1.062
+    },
+    "Santa Fe": {
+     "p": 14,
+     "w": 5,
+     "d": 6,
+     "l": 3,
+     "gf": 20,
+     "ga": 17,
+     "ppg": 1.5
+    },
+    "Fortaleza": {
+     "p": 14,
+     "w": 0,
+     "d": 8,
+     "l": 6,
+     "gf": 14,
+     "ga": 25,
+     "ppg": 0.571
+    },
+    "\u00c1guilas Doradas": {
+     "p": 14,
+     "w": 4,
+     "d": 4,
+     "l": 6,
+     "gf": 12,
+     "ga": 19,
+     "ppg": 1.143
+    }
+   },
+   "h2h": {
+    "Alianza|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Alianza",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Am\u00e9rica de Cali|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "\u00c1guilas Doradas",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Nacional|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "\u00c1guilas Doradas",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "C\u00facuta Deportivo|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "C\u00facuta Deportivo",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Deportivo Cali|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Deportivo Cali",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Cali",
+      "away": "\u00c1guilas Doradas",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pasto|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Deportivo Pasto",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Pasto",
+      "away": "\u00c1guilas Doradas",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Internacional de Bogot\u00e1|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "\u00c1guilas Doradas",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Junior|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Junior",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Once Caldas|\u00c1guilas Doradas": [
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Once Caldas",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Alianza|Am\u00e9rica de Cali": [
+     {
+      "home": "Alianza",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 0,
+      "ag": 3
+     },
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Alianza",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Alianza|Boyac\u00e1 Chic\u00f3": [
+     {
+      "home": "Alianza",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Alianza",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Alianza|C\u00facuta Deportivo": [
+     {
+      "home": "Alianza",
+      "away": "C\u00facuta Deportivo",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Alianza",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Alianza|Deportivo Cali": [
+     {
+      "home": "Alianza",
+      "away": "Deportivo Cali",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Alianza|Deportivo Pasto": [
+     {
+      "home": "Alianza",
+      "away": "Deportivo Pasto",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Alianza|Independiente Medell\u00edn": [
+     {
+      "home": "Alianza",
+      "away": "Independiente Medell\u00edn",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Alianza|Jaguares": [
+     {
+      "home": "Alianza",
+      "away": "Jaguares",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Jaguares",
+      "away": "Alianza",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Alianza|Millonarios": [
+     {
+      "home": "Alianza",
+      "away": "Millonarios",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Alianza|Once Caldas": [
+     {
+      "home": "Alianza",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Am\u00e9rica de Cali|Atl\u00e9tico Bucaramanga": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Am\u00e9rica de Cali|Deportes Tolima": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Deportes Tolima",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Deportes Tolima",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Am\u00e9rica de Cali|Deportivo Pereira": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Deportivo Pereira",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Am\u00e9rica de Cali|Internacional de Bogot\u00e1": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Am\u00e9rica de Cali|Jaguares": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Jaguares",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Jaguares",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Am\u00e9rica de Cali|Llaneros": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Llaneros",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Am\u00e9rica de Cali|Millonarios": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Millonarios",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Am\u00e9rica de Cali|Once Caldas": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Once Caldas",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Am\u00e9rica de Cali|Santa Fe": [
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Santa Fe",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Alianza|Atl\u00e9tico Bucaramanga": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Alianza",
+      "hg": 5,
+      "ag": 0
+     },
+     {
+      "home": "Alianza",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Boyac\u00e1 Chic\u00f3": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 5,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Deportes Tolima": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Deportes Tolima",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Deportes Tolima",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Deportivo Cali": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Deportivo Cali",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Cali",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Deportivo Pereira": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Deportivo Pereira",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Pereira",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Jaguares": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Jaguares",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Millonarios": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Millonarios",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Millonarios",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Once Caldas": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Once Caldas",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Santa Fe": [
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Alianza|Atl\u00e9tico Nacional": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Alianza",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Alianza",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 5
+     }
+    ],
+    "Am\u00e9rica de Cali|Atl\u00e9tico Nacional": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Atl\u00e9tico Nacional": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Nacional|Boyac\u00e1 Chic\u00f3": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Nacional|C\u00facuta Deportivo": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "C\u00facuta Deportivo",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Nacional|Fortaleza": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Fortaleza",
+      "hg": 4,
+      "ag": 1
+     },
+     {
+      "home": "Fortaleza",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Nacional|Internacional de Bogot\u00e1": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Atl\u00e9tico Nacional|Jaguares": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Jaguares",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Jaguares",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Atl\u00e9tico Nacional|Llaneros": [
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Llaneros",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Llaneros",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|\u00c1guilas Doradas": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "\u00c1guilas Doradas",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Am\u00e9rica de Cali|Boyac\u00e1 Chic\u00f3": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 7,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Deportes Tolima": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Deportes Tolima",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Deportivo Cali": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Deportivo Cali",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Deportivo Pereira": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Deportivo Pereira",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Jaguares": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Jaguares",
+      "hg": 5,
+      "ag": 0
+     },
+     {
+      "home": "Jaguares",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Llaneros": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Llaneros",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Millonarios": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Millonarios",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Millonarios",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Santa Fe": [
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Santa Fe",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Santa Fe",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Am\u00e9rica de Cali|C\u00facuta Deportivo": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|C\u00facuta Deportivo": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "C\u00facuta Deportivo",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|C\u00facuta Deportivo": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "C\u00facuta Deportivo|Deportes Tolima": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Deportes Tolima",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Deportes Tolima",
+      "away": "C\u00facuta Deportivo",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "C\u00facuta Deportivo|Deportivo Cali": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Deportivo Cali",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Cali",
+      "away": "C\u00facuta Deportivo",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "C\u00facuta Deportivo|Fortaleza": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Fortaleza",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Fortaleza",
+      "away": "C\u00facuta Deportivo",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "C\u00facuta Deportivo|Independiente Medell\u00edn": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Independiente Medell\u00edn",
+      "hg": 1,
+      "ag": 3
+     },
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "C\u00facuta Deportivo",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "C\u00facuta Deportivo|Junior": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Junior",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "C\u00facuta Deportivo|Once Caldas": [
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Once Caldas",
+      "away": "C\u00facuta Deportivo",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Deportes Tolima|\u00c1guilas Doradas": [
+     {
+      "home": "Deportes Tolima",
+      "away": "\u00c1guilas Doradas",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Alianza|Deportes Tolima": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Alianza",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Alianza",
+      "away": "Deportes Tolima",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Nacional|Deportes Tolima": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportes Tolima|Deportivo Cali": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Deportivo Cali",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportes Tolima|Deportivo Pereira": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Deportivo Pereira",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportes Tolima|Fortaleza": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Fortaleza",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Fortaleza",
+      "away": "Deportes Tolima",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportes Tolima|Jaguares": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Jaguares",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Deportes Tolima|Llaneros": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Llaneros",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Llaneros",
+      "away": "Deportes Tolima",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportes Tolima|Once Caldas": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Once Caldas",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Once Caldas",
+      "away": "Deportes Tolima",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportes Tolima|Santa Fe": [
+     {
+      "home": "Deportes Tolima",
+      "away": "Santa Fe",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Santa Fe",
+      "away": "Deportes Tolima",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Am\u00e9rica de Cali|Deportivo Cali": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Nacional|Deportivo Cali": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Deportivo Cali",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Deportivo Cali|Deportivo Pasto": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Deportivo Pasto",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Pasto",
+      "away": "Deportivo Cali",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Deportivo Cali|Deportivo Pereira": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Deportivo Pereira",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Cali|Fortaleza": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Fortaleza",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportivo Cali|Independiente Medell\u00edn": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Independiente Medell\u00edn",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Deportivo Cali",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Cali|Llaneros": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Llaneros",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportivo Cali|Millonarios": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Millonarios",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Millonarios",
+      "away": "Deportivo Cali",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportivo Cali|Once Caldas": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Once Caldas",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Once Caldas",
+      "away": "Deportivo Cali",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportivo Cali|Santa Fe": [
+     {
+      "home": "Deportivo Cali",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Santa Fe",
+      "away": "Deportivo Cali",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Am\u00e9rica de Cali|Deportivo Pasto": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Deportivo Pasto",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Deportivo Pasto": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Nacional|Deportivo Pasto": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Deportivo Pasto": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Deportivo Pasto",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "C\u00facuta Deportivo|Deportivo Pasto": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "C\u00facuta Deportivo",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Deportivo Pasto",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportes Tolima|Deportivo Pasto": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Deportes Tolima",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pasto|Independiente Medell\u00edn": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Independiente Medell\u00edn",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Deportivo Pasto",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Deportivo Pasto|Internacional de Bogot\u00e1": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Deportivo Pasto",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportivo Pasto|Millonarios": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Millonarios",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Millonarios",
+      "away": "Deportivo Pasto",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pasto|Santa Fe": [
+     {
+      "home": "Deportivo Pasto",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportivo Pereira|\u00c1guilas Doradas": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "\u00c1guilas Doradas",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Deportivo Pereira",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Alianza|Deportivo Pereira": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "Alianza",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "Alianza",
+      "away": "Deportivo Pereira",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Nacional|Deportivo Pereira": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "C\u00facuta Deportivo|Deportivo Pereira": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "C\u00facuta Deportivo",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportivo Pasto|Deportivo Pereira": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "Deportivo Pasto",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Pasto",
+      "away": "Deportivo Pereira",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportivo Pereira|Fortaleza": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "Fortaleza",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Fortaleza",
+      "away": "Deportivo Pereira",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pereira|Junior": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "Junior",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Deportivo Pereira|Llaneros": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "Llaneros",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Llaneros",
+      "away": "Deportivo Pereira",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pereira|Once Caldas": [
+     {
+      "home": "Deportivo Pereira",
+      "away": "Once Caldas",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Fortaleza|\u00c1guilas Doradas": [
+     {
+      "home": "Fortaleza",
+      "away": "\u00c1guilas Doradas",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Alianza|Fortaleza": [
+     {
+      "home": "Fortaleza",
+      "away": "Alianza",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Alianza",
+      "away": "Fortaleza",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Am\u00e9rica de Cali|Fortaleza": [
+     {
+      "home": "Fortaleza",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Fortaleza": [
+     {
+      "home": "Fortaleza",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Fortaleza": [
+     {
+      "home": "Fortaleza",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Fortaleza",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pasto|Fortaleza": [
+     {
+      "home": "Fortaleza",
+      "away": "Deportivo Pasto",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Fortaleza|Internacional de Bogot\u00e1": [
+     {
+      "home": "Fortaleza",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Fortaleza|Jaguares": [
+     {
+      "home": "Fortaleza",
+      "away": "Jaguares",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Jaguares",
+      "away": "Fortaleza",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Fortaleza|Llaneros": [
+     {
+      "home": "Fortaleza",
+      "away": "Llaneros",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Llaneros",
+      "away": "Fortaleza",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Fortaleza|Santa Fe": [
+     {
+      "home": "Fortaleza",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Santa Fe",
+      "away": "Fortaleza",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Independiente Medell\u00edn|\u00c1guilas Doradas": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "\u00c1guilas Doradas",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Am\u00e9rica de Cali|Independiente Medell\u00edn": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Independiente Medell\u00edn": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Independiente Medell\u00edn",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Nacional|Independiente Medell\u00edn": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Independiente Medell\u00edn": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Independiente Medell\u00edn",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Deportes Tolima|Independiente Medell\u00edn": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Deportes Tolima",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Deportes Tolima",
+      "away": "Independiente Medell\u00edn",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Deportivo Pereira|Independiente Medell\u00edn": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Deportivo Pereira",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Pereira",
+      "away": "Independiente Medell\u00edn",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Fortaleza|Independiente Medell\u00edn": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Fortaleza",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Independiente Medell\u00edn|Internacional de Bogot\u00e1": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Independiente Medell\u00edn|Junior": [
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Junior",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Junior",
+      "away": "Independiente Medell\u00edn",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Alianza|Internacional de Bogot\u00e1": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Alianza",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Internacional de Bogot\u00e1": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Internacional de Bogot\u00e1": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "C\u00facuta Deportivo|Internacional de Bogot\u00e1": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "C\u00facuta Deportivo",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportes Tolima|Internacional de Bogot\u00e1": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Deportes Tolima",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Deportes Tolima",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Deportivo Cali|Internacional de Bogot\u00e1": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Deportivo Cali",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Cali",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportivo Pereira|Internacional de Bogot\u00e1": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Deportivo Pereira",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Pereira",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Internacional de Bogot\u00e1|Junior": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Junior",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Internacional de Bogot\u00e1|Millonarios": [
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Millonarios",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Millonarios",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Jaguares|\u00c1guilas Doradas": [
+     {
+      "home": "Jaguares",
+      "away": "\u00c1guilas Doradas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "C\u00facuta Deportivo|Jaguares": [
+     {
+      "home": "Jaguares",
+      "away": "C\u00facuta Deportivo",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Cali|Jaguares": [
+     {
+      "home": "Jaguares",
+      "away": "Deportivo Cali",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Cali",
+      "away": "Jaguares",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pasto|Jaguares": [
+     {
+      "home": "Jaguares",
+      "away": "Deportivo Pasto",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Deportivo Pereira|Jaguares": [
+     {
+      "home": "Jaguares",
+      "away": "Deportivo Pereira",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Independiente Medell\u00edn|Jaguares": [
+     {
+      "home": "Jaguares",
+      "away": "Independiente Medell\u00edn",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Jaguares",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Internacional de Bogot\u00e1|Jaguares": [
+     {
+      "home": "Jaguares",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Jaguares",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Jaguares|Junior": [
+     {
+      "home": "Jaguares",
+      "away": "Junior",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Junior",
+      "away": "Jaguares",
+      "hg": 3,
+      "ag": 3
+     }
+    ],
+    "Jaguares|Millonarios": [
+     {
+      "home": "Jaguares",
+      "away": "Millonarios",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Jaguares|Santa Fe": [
+     {
+      "home": "Jaguares",
+      "away": "Santa Fe",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Alianza|Junior": [
+     {
+      "home": "Junior",
+      "away": "Alianza",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Alianza",
+      "away": "Junior",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Am\u00e9rica de Cali|Junior": [
+     {
+      "home": "Junior",
+      "away": "Am\u00e9rica de Cali",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Am\u00e9rica de Cali",
+      "away": "Junior",
+      "hg": 4,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Junior": [
+     {
+      "home": "Junior",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Nacional|Junior": [
+     {
+      "home": "Junior",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 0,
+      "ag": 4
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Junior": [
+     {
+      "home": "Junior",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Deportes Tolima|Junior": [
+     {
+      "home": "Junior",
+      "away": "Deportes Tolima",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Deportes Tolima",
+      "away": "Junior",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Deportivo Cali|Junior": [
+     {
+      "home": "Junior",
+      "away": "Deportivo Cali",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportivo Pasto|Junior": [
+     {
+      "home": "Junior",
+      "away": "Deportivo Pasto",
+      "hg": 4,
+      "ag": 3
+     }
+    ],
+    "Fortaleza|Junior": [
+     {
+      "home": "Junior",
+      "away": "Fortaleza",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Fortaleza",
+      "away": "Junior",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Junior|Llaneros": [
+     {
+      "home": "Junior",
+      "away": "Llaneros",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Llaneros|\u00c1guilas Doradas": [
+     {
+      "home": "Llaneros",
+      "away": "\u00c1guilas Doradas",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Llaneros",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Alianza|Llaneros": [
+     {
+      "home": "Llaneros",
+      "away": "Alianza",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Bucaramanga|Llaneros": [
+     {
+      "home": "Llaneros",
+      "away": "Atl\u00e9tico Bucaramanga",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Atl\u00e9tico Bucaramanga",
+      "away": "Llaneros",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "C\u00facuta Deportivo|Llaneros": [
+     {
+      "home": "Llaneros",
+      "away": "C\u00facuta Deportivo",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Llaneros",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Deportivo Pasto|Llaneros": [
+     {
+      "home": "Llaneros",
+      "away": "Deportivo Pasto",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Pasto",
+      "away": "Llaneros",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Independiente Medell\u00edn|Llaneros": [
+     {
+      "home": "Llaneros",
+      "away": "Independiente Medell\u00edn",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Llaneros",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Internacional de Bogot\u00e1|Llaneros": [
+     {
+      "home": "Llaneros",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Internacional de Bogot\u00e1",
+      "away": "Llaneros",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Jaguares|Llaneros": [
+     {
+      "home": "Llaneros",
+      "away": "Jaguares",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Llaneros|Once Caldas": [
+     {
+      "home": "Llaneros",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Millonarios|\u00c1guilas Doradas": [
+     {
+      "home": "Millonarios",
+      "away": "\u00c1guilas Doradas",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Millonarios",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Nacional|Millonarios": [
+     {
+      "home": "Millonarios",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Nacional",
+      "away": "Millonarios",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "C\u00facuta Deportivo|Millonarios": [
+     {
+      "home": "Millonarios",
+      "away": "C\u00facuta Deportivo",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "C\u00facuta Deportivo",
+      "away": "Millonarios",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportes Tolima|Millonarios": [
+     {
+      "home": "Millonarios",
+      "away": "Deportes Tolima",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pereira|Millonarios": [
+     {
+      "home": "Millonarios",
+      "away": "Deportivo Pereira",
+      "hg": 5,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Pereira",
+      "away": "Millonarios",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Fortaleza|Millonarios": [
+     {
+      "home": "Millonarios",
+      "away": "Fortaleza",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Independiente Medell\u00edn|Millonarios": [
+     {
+      "home": "Millonarios",
+      "away": "Independiente Medell\u00edn",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Independiente Medell\u00edn",
+      "away": "Millonarios",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Junior|Millonarios": [
+     {
+      "home": "Millonarios",
+      "away": "Junior",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Junior",
+      "away": "Millonarios",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Llaneros|Millonarios": [
+     {
+      "home": "Millonarios",
+      "away": "Llaneros",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Llaneros",
+      "away": "Millonarios",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Millonarios|Santa Fe": [
+     {
+      "home": "Millonarios",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Santa Fe",
+      "away": "Millonarios",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Nacional|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Boyac\u00e1 Chic\u00f3|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Boyac\u00e1 Chic\u00f3",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Boyac\u00e1 Chic\u00f3",
+      "away": "Once Caldas",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pasto|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Deportivo Pasto",
+      "hg": 4,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Pasto",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Fortaleza|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Fortaleza",
+      "hg": 4,
+      "ag": 2
+     },
+     {
+      "home": "Fortaleza",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Independiente Medell\u00edn|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Independiente Medell\u00edn",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Internacional de Bogot\u00e1|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Jaguares|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Jaguares",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Jaguares",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Junior|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Junior",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Junior",
+      "away": "Once Caldas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Millonarios|Once Caldas": [
+     {
+      "home": "Once Caldas",
+      "away": "Millonarios",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Once Caldas|Santa Fe": [
+     {
+      "home": "Once Caldas",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Santa Fe",
+      "away": "Once Caldas",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Santa Fe|\u00c1guilas Doradas": [
+     {
+      "home": "Santa Fe",
+      "away": "\u00c1guilas Doradas",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "\u00c1guilas Doradas",
+      "away": "Santa Fe",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Alianza|Santa Fe": [
+     {
+      "home": "Santa Fe",
+      "away": "Alianza",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Alianza",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Atl\u00e9tico Nacional|Santa Fe": [
+     {
+      "home": "Santa Fe",
+      "away": "Atl\u00e9tico Nacional",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "C\u00facuta Deportivo|Santa Fe": [
+     {
+      "home": "Santa Fe",
+      "away": "C\u00facuta Deportivo",
+      "hg": 5,
+      "ag": 0
+     }
+    ],
+    "Deportivo Pereira|Santa Fe": [
+     {
+      "home": "Santa Fe",
+      "away": "Deportivo Pereira",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Pereira",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Independiente Medell\u00edn|Santa Fe": [
+     {
+      "home": "Santa Fe",
+      "away": "Independiente Medell\u00edn",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Internacional de Bogot\u00e1|Santa Fe": [
+     {
+      "home": "Santa Fe",
+      "away": "Internacional de Bogot\u00e1",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Junior|Santa Fe": [
+     {
+      "home": "Santa Fe",
+      "away": "Junior",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Junior",
+      "away": "Santa Fe",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Llaneros|Santa Fe": [
+     {
+      "home": "Santa Fe",
+      "away": "Llaneros",
+      "hg": 0,
+      "ag": 1
+     }
+    ]
+   }
+  },
+  "matches": [
+   [
+    "\u00c1guilas Doradas",
+    "Alianza",
+    1,
+    0
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Am\u00e9rica de Cali",
+    0,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "C\u00facuta Deportivo",
+    3,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Deportivo Cali",
+    2,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Deportivo Pasto",
+    1,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Junior",
+    0,
+    3
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Once Caldas",
+    2,
+    2
+   ],
+   [
+    "Alianza",
+    "Am\u00e9rica de Cali",
+    0,
+    3
+   ],
+   [
+    "Alianza",
+    "Boyac\u00e1 Chic\u00f3",
+    1,
+    1
+   ],
+   [
+    "Alianza",
+    "C\u00facuta Deportivo",
+    1,
+    1
+   ],
+   [
+    "Alianza",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "Alianza",
+    "Deportivo Pasto",
+    0,
+    0
+   ],
+   [
+    "Alianza",
+    "Independiente Medell\u00edn",
+    0,
+    1
+   ],
+   [
+    "Alianza",
+    "Jaguares",
+    1,
+    0
+   ],
+   [
+    "Alianza",
+    "Millonarios",
+    2,
+    2
+   ],
+   [
+    "Alianza",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Deportes Tolima",
+    1,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Internacional de Bogot\u00e1",
+    3,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Jaguares",
+    3,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Llaneros",
+    0,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Millonarios",
+    3,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Santa Fe",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Alianza",
+    5,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Boyac\u00e1 Chic\u00f3",
+    5,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Deportes Tolima",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Deportivo Cali",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Deportivo Pereira",
+    3,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Jaguares",
+    2,
+    2
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Santa Fe",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Alianza",
+    3,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Am\u00e9rica de Cali",
+    2,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Boyac\u00e1 Chic\u00f3",
+    4,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "C\u00facuta Deportivo",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Fortaleza",
+    4,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Internacional de Bogot\u00e1",
+    3,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Jaguares",
+    2,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Llaneros",
+    2,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "\u00c1guilas Doradas",
+    0,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Am\u00e9rica de Cali",
+    0,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportes Tolima",
+    1,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Jaguares",
+    5,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Llaneros",
+    3,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Santa Fe",
+    0,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Am\u00e9rica de Cali",
+    2,
+    0
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    2
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Boyac\u00e1 Chic\u00f3",
+    1,
+    0
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Deportes Tolima",
+    3,
+    2
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Deportivo Cali",
+    0,
+    2
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Fortaleza",
+    1,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Independiente Medell\u00edn",
+    1,
+    3
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Junior",
+    1,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Once Caldas",
+    1,
+    2
+   ],
+   [
+    "Deportes Tolima",
+    "\u00c1guilas Doradas",
+    4,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Alianza",
+    2,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "Deportivo Cali",
+    1,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Deportivo Pereira",
+    2,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "Fortaleza",
+    2,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "Jaguares",
+    3,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Once Caldas",
+    2,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Santa Fe",
+    2,
+    2
+   ],
+   [
+    "Deportivo Cali",
+    "Am\u00e9rica de Cali",
+    1,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Deportivo Pasto",
+    3,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Fortaleza",
+    1,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "Independiente Medell\u00edn",
+    3,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "Millonarios",
+    0,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Once Caldas",
+    0,
+    2
+   ],
+   [
+    "Deportivo Cali",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Deportivo Pasto",
+    "Am\u00e9rica de Cali",
+    2,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "C\u00facuta Deportivo",
+    3,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Deportes Tolima",
+    1,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "Independiente Medell\u00edn",
+    1,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "Deportivo Pasto",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "Deportivo Pasto",
+    "Santa Fe",
+    1,
+    2
+   ],
+   [
+    "Deportivo Pereira",
+    "\u00c1guilas Doradas",
+    0,
+    1
+   ],
+   [
+    "Deportivo Pereira",
+    "Alianza",
+    2,
+    3
+   ],
+   [
+    "Deportivo Pereira",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Deportivo Pereira",
+    "C\u00facuta Deportivo",
+    2,
+    2
+   ],
+   [
+    "Deportivo Pereira",
+    "Deportivo Pasto",
+    2,
+    2
+   ],
+   [
+    "Deportivo Pereira",
+    "Fortaleza",
+    0,
+    0
+   ],
+   [
+    "Deportivo Pereira",
+    "Junior",
+    2,
+    3
+   ],
+   [
+    "Deportivo Pereira",
+    "Llaneros",
+    0,
+    2
+   ],
+   [
+    "Deportivo Pereira",
+    "Once Caldas",
+    0,
+    0
+   ],
+   [
+    "Fortaleza",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "Fortaleza",
+    "Alianza",
+    1,
+    0
+   ],
+   [
+    "Fortaleza",
+    "Am\u00e9rica de Cali",
+    1,
+    2
+   ],
+   [
+    "Fortaleza",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Deportivo Pasto",
+    1,
+    2
+   ],
+   [
+    "Fortaleza",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Jaguares",
+    2,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "Fortaleza",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "\u00c1guilas Doradas",
+    1,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Am\u00e9rica de Cali",
+    2,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Atl\u00e9tico Nacional",
+    2,
+    3
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    0
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Deportes Tolima",
+    2,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Deportivo Pereira",
+    1,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Fortaleza",
+    1,
+    0
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Internacional de Bogot\u00e1",
+    1,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Junior",
+    2,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Alianza",
+    2,
+    1
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Boyac\u00e1 Chic\u00f3",
+    4,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "C\u00facuta Deportivo",
+    2,
+    1
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Deportes Tolima",
+    0,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Deportivo Cali",
+    3,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Deportivo Pereira",
+    2,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Junior",
+    0,
+    1
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Millonarios",
+    3,
+    2
+   ],
+   [
+    "Jaguares",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
+    "Jaguares",
+    "C\u00facuta Deportivo",
+    2,
+    0
+   ],
+   [
+    "Jaguares",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "Jaguares",
+    "Deportivo Pasto",
+    2,
+    3
+   ],
+   [
+    "Jaguares",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Jaguares",
+    "Independiente Medell\u00edn",
+    1,
+    2
+   ],
+   [
+    "Jaguares",
+    "Internacional de Bogot\u00e1",
+    2,
+    3
+   ],
+   [
+    "Jaguares",
+    "Junior",
+    0,
+    2
+   ],
+   [
+    "Jaguares",
+    "Millonarios",
+    1,
+    0
+   ],
+   [
+    "Jaguares",
+    "Santa Fe",
+    3,
+    1
+   ],
+   [
+    "Junior",
+    "Alianza",
+    1,
+    1
+   ],
+   [
+    "Junior",
+    "Am\u00e9rica de Cali",
+    2,
+    1
+   ],
+   [
+    "Junior",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    0
+   ],
+   [
+    "Junior",
+    "Atl\u00e9tico Nacional",
+    0,
+    4
+   ],
+   [
+    "Junior",
+    "Boyac\u00e1 Chic\u00f3",
+    3,
+    0
+   ],
+   [
+    "Junior",
+    "Deportes Tolima",
+    0,
+    2
+   ],
+   [
+    "Junior",
+    "Deportivo Cali",
+    1,
+    2
+   ],
+   [
+    "Junior",
+    "Deportivo Pasto",
+    4,
+    3
+   ],
+   [
+    "Junior",
+    "Fortaleza",
+    2,
+    1
+   ],
+   [
+    "Junior",
+    "Llaneros",
+    2,
+    0
+   ],
+   [
+    "Llaneros",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
+    "Llaneros",
+    "Alianza",
+    0,
+    0
+   ],
+   [
+    "Llaneros",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    1
+   ],
+   [
+    "Llaneros",
+    "C\u00facuta Deportivo",
+    2,
+    2
+   ],
+   [
+    "Llaneros",
+    "Deportivo Pasto",
+    0,
+    1
+   ],
+   [
+    "Llaneros",
+    "Independiente Medell\u00edn",
+    2,
+    2
+   ],
+   [
+    "Llaneros",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "Llaneros",
+    "Jaguares",
+    2,
+    0
+   ],
+   [
+    "Llaneros",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Millonarios",
+    "\u00c1guilas Doradas",
+    1,
+    0
+   ],
+   [
+    "Millonarios",
+    "Atl\u00e9tico Nacional",
+    3,
+    0
+   ],
+   [
+    "Millonarios",
+    "C\u00facuta Deportivo",
+    2,
+    0
+   ],
+   [
+    "Millonarios",
+    "Deportes Tolima",
+    2,
+    0
+   ],
+   [
+    "Millonarios",
+    "Deportivo Pereira",
+    5,
+    1
+   ],
+   [
+    "Millonarios",
+    "Fortaleza",
+    2,
+    2
+   ],
+   [
+    "Millonarios",
+    "Independiente Medell\u00edn",
+    0,
+    0
+   ],
+   [
+    "Millonarios",
+    "Junior",
+    1,
+    2
+   ],
+   [
+    "Millonarios",
+    "Llaneros",
+    2,
+    1
+   ],
+   [
+    "Millonarios",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Once Caldas",
+    "Boyac\u00e1 Chic\u00f3",
+    3,
+    0
+   ],
+   [
+    "Once Caldas",
+    "Deportivo Pasto",
+    4,
+    2
+   ],
+   [
+    "Once Caldas",
+    "Fortaleza",
+    4,
+    2
+   ],
+   [
+    "Once Caldas",
+    "Independiente Medell\u00edn",
+    1,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Internacional de Bogot\u00e1",
+    2,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Jaguares",
+    1,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Junior",
+    2,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Millonarios",
+    1,
+    4
+   ],
+   [
+    "Once Caldas",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Santa Fe",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Alianza",
+    1,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "Santa Fe",
+    "C\u00facuta Deportivo",
+    5,
+    0
+   ],
+   [
+    "Santa Fe",
+    "Deportivo Pereira",
+    2,
+    2
+   ],
+   [
+    "Santa Fe",
+    "Independiente Medell\u00edn",
+    2,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Internacional de Bogot\u00e1",
+    3,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Junior",
+    2,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Deportivo Pereira",
+    2,
+    2
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "\u00c1guilas Doradas",
+    "Santa Fe",
+    2,
+    1
+   ],
+   [
+    "Alianza",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    3
+   ],
+   [
+    "Alianza",
+    "Atl\u00e9tico Nacional",
+    1,
+    5
+   ],
+   [
+    "Alianza",
+    "Deportes Tolima",
+    1,
+    2
+   ],
+   [
+    "Alianza",
+    "Deportivo Pereira",
+    0,
+    0
+   ],
+   [
+    "Alianza",
+    "Fortaleza",
+    1,
+    1
+   ],
+   [
+    "Alianza",
+    "Junior",
+    1,
+    0
+   ],
+   [
+    "Alianza",
+    "Santa Fe",
+    1,
+    4
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "\u00c1guilas Doradas",
+    1,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Alianza",
+    3,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Boyac\u00e1 Chic\u00f3",
+    7,
+    0
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Deportivo Pasto",
+    0,
+    1
+   ],
+   [
+    "Am\u00e9rica de Cali",
+    "Junior",
+    4,
+    2
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "C\u00facuta Deportivo",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Independiente Medell\u00edn",
+    2,
+    2
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Internacional de Bogot\u00e1",
+    2,
+    0
+   ],
+   [
+    "Atl\u00e9tico Bucaramanga",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Deportivo Cali",
+    2,
+    1
+   ],
+   [
+    "Atl\u00e9tico Nacional",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Alianza",
+    1,
+    2
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportivo Pasto",
+    3,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Fortaleza",
+    0,
+    0
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Independiente Medell\u00edn",
+    2,
+    1
+   ],
+   [
+    "Boyac\u00e1 Chic\u00f3",
+    "Once Caldas",
+    2,
+    0
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Alianza",
+    1,
+    0
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Deportivo Pasto",
+    2,
+    2
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Llaneros",
+    2,
+    1
+   ],
+   [
+    "C\u00facuta Deportivo",
+    "Millonarios",
+    1,
+    2
+   ],
+   [
+    "Deportes Tolima",
+    "Am\u00e9rica de Cali",
+    1,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    0
+   ],
+   [
+    "Deportes Tolima",
+    "C\u00facuta Deportivo",
+    2,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Independiente Medell\u00edn",
+    2,
+    3
+   ],
+   [
+    "Deportes Tolima",
+    "Internacional de Bogot\u00e1",
+    2,
+    1
+   ],
+   [
+    "Deportes Tolima",
+    "Junior",
+    2,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    1
+   ],
+   [
+    "Deportivo Cali",
+    "C\u00facuta Deportivo",
+    3,
+    0
+   ],
+   [
+    "Deportivo Cali",
+    "Internacional de Bogot\u00e1",
+    2,
+    2
+   ],
+   [
+    "Deportivo Cali",
+    "Jaguares",
+    2,
+    0
+   ],
+   [
+    "Deportivo Pasto",
+    "\u00c1guilas Doradas",
+    1,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Deportivo Cali",
+    0,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Deportivo Pereira",
+    1,
+    2
+   ],
+   [
+    "Deportivo Pasto",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "Deportivo Pasto",
+    "Once Caldas",
+    1,
+    0
+   ],
+   [
+    "Deportivo Pereira",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    3
+   ],
+   [
+    "Deportivo Pereira",
+    "Independiente Medell\u00edn",
+    0,
+    3
+   ],
+   [
+    "Deportivo Pereira",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
+   ],
+   [
+    "Deportivo Pereira",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "Deportivo Pereira",
+    "Santa Fe",
+    1,
+    2
+   ],
+   [
+    "Fortaleza",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "Fortaleza",
+    "C\u00facuta Deportivo",
+    2,
+    0
+   ],
+   [
+    "Fortaleza",
+    "Deportes Tolima",
+    2,
+    2
+   ],
+   [
+    "Fortaleza",
+    "Deportivo Pereira",
+    0,
+    0
+   ],
+   [
+    "Fortaleza",
+    "Junior",
+    1,
+    4
+   ],
+   [
+    "Fortaleza",
+    "Once Caldas",
+    1,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "C\u00facuta Deportivo",
+    0,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Deportivo Pasto",
+    3,
+    2
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Jaguares",
+    2,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Llaneros",
+    2,
+    1
+   ],
+   [
+    "Independiente Medell\u00edn",
+    "Millonarios",
+    2,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "\u00c1guilas Doradas",
+    2,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Am\u00e9rica de Cali",
+    0,
+    2
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Atl\u00e9tico Nacional",
+    2,
+    3
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Deportivo Pasto",
+    1,
+    1
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Jaguares",
+    1,
+    0
+   ],
+   [
+    "Internacional de Bogot\u00e1",
+    "Llaneros",
+    3,
+    2
+   ],
+   [
+    "Jaguares",
+    "Alianza",
+    1,
+    2
+   ],
+   [
+    "Jaguares",
+    "Am\u00e9rica de Cali",
+    2,
+    2
+   ],
+   [
+    "Jaguares",
+    "Atl\u00e9tico Nacional",
+    0,
+    3
+   ],
+   [
+    "Jaguares",
+    "Boyac\u00e1 Chic\u00f3",
+    1,
+    0
+   ],
+   [
+    "Jaguares",
+    "Fortaleza",
+    2,
+    2
+   ],
+   [
+    "Jaguares",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Junior",
+    "Independiente Medell\u00edn",
+    2,
+    0
+   ],
+   [
+    "Junior",
+    "Jaguares",
+    3,
+    3
+   ],
+   [
+    "Junior",
+    "Millonarios",
+    0,
+    1
+   ],
+   [
+    "Junior",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "Junior",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "Llaneros",
+    "Atl\u00e9tico Nacional",
+    2,
+    0
+   ],
+   [
+    "Llaneros",
+    "Deportes Tolima",
+    1,
+    2
+   ],
+   [
+    "Llaneros",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "Llaneros",
+    "Fortaleza",
+    3,
+    1
+   ],
+   [
+    "Llaneros",
+    "Millonarios",
+    0,
+    2
+   ],
+   [
+    "Millonarios",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    1
+   ],
+   [
+    "Millonarios",
+    "Boyac\u00e1 Chic\u00f3",
+    3,
+    0
+   ],
+   [
+    "Millonarios",
+    "Deportivo Cali",
+    1,
+    1
+   ],
+   [
+    "Millonarios",
+    "Deportivo Pasto",
+    2,
+    0
+   ],
+   [
+    "Millonarios",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
+   ],
+   [
+    "Once Caldas",
+    "Am\u00e9rica de Cali",
+    0,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    3
+   ],
+   [
+    "Once Caldas",
+    "C\u00facuta Deportivo",
+    5,
+    1
+   ],
+   [
+    "Once Caldas",
+    "Deportes Tolima",
+    1,
+    0
+   ],
+   [
+    "Once Caldas",
+    "Deportivo Cali",
+    1,
+    2
+   ],
+   [
+    "Santa Fe",
+    "Am\u00e9rica de Cali",
+    0,
+    0
+   ],
+   [
+    "Santa Fe",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    0
+   ],
+   [
+    "Santa Fe",
+    "Deportes Tolima",
+    1,
+    0
+   ],
+   [
+    "Santa Fe",
+    "Deportivo Cali",
+    0,
+    1
+   ],
+   [
+    "Santa Fe",
+    "Fortaleza",
+    2,
+    2
+   ],
+   [
+    "Santa Fe",
+    "Millonarios",
+    3,
+    2
+   ],
+   [
+    "Santa Fe",
+    "Once Caldas",
+    2,
+    2
+   ]
+  ],
+  "refused_matrices": []
+ },
+ "Peru Liga 1": {
+  "slug": "2026_Liga_1_(Peru)",
+  "rates": {
+   "result": {
+    "n": 242,
+    "home": 0.53306,
+    "draw": 0.23554,
+    "away": 0.2314,
+    "mean_goals": 2.785
+   },
+   "under": {
+    "1.5": 0.2562,
+    "2.5": 0.45868,
+    "3.5": 0.66942,
+    "4.5": 0.83884,
+    "5.5": 0.95455
+   },
+   "src": "wikipedia-matrix"
+  },
+  "splits": {
+   "home": {
+    "ADT": {
+     "p": 14,
+     "w": 5,
+     "d": 3,
+     "l": 6,
+     "gf": 19,
+     "ga": 17,
+     "ppg": 1.286
+    },
+    "Alianza Atl\u00e9tico": {
+     "p": 13,
+     "w": 8,
+     "d": 4,
+     "l": 1,
+     "gf": 23,
+     "ga": 10,
+     "ppg": 2.154
+    },
+    "Alianza Lima": {
+     "p": 14,
+     "w": 11,
+     "d": 1,
+     "l": 2,
+     "gf": 31,
+     "ga": 9,
+     "ppg": 2.429
+    },
+    "Atl\u00e9tico Grau": {
+     "p": 13,
+     "w": 7,
+     "d": 2,
+     "l": 4,
+     "gf": 16,
+     "ga": 9,
+     "ppg": 1.769
+    },
+    "Cajamarca": {
+     "p": 14,
+     "w": 4,
+     "d": 4,
+     "l": 6,
+     "gf": 25,
+     "ga": 29,
+     "ppg": 1.143
+    },
+    "Cienciano": {
+     "p": 13,
+     "w": 8,
+     "d": 2,
+     "l": 3,
+     "gf": 26,
+     "ga": 14,
+     "ppg": 2.0
+    },
+    "Comerciantes Unidos": {
+     "p": 13,
+     "w": 5,
+     "d": 5,
+     "l": 3,
+     "gf": 16,
+     "ga": 12,
+     "ppg": 1.538
+    },
+    "Cusco": {
+     "p": 13,
+     "w": 9,
+     "d": 2,
+     "l": 2,
+     "gf": 23,
+     "ga": 9,
+     "ppg": 2.231
+    },
+    "Deportivo Garcilaso": {
+     "p": 14,
+     "w": 11,
+     "d": 2,
+     "l": 1,
+     "gf": 33,
+     "ga": 13,
+     "ppg": 2.5
+    },
+    "Deportivo Moquegua": {
+     "p": 13,
+     "w": 4,
+     "d": 5,
+     "l": 4,
+     "gf": 18,
+     "ga": 18,
+     "ppg": 1.308
+    },
+    "Juan Pablo II College": {
+     "p": 14,
+     "w": 5,
+     "d": 5,
+     "l": 4,
+     "gf": 25,
+     "ga": 21,
+     "ppg": 1.429
+    },
+    "Los Chankas": {
+     "p": 14,
+     "w": 9,
+     "d": 1,
+     "l": 4,
+     "gf": 24,
+     "ga": 19,
+     "ppg": 2.0
+    },
+    "Melgar": {
+     "p": 14,
+     "w": 8,
+     "d": 3,
+     "l": 3,
+     "gf": 28,
+     "ga": 15,
+     "ppg": 1.929
+    },
+    "Sport Boys": {
+     "p": 14,
+     "w": 8,
+     "d": 5,
+     "l": 1,
+     "gf": 19,
+     "ga": 7,
+     "ppg": 2.071
+    },
+    "Sport Huancayo": {
+     "p": 13,
+     "w": 7,
+     "d": 3,
+     "l": 3,
+     "gf": 20,
+     "ga": 15,
+     "ppg": 1.846
+    },
+    "Sporting Cristal": {
+     "p": 13,
+     "w": 9,
+     "d": 2,
+     "l": 2,
+     "gf": 32,
+     "ga": 14,
+     "ppg": 2.231
+    },
+    "Universitario": {
+     "p": 13,
+     "w": 9,
+     "d": 2,
+     "l": 2,
+     "gf": 23,
+     "ga": 10,
+     "ppg": 2.231
+    },
+    "UTC": {
+     "p": 13,
+     "w": 2,
+     "d": 6,
+     "l": 5,
+     "gf": 14,
+     "ga": 18,
+     "ppg": 0.923
+    }
+   },
+   "away": {
+    "Alianza Lima": {
+     "p": 13,
+     "w": 5,
+     "d": 7,
+     "l": 1,
+     "gf": 13,
+     "ga": 9,
+     "ppg": 1.692
+    },
+    "Atl\u00e9tico Grau": {
+     "p": 14,
+     "w": 2,
+     "d": 3,
+     "l": 9,
+     "gf": 10,
+     "ga": 22,
+     "ppg": 0.643
+    },
+    "Comerciantes Unidos": {
+     "p": 14,
+     "w": 2,
+     "d": 4,
+     "l": 8,
+     "gf": 19,
+     "ga": 26,
+     "ppg": 0.714
+    },
+    "Cusco": {
+     "p": 14,
+     "w": 4,
+     "d": 1,
+     "l": 9,
+     "gf": 16,
+     "ga": 30,
+     "ppg": 0.929
+    },
+    "Juan Pablo II College": {
+     "p": 13,
+     "w": 4,
+     "d": 2,
+     "l": 7,
+     "gf": 17,
+     "ga": 31,
+     "ppg": 1.077
+    },
+    "Los Chankas": {
+     "p": 12,
+     "w": 3,
+     "d": 4,
+     "l": 5,
+     "gf": 11,
+     "ga": 25,
+     "ppg": 1.083
+    },
+    "Melgar": {
+     "p": 13,
+     "w": 5,
+     "d": 4,
+     "l": 4,
+     "gf": 17,
+     "ga": 14,
+     "ppg": 1.462
+    },
+    "Sport Boys": {
+     "p": 13,
+     "w": 2,
+     "d": 3,
+     "l": 8,
+     "gf": 10,
+     "ga": 19,
+     "ppg": 0.692
+    },
+    "UTC": {
+     "p": 14,
+     "w": 2,
+     "d": 2,
+     "l": 10,
+     "gf": 18,
+     "ga": 32,
+     "ppg": 0.571
+    },
+    "ADT": {
+     "p": 13,
+     "w": 1,
+     "d": 4,
+     "l": 8,
+     "gf": 10,
+     "ga": 25,
+     "ppg": 0.538
+    },
+    "Cajamarca": {
+     "p": 13,
+     "w": 4,
+     "d": 2,
+     "l": 7,
+     "gf": 17,
+     "ga": 22,
+     "ppg": 1.077
+    },
+    "Deportivo Moquegua": {
+     "p": 14,
+     "w": 2,
+     "d": 2,
+     "l": 10,
+     "gf": 6,
+     "ga": 23,
+     "ppg": 0.571
+    },
+    "Sport Huancayo": {
+     "p": 14,
+     "w": 3,
+     "d": 2,
+     "l": 9,
+     "gf": 17,
+     "ga": 29,
+     "ppg": 0.786
+    },
+    "Sporting Cristal": {
+     "p": 14,
+     "w": 2,
+     "d": 3,
+     "l": 9,
+     "gf": 16,
+     "ga": 26,
+     "ppg": 0.643
+    },
+    "Cienciano": {
+     "p": 13,
+     "w": 4,
+     "d": 2,
+     "l": 7,
+     "gf": 19,
+     "ga": 25,
+     "ppg": 1.077
+    },
+    "Deportivo Garcilaso": {
+     "p": 13,
+     "w": 3,
+     "d": 4,
+     "l": 6,
+     "gf": 6,
+     "ga": 11,
+     "ppg": 1.0
+    },
+    "Alianza Atl\u00e9tico": {
+     "p": 14,
+     "w": 3,
+     "d": 3,
+     "l": 8,
+     "gf": 17,
+     "ga": 25,
+     "ppg": 0.857
+    },
+    "Universitario": {
+     "p": 14,
+     "w": 5,
+     "d": 5,
+     "l": 4,
+     "gf": 20,
+     "ga": 21,
+     "ppg": 1.429
+    }
+   },
+   "h2h": {
+    "ADT|Alianza Lima": [
+     {
+      "home": "ADT",
+      "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "ADT|Atl\u00e9tico Grau": [
+     {
+      "home": "ADT",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "ADT|Comerciantes Unidos": [
+     {
+      "home": "ADT",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "ADT|Cusco": [
+     {
+      "home": "ADT",
+      "away": "Cusco",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "ADT|Juan Pablo II College": [
+     {
+      "home": "ADT",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "Juan Pablo II College",
+      "away": "ADT",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "ADT|Los Chankas": [
+     {
+      "home": "ADT",
+      "away": "Los Chankas",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "ADT|Melgar": [
+     {
+      "home": "ADT",
+      "away": "Melgar",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Melgar",
+      "away": "ADT",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "ADT|Sport Boys": [
+     {
+      "home": "ADT",
+      "away": "Sport Boys",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Sport Boys",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "ADT|UTC": [
+     {
+      "home": "ADT",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "UTC",
+      "away": "ADT",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "ADT|Alianza Atl\u00e9tico": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "ADT",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "ADT",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Alianza Lima": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Atl\u00e9tico Grau": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Cajamarca": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Cajamarca",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Cusco": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Cusco",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cusco",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Deportivo Moquegua": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Deportivo Moquegua",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Alianza Atl\u00e9tico|Sport Boys": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Sport Boys",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Sport Huancayo": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Sport Huancayo",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|Comerciantes Unidos": [
+     {
+      "home": "Alianza Lima",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Alianza Lima",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Alianza Lima|Cusco": [
+     {
+      "home": "Alianza Lima",
+      "away": "Cusco",
+      "hg": 8,
+      "ag": 0
+     }
+    ],
+    "Alianza Lima|Deportivo Moquegua": [
+     {
+      "home": "Alianza Lima",
+      "away": "Deportivo Moquegua",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|Juan Pablo II College": [
+     {
+      "home": "Alianza Lima",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Juan Pablo II College",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|Los Chankas": [
+     {
+      "home": "Alianza Lima",
+      "away": "Los Chankas",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Alianza Lima|Melgar": [
+     {
+      "home": "Alianza Lima",
+      "away": "Melgar",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Melgar",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|Sport Boys": [
+     {
+      "home": "Alianza Lima",
+      "away": "Sport Boys",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Sport Boys",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|Sporting Cristal": [
+     {
+      "home": "Alianza Lima",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|Atl\u00e9tico Grau": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Grau|Cajamarca": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Cajamarca",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cajamarca",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Atl\u00e9tico Grau|Cienciano": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Cienciano",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Grau|Deportivo Garcilaso": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 4,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Grau|Deportivo Moquegua": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Deportivo Moquegua",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|Juan Pablo II College": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Juan Pablo II College",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Juan Pablo II College",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|Sport Huancayo": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Sport Huancayo",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|Sporting Cristal": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Sporting Cristal",
+      "hg": 4,
+      "ag": 1
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "ADT|Cajamarca": [
+     {
+      "home": "Cajamarca",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Alianza Lima|Cajamarca": [
+     {
+      "home": "Cajamarca",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cajamarca|Comerciantes Unidos": [
+     {
+      "home": "Cajamarca",
+      "away": "Comerciantes Unidos",
+      "hg": 3,
+      "ag": 4
+     },
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Cajamarca",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Cajamarca|Deportivo Garcilaso": [
+     {
+      "home": "Cajamarca",
+      "away": "Deportivo Garcilaso",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Cajamarca",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cajamarca|Los Chankas": [
+     {
+      "home": "Cajamarca",
+      "away": "Los Chankas",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Los Chankas",
+      "away": "Cajamarca",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Cajamarca|Melgar": [
+     {
+      "home": "Cajamarca",
+      "away": "Melgar",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Melgar",
+      "away": "Cajamarca",
+      "hg": 2,
+      "ag": 4
+     }
+    ],
+    "Cajamarca|Sport Boys": [
+     {
+      "home": "Cajamarca",
+      "away": "Sport Boys",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Cajamarca|Sporting Cristal": [
+     {
+      "home": "Cajamarca",
+      "away": "Sporting Cristal",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "ADT|Cienciano": [
+     {
+      "home": "Cienciano",
+      "away": "ADT",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "ADT",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Cienciano": [
+     {
+      "home": "Cienciano",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Cienciano",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Alianza Lima|Cienciano": [
+     {
+      "home": "Cienciano",
+      "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Cajamarca|Cienciano": [
+     {
+      "home": "Cienciano",
+      "away": "Cajamarca",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Cajamarca",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 5
+     }
+    ],
+    "Cienciano|Comerciantes Unidos": [
+     {
+      "home": "Cienciano",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cienciano|Deportivo Moquegua": [
+     {
+      "home": "Cienciano",
+      "away": "Deportivo Moquegua",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Juan Pablo II College": [
+     {
+      "home": "Cienciano",
+      "away": "Juan Pablo II College",
+      "hg": 6,
+      "ag": 1
+     },
+     {
+      "home": "Juan Pablo II College",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Cienciano|Sport Boys": [
+     {
+      "home": "Cienciano",
+      "away": "Sport Boys",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Sport Boys",
+      "away": "Cienciano",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Sporting Cristal": [
+     {
+      "home": "Cienciano",
+      "away": "Sporting Cristal",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Alianza Atl\u00e9tico|Comerciantes Unidos": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Grau|Comerciantes Unidos": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Comerciantes Unidos|Deportivo Garcilaso": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Comerciantes Unidos|Deportivo Moquegua": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Deportivo Moquegua",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|Los Chankas": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Los Chankas",
+      "away": "Comerciantes Unidos",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|Melgar": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Melgar",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Comerciantes Unidos|Sporting Cristal": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Comerciantes Unidos|Universitario": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Universitario",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Universitario",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|UTC": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "UTC",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "UTC",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Atl\u00e9tico Grau|Cusco": [
+     {
+      "home": "Cusco",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cajamarca|Cusco": [
+     {
+      "home": "Cusco",
+      "away": "Cajamarca",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cajamarca",
+      "away": "Cusco",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Cusco": [
+     {
+      "home": "Cusco",
+      "away": "Cienciano",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Cienciano",
+      "away": "Cusco",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|Cusco": [
+     {
+      "home": "Cusco",
+      "away": "Comerciantes Unidos",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Cusco",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Cusco|Deportivo Garcilaso": [
+     {
+      "home": "Cusco",
+      "away": "Deportivo Garcilaso",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Cusco",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Cusco|Los Chankas": [
+     {
+      "home": "Cusco",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cusco|Sport Huancayo": [
+     {
+      "home": "Cusco",
+      "away": "Sport Huancayo",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cusco|Universitario": [
+     {
+      "home": "Cusco",
+      "away": "Universitario",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Universitario",
+      "away": "Cusco",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "ADT|Deportivo Garcilaso": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "ADT",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "ADT",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Deportivo Garcilaso": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|Deportivo Garcilaso": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Deportivo Garcilaso": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "Cienciano",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|Juan Pablo II College": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Juan Pablo II College",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Deportivo Garcilaso|Melgar": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Melgar",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|Sport Boys": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Sport Boys",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Sport Boys",
+      "away": "Deportivo Garcilaso",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|Sporting Cristal": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Deportivo Garcilaso",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|UTC": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "ADT|Deportivo Moquegua": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Cajamarca|Deportivo Moquegua": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Cajamarca",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cusco|Deportivo Moquegua": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Cusco",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Cusco",
+      "away": "Deportivo Moquegua",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|Deportivo Moquegua": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Deportivo Garcilaso",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Deportivo Moquegua",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Moquegua|Juan Pablo II College": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Juan Pablo II College",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Juan Pablo II College",
+      "away": "Deportivo Moquegua",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "Deportivo Moquegua|Sport Huancayo": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Sport Huancayo",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "Deportivo Moquegua",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Deportivo Moquegua|Universitario": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Universitario",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Deportivo Moquegua|UTC": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "UTC",
+      "away": "Deportivo Moquegua",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Alianza Atl\u00e9tico|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Cajamarca|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Cajamarca",
+      "hg": 3,
+      "ag": 3
+     },
+     {
+      "home": "Cajamarca",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Cusco|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Cusco",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Cusco",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Juan Pablo II College|Los Chankas": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Los Chankas",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "Los Chankas",
+      "away": "Juan Pablo II College",
+      "hg": 3,
+      "ag": 4
+     }
+    ],
+    "Juan Pablo II College|Melgar": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Melgar",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Juan Pablo II College|Sporting Cristal": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Sporting Cristal",
+      "hg": 0,
+      "ag": 2
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Juan Pablo II College|Universitario": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Universitario",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Juan Pablo II College|UTC": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "UTC",
+      "away": "Juan Pablo II College",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Alianza Atl\u00e9tico|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Los Chankas",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Grau|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Cienciano|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Cienciano",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Deportivo Moquegua|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Deportivo Moquegua",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Los Chankas|Sport Huancayo": [
+     {
+      "home": "Los Chankas",
+      "away": "Sport Huancayo",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Los Chankas|Sporting Cristal": [
+     {
+      "home": "Los Chankas",
+      "away": "Sporting Cristal",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Los Chankas",
+      "hg": 5,
+      "ag": 0
+     }
+    ],
+    "Los Chankas|Universitario": [
+     {
+      "home": "Los Chankas",
+      "away": "Universitario",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Universitario",
+      "away": "Los Chankas",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Los Chankas|UTC": [
+     {
+      "home": "Los Chankas",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Alianza Atl\u00e9tico|Melgar": [
+     {
+      "home": "Melgar",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Grau|Melgar": [
+     {
+      "home": "Melgar",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Melgar",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cienciano|Melgar": [
+     {
+      "home": "Melgar",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Cienciano",
+      "away": "Melgar",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Cusco|Melgar": [
+     {
+      "home": "Melgar",
+      "away": "Cusco",
+      "hg": 1,
+      "ag": 3
+     },
+     {
+      "home": "Cusco",
+      "away": "Melgar",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Deportivo Moquegua|Melgar": [
+     {
+      "home": "Melgar",
+      "away": "Deportivo Moquegua",
+      "hg": 4,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Melgar",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Los Chankas|Melgar": [
+     {
+      "home": "Melgar",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Los Chankas",
+      "away": "Melgar",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Melgar|Sport Huancayo": [
+     {
+      "home": "Melgar",
+      "away": "Sport Huancayo",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Melgar|Universitario": [
+     {
+      "home": "Melgar",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Melgar|UTC": [
+     {
+      "home": "Melgar",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Sport Boys",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Comerciantes Unidos|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cusco|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Cusco",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Moquegua|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Deportivo Moquegua",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Sport Boys",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Juan Pablo II College|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Juan Pablo II College",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Los Chankas|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Los Chankas",
+      "away": "Sport Boys",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Melgar|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Melgar",
+      "hg": 1,
+      "ag": 3
+     },
+     {
+      "home": "Melgar",
+      "away": "Sport Boys",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Sport Boys|Sport Huancayo": [
+     {
+      "home": "Sport Boys",
+      "away": "Sport Huancayo",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "Sport Boys",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Sport Boys|Universitario": [
+     {
+      "home": "Sport Boys",
+      "away": "Universitario",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "ADT|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "ADT",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "ADT",
+      "away": "Sport Huancayo",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Alianza Lima|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "Sport Huancayo",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cajamarca|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Cajamarca",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Cajamarca",
+      "away": "Sport Huancayo",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Cienciano|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Sport Huancayo",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Deportivo Garcilaso|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Deportivo Garcilaso",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Juan Pablo II College|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Sport Huancayo|Sporting Cristal": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Sporting Cristal",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Sport Huancayo",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "ADT|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Sporting Cristal",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Cusco|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Cusco",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportivo Moquegua|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Deportivo Moquegua",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Melgar|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Melgar",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Melgar",
+      "away": "Sporting Cristal",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Sport Boys|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Sport Boys",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Sport Boys",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Sporting Cristal|Universitario": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Universitario",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Sporting Cristal|UTC": [
+     {
+      "home": "Sporting Cristal",
+      "away": "UTC",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "ADT|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "ADT",
+      "away": "Universitario",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Alianza Atl\u00e9tico|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Alianza Lima|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "Universitario",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Grau|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Cajamarca|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Cajamarca",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cajamarca",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Cienciano|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Cienciano",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Deportivo Garcilaso",
+      "hg": 4,
+      "ag": 1
+     },
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Universitario",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "Sport Huancayo|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Sport Huancayo",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "UTC|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "UTC",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 4
+     }
+    ],
+    "Alianza Atl\u00e9tico|UTC": [
+     {
+      "home": "UTC",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "UTC",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Alianza Lima|UTC": [
+     {
+      "home": "UTC",
+      "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "UTC",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|UTC": [
+     {
+      "home": "UTC",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "UTC",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Cajamarca|UTC": [
+     {
+      "home": "UTC",
+      "away": "Cajamarca",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Cienciano|UTC": [
+     {
+      "home": "UTC",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Cusco|UTC": [
+     {
+      "home": "UTC",
+      "away": "Cusco",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cusco",
+      "away": "UTC",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Sport Boys|UTC": [
+     {
+      "home": "UTC",
+      "away": "Sport Boys",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Sport Huancayo|UTC": [
+     {
+      "home": "UTC",
+      "away": "Sport Huancayo",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "UTC",
+      "hg": 3,
+      "ag": 2
+     }
+    ]
+   }
+  },
+  "matches": [
+   [
+    "ADT",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "ADT",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "ADT",
+    "Comerciantes Unidos",
+    2,
+    0
+   ],
+   [
+    "ADT",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "ADT",
+    "Juan Pablo II College",
+    2,
+    3
+   ],
+   [
+    "ADT",
+    "Los Chankas",
+    4,
+    0
+   ],
+   [
+    "ADT",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "ADT",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "ADT",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "ADT",
+    0,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Alianza Lima",
+    0,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Atl\u00e9tico Grau",
+    2,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cajamarca",
+    1,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Deportivo Moquegua",
+    3,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sport Boys",
+    0,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Comerciantes Unidos",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Cusco",
+    8,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Melgar",
+    3,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Juan Pablo II College",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sport Huancayo",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sporting Cristal",
+    4,
+    1
+   ],
+   [
+    "Cajamarca",
+    "ADT",
+    2,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Comerciantes Unidos",
+    3,
+    4
+   ],
+   [
+    "Cajamarca",
+    "Deportivo Garcilaso",
+    1,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Los Chankas",
+    0,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Melgar",
+    3,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "Cienciano",
+    "ADT",
+    3,
+    2
+   ],
+   [
+    "Cienciano",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "Cienciano",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "Cienciano",
+    "Cajamarca",
+    3,
+    0
+   ],
+   [
+    "Cienciano",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Cienciano",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "Cienciano",
+    "Juan Pablo II College",
+    6,
+    1
+   ],
+   [
+    "Cienciano",
+    "Sport Boys",
+    3,
+    1
+   ],
+   [
+    "Cienciano",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "Comerciantes Unidos",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "UTC",
+    1,
+    2
+   ],
+   [
+    "Cusco",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "Cusco",
+    "Comerciantes Unidos",
+    3,
+    1
+   ],
+   [
+    "Cusco",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Cusco",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Cusco",
+    "Universitario",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "ADT",
+    1,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Alianza Atl\u00e9tico",
+    2,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cienciano",
+    2,
+    3
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Juan Pablo II College",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Melgar",
+    1,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "ADT",
+    2,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Cajamarca",
+    2,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Juan Pablo II College",
+    3,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "UTC",
+    2,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Alianza Atl\u00e9tico",
+    0,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Cajamarca",
+    3,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Los Chankas",
+    2,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Sporting Cristal",
+    0,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Universitario",
+    1,
+    4
+   ],
+   [
+    "Juan Pablo II College",
+    "UTC",
+    2,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Sport Huancayo",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Universitario",
+    3,
+    1
+   ],
+   [
+    "Los Chankas",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "Melgar",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Melgar",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "Melgar",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "Melgar",
+    "Cusco",
+    1,
+    3
+   ],
+   [
+    "Melgar",
+    "Deportivo Moquegua",
+    4,
+    0
+   ],
+   [
+    "Melgar",
+    "Los Chankas",
+    1,
+    2
+   ],
+   [
+    "Melgar",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Melgar",
+    "Universitario",
+    2,
+    1
+   ],
+   [
+    "Melgar",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Juan Pablo II College",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Melgar",
+    1,
+    3
+   ],
+   [
+    "Sport Boys",
+    "Sport Huancayo",
+    3,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "ADT",
+    0,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Alianza Lima",
+    1,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Cajamarca",
+    2,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Cienciano",
+    2,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Comerciantes Unidos",
+    1,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Deportivo Garcilaso",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Juan Pablo II College",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "ADT",
+    2,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Cusco",
+    2,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Deportivo Moquegua",
+    1,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Melgar",
+    1,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Sport Boys",
+    3,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Universitario",
+    2,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Universitario",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Universitario",
+    "Alianza Atl\u00e9tico",
+    1,
+    2
+   ],
+   [
+    "Universitario",
+    "Alianza Lima",
+    1,
+    0
+   ],
+   [
+    "Universitario",
+    "Atl\u00e9tico Grau",
+    0,
+    1
+   ],
+   [
+    "Universitario",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Universitario",
+    "Cienciano",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "Deportivo Garcilaso",
+    4,
+    1
+   ],
+   [
+    "Universitario",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "UTC",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "UTC",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "UTC",
+    "Cajamarca",
+    1,
+    2
+   ],
+   [
+    "UTC",
+    "Cienciano",
+    2,
+    2
+   ],
+   [
+    "UTC",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "UTC",
+    "Sport Boys",
+    0,
+    0
+   ],
+   [
+    "UTC",
+    "Sport Huancayo",
+    2,
+    2
+   ],
+   [
+    "ADT",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "ADT",
+    "Cienciano",
+    2,
+    1
+   ],
+   [
+    "ADT",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "ADT",
+    "Sport Huancayo",
+    1,
+    3
+   ],
+   [
+    "ADT",
+    "Universitario",
+    1,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Comerciantes Unidos",
+    2,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Los Chankas",
+    3,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Universitario",
+    1,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "UTC",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Melgar",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sport Boys",
+    0,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "UTC",
+    3,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Atl\u00e9tico Grau",
+    1,
+    3
+   ],
+   [
+    "Cajamarca",
+    "Cienciano",
+    2,
+    5
+   ],
+   [
+    "Cajamarca",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Juan Pablo II College",
+    2,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Sport Huancayo",
+    0,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Universitario",
+    2,
+    3
+   ],
+   [
+    "Cienciano",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "Cienciano",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Cienciano",
+    "Melgar",
+    1,
+    3
+   ],
+   [
+    "Cienciano",
+    "Universitario",
+    2,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Alianza Lima",
+    2,
+    2
+   ],
+   [
+    "Comerciantes Unidos",
+    "Cajamarca",
+    2,
+    3
+   ],
+   [
+    "Comerciantes Unidos",
+    "Cusco",
+    3,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Sport Huancayo",
+    0,
+    1
+   ],
+   [
+    "Cusco",
+    "Alianza Atl\u00e9tico",
+    4,
+    1
+   ],
+   [
+    "Cusco",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "Cusco",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Cusco",
+    "Melgar",
+    0,
+    1
+   ],
+   [
+    "Cusco",
+    "UTC",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Atl\u00e9tico Grau",
+    4,
+    2
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cajamarca",
+    2,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cusco",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Universitario",
+    4,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Alianza Atl\u00e9tico",
+    1,
+    4
+   ],
+   [
+    "Deportivo Moquegua",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Melgar",
+    0,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sporting Cristal",
+    1,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "ADT",
+    5,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "Deportivo Moquegua",
+    4,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Cajamarca",
+    1,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Comerciantes Unidos",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Juan Pablo II College",
+    3,
+    4
+   ],
+   [
+    "Los Chankas",
+    "Melgar",
+    0,
+    3
+   ],
+   [
+    "Los Chankas",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "Melgar",
+    "ADT",
+    3,
+    0
+   ],
+   [
+    "Melgar",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Melgar",
+    "Cajamarca",
+    2,
+    4
+   ],
+   [
+    "Melgar",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "Melgar",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "Sport Boys",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Cienciano",
+    5,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Deportivo Moquegua",
+    0,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Sport Boys",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Los Chankas",
+    5,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Universitario",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Universitario",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "Universitario",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "ADT",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "Comerciantes Unidos",
+    1,
+    3
+   ],
+   [
+    "UTC",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "UTC",
+    "Juan Pablo II College",
+    1,
+    2
+   ],
+   [
+    "UTC",
+    "Universitario",
+    2,
+    4
+   ]
+  ],
+  "refused_matrices": []
+ }
+}

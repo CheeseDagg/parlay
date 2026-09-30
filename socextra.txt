@@ -1,0 +1,14 @@
+socextra -- leagues football-data does not publish
+  OK      Colombia Primera A: 297 matches  home 0.451 draw 0.310 away 0.239 goals 2.569
+  OK      Peru Liga 1: 242 matches  home 0.533 draw 0.236 away 0.231 goals 2.785
+  Chile Primera: 2026_Campeonato_Nacional_(Chile) -> HTTPError
+  Chile Primera: 2026_Chilean_Primera_Divisi%C3%B3n_season -> HTTPError
+  Chile Primera: 2026_Primera_Divisi%C3%B3n_de_Chile -> HTTPError
+  ABSENT  Chile Primera: no pinned slug resolved
+  Uruguay Primera: 2026_Uruguayan_Primera_Divisi%C3%B3n_season -> HTTPError
+  ABSENT  Uruguay Primera: no pinned slug resolved
+  Bolivia Primera: 2026_Bolivian_Primera_Divisi%C3%B3n_season -> HTTPError
+  Bolivia Primera: 2026_Bolivian_Primera_Divisi%C3%B3n -> HTTPError
+  ABSENT  Bolivia Primera: no pinned slug resolved
+
+wrote /home/runner/work/parlay/parlay/socextra.json -- 2 leagues, 539 matches
