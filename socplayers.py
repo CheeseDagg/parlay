@@ -869,6 +869,15 @@ Fri Aug 15 2025
     sp2, _ = split_signals(two, min_venue=99, min_h2h=3, min_hits=4)
     chk(not sp2, 'a two-from-two is never a head-to-head signal')
 
+    # ------------------------------------------- every family reaches the file
+    import inspect
+    src = inspect.getsource(main)
+    built = {k for k in build(of_fetch=lambda u: '= empty\n',
+                              us_fetch=lambda slug: []) if k != 'report'}
+    chk(all(f"'{k}'" in src for k in built),
+        'every family build() returns is named in main() -- splits were computed '
+        'and then not written, because the publish step listed the keys by hand')
+
     # ------------------------------------------------------------- not form
     chk(not any('last' in r['text'] for r in sp + sph),
         'a split never borrows the language of form -- no "last N" in a standing record')
@@ -884,13 +893,21 @@ def main():
     print('socplayers')
     for line in res['report']:
         print(line)
-    json.dump({'streaks': res['streaks'], 'rates': res['rates']},
-              open(OUT, 'w'), ensure_ascii=False, separators=(',', ':'))
-    print(f"\nwrote {OUT} -- {len(res['streaks'])} streaks, {len(res['rates'])} rates")
-    for r in res['streaks'][:10]:
-        print(f"  {r['player'][:24]:24} {r['text'][:34]:34} {r['team'][:18]}")
-    for r in res['rates'][:12]:
-        print(f"  {r['player'][:24]:24} {r['text'][:52]:52} {r['team'][:18]}")
+    # NAME THE FAMILIES ONCE. This dict was written out key by key, so adding
+    # splits to build() shipped a runner job that computed 118 of them and
+    # wrote a file without them -- the publish step had its own idea of what
+    # the document contains, and nothing compared the two.
+    FAMILIES = ('streaks', 'splits', 'rates')
+    doc = {k: res[k] for k in FAMILIES}
+    missing = [k for k in res if k != 'report' and k not in FAMILIES]
+    if missing:
+        print(f"  WARNING: build() returned {','.join(missing)} and main() does not "
+              f"publish it -- add it to FAMILIES")
+    json.dump(doc, open(OUT, 'w'), ensure_ascii=False, separators=(',', ':'))
+    print(f"\nwrote {OUT} -- " + ', '.join(f'{len(doc[k])} {k}' for k in FAMILIES))
+    for k, w in (('streaks', 34), ('splits', 62), ('rates', 52)):
+        for r in doc[k][:10]:
+            print(f"  {r['player'][:24]:24} {r['text'][:w]:{w}} {r['team'][:18]}")
     return 0
 
 
