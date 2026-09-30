@@ -1,54 +1,81 @@
-=== SLUG RESOLUTION VIA WIKIPEDIA SEARCH ===
-  Chile Primera        -> ['2012_Chilean_Primera_Division_season', '2011_Chilean_Primera_Division_season', '2010_Chilean_Primera_Division_season', '2009_Chilean_Primera_Division_season', '2002_Chilean_Primera_Division_season', '2008_Chilean_Primera_Division_season']
-  Uruguay Primera      -> ['2025_Uruguayan_Primera_División_season', '2023_Uruguayan_Primera_División_season', '2022_Uruguayan_Primera_División_season', '2020_Uruguayan_Primera_División_season', '2024_Uruguayan_Primera_División_season', '2021_Uruguayan_Primera_División_season']
-  Bolivia Primera      -> ['2024_Bolivian_Primera_División_season', '2022_Bolivian_Primera_División_season', '2025_Bolivian_Primera_División_season', '2023_Bolivian_Primera_División_season', '2021_Bolivian_Primera_División_season', '2020_Bolivian_Primera_División_season']
-  USL Championship     -> ['2026_USL_Championship_season', '2026_RFL_Championship_season_results', '2025_USL_Championship_season', '2024_USL_Championship_season', '2020_USL_Championship_season', '2021_USL_Championship_season']
-  El Salvador          -> []
+=== ROUND 7: CHILE + URUGUAY, EN AND ES ===
 
-=== WHAT RESOLVED ===
-  Chile Primera        2012_Chilean_Primera_Division_season                 2 matrix/-es, 307 scorecells
-      [Results] 19x19
-        Home \ Away | ANT | AUD | CLA | CSL | COL | IQU | SER
-        Deportes Antofag |  | 1–2 | 1–0 | 2–1 |  | 1–1 | 
-      [Results] 19x19
-        Home \ Away | ANT | AUD | CLA | CSL | COL | IQU | SER
-        Deportes Antofag |  |  |  |  | 1–2 |  | 2–1
-  USL Championship     2025_USL_Championship_season                         1 matrix/-es, 720 scorecells
-      [Results table] 51x1
-        Color Key: Home 
-        Club | Match [ 26 ]
-  Uruguay Primera      NO MATRIX FOUND
-  Bolivia Primera      NO MATRIX FOUND
-  El Salvador          NO MATRIX FOUND
+-- Chile
+   [en] '2026 Chilean Primera Division'
+        Liga de Primera
+        2026 Liga de Primera
+        Deportes Concepción (Chile)
+        Club Universidad de Chile
+        Campeonato Nacional Primera B
+        1996 Campeonato Nacional Primera División
+   [es] 'Campeonato Nacional 2026 Chile'
+        Campeonato de Chile de ajedrez
+        Campeonato Nacional de Rodeo
+        Liga Nacional de Básquetbol (Chile)
+        Liga de Ascenso de Chile 2026
+        Selección de fútbol de Chile
+        Campeonato de Apertura de la Segunda División de Chile
+   [es] 'Primera Division de Chile 2026'
+        Liga de Primera 2026
+        Liga de Ascenso de Chile
+        Liga de Primera
+        Tercera División A de Chile
+        Liga Femenina de Chile
+        Liga de Ascenso de Chile 2026
 
-=== USL: every table on the page ===
-  [Stadiums and locations            ]  26x 3 scorecells=   0 
-        hdr: Team | Stadium | Capacity
-  [Personnel and sponsorships        ]  26x 5 scorecells=   0 
-        hdr: Team | Head coach | Captain(s) | Kit manufactur | Kit sponsor
-  [Eastern Conference                ]  14x11 scorecells=   0 
-        hdr: Pos | Team .mw-parse | Pld | W | L | T | GF | GA | GD | Pts
-  [Western Conference                ]  13x11 scorecells=   0 
-        hdr: Pos | Team v t e | Pld | W | L | T | GF | GA | GD | Pts
-  [Attendances                       ]  27x 7 scorecells=   0 
-        hdr: Pos | Team | Total | High | Low | Average | Change
-  [Goals                             ]  11x 4 scorecells=   0 
-        hdr: Rank | Player | Club | Goals [ 6 ]
-  [Hat-tricks                        ]  11x 5 scorecells=   0 
-        hdr: Player | Team | Against | Score | Date
-  [Assists                           ]  14x 4 scorecells=   0 
-        hdr: Rank | Player | Club | Assists [ 17 ]
-  [Clean sheets                      ]  13x 4 scorecells=   0 
-        hdr: Rank | Player | Club | Clean sheets [
-  [Midseason awards                  ]   2x 6 scorecells=   0 
-        hdr: Goalkeeper of  | Defender of th | Coach of the Y | Young Player o | Player of the  | References
-  [Monthly awards                    ]   8x 4 scorecells=   0 
-        hdr: Month | Player of the  | Coach of the M | References
-  [Weekly awards                     ]  27x 1 scorecells=   0 
-        hdr: Player of the 
-  [Weekly awards                     ]  27x 1 scorecells=   0 
-        hdr: Goal of the We
-  [Weekly awards                     ]  25x 1 scorecells=   0 
-        hdr: Save of the We
-  [Weekly awards                     ]  27x 1 scorecells=   0 
-        hdr: Team of the We
+-- Uruguay
+   [en] '2026 Uruguayan Primera Division'
+        Liga AUF Uruguaya
+        2026 Copa Uruguay
+        Uruguayan Primera División Amateur
+        2026 Uruguayan Segunda División season
+        Uruguayan Segunda División
+        List of Uruguayan Primera División top scorers
+   [es] 'Campeonato Uruguayo 2026'
+        Campeonato Uruguayo de Primera División 2026
+        Primera División de Uruguay
+        Campeonato Uruguayo de Fútbol Femenino
+        Segunda División Profesional de Uruguay
+        Campeonato Uruguayo de Divisional D 2026
+        Sistema de ligas de fútbol de Uruguay
+   [es] 'Primera Division de Uruguay 2026'
+        Primera División de Uruguay
+        Primera División Amateur de Uruguay
+        Segunda División Profesional de Uruguay
+        Divisional D AUF
+        Primera División de Venezuela
+        Primera División de Paraguay
+
+-- Bolivia
+   [es] 'Division de Futbol Profesional 2026'
+        Asociación Nacional de Fútbol Profesional
+        División Profesional del Fútbol Boliviano
+        Segunda División del Perú
+        División Mayor del Fútbol Colombiano
+        Liga Nacional de Fútbol Profesional
+        Liga de Fútbol Profesional Peruana
+   [en] '2026 Bolivian Primera Division'
+        2026 FBF División Profesional
+        1959 Bolivian Primera División
+        1967 Bolivian Primera División
+        1957 Bolivian Primera División
+        2021 FBF División Profesional
+        2026 Copa Libertadores
+
+=== PARENT-ARTICLE 2026 LINKS ===
+  [es] Primera División de Chile: none
+  [es] Primera División de Uruguay: ['Campeonato Uruguayo de Primera División 2026']
+  [en] Chilean Primera División: none
+  [en] Uruguayan Primera División: none
+
+=== DATED FIXTURE TABLES? (what Recent Form needs) ===
+  [en] 2026_Categor%C3%ADa_Primera_A_season
+        DATED TABLE [Managerial changes] 36 rows :: Team | Outgoing manager | Manner of departure | Date of vacancy | Position in table | Inco
+          Torneo Apertura
+          Deportivo Pereira | Cristian Galíndez | End of caretaker spe | 12 November 2025 | Pre-season | Arturo Reyes | 30 December 2025 [ 2
+  [es] Categor%C3%ADa_Primera_A_2026: HTTPError
+  [en] 2026_Liga_1_(Peru)
+        DATED TABLE [Managerial changes] 44 rows :: Team | Outgoing manager | Manner of departure | Date of vacancy | Position in table | Inco
+          Torneo Apertura
+          Deportivo Garcilaso | Carlos Bustos | Mutual agreement | 13 November 2025 [ 7 | Pre-season | Hernán Lisi | 5 December 2025 [ 8 
+  [es] Liga_1_2026: HTTPError
