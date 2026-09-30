@@ -9232,16 +9232,16 @@
     2
    ]
   ],
-  "rates_source": "dated rounds (superset of the grid)"
+  "rates_source": "dated rounds (per-fixture rows with dates; the grid is kept as grid_matches)"
  },
  "Peru Liga 1": {
   "slug": "https://en.wikipedia.org/wiki/2026_Liga_1_(Peru)",
   "rates": {
    "result": {
     "n": 242,
-    "home": 0.53306,
+    "home": 0.52893,
     "draw": 0.23554,
-    "away": 0.2314,
+    "away": 0.23554,
     "mean_goals": 2.785
    },
    "under": {
@@ -9255,115 +9255,25 @@
   },
   "splits": {
    "home": {
-    "ADT": {
-     "p": 14,
-     "w": 5,
-     "d": 3,
-     "l": 6,
-     "gf": 19,
-     "ga": 17,
-     "ppg": 1.286
-    },
-    "Alianza Atl\u00e9tico": {
-     "p": 13,
-     "w": 8,
-     "d": 4,
-     "l": 1,
-     "gf": 23,
-     "ga": 10,
-     "ppg": 2.154
-    },
-    "Alianza Lima": {
-     "p": 14,
-     "w": 11,
-     "d": 1,
-     "l": 2,
-     "gf": 31,
-     "ga": 9,
-     "ppg": 2.429
-    },
-    "Atl\u00e9tico Grau": {
+    "Sport Huancayo": {
      "p": 13,
      "w": 7,
-     "d": 2,
-     "l": 4,
-     "gf": 16,
-     "ga": 9,
-     "ppg": 1.769
-    },
-    "Cajamarca": {
-     "p": 14,
-     "w": 4,
-     "d": 4,
-     "l": 6,
-     "gf": 25,
-     "ga": 29,
-     "ppg": 1.143
-    },
-    "Cienciano": {
-     "p": 13,
-     "w": 8,
-     "d": 2,
+     "d": 3,
      "l": 3,
-     "gf": 26,
-     "ga": 14,
-     "ppg": 2.0
+     "gf": 20,
+     "ga": 15,
+     "ppg": 1.846
     },
-    "Comerciantes Unidos": {
+    "UTC": {
      "p": 13,
-     "w": 5,
-     "d": 5,
-     "l": 3,
-     "gf": 16,
-     "ga": 12,
-     "ppg": 1.538
-    },
-    "Cusco": {
-     "p": 13,
-     "w": 9,
-     "d": 2,
-     "l": 2,
-     "gf": 23,
-     "ga": 9,
-     "ppg": 2.231
-    },
-    "Deportivo Garcilaso": {
-     "p": 14,
-     "w": 11,
-     "d": 2,
-     "l": 1,
-     "gf": 33,
-     "ga": 13,
-     "ppg": 2.5
-    },
-    "Deportivo Moquegua": {
-     "p": 13,
-     "w": 4,
-     "d": 5,
-     "l": 4,
-     "gf": 18,
+     "w": 2,
+     "d": 6,
+     "l": 5,
+     "gf": 14,
      "ga": 18,
-     "ppg": 1.308
+     "ppg": 0.923
     },
-    "Juan Pablo II College": {
-     "p": 14,
-     "w": 5,
-     "d": 5,
-     "l": 4,
-     "gf": 25,
-     "ga": 21,
-     "ppg": 1.429
-    },
-    "Los Chankas": {
-     "p": 14,
-     "w": 9,
-     "d": 1,
-     "l": 4,
-     "gf": 24,
-     "ga": 19,
-     "ppg": 2.0
-    },
-    "Melgar": {
+    "FBC Melgar": {
      "p": 14,
      "w": 8,
      "d": 3,
@@ -9371,6 +9281,15 @@
      "gf": 28,
      "ga": 15,
      "ppg": 1.929
+    },
+    "Juan Pablo II College": {
+     "p": 9,
+     "w": 2,
+     "d": 3,
+     "l": 4,
+     "gf": 13,
+     "ga": 19,
+     "ppg": 1.0
     },
     "Sport Boys": {
      "p": 14,
@@ -9381,23 +9300,23 @@
      "ga": 7,
      "ppg": 2.071
     },
-    "Sport Huancayo": {
+    "Alianza Atl\u00e9tico": {
      "p": 13,
-     "w": 7,
-     "d": 3,
-     "l": 3,
-     "gf": 20,
-     "ga": 15,
-     "ppg": 1.846
+     "w": 8,
+     "d": 4,
+     "l": 1,
+     "gf": 23,
+     "ga": 10,
+     "ppg": 2.154
     },
-    "Sporting Cristal": {
-     "p": 13,
-     "w": 9,
+    "Deportivo Garcilaso": {
+     "p": 14,
+     "w": 11,
      "d": 2,
-     "l": 2,
-     "gf": 32,
-     "ga": 14,
-     "ppg": 2.231
+     "l": 1,
+     "gf": 33,
+     "ga": 13,
+     "ppg": 2.5
     },
     "Universitario": {
      "p": 13,
@@ -9408,14 +9327,113 @@
      "ga": 10,
      "ppg": 2.231
     },
-    "UTC": {
+    "Comerciantes Unidos": {
      "p": 13,
-     "w": 2,
-     "d": 6,
-     "l": 5,
-     "gf": 14,
+     "w": 5,
+     "d": 5,
+     "l": 3,
+     "gf": 16,
+     "ga": 12,
+     "ppg": 1.538
+    },
+    "Deportivo Moquegua": {
+     "p": 13,
+     "w": 4,
+     "d": 5,
+     "l": 4,
+     "gf": 18,
      "ga": 18,
-     "ppg": 0.923
+     "ppg": 1.308
+    },
+    "ADT": {
+     "p": 14,
+     "w": 5,
+     "d": 3,
+     "l": 6,
+     "gf": 19,
+     "ga": 17,
+     "ppg": 1.286
+    },
+    "Atl\u00e9tico Grau": {
+     "p": 13,
+     "w": 7,
+     "d": 2,
+     "l": 4,
+     "gf": 16,
+     "ga": 9,
+     "ppg": 1.769
+    },
+    "Cusco FC": {
+     "p": 13,
+     "w": 9,
+     "d": 2,
+     "l": 2,
+     "gf": 23,
+     "ga": 9,
+     "ppg": 2.231
+    },
+    "Alianza Lima": {
+     "p": 13,
+     "w": 10,
+     "d": 1,
+     "l": 2,
+     "gf": 28,
+     "ga": 9,
+     "ppg": 2.385
+    },
+    "Cienciano": {
+     "p": 13,
+     "w": 8,
+     "d": 2,
+     "l": 3,
+     "gf": 26,
+     "ga": 14,
+     "ppg": 2.0
+    },
+    "Los Chankas": {
+     "p": 14,
+     "w": 9,
+     "d": 1,
+     "l": 4,
+     "gf": 24,
+     "ga": 19,
+     "ppg": 2.0
+    },
+    "Sporting Cristal": {
+     "p": 13,
+     "w": 9,
+     "d": 2,
+     "l": 2,
+     "gf": 32,
+     "ga": 14,
+     "ppg": 2.231
+    },
+    "FC Cajamarca": {
+     "p": 14,
+     "w": 3,
+     "d": 4,
+     "l": 7,
+     "gf": 24,
+     "ga": 30,
+     "ppg": 0.929
+    },
+    "Alianza Lima (G)": {
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gf": 3,
+     "ga": 0,
+     "ppg": 3.0
+    },
+    "Juan Pablo II": {
+     "p": 5,
+     "w": 3,
+     "d": 2,
+     "l": 0,
+     "gf": 12,
+     "ga": 2,
+     "ppg": 2.2
     }
    },
    "away": {
@@ -9437,31 +9455,22 @@
      "ga": 22,
      "ppg": 0.643
     },
-    "Comerciantes Unidos": {
-     "p": 14,
-     "w": 2,
-     "d": 4,
-     "l": 8,
-     "gf": 19,
-     "ga": 26,
-     "ppg": 0.714
-    },
-    "Cusco": {
-     "p": 14,
+    "Cienciano": {
+     "p": 13,
      "w": 4,
-     "d": 1,
-     "l": 9,
-     "gf": 16,
-     "ga": 30,
-     "ppg": 0.929
+     "d": 2,
+     "l": 7,
+     "gf": 19,
+     "ga": 25,
+     "ppg": 1.077
     },
-    "Juan Pablo II College": {
+    "FC Cajamarca": {
      "p": 13,
      "w": 4,
      "d": 2,
      "l": 7,
      "gf": 17,
-     "ga": 31,
+     "ga": 22,
      "ppg": 1.077
     },
     "Los Chankas": {
@@ -9473,68 +9482,14 @@
      "ga": 25,
      "ppg": 1.083
     },
-    "Melgar": {
-     "p": 13,
+    "Cusco FC": {
+     "p": 14,
      "w": 5,
-     "d": 4,
-     "l": 4,
-     "gf": 17,
-     "ga": 14,
-     "ppg": 1.462
-    },
-    "Sport Boys": {
-     "p": 13,
-     "w": 2,
-     "d": 3,
+     "d": 1,
      "l": 8,
-     "gf": 10,
-     "ga": 19,
-     "ppg": 0.692
-    },
-    "UTC": {
-     "p": 14,
-     "w": 2,
-     "d": 2,
-     "l": 10,
-     "gf": 18,
-     "ga": 32,
-     "ppg": 0.571
-    },
-    "ADT": {
-     "p": 13,
-     "w": 1,
-     "d": 4,
-     "l": 8,
-     "gf": 10,
-     "ga": 25,
-     "ppg": 0.538
-    },
-    "Cajamarca": {
-     "p": 13,
-     "w": 4,
-     "d": 2,
-     "l": 7,
-     "gf": 17,
-     "ga": 22,
-     "ppg": 1.077
-    },
-    "Deportivo Moquegua": {
-     "p": 14,
-     "w": 2,
-     "d": 2,
-     "l": 10,
-     "gf": 6,
-     "ga": 23,
-     "ppg": 0.571
-    },
-    "Sport Huancayo": {
-     "p": 14,
-     "w": 3,
-     "d": 2,
-     "l": 9,
      "gf": 17,
      "ga": 29,
-     "ppg": 0.786
+     "ppg": 1.143
     },
     "Sporting Cristal": {
      "p": 14,
@@ -9545,23 +9500,77 @@
      "ga": 26,
      "ppg": 0.643
     },
-    "Cienciano": {
+    "ADT": {
      "p": 13,
-     "w": 4,
-     "d": 2,
-     "l": 7,
-     "gf": 19,
-     "ga": 25,
-     "ppg": 1.077
-    },
-    "Deportivo Garcilaso": {
-     "p": 13,
-     "w": 3,
+     "w": 1,
      "d": 4,
-     "l": 6,
+     "l": 8,
+     "gf": 10,
+     "ga": 25,
+     "ppg": 0.538
+    },
+    "Deportivo Moquegua": {
+     "p": 14,
+     "w": 2,
+     "d": 2,
+     "l": 10,
      "gf": 6,
-     "ga": 11,
-     "ppg": 1.0
+     "ga": 23,
+     "ppg": 0.571
+    },
+    "UTC": {
+     "p": 14,
+     "w": 2,
+     "d": 2,
+     "l": 10,
+     "gf": 18,
+     "ga": 32,
+     "ppg": 0.571
+    },
+    "Sport Boys": {
+     "p": 13,
+     "w": 2,
+     "d": 3,
+     "l": 8,
+     "gf": 10,
+     "ga": 19,
+     "ppg": 0.692
+    },
+    "Sport Huancayo": {
+     "p": 14,
+     "w": 3,
+     "d": 2,
+     "l": 9,
+     "gf": 17,
+     "ga": 29,
+     "ppg": 0.786
+    },
+    "Universitario": {
+     "p": 14,
+     "w": 5,
+     "d": 5,
+     "l": 4,
+     "gf": 20,
+     "ga": 21,
+     "ppg": 1.429
+    },
+    "Comerciantes Unidos": {
+     "p": 14,
+     "w": 2,
+     "d": 4,
+     "l": 8,
+     "gf": 19,
+     "ga": 26,
+     "ppg": 0.714
+    },
+    "Juan Pablo II College": {
+     "p": 7,
+     "w": 2,
+     "d": 0,
+     "l": 5,
+     "gf": 8,
+     "ga": 20,
+     "ppg": 0.857
     },
     "Alianza Atl\u00e9tico": {
      "p": 14,
@@ -9572,88 +9581,166 @@
      "ga": 25,
      "ppg": 0.857
     },
-    "Universitario": {
-     "p": 14,
+    "FBC Melgar": {
+     "p": 13,
      "w": 5,
-     "d": 5,
+     "d": 4,
      "l": 4,
-     "gf": 20,
-     "ga": 21,
-     "ppg": 1.429
+     "gf": 17,
+     "ga": 14,
+     "ppg": 1.462
+    },
+    "Deportivo Garcilaso": {
+     "p": 13,
+     "w": 3,
+     "d": 4,
+     "l": 6,
+     "gf": 6,
+     "ga": 11,
+     "ppg": 1.0
+    },
+    "Juan Pablo II": {
+     "p": 6,
+     "w": 2,
+     "d": 2,
+     "l": 2,
+     "gf": 9,
+     "ga": 11,
+     "ppg": 1.333
     }
    },
    "h2h": {
-    "ADT|Alianza Lima": [
+    "Alianza Lima|Sport Huancayo": [
      {
-      "home": "ADT",
+      "home": "Sport Huancayo",
       "away": "Alianza Lima",
-      "hg": 0,
-      "ag": 1
+      "hg": 1,
+      "ag": 2
      },
      {
       "home": "Alianza Lima",
-      "away": "ADT",
+      "away": "Sport Huancayo",
       "hg": 2,
-      "ag": 0
+      "ag": 1
      }
     ],
-    "ADT|Atl\u00e9tico Grau": [
+    "Atl\u00e9tico Grau|UTC": [
      {
-      "home": "ADT",
+      "home": "UTC",
       "away": "Atl\u00e9tico Grau",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "UTC",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Cienciano|FBC Melgar": [
+     {
+      "home": "FBC Melgar",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Cienciano",
+      "away": "FBC Melgar",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "FC Cajamarca|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "FC Cajamarca",
+      "hg": 3,
+      "ag": 3
+     }
+    ],
+    "Los Chankas|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Los Chankas",
+      "away": "Sport Boys",
       "hg": 1,
       "ag": 0
      }
     ],
-    "ADT|Comerciantes Unidos": [
+    "Alianza Atl\u00e9tico|Cusco FC": [
      {
-      "home": "ADT",
-      "away": "Comerciantes Unidos",
-      "hg": 2,
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Cusco FC",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cusco FC",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Deportivo Garcilaso|Sporting Cristal": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Deportivo Garcilaso",
+      "hg": 1,
       "ag": 0
      }
     ],
-    "ADT|Cusco": [
+    "ADT|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 0
+     },
      {
       "home": "ADT",
-      "away": "Cusco",
+      "away": "Universitario",
       "hg": 1,
       "ag": 2
      }
     ],
-    "ADT|Juan Pablo II College": [
+    "Comerciantes Unidos|Deportivo Moquegua": [
      {
-      "home": "ADT",
-      "away": "Juan Pablo II College",
+      "home": "Comerciantes Unidos",
+      "away": "Deportivo Moquegua",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportivo Moquegua|UTC": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "UTC",
       "hg": 2,
       "ag": 3
      },
      {
-      "home": "Juan Pablo II College",
-      "away": "ADT",
-      "hg": 5,
-      "ag": 1
-     }
-    ],
-    "ADT|Los Chankas": [
-     {
-      "home": "ADT",
-      "away": "Los Chankas",
-      "hg": 4,
-      "ag": 0
-     }
-    ],
-    "ADT|Melgar": [
-     {
-      "home": "ADT",
-      "away": "Melgar",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Melgar",
-      "away": "ADT",
-      "hg": 3,
+      "home": "UTC",
+      "away": "Deportivo Moquegua",
+      "hg": 0,
       "ag": 0
      }
     ],
@@ -9671,111 +9758,31 @@
       "ag": 0
      }
     ],
-    "ADT|UTC": [
-     {
-      "home": "ADT",
-      "away": "UTC",
-      "hg": 2,
-      "ag": 2
-     },
-     {
-      "home": "UTC",
-      "away": "ADT",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "ADT|Alianza Atl\u00e9tico": [
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "ADT",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "ADT",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Alianza Atl\u00e9tico|Alianza Lima": [
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Alianza Lima",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "Alianza Lima",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Alianza Atl\u00e9tico|Atl\u00e9tico Grau": [
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Atl\u00e9tico Grau",
-      "hg": 2,
-      "ag": 2
-     },
+    "Atl\u00e9tico Grau|Sport Huancayo": [
      {
       "home": "Atl\u00e9tico Grau",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Alianza Atl\u00e9tico|Cajamarca": [
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Cajamarca",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Alianza Atl\u00e9tico|Cusco": [
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Cusco",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Cusco",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "Alianza Atl\u00e9tico|Deportivo Moquegua": [
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Deportivo Moquegua",
-      "hg": 3,
-      "ag": 0
-     },
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 1,
-      "ag": 4
-     }
-    ],
-    "Alianza Atl\u00e9tico|Sport Boys": [
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Sport Boys",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Alianza Atl\u00e9tico|Sport Huancayo": [
-     {
-      "home": "Alianza Atl\u00e9tico",
       "away": "Sport Huancayo",
-      "hg": 4,
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Cusco FC|Universitario": [
+     {
+      "home": "Cusco FC",
+      "away": "Universitario",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Universitario",
+      "away": "Cusco FC",
+      "hg": 2,
       "ag": 1
      }
     ],
@@ -9793,56 +9800,174 @@
       "ag": 2
      }
     ],
-    "Alianza Lima|Cusco": [
+    "Cienciano|Juan Pablo II College": [
      {
-      "home": "Alianza Lima",
-      "away": "Cusco",
-      "hg": 8,
-      "ag": 0
-     }
-    ],
-    "Alianza Lima|Deportivo Moquegua": [
-     {
-      "home": "Alianza Lima",
-      "away": "Deportivo Moquegua",
-      "hg": 2,
+      "home": "Cienciano",
+      "away": "Juan Pablo II College",
+      "hg": 6,
       "ag": 1
      }
     ],
-    "Alianza Lima|Juan Pablo II College": [
+    "Alianza Atl\u00e9tico|Los Chankas": [
      {
-      "home": "Alianza Lima",
-      "away": "Juan Pablo II College",
-      "hg": 2,
+      "home": "Los Chankas",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
       "ag": 0
      },
      {
-      "home": "Juan Pablo II College",
-      "away": "Alianza Lima",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Alianza Lima|Los Chankas": [
-     {
-      "home": "Alianza Lima",
+      "home": "Alianza Atl\u00e9tico",
       "away": "Los Chankas",
       "hg": 3,
-      "ag": 0
+      "ag": 1
      }
     ],
-    "Alianza Lima|Melgar": [
+    "FBC Melgar|Sporting Cristal": [
      {
-      "home": "Alianza Lima",
-      "away": "Melgar",
-      "hg": 3,
+      "home": "Sporting Cristal",
+      "away": "FBC Melgar",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "FBC Melgar",
+      "away": "Sporting Cristal",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Deportivo Garcilaso|FC Cajamarca": [
+     {
+      "home": "FC Cajamarca",
+      "away": "Deportivo Garcilaso",
+      "hg": 1,
       "ag": 1
      },
      {
-      "home": "Melgar",
+      "home": "Deportivo Garcilaso",
+      "away": "FC Cajamarca",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cusco FC|UTC": [
+     {
+      "home": "UTC",
+      "away": "Cusco FC",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Cusco FC",
+      "away": "UTC",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Cienciano",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Alianza Atl\u00e9tico|Alianza Lima": [
+     {
+      "home": "Alianza Atl\u00e9tico",
       "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "ADT|Deportivo Garcilaso": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "ADT",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "ADT",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Juan Pablo II College|Sporting Cristal": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Sporting Cristal",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Grau|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Sport Boys",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Comerciantes Unidos|Los Chankas": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Los Chankas",
       "hg": 1,
       "ag": 1
+     },
+     {
+      "home": "Los Chankas",
+      "away": "Comerciantes Unidos",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Deportivo Moquegua|FBC Melgar": [
+     {
+      "home": "FBC Melgar",
+      "away": "Deportivo Moquegua",
+      "hg": 4,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "FBC Melgar",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "FC Cajamarca|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "FC Cajamarca",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "FC Cajamarca",
+      "away": "Sport Huancayo",
+      "hg": 0,
+      "ag": 2
      }
     ],
     "Alianza Lima|Sport Boys": [
@@ -9859,42 +9984,548 @@
       "ag": 1
      }
     ],
-    "Alianza Lima|Sporting Cristal": [
+    "Alianza Atl\u00e9tico|Cienciano": [
      {
-      "home": "Alianza Lima",
+      "home": "Cienciano",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Cienciano",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "FBC Melgar|FC Cajamarca": [
+     {
+      "home": "FC Cajamarca",
+      "away": "FBC Melgar",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "FBC Melgar",
+      "away": "FC Cajamarca",
+      "hg": 2,
+      "ag": 4
+     }
+    ],
+    "Sporting Cristal|Universitario": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Universitario",
       "away": "Sporting Cristal",
       "hg": 1,
       "ag": 1
      }
     ],
-    "Alianza Lima|Atl\u00e9tico Grau": [
+    "ADT|UTC": [
      {
-      "home": "Atl\u00e9tico Grau",
-      "away": "Alianza Lima",
-      "hg": 0,
+      "home": "ADT",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "UTC",
+      "away": "ADT",
+      "hg": 1,
       "ag": 1
      }
     ],
-    "Atl\u00e9tico Grau|Cajamarca": [
+    "Atl\u00e9tico Grau|Juan Pablo II College": [
      {
       "home": "Atl\u00e9tico Grau",
-      "away": "Cajamarca",
+      "away": "Juan Pablo II College",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|Cusco FC": [
+     {
+      "home": "Cusco FC",
+      "away": "Comerciantes Unidos",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Cusco FC",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Los Chankas|Sport Huancayo": [
+     {
+      "home": "Los Chankas",
+      "away": "Sport Huancayo",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportivo Garcilaso|Deportivo Moquegua": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Deportivo Garcilaso",
       "hg": 1,
       "ag": 0
      },
      {
-      "home": "Cajamarca",
+      "home": "Deportivo Garcilaso",
+      "away": "Deportivo Moquegua",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "ADT|Alianza Atl\u00e9tico": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "ADT",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "ADT",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Deportivo Garcilaso": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 3
+     },
+     {
+      "home": "Cienciano",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "FBC Melgar|Los Chankas": [
+     {
+      "home": "FBC Melgar",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Los Chankas",
+      "away": "FBC Melgar",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Deportivo Moquegua|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Deportivo Moquegua",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Sport Boys",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Sport Huancayo|Sporting Cristal": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Sporting Cristal",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Sport Huancayo",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|UTC": [
+     {
+      "home": "UTC",
+      "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "UTC",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|Comerciantes Unidos": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Cusco FC|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Cusco FC",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "FC Cajamarca|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "FC Cajamarca",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "FC Cajamarca",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Atl\u00e9tico Grau|FC Cajamarca": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "FC Cajamarca",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "FC Cajamarca",
       "away": "Atl\u00e9tico Grau",
       "hg": 1,
       "ag": 3
      }
     ],
-    "Atl\u00e9tico Grau|Cienciano": [
+    "Comerciantes Unidos|UTC": [
      {
-      "home": "Atl\u00e9tico Grau",
+      "home": "Comerciantes Unidos",
+      "away": "UTC",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "UTC",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Cusco FC|Deportivo Garcilaso": [
+     {
+      "home": "Cusco FC",
+      "away": "Deportivo Garcilaso",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Cusco FC",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Deportivo Moquegua|Sport Huancayo": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Sport Huancayo",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "Deportivo Moquegua",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Alianza Atl\u00e9tico|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Sporting Cristal",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "ADT|Juan Pablo II College": [
+     {
+      "home": "ADT",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Los Chankas|Universitario": [
+     {
+      "home": "Los Chankas",
+      "away": "Universitario",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Universitario",
+      "away": "Los Chankas",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Alianza Lima|FBC Melgar": [
+     {
+      "home": "Alianza Lima",
+      "away": "FBC Melgar",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "FBC Melgar",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Sport Boys": [
+     {
+      "home": "Cienciano",
+      "away": "Sport Boys",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Sport Boys",
+      "away": "Cienciano",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Comerciantes Unidos|FC Cajamarca": [
+     {
+      "home": "FC Cajamarca",
+      "away": "Comerciantes Unidos",
+      "hg": 3,
+      "ag": 4
+     },
+     {
+      "home": "Comerciantes Unidos",
+      "away": "FC Cajamarca",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Alianza Lima|Deportivo Garcilaso": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Juan Pablo II College|Los Chankas": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Los Chankas",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "ADT|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "ADT",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "ADT",
+      "away": "Sport Huancayo",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "UTC|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "UTC",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 4
+     }
+    ],
+    "Alianza Atl\u00e9tico|Deportivo Moquegua": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Deportivo Moquegua",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Cienciano|Cusco FC": [
+     {
+      "home": "Cusco FC",
       "away": "Cienciano",
       "hg": 1,
       "ag": 2
+     },
+     {
+      "home": "Cienciano",
+      "away": "Cusco FC",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Grau|FBC Melgar": [
+     {
+      "home": "FBC Melgar",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "FBC Melgar",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Sport Boys|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Sport Boys",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Sport Boys",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "ADT|FBC Melgar": [
+     {
+      "home": "ADT",
+      "away": "FBC Melgar",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "FBC Melgar",
+      "away": "ADT",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Cienciano|FC Cajamarca": [
+     {
+      "home": "Cienciano",
+      "away": "FC Cajamarca",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "FC Cajamarca",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 5
+     }
+    ],
+    "Alianza Lima|Juan Pablo II College": [
+     {
+      "home": "Alianza Lima",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Comerciantes Unidos|Universitario": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Universitario",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Universitario",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Cusco FC|Deportivo Moquegua": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Cusco FC",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Cusco FC",
+      "away": "Deportivo Moquegua",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Los Chankas|Sporting Cristal": [
+     {
+      "home": "Los Chankas",
+      "away": "Sporting Cristal",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Los Chankas",
+      "hg": 5,
+      "ag": 0
      }
     ],
     "Atl\u00e9tico Grau|Deportivo Garcilaso": [
@@ -9911,140 +10542,44 @@
       "ag": 2
      }
     ],
-    "Atl\u00e9tico Grau|Deportivo Moquegua": [
+    "Sport Boys|Sport Huancayo": [
      {
-      "home": "Atl\u00e9tico Grau",
-      "away": "Deportivo Moquegua",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Atl\u00e9tico Grau|Juan Pablo II College": [
-     {
-      "home": "Atl\u00e9tico Grau",
-      "away": "Juan Pablo II College",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "Juan Pablo II College",
-      "away": "Atl\u00e9tico Grau",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Atl\u00e9tico Grau|Sport Huancayo": [
-     {
-      "home": "Atl\u00e9tico Grau",
+      "home": "Sport Boys",
       "away": "Sport Huancayo",
-      "hg": 0,
+      "hg": 3,
       "ag": 0
      },
      {
       "home": "Sport Huancayo",
-      "away": "Atl\u00e9tico Grau",
+      "away": "Sport Boys",
       "hg": 2,
-      "ag": 0
+      "ag": 1
      }
     ],
-    "Atl\u00e9tico Grau|Sporting Cristal": [
+    "Alianza Atl\u00e9tico|UTC": [
+     {
+      "home": "UTC",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "UTC",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Alianza Atl\u00e9tico|Atl\u00e9tico Grau": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 2,
+      "ag": 2
+     },
      {
       "home": "Atl\u00e9tico Grau",
-      "away": "Sporting Cristal",
-      "hg": 4,
-      "ag": 1
-     },
-     {
-      "home": "Sporting Cristal",
-      "away": "Atl\u00e9tico Grau",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "ADT|Cajamarca": [
-     {
-      "home": "Cajamarca",
-      "away": "ADT",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Alianza Lima|Cajamarca": [
-     {
-      "home": "Cajamarca",
-      "away": "Alianza Lima",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Cajamarca|Comerciantes Unidos": [
-     {
-      "home": "Cajamarca",
-      "away": "Comerciantes Unidos",
-      "hg": 3,
-      "ag": 4
-     },
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Cajamarca",
-      "hg": 2,
-      "ag": 3
-     }
-    ],
-    "Cajamarca|Deportivo Garcilaso": [
-     {
-      "home": "Cajamarca",
-      "away": "Deportivo Garcilaso",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "Cajamarca",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Cajamarca|Los Chankas": [
-     {
-      "home": "Cajamarca",
-      "away": "Los Chankas",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "Los Chankas",
-      "away": "Cajamarca",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Cajamarca|Melgar": [
-     {
-      "home": "Cajamarca",
-      "away": "Melgar",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Melgar",
-      "away": "Cajamarca",
-      "hg": 2,
-      "ag": 4
-     }
-    ],
-    "Cajamarca|Sport Boys": [
-     {
-      "home": "Cajamarca",
-      "away": "Sport Boys",
-      "hg": 3,
-      "ag": 2
-     }
-    ],
-    "Cajamarca|Sporting Cristal": [
-     {
-      "home": "Cajamarca",
-      "away": "Sporting Cristal",
+      "away": "Alianza Atl\u00e9tico",
       "hg": 3,
       "ag": 1
      }
@@ -10063,360 +10598,18 @@
       "ag": 1
      }
     ],
-    "Alianza Atl\u00e9tico|Cienciano": [
+    "Deportivo Moquegua|Sporting Cristal": [
      {
-      "home": "Cienciano",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Cienciano",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Alianza Lima|Cienciano": [
-     {
-      "home": "Cienciano",
-      "away": "Alianza Lima",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Cajamarca|Cienciano": [
-     {
-      "home": "Cienciano",
-      "away": "Cajamarca",
-      "hg": 3,
-      "ag": 0
-     },
-     {
-      "home": "Cajamarca",
-      "away": "Cienciano",
-      "hg": 2,
-      "ag": 5
-     }
-    ],
-    "Cienciano|Comerciantes Unidos": [
-     {
-      "home": "Cienciano",
-      "away": "Comerciantes Unidos",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Cienciano|Deportivo Moquegua": [
-     {
-      "home": "Cienciano",
+      "home": "Sporting Cristal",
       "away": "Deportivo Moquegua",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Cienciano|Juan Pablo II College": [
-     {
-      "home": "Cienciano",
-      "away": "Juan Pablo II College",
-      "hg": 6,
-      "ag": 1
-     },
-     {
-      "home": "Juan Pablo II College",
-      "away": "Cienciano",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Cienciano|Sport Boys": [
-     {
-      "home": "Cienciano",
-      "away": "Sport Boys",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Sport Boys",
-      "away": "Cienciano",
-      "hg": 5,
-      "ag": 1
-     }
-    ],
-    "Cienciano|Sporting Cristal": [
-     {
-      "home": "Cienciano",
-      "away": "Sporting Cristal",
-      "hg": 3,
+      "hg": 1,
       "ag": 2
-     }
-    ],
-    "Alianza Atl\u00e9tico|Comerciantes Unidos": [
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Comerciantes Unidos",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Atl\u00e9tico Grau|Comerciantes Unidos": [
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Atl\u00e9tico Grau",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Atl\u00e9tico Grau",
-      "away": "Comerciantes Unidos",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Comerciantes Unidos|Deportivo Garcilaso": [
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Deportivo Garcilaso",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Comerciantes Unidos|Deportivo Moquegua": [
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Deportivo Moquegua",
-      "hg": 1,
-      "ag": 0
      },
      {
       "home": "Deportivo Moquegua",
-      "away": "Comerciantes Unidos",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Comerciantes Unidos|Los Chankas": [
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Los Chankas",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Los Chankas",
-      "away": "Comerciantes Unidos",
-      "hg": 3,
-      "ag": 2
-     }
-    ],
-    "Comerciantes Unidos|Melgar": [
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Melgar",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Comerciantes Unidos|Sporting Cristal": [
-     {
-      "home": "Comerciantes Unidos",
       "away": "Sporting Cristal",
       "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Comerciantes Unidos|Universitario": [
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Universitario",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "Universitario",
-      "away": "Comerciantes Unidos",
-      "hg": 2,
       "ag": 2
-     }
-    ],
-    "Comerciantes Unidos|UTC": [
-     {
-      "home": "Comerciantes Unidos",
-      "away": "UTC",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "UTC",
-      "away": "Comerciantes Unidos",
-      "hg": 1,
-      "ag": 3
-     }
-    ],
-    "Atl\u00e9tico Grau|Cusco": [
-     {
-      "home": "Cusco",
-      "away": "Atl\u00e9tico Grau",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Cajamarca|Cusco": [
-     {
-      "home": "Cusco",
-      "away": "Cajamarca",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Cajamarca",
-      "away": "Cusco",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Cienciano|Cusco": [
-     {
-      "home": "Cusco",
-      "away": "Cienciano",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "Cienciano",
-      "away": "Cusco",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Comerciantes Unidos|Cusco": [
-     {
-      "home": "Cusco",
-      "away": "Comerciantes Unidos",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Cusco",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Cusco|Deportivo Garcilaso": [
-     {
-      "home": "Cusco",
-      "away": "Deportivo Garcilaso",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "Cusco",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "Cusco|Los Chankas": [
-     {
-      "home": "Cusco",
-      "away": "Los Chankas",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Cusco|Sport Huancayo": [
-     {
-      "home": "Cusco",
-      "away": "Sport Huancayo",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Cusco|Universitario": [
-     {
-      "home": "Cusco",
-      "away": "Universitario",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Universitario",
-      "away": "Cusco",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "ADT|Deportivo Garcilaso": [
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "ADT",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "ADT",
-      "away": "Deportivo Garcilaso",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Alianza Atl\u00e9tico|Deportivo Garcilaso": [
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Alianza Lima|Deportivo Garcilaso": [
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "Alianza Lima",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Alianza Lima",
-      "away": "Deportivo Garcilaso",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Cienciano|Deportivo Garcilaso": [
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "Cienciano",
-      "hg": 2,
-      "ag": 3
-     },
-     {
-      "home": "Cienciano",
-      "away": "Deportivo Garcilaso",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Deportivo Garcilaso|Juan Pablo II College": [
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "Juan Pablo II College",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "Deportivo Garcilaso|Melgar": [
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "Melgar",
-      "hg": 1,
-      "ag": 0
      }
     ],
     "Deportivo Garcilaso|Sport Boys": [
@@ -10433,732 +10626,18 @@
       "ag": 0
      }
     ],
-    "Deportivo Garcilaso|Sporting Cristal": [
+    "Cusco FC|FBC Melgar": [
      {
-      "home": "Deportivo Garcilaso",
-      "away": "Sporting Cristal",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Sporting Cristal",
-      "away": "Deportivo Garcilaso",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Deportivo Garcilaso|UTC": [
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "UTC",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "ADT|Deportivo Moquegua": [
-     {
-      "home": "Deportivo Moquegua",
-      "away": "ADT",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Cajamarca|Deportivo Moquegua": [
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Cajamarca",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Cusco|Deportivo Moquegua": [
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Cusco",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "Cusco",
-      "away": "Deportivo Moquegua",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Deportivo Garcilaso|Deportivo Moquegua": [
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Deportivo Garcilaso",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Deportivo Garcilaso",
-      "away": "Deportivo Moquegua",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Deportivo Moquegua|Juan Pablo II College": [
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Juan Pablo II College",
-      "hg": 3,
-      "ag": 0
-     },
-     {
-      "home": "Juan Pablo II College",
-      "away": "Deportivo Moquegua",
-      "hg": 4,
-      "ag": 0
-     }
-    ],
-    "Deportivo Moquegua|Sport Huancayo": [
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Sport Huancayo",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "Sport Huancayo",
-      "away": "Deportivo Moquegua",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Deportivo Moquegua|Universitario": [
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Universitario",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Deportivo Moquegua|UTC": [
-     {
-      "home": "Deportivo Moquegua",
-      "away": "UTC",
-      "hg": 2,
-      "ag": 3
-     },
-     {
-      "home": "UTC",
-      "away": "Deportivo Moquegua",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Alianza Atl\u00e9tico|Juan Pablo II College": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Cajamarca|Juan Pablo II College": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "Cajamarca",
-      "hg": 3,
-      "ag": 3
-     },
-     {
-      "home": "Cajamarca",
-      "away": "Juan Pablo II College",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Comerciantes Unidos|Juan Pablo II College": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "Comerciantes Unidos",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Cusco|Juan Pablo II College": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "Cusco",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "Cusco",
-      "away": "Juan Pablo II College",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Juan Pablo II College|Los Chankas": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "Los Chankas",
-      "hg": 2,
-      "ag": 3
-     },
-     {
-      "home": "Los Chankas",
-      "away": "Juan Pablo II College",
-      "hg": 3,
-      "ag": 4
-     }
-    ],
-    "Juan Pablo II College|Melgar": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "Melgar",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Juan Pablo II College|Sporting Cristal": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "Sporting Cristal",
-      "hg": 0,
-      "ag": 2
-     },
-     {
-      "home": "Sporting Cristal",
-      "away": "Juan Pablo II College",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Juan Pablo II College|Universitario": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "Universitario",
-      "hg": 1,
-      "ag": 4
-     }
-    ],
-    "Juan Pablo II College|UTC": [
-     {
-      "home": "Juan Pablo II College",
-      "away": "UTC",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "UTC",
-      "away": "Juan Pablo II College",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Alianza Atl\u00e9tico|Los Chankas": [
-     {
-      "home": "Los Chankas",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Los Chankas",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Atl\u00e9tico Grau|Los Chankas": [
-     {
-      "home": "Los Chankas",
-      "away": "Atl\u00e9tico Grau",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Cienciano|Los Chankas": [
-     {
-      "home": "Los Chankas",
-      "away": "Cienciano",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Deportivo Garcilaso|Los Chankas": [
-     {
-      "home": "Los Chankas",
-      "away": "Deportivo Garcilaso",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Deportivo Moquegua|Los Chankas": [
-     {
-      "home": "Los Chankas",
-      "away": "Deportivo Moquegua",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Los Chankas|Sport Huancayo": [
-     {
-      "home": "Los Chankas",
-      "away": "Sport Huancayo",
-      "hg": 3,
-      "ag": 2
-     },
-     {
-      "home": "Sport Huancayo",
-      "away": "Los Chankas",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Los Chankas|Sporting Cristal": [
-     {
-      "home": "Los Chankas",
-      "away": "Sporting Cristal",
-      "hg": 3,
-      "ag": 2
-     },
-     {
-      "home": "Sporting Cristal",
-      "away": "Los Chankas",
-      "hg": 5,
-      "ag": 0
-     }
-    ],
-    "Los Chankas|Universitario": [
-     {
-      "home": "Los Chankas",
-      "away": "Universitario",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Universitario",
-      "away": "Los Chankas",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Los Chankas|UTC": [
-     {
-      "home": "Los Chankas",
-      "away": "UTC",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Alianza Atl\u00e9tico|Melgar": [
-     {
-      "home": "Melgar",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Atl\u00e9tico Grau|Melgar": [
-     {
-      "home": "Melgar",
-      "away": "Atl\u00e9tico Grau",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "Atl\u00e9tico Grau",
-      "away": "Melgar",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Cienciano|Melgar": [
-     {
-      "home": "Melgar",
-      "away": "Cienciano",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "Cienciano",
-      "away": "Melgar",
-      "hg": 1,
-      "ag": 3
-     }
-    ],
-    "Cusco|Melgar": [
-     {
-      "home": "Melgar",
-      "away": "Cusco",
+      "home": "FBC Melgar",
+      "away": "Cusco FC",
       "hg": 1,
       "ag": 3
      },
      {
-      "home": "Cusco",
-      "away": "Melgar",
+      "home": "Cusco FC",
+      "away": "FBC Melgar",
       "hg": 0,
       "ag": 1
-     }
-    ],
-    "Deportivo Moquegua|Melgar": [
-     {
-      "home": "Melgar",
-      "away": "Deportivo Moquegua",
-      "hg": 4,
-      "ag": 0
-     },
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Melgar",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Los Chankas|Melgar": [
-     {
-      "home": "Melgar",
-      "away": "Los Chankas",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "Los Chankas",
-      "away": "Melgar",
-      "hg": 0,
-      "ag": 3
-     }
-    ],
-    "Melgar|Sport Huancayo": [
-     {
-      "home": "Melgar",
-      "away": "Sport Huancayo",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "Melgar|Universitario": [
-     {
-      "home": "Melgar",
-      "away": "Universitario",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Melgar|UTC": [
-     {
-      "home": "Melgar",
-      "away": "UTC",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Atl\u00e9tico Grau|Sport Boys": [
-     {
-      "home": "Sport Boys",
-      "away": "Atl\u00e9tico Grau",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Atl\u00e9tico Grau",
-      "away": "Sport Boys",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Comerciantes Unidos|Sport Boys": [
-     {
-      "home": "Sport Boys",
-      "away": "Comerciantes Unidos",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Cusco|Sport Boys": [
-     {
-      "home": "Sport Boys",
-      "away": "Cusco",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Deportivo Moquegua|Sport Boys": [
-     {
-      "home": "Sport Boys",
-      "away": "Deportivo Moquegua",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Sport Boys",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Juan Pablo II College|Sport Boys": [
-     {
-      "home": "Sport Boys",
-      "away": "Juan Pablo II College",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Los Chankas|Sport Boys": [
-     {
-      "home": "Sport Boys",
-      "away": "Los Chankas",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Los Chankas",
-      "away": "Sport Boys",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Melgar|Sport Boys": [
-     {
-      "home": "Sport Boys",
-      "away": "Melgar",
-      "hg": 1,
-      "ag": 3
-     },
-     {
-      "home": "Melgar",
-      "away": "Sport Boys",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Sport Boys|Sport Huancayo": [
-     {
-      "home": "Sport Boys",
-      "away": "Sport Huancayo",
-      "hg": 3,
-      "ag": 0
-     },
-     {
-      "home": "Sport Huancayo",
-      "away": "Sport Boys",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Sport Boys|Universitario": [
-     {
-      "home": "Sport Boys",
-      "away": "Universitario",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "ADT|Sport Huancayo": [
-     {
-      "home": "Sport Huancayo",
-      "away": "ADT",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "ADT",
-      "away": "Sport Huancayo",
-      "hg": 1,
-      "ag": 3
-     }
-    ],
-    "Alianza Lima|Sport Huancayo": [
-     {
-      "home": "Sport Huancayo",
-      "away": "Alianza Lima",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "Alianza Lima",
-      "away": "Sport Huancayo",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Cajamarca|Sport Huancayo": [
-     {
-      "home": "Sport Huancayo",
-      "away": "Cajamarca",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "Cajamarca",
-      "away": "Sport Huancayo",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Cienciano|Sport Huancayo": [
-     {
-      "home": "Sport Huancayo",
-      "away": "Cienciano",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Comerciantes Unidos|Sport Huancayo": [
-     {
-      "home": "Sport Huancayo",
-      "away": "Comerciantes Unidos",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Comerciantes Unidos",
-      "away": "Sport Huancayo",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Deportivo Garcilaso|Sport Huancayo": [
-     {
-      "home": "Sport Huancayo",
-      "away": "Deportivo Garcilaso",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Juan Pablo II College|Sport Huancayo": [
-     {
-      "home": "Sport Huancayo",
-      "away": "Juan Pablo II College",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Sport Huancayo|Sporting Cristal": [
-     {
-      "home": "Sport Huancayo",
-      "away": "Sporting Cristal",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "Sporting Cristal",
-      "away": "Sport Huancayo",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "ADT|Sporting Cristal": [
-     {
-      "home": "Sporting Cristal",
-      "away": "ADT",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Alianza Atl\u00e9tico|Sporting Cristal": [
-     {
-      "home": "Sporting Cristal",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "Sporting Cristal",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Cusco|Sporting Cristal": [
-     {
-      "home": "Sporting Cristal",
-      "away": "Cusco",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Deportivo Moquegua|Sporting Cristal": [
-     {
-      "home": "Sporting Cristal",
-      "away": "Deportivo Moquegua",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "Deportivo Moquegua",
-      "away": "Sporting Cristal",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Melgar|Sporting Cristal": [
-     {
-      "home": "Sporting Cristal",
-      "away": "Melgar",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "Melgar",
-      "away": "Sporting Cristal",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Sport Boys|Sporting Cristal": [
-     {
-      "home": "Sporting Cristal",
-      "away": "Sport Boys",
-      "hg": 3,
-      "ag": 0
-     },
-     {
-      "home": "Sport Boys",
-      "away": "Sporting Cristal",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Sporting Cristal|Universitario": [
-     {
-      "home": "Sporting Cristal",
-      "away": "Universitario",
-      "hg": 2,
-      "ag": 2
-     },
-     {
-      "home": "Universitario",
-      "away": "Sporting Cristal",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Sporting Cristal|UTC": [
-     {
-      "home": "Sporting Cristal",
-      "away": "UTC",
-      "hg": 3,
-      "ag": 2
-     }
-    ],
-    "ADT|Universitario": [
-     {
-      "home": "Universitario",
-      "away": "ADT",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "ADT",
-      "away": "Universitario",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Alianza Atl\u00e9tico|Universitario": [
-     {
-      "home": "Universitario",
-      "away": "Alianza Atl\u00e9tico",
-      "hg": 1,
-      "ag": 2
      }
     ],
     "Alianza Lima|Universitario": [
@@ -11175,40 +10654,204 @@
       "ag": 2
      }
     ],
-    "Atl\u00e9tico Grau|Universitario": [
+    "Juan Pablo II College|UTC": [
      {
-      "home": "Universitario",
-      "away": "Atl\u00e9tico Grau",
+      "home": "Juan Pablo II College",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Comerciantes Unidos|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Sport Huancayo",
       "hg": 0,
       "ag": 1
      }
     ],
-    "Cajamarca|Universitario": [
+    "FC Cajamarca|Los Chankas": [
      {
-      "home": "Universitario",
-      "away": "Cajamarca",
+      "home": "FC Cajamarca",
+      "away": "Los Chankas",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Los Chankas",
+      "away": "FC Cajamarca",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "ADT|Alianza Lima": [
+     {
+      "home": "ADT",
+      "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Alianza Lima",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Moquegua|Juan Pablo II College": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Juan Pablo II College",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "FBC Melgar|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "FBC Melgar",
+      "hg": 1,
+      "ag": 3
+     },
+     {
+      "home": "FBC Melgar",
+      "away": "Sport Boys",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Sport Huancayo|UTC": [
+     {
+      "home": "UTC",
+      "away": "Sport Huancayo",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Sport Huancayo",
+      "away": "UTC",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Grau|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Alianza Lima|Cusco FC": [
+     {
+      "home": "Alianza Lima",
+      "away": "Cusco FC",
+      "hg": 8,
+      "ag": 0
+     }
+    ],
+    "ADT|FC Cajamarca": [
+     {
+      "home": "FC Cajamarca",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportivo Garcilaso|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Deportivo Garcilaso",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Sport Boys": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Sport Boys",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Deportivo Moquegua": [
+     {
+      "home": "Cienciano",
+      "away": "Deportivo Moquegua",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "FBC Melgar|Universitario": [
+     {
+      "home": "FBC Melgar",
+      "away": "Universitario",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Sporting Cristal|UTC": [
+     {
+      "home": "Sporting Cristal",
+      "away": "UTC",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Atl\u00e9tico Grau|Sporting Cristal": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Sporting Cristal",
+      "hg": 4,
+      "ag": 1
+     },
+     {
+      "home": "Sporting Cristal",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Comerciantes Unidos": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Alianza Atl\u00e9tico",
       "hg": 1,
       "ag": 0
      },
      {
-      "home": "Cajamarca",
-      "away": "Universitario",
-      "hg": 2,
-      "ag": 3
-     }
-    ],
-    "Cienciano|Universitario": [
-     {
-      "home": "Universitario",
-      "away": "Cienciano",
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Comerciantes Unidos",
       "hg": 2,
       "ag": 1
+     }
+    ],
+    "Cusco FC|FC Cajamarca": [
+     {
+      "home": "Cusco FC",
+      "away": "FC Cajamarca",
+      "hg": 1,
+      "ag": 0
      },
      {
-      "home": "Cienciano",
-      "away": "Universitario",
-      "hg": 2,
-      "ag": 0
+      "home": "FC Cajamarca",
+      "away": "Cusco FC",
+      "hg": 1,
+      "ag": 2
      }
     ],
     "Deportivo Garcilaso|Universitario": [
@@ -11225,76 +10868,52 @@
       "ag": 0
      }
     ],
-    "Sport Huancayo|Universitario": [
+    "Cienciano|Los Chankas": [
      {
-      "home": "Universitario",
-      "away": "Sport Huancayo",
+      "home": "Los Chankas",
+      "away": "Cienciano",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Comerciantes Unidos|Sporting Cristal": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Moquegua|FC Cajamarca": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "FC Cajamarca",
       "hg": 2,
       "ag": 1
      }
     ],
-    "UTC|Universitario": [
+    "Juan Pablo II|Sport Boys": [
      {
-      "home": "Universitario",
-      "away": "UTC",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "UTC",
-      "away": "Universitario",
-      "hg": 2,
-      "ag": 4
-     }
-    ],
-    "Alianza Atl\u00e9tico|UTC": [
-     {
-      "home": "UTC",
-      "away": "Alianza Atl\u00e9tico",
+      "home": "Sport Boys",
+      "away": "Juan Pablo II",
       "hg": 1,
       "ag": 1
-     },
-     {
-      "home": "Alianza Atl\u00e9tico",
-      "away": "UTC",
-      "hg": 3,
-      "ag": 2
      }
     ],
-    "Alianza Lima|UTC": [
+    "Alianza Lima|Atl\u00e9tico Grau": [
      {
-      "home": "UTC",
+      "home": "Atl\u00e9tico Grau",
       "away": "Alianza Lima",
       "hg": 0,
       "ag": 1
-     },
-     {
-      "home": "Alianza Lima",
-      "away": "UTC",
-      "hg": 1,
-      "ag": 0
      }
     ],
-    "Atl\u00e9tico Grau|UTC": [
+    "Cusco FC|Sport Huancayo": [
      {
-      "home": "UTC",
-      "away": "Atl\u00e9tico Grau",
+      "home": "Cusco FC",
+      "away": "Sport Huancayo",
       "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "Atl\u00e9tico Grau",
-      "away": "UTC",
-      "hg": 3,
       "ag": 1
-     }
-    ],
-    "Cajamarca|UTC": [
-     {
-      "home": "UTC",
-      "away": "Cajamarca",
-      "hg": 1,
-      "ag": 2
      }
     ],
     "Cienciano|UTC": [
@@ -11305,18 +10924,276 @@
       "ag": 2
      }
     ],
-    "Cusco|UTC": [
+    "Alianza Atl\u00e9tico|Universitario": [
      {
-      "home": "UTC",
-      "away": "Cusco",
+      "home": "Universitario",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "ADT|Los Chankas": [
+     {
+      "home": "ADT",
+      "away": "Los Chankas",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|FBC Melgar": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "FBC Melgar",
       "hg": 1,
       "ag": 0
-     },
+     }
+    ],
+    "ADT|Atl\u00e9tico Grau": [
      {
-      "home": "Cusco",
-      "away": "UTC",
+      "home": "ADT",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Alianza Lima|Deportivo Moquegua": [
+     {
+      "home": "Alianza Lima",
+      "away": "Deportivo Moquegua",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Comerciantes Unidos": [
+     {
+      "home": "Cienciano",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "FC Cajamarca|Sport Boys": [
+     {
+      "home": "FC Cajamarca",
+      "away": "Sport Boys",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Alianza Atl\u00e9tico|Sport Huancayo": [
+     {
+      "home": "Alianza Atl\u00e9tico",
+      "away": "Sport Huancayo",
       "hg": 4,
       "ag": 1
+     }
+    ],
+    "FBC Melgar|UTC": [
+     {
+      "home": "FBC Melgar",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Juan Pablo II College|Universitario": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Universitario",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Cusco FC|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Cusco FC",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportivo Garcilaso|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "FC Cajamarca|UTC": [
+     {
+      "home": "UTC",
+      "away": "FC Cajamarca",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Alianza Lima|Sporting Cristal": [
+     {
+      "home": "Alianza Lima",
+      "away": "Sporting Cristal",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Grau|Cienciano": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Cienciano",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "ADT|Deportivo Moquegua": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Comerciantes Unidos|FBC Melgar": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "FBC Melgar",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cusco FC|Los Chankas": [
+     {
+      "home": "Cusco FC",
+      "away": "Los Chankas",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Juan Pablo II College|Sport Huancayo": [
+     {
+      "home": "Sport Huancayo",
+      "away": "Juan Pablo II College",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Deportivo Garcilaso": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Sport Boys|Universitario": [
+     {
+      "home": "Sport Boys",
+      "away": "Universitario",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "FC Cajamarca|Sporting Cristal": [
+     {
+      "home": "FC Cajamarca",
+      "away": "Sporting Cristal",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Atl\u00e9tico Grau|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|Cienciano": [
+     {
+      "home": "Cienciano",
+      "away": "Alianza Lima",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "FBC Melgar|Sport Huancayo": [
+     {
+      "home": "FBC Melgar",
+      "away": "Sport Huancayo",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Alianza Atl\u00e9tico|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Cusco FC|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Cusco FC",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "ADT|Comerciantes Unidos": [
+     {
+      "home": "ADT",
+      "away": "Comerciantes Unidos",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Garcilaso|UTC": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportivo Moquegua|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Deportivo Moquegua",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "FBC Melgar|Juan Pablo II College": [
+     {
+      "home": "Juan Pablo II College",
+      "away": "FBC Melgar",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima (G)|Los Chankas": [
+     {
+      "home": "Alianza Lima (G)",
+      "away": "Los Chankas",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|Cusco FC": [
+     {
+      "home": "Cusco FC",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportivo Moquegua|Universitario": [
+     {
+      "home": "Deportivo Moquegua",
+      "away": "Universitario",
+      "hg": 0,
+      "ag": 0
      }
     ],
     "Sport Boys|UTC": [
@@ -11327,208 +11204,258 @@
       "ag": 0
      }
     ],
-    "Sport Huancayo|UTC": [
+    "Alianza Atl\u00e9tico|FC Cajamarca": [
      {
-      "home": "UTC",
-      "away": "Sport Huancayo",
-      "hg": 2,
-      "ag": 2
-     },
+      "home": "Alianza Atl\u00e9tico",
+      "away": "FC Cajamarca",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Sport Huancayo": [
      {
       "home": "Sport Huancayo",
-      "away": "UTC",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "ADT|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "ADT",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Comerciantes Unidos|Deportivo Garcilaso": [
+     {
+      "home": "Comerciantes Unidos",
+      "away": "Deportivo Garcilaso",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|Deportivo Moquegua": [
+     {
+      "home": "Atl\u00e9tico Grau",
+      "away": "Deportivo Moquegua",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "ADT|Cusco FC": [
+     {
+      "home": "ADT",
+      "away": "Cusco FC",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportivo Garcilaso|Juan Pablo II College": [
+     {
+      "home": "Deportivo Garcilaso",
+      "away": "Juan Pablo II College",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Comerciantes Unidos|Sport Boys": [
+     {
+      "home": "Sport Boys",
+      "away": "Comerciantes Unidos",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Sport Huancayo|Universitario": [
+     {
+      "home": "Universitario",
+      "away": "Sport Huancayo",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cienciano|Sporting Cristal": [
+     {
+      "home": "Cienciano",
+      "away": "Sporting Cristal",
       "hg": 3,
       "ag": 2
+     }
+    ],
+    "Alianza Atl\u00e9tico|FBC Melgar": [
+     {
+      "home": "FBC Melgar",
+      "away": "Alianza Atl\u00e9tico",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Alianza Lima|FC Cajamarca": [
+     {
+      "home": "FC Cajamarca",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Los Chankas|UTC": [
+     {
+      "home": "Los Chankas",
+      "away": "UTC",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "FC Cajamarca|Juan Pablo II": [
+     {
+      "home": "FC Cajamarca",
+      "away": "Juan Pablo II",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Cienciano|Juan Pablo II": [
+     {
+      "home": "Juan Pablo II",
+      "away": "Cienciano",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Juan Pablo II|Sporting Cristal": [
+     {
+      "home": "Sporting Cristal",
+      "away": "Juan Pablo II",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Atl\u00e9tico Grau|Juan Pablo II": [
+     {
+      "home": "Juan Pablo II",
+      "away": "Atl\u00e9tico Grau",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Cusco FC|Juan Pablo II": [
+     {
+      "home": "Cusco FC",
+      "away": "Juan Pablo II",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "ADT|Juan Pablo II": [
+     {
+      "home": "Juan Pablo II",
+      "away": "ADT",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Juan Pablo II|Los Chankas": [
+     {
+      "home": "Los Chankas",
+      "away": "Juan Pablo II",
+      "hg": 3,
+      "ag": 4
+     }
+    ],
+    "Alianza Lima|Juan Pablo II": [
+     {
+      "home": "Juan Pablo II",
+      "away": "Alianza Lima",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Juan Pablo II|UTC": [
+     {
+      "home": "UTC",
+      "away": "Juan Pablo II",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportivo Moquegua|Juan Pablo II": [
+     {
+      "home": "Juan Pablo II",
+      "away": "Deportivo Moquegua",
+      "hg": 4,
+      "ag": 0
      }
     ]
    }
   },
   "matches": [
    [
-    "ADT",
+    "Sport Huancayo",
     "Alianza Lima",
-    0,
-    1
-   ],
-   [
-    "ADT",
-    "Atl\u00e9tico Grau",
-    1,
-    0
-   ],
-   [
-    "ADT",
-    "Comerciantes Unidos",
-    2,
-    0
-   ],
-   [
-    "ADT",
-    "Cusco",
     1,
     2
    ],
    [
-    "ADT",
+    "UTC",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "FBC Melgar",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
     "Juan Pablo II College",
+    "FC Cajamarca",
+    3,
+    3
+   ],
+   [
+    "Sport Boys",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cusco FC",
+    1,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Universitario",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "UTC",
     2,
     3
    ],
    [
     "ADT",
-    "Los Chankas",
-    4,
-    0
-   ],
-   [
-    "ADT",
-    "Melgar",
-    1,
-    1
-   ],
-   [
-    "ADT",
     "Sport Boys",
     1,
     0
-   ],
-   [
-    "ADT",
-    "UTC",
-    2,
-    2
-   ],
-   [
-    "Alianza Atl\u00e9tico",
-    "ADT",
-    0,
-    0
-   ],
-   [
-    "Alianza Atl\u00e9tico",
-    "Alianza Lima",
-    0,
-    0
-   ],
-   [
-    "Alianza Atl\u00e9tico",
-    "Atl\u00e9tico Grau",
-    2,
-    2
-   ],
-   [
-    "Alianza Atl\u00e9tico",
-    "Cajamarca",
-    1,
-    1
-   ],
-   [
-    "Alianza Atl\u00e9tico",
-    "Cusco",
-    1,
-    0
-   ],
-   [
-    "Alianza Atl\u00e9tico",
-    "Deportivo Moquegua",
-    3,
-    0
-   ],
-   [
-    "Alianza Atl\u00e9tico",
-    "Sport Boys",
-    0,
-    1
-   ],
-   [
-    "Alianza Atl\u00e9tico",
-    "Sport Huancayo",
-    4,
-    1
-   ],
-   [
-    "Alianza Lima",
-    "Comerciantes Unidos",
-    2,
-    1
-   ],
-   [
-    "Alianza Lima",
-    "Cusco",
-    8,
-    0
-   ],
-   [
-    "Alianza Lima",
-    "Deportivo Moquegua",
-    2,
-    1
-   ],
-   [
-    "Alianza Lima",
-    "Juan Pablo II College",
-    2,
-    0
-   ],
-   [
-    "Alianza Lima",
-    "Los Chankas",
-    3,
-    0
-   ],
-   [
-    "Alianza Lima",
-    "Melgar",
-    3,
-    1
-   ],
-   [
-    "Alianza Lima",
-    "Sport Boys",
-    1,
-    0
-   ],
-   [
-    "Alianza Lima",
-    "Sporting Cristal",
-    1,
-    1
-   ],
-   [
-    "Atl\u00e9tico Grau",
-    "Alianza Lima",
-    0,
-    1
-   ],
-   [
-    "Atl\u00e9tico Grau",
-    "Cajamarca",
-    1,
-    0
-   ],
-   [
-    "Atl\u00e9tico Grau",
-    "Cienciano",
-    1,
-    2
-   ],
-   [
-    "Atl\u00e9tico Grau",
-    "Deportivo Garcilaso",
-    0,
-    0
-   ],
-   [
-    "Atl\u00e9tico Grau",
-    "Deportivo Moquegua",
-    1,
-    0
-   ],
-   [
-    "Atl\u00e9tico Grau",
-    "Juan Pablo II College",
-    1,
-    2
    ],
    [
     "Atl\u00e9tico Grau",
@@ -11537,92 +11464,14 @@
     0
    ],
    [
-    "Atl\u00e9tico Grau",
-    "Sporting Cristal",
-    4,
+    "Cusco FC",
+    "Universitario",
+    1,
     1
    ],
    [
-    "Cajamarca",
-    "ADT",
-    2,
-    2
-   ],
-   [
-    "Cajamarca",
     "Alianza Lima",
-    1,
-    1
-   ],
-   [
-    "Cajamarca",
     "Comerciantes Unidos",
-    3,
-    4
-   ],
-   [
-    "Cajamarca",
-    "Deportivo Garcilaso",
-    1,
-    1
-   ],
-   [
-    "Cajamarca",
-    "Los Chankas",
-    0,
-    1
-   ],
-   [
-    "Cajamarca",
-    "Melgar",
-    3,
-    1
-   ],
-   [
-    "Cajamarca",
-    "Sport Boys",
-    3,
-    2
-   ],
-   [
-    "Cajamarca",
-    "Sporting Cristal",
-    3,
-    1
-   ],
-   [
-    "Cienciano",
-    "ADT",
-    3,
-    2
-   ],
-   [
-    "Cienciano",
-    "Alianza Atl\u00e9tico",
-    1,
-    1
-   ],
-   [
-    "Cienciano",
-    "Alianza Lima",
-    0,
-    1
-   ],
-   [
-    "Cienciano",
-    "Cajamarca",
-    3,
-    0
-   ],
-   [
-    "Cienciano",
-    "Comerciantes Unidos",
-    1,
-    0
-   ],
-   [
-    "Cienciano",
-    "Deportivo Moquegua",
     2,
     1
    ],
@@ -11633,38 +11482,56 @@
     1
    ],
    [
-    "Cienciano",
-    "Sport Boys",
-    3,
-    1
-   ],
-   [
-    "Cienciano",
-    "Sporting Cristal",
-    3,
-    2
-   ],
-   [
-    "Comerciantes Unidos",
+    "Los Chankas",
     "Alianza Atl\u00e9tico",
     1,
     0
    ],
    [
-    "Comerciantes Unidos",
-    "Atl\u00e9tico Grau",
-    3,
+    "Sporting Cristal",
+    "FBC Melgar",
+    1,
+    2
+   ],
+   [
+    "FC Cajamarca",
+    "Deportivo Garcilaso",
+    1,
     1
    ],
    [
-    "Comerciantes Unidos",
-    "Deportivo Garcilaso",
+    "UTC",
+    "Cusco FC",
+    1,
+    0
+   ],
+   [
+    "Universitario",
+    "Cienciano",
+    2,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Alianza Lima",
     0,
     0
    ],
    [
-    "Comerciantes Unidos",
-    "Deportivo Moquegua",
+    "Deportivo Garcilaso",
+    "ADT",
+    1,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "Sporting Cristal",
+    0,
+    2
+   ],
+   [
+    "Sport Boys",
+    "Atl\u00e9tico Grau",
     1,
     0
    ],
@@ -11675,21 +11542,129 @@
     1
    ],
    [
-    "Comerciantes Unidos",
-    "Melgar",
-    1,
-    1
+    "FBC Melgar",
+    "Deportivo Moquegua",
+    4,
+    0
    ],
    [
-    "Comerciantes Unidos",
-    "Sporting Cristal",
+    "Sport Huancayo",
+    "FC Cajamarca",
+    2,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Sport Boys",
     1,
     0
    ],
    [
-    "Comerciantes Unidos",
+    "Cienciano",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "FC Cajamarca",
+    "FBC Melgar",
+    3,
+    1
+   ],
+   [
+    "Sporting Cristal",
     "Universitario",
+    2,
+    2
+   ],
+   [
+    "ADT",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Juan Pablo II College",
+    1,
+    2
+   ],
+   [
+    "Cusco FC",
+    "Comerciantes Unidos",
+    3,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Sport Huancayo",
+    3,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "ADT",
     0,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cienciano",
+    2,
+    3
+   ],
+   [
+    "FBC Melgar",
+    "Los Chankas",
+    1,
+    2
+   ],
+   [
+    "Sport Boys",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "UTC",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Cusco FC",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "FC Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "FC Cajamarca",
+    1,
     0
    ],
    [
@@ -11699,64 +11674,52 @@
     2
    ],
    [
-    "Cusco",
-    "Atl\u00e9tico Grau",
-    1,
-    0
-   ],
-   [
-    "Cusco",
-    "Cajamarca",
-    1,
-    0
-   ],
-   [
-    "Cusco",
-    "Cienciano",
-    1,
-    2
-   ],
-   [
-    "Cusco",
-    "Comerciantes Unidos",
-    3,
-    1
-   ],
-   [
-    "Cusco",
+    "Cusco FC",
     "Deportivo Garcilaso",
     1,
     0
    ],
    [
-    "Cusco",
-    "Los Chankas",
-    1,
-    1
-   ],
-   [
-    "Cusco",
+    "Deportivo Moquegua",
     "Sport Huancayo",
     2,
     1
    ],
    [
-    "Cusco",
-    "Universitario",
-    1,
-    1
-   ],
-   [
-    "Deportivo Garcilaso",
-    "ADT",
-    1,
-    0
-   ],
-   [
-    "Deportivo Garcilaso",
+    "Sporting Cristal",
     "Alianza Atl\u00e9tico",
-    2,
+    3,
     1
+   ],
+   [
+    "ADT",
+    "Juan Pablo II College",
+    2,
+    3
+   ],
+   [
+    "Los Chankas",
+    "Universitario",
+    3,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "FBC Melgar",
+    3,
+    1
+   ],
+   [
+    "Cienciano",
+    "Sport Boys",
+    3,
+    1
+   ],
+   [
+    "FC Cajamarca",
+    "Comerciantes Unidos",
+    3,
+    4
    ],
    [
     "Deportivo Garcilaso",
@@ -11765,22 +11728,118 @@
     1
    ],
    [
-    "Deportivo Garcilaso",
-    "Cienciano",
+    "Juan Pablo II College",
+    "Los Chankas",
     2,
     3
    ],
    [
-    "Deportivo Garcilaso",
-    "Juan Pablo II College",
-    4,
+    "Sport Huancayo",
+    "ADT",
+    0,
     1
    ],
    [
-    "Deportivo Garcilaso",
-    "Melgar",
-    1,
+    "Universitario",
+    "UTC",
+    2,
     0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Deportivo Moquegua",
+    3,
+    0
+   ],
+   [
+    "Cusco FC",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "FBC Melgar",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Sport Boys",
+    3,
+    0
+   ],
+   [
+    "ADT",
+    "FBC Melgar",
+    1,
+    1
+   ],
+   [
+    "Cienciano",
+    "FC Cajamarca",
+    3,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Cusco FC",
+    1,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Sport Huancayo",
+    3,
+    0
+   ],
+   [
+    "UTC",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Atl\u00e9tico Grau",
+    2,
+    2
+   ],
+   [
+    "Cienciano",
+    "ADT",
+    3,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Deportivo Moquegua",
+    1,
+    2
    ],
    [
     "Deportivo Garcilaso",
@@ -11789,76 +11848,76 @@
     2
    ],
    [
-    "Deportivo Garcilaso",
-    "Sporting Cristal",
+    "FBC Melgar",
+    "Cusco FC",
+    1,
+    3
+   ],
+   [
+    "Universitario",
+    "Alianza Lima",
+    1,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "UTC",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Comerciantes Unidos",
     1,
     1
    ],
    [
-    "Deportivo Garcilaso",
+    "FC Cajamarca",
+    "Los Chankas",
+    0,
+    1
+   ],
+   [
+    "ADT",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Juan Pablo II College",
+    3,
+    0
+   ],
+   [
+    "Sport Boys",
+    "FBC Melgar",
+    1,
+    3
+   ],
+   [
     "UTC",
+    "Sport Huancayo",
+    2,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Atl\u00e9tico Grau",
     2,
     0
    ],
    [
-    "Deportivo Moquegua",
+    "Alianza Lima",
+    "Cusco FC",
+    8,
+    0
+   ],
+   [
+    "FC Cajamarca",
     "ADT",
     2,
     2
-   ],
-   [
-    "Deportivo Moquegua",
-    "Cajamarca",
-    2,
-    1
-   ],
-   [
-    "Deportivo Moquegua",
-    "Cusco",
-    1,
-    2
-   ],
-   [
-    "Deportivo Moquegua",
-    "Deportivo Garcilaso",
-    1,
-    0
-   ],
-   [
-    "Deportivo Moquegua",
-    "Juan Pablo II College",
-    3,
-    0
-   ],
-   [
-    "Deportivo Moquegua",
-    "Sport Huancayo",
-    2,
-    1
-   ],
-   [
-    "Deportivo Moquegua",
-    "Universitario",
-    0,
-    0
-   ],
-   [
-    "Deportivo Moquegua",
-    "UTC",
-    2,
-    3
-   ],
-   [
-    "Juan Pablo II College",
-    "Alianza Atl\u00e9tico",
-    0,
-    2
-   ],
-   [
-    "Juan Pablo II College",
-    "Cajamarca",
-    3,
-    3
    ],
    [
     "Juan Pablo II College",
@@ -11867,28 +11926,154 @@
     2
    ],
    [
-    "Juan Pablo II College",
-    "Cusco",
+    "Sport Huancayo",
+    "Deportivo Garcilaso",
     2,
     1
    ],
    [
-    "Juan Pablo II College",
-    "Los Chankas",
-    2,
-    3
+    "Alianza Atl\u00e9tico",
+    "Sport Boys",
+    0,
+    1
    ],
    [
-    "Juan Pablo II College",
-    "Melgar",
+    "Cienciano",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "FBC Melgar",
+    "Universitario",
+    2,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sporting Cristal",
+    4,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "Cusco FC",
+    "FC Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Universitario",
+    "Deportivo Garcilaso",
+    4,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "FC Cajamarca",
+    2,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Juan Pablo II",
     1,
     1
    ],
    [
-    "Juan Pablo II College",
-    "Sporting Cristal",
+    "Atl\u00e9tico Grau",
+    "Alianza Lima",
     0,
+    1
+   ],
+   [
+    "Cusco FC",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "UTC",
+    "Cienciano",
+    2,
     2
+   ],
+   [
+    "Universitario",
+    "Alianza Atl\u00e9tico",
+    1,
+    2
+   ],
+   [
+    "ADT",
+    "Los Chankas",
+    4,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "FBC Melgar",
+    1,
+    0
+   ],
+   [
+    "ADT",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "Cienciano",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "FC Cajamarca",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "FBC Melgar",
+    "UTC",
+    2,
+    0
    ],
    [
     "Juan Pablo II College",
@@ -11897,207 +12082,51 @@
     4
    ],
    [
-    "Juan Pablo II College",
-    "UTC",
-    2,
-    1
-   ],
-   [
-    "Los Chankas",
-    "Alianza Atl\u00e9tico",
-    1,
-    0
-   ],
-   [
-    "Los Chankas",
-    "Atl\u00e9tico Grau",
-    2,
-    0
-   ],
-   [
-    "Los Chankas",
-    "Cienciano",
-    1,
-    0
-   ],
-   [
-    "Los Chankas",
-    "Deportivo Garcilaso",
-    0,
-    1
-   ],
-   [
-    "Los Chankas",
-    "Deportivo Moquegua",
-    1,
-    0
-   ],
-   [
-    "Los Chankas",
-    "Sport Huancayo",
-    3,
-    2
-   ],
-   [
-    "Los Chankas",
     "Sporting Cristal",
-    3,
+    "Cusco FC",
+    2,
     2
    ],
    [
     "Los Chankas",
-    "Universitario",
-    3,
-    1
-   ],
-   [
-    "Los Chankas",
-    "UTC",
-    2,
-    2
-   ],
-   [
-    "Melgar",
-    "Alianza Atl\u00e9tico",
-    3,
-    1
-   ],
-   [
-    "Melgar",
-    "Atl\u00e9tico Grau",
-    0,
-    0
-   ],
-   [
-    "Melgar",
-    "Cienciano",
-    2,
-    0
-   ],
-   [
-    "Melgar",
-    "Cusco",
-    1,
-    3
-   ],
-   [
-    "Melgar",
-    "Deportivo Moquegua",
-    4,
-    0
-   ],
-   [
-    "Melgar",
-    "Los Chankas",
-    1,
-    2
-   ],
-   [
-    "Melgar",
-    "Sport Huancayo",
-    4,
-    1
-   ],
-   [
-    "Melgar",
-    "Universitario",
-    2,
-    1
-   ],
-   [
-    "Melgar",
-    "UTC",
-    2,
-    0
-   ],
-   [
-    "Sport Boys",
-    "Atl\u00e9tico Grau",
-    1,
-    0
-   ],
-   [
-    "Sport Boys",
-    "Comerciantes Unidos",
-    1,
-    0
-   ],
-   [
-    "Sport Boys",
-    "Cusco",
-    1,
-    0
-   ],
-   [
-    "Sport Boys",
-    "Deportivo Moquegua",
-    0,
-    0
-   ],
-   [
-    "Sport Boys",
-    "Juan Pablo II College",
-    1,
-    1
-   ],
-   [
-    "Sport Boys",
-    "Los Chankas",
-    1,
-    1
-   ],
-   [
-    "Sport Boys",
-    "Melgar",
-    1,
-    3
-   ],
-   [
-    "Sport Boys",
-    "Sport Huancayo",
-    3,
-    0
-   ],
-   [
-    "Sport Boys",
-    "Universitario",
-    0,
-    0
-   ],
-   [
-    "Sport Huancayo",
-    "ADT",
-    0,
-    1
-   ],
-   [
-    "Sport Huancayo",
-    "Alianza Lima",
-    1,
-    2
-   ],
-   [
-    "Sport Huancayo",
-    "Cajamarca",
-    2,
-    0
-   ],
-   [
-    "Sport Huancayo",
-    "Cienciano",
-    2,
-    2
-   ],
-   [
-    "Sport Huancayo",
-    "Comerciantes Unidos",
-    1,
-    1
-   ],
-   [
-    "Sport Huancayo",
     "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "UTC",
+    "FC Cajamarca",
+    1,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "ADT",
     2,
+    2
+   ],
+   [
+    "Comerciantes Unidos",
+    "FBC Melgar",
+    1,
+    1
+   ],
+   [
+    "Cusco FC",
+    "Los Chankas",
+    1,
     1
    ],
    [
@@ -12107,76 +12136,22 @@
     1
    ],
    [
-    "Sport Huancayo",
-    "Sporting Cristal",
-    2,
-    1
-   ],
-   [
-    "Sporting Cristal",
-    "ADT",
-    2,
-    1
-   ],
-   [
-    "Sporting Cristal",
+    "Deportivo Garcilaso",
     "Alianza Atl\u00e9tico",
-    3,
+    2,
     1
    ],
    [
-    "Sporting Cristal",
-    "Cusco",
-    2,
-    2
-   ],
-   [
-    "Sporting Cristal",
-    "Deportivo Moquegua",
-    1,
-    2
-   ],
-   [
-    "Sporting Cristal",
-    "Melgar",
-    1,
-    2
-   ],
-   [
-    "Sporting Cristal",
     "Sport Boys",
-    3,
+    "Universitario",
+    0,
     0
    ],
    [
+    "FC Cajamarca",
     "Sporting Cristal",
-    "Universitario",
-    2,
-    2
-   ],
-   [
-    "Sporting Cristal",
-    "UTC",
     3,
-    2
-   ],
-   [
-    "Universitario",
-    "ADT",
-    2,
-    0
-   ],
-   [
-    "Universitario",
-    "Alianza Atl\u00e9tico",
-    1,
-    2
-   ],
-   [
-    "Universitario",
-    "Alianza Lima",
-    1,
-    0
+    1
    ],
    [
     "Universitario",
@@ -12185,69 +12160,69 @@
     1
    ],
    [
-    "Universitario",
-    "Cajamarca",
-    1,
-    0
-   ],
-   [
-    "Universitario",
     "Cienciano",
-    2,
+    "Alianza Lima",
+    0,
     1
    ],
    [
-    "Universitario",
-    "Deportivo Garcilaso",
+    "FBC Melgar",
+    "Sport Huancayo",
     4,
     1
    ],
    [
-    "Universitario",
-    "Sport Huancayo",
-    2,
-    1
-   ],
-   [
-    "Universitario",
-    "UTC",
-    2,
-    0
-   ],
-   [
-    "UTC",
+    "Juan Pablo II College",
     "Alianza Atl\u00e9tico",
-    1,
-    1
-   ],
-   [
-    "UTC",
-    "Alianza Lima",
     0,
-    1
+    2
    ],
    [
-    "UTC",
-    "Atl\u00e9tico Grau",
+    "Sport Boys",
+    "Cusco FC",
+    1,
+    0
+   ],
+   [
+    "ADT",
+    "Comerciantes Unidos",
     2,
     0
    ],
    [
+    "Deportivo Garcilaso",
     "UTC",
-    "Cajamarca",
-    1,
-    2
-   ],
-   [
-    "UTC",
-    "Cienciano",
     2,
-    2
+    0
    ],
    [
-    "UTC",
-    "Cusco",
+    "Los Chankas",
+    "Deportivo Moquegua",
     1,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "FBC Melgar",
+    1,
+    1
+   ],
+   [
+    "Alianza Lima (G)",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "Cusco FC",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Universitario",
+    0,
     0
    ],
    [
@@ -12257,34 +12232,100 @@
     0
    ],
    [
-    "UTC",
+    "Alianza Atl\u00e9tico",
+    "FC Cajamarca",
+    1,
+    1
+   ],
+   [
     "Sport Huancayo",
+    "Cienciano",
     2,
     2
    ],
    [
+    "Sporting Cristal",
     "ADT",
-    "Alianza Atl\u00e9tico",
-    1,
-    1
-   ],
-   [
-    "ADT",
-    "Cienciano",
     2,
     1
    ],
    [
-    "ADT",
+    "Comerciantes Unidos",
     "Deportivo Garcilaso",
     0,
-    1
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Deportivo Moquegua",
+    1,
+    0
    ],
    [
     "ADT",
+    "Cusco FC",
+    1,
+    2
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Juan Pablo II College",
+    4,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Universitario",
     "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Cienciano",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "FBC Melgar",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "FC Cajamarca",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Los Chankas",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "Cienciano",
+    "FBC Melgar",
     1,
     3
+   ],
+   [
+    "FC Cajamarca",
+    "Juan Pablo II",
+    2,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Deportivo Garcilaso",
+    1,
+    0
    ],
    [
     "ADT",
@@ -12293,16 +12334,34 @@
     2
    ],
    [
-    "Alianza Atl\u00e9tico",
-    "Cienciano",
-    1,
-    0
+    "Atl\u00e9tico Grau",
+    "UTC",
+    3,
+    1
    ],
    [
+    "Cusco FC",
     "Alianza Atl\u00e9tico",
+    4,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
     "Comerciantes Unidos",
     2,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "Sport Huancayo",
+    2,
     1
+   ],
+   [
+    "Los Chankas",
+    "Sport Boys",
+    1,
+    0
    ],
    [
     "Alianza Atl\u00e9tico",
@@ -12311,70 +12370,64 @@
     1
    ],
    [
-    "Alianza Atl\u00e9tico",
-    "Sporting Cristal",
-    3,
+    "Universitario",
+    "Cusco FC",
+    2,
     1
    ],
    [
-    "Alianza Atl\u00e9tico",
-    "UTC",
-    3,
-    2
+    "FBC Melgar",
+    "Sporting Cristal",
+    2,
+    1
    ],
    [
-    "Alianza Lima",
+    "Juan Pablo II",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "Sport Boys",
     "ADT",
     2,
     0
    ],
    [
-    "Alianza Lima",
-    "Alianza Atl\u00e9tico",
-    3,
-    1
-   ],
-   [
-    "Alianza Lima",
-    "Deportivo Garcilaso",
-    0,
-    1
-   ],
-   [
-    "Alianza Lima",
     "Sport Huancayo",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Alianza Lima",
+    2,
+    2
+   ],
+   [
+    "Deportivo Garcilaso",
+    "FC Cajamarca",
     2,
     1
    ],
    [
-    "Alianza Lima",
-    "Universitario",
-    1,
+    "UTC",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Comerciantes Unidos",
+    3,
     2
    ],
    [
     "Alianza Lima",
-    "UTC",
-    1,
-    0
-   ],
-   [
-    "Atl\u00e9tico Grau",
     "Alianza Atl\u00e9tico",
     3,
     1
-   ],
-   [
-    "Atl\u00e9tico Grau",
-    "Comerciantes Unidos",
-    1,
-    0
-   ],
-   [
-    "Atl\u00e9tico Grau",
-    "Melgar",
-    1,
-    0
    ],
    [
     "Atl\u00e9tico Grau",
@@ -12383,88 +12436,328 @@
     1
    ],
    [
-    "Atl\u00e9tico Grau",
+    "Cusco FC",
     "UTC",
+    4,
+    1
+   ],
+   [
+    "FC Cajamarca",
+    "Sport Huancayo",
+    0,
+    2
+   ],
+   [
+    "ADT",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "Cienciano",
+    "Universitario",
+    2,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "FBC Melgar",
+    0,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Juan Pablo II",
+    2,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Cusco FC",
     3,
     1
    ],
    [
-    "Cajamarca",
+    "Sport Huancayo",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Universitario",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Juan Pablo II",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "ADT",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "FBC Melgar",
+    "FC Cajamarca",
+    2,
+    4
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Cusco FC",
+    "Juan Pablo II",
+    2,
+    0
+   ],
+   [
+    "ADT",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "UTC",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "FBC Melgar",
+    0,
+    3
+   ],
+   [
+    "Cienciano",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "FC Cajamarca",
+    "Universitario",
+    2,
+    3
+   ],
+   [
+    "Sporting Cristal",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "FC Cajamarca",
     "Atl\u00e9tico Grau",
     1,
     3
    ],
    [
-    "Cajamarca",
+    "Deportivo Garcilaso",
+    "Cusco FC",
+    4,
+    1
+   ],
+   [
+    "Juan Pablo II",
+    "ADT",
+    5,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Deportivo Moquegua",
+    0,
+    2
+   ],
+   [
+    "UTC",
+    "Comerciantes Unidos",
+    1,
+    3
+   ],
+   [
+    "FBC Melgar",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Cienciano",
+    5,
+    1
+   ],
+   [
+    "Universitario",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "FC Cajamarca",
+    2,
+    3
+   ],
+   [
+    "Alianza Lima",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Juan Pablo II",
+    3,
+    4
+   ],
+   [
+    "UTC",
+    "Universitario",
+    2,
+    4
+   ],
+   [
+    "ADT",
+    "Sport Huancayo",
+    1,
+    3
+   ],
+   [
+    "Cienciano",
+    "Cusco FC",
+    1,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Alianza Atl\u00e9tico",
+    1,
+    4
+   ],
+   [
+    "Sport Boys",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "FBC Melgar",
+    1,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "FC Cajamarca",
     "Cienciano",
     2,
     5
    ],
    [
-    "Cajamarca",
-    "Cusco",
+    "Cusco FC",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Sport Boys",
     2,
     1
    ],
    [
-    "Cajamarca",
-    "Juan Pablo II College",
-    2,
-    2
-   ],
-   [
-    "Cajamarca",
-    "Sport Huancayo",
-    0,
-    2
-   ],
-   [
-    "Cajamarca",
     "Universitario",
+    "Comerciantes Unidos",
     2,
-    3
-   ],
-   [
-    "Cienciano",
-    "Cusco",
-    1,
     2
    ],
    [
-    "Cienciano",
     "Deportivo Garcilaso",
-    0,
-    0
-   ],
-   [
-    "Cienciano",
-    "Melgar",
-    1,
-    3
-   ],
-   [
-    "Cienciano",
-    "Universitario",
-    2,
-    0
-   ],
-   [
-    "Comerciantes Unidos",
-    "Alianza Lima",
-    2,
+    "Atl\u00e9tico Grau",
+    4,
     2
    ],
    [
-    "Comerciantes Unidos",
-    "Cajamarca",
-    2,
-    3
+    "FBC Melgar",
+    "ADT",
+    3,
+    0
    ],
    [
-    "Comerciantes Unidos",
-    "Cusco",
-    3,
+    "Juan Pablo II",
+    "Alianza Lima",
+    1,
     1
+   ],
+   [
+    "Sporting Cristal",
+    "Los Chankas",
+    5,
+    0
+   ],
+   [
+    "Cusco FC",
+    "FBC Melgar",
+    0,
+    1
+   ],
+   [
+    "UTC",
+    "Juan Pablo II",
+    1,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "Universitario",
+    1,
+    2
    ],
    [
     "Comerciantes Unidos",
@@ -12473,328 +12766,82 @@
     1
    ],
    [
-    "Cusco",
+    "Los Chankas",
+    "FC Cajamarca",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
     "Alianza Atl\u00e9tico",
-    4,
+    3,
     1
    ],
    [
-    "Cusco",
     "Deportivo Moquegua",
-    2,
-    0
-   ],
-   [
-    "Cusco",
-    "Juan Pablo II College",
-    2,
-    0
-   ],
-   [
-    "Cusco",
-    "Melgar",
-    0,
-    1
-   ],
-   [
-    "Cusco",
-    "UTC",
-    4,
-    1
-   ],
-   [
-    "Deportivo Garcilaso",
-    "Atl\u00e9tico Grau",
-    4,
+    "Sporting Cristal",
+    1,
     2
    ],
    [
+    "Sport Boys",
     "Deportivo Garcilaso",
-    "Cajamarca",
-    2,
-    1
-   ],
-   [
-    "Deportivo Garcilaso",
-    "Cusco",
-    4,
-    1
-   ],
-   [
-    "Deportivo Garcilaso",
-    "Deportivo Moquegua",
-    2,
+    1,
     0
    ],
    [
-    "Deportivo Garcilaso",
-    "Universitario",
-    4,
-    0
-   ],
-   [
-    "Deportivo Moquegua",
     "Alianza Atl\u00e9tico",
-    1,
-    4
-   ],
-   [
-    "Deportivo Moquegua",
     "Comerciantes Unidos",
     2,
-    2
+    1
    ],
    [
-    "Deportivo Moquegua",
-    "Melgar",
-    0,
+    "Alianza Lima",
+    "ADT",
+    2,
     0
    ],
    [
-    "Deportivo Moquegua",
+    "Deportivo Garcilaso",
+    "Universitario",
+    4,
+    0
+   ],
+   [
+    "FBC Melgar",
     "Sport Boys",
     1,
     1
    ],
    [
-    "Deportivo Moquegua",
-    "Sporting Cristal",
+    "FC Cajamarca",
+    "Cusco FC",
     1,
     2
    ],
    [
-    "Juan Pablo II College",
-    "ADT",
-    5,
-    1
-   ],
-   [
-    "Juan Pablo II College",
-    "Alianza Lima",
-    1,
-    1
-   ],
-   [
-    "Juan Pablo II College",
+    "Sporting Cristal",
     "Atl\u00e9tico Grau",
-    0,
-    0
+    3,
+    1
    ],
    [
-    "Juan Pablo II College",
-    "Cienciano",
-    2,
-    0
-   ],
-   [
-    "Juan Pablo II College",
+    "Juan Pablo II",
     "Deportivo Moquegua",
     4,
     0
    ],
    [
-    "Los Chankas",
-    "Cajamarca",
-    1,
-    2
-   ],
-   [
-    "Los Chankas",
-    "Comerciantes Unidos",
+    "Sport Huancayo",
+    "UTC",
     3,
     2
    ],
    [
-    "Los Chankas",
-    "Juan Pablo II College",
-    3,
-    4
-   ],
-   [
-    "Los Chankas",
-    "Melgar",
-    0,
-    3
-   ],
-   [
-    "Los Chankas",
-    "Sport Boys",
-    1,
-    0
-   ],
-   [
-    "Melgar",
     "ADT",
-    3,
-    0
-   ],
-   [
-    "Melgar",
-    "Alianza Lima",
-    1,
-    1
-   ],
-   [
-    "Melgar",
-    "Cajamarca",
-    2,
-    4
-   ],
-   [
-    "Melgar",
-    "Sport Boys",
-    1,
-    1
-   ],
-   [
-    "Melgar",
-    "Sporting Cristal",
-    2,
-    1
-   ],
-   [
-    "Sport Boys",
-    "ADT",
-    2,
-    0
-   ],
-   [
-    "Sport Boys",
-    "Alianza Lima",
-    1,
-    1
-   ],
-   [
-    "Sport Boys",
     "Cienciano",
-    5,
-    1
-   ],
-   [
-    "Sport Boys",
-    "Deportivo Garcilaso",
-    1,
-    0
-   ],
-   [
-    "Sport Boys",
-    "Sporting Cristal",
-    1,
-    0
-   ],
-   [
-    "Sport Huancayo",
-    "Atl\u00e9tico Grau",
-    2,
-    0
-   ],
-   [
-    "Sport Huancayo",
-    "Deportivo Moquegua",
-    0,
-    2
-   ],
-   [
-    "Sport Huancayo",
-    "Los Chankas",
-    1,
-    1
-   ],
-   [
-    "Sport Huancayo",
-    "Sport Boys",
     2,
     1
-   ],
-   [
-    "Sport Huancayo",
-    "UTC",
-    3,
-    2
-   ],
-   [
-    "Sporting Cristal",
-    "Atl\u00e9tico Grau",
-    3,
-    1
-   ],
-   [
-    "Sporting Cristal",
-    "Deportivo Garcilaso",
-    1,
-    0
-   ],
-   [
-    "Sporting Cristal",
-    "Juan Pablo II College",
-    2,
-    0
-   ],
-   [
-    "Sporting Cristal",
-    "Los Chankas",
-    5,
-    0
-   ],
-   [
-    "Sporting Cristal",
-    "Sport Huancayo",
-    4,
-    1
-   ],
-   [
-    "Universitario",
-    "Comerciantes Unidos",
-    2,
-    2
-   ],
-   [
-    "Universitario",
-    "Cusco",
-    2,
-    1
-   ],
-   [
-    "Universitario",
-    "Los Chankas",
-    3,
-    0
-   ],
-   [
-    "Universitario",
-    "Sporting Cristal",
-    1,
-    1
-   ],
-   [
-    "UTC",
-    "ADT",
-    1,
-    1
-   ],
-   [
-    "UTC",
-    "Comerciantes Unidos",
-    1,
-    3
-   ],
-   [
-    "UTC",
-    "Deportivo Moquegua",
-    0,
-    0
-   ],
-   [
-    "UTC",
-    "Juan Pablo II College",
-    1,
-    2
-   ],
-   [
-    "UTC",
-    "Universitario",
-    2,
-    4
    ]
   ],
   "refused_matrices": [],
@@ -15473,7 +15520,1461 @@
    "dated_is_superset": false,
    "name_coverage": 0.95
   },
-  "rates_source": "results grid (dated rounds not a superset)"
+  "grid_matches": [
+   [
+    "ADT",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "ADT",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "ADT",
+    "Comerciantes Unidos",
+    2,
+    0
+   ],
+   [
+    "ADT",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "ADT",
+    "Juan Pablo II College",
+    2,
+    3
+   ],
+   [
+    "ADT",
+    "Los Chankas",
+    4,
+    0
+   ],
+   [
+    "ADT",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "ADT",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "ADT",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "ADT",
+    0,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Alianza Lima",
+    0,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Atl\u00e9tico Grau",
+    2,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cajamarca",
+    1,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Deportivo Moquegua",
+    3,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sport Boys",
+    0,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Comerciantes Unidos",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Cusco",
+    8,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Melgar",
+    3,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Juan Pablo II College",
+    1,
+    2
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sport Huancayo",
+    0,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sporting Cristal",
+    4,
+    1
+   ],
+   [
+    "Cajamarca",
+    "ADT",
+    2,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Comerciantes Unidos",
+    3,
+    4
+   ],
+   [
+    "Cajamarca",
+    "Deportivo Garcilaso",
+    1,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Los Chankas",
+    0,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Melgar",
+    3,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "Cienciano",
+    "ADT",
+    3,
+    2
+   ],
+   [
+    "Cienciano",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "Cienciano",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "Cienciano",
+    "Cajamarca",
+    3,
+    0
+   ],
+   [
+    "Cienciano",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Cienciano",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "Cienciano",
+    "Juan Pablo II College",
+    6,
+    1
+   ],
+   [
+    "Cienciano",
+    "Sport Boys",
+    3,
+    1
+   ],
+   [
+    "Cienciano",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "Comerciantes Unidos",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "UTC",
+    1,
+    2
+   ],
+   [
+    "Cusco",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "Cusco",
+    "Comerciantes Unidos",
+    3,
+    1
+   ],
+   [
+    "Cusco",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Cusco",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Cusco",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Cusco",
+    "Universitario",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "ADT",
+    1,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Alianza Atl\u00e9tico",
+    2,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cienciano",
+    2,
+    3
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Juan Pablo II College",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Melgar",
+    1,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "ADT",
+    2,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Cajamarca",
+    2,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Juan Pablo II College",
+    3,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "UTC",
+    2,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Alianza Atl\u00e9tico",
+    0,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Cajamarca",
+    3,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Los Chankas",
+    2,
+    3
+   ],
+   [
+    "Juan Pablo II College",
+    "Melgar",
+    1,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Sporting Cristal",
+    0,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "Universitario",
+    1,
+    4
+   ],
+   [
+    "Juan Pablo II College",
+    "UTC",
+    2,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "Los Chankas",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Sport Huancayo",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Universitario",
+    3,
+    1
+   ],
+   [
+    "Los Chankas",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "Melgar",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Melgar",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "Melgar",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "Melgar",
+    "Cusco",
+    1,
+    3
+   ],
+   [
+    "Melgar",
+    "Deportivo Moquegua",
+    4,
+    0
+   ],
+   [
+    "Melgar",
+    "Los Chankas",
+    1,
+    2
+   ],
+   [
+    "Melgar",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Melgar",
+    "Universitario",
+    2,
+    1
+   ],
+   [
+    "Melgar",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Juan Pablo II College",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Melgar",
+    1,
+    3
+   ],
+   [
+    "Sport Boys",
+    "Sport Huancayo",
+    3,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "ADT",
+    0,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Alianza Lima",
+    1,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Cajamarca",
+    2,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Cienciano",
+    2,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Comerciantes Unidos",
+    1,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Deportivo Garcilaso",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Juan Pablo II College",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "ADT",
+    2,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Cusco",
+    2,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Deportivo Moquegua",
+    1,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Melgar",
+    1,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Sport Boys",
+    3,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Universitario",
+    2,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Universitario",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Universitario",
+    "Alianza Atl\u00e9tico",
+    1,
+    2
+   ],
+   [
+    "Universitario",
+    "Alianza Lima",
+    1,
+    0
+   ],
+   [
+    "Universitario",
+    "Atl\u00e9tico Grau",
+    0,
+    1
+   ],
+   [
+    "Universitario",
+    "Cajamarca",
+    1,
+    0
+   ],
+   [
+    "Universitario",
+    "Cienciano",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "Deportivo Garcilaso",
+    4,
+    1
+   ],
+   [
+    "Universitario",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "UTC",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "UTC",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "UTC",
+    "Cajamarca",
+    1,
+    2
+   ],
+   [
+    "UTC",
+    "Cienciano",
+    2,
+    2
+   ],
+   [
+    "UTC",
+    "Cusco",
+    1,
+    0
+   ],
+   [
+    "UTC",
+    "Sport Boys",
+    0,
+    0
+   ],
+   [
+    "UTC",
+    "Sport Huancayo",
+    2,
+    2
+   ],
+   [
+    "ADT",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "ADT",
+    "Cienciano",
+    2,
+    1
+   ],
+   [
+    "ADT",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "ADT",
+    "Sport Huancayo",
+    1,
+    3
+   ],
+   [
+    "ADT",
+    "Universitario",
+    1,
+    2
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Comerciantes Unidos",
+    2,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Los Chankas",
+    3,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "Alianza Atl\u00e9tico",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Alianza Lima",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "Alianza Lima",
+    "Universitario",
+    1,
+    2
+   ],
+   [
+    "Alianza Lima",
+    "UTC",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Melgar",
+    1,
+    0
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "Sport Boys",
+    0,
+    1
+   ],
+   [
+    "Atl\u00e9tico Grau",
+    "UTC",
+    3,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Atl\u00e9tico Grau",
+    1,
+    3
+   ],
+   [
+    "Cajamarca",
+    "Cienciano",
+    2,
+    5
+   ],
+   [
+    "Cajamarca",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Cajamarca",
+    "Juan Pablo II College",
+    2,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Sport Huancayo",
+    0,
+    2
+   ],
+   [
+    "Cajamarca",
+    "Universitario",
+    2,
+    3
+   ],
+   [
+    "Cienciano",
+    "Cusco",
+    1,
+    2
+   ],
+   [
+    "Cienciano",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "Cienciano",
+    "Melgar",
+    1,
+    3
+   ],
+   [
+    "Cienciano",
+    "Universitario",
+    2,
+    0
+   ],
+   [
+    "Comerciantes Unidos",
+    "Alianza Lima",
+    2,
+    2
+   ],
+   [
+    "Comerciantes Unidos",
+    "Cajamarca",
+    2,
+    3
+   ],
+   [
+    "Comerciantes Unidos",
+    "Cusco",
+    3,
+    1
+   ],
+   [
+    "Comerciantes Unidos",
+    "Sport Huancayo",
+    0,
+    1
+   ],
+   [
+    "Cusco",
+    "Alianza Atl\u00e9tico",
+    4,
+    1
+   ],
+   [
+    "Cusco",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "Cusco",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Cusco",
+    "Melgar",
+    0,
+    1
+   ],
+   [
+    "Cusco",
+    "UTC",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Atl\u00e9tico Grau",
+    4,
+    2
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cajamarca",
+    2,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Cusco",
+    4,
+    1
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "Deportivo Garcilaso",
+    "Universitario",
+    4,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Alianza Atl\u00e9tico",
+    1,
+    4
+   ],
+   [
+    "Deportivo Moquegua",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Deportivo Moquegua",
+    "Melgar",
+    0,
+    0
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "Deportivo Moquegua",
+    "Sporting Cristal",
+    1,
+    2
+   ],
+   [
+    "Juan Pablo II College",
+    "ADT",
+    5,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Juan Pablo II College",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "Juan Pablo II College",
+    "Deportivo Moquegua",
+    4,
+    0
+   ],
+   [
+    "Los Chankas",
+    "Cajamarca",
+    1,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Comerciantes Unidos",
+    3,
+    2
+   ],
+   [
+    "Los Chankas",
+    "Juan Pablo II College",
+    3,
+    4
+   ],
+   [
+    "Los Chankas",
+    "Melgar",
+    0,
+    3
+   ],
+   [
+    "Los Chankas",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "Melgar",
+    "ADT",
+    3,
+    0
+   ],
+   [
+    "Melgar",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Melgar",
+    "Cajamarca",
+    2,
+    4
+   ],
+   [
+    "Melgar",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "Melgar",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "Sport Boys",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Cienciano",
+    5,
+    1
+   ],
+   [
+    "Sport Boys",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Sport Boys",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "Sport Huancayo",
+    "Deportivo Moquegua",
+    0,
+    2
+   ],
+   [
+    "Sport Huancayo",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "Sport Boys",
+    2,
+    1
+   ],
+   [
+    "Sport Huancayo",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "Sporting Cristal",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "Sporting Cristal",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Los Chankas",
+    5,
+    0
+   ],
+   [
+    "Sporting Cristal",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "Universitario",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "Universitario",
+    "Cusco",
+    2,
+    1
+   ],
+   [
+    "Universitario",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "Universitario",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "ADT",
+    1,
+    1
+   ],
+   [
+    "UTC",
+    "Comerciantes Unidos",
+    1,
+    3
+   ],
+   [
+    "UTC",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "UTC",
+    "Juan Pablo II College",
+    1,
+    2
+   ],
+   [
+    "UTC",
+    "Universitario",
+    2,
+    4
+   ]
+  ],
+  "rates_source": "dated rounds (per-fixture rows with dates; the grid is kept as grid_matches)"
  },
  "Chile Liga de Primera": {
   "slug": "https://en.wikipedia.org/wiki/2026_Liga_de_Primera",
@@ -21359,7 +22860,7 @@
     1
    ]
   ],
-  "rates_source": "dated rounds (superset of the grid)"
+  "rates_source": "dated rounds (per-fixture rows with dates; the grid is kept as grid_matches)"
  },
  "Uruguay Primera": {
   "slug": null,
@@ -32670,6 +34171,6 @@
     2
    ]
   ],
-  "rates_source": "dated rounds (superset of the grid)"
+  "rates_source": "dated rounds (per-fixture rows with dates; the grid is kept as grid_matches)"
  }
 }
