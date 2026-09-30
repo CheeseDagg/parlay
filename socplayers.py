@@ -30,7 +30,7 @@ embedded JSON, so the POST route is the only way in. The long-standing note
 in SoccerTool that understat Cloudflare-walls the runner is STALE: the POST
 route works, which is why player_shares_pin.json could be live again.
 """
-import gzip, json, math, os, re, sys, urllib.parse, urllib.request
+import datetime as dt, gzip, json, math, os, re, sys, urllib.parse, urllib.request
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -110,19 +110,53 @@ def split_scorers(chunk):
     return out
 
 
-def parse_openfootball(text, default_year=None):
-    """[(date, home, away, hg, ag, [(player, goals)], [(player, goals)])]"""
+def parse_openfootball(text, default_year=None, stats=None):
+    """[(date, home, away, hg, ag, [(player, goals)], [(player, goals)])]
+
+    Pass a dict as `stats` to get the reconciliation counts back. Nothing
+    checked them for the first build and a quarter of every league was wrong
+    in silence -- see flush().
+    """
     games, cur_date, pending = [], None, None
     year = default_year
+    st = stats if stats is not None else {}
+    for k in ('ambiguous', 'reconciled', 'mismatch'):
+        st.setdefault(k, 0)
 
     def flush(block):
         if not pending or not block:
             return
-        body = ' '.join(block).strip()
-        body = body.strip('()')
-        h, _, a = body.partition(';')
-        pending[5].extend(split_scorers(h))
-        pending[6].extend(split_scorers(a))
+        body = ' '.join(block).strip().strip('()')
+        if ';' in body:
+            h, _, a = body.partition(';')
+            pending[5].extend(split_scorers(h))
+            pending[6].extend(split_scorers(a))
+            return
+        # NO SEMICOLON, AND THIS IS WHERE A QUARTER OF EVERY LEAGUE WENT WRONG.
+        # openfootball separates the two sides' scorers with ';' -- but omits
+        # it entirely when only one side scored:
+        #     Wolverhampton Wanderers  0-4 (0-2)  Manchester City
+        #                   (Erling HAALAND 34', 61', ...)
+        # str.partition on a string with no ';' returns the WHOLE THING as the
+        # first part, so every goal in every one-sided away win was credited
+        # to the home team. 95 of 380 Premier League matches. It is why
+        # Raphinha read as "all 11 of his goals came at home": his away goals
+        # were filed under the teams Barcelona beat.
+        #
+        # The scoreline sitting on the line above disambiguates it completely
+        # -- measured across the 2025-26 Premier League, all 140 semicolon-less
+        # blocks are one-sided (81 home, 59 away) and none is ambiguous. The
+        # ambiguous branch is kept anyway and COUNTED, because a source that
+        # starts omitting the separator on a two-sided scoreline would
+        # otherwise reintroduce the same silent mis-attribution.
+        one = split_scorers(body)
+        hg, ag = pending[3], pending[4]
+        if ag == 0 and hg:
+            pending[5].extend(one)
+        elif hg == 0 and ag:
+            pending[6].extend(one)
+        else:
+            st['ambiguous'] += 1
 
     block = []
     for raw in text.splitlines():
@@ -154,6 +188,15 @@ def parse_openfootball(text, default_year=None):
             pending = [cur_date, home, away, hg, ag, [], []]
             games.append(pending)
     flush(block)
+    # Reconcile against the scoreline the file already gave us. A match whose
+    # listed scorers do not add up to its own result is either incomplete at
+    # source or mis-attributed here, and the first build could not tell the
+    # difference because it never looked.
+    for g in games:
+        if sum(n for _, n in g[5]) == g[3] and sum(n for _, n in g[6]) == g[4]:
+            st['reconciled'] += 1
+        elif g[5] or g[6]:
+            st['mismatch'] += 1
     return [tuple(g) for g in games]
 
 
@@ -183,6 +226,204 @@ def player_matches(games):
     return by
 
 
+def team_matches_venue(games):
+    """{team: [(date, opp, venue, {player: goals})]} oldest first.
+
+    Separate from team_matches() rather than a wider tuple on it: that one is
+    load-bearing for streak_signals and its selftest pins the shape.
+    """
+    by = defaultdict(list)
+    for date, home, away, _hg, _ag, hs, as_ in games:
+        by[home].append((date, away, 'home', dict(hs)))
+        by[away].append((date, home, 'away', dict(as_)))
+    for k in by:
+        by[k].sort()
+    return by
+
+
+def poss(name):
+    """Possessive that survives a club called Wolves."""
+    return name + ("'" if name.endswith('s') else "'s")
+
+
+def player_spells(games):
+    """{(player, team): (first_date, last_date)} for players who changed club.
+
+    A goal feed has no transfer list, but it has something almost as good: a
+    player who appears under two different clubs inside one season moved, and
+    the file says exactly when. Antoine Semenyo scored for Bournemouth through
+    January and for Manchester City after it, and quoting "5 of Manchester
+    City's 19 home matches" over a season he spent half of at Bournemouth is
+    not a small error -- the denominator counts ten matches before he signed.
+
+    Only players with more than one club get a spell. For everyone else the
+    full season is the honest denominator, and it is the CONSERVATIVE one:
+    counting matches a player missed through injury understates his rate,
+    which is the safe direction for a number someone is going to bet on.
+    """
+    seen = defaultdict(list)
+    for date, home, away, _hg, _ag, hs, as_ in games:
+        for team, scorers in ((home, hs), (away, as_)):
+            for name, _g in scorers:
+                seen[name].append((date, team))
+    end = max((g[0] for g in games), default='9999-12-31')
+    spells = {}
+    for name, rows in seen.items():
+        clubs = {t for _d, t in rows}
+        if len(clubs) < 2:
+            continue
+        rows.sort()
+        # Order the clubs by FIRST goal, and run each spell from that date up to
+        # the day before the next club's first goal. Bounding a spell by the
+        # player's own last goal instead -- the obvious first try -- makes it
+        # far too tight: a striker who stops scoring in April still played in
+        # May, and the denominator would shrink to the weeks he was hot, which
+        # inflates every rate built on it. The transfer boundary is a fact in
+        # the data; a scoring drought is not a boundary at all.
+        firsts = sorted({t: min(d for d, tt in rows if tt == t) for t in clubs}.items(),
+                        key=lambda kv: kv[1])
+        for i, (club, start) in enumerate(firsts):
+            if i + 1 < len(firsts):
+                # The day BEFORE the next club's first goal. An inclusive bound
+                # would put a match played on the changeover date inside both
+                # spells, and the same fixture would be counted twice.
+                nxt = dt.date.fromisoformat(firsts[i + 1][1]) - dt.timedelta(days=1)
+                stop = min(nxt.isoformat(), end)
+            else:
+                stop = end
+            spells[(name, club)] = (start, stop)
+    return spells
+
+
+def split_signals(games, min_venue=8, min_h2h=3, min_hits=4):
+    """Player scoring rates split by venue, and by opponent.
+
+    THESE ARE NOT FORM, AND THAT IS WHY THEY DO NOT EXPIRE. "scored in 5 of
+    the last 6" is a claim about right now, so streak_signals kills it at
+    MAX_AGE_DAYS. "scored in 9 of 19 at home" is a claim about a completed
+    record, and the record does not get less true in October. So these are
+    built from every match the source has, and every row carries the span it
+    covers instead of being stale-refused.
+
+    The denominator problem is unchanged and handled the same way it is in
+    streak_signals: a goal feed knows who scored, not who played. The
+    denominator can only be the TEAM's matches at that venue, and the sentence
+    says so -- "of Barcelona's 19 home matches", never "of his 19".
+
+    One row per player per venue pair, stating both sides. A row that gave
+    only the home number would be the same trap as a de-vigged price quoted
+    without its other side: 9 of 19 at home means one thing next to 3 of 19
+    away and something else entirely next to 8 of 19.
+    """
+    tm = team_matches_venue(games)
+    spells = player_spells(games)
+    dates = sorted(g[0] for g in games)
+    span = f'{dates[0][:7]} to {dates[-1][:7]}' if dates else ''
+    out, h2h_pairs = [], 0
+
+    def window(player, team, rows):
+        """The club's matches that can honestly be this player's denominator."""
+        sp = spells.get((player, team))
+        if not sp:
+            return rows
+        lo, hi = sp
+        return [r for r in rows if lo <= r[0] <= hi]
+
+    for team, rows in tm.items():
+        totals = defaultdict(int)
+        for _d, _o, _v, gs in rows:
+            for pl, g in gs.items():
+                totals[pl] += g
+
+        for player in totals:
+            mine = window(player, team, rows)
+            home = [r for r in mine if r[2] == 'home']
+            away = [r for r in mine if r[2] == 'away']
+            if len(home) >= min_venue and len(away) >= min_venue:
+                kh = sum(1 for _d, _o, _v, gs in home if gs.get(player))
+                ka = sum(1 for _d, _o, _v, gs in away if gs.get(player))
+                if max(kh, ka) < min_hits:
+                    continue
+                rh, ra = kh / len(home), ka / len(away)
+                hi, lo = max(rh, ra), min(rh, ra)
+                # Rank 0: a genuine split -- one side at least twice the other,
+                # or a clean zero. Rank 1: no real split, but a high rate at one
+                # venue is still a fact worth a line. Anything else is a good
+                # player scoring at a normal clip in both directions, which is
+                # not a signal about venue and does not belong in a venue list.
+                if lo == 0 or hi >= 2 * lo:
+                    rank = 0
+                elif hi >= 0.45:
+                    rank = 1
+                else:
+                    continue
+                # A windowed denominator has to SAY it is windowed, or "5 of 8"
+                # next to a neighbouring "8 of 19" reads as a worse player
+                # rather than a shorter spell.
+                tail = " since joining" if (player, team) in spells else ""
+                out.append({
+                    'player': player, 'team': team, 'league': None,
+                    'category': 'Player split', 'split': 'venue',
+                    'text': (f"scored in {kh} of {poss(team)} {len(home)} home "
+                             f"matches{tail}, {ka} of {len(away)} away"),
+                    'home_hits': kh, 'home_n': len(home),
+                    'away_hits': ka, 'away_n': len(away),
+                    'hits': max(kh, ka), 'n': len(home) if rh >= ra else len(away),
+                    'goals': sum(gs.get(player, 0) for _d, _o, _v, gs in mine),
+                    'span': span, 'rank': rank, 'partial': (player, team) in spells,
+                    'source': 'openfootball per-match',
+                    'evidence': [{'date': d, 'opp': o, 'venue': v,
+                                  'goals': gs.get(player, 0)}
+                                 for d, o, v, gs in mine if gs.get(player)][::-1]})
+
+        # Head-to-head. Keyed on the club the player scored for, not on the
+        # player alone: a transfer would otherwise sum two clubs' fixtures into
+        # one denominator. Keeping the club makes the denominator too LARGE
+        # when a player joined mid-window, which understates the rate -- the
+        # safe direction for a claim someone is going to bet on.
+        #
+        # This is also where a search across every player x every opponent will
+        # hand you whatever you ask for, so the floor is the same as a streak's:
+        # three or more meetings, three or more of them scored in. Never a
+        # two-from-two.
+        by_opp = defaultdict(list)
+        for d, o, v, gs in rows:
+            by_opp[o].append((d, v, gs))
+        for opp, met in by_opp.items():
+            if len(met) < min_h2h:
+                continue
+            h2h_pairs += 1
+            for player in totals:
+                # Same transfer window as the venue rows: a player's meetings
+                # with an opponent are the ones inside his spell at the club,
+                # not every fixture the club played that season.
+                sp = spells.get((player, team))
+                mine = ([m for m in met if sp[0] <= m[0] <= sp[1]] if sp else met)
+                if len(mine) < min_h2h:
+                    continue
+                hits = sum(1 for _d, _v, gs in mine if gs.get(player))
+                if hits < 3 or hits / len(mine) < 0.6:
+                    continue
+                met_n, goals = len(mine), sum(gs.get(player, 0) for _d, _v, gs in mine)
+                text = (f"scored in all {met_n} of {poss(team)} meetings with {opp}"
+                        if hits == met_n else
+                        f"scored in {hits} of {poss(team)} {met_n} meetings with {opp}")
+                if goals > hits:
+                    text += f' — {goals} goals'
+                out.append({'player': player, 'team': team, 'league': None,
+                            'category': 'Player split', 'split': 'h2h', 'opp': opp,
+                            'text': text, 'hits': hits, 'n': met_n, 'goals': goals,
+                            'span': span, 'rank': 0, 'partial': bool(sp),
+                            'source': 'openfootball per-match',
+                            'evidence': [{'date': d, 'opp': opp, 'venue': v,
+                                          'goals': gs.get(player, 0)}
+                                         for d, v, gs in mine if gs.get(player)][::-1]})
+    out.sort(key=lambda r: (r['rank'], -(r['hits'] / r['n']), -r['goals']))
+    for r in out:
+        r.pop('rank', None)
+    return out, h2h_pairs
+
+
 def streak_signals(games, today=None, window=WINDOW, min_hits=3):
     """'scored in N of {team}'s last M' -- and the phrasing is the honest part.
 
@@ -196,7 +437,6 @@ def streak_signals(games, today=None, window=WINDOW, min_hits=3):
     time X is out" are NOT produced here: both need an appearance record, and
     no source reachable from this runner publishes one for a live season.
     """
-    import datetime as dt
     today = today or dt.date.today()
     tm = team_matches(games)
     out, stale = [], 0
@@ -313,7 +553,8 @@ def rate_signals(rows, league_name, min_games=3):
 def build(of_fetch=None, us_fetch=None, today=None):
     of_fetch = of_fetch or (lambda url: http(url))
     us_fetch = us_fetch or understat
-    report, streaks, rates = [], [], []
+    report, streaks, rates, splits = [], [], [], []
+    pooled = defaultdict(list)
 
     for league, (repo, fname) in OF_LEAGUES.items():
         for yr in OF_YEARS:
@@ -323,20 +564,62 @@ def build(of_fetch=None, us_fetch=None, today=None):
             except Exception as e:
                 report.append(f'  openfootball {league} {yr}: {type(e).__name__}')
                 continue
-            games = parse_openfootball(txt, default_year=int(yr[:4]))
+            pstats = {}
+            games = parse_openfootball(txt, default_year=int(yr[:4]), stats=pstats)
+            # A 0-0 IS A MATCH THE PLAYER DID NOT SCORE IN. The first build
+            # filtered to matches that had goal events and then used that list
+            # as the denominator, so every goalless draw vanished and every
+            # rate was quoted over a short season: Crystal Palace read as
+            # "14 home matches" because five of their nineteen finished 0-0.
+            # The filter is only fit for deciding whether the FILE carries goal
+            # events at all (2026-27 parses fine and lists none), which is what
+            # it is used for now -- the full list goes downstream.
             withgoals = [g for g in games if g[5] or g[6]]
             if not withgoals:
                 report.append(f'  openfootball {league} {yr}: {len(games)} matches, '
                               f'NO goal events yet (backfilled after the season)')
                 continue
-            got, stale = streak_signals(withgoals, today=today)
+            got, stale = streak_signals(games, today=today)
             for r in got:
                 r['league'] = league
             streaks.extend(got)
-            nplayers = len(player_matches(withgoals))
-            report.append(f'  openfootball {league} {yr}: {len(withgoals)} matches with '
-                          f'scorers, {nplayers} players, {len(got)} live streaks'
+            # Splits pool ACROSS seasons on purpose. A streak is about now, so
+            # it lives inside one season and expires; a home/away or
+            # head-to-head record is a standing fact, and two seasons of
+            # meetings is the difference between a head-to-head worth reading
+            # and a 2-from-2 that means nothing.
+            pooled[league].extend(games)
+            nplayers = len(player_matches(games))
+            report.append(f'  openfootball {league} {yr}: {len(games)} matches '
+                          f'({len(withgoals)} with scorers), {nplayers} players, '
+                          f'{len(got)} live streaks'
                           + (f', {stale} too old to call form' if stale else ''))
+            # The scoreline reconciliation is REPORTED, not hidden. The first
+            # build credited every one-sided away win's scorers to the home
+            # team and nothing noticed, because nothing compared the parsed
+            # scorers against the result printed on the line above them.
+            report.append(f'    reconciled {pstats["reconciled"]} vs scoreline, '
+                          f'{pstats["mismatch"]} short (own goals and gaps at source)'
+                          + (f', {pstats["ambiguous"]} REFUSED as unattributable'
+                             if pstats['ambiguous'] else ''))
+
+    for league, games in pooled.items():
+        got, h2h_pairs = split_signals(games)
+        for r in got:
+            r['league'] = league
+        splits.extend(got)
+        nv = sum(1 for r in got if r['split'] == 'venue')
+        nh = sum(1 for r in got if r['split'] == 'h2h')
+        line = f'  splits {league}: {len(games)} pooled matches, {nv} venue, {nh} head-to-head'
+        if not h2h_pairs:
+            # Say WHY it is empty. openfootball carries goal events for one
+            # season only (2024-25 and earlier parse but list no scorers), and
+            # inside one season no two clubs meet more than twice -- below the
+            # three-meeting floor by construction. This turns on by itself the
+            # season a second year of scorers lands, and until then an empty
+            # head-to-head list is the source's limit, not a missing feature.
+            line += ' (no pair has met 3+ times in the seasons that carry scorers)'
+        report.append(line)
 
     for slug, name in UNDERSTAT_LEAGUES.items():
         try:
@@ -348,7 +631,7 @@ def build(of_fetch=None, us_fetch=None, today=None):
         rates.extend(got)
         report.append(f'  understat {name}: {len(rows)} players, {len(got)} rate signals')
 
-    return {'streaks': streaks, 'rates': rates, 'report': report}
+    return {'streaks': streaks, 'rates': rates, 'splits': splits, 'report': report}
 
 
 def selftest():
@@ -459,6 +742,138 @@ Sat Aug 24
     chk({r['source'] for r in res['streaks']} == {'openfootball per-match'} and
         {r['source'] for r in res['rates']} == {'understat season totals'},
         'every signal names which source it came from')
+
+    # ---------------------------------------------------------- the parser bug
+    # openfootball omits the ';' between the two sides' scorers when only one
+    # side scored. str.partition then returns the WHOLE block as the home part,
+    # so every goal in every one-sided away win was credited to the home team:
+    # 95 of 380 Premier League matches, and the symptom was strikers reading as
+    # "all his goals came at home" because their away goals were filed under
+    # the clubs they beat.
+    ONE_SIDED = """= T
+Fri Aug 15 2025
+  19:00   Wolves  0-4 (0-2)  Manchester City
+                  (Erling HAALAND 34', 61', Rayan CHERKI 81', Tijjani REIJNDERS 37')
+  19:00   Sunderland  3-0 (0-0)  West Ham United
+                  (Eliezer Mayenda 61', Daniel BALLARD 73', Wilson Isidor 90+2')
+  19:00   Chelsea  0-0 (0-0)  Palace
+  19:00   Everton  2-1 (1-0)  Leeds
+                  (Iliman NDIAYE 12', Beto 55'; Joe RODON 80')
+"""
+    st = {}
+    gs_ = parse_openfootball(ONE_SIDED, 2025, stats=st)
+    byname = {f'{g[1]} v {g[2]}': g for g in gs_}
+    wolves = byname['Wolves v Manchester City']
+    chk(wolves[5] == [] and sum(n for _, n in wolves[6]) == 4,
+        'a 0-4 with no semicolon credits all four goals to the AWAY team')
+    chk(dict(wolves[6]).get('Erling HAALAND') == 2,
+        'a two-goal player in a semicolon-less block is one entry with 2 goals')
+    sund = byname['Sunderland v West Ham United']
+    chk(sum(n for _, n in sund[5]) == 3 and sund[6] == [],
+        'a 3-0 with no semicolon still credits the HOME team')
+    ev = byname['Everton v Leeds']
+    chk(sum(n for _, n in ev[5]) == 2 and sum(n for _, n in ev[6]) == 1,
+        'a semicolon block is still split on the semicolon')
+    chk(st['reconciled'] == 4 and st['mismatch'] == 0 and st['ambiguous'] == 0,
+        'every parsed match reconciles against its own scoreline')
+    AMBIG = """= T
+Fri Aug 15 2025
+  19:00   A  1-1 (0-0)  B
+                  (Someone 12')
+"""
+    st2 = {}
+    ag = parse_openfootball(AMBIG, 2025, stats=st2)
+    chk(ag[0][5] == [] and ag[0][6] == [] and st2['ambiguous'] == 1,
+        'a semicolon-less block on a two-sided scoreline is REFUSED, not guessed')
+
+    # ------------------------------------------------------- splits: the rules
+    def season(team, hs_dates, as_dates, scorer, home_goals, away_goals, opp='Rival'):
+        """A synthetic club season: n home + n away, scorer hits listed dates."""
+        out = []
+        for i, d in enumerate(hs_dates):
+            sc = [(scorer, 1)] if i in home_goals else []
+            out.append((d, team, f'{opp}{i}', 1 if sc else 0, 0, sc, []))
+        for i, d in enumerate(as_dates):
+            sc = [(scorer, 1)] if i in away_goals else []
+            out.append((d, f'{opp}{i}', team, 0, 1 if sc else 0, [], sc))
+        return out
+
+    hd = [f'2025-09-{i+1:02d}' for i in range(10)]
+    ad = [f'2025-10-{i+1:02d}' for i in range(10)]
+    g1 = season('Cats', hd, ad, 'Striker', {0, 1, 2, 3, 4, 5}, set())
+    sp, pairs = split_signals(g1, min_venue=8, min_h2h=3, min_hits=4)
+    v = [r for r in sp if r['split'] == 'venue' and r['player'] == 'Striker']
+    chk(len(v) == 1 and v[0]['text'] == "scored in 6 of Cats' 10 home matches, 0 of 10 away",
+        'a venue row states BOTH sides in one sentence, and Cats\' takes a bare apostrophe')
+    chk(v[0]['home_hits'] == 6 and v[0]['away_n'] == 10 and not v[0].get('partial'),
+        'the venue row carries both denominators as fields, unwindowed')
+    chk(pairs == 0, 'no opponent met 3 times, so no head-to-head was even attempted')
+
+    # A GOALLESS DRAW IS A MATCH HE DID NOT SCORE IN. All ten away fixtures
+    # above finished 0-0, so an away_n of 10 is the whole check: the first build
+    # filtered goalless matches out before measuring and quoted every rate over
+    # a short season.
+    chk(sum(1 for g in g1 if not g[5] and not g[6]) == 14 and v[0]['away_n'] == 10,
+        'goalless matches stay in the denominator instead of shortening the season')
+
+    # an even scorer at both ends is not a VENUE signal
+    g3 = season('Dogs', hd, ad, 'Even', {0, 1, 2, 3}, {0, 1, 2, 3})
+    sp3, _ = split_signals(g3, min_venue=8, min_h2h=3, min_hits=4)
+    chk(not [r for r in sp3 if r['split'] == 'venue'],
+        'scoring at the same clip home and away is not a venue split')
+
+    # below the hit floor at both ends -> nothing
+    g4 = season('Eels', hd, ad, 'Quiet', {0, 1}, set())
+    sp4, _ = split_signals(g4, min_venue=8, min_h2h=3, min_hits=4)
+    chk(not sp4, 'two goals at one venue is below the floor and produces no row')
+
+    # short seasons cannot support a venue claim
+    g5 = season('Figs', hd[:5], ad[:5], 'Striker', {0, 1, 2, 3}, set())
+    sp5, _ = split_signals(g5, min_venue=8, min_h2h=3, min_hits=4)
+    chk(not [r for r in sp5 if r['split'] == 'venue'],
+        'a club with fewer than min_venue matches at a venue gets no venue row')
+
+    # ------------------------------------------------------ splits: transfers
+    moved = (season('Old', hd[:5], ad[:5], 'Mover', {0, 1, 2}, set())
+             + season('New', hd[5:], ad[5:], 'Mover', {0, 1, 2, 3}, set()))
+    # give New a full pre-transfer slate that Mover was NOT part of
+    moved += [(f'2025-08-{i+1:02d}', 'New', f'X{i}', 0, 0, [], []) for i in range(6)]
+    moved += [(f'2025-08-{i+1:02d}', f'X{i}', 'New', 0, 0, [], []) for i in range(6, 12)]
+    spells = player_spells(moved)
+    chk(('Mover', 'New') in spells and ('Mover', 'Old') in spells,
+        'a player appearing under two clubs is detected as having moved')
+    chk(spells[('Mover', 'New')][0] == '2025-09-06',
+        "the spell starts at the player's first goal for the new club, not the season")
+    spm, _ = split_signals(moved, min_venue=5, min_h2h=3, min_hits=4)
+    vm = [r for r in spm if r['player'] == 'Mover' and r['team'] == 'New']
+    chk(vm and vm[0]['home_n'] == 5 and vm[0]['partial'],
+        "a transferred player's denominator is his spell, not the club's season")
+    chk(vm and 'since joining' in vm[0]['text'],
+        'a windowed denominator says so, or "5 of 8" reads as a worse player')
+
+    # ----------------------------------------------------- splits: head-to-head
+    h2h = []
+    for i, d in enumerate(['2024-09-01', '2025-02-01', '2025-09-01', '2026-02-01']):
+        sc = [('Nemesis', 1)] if i != 1 else []
+        h2h.append((d, 'Cats', 'Rival', 1 if sc else 0, 0, sc, []))
+    h2h += [(f'2025-11-{i+1:02d}', 'Cats', f'Other{i}', 0, 0, [], []) for i in range(6)]
+    sph, pairs2 = split_signals(h2h, min_venue=99, min_h2h=3, min_hits=4)
+    hh = [r for r in sph if r['split'] == 'h2h']
+    # pairs2 is 2 because the pairing is counted from BOTH clubs' fixture
+    # lists; only Cats have a player who scored in it, so only one row exists.
+    chk(pairs2 == 2 and len(hh) == 1,
+        'only the opponent met 3+ times is eligible for a head-to-head row')
+    chk(hh[0]['text'] == "scored in 3 of Cats' 4 meetings with Rival",
+        'the head-to-head sentence names the club whose fixtures are the denominator')
+    two = [(d, 'Cats', 'Rival', 1, 0, [('Flash', 1)], []) for d in ('2025-09-01', '2026-02-01')]
+    sp2, _ = split_signals(two, min_venue=99, min_h2h=3, min_hits=4)
+    chk(not sp2, 'a two-from-two is never a head-to-head signal')
+
+    # ------------------------------------------------------------- not form
+    chk(not any('last' in r['text'] for r in sp + sph),
+        'a split never borrows the language of form -- no "last N" in a standing record')
+    chk(all(r.get('span') for r in sp + sph),
+        'every split row carries the span it was built from')
 
     print(f'\n{ok[0]}/{ok[1]} checks pass')
     return 0 if ok[0] == ok[1] else 1
