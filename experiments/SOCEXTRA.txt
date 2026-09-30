@@ -1,1 +1,2 @@
 2026-09-30T15:47Z first build: Colombia + Peru
+2026-09-30T15:57Z round 2: +Chile(renamed) +Uruguay(es) +Bolivia

@@ -44,16 +44,17 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
 # built on it would quietly grade this year against a fourteen-year-old
 # league. Pin the slug; when a season rolls over, the fetch 404s loudly.
 LEAGUES = {
-    'Colombia Primera A': ['2026_Categor%C3%ADa_Primera_A_season'],
-    'Peru Liga 1':        ['2026_Liga_1_(Peru)'],
-    # Tried and not yet found (kept so the next run re-tests them and the
-    # report says so out loud rather than the league just being absent):
-    'Chile Primera':      ['2026_Campeonato_Nacional_(Chile)',
-                           '2026_Chilean_Primera_Divisi%C3%B3n_season',
-                           '2026_Primera_Divisi%C3%B3n_de_Chile'],
-    'Uruguay Primera':    ['2026_Uruguayan_Primera_Divisi%C3%B3n_season'],
-    'Bolivia Primera':    ['2026_Bolivian_Primera_Divisi%C3%B3n_season',
-                           '2026_Bolivian_Primera_Divisi%C3%B3n'],
+    # Full URLs, not slugs: Uruguay's season lives on SPANISH Wikipedia only,
+    # and the page that carries a league is not always on the wiki you expect.
+    'Colombia Primera A': ['https://en.wikipedia.org/wiki/2026_Categor%C3%ADa_Primera_A_season'],
+    'Peru Liga 1':        ['https://en.wikipedia.org/wiki/2026_Liga_1_(Peru)'],
+    # Chile RENAMED the competition: it is "Liga de Primera" now, which is the
+    # entire reason every 2026_Chilean_Primera_Division slug 404'd through
+    # three probe rounds. The league did not vanish, its name moved.
+    'Chile Liga de Primera': ['https://en.wikipedia.org/wiki/2026_Liga_de_Primera',
+                              'https://es.wikipedia.org/wiki/Liga_de_Primera_2026'],
+    'Uruguay Primera':    ['https://es.wikipedia.org/wiki/Campeonato_Uruguayo_de_Primera_Divisi%C3%B3n_2026'],
+    'Bolivia Profesional': ['https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional'],
 }
 
 RUNGS = (1.5, 2.5, 3.5, 4.5, 5.5)
@@ -115,7 +116,8 @@ def is_matrix(rows):
     if not rows or len(rows) < 4:
         return False
     corner = rows[0][0].lower() if rows[0] else ''
-    if 'home' not in corner:
+    # es.wikipedia writes the corner as 'Local \\ Visitante'. A grid is a grid.
+    if not any(w in corner for w in ('home', 'local', 'equipo')):
         return False
     return sum(1 for r in rows for c in r if SCORE.match(c.strip())) >= 20
 
@@ -195,11 +197,11 @@ def build(fetch=get):
         html = None
         for s in slugs:
             try:
-                html = fetch(f'https://en.wikipedia.org/wiki/{s}')
+                html = fetch(s)
                 used = s
                 break
             except Exception as e:
-                report.append(f'  {league}: {s} -> {type(e).__name__}')
+                report.append(f'  {league}: {s.rsplit("/", 1)[-1]} -> {type(e).__name__}')
         if html is None:
             report.append(f'  ABSENT  {league}: no pinned slug resolved')
             continue
@@ -254,6 +256,12 @@ def selftest():
             row.append('—' if i == j else f'{(i + j) % 4}–{(i * j) % 3}')
         big.append(row)
     chk(is_matrix(big), 'an 8-club full grid reads as a matrix')
+    es = [r[:] for r in big]
+    es[0][0] = 'Local \\ Visitante'
+    chk(is_matrix(es), 'a SPANISH grid (Local \\ Visitante) is still a matrix')
+    en_only = [r[:] for r in big]
+    en_only[0][0] = 'Player'
+    chk(not is_matrix(en_only), 'a scores table that is not a grid is refused')
     chk(diagonal_ok(big)[0], 'a clean grid passes the diagonal guard')
 
     m = read_matrix(big)
