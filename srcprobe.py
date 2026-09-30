@@ -164,19 +164,44 @@ def body_text(b):
     return b.decode('utf-8', 'replace')
 
 
-print("=== ROUND 15: is understat's 200 a real page or a challenge? ===")
-b = probe("https://understat.com/league/EPL/2026", "understat EPL 2026")
-if b:
-    t = body_text(b)
-    print(f"     {len(t):,} chars")
-    low = t.lower()
-    for marker in ('cloudflare', 'just a moment', 'challenge', 'cf-', 'captcha',
-                   'enable javascript', 'ray id'):
-        if marker in low:
-            print(f"     CHALLENGE MARKER: {marker!r}")
-    print("     --- first 400 chars ---")
-    print("     " + t[:400].replace('\n', ' ')[:400])
-    print("     --- title ---")
-    import re as _re
-    ti = _re.search(r'<title[^>]*>(.*?)</title>', t, _re.S | _re.I)
-    print("     " + (ti.group(1).strip()[:120] if ti else 'no title'))
+print("=== ROUND 16: understat POST routes -- is there a PER-MATCH one? ===")
+import json as _j, re as _re
+
+pb = probe("https://understat.com/main/getPlayersStats/", "getPlayersStats (EPL 2026)",
+           post=urllib.parse.urlencode({"league": "EPL", "season": "2026"}).encode(),
+           referer="https://understat.com/league/EPL/2026")
+pid = None
+if pb:
+    t = body_text(pb)
+    print(f"     decoded {len(t):,} chars")
+    try:
+        d = _j.loads(t)
+        rows = (d.get('response') or {}).get('players') or d.get('players') or []
+        print(f"     players: {len(rows)}")
+        if rows:
+            print("     fields:", sorted(rows[0])[:14])
+            print("     sample:", {k: rows[0][k] for k in list(rows[0])[:7]})
+            pid = rows[0].get('id')
+    except Exception as e:
+        print("     not json:", type(e).__name__, t[:160])
+
+if pid:
+    for route, payload in (("/main/getPlayerStats/", {"player_id": pid}),
+                           ("/main/getPlayerMatches/", {"player_id": pid}),
+                           ("/main/getPlayerShots/", {"player_id": pid})):
+        rb = probe("https://understat.com" + route, f"{route} for player {pid}",
+                   post=urllib.parse.urlencode(payload).encode(),
+                   referer=f"https://understat.com/player/{pid}")
+        if not rb:
+            continue
+        rt = body_text(rb)
+        try:
+            d = _j.loads(rt)
+            keys = list(d) if isinstance(d, dict) else f'list[{len(d)}]'
+            print(f"       keys: {keys}")
+            blob = _j.dumps(d)[:300]
+            print(f"       sample: {blob}")
+            if 'date' in blob and ('goals' in blob or 'g' in blob):
+                print("       >>> LOOKS PER-MATCH")
+        except Exception:
+            print(f"       not json, {len(rt)} chars: {rt[:140]}")
