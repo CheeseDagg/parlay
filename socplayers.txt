@@ -20,7 +20,17 @@ socplayers
   understat Germany Bundesliga: 367 players, 5 rate signals
   understat Italy Serie A: 448 players, 46 rate signals
 
-wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 164 rates
+wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 118 splits, 164 rates
+  Antoine SEMENYO          scored in 5 of Manchester City's 8 home matches since joining, Manchester City
+  Harry WILSON             scored in 8 of Fulham's 19 home matches, 2 of 19 away          Fulham
+  BRUNO GUIMARAES          scored in 8 of Newcastle United's 19 home matches, 1 of 19 awa Newcastle United
+  Jean-Philippe MATETA     scored in 7 of Crystal Palace's 19 home matches, 2 of 19 away  Crystal Palace
+  Zian Flemming            scored in 3 of Burnley's 19 home matches, 7 of 19 away         Burnley
+  CASEMIRO                 scored in 7 of Manchester United's 19 home matches, 2 of 19 aw Manchester United
+  Nick WOLTEMADE           scored in 5 of Newcastle United's 19 home matches, 2 of 19 awa Newcastle United
+  William Osula            scored in 5 of Newcastle United's 19 home matches, 1 of 19 awa Newcastle United
+  IGOR JESUS               scored in 1 of Nottingham Forest's 19 home matches, 5 of 19 aw Nottingham Forest
+  Kevin SCHADE             scored in 4 of Brentford's 19 home matches, 2 of 19 away       Brentford
   Erling Haaland           leads the league with 5 goals in 5 games             Manchester City
   Alexander Isak           is among the top scorers with 4 goals in 5 games     Liverpool
   Pascal Groß              is among the top scorers with 3 goals in 5 games     Brighton
@@ -31,5 +41,3 @@ wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 164 rates
   Bryan Mbeumo             has played every minute of all 5 games               Manchester United
   Leif Davis               has played every minute of all 5 games               Ipswich
   Vitaly Janelt            has played every minute of all 5 games               Brentford
-  Antoine Semenyo          has played every minute of all 5 games               Manchester City
-  James Tarkowski          has played every minute of all 5 games               Everton
