@@ -1,22 +1,20 @@
-=== ROUND 11: USL, Uruguay, El Salvador with the ROWSPAN-AWARE parser ===
--- USL (its 2025 page had a results table the flat parser mangled)
-  USL 2026: 15 tables | 0 matrix | 0 dated rows (0 scored-but-undated)
-  USL 2025: 20 tables | 1 matrix | 0 dated rows (0 scored-but-undated)
-      matrix [Results table] 51x1 diagonal_ok=False
--- Uruguay per-tournament pages
-   search 'Torneo Apertura 2026 Uruguay': ['Torneo Apertura 2026 (Uruguay)', 'Torneo de Apertura y Clausura', 'Torneo Apertura 2026', 'Torneos cortos de la Primera División de Uruguay', 'Torneo Intermedio']
-   search 'Torneo Clausura 2026 Uruguay': ['Torneo Clausura 2026 (Uruguay)', 'Torneo Clausura 2026', 'Torneo de Apertura y Clausura', 'Torneos cortos de la Primera División de Uruguay', 'Torneo Intermedio']
-   search 'Torneo Intermedio 2026 Uruguay': ['Torneo Intermedio', 'Torneo Intermedio 2026', 'Torneos cortos de la Primera División de Uruguay', 'Torneo Clausura 2026 (Uruguay)', 'Supercopa Uruguaya']
-  Torneo_Apertura_2026_(Uruguay): 22 tables | 0 matrix | 120 dated rows (0 scored-but-undated)
-      dated: ('2026-02-06', 'Albion', 'Liverpool', 1, 2)
-      dated: ('2026-02-06', 'Montevideo Wanderers', 'Defensor Sporting', 1, 1)
-  Torneo_Clausura_2026_(Uruguay): 22 tables | 0 matrix | 63 dated rows (0 scored-but-undated)
-      dated: ('2026-08-07', 'Cerro Largo', 'Juventud', 1, 1)
-      dated: ('2026-08-08', 'Central Español', 'Progreso', 1, 0)
-  Torneo_Intermedio_2026: 8 tables | 0 matrix | 56 dated rows (0 scored-but-undated)
-      dated: ('2026-05-15', 'Montevideo City Torque', 'Nacional', 1, 2)
-      dated: ('2026-05-16', 'Boston River', 'Cerro', 4, 1)
--- El Salvador
-   search 'Primera Division de El Salvador 2026 Apertura': ['Primera División de El Salvador', 'Liga de Ascenso de El Salvador', 'Torneo de Apertura y Clausura', 'Primera División de Paraguay', 'Primera División de Argentina', 'Liga de Primera']
-  Torneo_Apertura_2026_(El_Salvador): HTTPError
-  Primera_Divisi%C3%B3n_de_F%C3%BAtbol_de_El_Salvador: HTTPError
+=== ROUND 12: a PER-PLAYER PER-MATCH source the RUNNER can reach ===
+Needed for 'scored in 5 of last 6'. player_shares_pin.json has season
+totals only; understat.com Cloudflare-walls this runner, which is why
+that file is a pin from 2026-08-03 carrying the 2025 season.
+
+-- understat (the incumbent)
+  OK       18,698b  understat league page  
+  FAIL  HTTPError 404  understat getLeagueData  
+  OK       28,386b  understat getPlayersStats (POST)  
+
+-- alternatives with per-player per-match
+  FAIL  HTTPError 403  fbref comp page  
+  FAIL  HTTPError 404  fotmob leagues api  
+  FAIL  HTTPError 403  sofascore events api  
+  OK       51,782b  openfootball england (goal events?)  
+  OK       34,887b  statsbomb open-data  
+
+-- and for the SOUTH AMERICAN leagues specifically
+  OK      555,021b  es.wikipedia (already used)  has goalscorer tables?
+  FAIL  HTTPError 403  sofascore search  
