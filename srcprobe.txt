@@ -1,12 +1,35 @@
-=== ROUND 8: why Uruguay's page yields no matrix ===
-  9 wikitables on the page
+=== ROUND 9: a DATED or ORDERED results source ===
+Recent Form needs order. A matrix has none. Two routes tested:
+  (a) Spanish Wikipedia round-by-round pages
+  (b) the odds API /scores endpoint for these league keys
 
-  [Ascensos y descensos            ]   4x  2 scorecells=   0 corner='Club'
-  [Ascensos y descensos            ]   4x  2 scorecells=   0 corner='Club'
-  [Información general             ]  17x 12 scorecells=   0 corner='Identidad'
-  [Distribución geográfica de los e]   5x  3 scorecells=   0 corner='Ciudad'
-  [Entrenadores                    ]  17x  3 scorecells=   0 corner='Equipo'
-  [Evolución de la clasificación   ]  18x 38 scorecells=   0 corner='Jornada / Equipo'
-  [Evolución de la clasificación   ]  18x 38 scorecells=   0 corner='Jornada / Equipo'
-  [Definición del campeonato       ]   4x  2 scorecells=   0 corner='Equipo'
-  [Referencias                     ]   1x  3 scorecells=   0 corner='Predecesor: 2025'
+--- (a) es.wikipedia season pages ---
+  Colombia: ['Categoría Primera B', 'Torneo Finalización 2002 (Colombia)', 'Torneo Finalización 2007 (Colombia)', 'Torneo Finalización 2013 (Colombia)', 'Torneo de Apertura y Clausura']
+  Peru: ['Liga1 2026 (Perú)', 'Liga1 (Perú)', 'Liga de Fútbol Profesional Peruana', 'Liga Femenina FPF', 'Segunda División del Perú']
+  Chile: ['Liga de Primera 2026', 'Liga de Ascenso de Chile 2026', 'Primeira Liga', 'Copa de la Liga de Chile 2026', 'Liga Femenina de baloncesto 2026-27']
+      [Liga de Primera 2026] ROUND TABLE [Primera rueda] 10r scores=14
+         hdr: Fecha 1
+         Local | Resultado | Visita | Estadio | Fecha | Hora
+         Universidad de Chi | 0-0 | Audax Italiano | Nacional | 30 de enero | 20:00
+      [Liga de Primera 2026] ROUND TABLE [Primera rueda] 10r scores=15
+         hdr: Fecha 2
+         Local | Resultado | Visita | Estadio | Fecha | Hora
+         Audax Italiano | 3-0 | Universidad de Con | La Florida | 6 de febrero | 20:00
+  Bolivia: ['Primera División de Bolivia', 'Copa Bolivia 2026', 'Primera División de Bolivia 2026', 'Segunda División de Bolivia', 'Primera División de Bolivia 2025']
+      [Copa Bolivia 2026] ROUND TABLE [Fixture] 10r scores=15
+         hdr: Fecha 1
+         Serie | Local | Resultado | Visitante | Estadio | Fecha | Hora
+         A | San Antonio Bulo B | 0 – 1 | Aurora | Dr. Carlos Villega | 18 de agosto | 15:00
+      [Copa Bolivia 2026] ROUND TABLE [Fixture] 10r scores=16
+         hdr: Fecha 2
+         Local | Resultado | Visitante | Estadio | Fecha | Hora
+         GV San José | 4 – 1 | Real Oruro | Jesús Bermúdez | 29 de agosto | 15:00
+
+--- (b) odds API /scores for these leagues ---
+  catalog 'colombia': ABSENT
+  catalog 'peru': ABSENT
+  catalog 'chile': ['soccer_chile_campeonato']
+  catalog 'bolivia': ABSENT
+  catalog 'uruguay': ABSENT
+  catalog 'usl': ['soccer_finland_veikkausliiga']
+    soccer_chile_campeonato: 10 events, 0 completed, sample=[]
