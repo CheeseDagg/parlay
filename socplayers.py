@@ -293,7 +293,8 @@ def drop_moved_players(splits, roster, clubs):
     not check" is not the same finding as "he moved", and acting on the first
     would quietly delete good rows over a naming mismatch.
 
-    `roster` is {normalised full name: {club, ...}}.
+    `roster` is {normalised full name: {club, ...}} and `clubs` is every club in
+    the CURRENT season, both from understat.
     """
     # NAME FALLBACK, WITH A COLLISION GUARD. The two sources write the same
     # player differently often enough that an exact-name check left 54 of 118
@@ -331,20 +332,31 @@ def drop_moved_players(splits, roster, clubs):
         if now is not None and reason is None:
             if len(now) > 1:
                 reason = 'listed at several clubs in the current season'
+            elif club_match(next(iter(now)), r.get('team')):
+                kept.append(r)              # still there -- the row stands
+                continue
+            elif any(club_match(c, r.get('team')) for c in clubs):
+                # His current club is not this row's club, AND this row's club
+                # is in the current season under a name we can match -- so the
+                # comparison is real and he has left. The row goes.
+                moved += 1
+                continue
             else:
-                hits = {c for c in clubs if any(club_match(c, t) for t in now)}
-                if not hits:
-                    reason = 'current club matches no club in the source data'
-                elif len(hits) > 1:
-                    reason = 'current club matches several clubs in the source data'
-                elif club_match(next(iter(hits)), r.get('team')):
-                    kept.append(r)          # still there -- the row stands
-                    continue
-                else:
-                    moved += 1              # he has left: the row goes
-                    continue
+                # The row's club is not in the current season under any
+                # matchable name: relegated, renamed, or spelled in a way the
+                # prefix rule cannot bridge. "He is elsewhere" and "I cannot
+                # find this club" are indistinguishable here, so neither is
+                # claimed.
+                reason = "row's club is not in the current season"
         why[reason] += 1
+        # MARK IT AND SINK IT. A row whose club could not be confirmed is weaker
+        # evidence than one that was, and Ryan is going to bet off these. It does
+        # NOT get a badge on the page -- the tab has been made confusing twice by
+        # extra furniture -- so instead it sorts beneath every verified row and
+        # the strongest evidence surfaces first without a word of explanation.
+        r['club_unverified'] = reason
         kept.append(r)
+    kept.sort(key=lambda r: 1 if r.get('club_unverified') else 0)
     return kept, moved, sum(why.values()), by_token, dict(why)
 
 
@@ -728,7 +740,7 @@ def build(of_fetch=None, us_fetch=None, today=None):
             line += ' (no pair has met 3+ times in the seasons that carry scorers)'
         report.append(line)
 
-    roster = defaultdict(set)
+    roster, now_clubs = defaultdict(set), set()
     for slug, name in UNDERSTAT_LEAGUES.items():
         try:
             rows = us_fetch(slug)
@@ -743,11 +755,23 @@ def build(of_fetch=None, us_fetch=None, today=None):
         for r in rows:
             if r.get('player_name') and r.get('team_title'):
                 roster[norm_name(r['player_name'])].add(r['team_title'])
+                now_clubs.add(r['team_title'])
         report.append(f'  understat {name}: {len(rows)} players, {len(got)} rate signals')
 
     if roster:
-        clubs = {g[1] for gs in pooled.values() for g in gs} | \
-                {g[2] for gs in pooled.values() for g in gs}
+        # THE CURRENT SEASON'S CLUBS, NOT LAST SEASON'S. The first version
+        # resolved each player's current club against the club list in the
+        # openfootball season the splits are built from -- so a player who moved
+        # to a PROMOTED club matched nothing, because a promoted club does not
+        # appear in the previous season's fixtures. That accounted for 28 of the
+        # 53 rows that could not be verified, and it was invisible until the
+        # failure reasons were counted separately.
+        clubs = now_clubs
+        # State the size of the universe the comparison ran against. Which club
+        # list this is was the whole bug, and it was not observable from the
+        # outside -- so a test could not tell the right list from the wrong one.
+        report.append(f'  current-club universe: {len(clubs)} clubs, from the '
+                      f'CURRENT season')
         before = len(splits)
         splits, moved, unchecked, by_tok, why = drop_moved_players(splits, roster, clubs)
         report.append(f'  current-club check: {before} splits -> {len(splits)} '
@@ -873,6 +897,17 @@ Sat Aug 24
     chk({r['source'] for r in res['streaks']} == {'openfootball per-match'} and
         {r['source'] for r in res['rates']} == {'understat season totals'},
         'every signal names which source it came from')
+    # WHICH CLUB LIST THE CHECK RUNS AGAINST. The stub understat data has three
+    # distinct clubs; the openfootball fixture has eight. Resolving a player's
+    # CURRENT club against LAST season's list is the bug that left 28 rows
+    # unverified -- a player who moved to a promoted club matches nothing there,
+    # because a promoted club is not in the previous season's fixtures. Asserting
+    # the size pins which list was used.
+    uni = [l for l in res['report'] if 'current-club universe' in l]
+    n_us = len({r['team_title'] for r in US})
+    chk(uni and f'{n_us} clubs' in uni[0],
+        f'the current-club check runs against the CURRENT season\'s clubs ({n_us}), '
+        f'not the season the splits were built from')
 
     # ---------------------------------------------------------- the parser bug
     # openfootball omits the ';' between the two sides' scorers when only one
@@ -1019,13 +1054,30 @@ Fri Aug 15 2025
     chk(moved_ == 1 and {r['player'] for r in keep} == {'Harry WILSON', 'Unknown GUY'},
         'a player now at another club loses his split; one still there keeps it')
     chk(unch == 1, 'a player absent from the current season is COUNTED as unchecked, not dropped')
-    keep2, moved2, unch2, _, _ = drop_moved_players(
-        [{'player': 'Xavier', 'team': 'Fulham'}], {'xavier': {'Real'}},
-        {'Fulham', 'Real Madrid', 'Real Sociedad'})
-    chk(moved2 == 0 and unch2 == 1 and len(keep2) == 1,
-        'a club name that matches two entries is ambiguous, so the row is kept, not guessed')
+    # A row whose own club is not in the current season cannot be judged: the
+    # club was relegated, renamed, or is spelled in a way the prefix rule cannot
+    # bridge, and "he is elsewhere" is indistinguishable from "I cannot find
+    # this club".
+    keep2, moved2, unch2, _, w2 = drop_moved_players(
+        [{'player': 'Xavier', 'team': 'Championship Club'}], {'xavier': {'Fulham'}},
+        {'Fulham', 'Chelsea'})
+    chk(moved2 == 0 and unch2 == 1 and len(keep2) == 1
+        and list(w2) == ["row's club is not in the current season"],
+        'a row whose club has left the division is kept unverified, not called moved')
+    keep2b, moved2b, _, _, _ = drop_moved_players(
+        [{'player': 'Xavier', 'team': 'Chelsea'}], {'xavier': {'Fulham'}},
+        {'Fulham', 'Chelsea'})
+    chk(moved2b == 1 and not keep2b,
+        'but when BOTH clubs are in the current season the comparison is real and he has moved')
     chk(drop_moved_players([{'player': 'X', 'team': 'Fulham'}], {}, CLUBS)[0],
         'no roster at all keeps every row rather than emptying the list')
+    mix = drop_moved_players(
+        [{'player': 'Ghost', 'team': 'Fulham'}, {'player': 'Harry WILSON', 'team': 'Fulham'}],
+        {'harrywilson': {'Fulham'}}, {'Fulham', 'Chelsea'})[0]
+    chk([r['player'] for r in mix] == ['Harry WILSON', 'Ghost'],
+        'a verified row outranks an unverified one without either carrying a badge')
+    chk('club_unverified' in mix[1] and 'club_unverified' not in mix[0],
+        'and the reason rides on the row for the log, not for the page')
     # The two sources spell the same player differently; a MIDDLE token is the
     # understat name in the Brazilian-style case, so a trailing-word match fails.
     long_roster = {'evanilson': {'Bournemouth'}, 'mateta': {'Crystal Palace'}}
