@@ -129,61 +129,56 @@ def looks_like_fixtures(rows):
 
 import urllib.parse
 
-API_ES = "https://es.wikipedia.org/w/api.php"
-API_EN = "https://en.wikipedia.org/w/api.php"
+import urllib.parse
 
-import socextra   # use the ROWSPAN-AWARE parser, not srcprobe's flat copy
-
-
-def api(base, **kw):
-    import json as _j
-    kw.setdefault("format", "json")
-    return _j.loads(get(base + "?" + urllib.parse.urlencode(kw), timeout=25))
+BUA2 = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
 
-def fulltext(base, q, n=8):
+def probe(url, label, post=None, referer=None, note=''):
+    hdrs = {'User-Agent': BUA2, 'Accept': '*/*',
+            'Accept-Language': 'en-US,en;q=0.9'}
+    if referer:
+        hdrs['Referer'] = referer
+    if post is not None:
+        hdrs['X-Requested-With'] = 'XMLHttpRequest'
+        hdrs['Content-Type'] = 'application/x-www-form-urlencoded'
     try:
-        r = api(base, action="query", list="search", srsearch=q, srlimit=n)
-        return [h["title"] for h in r["query"]["search"]]
+        req = urllib.request.Request(url, data=post, headers=hdrs)
+        with urllib.request.urlopen(req, timeout=30) as r:
+            body = r.read()
+        print(f"  OK    {len(body):>9,}b  {label}  {note}")
+        return body
     except Exception as e:
-        return [f"<{type(e).__name__}>"]
+        code = getattr(e, 'code', '')
+        print(f"  FAIL  {type(e).__name__}{' ' + str(code) if code else ''}  {label}  {note}")
+        return None
 
 
-def look(url, label):
-    try:
-        html = get(url)
-    except Exception as e:
-        print(f"  {label}: {type(e).__name__}")
-        return
-    p = socextra.Tables(); p.feed(html)
-    mats = [(h, t) for h, t in p.out if socextra.is_matrix(t)]
-    dated, und = socextra.read_rounds(p.out, 2026)
-    print(f"  {label}: {len(p.out)} tables | {len(mats)} matrix | "
-          f"{len(dated)} dated rows ({und} scored-but-undated)")
-    for h, t in mats[:1]:
-        ok, bad = socextra.diagonal_ok(t)
-        print(f"      matrix [{(h or '?')[:24]}] {len(t)}x{len(t[0])} diagonal_ok={ok}")
-    for d in dated[:2]:
-        print(f"      dated: {d}")
+print("=== ROUND 12: a PER-PLAYER PER-MATCH source the RUNNER can reach ===")
+print("Needed for 'scored in 5 of last 6'. player_shares_pin.json has season")
+print("totals only; understat.com Cloudflare-walls this runner, which is why")
+print("that file is a pin from 2026-08-03 carrying the 2025 season.\n")
 
+print("-- understat (the incumbent)")
+probe("https://understat.com/league/EPL/2026", "understat league page")
+probe("https://understat.com/getLeagueData/EPL/2026", "understat getLeagueData")
+probe("https://understat.com/main/getPlayersStats/",
+      "understat getPlayersStats (POST)",
+      post=urllib.parse.urlencode({"league": "EPL", "season": "2026"}).encode(),
+      referer="https://understat.com/league/EPL/2026")
 
-print("=== ROUND 11: USL, Uruguay, El Salvador with the ROWSPAN-AWARE parser ===")
-print("-- USL (its 2025 page had a results table the flat parser mangled)")
-for u, lab in (("https://en.wikipedia.org/wiki/2026_USL_Championship_season", "USL 2026"),
-               ("https://en.wikipedia.org/wiki/2025_USL_Championship_season", "USL 2025")):
-    look(u, lab)
+print("\n-- alternatives with per-player per-match")
+probe("https://fbref.com/en/comps/9/Premier-League-Stats", "fbref comp page")
+probe("https://www.fotmob.com/api/leagues?id=47", "fotmob leagues api")
+probe("https://api.sofascore.com/api/v1/unique-tournament/17/season/61627/events/last/0",
+      "sofascore events api")
+probe("https://raw.githubusercontent.com/openfootball/england/master/2025-26/1-premierleague.txt",
+      "openfootball england (goal events?)")
+probe("https://raw.githubusercontent.com/statsbomb/open-data/master/data/competitions.json",
+      "statsbomb open-data")
 
-print("-- Uruguay per-tournament pages")
-for q in ("Torneo Apertura 2026 Uruguay", "Torneo Clausura 2026 Uruguay",
-          "Torneo Intermedio 2026 Uruguay"):
-    print(f"   search {q!r}: {fulltext(API_ES, q)[:5]}")
-for slug in ("Torneo_Apertura_2026_(Uruguay)", "Torneo_Clausura_2026_(Uruguay)",
-             "Torneo_Intermedio_2026"):
-    look(f"https://es.wikipedia.org/wiki/{slug}", slug)
-
-print("-- El Salvador")
-for q in ("Primera Division de El Salvador 2026 Apertura",):
-    print(f"   search {q!r}: {fulltext(API_ES, q)[:6]}")
-for slug in ("Torneo_Apertura_2026_(El_Salvador)",
-             "Primera_Divisi%C3%B3n_de_F%C3%BAtbol_de_El_Salvador"):
-    look(f"https://es.wikipedia.org/wiki/{slug}", slug)
+print("\n-- and for the SOUTH AMERICAN leagues specifically")
+probe("https://es.wikipedia.org/wiki/Liga_de_Primera_2026", "es.wikipedia (already used)",
+      note="has goalscorer tables?")
+probe("https://api.sofascore.com/api/v1/search/all?q=Colo-Colo", "sofascore search")

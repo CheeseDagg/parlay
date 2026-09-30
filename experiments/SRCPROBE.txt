@@ -9,3 +9,4 @@ probe 2026-08-13T20:31Z sbr
 2026-09-30T16:18Z round 9: dated/ordered source for Recent Form
 2026-09-30T16:24Z round 10: undated rows + colombia/peru pages
 2026-09-30T16:33Z round 11: USL/Uruguay/El Salvador, rowspan-aware
+2026-09-30T17:53Z round 12: per-player per-match source
