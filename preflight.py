@@ -384,8 +384,17 @@ def gate_soccer_base(legs, form=None, teams_of=None):
             name, r, note = socbase.rates(key)
             if r is None:
                 blind.append(f"{l['lab']} ({note})")
-            elif note:
+            elif note and str(note).startswith('PROXY'):
                 proxied.append(f"{l['lab']} -> {name} ({note})")
+            elif note:
+                # MEASURED, with a provenance note -- not a proxy. A proxy here
+                # means another competition's numbers standing in; socextra's
+                # rows ARE this league's own results, read off season pages
+                # instead of closing odds. Calling that a proxy would teach a
+                # reader to discount real data, and would blur what PROXY means
+                # for the Leagues Cup blend, which genuinely is one.
+                seen.append(f"{name} draw {r['result']['draw']*100:.1f}% "
+                            f"goals {r['result']['mean_goals']:.2f} [{note.split(' -- ')[0]}]")
             else:
                 seen.append(f"{name} draw {r['result']['draw']*100:.1f}% "
                             f"goals {r['result']['mean_goals']:.2f}")
@@ -1096,6 +1105,22 @@ def selftest():
                                 form={'teams': {}}, teams_of={'SOC C-D': ['Unk FC']})
     chk('form unknown' in _m2,
         "an unmatched team reads 'form unknown' -- never bad form, never good")
+
+    # ---- socextra leagues are MEASURED, not proxied. A proxy here means
+    # another competition's numbers standing in (the Leagues Cup blend);
+    # socextra's rows are this league's OWN results, read off season pages
+    # rather than closing odds. The first run reported Chile and Colombia as
+    # "on a PROXY", which would teach a reader to discount real data.
+    _vx, _mx = gate_soccer_base([dict(L('U de Chile DC (derived)', -800, fam='SOC'),
+                                      grp='SOC A-B', lg='soccer_chile_campeonato')],
+                                form={'teams': {}}, teams_of={})
+    chk('PROXY' not in _mx, 'a socextra league is NOT reported as a proxy')
+    chk('Chile Liga de Primera' in _mx and 'socextra' in _mx,
+        'it is reported as measured, naming the league and its provenance')
+    _vy, _my = gate_soccer_base([dict(L('Blend DC', -200, fam='SOC'),
+                                      grp='SOC C-D', lg='soccer_concacaf_leagues_cup')],
+                                form={'teams': {}}, teams_of={})
+    chk('PROXY' in _my, 'a real proxy (the Leagues Cup blend) still reads as PROXY')
 
     # ---- HAND legs reach this gate too, teams drawn from their own paste.
     # 8/13's screenshot slip took six soccer pairs through preflight with no
