@@ -53,6 +53,11 @@ LEAGUES = {
     # three probe rounds. The league did not vanish, its name moved.
     'Chile Liga de Primera': ['https://en.wikipedia.org/wiki/2026_Liga_de_Primera',
                               'https://es.wikipedia.org/wiki/Liga_de_Primera_2026'],
+    # Uruguay: the page EXISTS and is the right one (its parent article links
+    # to it), but srcprobe round 8 found nine tables and ZERO score cells --
+    # es.wikipedia publishes standings evolution for this league, never a
+    # results grid. Left in so each run re-tests it and reports EMPTY out
+    # loud; do not re-chase the slug, the slug was never the problem.
     'Uruguay Primera':    ['https://es.wikipedia.org/wiki/Campeonato_Uruguayo_de_Primera_Divisi%C3%B3n_2026'],
     'Bolivia Profesional': ['https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional'],
 }
