@@ -110,6 +110,7 @@ EXTRA = {
     "soccer_peru_liga_1":        "Peru Liga 1",
     "soccer_chile_campeonato":   "Chile Liga de Primera",
     "soccer_bolivia_primera":    "Bolivia Profesional",
+    "soccer_uruguay_primera_division": "Uruguay Primera",
 }
 
 
