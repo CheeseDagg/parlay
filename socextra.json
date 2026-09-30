@@ -4342,10 +4342,31 @@
     2
    ],
    [
+    "2026-01-16",
+    "Fortaleza",
+    "Alianza Valledupar",
+    1,
+    0
+   ],
+   [
     "2026-01-17",
     "Am\u00e9rica de Cali",
     "Internacional de Bogot\u00e1",
     3,
+    0
+   ],
+   [
+    "2026-01-17",
+    "Atl\u00e9tico Bucaramanga",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "2026-01-17",
+    "Atl\u00e9tico Nacional",
+    "Boyac\u00e1 Chic\u00f3",
+    4,
     0
    ],
    [
@@ -4356,11 +4377,39 @@
     0
    ],
    [
+    "2026-01-18",
+    "Jaguares",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "2026-01-18",
+    "Junior",
+    "Deportes Tolima",
+    0,
+    2
+   ],
+   [
+    "2026-01-18",
+    "Santa Fe",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
     "2026-01-19",
     "C\u00facuta Deportivo",
     "Once Caldas",
     1,
     2
+   ],
+   [
+    "2026-01-23",
+    "Deportes Tolima",
+    "Alianza Valledupar",
+    2,
+    0
    ],
    [
     "2026-01-23",
@@ -4371,10 +4420,45 @@
    ],
    [
     "2026-01-24",
+    "Boyac\u00e1 Chic\u00f3",
+    "Am\u00e9rica de Cali",
+    0,
+    1
+   ],
+   [
+    "2026-01-24",
+    "Deportivo Cali",
+    "Independiente Medell\u00edn",
+    3,
+    1
+   ],
+   [
+    "2026-01-24",
     "Deportivo Pereira",
     "Fortaleza",
     0,
     0
+   ],
+   [
+    "2026-01-24",
+    "Llaneros",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    1
+   ],
+   [
+    "2026-01-25",
+    "Millonarios",
+    "Junior",
+    1,
+    2
+   ],
+   [
+    "2026-01-25",
+    "Once Caldas",
+    "Santa Fe",
+    1,
+    1
    ],
    [
     "2026-01-25",
@@ -4384,16 +4468,23 @@
     2
    ],
    [
-    "2026-04-06",
-    "Atl\u00e9tico Nacional",
-    "Jaguares",
+    "2026-01-27",
+    "C\u00facuta Deportivo",
+    "Atl\u00e9tico Bucaramanga",
     2,
+    2
+   ],
+   [
+    "2026-01-27",
+    "Fortaleza",
+    "Llaneros",
+    1,
     1
    ],
    [
     "2026-01-27",
-    "C\u00facuta Deportivo",
-    "Atl\u00e9tico Bucaramanga",
+    "Independiente Medell\u00edn",
+    "Deportes Tolima",
     2,
     2
    ],
@@ -4405,6 +4496,34 @@
     1
    ],
    [
+    "2026-01-28",
+    "Deportivo Pasto",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "2026-01-28",
+    "Santa Fe",
+    "Deportivo Pereira",
+    2,
+    2
+   ],
+   [
+    "2026-01-29",
+    "Am\u00e9rica de Cali",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "2026-01-29",
+    "Jaguares",
+    "Internacional de Bogot\u00e1",
+    2,
+    3
+   ],
+   [
     "2026-01-29",
     "\u00c1guilas Doradas",
     "Deportivo Cali",
@@ -4412,11 +4531,11 @@
     1
    ],
    [
-    "2026-03-10",
-    "Junior",
-    "Atl\u00e9tico Nacional",
+    "2026-01-31",
+    "Boyac\u00e1 Chic\u00f3",
+    "Santa Fe",
     0,
-    4
+    1
    ],
    [
     "2026-01-31",
@@ -4431,6 +4550,41 @@
     "Alianza Valledupar",
     5,
     0
+   ],
+   [
+    "2026-02-01",
+    "Deportivo Cali",
+    "Deportivo Pasto",
+    3,
+    0
+   ],
+   [
+    "2026-02-01",
+    "Llaneros",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
+    "2026-02-01",
+    "Millonarios",
+    "Independiente Medell\u00edn",
+    0,
+    0
+   ],
+   [
+    "2026-02-01",
+    "Once Caldas",
+    "Jaguares",
+    1,
+    1
+   ],
+   [
+    "2026-02-02",
+    "Deportivo Pereira",
+    "Junior",
+    2,
+    3
    ],
    [
     "2026-02-02",
@@ -4454,6 +4608,34 @@
     0
    ],
    [
+    "2026-02-06",
+    "Independiente Medell\u00edn",
+    "Internacional de Bogot\u00e1",
+    1,
+    2
+   ],
+   [
+    "2026-02-07",
+    "Deportes Tolima",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "2026-02-07",
+    "Fortaleza",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "2026-02-07",
+    "Junior",
+    "Boyac\u00e1 Chic\u00f3",
+    3,
+    0
+   ],
+   [
     "2026-02-07",
     "\u00c1guilas Doradas",
     "C\u00facuta Deportivo",
@@ -4468,18 +4650,25 @@
     1
    ],
    [
-    "2026-02-25",
-    "Santa Fe",
-    "Atl\u00e9tico Nacional",
-    1,
-    2
+    "2026-02-08",
+    "Deportivo Cali",
+    "Millonarios",
+    0,
+    0
    ],
    [
-    "2026-04-22",
-    "Fortaleza",
-    "Am\u00e9rica de Cali",
+    "2026-02-08",
+    "Jaguares",
+    "Deportivo Pereira",
     1,
-    2
+    0
+   ],
+   [
+    "2026-02-10",
+    "Atl\u00e9tico Bucaramanga",
+    "Deportes Tolima",
+    0,
+    0
    ],
    [
     "2026-02-10",
@@ -4487,6 +4676,20 @@
     "Independiente Medell\u00edn",
     1,
     3
+   ],
+   [
+    "2026-02-10",
+    "Llaneros",
+    "Deportivo Pasto",
+    0,
+    1
+   ],
+   [
+    "2026-02-11",
+    "Internacional de Bogot\u00e1",
+    "Deportivo Cali",
+    3,
+    2
    ],
    [
     "2026-02-11",
@@ -4497,10 +4700,24 @@
    ],
    [
     "2026-02-12",
+    "Atl\u00e9tico Nacional",
+    "Fortaleza",
+    4,
+    1
+   ],
+   [
+    "2026-02-12",
     "Boyac\u00e1 Chic\u00f3",
     "Jaguares",
     5,
     0
+   ],
+   [
+    "2026-02-12",
+    "Once Caldas",
+    "Junior",
+    2,
+    1
    ],
    [
     "2026-02-13",
@@ -4510,11 +4727,18 @@
     0
    ],
    [
-    "2026-04-06",
+    "2026-02-14",
+    "Deportivo Pasto",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "2026-02-14",
+    "Independiente Medell\u00edn",
     "Deportivo Pereira",
-    "Alianza Valledupar",
-    2,
-    3
+    1,
+    1
    ],
    [
     "2026-02-14",
@@ -4531,10 +4755,31 @@
     1
    ],
    [
+    "2026-02-15",
+    "Deportivo Cali",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "2026-02-15",
+    "Fortaleza",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    1
+   ],
+   [
     "2026-02-17",
     "Alianza Valledupar",
     "C\u00facuta Deportivo",
     1,
+    1
+   ],
+   [
+    "2026-02-17",
+    "Jaguares",
+    "Santa Fe",
+    3,
     1
    ],
    [
@@ -4545,11 +4790,11 @@
     1
    ],
    [
-    "2026-04-07",
-    "\u00c1guilas Doradas",
-    "Atl\u00e9tico Bucaramanga",
+    "2026-02-20",
+    "Deportivo Pereira",
+    "Deportivo Pasto",
     2,
-    1
+    2
    ],
    [
     "2026-02-20",
@@ -4560,10 +4805,45 @@
    ],
    [
     "2026-02-21",
+    "Atl\u00e9tico Bucaramanga",
+    "Deportivo Cali",
+    0,
+    0
+   ],
+   [
+    "2026-02-21",
+    "Atl\u00e9tico Nacional",
+    "Alianza Valledupar",
+    3,
+    0
+   ],
+   [
+    "2026-02-21",
+    "Internacional de Bogot\u00e1",
+    "Millonarios",
+    3,
+    2
+   ],
+   [
+    "2026-02-21",
     "Once Caldas",
     "Fortaleza",
     4,
     2
+   ],
+   [
+    "2026-02-22",
+    "Am\u00e9rica de Cali",
+    "Jaguares",
+    3,
+    0
+   ],
+   [
+    "2026-02-22",
+    "Boyac\u00e1 Chic\u00f3",
+    "\u00c1guilas Doradas",
+    0,
+    1
    ],
    [
     "2026-02-22",
@@ -4580,11 +4860,11 @@
     2
    ],
    [
-    "2026-02-07",
-    "Fortaleza",
+    "2026-02-25",
     "Santa Fe",
+    "Atl\u00e9tico Nacional",
     1,
-    1
+    2
    ],
    [
     "2026-02-26",
@@ -4608,6 +4888,34 @@
     3
    ],
    [
+    "2026-02-28",
+    "Independiente Medell\u00edn",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    2
+   ],
+   [
+    "2026-02-28",
+    "Jaguares",
+    "Junior",
+    0,
+    2
+   ],
+   [
+    "2026-03-01",
+    "Deportes Tolima",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "2026-03-01",
+    "Deportivo Cali",
+    "Fortaleza",
+    1,
+    1
+   ],
+   [
     "2026-03-01",
     "Deportivo Pasto",
     "C\u00facuta Deportivo",
@@ -4615,17 +4923,24 @@
     2
    ],
    [
-    "2026-04-12",
-    "Deportivo Cali",
-    "Llaneros",
-    1,
-    1
+    "2026-03-01",
+    "\u00c1guilas Doradas",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
    ],
    [
     "2026-03-04",
     "Fortaleza",
     "Jaguares",
     2,
+    1
+   ],
+   [
+    "2026-03-05",
+    "Junior",
+    "Alianza Valledupar",
+    1,
     1
    ],
    [
@@ -4651,6 +4966,20 @@
    ],
    [
     "2026-03-09",
+    "Deportivo Pasto",
+    "Am\u00e9rica de Cali",
+    2,
+    0
+   ],
+   [
+    "2026-03-09",
+    "Llaneros",
+    "Jaguares",
+    2,
+    0
+   ],
+   [
+    "2026-03-09",
     "Millonarios",
     "C\u00facuta Deportivo",
     2,
@@ -4664,16 +4993,16 @@
     0
    ],
    [
-    "2026-04-04",
-    "Deportes Tolima",
-    "Santa Fe",
-    2,
-    2
+    "2026-03-10",
+    "Junior",
+    "Atl\u00e9tico Nacional",
+    0,
+    4
    ],
    [
-    "2026-04-22",
-    "Independiente Medell\u00edn",
-    "Boyac\u00e1 Chic\u00f3",
+    "2026-03-13",
+    "Atl\u00e9tico Nacional",
+    "Llaneros",
     2,
     0
    ],
@@ -4686,16 +5015,58 @@
    ],
    [
     "2026-03-14",
+    "Boyac\u00e1 Chic\u00f3",
+    "Millonarios",
+    2,
+    1
+   ],
+   [
+    "2026-03-14",
+    "C\u00facuta Deportivo",
+    "Deportivo Cali",
+    0,
+    2
+   ],
+   [
+    "2026-03-14",
     "Internacional de Bogot\u00e1",
     "Atl\u00e9tico Bucaramanga",
     0,
     0
    ],
    [
+    "2026-03-14",
+    "Santa Fe",
+    "Alianza Valledupar",
+    1,
+    1
+   ],
+   [
+    "2026-03-15",
+    "Am\u00e9rica de Cali",
+    "Deportes Tolima",
+    1,
+    1
+   ],
+   [
     "2026-03-15",
     "Deportivo Pereira",
     "\u00c1guilas Doradas",
     0,
+    1
+   ],
+   [
+    "2026-03-15",
+    "Jaguares",
+    "Independiente Medell\u00edn",
+    1,
+    2
+   ],
+   [
+    "2026-03-15",
+    "Junior",
+    "Fortaleza",
+    2,
     1
    ],
    [
@@ -4706,11 +5077,39 @@
     2
    ],
    [
+    "2026-03-17",
+    "Millonarios",
+    "Atl\u00e9tico Nacional",
+    3,
+    0
+   ],
+   [
+    "2026-03-18",
+    "Atl\u00e9tico Bucaramanga",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "2026-03-18",
+    "Deportivo Cali",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
     "2026-03-18",
     "Deportivo Pasto",
     "Boyac\u00e1 Chic\u00f3",
     2,
     0
+   ],
+   [
+    "2026-03-18",
+    "Internacional de Bogot\u00e1",
+    "Deportivo Pereira",
+    2,
+    2
    ],
    [
     "2026-03-19",
@@ -4720,11 +5119,32 @@
     0
    ],
    [
+    "2026-03-19",
+    "Deportes Tolima",
+    "Fortaleza",
+    2,
+    0
+   ],
+   [
+    "2026-03-19",
+    "Independiente Medell\u00edn",
+    "Junior",
+    2,
+    0
+   ],
+   [
     "2026-03-20",
     "\u00c1guilas Doradas",
     "Am\u00e9rica de Cali",
     0,
     1
+   ],
+   [
+    "2026-03-21",
+    "Atl\u00e9tico Nacional",
+    "Internacional de Bogot\u00e1",
+    3,
+    0
    ],
    [
     "2026-03-21",
@@ -4748,6 +5168,20 @@
     1
    ],
    [
+    "2026-03-23",
+    "Jaguares",
+    "\u00c1guilas Doradas",
+    1,
+    1
+   ],
+   [
+    "2026-03-23",
+    "Santa Fe",
+    "Independiente Medell\u00edn",
+    2,
+    1
+   ],
+   [
     "2026-03-24",
     "Deportivo Pereira",
     "C\u00facuta Deportivo",
@@ -4755,11 +5189,32 @@
     2
    ],
    [
+    "2026-03-24",
+    "Fortaleza",
+    "Deportivo Pasto",
+    1,
+    2
+   ],
+   [
+    "2026-03-24",
+    "Junior",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    0
+   ],
+   [
     "2026-03-25",
     "Am\u00e9rica de Cali",
     "Llaneros",
     0,
     0
+   ],
+   [
+    "2026-03-27",
+    "Atl\u00e9tico Bucaramanga",
+    "Santa Fe",
+    1,
+    2
    ],
    [
     "2026-03-27",
@@ -4776,10 +5231,38 @@
     0
    ],
    [
+    "2026-03-28",
+    "Deportes Tolima",
+    "Jaguares",
+    3,
+    1
+   ],
+   [
+    "2026-03-28",
+    "Deportivo Cali",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "2026-03-29",
+    "Deportivo Pasto",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
     "2026-03-29",
     "Internacional de Bogot\u00e1",
     "Junior",
     0,
+    1
+   ],
+   [
+    "2026-03-29",
+    "Llaneros",
+    "Once Caldas",
+    1,
     1
    ],
    [
@@ -4788,6 +5271,13 @@
     "Am\u00e9rica de Cali",
     2,
     1
+   ],
+   [
+    "2026-03-30",
+    "Millonarios",
+    "Fortaleza",
+    2,
+    2
    ],
    [
     "2026-03-31",
@@ -4804,11 +5294,46 @@
     0
    ],
    [
+    "2026-04-01",
+    "Atl\u00e9tico Nacional",
+    "C\u00facuta Deportivo",
+    0,
+    0
+   ],
+   [
+    "2026-04-01",
+    "Santa Fe",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "2026-04-02",
+    "Am\u00e9rica de Cali",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    0
+   ],
+   [
     "2026-04-02",
     "Boyac\u00e1 Chic\u00f3",
     "Deportivo Pereira",
     1,
     0
+   ],
+   [
+    "2026-04-02",
+    "Jaguares",
+    "Millonarios",
+    1,
+    0
+   ],
+   [
+    "2026-04-02",
+    "Once Caldas",
+    "Independiente Medell\u00edn",
+    1,
+    1
    ],
    [
     "2026-04-03",
@@ -4818,24 +5343,52 @@
     1
    ],
    [
-    "2026-03-01",
+    "2026-04-03",
+    "Junior",
     "Deportivo Cali",
-    "Fortaleza",
     1,
-    1
+    2
    ],
    [
-    "2026-03-09",
-    "Llaneros",
-    "Jaguares",
+    "2026-04-04",
+    "Deportes Tolima",
+    "Santa Fe",
     2,
-    0
+    2
    ],
    [
     "2026-04-05",
     "C\u00facuta Deportivo",
     "Am\u00e9rica de Cali",
     2,
+    0
+   ],
+   [
+    "2026-04-06",
+    "Atl\u00e9tico Nacional",
+    "Jaguares",
+    2,
+    1
+   ],
+   [
+    "2026-04-06",
+    "Deportivo Pereira",
+    "Alianza Valledupar",
+    2,
+    3
+   ],
+   [
+    "2026-04-07",
+    "\u00c1guilas Doradas",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    1
+   ],
+   [
+    "2026-04-10",
+    "Deportivo Pasto",
+    "Deportes Tolima",
+    1,
     0
    ],
    [
@@ -4847,6 +5400,13 @@
    ],
    [
     "2026-04-11",
+    "Independiente Medell\u00edn",
+    "Atl\u00e9tico Nacional",
+    2,
+    3
+   ],
+   [
+    "2026-04-11",
     "\u00c1guilas Doradas",
     "Junior",
     0,
@@ -4854,10 +5414,38 @@
    ],
    [
     "2026-04-12",
+    "Atl\u00e9tico Bucaramanga",
+    "Boyac\u00e1 Chic\u00f3",
+    5,
+    0
+   ],
+   [
+    "2026-04-12",
+    "Deportivo Cali",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "2026-04-12",
+    "Internacional de Bogot\u00e1",
+    "Alianza Valledupar",
+    2,
+    1
+   ],
+   [
+    "2026-04-12",
     "Millonarios",
     "Santa Fe",
     1,
     1
+   ],
+   [
+    "2026-04-17",
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportivo Cali",
+    1,
+    0
    ],
    [
     "2026-04-17",
@@ -4874,10 +5462,45 @@
     0
    ],
    [
+    "2026-04-18",
+    "Fortaleza",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "2026-04-19",
+    "Alianza Valledupar",
+    "Independiente Medell\u00edn",
+    0,
+    1
+   ],
+   [
+    "2026-04-19",
+    "Am\u00e9rica de Cali",
+    "Millonarios",
+    3,
+    1
+   ],
+   [
+    "2026-04-19",
+    "Junior",
+    "Llaneros",
+    2,
+    0
+   ],
+   [
     "2026-04-19",
     "Santa Fe",
     "C\u00facuta Deportivo",
     5,
+    0
+   ],
+   [
+    "2026-04-20",
+    "Atl\u00e9tico Nacional",
+    "Atl\u00e9tico Bucaramanga",
+    2,
     0
    ],
    [
@@ -4888,11 +5511,32 @@
     1
    ],
    [
+    "2026-04-22",
+    "Fortaleza",
+    "Am\u00e9rica de Cali",
+    1,
+    2
+   ],
+   [
+    "2026-04-22",
+    "Independiente Medell\u00edn",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    0
+   ],
+   [
     "2026-04-23",
     "Deportivo Pasto",
     "Santa Fe",
     1,
     2
+   ],
+   [
+    "2026-04-23",
+    "Millonarios",
+    "Deportes Tolima",
+    2,
+    0
    ],
    [
     "2026-04-24",
@@ -4907,6 +5551,41 @@
     "Jaguares",
     2,
     2
+   ],
+   [
+    "2026-04-25",
+    "Deportivo Cali",
+    "Am\u00e9rica de Cali",
+    1,
+    0
+   ],
+   [
+    "2026-04-25",
+    "Deportivo Pereira",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "2026-04-25",
+    "Independiente Medell\u00edn",
+    "Fortaleza",
+    1,
+    0
+   ],
+   [
+    "2026-04-26",
+    "Internacional de Bogot\u00e1",
+    "Boyac\u00e1 Chic\u00f3",
+    4,
+    0
+   ],
+   [
+    "2026-04-26",
+    "Llaneros",
+    "Alianza Valledupar",
+    0,
+    0
    ],
    [
     "2026-04-26",
@@ -4930,6 +5609,13 @@
     0
    ],
    [
+    "2026-05-02",
+    "Jaguares",
+    "C\u00facuta Deportivo",
+    2,
+    0
+   ],
+   [
     "2026-05-03",
     "Alianza Valledupar",
     "Millonarios",
@@ -4937,10 +5623,45 @@
     2
    ],
    [
-    "2026-03-31",
+    "2026-05-03",
+    "Am\u00e9rica de Cali",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "2026-05-03",
     "Deportes Tolima",
+    "Deportivo Cali",
+    1,
+    1
+   ],
+   [
+    "2026-05-03",
+    "Fortaleza",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    1
+   ],
+   [
+    "2026-05-03",
+    "Independiente Medell\u00edn",
     "\u00c1guilas Doradas",
+    1,
+    2
+   ],
+   [
+    "2026-05-03",
+    "Junior",
+    "Deportivo Pasto",
     4,
+    3
+   ],
+   [
+    "2026-05-03",
+    "Santa Fe",
+    "Internacional de Bogot\u00e1",
+    3,
     1
    ],
    [
@@ -4949,900 +5670,1330 @@
     "Am\u00e9rica de Cali",
     4,
     0
+   ],
+   [
+    "2026-07-24",
+    "Deportivo Cali",
+    "Jaguares",
+    2,
+    0
+   ],
+   [
+    "2026-07-24",
+    "Llaneros",
+    "Deportivo Pereira",
+    1,
+    0
+   ],
+   [
+    "2026-07-25",
+    "Deportes Tolima",
+    "Junior",
+    2,
+    1
+   ],
+   [
+    "2026-07-25",
+    "Independiente Medell\u00edn",
+    "Deportivo Pasto",
+    3,
+    2
+   ],
+   [
+    "2026-07-25",
+    "Millonarios",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    1
+   ],
+   [
+    "2026-07-26",
+    "Alianza Valledupar",
+    "Fortaleza",
+    1,
+    1
+   ],
+   [
+    "2026-07-26",
+    "Internacional de Bogot\u00e1",
+    "Am\u00e9rica de Cali",
+    0,
+    2
+   ],
+   [
+    "2026-07-26",
+    "Once Caldas",
+    "C\u00facuta Deportivo",
+    5,
+    1
+   ],
+   [
+    "2026-07-26",
+    "\u00c1guilas Doradas",
+    "Santa Fe",
+    2,
+    1
+   ],
+   [
+    "2026-07-30",
+    "Atl\u00e9tico Bucaramanga",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "2026-07-31",
+    "Fortaleza",
+    "Deportivo Pereira",
+    0,
+    0
+   ],
+   [
+    "2026-08-01",
+    "Alianza Valledupar",
+    "Deportes Tolima",
+    1,
+    2
+   ],
+   [
+    "2026-08-01",
+    "Deportivo Pasto",
+    "\u00c1guilas Doradas",
+    1,
+    2
+   ],
+   [
+    "2026-08-01",
+    "Independiente Medell\u00edn",
+    "Deportivo Cali",
+    1,
+    0
+   ],
+   [
+    "2026-08-01",
+    "Junior",
+    "Millonarios",
+    0,
+    1
+   ],
+   [
+    "2026-08-02",
+    "Am\u00e9rica de Cali",
+    "Boyac\u00e1 Chic\u00f3",
+    7,
+    0
+   ],
+   [
+    "2026-08-02",
+    "Jaguares",
+    "Atl\u00e9tico Nacional",
+    0,
+    3
+   ],
+   [
+    "2026-08-02",
+    "Santa Fe",
+    "Once Caldas",
+    2,
+    2
+   ],
+   [
+    "2026-08-03",
+    "Atl\u00e9tico Bucaramanga",
+    "C\u00facuta Deportivo",
+    1,
+    1
+   ],
+   [
+    "2026-08-04",
+    "Deportes Tolima",
+    "Independiente Medell\u00edn",
+    2,
+    3
+   ],
+   [
+    "2026-08-04",
+    "Llaneros",
+    "Fortaleza",
+    3,
+    1
+   ],
+   [
+    "2026-08-04",
+    "Millonarios",
+    "Deportivo Pasto",
+    2,
+    0
+   ],
+   [
+    "2026-08-05",
+    "Internacional de Bogot\u00e1",
+    "Jaguares",
+    1,
+    0
+   ],
+   [
+    "2026-08-05",
+    "Once Caldas",
+    "Am\u00e9rica de Cali",
+    0,
+    1
+   ],
+   [
+    "2026-08-08",
+    "Deportes Tolima",
+    "Internacional de Bogot\u00e1",
+    2,
+    1
+   ],
+   [
+    "2026-08-08",
+    "Deportivo Pasto",
+    "Deportivo Cali",
+    0,
+    2
+   ],
+   [
+    "2026-08-08",
+    "Fortaleza",
+    "C\u00facuta Deportivo",
+    2,
+    0
+   ],
+   [
+    "2026-08-08",
+    "Santa Fe",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    0
+   ],
+   [
+    "2026-08-09",
+    "Alianza Valledupar",
+    "Atl\u00e9tico Bucaramanga",
+    2,
+    3
+   ],
+   [
+    "2026-08-09",
+    "Am\u00e9rica de Cali",
+    "Atl\u00e9tico Nacional",
+    1,
+    0
+   ],
+   [
+    "2026-08-09",
+    "Jaguares",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "2026-08-19",
+    "C\u00facuta Deportivo",
+    "Internacional de Bogot\u00e1",
+    1,
+    1
+   ],
+   [
+    "2026-08-19",
+    "\u00c1guilas Doradas",
+    "Llaneros",
+    1,
+    1
+   ],
+   [
+    "2026-08-21",
+    "Alianza Valledupar",
+    "Deportivo Pereira",
+    0,
+    0
+   ],
+   [
+    "2026-08-21",
+    "Jaguares",
+    "Boyac\u00e1 Chic\u00f3",
+    1,
+    0
+   ],
+   [
+    "2026-08-22",
+    "Deportes Tolima",
+    "Atl\u00e9tico Bucaramanga",
+    0,
+    0
+   ],
+   [
+    "2026-08-22",
+    "Independiente Medell\u00edn",
+    "C\u00facuta Deportivo",
+    0,
+    1
+   ],
+   [
+    "2026-08-22",
+    "Santa Fe",
+    "Am\u00e9rica de Cali",
+    0,
+    0
+   ],
+   [
+    "2026-08-22",
+    "\u00c1guilas Doradas",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "2026-08-23",
+    "Deportivo Cali",
+    "Internacional de Bogot\u00e1",
+    2,
+    2
+   ],
+   [
+    "2026-08-23",
+    "Deportivo Pasto",
+    "Llaneros",
+    0,
+    1
+   ],
+   [
+    "2026-08-23",
+    "Fortaleza",
+    "Atl\u00e9tico Nacional",
+    1,
+    2
+   ],
+   [
+    "2026-08-23",
+    "Junior",
+    "Once Caldas",
+    1,
+    1
+   ],
+   [
+    "2026-08-25",
+    "C\u00facuta Deportivo",
+    "Alianza Valledupar",
+    1,
+    0
+   ],
+   [
+    "2026-08-26",
+    "Am\u00e9rica de Cali",
+    "Junior",
+    4,
+    2
+   ],
+   [
+    "2026-08-26",
+    "Atl\u00e9tico Nacional",
+    "Deportivo Cali",
+    2,
+    1
+   ],
+   [
+    "2026-08-26",
+    "Boyac\u00e1 Chic\u00f3",
+    "Fortaleza",
+    0,
+    0
+   ],
+   [
+    "2026-08-27",
+    "Internacional de Bogot\u00e1",
+    "Deportivo Pasto",
+    1,
+    1
+   ],
+   [
+    "2026-08-27",
+    "Llaneros",
+    "Millonarios",
+    0,
+    2
+   ],
+   [
+    "2026-08-29",
+    "Alianza Valledupar",
+    "Atl\u00e9tico Nacional",
+    1,
+    5
+   ],
+   [
+    "2026-08-29",
+    "Jaguares",
+    "Am\u00e9rica de Cali",
+    2,
+    2
+   ],
+   [
+    "2026-08-29",
+    "Junior",
+    "Santa Fe",
+    1,
+    1
+   ],
+   [
+    "2026-08-30",
+    "Deportivo Cali",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    1
+   ],
+   [
+    "2026-08-30",
+    "Independiente Medell\u00edn",
+    "Llaneros",
+    2,
+    1
+   ],
+   [
+    "2026-08-30",
+    "Millonarios",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
+   ],
+   [
+    "2026-08-30",
+    "\u00c1guilas Doradas",
+    "Boyac\u00e1 Chic\u00f3",
+    2,
+    2
+   ],
+   [
+    "2026-08-31",
+    "Deportes Tolima",
+    "C\u00facuta Deportivo",
+    2,
+    1
+   ],
+   [
+    "2026-08-31",
+    "Deportivo Pasto",
+    "Deportivo Pereira",
+    1,
+    2
+   ],
+   [
+    "2026-09-01",
+    "Fortaleza",
+    "Once Caldas",
+    1,
+    2
+   ],
+   [
+    "2026-09-02",
+    "Santa Fe",
+    "Millonarios",
+    3,
+    2
+   ],
+   [
+    "2026-09-03",
+    "Am\u00e9rica de Cali",
+    "Alianza Valledupar",
+    3,
+    0
+   ],
+   [
+    "2026-09-03",
+    "Deportivo Pereira",
+    "Independiente Medell\u00edn",
+    0,
+    3
+   ],
+   [
+    "2026-09-05",
+    "Boyac\u00e1 Chic\u00f3",
+    "Once Caldas",
+    2,
+    0
+   ],
+   [
+    "2026-09-05",
+    "C\u00facuta Deportivo",
+    "Deportivo Pasto",
+    2,
+    2
+   ],
+   [
+    "2026-09-05",
+    "Junior",
+    "Jaguares",
+    3,
+    3
+   ],
+   [
+    "2026-09-05",
+    "Santa Fe",
+    "Fortaleza",
+    2,
+    2
+   ],
+   [
+    "2026-09-06",
+    "Deportivo Pereira",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "2026-09-06",
+    "Internacional de Bogot\u00e1",
+    "\u00c1guilas Doradas",
+    2,
+    2
+   ],
+   [
+    "2026-09-07",
+    "Llaneros",
+    "Deportes Tolima",
+    1,
+    2
+   ],
+   [
+    "2026-09-10",
+    "Millonarios",
+    "Deportivo Cali",
+    1,
+    1
+   ],
+   [
+    "2026-09-11",
+    "Jaguares",
+    "Fortaleza",
+    2,
+    2
+   ],
+   [
+    "2026-09-11",
+    "Santa Fe",
+    "Deportes Tolima",
+    1,
+    0
+   ],
+   [
+    "2026-09-12",
+    "Alianza Valledupar",
+    "Junior",
+    1,
+    0
+   ],
+   [
+    "2026-09-12",
+    "Boyac\u00e1 Chic\u00f3",
+    "Independiente Medell\u00edn",
+    2,
+    1
+   ],
+   [
+    "2026-09-12",
+    "Internacional de Bogot\u00e1",
+    "Llaneros",
+    3,
+    2
+   ],
+   [
+    "2026-09-13",
+    "Atl\u00e9tico Nacional",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "2026-09-13",
+    "C\u00facuta Deportivo",
+    "Millonarios",
+    1,
+    2
+   ],
+   [
+    "2026-09-13",
+    "Deportivo Pereira",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    3
+   ],
+   [
+    "2026-09-13",
+    "Once Caldas",
+    "Deportivo Cali",
+    1,
+    2
+   ],
+   [
+    "2026-09-14",
+    "Am\u00e9rica de Cali",
+    "Deportivo Pasto",
+    0,
+    1
+   ],
+   [
+    "2026-09-15",
+    "Boyac\u00e1 Chic\u00f3",
+    "Alianza Valledupar",
+    1,
+    2
+   ],
+   [
+    "2026-09-16",
+    "Internacional de Bogot\u00e1",
+    "Atl\u00e9tico Nacional",
+    2,
+    3
+   ],
+   [
+    "2026-09-16",
+    "Once Caldas",
+    "Deportes Tolima",
+    1,
+    0
+   ],
+   [
+    "2026-09-17",
+    "Atl\u00e9tico Bucaramanga",
+    "Independiente Medell\u00edn",
+    2,
+    2
+   ],
+   [
+    "2026-09-18",
+    "\u00c1guilas Doradas",
+    "Deportivo Pereira",
+    2,
+    2
+   ],
+   [
+    "2026-09-19",
+    "Alianza Valledupar",
+    "Santa Fe",
+    1,
+    4
+   ],
+   [
+    "2026-09-19",
+    "Deportivo Cali",
+    "C\u00facuta Deportivo",
+    3,
+    0
+   ],
+   [
+    "2026-09-19",
+    "Deportivo Pasto",
+    "Once Caldas",
+    1,
+    0
+   ],
+   [
+    "2026-09-19",
+    "Millonarios",
+    "Boyac\u00e1 Chic\u00f3",
+    3,
+    0
+   ],
+   [
+    "2026-09-20",
+    "Atl\u00e9tico Bucaramanga",
+    "Internacional de Bogot\u00e1",
+    2,
+    0
+   ],
+   [
+    "2026-09-20",
+    "Deportes Tolima",
+    "Am\u00e9rica de Cali",
+    1,
+    1
+   ],
+   [
+    "2026-09-20",
+    "Fortaleza",
+    "Junior",
+    1,
+    4
+   ],
+   [
+    "2026-09-20",
+    "Llaneros",
+    "Atl\u00e9tico Nacional",
+    2,
+    0
+   ],
+   [
+    "2026-09-22",
+    "Independiente Medell\u00edn",
+    "Jaguares",
+    2,
+    1
+   ],
+   [
+    "2026-09-22",
+    "Santa Fe",
+    "Deportivo Cali",
+    0,
+    1
+   ],
+   [
+    "2026-09-23",
+    "Am\u00e9rica de Cali",
+    "\u00c1guilas Doradas",
+    1,
+    0
+   ],
+   [
+    "2026-09-24",
+    "Atl\u00e9tico Nacional",
+    "Millonarios",
+    1,
+    1
+   ],
+   [
+    "2026-09-25",
+    "Boyac\u00e1 Chic\u00f3",
+    "Deportivo Pasto",
+    3,
+    0
+   ],
+   [
+    "2026-09-25",
+    "Once Caldas",
+    "Atl\u00e9tico Bucaramanga",
+    1,
+    3
+   ],
+   [
+    "2026-09-26",
+    "C\u00facuta Deportivo",
+    "Llaneros",
+    2,
+    1
+   ],
+   [
+    "2026-09-26",
+    "Deportivo Pereira",
+    "Internacional de Bogot\u00e1",
+    0,
+    0
+   ],
+   [
+    "2026-09-26",
+    "Junior",
+    "Independiente Medell\u00edn",
+    2,
+    0
+   ],
+   [
+    "2026-09-27",
+    "Deportivo Cali",
+    "\u00c1guilas Doradas",
+    2,
+    0
+   ],
+   [
+    "2026-09-27",
+    "Fortaleza",
+    "Deportes Tolima",
+    2,
+    2
+   ],
+   [
+    "2026-09-27",
+    "Jaguares",
+    "Alianza Valledupar",
+    1,
+    2
+   ],
+   [
+    "2026-09-29",
+    "Deportivo Pereira",
+    "Santa Fe",
+    1,
+    2
+   ],
+   [
+    "2026-09-29",
+    "Independiente Medell\u00edn",
+    "Millonarios",
+    2,
+    2
    ]
   ],
   "form": {
    "Deportivo Pereira": {
-    "form": "LDLLD",
+    "form": "LDDLD",
     "n": 5,
-    "gf": 4,
+    "gf": 5,
     "ga": 8,
-    "newest": "2026-04-18",
+    "newest": "2026-09-29",
     "matches": [
      {
-      "date": "2026-04-18",
+      "date": "2026-09-29",
       "res": "L",
-      "gf": 0,
+      "gf": 1,
       "ga": 2,
-      "opp": "Deportes Tolima",
-      "side": "A"
+      "opp": "Santa Fe",
+      "side": "H"
      },
      {
-      "date": "2026-04-10",
+      "date": "2026-09-26",
       "res": "D",
       "gf": 0,
       "ga": 0,
-      "opp": "Once Caldas",
+      "opp": "Internacional de Bogot\u00e1",
       "side": "H"
      },
      {
-      "date": "2026-04-06",
-      "res": "L",
-      "gf": 2,
-      "ga": 3,
-      "opp": "Alianza Valledupar",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-02",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Boyac\u00e1 Chic\u00f3",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-24",
+      "date": "2026-09-18",
       "res": "D",
       "gf": 2,
       "ga": 2,
-      "opp": "C\u00facuta Deportivo",
+      "opp": "\u00c1guilas Doradas",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Atl\u00e9tico Bucaramanga",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Millonarios",
       "side": "H"
      }
     ]
    },
    "Llaneros": {
-    "form": "LDDDW",
+    "form": "LWLLL",
     "n": 5,
-    "gf": 5,
-    "ga": 6,
-    "newest": "2026-05-02",
-    "matches": [
-     {
-      "date": "2026-05-02",
-      "res": "L",
-      "gf": 0,
-      "ga": 3,
-      "opp": "Boyac\u00e1 Chic\u00f3",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-12",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Deportivo Cali",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-25",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Am\u00e9rica de Cali",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-17",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "C\u00facuta Deportivo",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-09",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Jaguares",
-      "side": "H"
-     }
-    ]
-   },
-   "Am\u00e9rica de Cali": {
-    "form": "LWLLD",
-    "n": 5,
-    "gf": 3,
+    "gf": 7,
     "ga": 9,
-    "newest": "2026-05-12",
+    "newest": "2026-09-26",
     "matches": [
      {
-      "date": "2026-05-12",
+      "date": "2026-09-26",
       "res": "L",
-      "gf": 0,
-      "ga": 4,
-      "opp": "Santa Fe",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-22",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Fortaleza",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-05",
-      "res": "L",
-      "gf": 0,
+      "gf": 1,
       "ga": 2,
       "opp": "C\u00facuta Deportivo",
       "side": "A"
      },
      {
-      "date": "2026-03-30",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "Independiente Medell\u00edn",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-25",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Llaneros",
-      "side": "H"
-     }
-    ]
-   },
-   "Internacional de Bogot\u00e1": {
-    "form": "LDLDD",
-    "n": 5,
-    "gf": 3,
-    "ga": 5,
-    "newest": "2026-04-20",
-    "matches": [
-     {
-      "date": "2026-04-20",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "Once Caldas",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-03",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Fortaleza",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-29",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Junior",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-14",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Atl\u00e9tico Bucaramanga",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-05",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Llaneros",
-      "side": "A"
-     }
-    ]
-   },
-   "Deportivo Pasto": {
-    "form": "LWDWL",
-    "n": 5,
-    "gf": 8,
-    "ga": 8,
-    "newest": "2026-04-23",
-    "matches": [
-     {
-      "date": "2026-04-23",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "Santa Fe",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-17",
-      "res": "W",
-      "gf": 3,
-      "ga": 2,
-      "opp": "Jaguares",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-01",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Alianza Valledupar",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-18",
+      "date": "2026-09-20",
       "res": "W",
       "gf": 2,
-      "ga": 0,
-      "opp": "Boyac\u00e1 Chic\u00f3",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-13",
-      "res": "L",
-      "gf": 2,
-      "ga": 4,
-      "opp": "Once Caldas",
-      "side": "A"
-     }
-    ]
-   },
-   "Independiente Medell\u00edn": {
-    "form": "WWDWL",
-    "n": 5,
-    "gf": 9,
-    "ga": 5,
-    "newest": "2026-04-22",
-    "matches": [
-     {
-      "date": "2026-04-22",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Boyac\u00e1 Chic\u00f3",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-30",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Am\u00e9rica de Cali",
-      "side": "H"
-     },
-     {
-      "date": "2026-02-20",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "Llaneros",
-      "side": "A"
-     },
-     {
-      "date": "2026-02-10",
-      "res": "W",
-      "gf": 3,
-      "ga": 1,
-      "opp": "C\u00facuta Deportivo",
-      "side": "A"
-     },
-     {
-      "date": "2026-01-18",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Deportivo Pasto",
-      "side": "A"
-     }
-    ]
-   },
-   "C\u00facuta Deportivo": {
-    "form": "DLWWD",
-    "n": 5,
-    "gf": 6,
-    "ga": 8,
-    "newest": "2026-04-24",
-    "matches": [
-     {
-      "date": "2026-04-24",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Junior",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-19",
-      "res": "L",
-      "gf": 0,
-      "ga": 5,
-      "opp": "Santa Fe",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-05",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Am\u00e9rica de Cali",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-28",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Boyac\u00e1 Chic\u00f3",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-24",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "Deportivo Pereira",
-      "side": "A"
-     }
-    ]
-   },
-   "Once Caldas": {
-    "form": "WDWDL",
-    "n": 5,
-    "gf": 6,
-    "ga": 7,
-    "newest": "2026-05-01",
-    "matches": [
-     {
-      "date": "2026-05-01",
-      "res": "W",
-      "gf": 1,
       "ga": 0,
       "opp": "Atl\u00e9tico Nacional",
       "side": "H"
      },
      {
-      "date": "2026-04-26",
-      "res": "D",
+      "date": "2026-09-12",
+      "res": "L",
       "gf": 2,
-      "ga": 2,
-      "opp": "\u00c1guilas Doradas",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-20",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
+      "ga": 3,
       "opp": "Internacional de Bogot\u00e1",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-10",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Deportivo Pereira",
       "side": "A"
      },
      {
-      "date": "2026-03-21",
+      "date": "2026-09-07",
       "res": "L",
       "gf": 1,
-      "ga": 4,
-      "opp": "Millonarios",
+      "ga": 2,
+      "opp": "Deportes Tolima",
       "side": "H"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Independiente Medell\u00edn",
+      "side": "A"
      }
     ]
    },
    "Fortaleza": {
-    "form": "LDWDL",
+    "form": "DLDDL",
     "n": 5,
-    "gf": 7,
-    "ga": 9,
-    "newest": "2026-04-22",
+    "gf": 8,
+    "ga": 12,
+    "newest": "2026-09-27",
     "matches": [
      {
-      "date": "2026-04-22",
-      "res": "L",
-      "gf": 1,
+      "date": "2026-09-27",
+      "res": "D",
+      "gf": 2,
       "ga": 2,
-      "opp": "Am\u00e9rica de Cali",
+      "opp": "Deportes Tolima",
       "side": "H"
      },
      {
-      "date": "2026-04-03",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Internacional de Bogot\u00e1",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-04",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Jaguares",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-01",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Deportivo Cali",
-      "side": "A"
-     },
-     {
-      "date": "2026-02-21",
+      "date": "2026-09-20",
       "res": "L",
-      "gf": 2,
+      "gf": 1,
       "ga": 4,
-      "opp": "Once Caldas",
-      "side": "A"
-     }
-    ]
-   },
-   "\u00c1guilas Doradas": {
-    "form": "DLWLL",
-    "n": 5,
-    "gf": 6,
-    "ga": 14,
-    "newest": "2026-04-26",
-    "matches": [
-     {
-      "date": "2026-04-26",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "Once Caldas",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-11",
-      "res": "L",
-      "gf": 0,
-      "ga": 3,
       "opp": "Junior",
       "side": "H"
      },
      {
-      "date": "2026-04-07",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Atl\u00e9tico Bucaramanga",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-31",
-      "res": "L",
-      "gf": 1,
-      "ga": 4,
-      "opp": "Deportes Tolima",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-31",
-      "res": "L",
-      "gf": 1,
-      "ga": 4,
-      "opp": "Deportes Tolima",
-      "side": "A"
-     }
-    ]
-   },
-   "Atl\u00e9tico Bucaramanga": {
-    "form": "DLDWD",
-    "n": 5,
-    "gf": 6,
-    "ga": 4,
-    "newest": "2026-04-25",
-    "matches": [
-     {
-      "date": "2026-04-25",
+      "date": "2026-09-11",
       "res": "D",
       "gf": 2,
       "ga": 2,
       "opp": "Jaguares",
-      "side": "H"
+      "side": "A"
      },
      {
-      "date": "2026-04-07",
+      "date": "2026-09-05",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Santa Fe",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-01",
       "res": "L",
       "gf": 1,
       "ga": 2,
-      "opp": "\u00c1guilas Doradas",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-14",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Internacional de Bogot\u00e1",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-10",
-      "res": "W",
-      "gf": 3,
-      "ga": 0,
-      "opp": "Deportivo Pereira",
+      "opp": "Once Caldas",
       "side": "H"
-     },
-     {
-      "date": "2026-02-06",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Deportivo Pasto",
-      "side": "A"
      }
     ]
    },
    "Alianza Valledupar": {
-    "form": "DWDLW",
+    "form": "WLWWL",
     "n": 5,
     "gf": 6,
-    "ga": 5,
-    "newest": "2026-05-03",
+    "ga": 9,
+    "newest": "2026-09-27",
     "matches": [
      {
-      "date": "2026-05-03",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "Millonarios",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-06",
-      "res": "W",
-      "gf": 3,
-      "ga": 2,
-      "opp": "Deportivo Pereira",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-01",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Deportivo Pasto",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-27",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "\u00c1guilas Doradas",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-22",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Deportivo Cali",
-      "side": "H"
-     }
-    ]
-   },
-   "Boyac\u00e1 Chic\u00f3": {
-    "form": "WLWLD",
-    "n": 5,
-    "gf": 5,
-    "ga": 4,
-    "newest": "2026-05-02",
-    "matches": [
-     {
-      "date": "2026-05-02",
-      "res": "W",
-      "gf": 3,
-      "ga": 0,
-      "opp": "Llaneros",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-22",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Independiente Medell\u00edn",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-02",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Deportivo Pereira",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-28",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "C\u00facuta Deportivo",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-23",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Deportes Tolima",
-      "side": "H"
-     }
-    ]
-   },
-   "Deportivo Cali": {
-    "form": "DLLDL",
-    "n": 5,
-    "gf": 3,
-    "ga": 7,
-    "newest": "2026-04-12",
-    "matches": [
-     {
-      "date": "2026-04-12",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Llaneros",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-22",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Alianza Valledupar",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-06",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Once Caldas",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-01",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Fortaleza",
-      "side": "H"
-     },
-     {
-      "date": "2026-01-29",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "\u00c1guilas Doradas",
-      "side": "A"
-     }
-    ]
-   },
-   "Deportes Tolima": {
-    "form": "WDWWD",
-    "n": 5,
-    "gf": 13,
-    "ga": 5,
-    "newest": "2026-04-18",
-    "matches": [
-     {
-      "date": "2026-04-18",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Deportivo Pereira",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-04",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "Santa Fe",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-31",
-      "res": "W",
-      "gf": 4,
-      "ga": 1,
-      "opp": "\u00c1guilas Doradas",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-31",
-      "res": "W",
-      "gf": 4,
-      "ga": 1,
-      "opp": "\u00c1guilas Doradas",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-23",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Boyac\u00e1 Chic\u00f3",
-      "side": "A"
-     }
-    ]
-   },
-   "Atl\u00e9tico Nacional": {
-    "form": "LWWWW",
-    "n": 5,
-    "gf": 10,
-    "ga": 4,
-    "newest": "2026-05-01",
-    "matches": [
-     {
-      "date": "2026-05-01",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Once Caldas",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-06",
+      "date": "2026-09-27",
       "res": "W",
       "gf": 2,
       "ga": 1,
       "opp": "Jaguares",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 1,
+      "ga": 4,
+      "opp": "Santa Fe",
       "side": "H"
      },
      {
-      "date": "2026-03-10",
+      "date": "2026-09-15",
       "res": "W",
-      "gf": 4,
+      "gf": 2,
+      "ga": 1,
+      "opp": "Boyac\u00e1 Chic\u00f3",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 1,
       "ga": 0,
       "opp": "Junior",
-      "side": "A"
+      "side": "H"
      },
      {
-      "date": "2026-03-07",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "\u00c1guilas Doradas",
-      "side": "A"
-     },
-     {
-      "date": "2026-02-25",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Santa Fe",
+      "date": "2026-09-03",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Am\u00e9rica de Cali",
       "side": "A"
      }
     ]
    },
-   "Santa Fe": {
-    "form": "WWWDD",
+   "Am\u00e9rica de Cali": {
+    "form": "WDLWD",
     "n": 5,
-    "gf": 14,
+    "gf": 7,
     "ga": 4,
-    "newest": "2026-05-12",
+    "newest": "2026-09-23",
     "matches": [
      {
-      "date": "2026-05-12",
+      "date": "2026-09-23",
       "res": "W",
-      "gf": 4,
+      "gf": 1,
       "ga": 0,
-      "opp": "Am\u00e9rica de Cali",
+      "opp": "\u00c1guilas Doradas",
       "side": "H"
      },
      {
-      "date": "2026-04-23",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Deportivo Pasto",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-19",
-      "res": "W",
-      "gf": 5,
-      "ga": 0,
-      "opp": "C\u00facuta Deportivo",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-12",
+      "date": "2026-09-20",
       "res": "D",
       "gf": 1,
       "ga": 1,
-      "opp": "Millonarios",
+      "opp": "Deportes Tolima",
       "side": "A"
      },
      {
-      "date": "2026-04-04",
+      "date": "2026-09-14",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Deportivo Pasto",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-03",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "Alianza Valledupar",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
       "res": "D",
       "gf": 2,
       "ga": 2,
-      "opp": "Deportes Tolima",
+      "opp": "Jaguares",
+      "side": "A"
+     }
+    ]
+   },
+   "Internacional de Bogot\u00e1": {
+    "form": "DLLWD",
+    "n": 5,
+    "gf": 7,
+    "ga": 9,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Deportivo Pereira",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Atl\u00e9tico Bucaramanga",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-16",
+      "res": "L",
+      "gf": 2,
+      "ga": 3,
+      "opp": "Atl\u00e9tico Nacional",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "Llaneros",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "\u00c1guilas Doradas",
+      "side": "H"
+     }
+    ]
+   },
+   "Atl\u00e9tico Bucaramanga": {
+    "form": "WWDWD",
+    "n": 5,
+    "gf": 11,
+    "ga": 5,
+    "newest": "2026-09-25",
+    "matches": [
+     {
+      "date": "2026-09-25",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Once Caldas",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Internacional de Bogot\u00e1",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-17",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Independiente Medell\u00edn",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Deportivo Pereira",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Deportivo Cali",
       "side": "A"
      }
     ]
    },
    "Millonarios": {
-    "form": "DDWWW",
+    "form": "DDWWD",
     "n": 5,
-    "gf": 14,
+    "gf": 9,
     "ga": 5,
-    "newest": "2026-05-03",
+    "newest": "2026-09-29",
     "matches": [
      {
-      "date": "2026-05-03",
+      "date": "2026-09-29",
       "res": "D",
       "gf": 2,
       "ga": 2,
-      "opp": "Alianza Valledupar",
+      "opp": "Independiente Medell\u00edn",
       "side": "A"
      },
      {
-      "date": "2026-04-12",
+      "date": "2026-09-24",
       "res": "D",
       "gf": 1,
       "ga": 1,
-      "opp": "Santa Fe",
-      "side": "H"
-     },
-     {
-      "date": "2026-03-21",
-      "res": "W",
-      "gf": 4,
-      "ga": 1,
-      "opp": "Once Caldas",
+      "opp": "Atl\u00e9tico Nacional",
       "side": "A"
      },
      {
-      "date": "2026-03-09",
+      "date": "2026-09-19",
       "res": "W",
-      "gf": 2,
+      "gf": 3,
       "ga": 0,
-      "opp": "C\u00facuta Deportivo",
+      "opp": "Boyac\u00e1 Chic\u00f3",
       "side": "H"
      },
      {
-      "date": "2026-02-26",
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "C\u00facuta Deportivo",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-10",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Deportivo Cali",
+      "side": "H"
+     }
+    ]
+   },
+   "Atl\u00e9tico Nacional": {
+    "form": "DLWWW",
+    "n": 5,
+    "gf": 11,
+    "ga": 6,
+    "newest": "2026-09-24",
+    "matches": [
+     {
+      "date": "2026-09-24",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Millonarios",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Llaneros",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-16",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "Internacional de Bogot\u00e1",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "\u00c1guilas Doradas",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
       "res": "W",
       "gf": 5,
       "ga": 1,
+      "opp": "Alianza Valledupar",
+      "side": "A"
+     }
+    ]
+   },
+   "Boyac\u00e1 Chic\u00f3": {
+    "form": "WLLWW",
+    "n": 5,
+    "gf": 8,
+    "ga": 6,
+    "newest": "2026-09-25",
+    "matches": [
+     {
+      "date": "2026-09-25",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "Deportivo Pasto",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Millonarios",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-15",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Alianza Valledupar",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Independiente Medell\u00edn",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Once Caldas",
+      "side": "H"
+     }
+    ]
+   },
+   "Deportivo Pasto": {
+    "form": "LWWDL",
+    "n": 5,
+    "gf": 5,
+    "ga": 7,
+    "newest": "2026-09-25",
+    "matches": [
+     {
+      "date": "2026-09-25",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Boyac\u00e1 Chic\u00f3",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Once Caldas",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-14",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Am\u00e9rica de Cali",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "C\u00facuta Deportivo",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-31",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
       "opp": "Deportivo Pereira",
       "side": "H"
      }
     ]
    },
-   "Jaguares": {
-    "form": "DLLLL",
+   "Independiente Medell\u00edn": {
+    "form": "DLWDL",
     "n": 5,
-    "gf": 5,
-    "ga": 10,
-    "newest": "2026-04-25",
+    "gf": 7,
+    "ga": 9,
+    "newest": "2026-09-29",
     "matches": [
      {
-      "date": "2026-04-25",
+      "date": "2026-09-29",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Millonarios",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-26",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Junior",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-22",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Jaguares",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-17",
       "res": "D",
       "gf": 2,
       "ga": 2,
@@ -5850,23 +7001,138 @@
       "side": "A"
      },
      {
-      "date": "2026-04-17",
-      "res": "L",
-      "gf": 2,
-      "ga": 3,
-      "opp": "Deportivo Pasto",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-06",
+      "date": "2026-09-12",
       "res": "L",
       "gf": 1,
       "ga": 2,
-      "opp": "Atl\u00e9tico Nacional",
+      "opp": "Boyac\u00e1 Chic\u00f3",
+      "side": "A"
+     }
+    ]
+   },
+   "Jaguares": {
+    "form": "LLDDD",
+    "n": 5,
+    "gf": 9,
+    "ga": 11,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Alianza Valledupar",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-22",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Independiente Medell\u00edn",
       "side": "A"
      },
      {
-      "date": "2026-03-19",
+      "date": "2026-09-11",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Fortaleza",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "D",
+      "gf": 3,
+      "ga": 3,
+      "opp": "Junior",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Am\u00e9rica de Cali",
+      "side": "H"
+     }
+    ]
+   },
+   "Deportivo Cali": {
+    "form": "WWWWD",
+    "n": 5,
+    "gf": 9,
+    "ga": 2,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "\u00c1guilas Doradas",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-22",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Santa Fe",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "C\u00facuta Deportivo",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Once Caldas",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-10",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Millonarios",
+      "side": "A"
+     }
+    ]
+   },
+   "Junior": {
+    "form": "WWLDD",
+    "n": 5,
+    "gf": 10,
+    "ga": 6,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Independiente Medell\u00edn",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "W",
+      "gf": 4,
+      "ga": 1,
+      "opp": "Fortaleza",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
       "res": "L",
       "gf": 0,
       "ga": 1,
@@ -5874,66 +7140,273 @@
       "side": "A"
      },
      {
-      "date": "2026-03-09",
+      "date": "2026-09-05",
+      "res": "D",
+      "gf": 3,
+      "ga": 3,
+      "opp": "Jaguares",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Santa Fe",
+      "side": "H"
+     }
+    ]
+   },
+   "Deportes Tolima": {
+    "form": "DDLLW",
+    "n": 5,
+    "gf": 5,
+    "ga": 6,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Fortaleza",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-20",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Am\u00e9rica de Cali",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-16",
       "res": "L",
       "gf": 0,
-      "ga": 2,
+      "ga": 1,
+      "opp": "Once Caldas",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-11",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Santa Fe",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-07",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
       "opp": "Llaneros",
       "side": "A"
      }
     ]
    },
-   "Junior": {
-    "form": "DWWLL",
+   "Santa Fe": {
+    "form": "WLWWD",
     "n": 5,
-    "gf": 6,
-    "ga": 7,
-    "newest": "2026-04-24",
+    "gf": 9,
+    "ga": 5,
+    "newest": "2026-09-29",
     "matches": [
      {
-      "date": "2026-04-24",
-      "res": "D",
-      "gf": 1,
+      "date": "2026-09-29",
+      "res": "W",
+      "gf": 2,
       "ga": 1,
-      "opp": "C\u00facuta Deportivo",
+      "opp": "Deportivo Pereira",
       "side": "A"
      },
      {
-      "date": "2026-04-11",
-      "res": "W",
-      "gf": 3,
-      "ga": 0,
-      "opp": "\u00c1guilas Doradas",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-29",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Internacional de Bogot\u00e1",
-      "side": "A"
-     },
-     {
-      "date": "2026-03-10",
+      "date": "2026-09-22",
       "res": "L",
       "gf": 0,
-      "ga": 4,
-      "opp": "Atl\u00e9tico Nacional",
+      "ga": 1,
+      "opp": "Deportivo Cali",
       "side": "H"
      },
      {
-      "date": "2026-02-22",
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 4,
+      "ga": 1,
+      "opp": "Alianza Valledupar",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-11",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Deportes Tolima",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Fortaleza",
+      "side": "H"
+     }
+    ]
+   },
+   "\u00c1guilas Doradas": {
+    "form": "LLDLD",
+    "n": 5,
+    "gf": 4,
+    "ga": 9,
+    "newest": "2026-09-27",
+    "matches": [
+     {
+      "date": "2026-09-27",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Deportivo Cali",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-23",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Am\u00e9rica de Cali",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-18",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Deportivo Pereira",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Atl\u00e9tico Nacional",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Internacional de Bogot\u00e1",
+      "side": "A"
+     }
+    ]
+   },
+   "C\u00facuta Deportivo": {
+    "form": "WLLDL",
+    "n": 5,
+    "gf": 6,
+    "ga": 10,
+    "newest": "2026-09-26",
+    "matches": [
+     {
+      "date": "2026-09-26",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Llaneros",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Deportivo Cali",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
       "res": "L",
       "gf": 1,
       "ga": 2,
-      "opp": "Santa Fe",
+      "opp": "Millonarios",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Deportivo Pasto",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-31",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Deportes Tolima",
+      "side": "A"
+     }
+    ]
+   },
+   "Once Caldas": {
+    "form": "LLWLL",
+    "n": 5,
+    "gf": 3,
+    "ga": 8,
+    "newest": "2026-09-25",
+    "matches": [
+     {
+      "date": "2026-09-25",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Atl\u00e9tico Bucaramanga",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Deportivo Pasto",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-16",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Deportes Tolima",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Deportivo Cali",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Boyac\u00e1 Chic\u00f3",
       "side": "A"
      }
     ]
    }
   },
-  "es_page": "https://es.wikipedia.org/wiki/Torneo_Apertura_2026_(Colombia)"
+  "es_pages": [
+   "Torneo_Finalizaci%C3%B3n_2026_(Colombia)",
+   "Torneo_Apertura_2026_(Colombia)"
+  ]
  },
  "Peru Liga 1": {
   "slug": "https://en.wikipedia.org/wiki/2026_Liga_1_(Peru)",
@@ -9498,7 +10971,2657 @@
     4
    ]
   ],
-  "refused_matrices": []
+  "refused_matrices": [],
+  "dated": [
+   [
+    "2026-01-30",
+    "Sport Huancayo",
+    "Alianza Lima",
+    1,
+    2
+   ],
+   [
+    "2026-01-30",
+    "UTC",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "2026-01-31",
+    "FBC Melgar",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "2026-01-31",
+    "Juan Pablo II College",
+    "FC Cajamarca",
+    3,
+    3
+   ],
+   [
+    "2026-01-31",
+    "Sport Boys",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "2026-02-01",
+    "Alianza Atl\u00e9tico",
+    "Cusco FC",
+    1,
+    0
+   ],
+   [
+    "2026-02-01",
+    "Deportivo Garcilaso",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "2026-02-01",
+    "Universitario",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "2026-02-02",
+    "Comerciantes Unidos",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "2026-02-06",
+    "Deportivo Moquegua",
+    "UTC",
+    2,
+    3
+   ],
+   [
+    "2026-02-07",
+    "ADT",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "2026-02-07",
+    "Atl\u00e9tico Grau",
+    "Sport Huancayo",
+    0,
+    0
+   ],
+   [
+    "2026-02-07",
+    "Cusco FC",
+    "Universitario",
+    1,
+    1
+   ],
+   [
+    "2026-02-08",
+    "Alianza Lima",
+    "Comerciantes Unidos",
+    2,
+    1
+   ],
+   [
+    "2026-02-08",
+    "Cienciano",
+    "Juan Pablo II College",
+    6,
+    1
+   ],
+   [
+    "2026-02-08",
+    "Los Chankas",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "2026-02-08",
+    "Sporting Cristal",
+    "FBC Melgar",
+    1,
+    2
+   ],
+   [
+    "2026-02-09",
+    "FC Cajamarca",
+    "Deportivo Garcilaso",
+    1,
+    1
+   ],
+   [
+    "2026-02-13",
+    "UTC",
+    "Cusco FC",
+    1,
+    0
+   ],
+   [
+    "2026-02-13",
+    "Universitario",
+    "Cienciano",
+    2,
+    1
+   ],
+   [
+    "2026-02-14",
+    "Alianza Atl\u00e9tico",
+    "Alianza Lima",
+    0,
+    0
+   ],
+   [
+    "2026-02-14",
+    "Deportivo Garcilaso",
+    "ADT",
+    1,
+    0
+   ],
+   [
+    "2026-02-14",
+    "Juan Pablo II College",
+    "Sporting Cristal",
+    0,
+    2
+   ],
+   [
+    "2026-02-14",
+    "Sport Boys",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "2026-02-15",
+    "Comerciantes Unidos",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "2026-02-15",
+    "FBC Melgar",
+    "Deportivo Moquegua",
+    4,
+    0
+   ],
+   [
+    "2026-02-15",
+    "Sport Huancayo",
+    "FC Cajamarca",
+    2,
+    0
+   ],
+   [
+    "2026-02-20",
+    "Alianza Lima",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "2026-02-21",
+    "Cienciano",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "2026-02-21",
+    "FC Cajamarca",
+    "FBC Melgar",
+    3,
+    1
+   ],
+   [
+    "2026-02-21",
+    "Sporting Cristal",
+    "Universitario",
+    2,
+    2
+   ],
+   [
+    "2026-02-22",
+    "ADT",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "2026-02-22",
+    "Atl\u00e9tico Grau",
+    "Juan Pablo II College",
+    1,
+    2
+   ],
+   [
+    "2026-02-22",
+    "Cusco FC",
+    "Comerciantes Unidos",
+    3,
+    1
+   ],
+   [
+    "2026-02-22",
+    "Los Chankas",
+    "Sport Huancayo",
+    3,
+    2
+   ],
+   [
+    "2026-02-23",
+    "Deportivo Moquegua",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "2026-02-27",
+    "Alianza Atl\u00e9tico",
+    "ADT",
+    0,
+    0
+   ],
+   [
+    "2026-02-27",
+    "Deportivo Garcilaso",
+    "Cienciano",
+    2,
+    3
+   ],
+   [
+    "2026-02-27",
+    "FBC Melgar",
+    "Los Chankas",
+    1,
+    2
+   ],
+   [
+    "2026-02-28",
+    "Sport Boys",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "2026-02-28",
+    "Sport Huancayo",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "2026-02-28",
+    "UTC",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "2026-03-01",
+    "Comerciantes Unidos",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "2026-03-01",
+    "Juan Pablo II College",
+    "Cusco FC",
+    2,
+    1
+   ],
+   [
+    "2026-03-01",
+    "Universitario",
+    "FC Cajamarca",
+    1,
+    0
+   ],
+   [
+    "2026-03-06",
+    "Atl\u00e9tico Grau",
+    "FC Cajamarca",
+    1,
+    0
+   ],
+   [
+    "2026-03-07",
+    "Comerciantes Unidos",
+    "UTC",
+    1,
+    2
+   ],
+   [
+    "2026-03-07",
+    "Cusco FC",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "2026-03-07",
+    "Deportivo Moquegua",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "2026-03-07",
+    "Sporting Cristal",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "2026-03-08",
+    "ADT",
+    "Juan Pablo II College",
+    2,
+    3
+   ],
+   [
+    "2026-03-08",
+    "Los Chankas",
+    "Universitario",
+    3,
+    1
+   ],
+   [
+    "2026-03-09",
+    "Alianza Lima",
+    "FBC Melgar",
+    3,
+    1
+   ],
+   [
+    "2026-03-09",
+    "Cienciano",
+    "Sport Boys",
+    3,
+    1
+   ],
+   [
+    "2026-03-13",
+    "FC Cajamarca",
+    "Comerciantes Unidos",
+    3,
+    4
+   ],
+   [
+    "2026-03-14",
+    "Deportivo Garcilaso",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "2026-03-14",
+    "Juan Pablo II College",
+    "Los Chankas",
+    2,
+    3
+   ],
+   [
+    "2026-03-14",
+    "Sport Huancayo",
+    "ADT",
+    0,
+    1
+   ],
+   [
+    "2026-03-14",
+    "Universitario",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "2026-03-15",
+    "Alianza Atl\u00e9tico",
+    "Deportivo Moquegua",
+    3,
+    0
+   ],
+   [
+    "2026-03-15",
+    "Cusco FC",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "2026-03-15",
+    "FBC Melgar",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "2026-03-15",
+    "Sporting Cristal",
+    "Sport Boys",
+    3,
+    0
+   ],
+   [
+    "2026-03-20",
+    "ADT",
+    "FBC Melgar",
+    1,
+    1
+   ],
+   [
+    "2026-03-20",
+    "Cienciano",
+    "FC Cajamarca",
+    3,
+    0
+   ],
+   [
+    "2026-03-21",
+    "Alianza Lima",
+    "Juan Pablo II College",
+    2,
+    0
+   ],
+   [
+    "2026-03-21",
+    "Comerciantes Unidos",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "2026-03-21",
+    "Deportivo Moquegua",
+    "Cusco FC",
+    1,
+    2
+   ],
+   [
+    "2026-03-21",
+    "Los Chankas",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "2026-03-22",
+    "Atl\u00e9tico Grau",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "2026-03-22",
+    "Sport Boys",
+    "Sport Huancayo",
+    3,
+    0
+   ],
+   [
+    "2026-03-22",
+    "UTC",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "2026-04-03",
+    "Alianza Atl\u00e9tico",
+    "Atl\u00e9tico Grau",
+    2,
+    2
+   ],
+   [
+    "2026-04-03",
+    "Cienciano",
+    "ADT",
+    3,
+    2
+   ],
+   [
+    "2026-04-03",
+    "Sporting Cristal",
+    "Deportivo Moquegua",
+    1,
+    2
+   ],
+   [
+    "2026-04-04",
+    "Deportivo Garcilaso",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "2026-04-04",
+    "FBC Melgar",
+    "Cusco FC",
+    1,
+    3
+   ],
+   [
+    "2026-04-04",
+    "Universitario",
+    "Alianza Lima",
+    1,
+    0
+   ],
+   [
+    "2026-04-05",
+    "Juan Pablo II College",
+    "UTC",
+    2,
+    1
+   ],
+   [
+    "2026-04-05",
+    "Sport Huancayo",
+    "Comerciantes Unidos",
+    1,
+    1
+   ],
+   [
+    "2026-04-06",
+    "FC Cajamarca",
+    "Los Chankas",
+    0,
+    1
+   ],
+   [
+    "2026-04-14",
+    "ADT",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "2026-04-14",
+    "Deportivo Moquegua",
+    "Juan Pablo II College",
+    3,
+    0
+   ],
+   [
+    "2026-04-14",
+    "Sport Boys",
+    "FBC Melgar",
+    1,
+    3
+   ],
+   [
+    "2026-04-15",
+    "UTC",
+    "Sport Huancayo",
+    2,
+    2
+   ],
+   [
+    "2026-04-17",
+    "Los Chankas",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "2026-04-18",
+    "Alianza Lima",
+    "Cusco FC",
+    8,
+    0
+   ],
+   [
+    "2026-04-18",
+    "FC Cajamarca",
+    "ADT",
+    2,
+    2
+   ],
+   [
+    "2026-04-18",
+    "Juan Pablo II College",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "2026-04-18",
+    "Sport Huancayo",
+    "Deportivo Garcilaso",
+    2,
+    1
+   ],
+   [
+    "2026-04-19",
+    "Alianza Atl\u00e9tico",
+    "Sport Boys",
+    0,
+    1
+   ],
+   [
+    "2026-04-19",
+    "Cienciano",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "2026-04-19",
+    "FBC Melgar",
+    "Universitario",
+    2,
+    1
+   ],
+   [
+    "2026-04-19",
+    "Sporting Cristal",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "2026-04-22",
+    "Atl\u00e9tico Grau",
+    "Sporting Cristal",
+    4,
+    1
+   ],
+   [
+    "2026-04-22",
+    "Comerciantes Unidos",
+    "Alianza Atl\u00e9tico",
+    1,
+    0
+   ],
+   [
+    "2026-04-22",
+    "Cusco FC",
+    "FC Cajamarca",
+    1,
+    0
+   ],
+   [
+    "2026-04-22",
+    "Universitario",
+    "Deportivo Garcilaso",
+    4,
+    1
+   ],
+   [
+    "2026-04-23",
+    "Los Chankas",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "2026-04-25",
+    "Comerciantes Unidos",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "2026-04-25",
+    "Deportivo Moquegua",
+    "FC Cajamarca",
+    2,
+    1
+   ],
+   [
+    "2026-04-25",
+    "Sport Boys",
+    "Juan Pablo II",
+    1,
+    1
+   ],
+   [
+    "2026-04-26",
+    "Atl\u00e9tico Grau",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "2026-04-26",
+    "Cusco FC",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "2026-04-26",
+    "UTC",
+    "Cienciano",
+    2,
+    2
+   ],
+   [
+    "2026-04-26",
+    "Universitario",
+    "Alianza Atl\u00e9tico",
+    1,
+    2
+   ],
+   [
+    "2026-04-27",
+    "ADT",
+    "Los Chankas",
+    4,
+    0
+   ],
+   [
+    "2026-04-27",
+    "Deportivo Garcilaso",
+    "FBC Melgar",
+    1,
+    0
+   ],
+   [
+    "2026-05-02",
+    "ADT",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "2026-05-02",
+    "Alianza Lima",
+    "Deportivo Moquegua",
+    2,
+    1
+   ],
+   [
+    "2026-05-02",
+    "Cienciano",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "2026-05-02",
+    "FC Cajamarca",
+    "Sport Boys",
+    3,
+    2
+   ],
+   [
+    "2026-05-03",
+    "Alianza Atl\u00e9tico",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "2026-05-03",
+    "FBC Melgar",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "2026-05-03",
+    "Juan Pablo II College",
+    "Universitario",
+    1,
+    4
+   ],
+   [
+    "2026-05-03",
+    "Sporting Cristal",
+    "Cusco FC",
+    2,
+    2
+   ],
+   [
+    "2026-05-04",
+    "Los Chankas",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "2026-05-08",
+    "UTC",
+    "FC Cajamarca",
+    1,
+    2
+   ],
+   [
+    "2026-05-09",
+    "Alianza Lima",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "2026-05-09",
+    "Atl\u00e9tico Grau",
+    "Cienciano",
+    1,
+    2
+   ],
+   [
+    "2026-05-09",
+    "Deportivo Moquegua",
+    "ADT",
+    2,
+    2
+   ],
+   [
+    "2026-05-10",
+    "Comerciantes Unidos",
+    "FBC Melgar",
+    1,
+    1
+   ],
+   [
+    "2026-05-10",
+    "Cusco FC",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "2026-05-10",
+    "Sport Huancayo",
+    "Juan Pablo II College",
+    2,
+    1
+   ],
+   [
+    "2026-05-11",
+    "Deportivo Garcilaso",
+    "Alianza Atl\u00e9tico",
+    2,
+    1
+   ],
+   [
+    "2026-05-11",
+    "Sport Boys",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "2026-05-15",
+    "FC Cajamarca",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "2026-05-15",
+    "Universitario",
+    "Atl\u00e9tico Grau",
+    0,
+    1
+   ],
+   [
+    "2026-05-16",
+    "Cienciano",
+    "Alianza Lima",
+    0,
+    1
+   ],
+   [
+    "2026-05-16",
+    "FBC Melgar",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "2026-05-16",
+    "Juan Pablo II College",
+    "Alianza Atl\u00e9tico",
+    0,
+    2
+   ],
+   [
+    "2026-05-16",
+    "Sport Boys",
+    "Cusco FC",
+    1,
+    0
+   ],
+   [
+    "2026-05-17",
+    "ADT",
+    "Comerciantes Unidos",
+    2,
+    0
+   ],
+   [
+    "2026-05-17",
+    "Deportivo Garcilaso",
+    "UTC",
+    2,
+    0
+   ],
+   [
+    "2026-05-17",
+    "Los Chankas",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "2026-05-22",
+    "Juan Pablo II College",
+    "FBC Melgar",
+    1,
+    1
+   ],
+   [
+    "2026-05-23",
+    "Alianza Lima (G)",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "2026-05-23",
+    "Cusco FC",
+    "Atl\u00e9tico Grau",
+    1,
+    0
+   ],
+   [
+    "2026-05-23",
+    "Deportivo Moquegua",
+    "Universitario",
+    0,
+    0
+   ],
+   [
+    "2026-05-23",
+    "UTC",
+    "Sport Boys",
+    0,
+    0
+   ],
+   [
+    "2026-05-24",
+    "Alianza Atl\u00e9tico",
+    "FC Cajamarca",
+    1,
+    1
+   ],
+   [
+    "2026-05-24",
+    "Sport Huancayo",
+    "Cienciano",
+    2,
+    2
+   ],
+   [
+    "2026-05-24",
+    "Sporting Cristal",
+    "ADT",
+    2,
+    1
+   ],
+   [
+    "2026-05-25",
+    "Comerciantes Unidos",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "2026-05-29",
+    "Atl\u00e9tico Grau",
+    "Deportivo Moquegua",
+    1,
+    0
+   ],
+   [
+    "2026-05-30",
+    "ADT",
+    "Cusco FC",
+    1,
+    2
+   ],
+   [
+    "2026-05-30",
+    "Deportivo Garcilaso",
+    "Juan Pablo II College",
+    4,
+    1
+   ],
+   [
+    "2026-05-30",
+    "Sport Boys",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "2026-05-30",
+    "Universitario",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "2026-05-31",
+    "Cienciano",
+    "Sporting Cristal",
+    3,
+    2
+   ],
+   [
+    "2026-05-31",
+    "FBC Melgar",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "2026-05-31",
+    "FC Cajamarca",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "2026-05-31",
+    "Los Chankas",
+    "UTC",
+    2,
+    2
+   ],
+   [
+    "2026-07-17",
+    "Cienciano",
+    "FBC Melgar",
+    1,
+    3
+   ],
+   [
+    "2026-07-17",
+    "FC Cajamarca",
+    "Juan Pablo II",
+    2,
+    2
+   ],
+   [
+    "2026-07-17",
+    "Sporting Cristal",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "2026-07-18",
+    "ADT",
+    "Universitario",
+    1,
+    2
+   ],
+   [
+    "2026-07-18",
+    "Atl\u00e9tico Grau",
+    "UTC",
+    3,
+    1
+   ],
+   [
+    "2026-07-18",
+    "Cusco FC",
+    "Alianza Atl\u00e9tico",
+    4,
+    1
+   ],
+   [
+    "2026-07-18",
+    "Deportivo Moquegua",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "2026-07-19",
+    "Alianza Lima",
+    "Sport Huancayo",
+    2,
+    1
+   ],
+   [
+    "2026-07-19",
+    "Los Chankas",
+    "Sport Boys",
+    1,
+    0
+   ],
+   [
+    "2026-07-24",
+    "Alianza Atl\u00e9tico",
+    "Los Chankas",
+    3,
+    1
+   ],
+   [
+    "2026-07-24",
+    "Universitario",
+    "Cusco FC",
+    2,
+    1
+   ],
+   [
+    "2026-07-25",
+    "FBC Melgar",
+    "Sporting Cristal",
+    2,
+    1
+   ],
+   [
+    "2026-07-25",
+    "Juan Pablo II",
+    "Cienciano",
+    2,
+    0
+   ],
+   [
+    "2026-07-25",
+    "Sport Boys",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "2026-07-25",
+    "Sport Huancayo",
+    "Atl\u00e9tico Grau",
+    2,
+    0
+   ],
+   [
+    "2026-07-26",
+    "Comerciantes Unidos",
+    "Alianza Lima",
+    2,
+    2
+   ],
+   [
+    "2026-07-26",
+    "Deportivo Garcilaso",
+    "FC Cajamarca",
+    2,
+    1
+   ],
+   [
+    "2026-07-26",
+    "UTC",
+    "Deportivo Moquegua",
+    0,
+    0
+   ],
+   [
+    "2026-07-31",
+    "Los Chankas",
+    "Comerciantes Unidos",
+    3,
+    2
+   ],
+   [
+    "2026-08-01",
+    "Alianza Lima",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "2026-08-01",
+    "Atl\u00e9tico Grau",
+    "Sport Boys",
+    0,
+    1
+   ],
+   [
+    "2026-08-01",
+    "Cusco FC",
+    "UTC",
+    4,
+    1
+   ],
+   [
+    "2026-08-01",
+    "FC Cajamarca",
+    "Sport Huancayo",
+    0,
+    2
+   ],
+   [
+    "2026-08-02",
+    "ADT",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "2026-08-02",
+    "Cienciano",
+    "Universitario",
+    2,
+    0
+   ],
+   [
+    "2026-08-02",
+    "Deportivo Moquegua",
+    "FBC Melgar",
+    0,
+    0
+   ],
+   [
+    "2026-08-02",
+    "Sporting Cristal",
+    "Juan Pablo II",
+    2,
+    0
+   ],
+   [
+    "2026-08-06",
+    "Alianza Atl\u00e9tico",
+    "Cienciano",
+    1,
+    0
+   ],
+   [
+    "2026-08-07",
+    "Comerciantes Unidos",
+    "Cusco FC",
+    3,
+    1
+   ],
+   [
+    "2026-08-07",
+    "Sport Huancayo",
+    "Los Chankas",
+    1,
+    1
+   ],
+   [
+    "2026-08-07",
+    "Universitario",
+    "Sporting Cristal",
+    1,
+    1
+   ],
+   [
+    "2026-08-08",
+    "Juan Pablo II",
+    "Atl\u00e9tico Grau",
+    0,
+    0
+   ],
+   [
+    "2026-08-08",
+    "Sport Boys",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "2026-08-08",
+    "UTC",
+    "ADT",
+    1,
+    1
+   ],
+   [
+    "2026-08-09",
+    "Deportivo Garcilaso",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "2026-08-09",
+    "FBC Melgar",
+    "FC Cajamarca",
+    2,
+    4
+   ],
+   [
+    "2026-08-14",
+    "Atl\u00e9tico Grau",
+    "Comerciantes Unidos",
+    1,
+    0
+   ],
+   [
+    "2026-08-14",
+    "Cusco FC",
+    "Juan Pablo II",
+    2,
+    0
+   ],
+   [
+    "2026-08-15",
+    "ADT",
+    "Alianza Atl\u00e9tico",
+    1,
+    1
+   ],
+   [
+    "2026-08-15",
+    "Alianza Lima",
+    "UTC",
+    1,
+    0
+   ],
+   [
+    "2026-08-15",
+    "Los Chankas",
+    "FBC Melgar",
+    0,
+    3
+   ],
+   [
+    "2026-08-16",
+    "Cienciano",
+    "Deportivo Garcilaso",
+    0,
+    0
+   ],
+   [
+    "2026-08-16",
+    "Deportivo Moquegua",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "2026-08-16",
+    "FC Cajamarca",
+    "Universitario",
+    2,
+    3
+   ],
+   [
+    "2026-08-16",
+    "Sporting Cristal",
+    "Sport Huancayo",
+    4,
+    1
+   ],
+   [
+    "2026-08-21",
+    "Alianza Atl\u00e9tico",
+    "Sporting Cristal",
+    3,
+    1
+   ],
+   [
+    "2026-08-21",
+    "FC Cajamarca",
+    "Atl\u00e9tico Grau",
+    1,
+    3
+   ],
+   [
+    "2026-08-22",
+    "Deportivo Garcilaso",
+    "Cusco FC",
+    4,
+    1
+   ],
+   [
+    "2026-08-22",
+    "Juan Pablo II",
+    "ADT",
+    5,
+    1
+   ],
+   [
+    "2026-08-22",
+    "Sport Huancayo",
+    "Deportivo Moquegua",
+    0,
+    2
+   ],
+   [
+    "2026-08-22",
+    "UTC",
+    "Comerciantes Unidos",
+    1,
+    3
+   ],
+   [
+    "2026-08-23",
+    "FBC Melgar",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "2026-08-23",
+    "Sport Boys",
+    "Cienciano",
+    5,
+    1
+   ],
+   [
+    "2026-08-23",
+    "Universitario",
+    "Los Chankas",
+    3,
+    0
+   ],
+   [
+    "2026-08-28",
+    "Comerciantes Unidos",
+    "FC Cajamarca",
+    2,
+    3
+   ],
+   [
+    "2026-08-29",
+    "Alianza Lima",
+    "Deportivo Garcilaso",
+    0,
+    1
+   ],
+   [
+    "2026-08-29",
+    "Los Chankas",
+    "Juan Pablo II",
+    3,
+    4
+   ],
+   [
+    "2026-08-29",
+    "UTC",
+    "Universitario",
+    2,
+    4
+   ],
+   [
+    "2026-08-30",
+    "ADT",
+    "Sport Huancayo",
+    1,
+    3
+   ],
+   [
+    "2026-08-30",
+    "Cienciano",
+    "Cusco FC",
+    1,
+    2
+   ],
+   [
+    "2026-08-30",
+    "Deportivo Moquegua",
+    "Alianza Atl\u00e9tico",
+    1,
+    4
+   ],
+   [
+    "2026-08-30",
+    "Sport Boys",
+    "Sporting Cristal",
+    1,
+    0
+   ],
+   [
+    "2026-09-01",
+    "Atl\u00e9tico Grau",
+    "FBC Melgar",
+    1,
+    0
+   ],
+   [
+    "2026-09-04",
+    "Alianza Atl\u00e9tico",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "2026-09-04",
+    "FC Cajamarca",
+    "Cienciano",
+    2,
+    5
+   ],
+   [
+    "2026-09-05",
+    "Cusco FC",
+    "Deportivo Moquegua",
+    2,
+    0
+   ],
+   [
+    "2026-09-05",
+    "Sport Huancayo",
+    "Sport Boys",
+    2,
+    1
+   ],
+   [
+    "2026-09-05",
+    "Universitario",
+    "Comerciantes Unidos",
+    2,
+    2
+   ],
+   [
+    "2026-09-06",
+    "Deportivo Garcilaso",
+    "Atl\u00e9tico Grau",
+    4,
+    2
+   ],
+   [
+    "2026-09-06",
+    "FBC Melgar",
+    "ADT",
+    3,
+    0
+   ],
+   [
+    "2026-09-06",
+    "Juan Pablo II",
+    "Alianza Lima",
+    1,
+    1
+   ],
+   [
+    "2026-09-06",
+    "Sporting Cristal",
+    "Los Chankas",
+    5,
+    0
+   ],
+   [
+    "2026-09-11",
+    "Cusco FC",
+    "FBC Melgar",
+    0,
+    1
+   ],
+   [
+    "2026-09-11",
+    "UTC",
+    "Juan Pablo II",
+    1,
+    2
+   ],
+   [
+    "2026-09-12",
+    "Alianza Lima",
+    "Universitario",
+    1,
+    2
+   ],
+   [
+    "2026-09-12",
+    "Comerciantes Unidos",
+    "Sport Huancayo",
+    0,
+    1
+   ],
+   [
+    "2026-09-12",
+    "Los Chankas",
+    "FC Cajamarca",
+    1,
+    2
+   ],
+   [
+    "2026-09-13",
+    "Atl\u00e9tico Grau",
+    "Alianza Atl\u00e9tico",
+    3,
+    1
+   ],
+   [
+    "2026-09-13",
+    "Deportivo Moquegua",
+    "Sporting Cristal",
+    1,
+    2
+   ],
+   [
+    "2026-09-13",
+    "Sport Boys",
+    "Deportivo Garcilaso",
+    1,
+    0
+   ],
+   [
+    "2026-09-18",
+    "Alianza Atl\u00e9tico",
+    "Comerciantes Unidos",
+    2,
+    1
+   ],
+   [
+    "2026-09-18",
+    "Alianza Lima",
+    "ADT",
+    2,
+    0
+   ],
+   [
+    "2026-09-19",
+    "Deportivo Garcilaso",
+    "Universitario",
+    4,
+    0
+   ],
+   [
+    "2026-09-19",
+    "FBC Melgar",
+    "Sport Boys",
+    1,
+    1
+   ],
+   [
+    "2026-09-19",
+    "FC Cajamarca",
+    "Cusco FC",
+    1,
+    2
+   ],
+   [
+    "2026-09-19",
+    "Sporting Cristal",
+    "Atl\u00e9tico Grau",
+    3,
+    1
+   ],
+   [
+    "2026-09-20",
+    "Juan Pablo II",
+    "Deportivo Moquegua",
+    4,
+    0
+   ],
+   [
+    "2026-09-20",
+    "Sport Huancayo",
+    "UTC",
+    3,
+    2
+   ],
+   [
+    "2026-09-23",
+    "ADT",
+    "Cienciano",
+    2,
+    1
+   ]
+  ],
+  "form": {
+   "Sport Huancayo": {
+    "form": "WWWWL",
+    "n": 5,
+    "gf": 9,
+    "ga": 6,
+    "newest": "2026-09-20",
+    "matches": [
+     {
+      "date": "2026-09-20",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "UTC",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Comerciantes Unidos",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Sport Boys",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "ADT",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Deportivo Moquegua",
+      "side": "H"
+     }
+    ]
+   },
+   "Alianza Lima": {
+    "form": "WLDLD",
+    "n": 5,
+    "gf": 5,
+    "ga": 5,
+    "newest": "2026-09-18",
+    "matches": [
+     {
+      "date": "2026-09-18",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "ADT",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Universitario",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Juan Pablo II",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Deportivo Garcilaso",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "FBC Melgar",
+      "side": "A"
+     }
+    ]
+   },
+   "UTC": {
+    "form": "LLLLL",
+    "n": 5,
+    "gf": 8,
+    "ga": 15,
+    "newest": "2026-09-20",
+    "matches": [
+     {
+      "date": "2026-09-20",
+      "res": "L",
+      "gf": 2,
+      "ga": 3,
+      "opp": "Sport Huancayo",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-11",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Juan Pablo II",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "L",
+      "gf": 2,
+      "ga": 3,
+      "opp": "Alianza Atl\u00e9tico",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "L",
+      "gf": 2,
+      "ga": 4,
+      "opp": "Universitario",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Comerciantes Unidos",
+      "side": "H"
+     }
+    ]
+   },
+   "Atl\u00e9tico Grau": {
+    "form": "LWLWW",
+    "n": 5,
+    "gf": 10,
+    "ga": 9,
+    "newest": "2026-09-19",
+    "matches": [
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Sporting Cristal",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Alianza Atl\u00e9tico",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 2,
+      "ga": 4,
+      "opp": "Deportivo Garcilaso",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-01",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "FBC Melgar",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-21",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "FC Cajamarca",
+      "side": "A"
+     }
+    ]
+   },
+   "FBC Melgar": {
+    "form": "DWWLD",
+    "n": 5,
+    "gf": 6,
+    "ga": 3,
+    "newest": "2026-09-19",
+    "matches": [
+     {
+      "date": "2026-09-19",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Sport Boys",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-11",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Cusco FC",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "ADT",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-01",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Atl\u00e9tico Grau",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Alianza Lima",
+      "side": "H"
+     }
+    ]
+   },
+   "Cienciano": {
+    "form": "LWLLD",
+    "n": 5,
+    "gf": 8,
+    "ga": 11,
+    "newest": "2026-09-23",
+    "matches": [
+     {
+      "date": "2026-09-23",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "ADT",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "W",
+      "gf": 5,
+      "ga": 2,
+      "opp": "FC Cajamarca",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Cusco FC",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "L",
+      "gf": 1,
+      "ga": 5,
+      "opp": "Sport Boys",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-16",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Deportivo Garcilaso",
+      "side": "H"
+     }
+    ]
+   },
+   "Juan Pablo II College": {
+    "form": "LDLLL",
+    "n": 5,
+    "gf": 4,
+    "ga": 13,
+    "newest": "2026-05-30",
+    "matches": [
+     {
+      "date": "2026-05-30",
+      "res": "L",
+      "gf": 1,
+      "ga": 4,
+      "opp": "Deportivo Garcilaso",
+      "side": "A"
+     },
+     {
+      "date": "2026-05-22",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "FBC Melgar",
+      "side": "H"
+     },
+     {
+      "date": "2026-05-16",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Alianza Atl\u00e9tico",
+      "side": "H"
+     },
+     {
+      "date": "2026-05-10",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Sport Huancayo",
+      "side": "A"
+     },
+     {
+      "date": "2026-05-03",
+      "res": "L",
+      "gf": 1,
+      "ga": 4,
+      "opp": "Universitario",
+      "side": "H"
+     }
+    ]
+   },
+   "FC Cajamarca": {
+    "form": "LWLWL",
+    "n": 5,
+    "gf": 9,
+    "ga": 13,
+    "newest": "2026-09-19",
+    "matches": [
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Cusco FC",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Los Chankas",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "L",
+      "gf": 2,
+      "ga": 5,
+      "opp": "Cienciano",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-28",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "Comerciantes Unidos",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-21",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Atl\u00e9tico Grau",
+      "side": "H"
+     }
+    ]
+   },
+   "Sport Boys": {
+    "form": "DWLWW",
+    "n": 5,
+    "gf": 9,
+    "ga": 4,
+    "newest": "2026-09-19",
+    "matches": [
+     {
+      "date": "2026-09-19",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "FBC Melgar",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Deportivo Garcilaso",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Sport Huancayo",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Sporting Cristal",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "W",
+      "gf": 5,
+      "ga": 1,
+      "opp": "Cienciano",
+      "side": "H"
+     }
+    ]
+   },
+   "Los Chankas": {
+    "form": "LLLLL",
+    "n": 5,
+    "gf": 4,
+    "ga": 17,
+    "newest": "2026-09-12",
+    "matches": [
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "FC Cajamarca",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 0,
+      "ga": 5,
+      "opp": "Sporting Cristal",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "L",
+      "gf": 3,
+      "ga": 4,
+      "opp": "Juan Pablo II",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Universitario",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-15",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "FBC Melgar",
+      "side": "H"
+     }
+    ]
+   },
+   "Alianza Atl\u00e9tico": {
+    "form": "WLWWW",
+    "n": 5,
+    "gf": 13,
+    "ga": 8,
+    "newest": "2026-09-18",
+    "matches": [
+     {
+      "date": "2026-09-18",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Comerciantes Unidos",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Atl\u00e9tico Grau",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "UTC",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "W",
+      "gf": 4,
+      "ga": 1,
+      "opp": "Deportivo Moquegua",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-21",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Sporting Cristal",
+      "side": "H"
+     }
+    ]
+   },
+   "Cusco FC": {
+    "form": "WLWWL",
+    "n": 5,
+    "gf": 7,
+    "ga": 7,
+    "newest": "2026-09-19",
+    "matches": [
+     {
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "FC Cajamarca",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-11",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "FBC Melgar",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Deportivo Moquegua",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Cienciano",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "L",
+      "gf": 1,
+      "ga": 4,
+      "opp": "Deportivo Garcilaso",
+      "side": "A"
+     }
+    ]
+   },
+   "Deportivo Garcilaso": {
+    "form": "WLWWW",
+    "n": 5,
+    "gf": 13,
+    "ga": 4,
+    "newest": "2026-09-19",
+    "matches": [
+     {
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 4,
+      "ga": 0,
+      "opp": "Universitario",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Sport Boys",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 4,
+      "ga": 2,
+      "opp": "Atl\u00e9tico Grau",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Alianza Lima",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "W",
+      "gf": 4,
+      "ga": 1,
+      "opp": "Cusco FC",
+      "side": "H"
+     }
+    ]
+   },
+   "Sporting Cristal": {
+    "form": "WWWLL",
+    "n": 5,
+    "gf": 11,
+    "ga": 6,
+    "newest": "2026-09-19",
+    "matches": [
+     {
+      "date": "2026-09-19",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Atl\u00e9tico Grau",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Deportivo Moquegua",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 5,
+      "ga": 0,
+      "opp": "Los Chankas",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Sport Boys",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-21",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Alianza Atl\u00e9tico",
+      "side": "A"
+     }
+    ]
+   },
+   "Universitario": {
+    "form": "LWDWW",
+    "n": 5,
+    "gf": 11,
+    "ga": 9,
+    "newest": "2026-09-19",
+    "matches": [
+     {
+      "date": "2026-09-19",
+      "res": "L",
+      "gf": 0,
+      "ga": 4,
+      "opp": "Deportivo Garcilaso",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Alianza Lima",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Comerciantes Unidos",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "W",
+      "gf": 4,
+      "ga": 2,
+      "opp": "UTC",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "Los Chankas",
+      "side": "H"
+     }
+    ]
+   },
+   "ADT": {
+    "form": "WLLLL",
+    "n": 5,
+    "gf": 4,
+    "ga": 14,
+    "newest": "2026-09-23",
+    "matches": [
+     {
+      "date": "2026-09-23",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Cienciano",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-18",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Alianza Lima",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "FBC Melgar",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Sport Huancayo",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "L",
+      "gf": 1,
+      "ga": 5,
+      "opp": "Juan Pablo II",
+      "side": "A"
+     }
+    ]
+   },
+   "Comerciantes Unidos": {
+    "form": "LLDLW",
+    "n": 5,
+    "gf": 8,
+    "ga": 9,
+    "newest": "2026-09-18",
+    "matches": [
+     {
+      "date": "2026-09-18",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Alianza Atl\u00e9tico",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Sport Huancayo",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Universitario",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-28",
+      "res": "L",
+      "gf": 2,
+      "ga": 3,
+      "opp": "FC Cajamarca",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "UTC",
+      "side": "A"
+     }
+    ]
+   },
+   "Deportivo Moquegua": {
+    "form": "LLLLW",
+    "n": 5,
+    "gf": 4,
+    "ga": 12,
+    "newest": "2026-09-20",
+    "matches": [
+     {
+      "date": "2026-09-20",
+      "res": "L",
+      "gf": 0,
+      "ga": 4,
+      "opp": "Juan Pablo II",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Sporting Cristal",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Cusco FC",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "L",
+      "gf": 1,
+      "ga": 4,
+      "opp": "Alianza Atl\u00e9tico",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Sport Huancayo",
+      "side": "A"
+     }
+    ]
+   },
+   "Juan Pablo II": {
+    "form": "WWDWW",
+    "n": 5,
+    "gf": 16,
+    "ga": 6,
+    "newest": "2026-09-20",
+    "matches": [
+     {
+      "date": "2026-09-20",
+      "res": "W",
+      "gf": 4,
+      "ga": 0,
+      "opp": "Deportivo Moquegua",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-11",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "UTC",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Alianza Lima",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "W",
+      "gf": 4,
+      "ga": 3,
+      "opp": "Los Chankas",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "W",
+      "gf": 5,
+      "ga": 1,
+      "opp": "ADT",
+      "side": "H"
+     }
+    ]
+   },
+   "Alianza Lima (G)": {
+    "form": "W",
+    "n": 1,
+    "gf": 3,
+    "ga": 0,
+    "newest": "2026-05-23",
+    "matches": [
+     {
+      "date": "2026-05-23",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "Los Chankas",
+      "side": "H"
+     }
+    ]
+   }
+  },
+  "es_pages": [
+   "Torneo_Clausura_2026_(Per%C3%BA)",
+   "Torneo_Apertura_2026_(Per%C3%BA)"
+  ]
  },
  "Chile Liga de Primera": {
   "slug": "https://en.wikipedia.org/wiki/2026_Liga_de_Primera",
@@ -12240,10 +16363,24 @@
    ],
    [
     "2026-01-31",
+    "Cobresal",
+    "Huachipato",
+    1,
+    0
+   ],
+   [
+    "2026-01-31",
     "Deportes Limache",
     "Colo-Colo",
     3,
     1
+   ],
+   [
+    "2026-01-31",
+    "Universidad de Concepci\u00f3n",
+    "Coquimbo Unido",
+    1,
+    0
    ],
    [
     "2026-02-01",
@@ -12251,6 +16388,20 @@
     "Universidad Cat\u00f3lica",
     2,
     2
+   ],
+   [
+    "2026-02-01",
+    "Palestino",
+    "\u00d1ublense",
+    1,
+    1
+   ],
+   [
+    "2026-02-02",
+    "O'Higgins",
+    "Deportes Concepci\u00f3n",
+    2,
+    1
    ],
    [
     "2026-02-06",
@@ -12261,16 +16412,44 @@
    ],
    [
     "2026-02-07",
+    "Colo-Colo",
+    "Everton",
+    2,
+    0
+   ],
+   [
+    "2026-02-07",
     "Coquimbo Unido",
     "Palestino",
     3,
     1
    ],
    [
+    "2026-02-07",
+    "O'Higgins",
+    "Deportes La Serena",
+    1,
+    0
+   ],
+   [
     "2026-02-08",
     "Huachipato",
     "Universidad de Chile",
     2,
+    1
+   ],
+   [
+    "2026-02-08",
+    "Universidad Cat\u00f3lica",
+    "Deportes Concepci\u00f3n",
+    2,
+    0
+   ],
+   [
+    "2026-02-08",
+    "\u00d1ublense",
+    "Deportes Limache",
+    1,
     1
    ],
    [
@@ -12281,6 +16460,20 @@
     3
    ],
    [
+    "2026-02-13",
+    "Palestino",
+    "Universidad de Chile",
+    0,
+    0
+   ],
+   [
+    "2026-02-14",
+    "Cobresal",
+    "Universidad Cat\u00f3lica",
+    3,
+    2
+   ],
+   [
     "2026-02-14",
     "Deportes La Serena",
     "Coquimbo Unido",
@@ -12288,10 +16481,38 @@
     1
    ],
    [
+    "2026-02-14",
+    "Deportes Limache",
+    "O'Higgins",
+    2,
+    1
+   ],
+   [
+    "2026-02-15",
+    "Colo-Colo",
+    "Uni\u00f3n La Calera",
+    1,
+    0
+   ],
+   [
     "2026-02-15",
     "Universidad de Concepci\u00f3n",
     "Deportes Concepci\u00f3n",
     2,
+    1
+   ],
+   [
+    "2026-02-15",
+    "\u00d1ublense",
+    "Audax Italiano",
+    1,
+    0
+   ],
+   [
+    "2026-02-20",
+    "Deportes Concepci\u00f3n",
+    "Cobresal",
+    1,
     1
    ],
    [
@@ -12309,11 +16530,39 @@
     1
    ],
    [
+    "2026-02-21",
+    "O'Higgins",
+    "Colo-Colo",
+    0,
+    1
+   ],
+   [
+    "2026-02-21",
+    "Universidad Cat\u00f3lica",
+    "Coquimbo Unido",
+    3,
+    1
+   ],
+   [
+    "2026-02-22",
+    "Audax Italiano",
+    "Everton",
+    1,
+    0
+   ],
+   [
     "2026-02-22",
     "Deportes La Serena",
     "Universidad de Concepci\u00f3n",
     1,
     1
+   ],
+   [
+    "2026-02-22",
+    "Universidad de Chile",
+    "Deportes Limache",
+    2,
+    2
    ],
    [
     "2026-02-27",
@@ -12323,9 +16572,37 @@
     1
    ],
    [
+    "2026-02-27",
+    "Uni\u00f3n La Calera",
+    "Audax Italiano",
+    3,
+    0
+   ],
+   [
     "2026-02-28",
     "Coquimbo Unido",
     "Deportes Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "2026-02-28",
+    "Deportes Limache",
+    "Huachipato",
+    3,
+    0
+   ],
+   [
+    "2026-02-28",
+    "Palestino",
+    "O'Higgins",
+    4,
+    2
+   ],
+   [
+    "2026-03-01",
+    "Colo-Colo",
+    "Universidad de Chile",
     0,
     1
    ],
@@ -12337,6 +16614,20 @@
     3
    ],
    [
+    "2026-03-01",
+    "\u00d1ublense",
+    "Universidad Cat\u00f3lica",
+    1,
+    2
+   ],
+   [
+    "2026-03-06",
+    "Deportes Concepci\u00f3n",
+    "\u00d1ublense",
+    0,
+    2
+   ],
+   [
     "2026-03-06",
     "Deportes La Serena",
     "Uni\u00f3n La Calera",
@@ -12345,10 +16636,31 @@
    ],
    [
     "2026-03-07",
+    "Audax Italiano",
+    "Colo-Colo",
+    0,
+    1
+   ],
+   [
+    "2026-03-07",
+    "Everton",
+    "Deportes Limache",
+    1,
+    0
+   ],
+   [
+    "2026-03-07",
     "Huachipato",
     "Coquimbo Unido",
     1,
     3
+   ],
+   [
+    "2026-03-07",
+    "O'Higgins",
+    "Universidad Cat\u00f3lica",
+    1,
+    0
    ],
    [
     "2026-03-08",
@@ -12379,10 +16691,38 @@
     1
    ],
    [
+    "2026-03-14",
+    "Universidad Cat\u00f3lica",
+    "Everton",
+    2,
+    2
+   ],
+   [
+    "2026-03-15",
+    "Cobresal",
+    "Deportes Limache",
+    2,
+    5
+   ],
+   [
     "2026-03-15",
     "Universidad de Concepci\u00f3n",
     "Palestino",
     1,
+    0
+   ],
+   [
+    "2026-03-15",
+    "\u00d1ublense",
+    "Deportes La Serena",
+    2,
+    2
+   ],
+   [
+    "2026-03-16",
+    "Colo-Colo",
+    "Huachipato",
+    2,
     0
    ],
    [
@@ -12407,10 +16747,24 @@
     2
    ],
    [
+    "2026-04-03",
+    "O'Higgins",
+    "Audax Italiano",
+    2,
+    1
+   ],
+   [
     "2026-04-04",
     "Deportes Limache",
     "Uni\u00f3n La Calera",
     4,
+    0
+   ],
+   [
+    "2026-04-04",
+    "Everton",
+    "\u00d1ublense",
+    0,
     0
    ],
    [
@@ -12419,6 +16773,13 @@
     "Colo-Colo",
     0,
     1
+   ],
+   [
+    "2026-04-05",
+    "Universidad de Chile",
+    "Deportes La Serena",
+    4,
+    0
    ],
    [
     "2026-04-06",
@@ -12436,8 +16797,29 @@
    ],
    [
     "2026-04-11",
+    "Audax Italiano",
+    "Universidad Cat\u00f3lica",
+    3,
+    4
+   ],
+   [
+    "2026-04-11",
     "Deportes La Serena",
     "Everton",
+    1,
+    0
+   ],
+   [
+    "2026-04-11",
+    "Palestino",
+    "Deportes Limache",
+    1,
+    0
+   ],
+   [
+    "2026-04-12",
+    "Universidad de Concepci\u00f3n",
+    "Cobresal",
     1,
     0
    ],
@@ -12456,18 +16838,18 @@
     0
    ],
    [
-    "2026-05-03",
-    "Colo-Colo",
-    "Coquimbo Unido",
-    3,
-    1
-   ],
-   [
     "2026-04-17",
     "Deportes Limache",
     "Universidad de Concepci\u00f3n",
     3,
     0
+   ],
+   [
+    "2026-04-18",
+    "Deportes Concepci\u00f3n",
+    "Deportes La Serena",
+    3,
+    3
    ],
    [
     "2026-04-18",
@@ -12478,10 +16860,31 @@
    ],
    [
     "2026-04-19",
+    "Cobresal",
+    "O'Higgins",
+    2,
+    3
+   ],
+   [
+    "2026-04-19",
+    "Colo-Colo",
+    "Palestino",
+    0,
+    1
+   ],
+   [
+    "2026-04-19",
     "Coquimbo Unido",
     "\u00d1ublense",
     1,
     1
+   ],
+   [
+    "2026-04-19",
+    "Huachipato",
+    "Audax Italiano",
+    3,
+    2
    ],
    [
     "2026-04-20",
@@ -12499,10 +16902,24 @@
    ],
    [
     "2026-04-24",
+    "Audax Italiano",
+    "Deportes Limache",
+    2,
+    2
+   ],
+   [
+    "2026-04-24",
     "Uni\u00f3n La Calera",
     "Coquimbo Unido",
     1,
     2
+   ],
+   [
+    "2026-04-25",
+    "Universidad de Chile",
+    "Universidad Cat\u00f3lica",
+    1,
+    0
    ],
    [
     "2026-04-25",
@@ -12519,6 +16936,34 @@
     0
    ],
    [
+    "2026-04-26",
+    "Everton",
+    "Cobresal",
+    3,
+    1
+   ],
+   [
+    "2026-04-26",
+    "Universidad de Concepci\u00f3n",
+    "Colo-Colo",
+    1,
+    2
+   ],
+   [
+    "2026-05-03",
+    "Colo-Colo",
+    "Coquimbo Unido",
+    3,
+    1
+   ],
+   [
+    "2026-05-15",
+    "Coquimbo Unido",
+    "Audax Italiano",
+    3,
+    0
+   ],
+   [
     "2026-05-15",
     "Palestino",
     "Deportes La Serena",
@@ -12527,10 +16972,38 @@
    ],
    [
     "2026-05-16",
+    "Deportes Limache",
+    "Universidad Cat\u00f3lica",
+    0,
+    2
+   ],
+   [
+    "2026-05-16",
     "O'Higgins",
     "Universidad de Concepci\u00f3n",
     0,
     1
+   ],
+   [
+    "2026-05-17",
+    "Cobresal",
+    "Universidad de Chile",
+    1,
+    0
+   ],
+   [
+    "2026-05-17",
+    "Colo-Colo",
+    "\u00d1ublense",
+    6,
+    2
+   ],
+   [
+    "2026-05-17",
+    "Deportes Concepci\u00f3n",
+    "Everton",
+    0,
+    2
    ],
    [
     "2026-05-17",
@@ -12554,6 +17027,20 @@
     1
    ],
    [
+    "2026-05-23",
+    "Uni\u00f3n La Calera",
+    "Palestino",
+    1,
+    2
+   ],
+   [
+    "2026-05-23",
+    "\u00d1ublense",
+    "Universidad de Concepci\u00f3n",
+    2,
+    2
+   ],
+   [
     "2026-05-24",
     "Deportes Concepci\u00f3n",
     "Huachipato",
@@ -12561,11 +17048,18 @@
     0
    ],
    [
-    "2026-06-18",
-    "Universidad de Chile",
-    "O'Higgins",
-    2,
-    0
+    "2026-05-24",
+    "Deportes La Serena",
+    "Deportes Limache",
+    4,
+    1
+   ],
+   [
+    "2026-05-24",
+    "Universidad Cat\u00f3lica",
+    "Colo-Colo",
+    1,
+    2
    ],
    [
     "2026-05-29",
@@ -12575,6 +17069,13 @@
     1
    ],
    [
+    "2026-05-29",
+    "Universidad de Concepci\u00f3n",
+    "Uni\u00f3n La Calera",
+    0,
+    0
+   ],
+   [
     "2026-05-30",
     "Deportes La Serena",
     "Colo-Colo",
@@ -12582,11 +17083,39 @@
     4
    ],
    [
+    "2026-05-30",
+    "Universidad de Chile",
+    "Deportes Concepci\u00f3n",
+    2,
+    1
+   ],
+   [
     "2026-05-31",
     "Deportes Limache",
     "Coquimbo Unido",
     2,
     3
+   ],
+   [
+    "2026-05-31",
+    "Huachipato",
+    "Universidad Cat\u00f3lica",
+    0,
+    3
+   ],
+   [
+    "2026-05-31",
+    "O'Higgins",
+    "Everton",
+    2,
+    3
+   ],
+   [
+    "2026-05-31",
+    "Palestino",
+    "Audax Italiano",
+    0,
+    0
    ],
    [
     "2026-06-12",
@@ -12597,10 +17126,31 @@
    ],
    [
     "2026-06-13",
+    "Colo-Colo",
+    "Cobresal",
+    3,
+    0
+   ],
+   [
+    "2026-06-13",
     "Coquimbo Unido",
     "O'Higgins",
     0,
     0
+   ],
+   [
+    "2026-06-13",
+    "Everton",
+    "Palestino",
+    1,
+    2
+   ],
+   [
+    "2026-06-13",
+    "\u00d1ublense",
+    "Huachipato",
+    2,
+    2
    ],
    [
     "2026-06-14",
@@ -12608,6 +17158,27 @@
     "Deportes Limache",
     3,
     2
+   ],
+   [
+    "2026-06-14",
+    "Universidad Cat\u00f3lica",
+    "Universidad de Concepci\u00f3n",
+    5,
+    1
+   ],
+   [
+    "2026-06-14",
+    "Uni\u00f3n La Calera",
+    "Universidad de Chile",
+    2,
+    2
+   ],
+   [
+    "2026-06-18",
+    "Universidad de Chile",
+    "O'Higgins",
+    2,
+    0
    ],
    [
     "2026-07-24",
@@ -12624,6 +17195,27 @@
     3
    ],
    [
+    "2026-07-25",
+    "Universidad Cat\u00f3lica",
+    "Deportes La Serena",
+    3,
+    3
+   ],
+   [
+    "2026-07-26",
+    "Audax Italiano",
+    "Universidad de Chile",
+    1,
+    2
+   ],
+   [
+    "2026-07-26",
+    "Deportes Concepci\u00f3n",
+    "O'Higgins",
+    2,
+    0
+   ],
+   [
     "2026-07-26",
     "\u00d1ublense",
     "Palestino",
@@ -12636,13 +17228,6 @@
     "Everton",
     1,
     1
-   ],
-   [
-    "2026-09-02",
-    "Coquimbo Unido",
-    "Universidad de Concepci\u00f3n",
-    1,
-    0
    ],
    [
     "2026-07-31",
@@ -12659,6 +17244,20 @@
     0
    ],
    [
+    "2026-08-01",
+    "Everton",
+    "Colo-Colo",
+    3,
+    4
+   ],
+   [
+    "2026-08-01",
+    "Palestino",
+    "Coquimbo Unido",
+    2,
+    1
+   ],
+   [
     "2026-08-02",
     "Deportes Concepci\u00f3n",
     "Universidad Cat\u00f3lica",
@@ -12666,9 +17265,16 @@
     0
    ],
    [
-    "2026-09-02",
-    "Deportes Limache",
-    "\u00d1ublense",
+    "2026-08-02",
+    "Deportes La Serena",
+    "O'Higgins",
+    1,
+    2
+   ],
+   [
+    "2026-08-02",
+    "Universidad de Chile",
+    "Huachipato",
     2,
     0
    ],
@@ -12678,6 +17284,13 @@
     "Cobresal",
     2,
     0
+   ],
+   [
+    "2026-08-08",
+    "Coquimbo Unido",
+    "Deportes La Serena",
+    1,
+    1
    ],
    [
     "2026-08-08",
@@ -12692,6 +17305,27 @@
     "Universidad de Concepci\u00f3n",
     1,
     0
+   ],
+   [
+    "2026-08-09",
+    "O'Higgins",
+    "Deportes Limache",
+    1,
+    3
+   ],
+   [
+    "2026-08-09",
+    "Universidad de Chile",
+    "Palestino",
+    2,
+    1
+   ],
+   [
+    "2026-08-09",
+    "Uni\u00f3n La Calera",
+    "Colo-Colo",
+    1,
+    2
    ],
    [
     "2026-08-10",
@@ -12715,6 +17349,27 @@
     3
    ],
    [
+    "2026-08-15",
+    "Everton",
+    "Audax Italiano",
+    1,
+    1
+   ],
+   [
+    "2026-08-16",
+    "Cobresal",
+    "Deportes Concepci\u00f3n",
+    0,
+    2
+   ],
+   [
+    "2026-08-16",
+    "Colo-Colo",
+    "O'Higgins",
+    2,
+    2
+   ],
+   [
     "2026-08-16",
     "\u00d1ublense",
     "Uni\u00f3n La Calera",
@@ -12727,13 +17382,6 @@
     "Huachipato",
     5,
     1
-   ],
-   [
-    "2026-08-26",
-    "Coquimbo Unido",
-    "Universidad Cat\u00f3lica",
-    1,
-    2
    ],
    [
     "2026-08-21",
@@ -12750,6 +17398,20 @@
     3
    ],
    [
+    "2026-08-22",
+    "Universidad Cat\u00f3lica",
+    "\u00d1ublense",
+    1,
+    2
+   ],
+   [
+    "2026-08-23",
+    "Deportes Concepci\u00f3n",
+    "Coquimbo Unido",
+    1,
+    1
+   ],
+   [
     "2026-08-23",
     "Deportes La Serena",
     "Cobresal",
@@ -12757,11 +17419,32 @@
     3
    ],
    [
+    "2026-08-23",
+    "O'Higgins",
+    "Palestino",
+    0,
+    1
+   ],
+   [
+    "2026-08-23",
+    "Universidad de Chile",
+    "Colo-Colo",
+    1,
+    2
+   ],
+   [
     "2026-08-24",
     "Everton",
     "Universidad de Concepci\u00f3n",
     3,
     1
+   ],
+   [
+    "2026-08-26",
+    "Coquimbo Unido",
+    "Universidad Cat\u00f3lica",
+    1,
+    2
    ],
    [
     "2026-08-28",
@@ -12778,11 +17461,32 @@
     3
    ],
    [
+    "2026-08-29",
+    "\u00d1ublense",
+    "Deportes Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "2026-08-30",
+    "Colo-Colo",
+    "Audax Italiano",
+    5,
+    1
+   ],
+   [
     "2026-08-30",
     "Universidad de Concepci\u00f3n",
     "Universidad de Chile",
     2,
     1
+   ],
+   [
+    "2026-08-31",
+    "Universidad Cat\u00f3lica",
+    "O'Higgins",
+    3,
+    2
    ],
    [
     "2026-08-31",
@@ -12792,11 +17496,18 @@
     1
    ],
    [
-    "2026-09-16",
+    "2026-09-02",
     "Coquimbo Unido",
-    "Huachipato",
-    0,
-    1
+    "Universidad de Concepci\u00f3n",
+    1,
+    0
+   ],
+   [
+    "2026-09-02",
+    "Deportes Limache",
+    "\u00d1ublense",
+    2,
+    0
    ],
    [
     "2026-09-04",
@@ -12813,9 +17524,37 @@
     1
    ],
    [
+    "2026-09-05",
+    "Universidad de Chile",
+    "Coquimbo Unido",
+    4,
+    2
+   ],
+   [
     "2026-09-06",
     "Deportes La Serena",
     "\u00d1ublense",
+    2,
+    1
+   ],
+   [
+    "2026-09-06",
+    "Huachipato",
+    "Colo-Colo",
+    0,
+    0
+   ],
+   [
+    "2026-09-06",
+    "O'Higgins",
+    "Uni\u00f3n La Calera",
+    2,
+    1
+   ],
+   [
+    "2026-09-06",
+    "Palestino",
+    "Universidad de Concepci\u00f3n",
     2,
     1
    ],
@@ -12828,10 +17567,38 @@
    ],
    [
     "2026-09-12",
+    "Cobresal",
+    "Coquimbo Unido",
+    3,
+    2
+   ],
+   [
+    "2026-09-12",
+    "Palestino",
+    "Universidad Cat\u00f3lica",
+    2,
+    3
+   ],
+   [
+    "2026-09-12",
     "\u00d1ublense",
     "Everton",
     1,
     3
+   ],
+   [
+    "2026-09-13",
+    "Audax Italiano",
+    "O'Higgins",
+    1,
+    0
+   ],
+   [
+    "2026-09-13",
+    "Colo-Colo",
+    "Deportes Concepci\u00f3n",
+    1,
+    1
    ],
    [
     "2026-09-13",
@@ -12846,14 +17613,21 @@
     "Deportes Limache",
     1,
     0
+   ],
+   [
+    "2026-09-16",
+    "Coquimbo Unido",
+    "Huachipato",
+    0,
+    1
    ]
   ],
   "form": {
    "Universidad de Chile": {
-    "form": "WLWWD",
+    "form": "WWLLW",
     "n": 5,
-    "gf": 9,
-    "ga": 3,
+    "gf": 12,
+    "ga": 7,
     "newest": "2026-09-13",
     "matches": [
      {
@@ -12865,6 +17639,14 @@
       "side": "A"
      },
      {
+      "date": "2026-09-05",
+      "res": "W",
+      "gf": 4,
+      "ga": 2,
+      "opp": "Coquimbo Unido",
+      "side": "H"
+     },
+     {
       "date": "2026-08-30",
       "res": "L",
       "gf": 1,
@@ -12873,44 +17655,52 @@
       "side": "A"
      },
      {
+      "date": "2026-08-23",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Colo-Colo",
+      "side": "H"
+     },
+     {
       "date": "2026-08-15",
       "res": "W",
       "gf": 3,
       "ga": 1,
       "opp": "Deportes Limache",
       "side": "A"
-     },
-     {
-      "date": "2026-06-18",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "O'Higgins",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-18",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Everton",
-      "side": "A"
      }
     ]
    },
    "Audax Italiano": {
-    "form": "WDDWD",
+    "form": "WWLDD",
     "n": 5,
-    "gf": 5,
-    "ga": 3,
-    "newest": "2026-09-04",
+    "gf": 4,
+    "ga": 6,
+    "newest": "2026-09-13",
     "matches": [
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "O'Higgins",
+      "side": "H"
+     },
      {
       "date": "2026-09-04",
       "res": "W",
       "gf": 1,
       "ga": 0,
       "opp": "Deportes Concepci\u00f3n",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-30",
+      "res": "L",
+      "gf": 1,
+      "ga": 5,
+      "opp": "Colo-Colo",
       "side": "A"
      },
      {
@@ -12922,27 +17712,109 @@
       "side": "H"
      },
      {
-      "date": "2026-08-10",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "\u00d1ublense",
-      "side": "H"
-     },
-     {
-      "date": "2026-07-31",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Universidad de Concepci\u00f3n",
-      "side": "A"
-     },
-     {
-      "date": "2026-06-12",
+      "date": "2026-08-15",
       "res": "D",
       "gf": 1,
       "ga": 1,
+      "opp": "Everton",
+      "side": "A"
+     }
+    ]
+   },
+   "Cobresal": {
+    "form": "WLWDL",
+    "n": 5,
+    "gf": 8,
+    "ga": 10,
+    "newest": "2026-09-12",
+    "matches": [
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "Coquimbo Unido",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-07",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Deportes Limache",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-28",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Palestino",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "D",
+      "gf": 3,
+      "ga": 3,
       "opp": "Deportes La Serena",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-16",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Deportes Concepci\u00f3n",
+      "side": "H"
+     }
+    ]
+   },
+   "Huachipato": {
+    "form": "WDLLL",
+    "n": 5,
+    "gf": 4,
+    "ga": 12,
+    "newest": "2026-09-16",
+    "matches": [
+     {
+      "date": "2026-09-16",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Coquimbo Unido",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Colo-Colo",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Deportes Limache",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-17",
+      "res": "L",
+      "gf": 1,
+      "ga": 5,
+      "opp": "Palestino",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-08",
+      "res": "L",
+      "gf": 1,
+      "ga": 4,
+      "opp": "Everton",
       "side": "H"
      }
     ]
@@ -12997,51 +17869,149 @@
     ]
    },
    "Colo-Colo": {
-    "form": "WWWWL",
+    "form": "DDWWD",
     "n": 5,
-    "gf": 12,
-    "ga": 7,
-    "newest": "2026-07-24",
+    "gf": 10,
+    "ga": 5,
+    "newest": "2026-09-13",
     "matches": [
      {
-      "date": "2026-07-24",
-      "res": "W",
-      "gf": 3,
+      "date": "2026-09-13",
+      "res": "D",
+      "gf": 1,
       "ga": 1,
-      "opp": "Deportes Limache",
+      "opp": "Deportes Concepci\u00f3n",
       "side": "H"
      },
      {
-      "date": "2026-05-30",
-      "res": "W",
-      "gf": 4,
-      "ga": 2,
-      "opp": "Deportes La Serena",
+      "date": "2026-09-06",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Huachipato",
       "side": "A"
      },
      {
-      "date": "2026-05-03",
+      "date": "2026-08-30",
       "res": "W",
-      "gf": 3,
+      "gf": 5,
+      "ga": 1,
+      "opp": "Audax Italiano",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Universidad de Chile",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-16",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "O'Higgins",
+      "side": "H"
+     }
+    ]
+   },
+   "Universidad de Concepci\u00f3n": {
+    "form": "LLWLL",
+    "n": 5,
+    "gf": 4,
+    "ga": 9,
+    "newest": "2026-09-06",
+    "matches": [
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Palestino",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-02",
+      "res": "L",
+      "gf": 0,
       "ga": 1,
       "opp": "Coquimbo Unido",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-05",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Deportes Concepci\u00f3n",
       "side": "A"
      },
      {
-      "date": "2026-01-31",
+      "date": "2026-08-30",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Universidad de Chile",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-24",
       "res": "L",
       "gf": 1,
       "ga": 3,
-      "opp": "Deportes Limache",
+      "opp": "Everton",
       "side": "A"
+     },
+     {
+      "date": "2026-08-14",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Deportes La Serena",
+      "side": "H"
+     }
+    ]
+   },
+   "Coquimbo Unido": {
+    "form": "LLLWL",
+    "n": 5,
+    "gf": 6,
+    "ga": 10,
+    "newest": "2026-09-16",
+    "matches": [
+     {
+      "date": "2026-09-16",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Huachipato",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 2,
+      "ga": 3,
+      "opp": "Cobresal",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "L",
+      "gf": 2,
+      "ga": 4,
+      "opp": "Universidad de Chile",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-02",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Universidad de Concepci\u00f3n",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-26",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Universidad Cat\u00f3lica",
+      "side": "H"
      }
     ]
    },
@@ -13095,12 +18065,20 @@
     ]
    },
    "Universidad Cat\u00f3lica": {
-    "form": "WWWLL",
+    "form": "WWWWL",
     "n": 5,
-    "gf": 6,
-    "ga": 6,
-    "newest": "2026-09-05",
+    "gf": 10,
+    "ga": 7,
+    "newest": "2026-09-12",
     "matches": [
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 3,
+      "ga": 2,
+      "opp": "Palestino",
+      "side": "A"
+     },
      {
       "date": "2026-09-05",
       "res": "W",
@@ -13110,144 +18088,54 @@
       "side": "A"
      },
      {
-      "date": "2026-08-26",
+      "date": "2026-08-31",
       "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Coquimbo Unido",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-07",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Cobresal",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-02",
-      "res": "L",
-      "gf": 0,
-      "ga": 3,
-      "opp": "Deportes Concepci\u00f3n",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-20",
-      "res": "L",
-      "gf": 1,
+      "gf": 3,
       "ga": 2,
-      "opp": "Uni\u00f3n La Calera",
-      "side": "H"
-     }
-    ]
-   },
-   "Universidad de Concepci\u00f3n": {
-    "form": "LWLLL",
-    "n": 5,
-    "gf": 3,
-    "ga": 8,
-    "newest": "2026-09-02",
-    "matches": [
-     {
-      "date": "2026-09-02",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Coquimbo Unido",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-30",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Universidad de Chile",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-24",
-      "res": "L",
-      "gf": 1,
-      "ga": 3,
-      "opp": "Everton",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-14",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Deportes La Serena",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-09",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Deportes Concepci\u00f3n",
-      "side": "A"
-     }
-    ]
-   },
-   "Coquimbo Unido": {
-    "form": "LWLDW",
-    "n": 5,
-    "gf": 5,
-    "ga": 5,
-    "newest": "2026-09-16",
-    "matches": [
-     {
-      "date": "2026-09-16",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Huachipato",
-      "side": "H"
-     },
-     {
-      "date": "2026-09-02",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Universidad de Concepci\u00f3n",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-26",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "Universidad Cat\u00f3lica",
-      "side": "H"
-     },
-     {
-      "date": "2026-06-13",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
       "opp": "O'Higgins",
       "side": "H"
      },
      {
-      "date": "2026-05-31",
+      "date": "2026-08-26",
       "res": "W",
-      "gf": 3,
-      "ga": 2,
-      "opp": "Deportes Limache",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Coquimbo Unido",
       "side": "A"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "\u00d1ublense",
+      "side": "H"
      }
     ]
    },
    "Palestino": {
-    "form": "LWLWL",
+    "form": "LWLWW",
     "n": 5,
     "gf": 10,
     "ga": 7,
-    "newest": "2026-08-28",
+    "newest": "2026-09-12",
     "matches": [
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 2,
+      "ga": 3,
+      "opp": "Universidad Cat\u00f3lica",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Universidad de Concepci\u00f3n",
+      "side": "H"
+     },
      {
       "date": "2026-08-28",
       "res": "L",
@@ -13257,92 +18145,174 @@
       "side": "A"
      },
      {
+      "date": "2026-08-23",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "O'Higgins",
+      "side": "A"
+     },
+     {
       "date": "2026-08-17",
       "res": "W",
       "gf": 5,
       "ga": 1,
       "opp": "Huachipato",
       "side": "H"
-     },
+     }
+    ]
+   },
+   "\u00d1ublense": {
+    "form": "LLLLW",
+    "n": 5,
+    "gf": 4,
+    "ga": 9,
+    "newest": "2026-09-12",
+    "matches": [
      {
-      "date": "2026-07-26",
+      "date": "2026-09-12",
       "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "\u00d1ublense",
-      "side": "A"
-     },
-     {
-      "date": "2026-05-15",
-      "res": "W",
-      "gf": 5,
-      "ga": 1,
-      "opp": "Deportes La Serena",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Everton",
       "side": "H"
      },
      {
-      "date": "2026-04-23",
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Deportes La Serena",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-02",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Deportes Limache",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-29",
       "res": "L",
       "gf": 0,
       "ga": 1,
       "opp": "Deportes Concepci\u00f3n",
       "side": "H"
-     }
-    ]
-   },
-   "Huachipato": {
-    "form": "WLLLD",
-    "n": 5,
-    "gf": 7,
-    "ga": 15,
-    "newest": "2026-09-16",
-    "matches": [
-     {
-      "date": "2026-09-16",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Coquimbo Unido",
-      "side": "A"
      },
      {
       "date": "2026-08-22",
-      "res": "L",
-      "gf": 1,
-      "ga": 3,
-      "opp": "Deportes Limache",
-      "side": "H"
-     },
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Universidad Cat\u00f3lica",
+      "side": "A"
+     }
+    ]
+   },
+   "O'Higgins": {
+    "form": "LWLLD",
+    "n": 5,
+    "gf": 6,
+    "ga": 8,
+    "newest": "2026-09-13",
+    "matches": [
      {
-      "date": "2026-08-17",
+      "date": "2026-09-13",
       "res": "L",
-      "gf": 1,
-      "ga": 5,
-      "opp": "Palestino",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Audax Italiano",
       "side": "A"
      },
      {
-      "date": "2026-08-08",
-      "res": "L",
-      "gf": 1,
-      "ga": 4,
-      "opp": "Everton",
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Uni\u00f3n La Calera",
       "side": "H"
      },
      {
-      "date": "2026-07-25",
-      "res": "D",
-      "gf": 3,
+      "date": "2026-08-31",
+      "res": "L",
+      "gf": 2,
       "ga": 3,
-      "opp": "Cobresal",
+      "opp": "Universidad Cat\u00f3lica",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Palestino",
       "side": "H"
+     },
+     {
+      "date": "2026-08-16",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "Colo-Colo",
+      "side": "A"
+     }
+    ]
+   },
+   "Deportes Concepci\u00f3n": {
+    "form": "DLWDW",
+    "n": 5,
+    "gf": 5,
+    "ga": 3,
+    "newest": "2026-09-13",
+    "matches": [
+     {
+      "date": "2026-09-13",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Colo-Colo",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "L",
+      "gf": 0,
+      "ga": 1,
+      "opp": "Audax Italiano",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-29",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "\u00d1ublense",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Coquimbo Unido",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-16",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Cobresal",
+      "side": "A"
      }
     ]
    },
    "Everton": {
-    "form": "WLWWW",
+    "form": "WLWWD",
     "n": 5,
-    "gf": 13,
+    "gf": 10,
     "ga": 4,
     "newest": "2026-09-12",
     "matches": [
@@ -13379,69 +18349,20 @@
       "side": "H"
      },
      {
-      "date": "2026-08-08",
-      "res": "W",
-      "gf": 4,
-      "ga": 1,
-      "opp": "Huachipato",
-      "side": "A"
-     }
-    ]
-   },
-   "Deportes Concepci\u00f3n": {
-    "form": "LWWWW",
-    "n": 5,
-    "gf": 9,
-    "ga": 3,
-    "newest": "2026-09-04",
-    "matches": [
-     {
-      "date": "2026-09-04",
-      "res": "L",
-      "gf": 0,
+      "date": "2026-08-15",
+      "res": "D",
+      "gf": 1,
       "ga": 1,
       "opp": "Audax Italiano",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-09",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Universidad de Concepci\u00f3n",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-02",
-      "res": "W",
-      "gf": 3,
-      "ga": 0,
-      "opp": "Universidad Cat\u00f3lica",
-      "side": "H"
-     },
-     {
-      "date": "2026-06-14",
-      "res": "W",
-      "gf": 3,
-      "ga": 2,
-      "opp": "Deportes Limache",
-      "side": "H"
-     },
-     {
-      "date": "2026-05-24",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Huachipato",
       "side": "H"
      }
     ]
    },
    "Uni\u00f3n La Calera": {
-    "form": "WLDLL",
+    "form": "WLLDL",
     "n": 5,
-    "gf": 2,
-    "ga": 7,
+    "gf": 3,
+    "ga": 5,
     "newest": "2026-09-14",
     "matches": [
      {
@@ -13451,6 +18372,14 @@
       "ga": 0,
       "opp": "Deportes Limache",
       "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "O'Higgins",
+      "side": "A"
      },
      {
       "date": "2026-08-31",
@@ -13475,166 +18404,13 @@
       "ga": 2,
       "opp": "\u00d1ublense",
       "side": "A"
-     },
-     {
-      "date": "2026-08-01",
-      "res": "L",
-      "gf": 0,
-      "ga": 4,
-      "opp": "Cobresal",
-      "side": "A"
-     }
-    ]
-   },
-   "\u00d1ublense": {
-    "form": "LLLWD",
-    "n": 5,
-    "gf": 6,
-    "ga": 10,
-    "newest": "2026-09-12",
-    "matches": [
-     {
-      "date": "2026-09-12",
-      "res": "L",
-      "gf": 1,
-      "ga": 3,
-      "opp": "Everton",
-      "side": "H"
-     },
-     {
-      "date": "2026-09-06",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "Deportes La Serena",
-      "side": "A"
-     },
-     {
-      "date": "2026-09-02",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Deportes Limache",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-16",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Uni\u00f3n La Calera",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-10",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "Audax Italiano",
-      "side": "A"
-     }
-    ]
-   },
-   "Cobresal": {
-    "form": "LWDLW",
-    "n": 5,
-    "gf": 9,
-    "ga": 8,
-    "newest": "2026-09-07",
-    "matches": [
-     {
-      "date": "2026-09-07",
-      "res": "L",
-      "gf": 0,
-      "ga": 3,
-      "opp": "Deportes Limache",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-28",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Palestino",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-23",
-      "res": "D",
-      "gf": 3,
-      "ga": 3,
-      "opp": "Deportes La Serena",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-07",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Universidad Cat\u00f3lica",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-01",
-      "res": "W",
-      "gf": 4,
-      "ga": 0,
-      "opp": "Uni\u00f3n La Calera",
-      "side": "H"
-     }
-    ]
-   },
-   "O'Higgins": {
-    "form": "LDLWL",
-    "n": 5,
-    "gf": 2,
-    "ga": 5,
-    "newest": "2026-06-18",
-    "matches": [
-     {
-      "date": "2026-06-18",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Universidad de Chile",
-      "side": "A"
-     },
-     {
-      "date": "2026-06-13",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "Coquimbo Unido",
-      "side": "A"
-     },
-     {
-      "date": "2026-05-16",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Universidad de Concepci\u00f3n",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-25",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "\u00d1ublense",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-10",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Huachipato",
-      "side": "H"
      }
     ]
    }
   },
-  "es_page": "https://es.wikipedia.org/wiki/Liga_de_Primera_2026"
+  "es_pages": [
+   "Liga_de_Primera_2026"
+  ]
  },
  "Bolivia Profesional": {
   "slug": "https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional",
@@ -16117,10 +20893,24 @@
   "dated": [
    [
     "2026-04-03",
+    "Blooming",
+    "Guabir\u00e1",
+    5,
+    0
+   ],
+   [
+    "2026-04-03",
     "Bolivar",
     "Real Oruro",
     5,
     2
+   ],
+   [
+    "2026-04-03",
+    "Independiente Petrolero",
+    "Nacional Potos\u00ed",
+    0,
+    3
    ],
    [
     "2026-04-04",
@@ -16130,9 +20920,30 @@
     0
    ],
    [
+    "2026-04-04",
+    "Real Potos\u00ed",
+    "Aurora",
+    0,
+    0
+   ],
+   [
+    "2026-04-04",
+    "San Antonio Bulo Bulo",
+    "Oriente Petrolero",
+    2,
+    0
+   ],
+   [
     "2026-04-05",
     "GV San Jos\u00e9",
     "ABB",
+    1,
+    2
+   ],
+   [
+    "2026-04-05",
+    "Universitario de Vinto",
+    "The Strongest",
     1,
     2
    ],
@@ -16151,6 +20962,27 @@
     2
    ],
    [
+    "2026-04-11",
+    "Aurora",
+    "Always Ready",
+    1,
+    1
+   ],
+   [
+    "2026-04-11",
+    "Nacional Potos\u00ed",
+    "Universitario de Vinto",
+    1,
+    0
+   ],
+   [
+    "2026-04-12",
+    "Oriente Petrolero",
+    "GV San Jos\u00e9",
+    2,
+    1
+   ],
+   [
     "2026-04-12",
     "Real Oruro",
     "Blooming",
@@ -16158,9 +20990,30 @@
     2
    ],
    [
+    "2026-04-12",
+    "The Strongest",
+    "San Antonio Bulo Bulo",
+    3,
+    2
+   ],
+   [
     "2026-04-13",
     "Real Tomayapo",
     "Real Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "2026-04-21",
+    "Bol\u00edvar",
+    "Independiente Petrolero",
+    1,
+    2
+   ],
+   [
+    "2026-04-21",
+    "GV San Jos\u00e9",
+    "Aurora",
     1,
     1
    ],
@@ -16179,6 +21032,27 @@
     0
    ],
    [
+    "2026-04-22",
+    "Blooming",
+    "Nacional Potos\u00ed",
+    2,
+    1
+   ],
+   [
+    "2026-04-22",
+    "Real Potos\u00ed",
+    "Guabir\u00e1",
+    3,
+    0
+   ],
+   [
+    "2026-04-23",
+    "Real Tomayapo",
+    "The Strongest",
+    0,
+    0
+   ],
+   [
     "2026-04-23",
     "San Antonio Bulo Bulo",
     "Real Oruro",
@@ -16194,10 +21068,38 @@
    ],
    [
     "2026-04-25",
+    "ABB",
+    "Blooming",
+    3,
+    2
+   ],
+   [
+    "2026-04-25",
+    "Guabir\u00e1",
+    "Always Ready",
+    1,
+    2
+   ],
+   [
+    "2026-04-25",
     "Nacional Potos\u00ed",
     "GV San Jos\u00e9",
     1,
     1
+   ],
+   [
+    "2026-04-26",
+    "Bol\u00edvar",
+    "Real Tomayapo",
+    6,
+    0
+   ],
+   [
+    "2026-04-26",
+    "Oriente Petrolero",
+    "Real Potos\u00ed",
+    2,
+    0
    ],
    [
     "2026-04-26",
@@ -16215,6 +21117,13 @@
    ],
    [
     "2026-05-01",
+    "Real Potos\u00ed",
+    "Real Oruro",
+    1,
+    2
+   ],
+   [
+    "2026-05-01",
     "San Antonio Bulo Bulo",
     "Independiente Petrolero",
     2,
@@ -16228,11 +21137,32 @@
     1
    ],
    [
+    "2026-05-02",
+    "Aurora",
+    "Guabir\u00e1",
+    4,
+    2
+   ],
+   [
+    "2026-05-02",
+    "Oriente Petrolero",
+    "Real Tomayapo",
+    3,
+    1
+   ],
+   [
     "2026-05-03",
     "GV San Jos\u00e9",
     "Bol\u00edvar",
     1,
     2
+   ],
+   [
+    "2026-05-03",
+    "The Strongest",
+    "ABB",
+    3,
+    1
    ],
    [
     "2026-05-04",
@@ -16249,9 +21179,30 @@
     0
    ],
    [
+    "2026-05-09",
+    "Real Tomayapo",
+    "San Antonio Bulo Bulo",
+    1,
+    0
+   ],
+   [
+    "2026-05-10",
+    "Blooming",
+    "Bol\u00edvar",
+    0,
+    0
+   ],
+   [
     "2026-05-10",
     "Independiente Petrolero",
     "Always Ready",
+    0,
+    0
+   ],
+   [
+    "2026-05-10",
+    "The Strongest",
+    "Real Potos\u00ed",
     0,
     0
    ],
@@ -16263,18 +21214,11 @@
     1
    ],
    [
-    "2026-07-08",
-    "Real Oruro",
-    "Universitario de Vinto",
-    4,
-    1
-   ],
-   [
-    "2026-07-09",
-    "Nacional Potos\u00ed",
+    "2026-05-12",
     "Aurora",
-    2,
-    0
+    "Real Oruro",
+    1,
+    1
    ],
    [
     "2026-05-12",
@@ -16282,6 +21226,13 @@
     "Universitario de Vinto",
     0,
     2
+   ],
+   [
+    "2026-05-13",
+    "Bol\u00edvar",
+    "Nacional Potos\u00ed",
+    1,
+    1
    ],
    [
     "2026-05-13",
@@ -16298,18 +21249,11 @@
     1
    ],
    [
-    "2026-07-07",
-    "GV San Jos\u00e9",
-    "Real Tomayapo",
-    3,
+    "2026-05-14",
+    "Oriente Petrolero",
+    "Guabir\u00e1",
+    2,
     2
-   ],
-   [
-    "2026-07-08",
-    "Real Potos\u00ed",
-    "ABB",
-    3,
-    1
    ],
    [
     "2026-05-15",
@@ -16331,62 +21275,6 @@
     "Nacional Potos\u00ed",
     2,
     1
-   ],
-   [
-    "2026-07-14",
-    "Real Oruro",
-    "Always Ready",
-    0,
-    6
-   ],
-   [
-    "2026-07-15",
-    "Real Potos\u00ed",
-    "San Antonio Bulo Bulo",
-    5,
-    0
-   ],
-   [
-    "2026-07-16",
-    "ABB",
-    "Independiente Petrolero",
-    3,
-    1
-   ],
-   [
-    "2026-07-17",
-    "Bol\u00edvar",
-    "Guabir\u00e1",
-    4,
-    0
-   ],
-   [
-    "2026-07-18",
-    "Always Ready",
-    "Universitario de Vinto",
-    4,
-    0
-   ],
-   [
-    "2026-07-19",
-    "GV San Jos\u00e9",
-    "The Strongest",
-    0,
-    0
-   ],
-   [
-    "2026-07-20",
-    "San Antonio Bulo Bulo",
-    "ABB",
-    2,
-    1
-   ],
-   [
-    "2026-07-21",
-    "Independiente Petrolero",
-    "Real Potos\u00ed",
-    1,
-    2
    ],
    [
     "2026-05-29",
@@ -16417,6 +21305,34 @@
     2
    ],
    [
+    "2026-07-07",
+    "GV San Jos\u00e9",
+    "Real Tomayapo",
+    3,
+    2
+   ],
+   [
+    "2026-07-08",
+    "Real Oruro",
+    "Universitario de Vinto",
+    4,
+    1
+   ],
+   [
+    "2026-07-08",
+    "Real Potos\u00ed",
+    "ABB",
+    3,
+    1
+   ],
+   [
+    "2026-07-09",
+    "Nacional Potos\u00ed",
+    "Aurora",
+    2,
+    0
+   ],
+   [
     "2026-07-11",
     "Real Oruro",
     "GV San Jos\u00e9",
@@ -16429,6 +21345,111 @@
     "Nacional Potos\u00ed",
     1,
     1
+   ],
+   [
+    "2026-07-12",
+    "Real Tomayapo",
+    "Independiente Petrolero",
+    2,
+    1
+   ],
+   [
+    "2026-07-12",
+    "The Strongest",
+    "Bol\u00edvar",
+    1,
+    1
+   ],
+   [
+    "2026-07-14",
+    "Blooming",
+    "GV San Jos\u00e9",
+    1,
+    1
+   ],
+   [
+    "2026-07-14",
+    "Real Oruro",
+    "Always Ready",
+    0,
+    6
+   ],
+   [
+    "2026-07-15",
+    "Real Potos\u00ed",
+    "San Antonio Bulo Bulo",
+    5,
+    0
+   ],
+   [
+    "2026-07-15",
+    "The Strongest",
+    "Oriente Petrolero",
+    2,
+    1
+   ],
+   [
+    "2026-07-16",
+    "ABB",
+    "Independiente Petrolero",
+    3,
+    1
+   ],
+   [
+    "2026-07-17",
+    "Bol\u00edvar",
+    "Guabir\u00e1",
+    4,
+    0
+   ],
+   [
+    "2026-07-18",
+    "Always Ready",
+    "Universitario de Vinto",
+    4,
+    0
+   ],
+   [
+    "2026-07-18",
+    "Aurora",
+    "Oriente Petrolero",
+    2,
+    2
+   ],
+   [
+    "2026-07-19",
+    "Blooming",
+    "Real Tomayapo",
+    1,
+    0
+   ],
+   [
+    "2026-07-19",
+    "GV San Jos\u00e9",
+    "The Strongest",
+    0,
+    0
+   ],
+   [
+    "2026-07-20",
+    "Nacional Potos\u00ed",
+    "Real Oruro",
+    1,
+    4
+   ],
+   [
+    "2026-07-20",
+    "San Antonio Bulo Bulo",
+    "ABB",
+    2,
+    1
+   ],
+   [
+    "2026-07-21",
+    "Independiente Petrolero",
+    "Real Potos\u00ed",
+    1,
+    2
    ],
    [
     "2026-07-24",
@@ -16445,6 +21466,20 @@
     1
    ],
    [
+    "2026-07-25",
+    "Guabir\u00e1",
+    "Real Oruro",
+    4,
+    1
+   ],
+   [
+    "2026-07-25",
+    "Independiente Petrolero",
+    "Oriente Petrolero",
+    1,
+    2
+   ],
+   [
     "2026-07-26",
     "Blooming",
     "The Strongest",
@@ -16452,10 +21487,38 @@
     1
    ],
    [
+    "2026-07-26",
+    "Bol\u00edvar",
+    "Real Potos\u00ed",
+    2,
+    1
+   ],
+   [
+    "2026-07-26",
+    "Nacional Potos\u00ed",
+    "Real Tomayapo",
+    4,
+    1
+   ],
+   [
     "2026-07-27",
     "GV San Jos\u00e9",
     "Universitario de Vinto",
     2,
+    1
+   ],
+   [
+    "2026-07-31",
+    "Real Tomayapo",
+    "ABB",
+    1,
+    1
+   ],
+   [
+    "2026-07-31",
+    "The Strongest",
+    "Aurora",
+    1,
     1
    ],
    [
@@ -16473,6 +21536,27 @@
     3
    ],
    [
+    "2026-08-01",
+    "San Antonio Bulo Bulo",
+    "Blooming",
+    2,
+    0
+   ],
+   [
+    "2026-08-02",
+    "Always Ready",
+    "Bol\u00edvar",
+    1,
+    0
+   ],
+   [
+    "2026-08-02",
+    "Oriente Petrolero",
+    "Nacional Potos\u00ed",
+    1,
+    0
+   ],
+   [
     "2026-08-02",
     "Real Potos\u00ed",
     "GV San Jos\u00e9",
@@ -16487,9 +21571,44 @@
     1
    ],
    [
+    "2026-08-04",
+    "Guabir\u00e1",
+    "Real Tomayapo",
+    3,
+    0
+   ],
+   [
+    "2026-08-04",
+    "Independiente Petrolero",
+    "Aurora",
+    1,
+    1
+   ],
+   [
+    "2026-08-05",
+    "Bol\u00edvar",
+    "Oriente Petrolero",
+    2,
+    1
+   ],
+   [
     "2026-08-05",
     "GV San Jos\u00e9",
     "San Antonio Bulo Bulo",
+    0,
+    0
+   ],
+   [
+    "2026-08-05",
+    "Nacional Potos\u00ed",
+    "The Strongest",
+    2,
+    3
+   ],
+   [
+    "2026-08-06",
+    "Blooming",
+    "Always Ready",
     0,
     0
    ],
@@ -16508,11 +21627,32 @@
     1
    ],
    [
+    "2026-08-07",
+    "Real Tomayapo",
+    "Real Oruro",
+    1,
+    2
+   ],
+   [
+    "2026-08-08",
+    "Aurora",
+    "Bol\u00edvar",
+    2,
+    4
+   ],
+   [
     "2026-08-08",
     "San Antonio Bulo Bulo",
     "Nacional Potos\u00ed",
     2,
     1
+   ],
+   [
+    "2026-08-08",
+    "The Strongest",
+    "Independiente Petrolero",
+    1,
+    2
    ],
    [
     "2026-08-09",
@@ -16522,10 +21662,45 @@
     3
    ],
    [
+    "2026-08-09",
+    "Oriente Petrolero",
+    "Universitario de Vinto",
+    5,
+    0
+   ],
+   [
+    "2026-08-09",
+    "Real Potos\u00ed",
+    "Blooming",
+    2,
+    0
+   ],
+   [
+    "2026-08-14",
+    "Bol\u00edvar",
+    "San Antonio Bulo Bulo",
+    4,
+    1
+   ],
+   [
     "2026-08-14",
     "Universitario de Vinto",
     "Real Tomayapo",
     0,
+    1
+   ],
+   [
+    "2026-08-15",
+    "Blooming",
+    "Aurora",
+    3,
+    0
+   ],
+   [
+    "2026-08-15",
+    "Guabir\u00e1",
+    "The Strongest",
+    3,
     1
    ],
    [
@@ -16543,6 +21718,27 @@
     1
    ],
    [
+    "2026-08-16",
+    "Independiente Petrolero",
+    "GV San Jos\u00e9",
+    1,
+    0
+   ],
+   [
+    "2026-08-16",
+    "Nacional Potos\u00ed",
+    "ABB",
+    2,
+    0
+   ],
+   [
+    "2026-08-21",
+    "Oriente Petrolero",
+    "San Antonio Bulo Bulo",
+    4,
+    0
+   ],
+   [
     "2026-08-21",
     "The Strongest",
     "Universitario de Vinto",
@@ -16557,6 +21753,27 @@
     2
    ],
    [
+    "2026-08-22",
+    "Aurora",
+    "Real Potos\u00ed",
+    0,
+    0
+   ],
+   [
+    "2026-08-22",
+    "Nacional Potos\u00ed",
+    "Independiente Petrolero",
+    3,
+    0
+   ],
+   [
+    "2026-08-23",
+    "Guabir\u00e1",
+    "Blooming",
+    1,
+    1
+   ],
+   [
     "2026-08-23",
     "Real Oruro",
     "Bol\u00edvar",
@@ -16564,11 +21781,39 @@
     4
    ],
    [
+    "2026-08-23",
+    "Real Tomayapo",
+    "Always Ready",
+    1,
+    1
+   ],
+   [
     "2026-08-25",
     "GV San Jos\u00e9",
     "Oriente Petrolero",
     3,
     3
+   ],
+   [
+    "2026-08-25",
+    "Universitario de Vinto",
+    "Nacional Potos\u00ed",
+    2,
+    0
+   ],
+   [
+    "2026-08-26",
+    "Blooming",
+    "Real Oruro",
+    1,
+    1
+   ],
+   [
+    "2026-08-26",
+    "Real Potos\u00ed",
+    "Real Tomayapo",
+    0,
+    1
    ],
    [
     "2026-08-26",
@@ -16585,10 +21830,38 @@
     2
    ],
    [
+    "2026-08-27",
+    "Bol\u00edvar",
+    "ABB",
+    4,
+    1
+   ],
+   [
+    "2026-08-27",
+    "Independiente Petrolero",
+    "Guabir\u00e1",
+    3,
+    1
+   ],
+   [
+    "2026-09-04",
+    "ABB",
+    "Universitario de Vinto",
+    2,
+    0
+   ],
+   [
     "2026-09-04",
     "Real Oruro",
     "San Antonio Bulo Bulo",
     2,
+    0
+   ],
+   [
+    "2026-09-05",
+    "Aurora",
+    "GV San Jos\u00e9",
+    3,
     0
    ],
    [
@@ -16599,11 +21872,39 @@
     1
    ],
    [
+    "2026-09-05",
+    "Oriente Petrolero",
+    "Always Ready",
+    1,
+    2
+   ],
+   [
     "2026-09-06",
     "Independiente Petrolero",
     "Bol\u00edvar",
     0,
     4
+   ],
+   [
+    "2026-09-06",
+    "Nacional Potos\u00ed",
+    "Blooming",
+    2,
+    1
+   ],
+   [
+    "2026-09-06",
+    "The Strongest",
+    "Real Tomayapo",
+    3,
+    1
+   ],
+   [
+    "2026-09-11",
+    "Real Potos\u00ed",
+    "Oriente Petrolero",
+    2,
+    1
    ],
    [
     "2026-09-11",
@@ -16614,10 +21915,24 @@
    ],
    [
     "2026-09-12",
+    "Blooming",
+    "ABB",
+    6,
+    1
+   ],
+   [
+    "2026-09-12",
     "GV San Jos\u00e9",
     "Nacional Potos\u00ed",
     0,
     3
+   ],
+   [
+    "2026-09-12",
+    "The Strongest",
+    "Real Oruro",
+    5,
+    0
    ],
    [
     "2026-09-13",
@@ -16625,6 +21940,27 @@
     "Guabir\u00e1",
     6,
     0
+   ],
+   [
+    "2026-09-13",
+    "Real Tomayapo",
+    "Bol\u00edvar",
+    1,
+    2
+   ],
+   [
+    "2026-09-13",
+    "Universitario de Vinto",
+    "Independiente Petrolero",
+    3,
+    1
+   ],
+   [
+    "2026-09-15",
+    "ABB",
+    "The Strongest",
+    1,
+    2
    ],
    [
     "2026-09-15",
@@ -16635,10 +21971,31 @@
    ],
    [
     "2026-09-16",
+    "Blooming",
+    "Universitario de Vinto",
+    1,
+    1
+   ],
+   [
+    "2026-09-16",
     "Guabir\u00e1",
     "Aurora",
     3,
     1
+   ],
+   [
+    "2026-09-16",
+    "Nacional Potos\u00ed",
+    "Always Ready",
+    0,
+    4
+   ],
+   [
+    "2026-09-17",
+    "Bol\u00edvar",
+    "GV San Jos\u00e9",
+    4,
+    2
    ],
    [
     "2026-09-17",
@@ -16656,273 +22013,60 @@
    ]
   ],
   "form": {
-   "Bolivar": {
-    "form": "W",
-    "n": 1,
-    "gf": 5,
-    "ga": 2,
-    "newest": "2026-04-03",
-    "matches": [
-     {
-      "date": "2026-04-03",
-      "res": "W",
-      "gf": 5,
-      "ga": 2,
-      "opp": "Real Oruro",
-      "side": "H"
-     }
-    ]
-   },
-   "Real Oruro": {
-    "form": "LWLLL",
+   "Blooming": {
+    "form": "DWLDD",
     "n": 5,
-    "gf": 7,
-    "ga": 13,
-    "newest": "2026-09-15",
+    "gf": 10,
+    "ga": 6,
+    "newest": "2026-09-16",
     "matches": [
      {
-      "date": "2026-09-15",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Real Potos\u00ed",
+      "date": "2026-09-16",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Universitario de Vinto",
       "side": "H"
      },
      {
-      "date": "2026-09-04",
+      "date": "2026-09-12",
       "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "San Antonio Bulo Bulo",
+      "gf": 6,
+      "ga": 1,
+      "opp": "ABB",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Nacional Potos\u00ed",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-26",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Real Oruro",
       "side": "H"
      },
      {
       "date": "2026-08-23",
-      "res": "L",
-      "gf": 2,
-      "ga": 4,
-      "opp": "Bol\u00edvar",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-15",
-      "res": "L",
-      "gf": 2,
-      "ga": 3,
-      "opp": "Oriente Petrolero",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-04",
-      "res": "L",
-      "gf": 1,
-      "ga": 4,
-      "opp": "ABB",
-      "side": "A"
-     }
-    ]
-   },
-   "Always Ready": {
-    "form": "WDDWW",
-    "n": 5,
-    "gf": 15,
-    "ga": 6,
-    "newest": "2026-09-13",
-    "matches": [
-     {
-      "date": "2026-09-13",
-      "res": "W",
-      "gf": 6,
-      "ga": 0,
-      "opp": "Guabir\u00e1",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-27",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "Aurora",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-16",
       "res": "D",
       "gf": 1,
-      "ga": 1,
-      "opp": "Real Potos\u00ed",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-09",
-      "res": "W",
-      "gf": 3,
-      "ga": 2,
-      "opp": "GV San Jos\u00e9",
-      "side": "A"
-     },
-     {
-      "date": "2026-07-25",
-      "res": "W",
-      "gf": 3,
-      "ga": 1,
-      "opp": "San Antonio Bulo Bulo",
-      "side": "H"
-     }
-    ]
-   },
-   "Real Tomayapo": {
-    "form": "LWLLD",
-    "n": 5,
-    "gf": 4,
-    "ga": 8,
-    "newest": "2026-09-17",
-    "matches": [
-     {
-      "date": "2026-09-17",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Oriente Petrolero",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-14",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Universitario de Vinto",
-      "side": "A"
-     },
-     {
-      "date": "2026-07-07",
-      "res": "L",
-      "gf": 2,
-      "ga": 3,
-      "opp": "GV San Jos\u00e9",
-      "side": "A"
-     },
-     {
-      "date": "2026-05-15",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
-      "opp": "Aurora",
-      "side": "H"
-     },
-     {
-      "date": "2026-04-13",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Real Potos\u00ed",
-      "side": "H"
-     }
-    ]
-   },
-   "GV San Jos\u00e9": {
-    "form": "LDDLD",
-    "n": 5,
-    "gf": 7,
-    "ga": 11,
-    "newest": "2026-09-12",
-    "matches": [
-     {
-      "date": "2026-09-12",
-      "res": "L",
-      "gf": 0,
-      "ga": 3,
-      "opp": "Nacional Potos\u00ed",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-25",
-      "res": "D",
-      "gf": 3,
-      "ga": 3,
-      "opp": "Oriente Petrolero",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-22",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "ABB",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-09",
-      "res": "L",
-      "gf": 2,
-      "ga": 3,
-      "opp": "Always Ready",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-05",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "San Antonio Bulo Bulo",
-      "side": "H"
-     }
-    ]
-   },
-   "ABB": {
-    "form": "DLWLL",
-    "n": 5,
-    "gf": 9,
-    "ga": 9,
-    "newest": "2026-08-22",
-    "matches": [
-     {
-      "date": "2026-08-22",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "GV San Jos\u00e9",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-07",
-      "res": "L",
-      "gf": 0,
       "ga": 1,
       "opp": "Guabir\u00e1",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-04",
-      "res": "W",
-      "gf": 4,
-      "ga": 1,
-      "opp": "Real Oruro",
-      "side": "H"
-     },
-     {
-      "date": "2026-07-24",
-      "res": "L",
-      "gf": 2,
-      "ga": 3,
-      "opp": "Aurora",
-      "side": "A"
-     },
-     {
-      "date": "2026-07-20",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "San Antonio Bulo Bulo",
       "side": "A"
      }
     ]
    },
    "Guabir\u00e1": {
-    "form": "WLDWD",
+    "form": "WLDLD",
     "n": 5,
     "gf": 6,
-    "ga": 9,
+    "ga": 12,
     "newest": "2026-09-16",
     "matches": [
      {
@@ -16950,28 +22094,94 @@
       "side": "H"
      },
      {
-      "date": "2026-08-07",
-      "res": "W",
+      "date": "2026-08-27",
+      "res": "L",
       "gf": 1,
-      "ga": 0,
-      "opp": "ABB",
+      "ga": 3,
+      "opp": "Independiente Petrolero",
       "side": "A"
      },
      {
-      "date": "2026-07-31",
+      "date": "2026-08-23",
       "res": "D",
       "gf": 1,
       "ga": 1,
-      "opp": "Universitario de Vinto",
+      "opp": "Blooming",
+      "side": "H"
+     }
+    ]
+   },
+   "Bolivar": {
+    "form": "W",
+    "n": 1,
+    "gf": 5,
+    "ga": 2,
+    "newest": "2026-04-03",
+    "matches": [
+     {
+      "date": "2026-04-03",
+      "res": "W",
+      "gf": 5,
+      "ga": 2,
+      "opp": "Real Oruro",
+      "side": "H"
+     }
+    ]
+   },
+   "Real Oruro": {
+    "form": "LLWDL",
+    "n": 5,
+    "gf": 5,
+    "ga": 12,
+    "newest": "2026-09-15",
+    "matches": [
+     {
+      "date": "2026-09-15",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Real Potos\u00ed",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 0,
+      "ga": 5,
+      "opp": "The Strongest",
       "side": "A"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "San Antonio Bulo Bulo",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-26",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Blooming",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "L",
+      "gf": 2,
+      "ga": 4,
+      "opp": "Bol\u00edvar",
+      "side": "H"
      }
     ]
    },
    "Independiente Petrolero": {
-    "form": "LLWLL",
+    "form": "LLLWL",
     "n": 5,
-    "gf": 6,
-    "ga": 12,
+    "gf": 5,
+    "ga": 14,
     "newest": "2026-09-18",
     "matches": [
      {
@@ -16983,6 +22193,14 @@
       "side": "H"
      },
      {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Universitario de Vinto",
+      "side": "A"
+     },
+     {
       "date": "2026-09-06",
       "res": "L",
       "gf": 0,
@@ -16991,134 +22209,175 @@
       "side": "H"
      },
      {
-      "date": "2026-08-01",
+      "date": "2026-08-27",
       "res": "W",
       "gf": 3,
-      "ga": 0,
-      "opp": "Real Oruro",
-      "side": "A"
-     },
-     {
-      "date": "2026-07-21",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "Real Potos\u00ed",
+      "ga": 1,
+      "opp": "Guabir\u00e1",
       "side": "H"
      },
      {
-      "date": "2026-07-16",
+      "date": "2026-08-22",
       "res": "L",
-      "gf": 1,
+      "gf": 0,
       "ga": 3,
-      "opp": "ABB",
+      "opp": "Nacional Potos\u00ed",
       "side": "A"
      }
     ]
    },
-   "Bol\u00edvar": {
-    "form": "WWWLW",
+   "Nacional Potos\u00ed": {
+    "form": "LWWLW",
     "n": 5,
-    "gf": 16,
-    "ga": 6,
-    "newest": "2026-09-06",
+    "gf": 8,
+    "ga": 7,
+    "newest": "2026-09-16",
     "matches": [
+     {
+      "date": "2026-09-16",
+      "res": "L",
+      "gf": 0,
+      "ga": 4,
+      "opp": "Always Ready",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "GV San Jos\u00e9",
+      "side": "A"
+     },
      {
       "date": "2026-09-06",
       "res": "W",
-      "gf": 4,
+      "gf": 2,
+      "ga": 1,
+      "opp": "Blooming",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-25",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Universitario de Vinto",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "W",
+      "gf": 3,
       "ga": 0,
       "opp": "Independiente Petrolero",
+      "side": "H"
+     }
+    ]
+   },
+   "Always Ready": {
+    "form": "WWWDD",
+    "n": 5,
+    "gf": 15,
+    "ga": 4,
+    "newest": "2026-09-16",
+    "matches": [
+     {
+      "date": "2026-09-16",
+      "res": "W",
+      "gf": 4,
+      "ga": 0,
+      "opp": "Nacional Potos\u00ed",
       "side": "A"
      },
      {
-      "date": "2026-08-23",
+      "date": "2026-09-13",
       "res": "W",
-      "gf": 4,
-      "ga": 2,
-      "opp": "Real Oruro",
-      "side": "A"
-     },
-     {
-      "date": "2026-07-17",
-      "res": "W",
-      "gf": 4,
+      "gf": 6,
       "ga": 0,
       "opp": "Guabir\u00e1",
       "side": "H"
      },
      {
-      "date": "2026-05-16",
-      "res": "L",
-      "gf": 2,
-      "ga": 3,
-      "opp": "Universitario de Vinto",
-      "side": "A"
-     },
-     {
-      "date": "2026-05-03",
+      "date": "2026-09-05",
       "res": "W",
       "gf": 2,
       "ga": 1,
-      "opp": "GV San Jos\u00e9",
-      "side": "A"
-     }
-    ]
-   },
-   "Blooming": {
-    "form": "DWLDD",
-    "n": 5,
-    "gf": 6,
-    "ga": 7,
-    "newest": "2026-07-26",
-    "matches": [
-     {
-      "date": "2026-07-26",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "The Strongest",
-      "side": "H"
-     },
-     {
-      "date": "2026-05-31",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
       "opp": "Oriente Petrolero",
       "side": "A"
      },
      {
-      "date": "2026-05-13",
-      "res": "L",
-      "gf": 1,
-      "ga": 3,
-      "opp": "Independiente Petrolero",
-      "side": "A"
-     },
-     {
-      "date": "2026-05-04",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Universitario de Vinto",
-      "side": "A"
-     },
-     {
-      "date": "2026-04-12",
+      "date": "2026-08-27",
       "res": "D",
       "gf": 2,
       "ga": 2,
-      "opp": "Real Oruro",
+      "opp": "Aurora",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Real Tomayapo",
       "side": "A"
      }
     ]
    },
-   "Real Potos\u00ed": {
-    "form": "WDDWD",
+   "Real Tomayapo": {
+    "form": "LLLWD",
     "n": 5,
-    "gf": 6,
-    "ga": 2,
+    "gf": 4,
+    "ga": 8,
+    "newest": "2026-09-17",
+    "matches": [
+     {
+      "date": "2026-09-17",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "Oriente Petrolero",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "Bol\u00edvar",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "The Strongest",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-26",
+      "res": "W",
+      "gf": 1,
+      "ga": 0,
+      "opp": "Real Potos\u00ed",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-23",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Always Ready",
+      "side": "H"
+     }
+    ]
+   },
+   "Real Potos\u00ed": {
+    "form": "WWDLD",
+    "n": 5,
+    "gf": 5,
+    "ga": 3,
     "newest": "2026-09-15",
     "matches": [
      {
@@ -17130,6 +22389,14 @@
       "side": "A"
      },
      {
+      "date": "2026-09-11",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Oriente Petrolero",
+      "side": "H"
+     },
+     {
       "date": "2026-09-05",
       "res": "D",
       "gf": 1,
@@ -17138,134 +22405,77 @@
       "side": "A"
      },
      {
-      "date": "2026-08-16",
-      "res": "D",
-      "gf": 1,
+      "date": "2026-08-26",
+      "res": "L",
+      "gf": 0,
       "ga": 1,
+      "opp": "Real Tomayapo",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "D",
+      "gf": 0,
+      "ga": 0,
+      "opp": "Aurora",
+      "side": "A"
+     }
+    ]
+   },
+   "Aurora": {
+    "form": "LWWDD",
+    "n": 5,
+    "gf": 8,
+    "ga": 5,
+    "newest": "2026-09-16",
+    "matches": [
+     {
+      "date": "2026-09-16",
+      "res": "L",
+      "gf": 1,
+      "ga": 3,
+      "opp": "Guabir\u00e1",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-11",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "San Antonio Bulo Bulo",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "W",
+      "gf": 3,
+      "ga": 0,
+      "opp": "GV San Jos\u00e9",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-27",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
       "opp": "Always Ready",
       "side": "A"
      },
      {
-      "date": "2026-08-06",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Universitario de Vinto",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-02",
+      "date": "2026-08-22",
       "res": "D",
       "gf": 0,
       "ga": 0,
-      "opp": "GV San Jos\u00e9",
-      "side": "H"
-     }
-    ]
-   },
-   "Universitario de Vinto": {
-    "form": "LLLDL",
-    "n": 5,
-    "gf": 5,
-    "ga": 10,
-    "newest": "2026-08-21",
-    "matches": [
-     {
-      "date": "2026-08-21",
-      "res": "L",
-      "gf": 3,
-      "ga": 4,
-      "opp": "The Strongest",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-14",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Real Tomayapo",
-      "side": "H"
-     },
-     {
-      "date": "2026-08-06",
-      "res": "L",
-      "gf": 0,
-      "ga": 2,
       "opp": "Real Potos\u00ed",
       "side": "H"
-     },
-     {
-      "date": "2026-07-31",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Guabir\u00e1",
-      "side": "H"
-     },
-     {
-      "date": "2026-07-27",
-      "res": "L",
-      "gf": 1,
-      "ga": 2,
-      "opp": "GV San Jos\u00e9",
-      "side": "A"
-     }
-    ]
-   },
-   "Oriente Petrolero": {
-    "form": "WDWLL",
-    "n": 5,
-    "gf": 9,
-    "ga": 9,
-    "newest": "2026-09-17",
-    "matches": [
-     {
-      "date": "2026-09-17",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Real Tomayapo",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-25",
-      "res": "D",
-      "gf": 3,
-      "ga": 3,
-      "opp": "GV San Jos\u00e9",
-      "side": "A"
-     },
-     {
-      "date": "2026-08-15",
-      "res": "W",
-      "gf": 3,
-      "ga": 2,
-      "opp": "Real Oruro",
-      "side": "A"
-     },
-     {
-      "date": "2026-05-31",
-      "res": "L",
-      "gf": 0,
-      "ga": 1,
-      "opp": "Blooming",
-      "side": "H"
-     },
-     {
-      "date": "2026-05-11",
-      "res": "L",
-      "gf": 1,
-      "ga": 3,
-      "opp": "ABB",
-      "side": "A"
      }
     ]
    },
    "San Antonio Bulo Bulo": {
-    "form": "WLLLW",
+    "form": "WLLLL",
     "n": 5,
-    "gf": 5,
-    "ga": 9,
+    "gf": 3,
+    "ga": 12,
     "newest": "2026-09-18",
     "matches": [
      {
@@ -17301,71 +22511,242 @@
       "side": "H"
      },
      {
-      "date": "2026-08-08",
-      "res": "W",
-      "gf": 2,
-      "ga": 1,
-      "opp": "Nacional Potos\u00ed",
-      "side": "H"
+      "date": "2026-08-21",
+      "res": "L",
+      "gf": 0,
+      "ga": 4,
+      "opp": "Oriente Petrolero",
+      "side": "A"
      }
     ]
    },
-   "Nacional Potos\u00ed": {
-    "form": "WLDWL",
+   "Oriente Petrolero": {
+    "form": "WLLDW",
     "n": 5,
-    "gf": 8,
-    "ga": 5,
-    "newest": "2026-09-12",
+    "gf": 11,
+    "ga": 7,
+    "newest": "2026-09-17",
     "matches": [
      {
-      "date": "2026-09-12",
+      "date": "2026-09-17",
       "res": "W",
-      "gf": 3,
+      "gf": 2,
       "ga": 0,
-      "opp": "GV San Jos\u00e9",
+      "opp": "Real Tomayapo",
       "side": "A"
      },
      {
-      "date": "2026-08-08",
+      "date": "2026-09-11",
       "res": "L",
       "gf": 1,
       "ga": 2,
-      "opp": "San Antonio Bulo Bulo",
-      "side": "A"
-     },
-     {
-      "date": "2026-07-12",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
       "opp": "Real Potos\u00ed",
       "side": "A"
      },
      {
-      "date": "2026-07-09",
-      "res": "W",
-      "gf": 2,
-      "ga": 0,
-      "opp": "Aurora",
-      "side": "H"
-     },
-     {
-      "date": "2026-05-17",
+      "date": "2026-09-05",
       "res": "L",
       "gf": 1,
       "ga": 2,
-      "opp": "Guabir\u00e1",
+      "opp": "Always Ready",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-25",
+      "res": "D",
+      "gf": 3,
+      "ga": 3,
+      "opp": "GV San Jos\u00e9",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-21",
+      "res": "W",
+      "gf": 4,
+      "ga": 0,
+      "opp": "San Antonio Bulo Bulo",
+      "side": "H"
+     }
+    ]
+   },
+   "GV San Jos\u00e9": {
+    "form": "LLLDD",
+    "n": 5,
+    "gf": 7,
+    "ga": 15,
+    "newest": "2026-09-17",
+    "matches": [
+     {
+      "date": "2026-09-17",
+      "res": "L",
+      "gf": 2,
+      "ga": 4,
+      "opp": "Bol\u00edvar",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Nacional Potos\u00ed",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-05",
+      "res": "L",
+      "gf": 0,
+      "ga": 3,
+      "opp": "Aurora",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-25",
+      "res": "D",
+      "gf": 3,
+      "ga": 3,
+      "opp": "Oriente Petrolero",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "ABB",
+      "side": "A"
+     }
+    ]
+   },
+   "ABB": {
+    "form": "LLWLD",
+    "n": 5,
+    "gf": 7,
+    "ga": 14,
+    "newest": "2026-09-15",
+    "matches": [
+     {
+      "date": "2026-09-15",
+      "res": "L",
+      "gf": 1,
+      "ga": 2,
+      "opp": "The Strongest",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "L",
+      "gf": 1,
+      "ga": 6,
+      "opp": "Blooming",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Universitario de Vinto",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-27",
+      "res": "L",
+      "gf": 1,
+      "ga": 4,
+      "opp": "Bol\u00edvar",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-22",
+      "res": "D",
+      "gf": 2,
+      "ga": 2,
+      "opp": "GV San Jos\u00e9",
+      "side": "H"
+     }
+    ]
+   },
+   "Universitario de Vinto": {
+    "form": "DWLWL",
+    "n": 5,
+    "gf": 9,
+    "ga": 8,
+    "newest": "2026-09-16",
+    "matches": [
+     {
+      "date": "2026-09-16",
+      "res": "D",
+      "gf": 1,
+      "ga": 1,
+      "opp": "Blooming",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Independiente Petrolero",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-04",
+      "res": "L",
+      "gf": 0,
+      "ga": 2,
+      "opp": "ABB",
+      "side": "A"
+     },
+     {
+      "date": "2026-08-25",
+      "res": "W",
+      "gf": 2,
+      "ga": 0,
+      "opp": "Nacional Potos\u00ed",
+      "side": "H"
+     },
+     {
+      "date": "2026-08-21",
+      "res": "L",
+      "gf": 3,
+      "ga": 4,
+      "opp": "The Strongest",
       "side": "A"
      }
     ]
    },
    "The Strongest": {
-    "form": "WWDDW",
+    "form": "WWWWW",
     "n": 5,
-    "gf": 9,
-    "ga": 4,
-    "newest": "2026-08-26",
+    "gf": 17,
+    "ga": 5,
+    "newest": "2026-09-15",
     "matches": [
+     {
+      "date": "2026-09-15",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "ABB",
+      "side": "A"
+     },
+     {
+      "date": "2026-09-12",
+      "res": "W",
+      "gf": 5,
+      "ga": 0,
+      "opp": "Real Oruro",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-06",
+      "res": "W",
+      "gf": 3,
+      "ga": 1,
+      "opp": "Real Tomayapo",
+      "side": "H"
+     },
      {
       "date": "2026-08-26",
       "res": "W",
@@ -17381,83 +22762,61 @@
       "ga": 3,
       "opp": "Universitario de Vinto",
       "side": "H"
-     },
-     {
-      "date": "2026-07-26",
-      "res": "D",
-      "gf": 1,
-      "ga": 1,
-      "opp": "Blooming",
-      "side": "A"
-     },
-     {
-      "date": "2026-07-19",
-      "res": "D",
-      "gf": 0,
-      "ga": 0,
-      "opp": "GV San Jos\u00e9",
-      "side": "A"
-     },
-     {
-      "date": "2026-05-14",
-      "res": "W",
-      "gf": 1,
-      "ga": 0,
-      "opp": "Always Ready",
-      "side": "A"
      }
     ]
    },
-   "Aurora": {
-    "form": "LWDWL",
+   "Bol\u00edvar": {
+    "form": "WWWWW",
     "n": 5,
-    "gf": 8,
-    "ga": 9,
-    "newest": "2026-09-16",
+    "gf": 18,
+    "ga": 6,
+    "newest": "2026-09-17",
     "matches": [
      {
-      "date": "2026-09-16",
-      "res": "L",
-      "gf": 1,
-      "ga": 3,
-      "opp": "Guabir\u00e1",
+      "date": "2026-09-17",
+      "res": "W",
+      "gf": 4,
+      "ga": 2,
+      "opp": "GV San Jos\u00e9",
+      "side": "H"
+     },
+     {
+      "date": "2026-09-13",
+      "res": "W",
+      "gf": 2,
+      "ga": 1,
+      "opp": "Real Tomayapo",
       "side": "A"
      },
      {
-      "date": "2026-09-11",
+      "date": "2026-09-06",
       "res": "W",
-      "gf": 2,
+      "gf": 4,
       "ga": 0,
-      "opp": "San Antonio Bulo Bulo",
+      "opp": "Independiente Petrolero",
       "side": "A"
      },
      {
       "date": "2026-08-27",
-      "res": "D",
-      "gf": 2,
-      "ga": 2,
-      "opp": "Always Ready",
-      "side": "A"
-     },
-     {
-      "date": "2026-07-24",
       "res": "W",
-      "gf": 3,
-      "ga": 2,
+      "gf": 4,
+      "ga": 1,
       "opp": "ABB",
       "side": "H"
      },
      {
-      "date": "2026-07-09",
-      "res": "L",
-      "gf": 0,
+      "date": "2026-08-23",
+      "res": "W",
+      "gf": 4,
       "ga": 2,
-      "opp": "Nacional Potos\u00ed",
+      "opp": "Real Oruro",
       "side": "A"
      }
     ]
    }
   },
-  "es_page": "https://es.wikipedia.org/wiki/Primera_Divisi%C3%B3n_de_Bolivia_2026"
+  "es_pages": [
+   "Primera_Divisi%C3%B3n_de_Bolivia_2026"
+  ]
  }
 }

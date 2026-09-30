@@ -1,13 +1,13 @@
 socextra -- leagues football-data does not publish
-    es-rounds Colombia Primera A: Categor%C3%ADa_Primera_A_2026 -> HTTPError
-    es-rounds Colombia Primera A: 88 dated results (104 rows had a score but no date)
+    es-rounds Colombia Primera A: 298 dated results across 2 page(s), newest 2026-09-29
   OK      Colombia Primera A: 297 matches  home 0.451 draw 0.310 away 0.239 goals 2.569
-    es-rounds Peru Liga 1: page read, no dated rows
+    es-rounds Peru Liga 1: Liga1_2026_(Per%C3%BA) read, no dated rows
+    es-rounds Peru Liga 1: 242 dated results across 2 page(s), newest 2026-09-23
   OK      Peru Liga 1: 242 matches  home 0.533 draw 0.236 away 0.231 goals 2.785
-    es-rounds Chile Liga de Primera: 88 dated results (93 rows had a score but no date)
+    es-rounds Chile Liga de Primera: 181 dated results across 1 page(s), newest 2026-09-16
   OK      Chile Liga de Primera: 181 matches  home 0.464 draw 0.210 away 0.326 goals 2.845
   EMPTY   Uruguay Primera: page found, no usable matrix
-    es-rounds Bolivia Profesional: 77 dated results (83 rows had a score but no date)
+    es-rounds Bolivia Profesional: 160 dated results across 1 page(s), newest 2026-09-18
   OK      Bolivia Profesional: 160 matches  home 0.487 draw 0.244 away 0.269 goals 3.119
 
 wrote /home/runner/work/parlay/parlay/socextra.json -- 4 leagues, 880 matches
