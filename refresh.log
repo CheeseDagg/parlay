@@ -1,66 +1,65 @@
 
-Successfully installed numpy-2.5.2 scipy-1.18.0
+Successfully installed numpy-2.5.3 scipy-1.18.1
 PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusal, vig bands, arity)
-  MLB: 15 games, 15 moneylines, 134 total rungs, 126 F5 rungs
+  MLB: 4 games, 4 moneylines, 52 total rungs, 41 F5 rungs
   MMA: 14 bouts
-  WNBA: 5 markets
-  WNBA: 102 alternate-total rungs
+  WNBA: 3 markets
+  WNBA: 153 alternate-total rungs
   CFL: 4 markets
-  CFL: 60 alternate-total rungs
-  BOX: 19 markets
-  SOC: 2 soccer competition(s) LIVE and NOT pulled — soccer_league_of_ireland (League of Ireland); soccer_switzerland_superleague (Swiss Superleague)
-  SOC: 17 out-of-season soccer key(s) not pulled — a qualifying round lives under its parent key, so check these before saying a competition is dark: soccer_africa_cup_of_nations; soccer_australia_aleague; soccer_concacaf_gold_cup; soccer_conmebol_copa_america; soccer_fa_cup; soccer_fifa_club_world_cup; soccer_fifa_world_cup; soccer_fifa_world_cup_qualifiers_europe; soccer_fifa_world_cup_qualifiers_south_america; soccer_fifa_world_cup_winner; soccer_fifa_world_cup_womens; soccer_france_coupe_de_france; soccer_germany_bundesliga_women; soccer_spain_copa_del_rey; soccer_uefa_champs_league_women; soccer_uefa_euro_qualification; soccer_uefa_european_championship
-  SOC soccer_uefa_champs_league_qualification: 7 fixtures
-  SOC soccer_netherlands_eredivisie: 7 fixtures
-  SOC soccer_portugal_primeira_liga: 7 fixtures
+  CFL: 0 alternate-total rungs
+  BOX: 6 markets
+  SOC: 5 soccer competition(s) LIVE and NOT pulled — soccer_australia_aleague (A-League); soccer_germany_bundesliga_women (Frauen-Bundesliga); soccer_league_of_ireland (League of Ireland); soccer_switzerland_superleague (Swiss Superleague); soccer_uefa_champs_league_women (UEFA Champions League Women)
+  SOC: 14 out-of-season soccer key(s) not pulled — a qualifying round lives under its parent key, so check these before saying a competition is dark: soccer_africa_cup_of_nations; soccer_concacaf_gold_cup; soccer_conmebol_copa_america; soccer_fa_cup; soccer_fifa_club_world_cup; soccer_fifa_world_cup; soccer_fifa_world_cup_qualifiers_europe; soccer_fifa_world_cup_qualifiers_south_america; soccer_fifa_world_cup_winner; soccer_fifa_world_cup_womens; soccer_france_coupe_de_france; soccer_spain_copa_del_rey; soccer_uefa_euro_qualification; soccer_uefa_european_championship
+  SOC soccer_uefa_champs_league_qualification: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_netherlands_eredivisie: 0 fixtures — queried, 9 event(s) returned, none priced by fanduel
+  SOC soccer_portugal_primeira_liga: 9 fixtures
   SOC soccer_turkey_super_league: 9 fixtures
   SOC soccer_greece_super_league: 7 fixtures
-  SOC soccer_sweden_allsvenskan: 7 fixtures
+  SOC soccer_sweden_allsvenskan: 8 fixtures
   SOC soccer_finland_veikkausliiga: 6 fixtures
   SOC soccer_norway_eliteserien: 8 fixtures
-  SOC soccer_china_superleague: 8 fixtures
-  SOC soccer_usa_mls: 30 fixtures
-  SOCT soccer_usa_mls: 110 goal-total rungs
-  SOC soccer_brazil_campeonato: 20 fixtures
+  SOC soccer_china_superleague: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_usa_mls: 18 fixtures
+  SOCT soccer_usa_mls: 8 goal-total rungs
+  SOC soccer_brazil_campeonato: 12 fixtures
   SOC soccer_mexico_ligamx: 9 fixtures
   SOC soccer_concacaf_leagues_cup: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  SOC soccer_conmebol_copa_libertadores: 0 fixtures — queried, 6 event(s) returned, none priced by fanduel
-  SOC soccer_conmebol_copa_sudamericana: 0 fixtures — queried, 6 event(s) returned, none priced by fanduel
+  SOC soccer_conmebol_copa_libertadores: 0 fixtures — queried, 1 event(s) returned, none priced by fanduel
+  SOC soccer_conmebol_copa_sudamericana: 0 fixtures — queried, 1 event(s) returned, none priced by fanduel
   SOC soccer_argentina_primera_division: 30 fixtures
-  SOC soccer_brazil_serie_b: 13 fixtures
+  SOC soccer_brazil_serie_b: 10 fixtures
   SOC soccer_chile_campeonato: 9 fixtures
   SOC soccer_epl: 10 fixtures
-  SOC soccer_spain_la_liga: 15 fixtures
-  SOCT soccer_spain_la_liga: 13 goal-total rungs
+  SOC soccer_spain_la_liga: 10 fixtures
   SOC soccer_italy_serie_a: 10 fixtures
   SOC soccer_germany_bundesliga: 9 fixtures
   SOC soccer_france_ligue_one: 9 fixtures
   SOC soccer_efl_champ: 12 fixtures
-  SOC soccer_england_league1: 0 fixtures — queried, 12 event(s) returned, none priced by fanduel
-  SOC soccer_england_league2: 0 fixtures — queried, 12 event(s) returned, none priced by fanduel
-  SOC soccer_england_efl_cup: 23 fixtures
+  SOC soccer_england_league1: 0 fixtures — queried, 22 event(s) returned, none priced by fanduel
+  SOC soccer_england_league2: 0 fixtures — queried, 11 event(s) returned, none priced by fanduel
+  SOC soccer_england_efl_cup: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_germany_bundesliga2: 9 fixtures
-  SOC soccer_germany_liga3: 0 fixtures — queried, 10 event(s) returned, none priced by fanduel
-  SOC soccer_germany_dfb_pokal: 0 fixtures — queried, 19 event(s) returned, none priced by fanduel
+  SOC soccer_germany_liga3: 0 fixtures — queried, 15 event(s) returned, none priced by fanduel
+  SOC soccer_germany_dfb_pokal: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_italy_serie_b: 10 fixtures
   SOC soccer_italy_coppa_italia: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_spain_segunda_division: 11 fixtures
   SOC soccer_france_ligue_two: 9 fixtures
-  SOC soccer_austria_bundesliga: 3 fixtures
-  SOC soccer_belgium_first_div: 0 fixtures — queried, 6 event(s) returned, none priced by fanduel
+  SOC soccer_austria_bundesliga: 5 fixtures
+  SOC soccer_belgium_first_div: 0 fixtures — queried, 9 event(s) returned, none priced by fanduel
   SOC soccer_denmark_superliga: 6 fixtures
-  SOC soccer_japan_j_league: 10 fixtures
-  SOC soccer_korea_kleague1: 0 fixtures — queried, 12 event(s) returned, none priced by fanduel
-  SOC soccer_poland_ekstraklasa: 7 fixtures
+  SOC soccer_japan_j_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_korea_kleague1: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_poland_ekstraklasa: 9 fixtures
   SOC soccer_russia_premier_league: 0 fixtures — queried, 8 event(s) returned, none priced by fanduel
-  SOC soccer_saudi_arabia_pro_league: 0 fixtures — queried, 9 event(s) returned, none priced by fanduel
-  SOC soccer_spl: 1 fixtures
-  SOC soccer_sweden_superettan: 8 fixtures
-  SOC soccer_uefa_nations_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_saudi_arabia_pro_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
+  SOC soccer_spl: 0 fixtures — queried, 6 event(s) returned, none priced by fanduel
+  SOC soccer_sweden_superettan: 7 fixtures
+  SOC soccer_uefa_nations_league: 0 fixtures — queried, 31 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  SOC soccer_uefa_champs_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
-  legs representable: ~2221 · API credits remaining 11140
+  SOC soccer_uefa_champs_league: 9 fixtures
+  legs representable: ~1380 · API credits remaining 16192
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -110,9 +109,7 @@ PASS  a quiet game does not flag
 PASS  a STALE slate flags nothing on the model arms -- four-day-old heat is not tonight's heat
 PASS  with no slate at all, a market main of 10+ still flags
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 56 of 1541 candidate legs have ALREADY STARTED (now 2026-08-19T17:39Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (NYRB-SLC) at -8000, 98.3%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -123,13 +120,11 @@ PASS  with no slate at all, a market main of 10+ still flags
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
 PASS  no Draw outcome survives into any pool
-PASS  every soccer offer is a derived Double Chance, never a 3-way side (337 soccer legs)
+PASS  every soccer offer is a derived Double Chance, never a 3-way side (270 soccer legs)
 PASS  derived DC probabilities are favourite-shaped, not draw-shaped
 PASS  the synthesized payout keeps LESS than fair -- the 80% shave is on, so a derived leg can under-promise but never over-promise
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 56 of 1541 candidate legs have ALREADY STARTED (now 2026-08-19T17:39Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (NYRB-SLC) at -8000, 98.3%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -143,9 +138,7 @@ PASS  EVERY soccer leg names both clubs -- 'San Lorenzo' alone is ten different 
 PASS  a totals leg inherits the fixture from its group's 3-way
 PASS  a 99.88% derived DC is outside the sane band -- that exact value (TPS Turku @ -102284, noon 8/14) failed the whole board build
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 56 of 1541 candidate legs have ALREADY STARTED (now 2026-08-19T17:39Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (NYRB-SLC) at -8000, 98.3%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -209,9 +202,7 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: MLBTool's kprops.json is not readable here -- K lambdas off. Every leg still prices from the market; nothing else is affected.
   board: MLBTool's slate.json is not readable here -- ML model opinions off. Every leg still prices from the market; nothing else is affected.
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
-  board: 56 of 1541 candidate legs have ALREADY STARTED (now 2026-08-19T17:39Z, newest event on the board 2026-09-02T06:00Z). These are not bettable and the cutoff is OFF -- they can appear on the ticket. Drop --anytime to exclude them.
+  board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (NYRB-SLC) at -8000, 98.3%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -222,8 +213,7 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
   board: fd_k_ladder.txt is EMPTY, so there are no strikeout legs. That is deliberate -- pitcher props are excluded. It is not a failed paste.
-  board: soccer group 'SOC LU-NF' has 6 outcomes -- not a 3-way, no DC derived, group skipped (rule 8)
-  board: 20 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (CF-OC) at -10000, 98.7%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
+  board: 1 shallow soccer OVER rung(s) read 90%+ (worst Over 0.5 goals (NYRB-SLC) at -8000, 98.3%). A 0-0 is 5-9% of matches, so these are the board's most overpriced legs while sorting as its safest. Do not lead a ticket with them.
   board: SOCCER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: UEFA Europa League -- NO KEY IN THE CATALOG, qualifying rounds included; UEFA Conference League -- NO KEY IN THE CATALOG, qualifying rounds included; NCAA soccer (men's and women's) -- not carried; club friendlies -- not carried; most women's competitions -- not carried
          also: Copa Libertadores and Copa Sudamericana ARE in the catalog but FanDuel is
          also: absent from the bookmakers list, so they return zero legs and look dark
@@ -234,66 +224,59 @@ PASS  and TODAY'S file is not scolded -- the note is earned, not automatic
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
 wrote BOARD.md
-  ATL@MIN    AJ Smith-Shawver        --  Taj Bradley            0.96    4.95
-  CWS@CHC    Sean Newcomb            --  Clay Holmes            0.33     6.3
-  AZ@BOS     Brandon Pfaadt         0.00 Payton Tolle           1.45    5.15
-  MIA@PHI    Sandy Alcantara        0.79 Aaron Nola             2.33     4.2  << GOPHER
-  NYY@BAL    Will Warren            1.88 Chris Bassitt          1.16    3.95  << GOPHER
-  SF@CLE     Matt Wilkinson          --  Parker Messick         1.19    4.95
-  STL@CIN    Matthew Liberatore     1.07 Chase Burns            0.32     3.8
-  TOR@TB     Max Scherzer           1.61 Drew Rasmussen         0.00    4.55
-  ATH@KC     None                    --  None                    --     5.05
-  SEA@MIL    Logan Gilbert          1.44 Dustin May             0.62     4.3
-  WSH@TEX    Cade Cavalli           1.69 Kumar Rocker           1.38    4.85
-  LAA@HOU    Walbert Ureña          0.34 Ethan Pecko             --      4.7
-  LAD@COL    Roki Sasaki            0.60 Kyle Freeland          1.10     6.1
+MLB form for 2026-09-30 -- 4 games
+
+  game       away starter            hr9 home starter            hr9  F5 env
+  PHI@ATL    Cristopher Sánchez     1.42 Tyler Mahle            1.17     3.8
+  CWS@HOU    Sean Burke             0.84 Hunter Brown           0.34     6.0
+  BOS@NYY    Sonny Gray             0.30 Max Fried              0.68    3.85
+  CHC@SD     Kevin Gausman          2.63 Nick Pivetta           0.83    5.15  << GOPHER
 
 wrote /home/runner/work/parlay/parlay/mlbform.json
-  OB Odense BK                LLWLLD  ppg 0.67  gf 0.67  ga 1.17  (last 2026-08-16)  [via Odense]
-  FC Midtjylland              DWWLDD  ppg 1.5   gf 1.83  ga 1.67  (last 2026-08-16)
-  Randers FC                  LWLDLD  ppg 0.83  gf 0.83  ga 2.17  (last 2026-08-16)
-  AC Horsens                  WLLD    ppg 1.0   gf 1.0   ga 1.5   (last 2026-08-16)
-  Lyngby                      DLDL    ppg 0.5   gf 1.25  ga 2.0   (last 2026-08-16)
-  FC Copenhagen               WWWWWD  ppg 2.67  gf 3.67  ga 1.0   (last 2026-08-16)
-  Viborg FF                   WDLWLL  ppg 1.17  gf 0.83  ga 1.5   (last 2026-08-14)  [via Viborg]
-  Brondby IF                  WWWDWL  ppg 2.17  gf 1.67  ga 1.17  (last 2026-08-17)
-  Silkeborg IF                LWLDLL  ppg 0.67  gf 0.67  ga 2.17  (last 2026-08-16)
-  Cracovia Kraków             WDLDDD  ppg 1.17  gf 1.0   ga 1.17  (last 2026-08-16)  [via Cracovia]
-  Wieczysta Kraków            WLL     ppg 1.0   gf 2.0   ga 2.33  (last 2026-08-15)
-  Korona Kielce               WDLDWL  ppg 1.33  gf 0.83  ga 1.0   (last 2026-08-15)
-  Motor Lublin                WLLDLD  ppg 0.83  gf 1.33  ga 2.33  (last 2026-08-16)
-  Piast Gliwice               LLWLLL  ppg 0.5   gf 1.5   ga 2.83  (last 2026-08-15)
-  Radomiak Radom              LLLWLL  ppg 0.5   gf 1.17  ga 3.5   (last 2026-08-14)
-  GKS Katowice                LWLDDD  ppg 1.0   gf 1.17  ga 1.17  (last 2026-08-16)
-  Pogoń Szczecin              WWLDWL  ppg 1.67  gf 1.5   ga 1.0   (last 2026-08-08)
-  Dundee FC                   WLWLWW  ppg 2.0   gf 1.67  ga 1.0   (last 2026-08-08)
-  Dundee United               LDDDLL  ppg 0.5   gf 0.33  ga 1.83  (last 2026-08-09)
+  Lyngby                      LDWDLD  ppg 1.0   gf 1.0   ga 1.5   (last 2026-09-18)
+  FC Copenhagen               WWWWWL  ppg 2.5   gf 2.17  ga 0.83  (last 2026-09-20)
+  FC Midtjylland              DWDWDW  ppg 2.0   gf 1.83  ga 0.83  (last 2026-09-19)
+  AGF Aarhus                  DLDLLD  ppg 0.5   gf 1.17  ga 2.0   (last 2026-09-20)  [via Aarhus]
+  SonderjyskE                 WDLLLL  ppg 0.67  gf 1.67  ga 2.83  (last 2026-09-20)
+  Wieczysta Kraków            DLDLLW  ppg 0.83  gf 1.5   ga 2.17  (last 2026-09-18)
+  GKS Katowice                WLLWWL  ppg 1.5   gf 2.0   ga 1.67  (last 2026-09-19)
+  Cracovia Kraków             LLLLWW  ppg 1.0   gf 1.5   ga 2.0   (last 2026-09-19)  [via Cracovia]
+  Lech Poznań                 WLWWWW  ppg 2.5   gf 2.5   ga 1.0   (last 2026-09-20)
+  Górnik Zabrze               DWWWWL  ppg 2.17  gf 1.5   ga 0.83  (last 2026-09-19)
+  Jagiellonia Białystok       LLWLWL  ppg 1.0   gf 1.5   ga 2.0   (last 2026-09-20)  [via Jagiellonia]
+  Piast Gliwice               LWWWDL  ppg 1.67  gf 2.0   ga 1.17  (last 2026-09-20)
+  Korona Kielce               WLWDWD  ppg 1.83  gf 1.5   ga 1.17  (last 2026-09-19)
+  Pogoń Szczecin              WWDDDW  ppg 2.0   gf 1.67  ga 0.83  (last 2026-09-20)
+  Motor Lublin                DLLLDW  ppg 0.83  gf 0.83  ga 1.33  (last 2026-09-19)
+  Radomiak Radom              LLDWDL  ppg 0.83  gf 0.5   ga 2.17  (last 2026-09-20)
+  Club Brugge                 WWWLWW  ppg 2.5   gf 2.0   ga 0.5   (last 2026-09-20)
+  PSV Eindhoven               LWWWWW  ppg 2.5   gf 3.67  ga 1.33  (last 2026-09-20)
 
-  UNMATCHED OR THIN (182): Bodø/Glimt; Hapoel Be'er Sheva; Sabah FK; NK Celje; ŠK Slovan Bratislava; AEK Athens; PFC Levski Sofia; Dinamo Zagreb; ADO Den Haag; SC Cambuur; Académico de Viseu; CS Maritimo; Erzurum BB; Çorum FK; Basaksehir; Amed SK; Iraklis FC; Aris Thessaloniki; Kalamata FC; Volos FC
+  UNMATCHED OR THIN (150): Amed SK; Erzurum BB; Basaksehir; AEK Athens; Levadiakos; Aris Thessaloniki; Volos FC; PAOK Thessaloniki; HJK Helsinki; KuPS Kuopio; SJK Seinäjoki; TPS Turku; Ilves Tampere; Bodø/Glimt; IK Start; KFUM; Atlanta United FC; D.C. United; LA Galaxy; Atletico Mineiro
   -- unmatched is a statement about the JOIN, not the team. Do not read absence as bad form.
-  persisted 608 teams with form into 'all' (361 of them board-joined)
+  persisted 656 teams with form into 'all' (334 of them board-joined)
+  NAME COLLISIONS across leagues (42): bolton (E1+E2); bromley (E2+E3); burnley (E0+E1); cambridge (E2+E3); cardiff (E1+E2); coventry (E0+E1); cremonese (I1+I2); elversberg (D1+D2); exeter (E2+E3); frosinone (I1+I2); girona (SP1+SP2); heidenheim (D1+D2); hull (E0+E1); ipswich (E0+E1); la coruna (SP1+SP2); le mans (F1+F2); leicester (E1+E2); lincoln (E1+E2); malaga (SP1+SP2); mallorca (SP1+SP2); metz (F1+F2); milton keynes dons (E2+E3); monza (I1+I2); nantes (F1+F2); northampton (E2+E3); notts county (E2+E3); oviedo (SP1+SP2); oxford (E1+E2); paderborn (D1+D2); pisa (I1+I2); port vale (E2+E3); rotherham (E2+E3); santander (SP1+SP2); schalke 04 (D1+D2); sheffield weds (E1+E2); st pauli (D1+D2); troyes (F1+F2); venezia (I1+I2); verona (I1+I2); west ham (E0+E1); wolfsburg (D1+D2); wolves (E0+E1)
 
-  361 matched / 182 not. wrote /home/runner/work/parlay/parlay/socform.json
+  334 matched / 150 not. wrote /home/runner/work/parlay/parlay/socform.json
   board: OTHER IS A FLOOR, not the schedule (checked 2026-08-13). Not visible here: NBA, NHL, NFL and college football are out of season in August and carry no key; boxing is pulled but FanDuel rarely prices the undercard
          recheck: python3 socdiag.py lists every catalog key, not only soccer
-  mlblines: 245 pregame leg(s) snapshotted, 1350 row(s) total (0 new)
+  mlblines: 96 pregame leg(s) snapshotted, 1446 row(s) total (96 new)
 
 7/7 checks pass
-MLB: 15 games on 2026-08-19
+MLB: 4 games on 2026-09-30
 soccer_concacaf_leagues_cup: 0 matches
-soccer_usa_mls: 30 matches
-soccer_sweden_allsvenskan: 7 matches
+soccer_usa_mls: 18 matches
+soccer_sweden_allsvenskan: 8 matches
 soccer_denmark_superliga: 6 matches
 soccer_spain_segunda_division: 11 matches
-soccer_spain_la_liga: 15 matches
+soccer_spain_la_liga: 20 matches
 soccer_efl_champ: 12 matches
-soccer_portugal_primeira_liga: 8 matches
-soccer_argentina_primera_division: 30 matches
-soccer_mexico_ligamx: 12 matches
-soccer_brazil_campeonato: 20 matches
+soccer_portugal_primeira_liga: 9 matches
+soccer_argentina_primera_division: 31 matches
+soccer_mexico_ligamx: 9 matches
+soccer_brazil_campeonato: 22 matches
+soccer_conmebol_copa_libertadores: 3 matches
+soccer_conmebol_copa_sudamericana: 2 matches
 wrote /home/runner/work/parlay/parlay/scores.json
-  DET@PIT    through5=  -  current=  2  inning=4  
-  SD@NYM     through5=  -  current=  0  inning=2  
-  ATL@MIN    through5=  -  current=  0  inning=1  
-  CWS@CHC    through5=  -  current=  0  inning=1  
-run conclusion: success at 2026-08-19 17:40
+  PHI@ATL    through5=  -  current=  0  inning=1  
+run conclusion: success at 2026-09-30 15:29
