@@ -62,6 +62,24 @@ LEAGUES = {
     'Bolivia Profesional': ['https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional'],
 }
 
+# Spanish Wikipedia publishes the same seasons as DATED round-by-round tables
+# ("Local | Resultado | Visita | Estadio | Fecha | Hora"). srcprobe round 9
+# found them after the matrix work was already done -- they are strictly
+# better, because order is what Recent Form needs and a matrix has none.
+# The matrix stays as the fallback: some leagues have one and not the other.
+ES_ROUNDS = {
+    'Chile Liga de Primera': ['https://es.wikipedia.org/wiki/Liga_de_Primera_2026'],
+    'Bolivia Profesional':   ['https://es.wikipedia.org/wiki/Primera_Divisi%C3%B3n_de_Bolivia_2026'],
+    'Peru Liga 1':           ['https://es.wikipedia.org/wiki/Liga1_2026_(Per%C3%BA)'],
+    'Colombia Primera A':    ['https://es.wikipedia.org/wiki/Categor%C3%ADa_Primera_A_2026',
+                              'https://es.wikipedia.org/wiki/Torneo_Apertura_2026_(Colombia)'],
+}
+
+MONTHS = {'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4, 'mayo': 5,
+          'junio': 6, 'julio': 7, 'agosto': 8, 'septiembre': 9, 'setiembre': 9,
+          'octubre': 10, 'noviembre': 11, 'diciembre': 12}
+
+YEAR = 2026
 RUNGS = (1.5, 2.5, 3.5, 4.5, 5.5)
 SCORE = re.compile(r'^(\d{1,2})\s*[-–—]\s*(\d{1,2})$')
 DASH = re.compile(r'^[\s—–-]*$')       # '—', '–', '-', or empty
@@ -159,6 +177,85 @@ def read_matrix(rows):
     return out
 
 
+ES_SCORE = re.compile(r'^(\d{1,2})\s*[-\u2013\u2014:]\s*(\d{1,2})$')
+ES_DATE = re.compile(r'(\d{1,2})\s*de\s*([a-z\u00e1\u00e9\u00ed\u00f3\u00fa]+)', re.I)
+
+
+def parse_es_date(cell, year):
+    """'30 de enero' -> '2026-01-30'. Returns None rather than a guess."""
+    m = ES_DATE.search(cell or '')
+    if not m:
+        return None
+    mon = MONTHS.get(m.group(2).lower())
+    if not mon:
+        return None
+    return f'{year:04d}-{mon:02d}-{int(m.group(1)):02d}'
+
+
+def read_rounds(tables, year):
+    """[(date, home, away, hg, ag)] from Spanish round-by-round tables.
+
+    A row only counts when it has BOTH a parsed score and a parsed date --
+    a fixture list contains future games with empty scores, and a dateless
+    row is exactly the thing this reader exists to avoid producing."""
+    out, undated = [], 0
+    for _head, rows in tables:
+        if not rows or not rows[0]:
+            continue
+        hdr = [c.strip().lower() for c in rows[0]]
+        def col(*names):
+            for i, c in enumerate(hdr):
+                if any(c.startswith(n) for n in names):
+                    return i
+            return None
+        ih, ir, ia = col('local'), col('resultado'), col('visita')
+        idt = col('fecha')
+        # 'Fecha' is both "date" and "matchday" in Spanish. The header row of a
+        # round table is literally 'Fecha 1', so the DATE column is the one that
+        # is not the first column and parses as a date -- checked per row below.
+        if ih is None or ir is None or ia is None:
+            continue
+        for row in rows[1:]:
+            if max(ih, ir, ia) >= len(row):
+                continue
+            m = ES_SCORE.match(row[ir].strip())
+            if not m:
+                continue
+            date = None
+            for j in range(len(row) - 1, -1, -1):
+                if j in (ih, ir, ia):
+                    continue
+                date = parse_es_date(row[j], year)
+                if date:
+                    break
+            if not date:
+                undated += 1
+                continue
+            out.append((date, row[ih].strip(), row[ia].strip(),
+                        int(m.group(1)), int(m.group(2))))
+    return out, undated
+
+
+def form_table(dated, last=5):
+    """Per team: the last N results newest-first, from DATED rows only."""
+    by = {}
+    for d, h, a, hg, ag in sorted(dated):
+        by.setdefault(h, []).append((d, 'W' if hg > ag else ('D' if hg == ag else 'L'), hg, ag, a, 'H'))
+        by.setdefault(a, []).append((d, 'W' if ag > hg else ('D' if hg == ag else 'L'), ag, hg, h, 'A'))
+    out = {}
+    for team, rows in by.items():
+        rows = rows[-last:][::-1]
+        out[team] = {
+            'form': ''.join(r[1] for r in rows),
+            'n': len(rows),
+            'gf': sum(r[2] for r in rows),
+            'ga': sum(r[3] for r in rows),
+            'newest': rows[0][0] if rows else None,
+            'matches': [{'date': r[0], 'res': r[1], 'gf': r[2], 'ga': r[3],
+                         'opp': r[4], 'side': r[5]} for r in rows]}
+    return out
+
+
 def rates(matches):
     """socbase-shaped rates. Deliberately no 'form' key -- see the docstring."""
     n = len(matches)
@@ -228,10 +325,31 @@ def build(fetch=get):
             report.append(f'  EMPTY   {league}: page found, no usable matrix'
                           + (f' (refused {len(refused)})' if refused else ''))
             continue
-        doc[league] = {'slug': used, 'rates': rates(matches),
-                       'splits': splits(matches),
-                       'matches': [list(m) for m in matches],
-                       'refused_matrices': refused}
+        entry = {'slug': used, 'rates': rates(matches),
+                 'splits': splits(matches),
+                 'matches': [list(m) for m in matches],
+                 'refused_matrices': refused}
+        # DATED ROUNDS, if this league publishes them in Spanish. Kept beside
+        # the matrix rather than replacing it: the matrix is the complete
+        # season, the rounds may lag, and only the rounds can carry form.
+        for u in ES_ROUNDS.get(league, []):
+            try:
+                eh = fetch(u)
+            except Exception as e:
+                report.append(f'    es-rounds {league}: {u.rsplit("/", 1)[-1]} -> {type(e).__name__}')
+                continue
+            ep = Tables()
+            ep.feed(eh)
+            dated, undated = read_rounds(ep.out, YEAR)
+            if dated:
+                entry['dated'] = [list(d) for d in dated]
+                entry['form'] = form_table(dated)
+                entry['es_page'] = u
+                report.append(f'    es-rounds {league}: {len(dated)} dated results'
+                              + (f' ({undated} rows had a score but no date)' if undated else ''))
+                break
+            report.append(f'    es-rounds {league}: page read, no dated rows')
+        doc[league] = entry
         r = doc[league]['rates']['result']
         report.append(f'  OK      {league}: {r["n"]} matches  home {r["home"]:.3f} '
                       f'draw {r["draw"]:.3f} away {r["away"]:.3f} goals {r["mean_goals"]}'
@@ -292,6 +410,26 @@ def selftest():
     chk(s['home']['A']['p'] == 2 and s['home']['A']['w'] == 1, "A's home record is 2 played, 1 won")
     chk(s['away']['A']['p'] == 1 and s['away']['A']['l'] == 1, "A's away record is separate from home")
     chk(len(s['h2h']['A|B']) == 3, 'head-to-head keys both orientations into one pair')
+
+    rt = [(None, [['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora'],
+                  ['Alpha', '2-1', 'Beta', 'Ground', '30 de enero', '20:00'],
+                  ['Beta', '0 \u2013 0', 'Gamma', 'Ground', '6 de febrero', '20:00'],
+                  ['Gamma', '', 'Alpha', 'Ground', '13 de marzo', '20:00'],
+                  ['Alpha', '1-0', 'Gamma', 'Ground', 'TBD', '20:00']])]
+    d, und = read_rounds(rt, 2026)
+    chk(len(d) == 2, f'only rows with BOTH a score and a date are taken, got {len(d)}')
+    chk(und == 1, 'a scored row with an unparseable date is COUNTED, not silently dropped')
+    chk(d[0] == ('2026-01-30', 'Alpha', 'Beta', 2, 1), f'row parses in full: {d[0]}')
+    chk(parse_es_date('6 de febrero', 2026) == '2026-02-06', 'spanish date -> iso')
+    chk(parse_es_date('sometime', 2026) is None, 'an unparseable date returns None, never a guess')
+
+    f = form_table([('2026-01-30', 'Alpha', 'Beta', 2, 1),
+                    ('2026-02-06', 'Beta', 'Alpha', 3, 0),
+                    ('2026-03-01', 'Alpha', 'Beta', 1, 1)])
+    chk(f['Alpha']['form'] == 'DLW', f"form is NEWEST FIRST across home and away, got {f['Alpha']['form']}")
+    chk(f['Beta']['form'] == 'DWL', 'the same fixtures read from the other side')
+    chk(f['Alpha']['matches'][0]['date'] == '2026-03-01', 'newest match leads the list')
+    chk(f['Alpha']['n'] == 3 and f['Alpha']['gf'] == 3, 'form counts goals for from the right side')
 
     def fake(url):
         if 'Peru' in url:
