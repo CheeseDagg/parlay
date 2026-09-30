@@ -130,6 +130,9 @@ def looks_like_fixtures(rows):
 import urllib.parse
 
 API_ES = "https://es.wikipedia.org/w/api.php"
+API_EN = "https://en.wikipedia.org/w/api.php"
+
+import socextra   # use the ROWSPAN-AWARE parser, not srcprobe's flat copy
 
 
 def api(base, **kw):
@@ -146,61 +149,41 @@ def fulltext(base, q, n=8):
         return [f"<{type(e).__name__}>"]
 
 
-SC = re.compile(r"^(\d{1,2})\s*[-\u2013\u2014:]\s*(\d{1,2})$")
-DATE = re.compile(r"(\d{1,2})\s*de\s*([a-z\u00e1\u00e9\u00ed\u00f3\u00fa]+)", re.I)
-
-print("=== ROUND 10a: WHY do half the scored rows have no date? ===")
-for tag, url in (("Chile", "https://es.wikipedia.org/wiki/Liga_de_Primera_2026"),
-                 ("Colombia", "https://es.wikipedia.org/wiki/Categor%C3%ADa_Primera_A_2026")):
+def look(url, label):
     try:
         html = get(url)
     except Exception as e:
-        print(f"  {tag}: {type(e).__name__}"); continue
-    p = Tables(); p.feed(html)
-    shown = 0
-    for h, rows in p.out:
-        hrow = None
-        for k in range(min(3, len(rows))):
-            cells = [c.strip().lower() for c in rows[k]]
-            if any(c.startswith("local") for c in cells) and any(c.startswith("resultado") for c in cells):
-                hrow = k; break
-        if hrow is None:
-            continue
-        for row in rows[hrow + 1:]:
-            has_score = any(SC.match(c.strip()) for c in row)
-            has_date = any(DATE.search(c) for c in row)
-            if has_score and not has_date and shown < 8:
-                shown += 1
-                print(f"  {tag} [{(h or '?')[:20]}] hdr={rows[hrow]}")
-                print(f"     ROW({len(row)}): {row}")
-    if not shown:
-        print(f"  {tag}: every scored row also carried a date")
+        print(f"  {label}: {type(e).__name__}")
+        return
+    p = socextra.Tables(); p.feed(html)
+    mats = [(h, t) for h, t in p.out if socextra.is_matrix(t)]
+    dated, und = socextra.read_rounds(p.out, 2026)
+    print(f"  {label}: {len(p.out)} tables | {len(mats)} matrix | "
+          f"{len(dated)} dated rows ({und} scored-but-undated)")
+    for h, t in mats[:1]:
+        ok, bad = socextra.diagonal_ok(t)
+        print(f"      matrix [{(h or '?')[:24]}] {len(t)}x{len(t[0])} diagonal_ok={ok}")
+    for d in dated[:2]:
+        print(f"      dated: {d}")
 
-print()
-print("=== ROUND 10b: Colombia Finalizacion + Peru round pages ===")
-for q in ("Torneo Finalizacion 2026 Colombia",
-          "Categoria Primera A 2026 Colombia",
-          "Liga1 2026 Peru Torneo Clausura",
-          "Liga1 2026 Peru"):
-    print(f"  {q!r}: {fulltext(API_ES, q)[:6]}")
 
-print()
-print("=== ROUND 10c: do those pages carry Local/Resultado tables? ===")
-for slug in ("Torneo_Finalizaci%C3%B3n_2026_(Colombia)",
-             "Torneo_Apertura_2026_(Colombia)",
-             "Liga1_2026_(Per%C3%BA)",
-             "Categor%C3%ADa_Primera_A_2026"):
-    try:
-        html = get(f"https://es.wikipedia.org/wiki/{slug}")
-    except Exception as e:
-        print(f"  {slug}: {type(e).__name__}"); continue
-    p = Tables(); p.feed(html)
-    nround = ndated = 0
-    for h, rows in p.out:
-        for k in range(min(3, len(rows))):
-            cells = [c.strip().lower() for c in rows[k]]
-            if any(c.startswith("local") for c in cells) and any(c.startswith("resultado") for c in cells):
-                nround += 1
-                ndated += sum(1 for r in rows[k+1:] if any(DATE.search(c) for c in r))
-                break
-    print(f"  {slug}: {len(p.out)} tables, {nround} round-tables, {ndated} rows with a date")
+print("=== ROUND 11: USL, Uruguay, El Salvador with the ROWSPAN-AWARE parser ===")
+print("-- USL (its 2025 page had a results table the flat parser mangled)")
+for u, lab in (("https://en.wikipedia.org/wiki/2026_USL_Championship_season", "USL 2026"),
+               ("https://en.wikipedia.org/wiki/2025_USL_Championship_season", "USL 2025")):
+    look(u, lab)
+
+print("-- Uruguay per-tournament pages")
+for q in ("Torneo Apertura 2026 Uruguay", "Torneo Clausura 2026 Uruguay",
+          "Torneo Intermedio 2026 Uruguay"):
+    print(f"   search {q!r}: {fulltext(API_ES, q)[:5]}")
+for slug in ("Torneo_Apertura_2026_(Uruguay)", "Torneo_Clausura_2026_(Uruguay)",
+             "Torneo_Intermedio_2026"):
+    look(f"https://es.wikipedia.org/wiki/{slug}", slug)
+
+print("-- El Salvador")
+for q in ("Primera Division de El Salvador 2026 Apertura",):
+    print(f"   search {q!r}: {fulltext(API_ES, q)[:6]}")
+for slug in ("Torneo_Apertura_2026_(El_Salvador)",
+             "Primera_Divisi%C3%B3n_de_F%C3%BAtbol_de_El_Salvador"):
+    look(f"https://es.wikipedia.org/wiki/{slug}", slug)
