@@ -1,0 +1,34 @@
+name: Player signals
+on:
+  workflow_dispatch: {}
+  push: { branches: [main], paths: ['experiments/SOCPLAYERS.txt'] }
+permissions: { contents: write }
+concurrency: { group: parlay-socplayers, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          set -o pipefail
+          python3 socplayers.py --selftest | tail -2
+          python3 socplayers.py 2>&1 | tee socplayers.new
+          test -s socplayers.new
+          mv socplayers.new socplayers.txt
+      - run: |
+          git config user.name  "parlay-bot"
+          git config user.email "parlay-bot@users.noreply.github.com"
+          mkdir -p /tmp/pub && cp socplayers.txt socplayers.json /tmp/pub/
+          for a in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/pub/socplayers.txt /tmp/pub/socplayers.json .
+            git add socplayers.txt socplayers.json
+            git diff --cached --quiet && exit 0
+            git commit -m "player signals $(date -u +%F\ %H:%M)"
+            git push origin HEAD:main && exit 0
+          done
+          exit 1
