@@ -202,20 +202,34 @@ def read_rounds(tables, year):
     for _head, rows in tables:
         if not rows or not rows[0]:
             continue
-        hdr = [c.strip().lower() for c in rows[0]]
+        # THE HEADER IS NOT ALWAYS ROW 0. These tables open with a one-cell
+        # TITLE row ('Fecha 1' = matchday 1) and put the real header beneath
+        # it. Reading row 0 as the header found 'fecha 1', matched no columns,
+        # and skipped every table on the page while reporting "no dated rows"
+        # -- a parser that looked like an absent source. Find the header row.
+        hrow = None
+        for k in range(min(3, len(rows))):
+            cells = [c.strip().lower() for c in rows[k]]
+            if any(c.startswith('local') for c in cells) and \
+               any(c.startswith('resultado') for c in cells):
+                hrow = k
+                break
+        if hrow is None:
+            continue
+        hdr = [c.strip().lower() for c in rows[hrow]]
+
         def col(*names):
             for i, c in enumerate(hdr):
                 if any(c.startswith(n) for n in names):
                     return i
             return None
         ih, ir, ia = col('local'), col('resultado'), col('visita')
-        idt = col('fecha')
         # 'Fecha' is both "date" and "matchday" in Spanish. The header row of a
         # round table is literally 'Fecha 1', so the DATE column is the one that
         # is not the first column and parses as a date -- checked per row below.
         if ih is None or ir is None or ia is None:
             continue
-        for row in rows[1:]:
+        for row in rows[hrow + 1:]:
             if max(ih, ir, ia) >= len(row):
                 continue
             m = ES_SCORE.match(row[ir].strip())
@@ -416,6 +430,13 @@ def selftest():
                   ['Beta', '0 \u2013 0', 'Gamma', 'Ground', '6 de febrero', '20:00'],
                   ['Gamma', '', 'Alpha', 'Ground', '13 de marzo', '20:00'],
                   ['Alpha', '1-0', 'Gamma', 'Ground', 'TBD', '20:00']])]
+    titled = [(None, [['Fecha 1'],
+                      ['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora'],
+                      ['U de Chile', '0-0', 'Audax', 'Nacional', '30 de enero', '20:00']])]
+    dt, _ = read_rounds(titled, 2026)
+    chk(len(dt) == 1 and dt[0][1] == 'U de Chile',
+        'a one-cell TITLE row above the header does not hide the table')
+
     d, und = read_rounds(rt, 2026)
     chk(len(d) == 2, f'only rows with BOTH a score and a date are taken, got {len(d)}')
     chk(und == 1, 'a scored row with an unparseable date is COUNTED, not silently dropped')
