@@ -7,21 +7,21 @@ socplayers
   openfootball Germany Bundesliga 2025-26: 293 matches with scorers, 272 players, 0 live streaks, 1 too old to call form
   openfootball Italy Serie A 2026-27: 0 matches, NO goal events yet (backfilled after the season)
   openfootball Italy Serie A 2025-26: 343 matches with scorers, 297 players, 0 live streaks
-  understat England Premier League: 421 players, 13 rate signals
-  understat Spain La Liga: 461 players, 15 rate signals
-  understat Germany Bundesliga: 367 players, 10 rate signals
-  understat Italy Serie A: 448 players, 8 rate signals
+  understat England Premier League: 421 players, 60 rate signals
+  understat Spain La Liga: 461 players, 53 rate signals
+  understat Germany Bundesliga: 367 players, 5 rate signals
+  understat Italy Serie A: 448 players, 46 rate signals
 
-wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 46 rates
-  Erling Haaland           5 goals in 5 games — a goal a game or better         Manchester City
-  Erling Haaland           has played 450 of a possible 450 minutes             Manchester City
-  Pascal Groß              has played 450 of a possible 450 minutes             Brighton
-  Bruno Fernandes          has played 450 of a possible 450 minutes             Manchester United
-  Kevin Schade             has played 450 of a possible 450 minutes             Brentford
-  Morgan Rogers            has played 444 of a possible 450 minutes             Chelsea
-  João Pedro               has played 360 of a possible 360 minutes             Chelsea
-  Kai Havertz              has played 442 of a possible 450 minutes             Arsenal
-  Bryan Mbeumo             has played 450 of a possible 450 minutes             Manchester United
-  Cole Palmer              has played 445 of a possible 450 minutes             Chelsea
-  Leif Davis               has played 450 of a possible 450 minutes             Ipswich
-  Vitaly Janelt            has played 450 of a possible 450 minutes             Brentford
+wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 164 rates
+  Erling Haaland           leads the league with 5 goals in 5 games             Manchester City
+  Alexander Isak           is among the top scorers with 4 goals in 5 games     Liverpool
+  Pascal Groß              is among the top scorers with 3 goals in 5 games     Brighton
+  Erling Haaland           has played every minute of all 5 games               Manchester City
+  Pascal Groß              has played every minute of all 5 games               Brighton
+  Bruno Fernandes          has played every minute of all 5 games               Manchester United
+  Kevin Schade             has played every minute of all 5 games               Brentford
+  Bryan Mbeumo             has played every minute of all 5 games               Manchester United
+  Leif Davis               has played every minute of all 5 games               Ipswich
+  Vitaly Janelt            has played every minute of all 5 games               Brentford
+  Antoine Semenyo          has played every minute of all 5 games               Manchester City
+  James Tarkowski          has played every minute of all 5 games               Everton
