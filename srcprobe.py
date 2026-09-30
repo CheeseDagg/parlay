@@ -127,64 +127,90 @@ def looks_like_fixtures(rows):
     return ("date" in h) and any(k in h for k in ("score", "result", "home", "away"))
 
 
-SEARCH = "https://en.wikipedia.org/w/api.php?action=opensearch&search={}&limit=6&format=json"
+API_EN = "https://en.wikipedia.org/w/api.php"
+API_ES = "https://es.wikipedia.org/w/api.php"
 
-def find_slug(q):
-    """Ask Wikipedia what the page is actually called instead of guessing."""
+
+def api(base, **kw):
     import json as _j, urllib.parse
+    kw.setdefault("format", "json")
+    url = base + "?" + urllib.parse.urlencode(kw)
+    return _j.loads(get(url, timeout=25))
+
+
+def fulltext(base, q, n=8):
+    """action=query&list=search -- real full-text search. opensearch ranked
+    2012 above 2026 for these leagues, which is how round 6 nearly graded a
+    2026 slate against a fourteen-year-old season."""
     try:
-        raw = get(SEARCH.format(urllib.parse.quote(q)), timeout=20)
-        titles = _j.loads(raw)[1]
-        return [t.replace(" ", "_") for t in titles]
+        r = api(base, action="query", list="search", srsearch=q, srlimit=n)
+        return [h["title"] for h in r["query"]["search"]]
     except Exception as e:
+        return [f"<{type(e).__name__}>"]
+
+
+def links_2026(base, title):
+    """Every outgoing link on a league's parent article that names 2026."""
+    try:
+        r = api(base, action="parse", page=title, prop="links")
+        return [l["*"] for l in r["parse"]["links"]
+                if "2026" in l["*"] and l.get("exists") is not None]
+    except Exception:
         return []
 
-WANT = {
-    "Chile Primera":    "2026 Chilean Primera Division season",
-    "Uruguay Primera":  "2026 Uruguayan Primera Division season",
-    "Bolivia Primera":  "2026 Bolivian Primera Division season",
-    "USL Championship": "2026 USL Championship season",
-    "El Salvador":      "2026 Salvadoran Primera Division",
+
+print("=== ROUND 7: CHILE + URUGUAY, EN AND ES ===")
+QUERIES = {
+    "Chile":   [(API_EN, "2026 Chilean Primera Division"),
+                (API_ES, "Campeonato Nacional 2026 Chile"),
+                (API_ES, "Primera Division de Chile 2026")],
+    "Uruguay": [(API_EN, "2026 Uruguayan Primera Division"),
+                (API_ES, "Campeonato Uruguayo 2026"),
+                (API_ES, "Primera Division de Uruguay 2026")],
+    "Bolivia": [(API_ES, "Division de Futbol Profesional 2026"),
+                (API_EN, "2026 Bolivian Primera Division")],
 }
+for country, qs in QUERIES.items():
+    print(f"\n-- {country}")
+    for base, q in qs:
+        wiki = "en" if base is API_EN else "es"
+        print(f"   [{wiki}] {q!r}")
+        for t in fulltext(base, q)[:6]:
+            print(f"        {t}")
 
-print("=== SLUG RESOLUTION VIA WIKIPEDIA SEARCH ===")
-resolved = {}
-for league, q in WANT.items():
-    cands = find_slug(q)
-    print(f"  {league:20} -> {cands}")
-    for c in cands:
-        try:
-            html = get(f"https://en.wikipedia.org/wiki/{c}")
-        except Exception:
-            continue
-        p = Tables(); p.feed(html)
-        mats = [(h, t) for h, t in p.out if looks_like_matrix(t)[0]]
-        if mats:
-            resolved[league] = (c, mats)
-            break
+print("\n=== PARENT-ARTICLE 2026 LINKS ===")
+for base, page in ((API_ES, "Primera Divisi\u00f3n de Chile"),
+                   (API_ES, "Primera Divisi\u00f3n de Uruguay"),
+                   (API_EN, "Chilean Primera Divisi\u00f3n"),
+                   (API_EN, "Uruguayan Primera Divisi\u00f3n")):
+    wiki = "en" if base is API_EN else "es"
+    ls = links_2026(base, page)
+    print(f"  [{wiki}] {page}: {ls[:10] if ls else 'none'}")
 
-print()
-print("=== WHAT RESOLVED ===")
-for league, (slug, mats) in resolved.items():
-    tot = sum(looks_like_matrix(t)[1] for _, t in mats)
-    print(f"  {league:20} {slug:52} {len(mats)} matrix/-es, {tot} scorecells")
-    for h, t in mats[:2]:
-        print(f"      [{h[:30]}] {len(t)}x{len(t[0])}")
-        for row in t[:2]:
-            print(f"        {' | '.join(c[:16] for c in row[:8])}")
-for league in WANT:
-    if league not in resolved:
-        print(f"  {league:20} NO MATRIX FOUND")
-
-print()
-print("=== USL: every table on the page ===")
-try:
-    html = get("https://en.wikipedia.org/wiki/2026_USL_Championship_season")
+print("\n=== DATED FIXTURE TABLES? (what Recent Form needs) ===")
+# A results MATRIX has no dates. Do these pages carry a per-round fixture
+# list with a date column anywhere? Check the leagues we already parse.
+DATE_RE = re.compile(r"(date|fecha)", re.I)
+for wiki, slug in (("en", "2026_Categor%C3%ADa_Primera_A_season"),
+                   ("es", "Categor%C3%ADa_Primera_A_2026"),
+                   ("en", "2026_Liga_1_(Peru)"),
+                   ("es", "Liga_1_2026")):
+    try:
+        html = get(f"https://{wiki}.wikipedia.org/wiki/{slug}")
+    except Exception as e:
+        print(f"  [{wiki}] {slug}: {type(e).__name__}")
+        continue
     p = Tables(); p.feed(html)
+    hits = 0
     for h, t in p.out:
-        if not t: continue
-        ism, n = looks_like_matrix(t)
-        print(f"  [{h[:34]:34}] {len(t):3}x{len(t[0]):2} scorecells={n:4} {'<< MATRIX' if ism else ''}")
-        print(f"        hdr: {' | '.join(c[:14] for c in t[0][:10])}")
-except Exception as e:
-    print("  FAIL", e)
+        if not t or not t[0]:
+            continue
+        hdr = " | ".join(t[0])
+        if DATE_RE.search(hdr) and len(t) > 6:
+            hits += 1
+            print(f"  [{wiki}] {slug}")
+            print(f"        DATED TABLE [{h[:28]}] {len(t)} rows :: {hdr[:90]}")
+            for row in t[1:3]:
+                print(f"          {' | '.join(c[:20] for c in row[:7])}")
+    if not hits:
+        print(f"  [{wiki}] {slug}: no dated table (matrix only)")

@@ -4,3 +4,4 @@ probe 2026-08-13T19:27Z nfl
 probe 2026-08-13T20:31Z sbr
 2026-09-30T15:44Z round 5: leagues the board cannot price
 2026-09-30T15:45Z round 6: resolve slugs via search API
+2026-09-30T15:56Z round 7: chile/uruguay slugs + dated-fixture hunt
