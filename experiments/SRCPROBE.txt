@@ -7,3 +7,4 @@ probe 2026-08-13T20:31Z sbr
 2026-09-30T15:56Z round 7: chile/uruguay slugs + dated-fixture hunt
 2026-09-30T15:57Z round 8: uruguay table shapes
 2026-09-30T16:18Z round 9: dated/ordered source for Recent Form
+2026-09-30T16:24Z round 10: undated rows + colombia/peru pages

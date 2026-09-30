@@ -130,16 +130,15 @@ def looks_like_fixtures(rows):
 import urllib.parse
 
 API_ES = "https://es.wikipedia.org/w/api.php"
-API_EN = "https://en.wikipedia.org/w/api.php"
 
 
 def api(base, **kw):
-    import json as _j, urllib.parse
+    import json as _j
     kw.setdefault("format", "json")
     return _j.loads(get(base + "?" + urllib.parse.urlencode(kw), timeout=25))
 
 
-def fulltext(base, q, n=6):
+def fulltext(base, q, n=8):
     try:
         r = api(base, action="query", list="search", srsearch=q, srlimit=n)
         return [h["title"] for h in r["query"]["search"]]
@@ -147,69 +146,61 @@ def fulltext(base, q, n=6):
         return [f"<{type(e).__name__}>"]
 
 
-SC = re.compile(r"^\d{1,2}\s*[-\u2013\u2014:]\s*\d{1,2}$")
-ROUND_HDR = re.compile(r"(jornada|fecha|round|local|visitante)", re.I)
+SC = re.compile(r"^(\d{1,2})\s*[-\u2013\u2014:]\s*(\d{1,2})$")
+DATE = re.compile(r"(\d{1,2})\s*de\s*([a-z\u00e1\u00e9\u00ed\u00f3\u00fa]+)", re.I)
 
-print("=== ROUND 9: a DATED or ORDERED results source ===")
-print("Recent Form needs order. A matrix has none. Two routes tested:")
-print("  (a) Spanish Wikipedia round-by-round pages")
-print("  (b) the odds API /scores endpoint for these league keys\n")
-
-print("--- (a) es.wikipedia season pages ---")
-QS = {
-  "Colombia": "Categoria Primera A 2026 Torneo Finalizacion",
-  "Peru":     "Liga 1 2026 Peru temporada",
-  "Chile":    "Liga de Primera 2026",
-  "Bolivia":  "Division Profesional 2026 Bolivia",
-}
-for country, q in QS.items():
-    titles = fulltext(API_ES, q)
-    print(f"  {country}: {titles[:5]}")
-    for t in titles[:3]:
-        slug = t.replace(" ", "_")
-        try:
-            html = get(f"https://es.wikipedia.org/wiki/{urllib.parse.quote(slug)}")
-        except Exception as e:
-            continue
-        p = Tables(); p.feed(html)
-        dated = 0
-        for h, rows in p.out:
-            if not rows or not rows[0]:
-                continue
-            hdr = " | ".join(rows[0])
-            nsc = sum(1 for r in rows for c in r if SC.match(c.strip()))
-            if ROUND_HDR.search(hdr) and nsc >= 5:
-                dated += 1
-                if dated <= 2:
-                    print(f"      [{t}] ROUND TABLE [{(h or '?')[:24]}] {len(rows)}r scores={nsc}")
-                    print(f"         hdr: {hdr[:88]}")
-                    for row in rows[1:3]:
-                        print(f"         {' | '.join(c[:18] for c in row[:8])}")
-        if dated:
-            break
-
-print("\n--- (b) odds API /scores for these leagues ---")
-import os
-key = os.environ.get("ODDS_API_KEY", "")
-if not key:
-    print("  NO ODDS_API_KEY in this job -- cannot test")
-else:
+print("=== ROUND 10a: WHY do half the scored rows have no date? ===")
+for tag, url in (("Chile", "https://es.wikipedia.org/wiki/Liga_de_Primera_2026"),
+                 ("Colombia", "https://es.wikipedia.org/wiki/Categor%C3%ADa_Primera_A_2026")):
     try:
-        cat = api_url = None
-        raw = get(f"https://api.the-odds-api.com/v4/sports/?apiKey={key}&all=true")
-        import json as _j
-        cat = _j.loads(raw)
-        socc = [s["key"] for s in cat if s.get("group") == "Soccer"]
-        for want in ("colombia", "peru", "chile", "bolivia", "uruguay", "usl"):
-            hits = [k for k in socc if want in k]
-            print(f"  catalog '{want}': {hits if hits else 'ABSENT'}")
-        for k in [x for x in socc if any(w in x for w in ("colombia", "peru", "chile", "bolivia"))]:
-            try:
-                sc = _j.loads(get(f"https://api.the-odds-api.com/v4/sports/{k}/scores/?daysFrom=3&apiKey={key}"))
-                done = [e for e in sc if e.get("completed")]
-                print(f"    {k}: {len(sc)} events, {len(done)} completed, "
-                      f"sample={[(e.get('home_team'), e.get('commence_time')[:10]) for e in done[:2]]}")
-            except Exception as e:
-                print(f"    {k}: scores -> {type(e).__name__}")
+        html = get(url)
     except Exception as e:
-        print("  catalog fetch failed:", type(e).__name__, str(e)[:80])
+        print(f"  {tag}: {type(e).__name__}"); continue
+    p = Tables(); p.feed(html)
+    shown = 0
+    for h, rows in p.out:
+        hrow = None
+        for k in range(min(3, len(rows))):
+            cells = [c.strip().lower() for c in rows[k]]
+            if any(c.startswith("local") for c in cells) and any(c.startswith("resultado") for c in cells):
+                hrow = k; break
+        if hrow is None:
+            continue
+        for row in rows[hrow + 1:]:
+            has_score = any(SC.match(c.strip()) for c in row)
+            has_date = any(DATE.search(c) for c in row)
+            if has_score and not has_date and shown < 8:
+                shown += 1
+                print(f"  {tag} [{(h or '?')[:20]}] hdr={rows[hrow]}")
+                print(f"     ROW({len(row)}): {row}")
+    if not shown:
+        print(f"  {tag}: every scored row also carried a date")
+
+print()
+print("=== ROUND 10b: Colombia Finalizacion + Peru round pages ===")
+for q in ("Torneo Finalizacion 2026 Colombia",
+          "Categoria Primera A 2026 Colombia",
+          "Liga1 2026 Peru Torneo Clausura",
+          "Liga1 2026 Peru"):
+    print(f"  {q!r}: {fulltext(API_ES, q)[:6]}")
+
+print()
+print("=== ROUND 10c: do those pages carry Local/Resultado tables? ===")
+for slug in ("Torneo_Finalizaci%C3%B3n_2026_(Colombia)",
+             "Torneo_Apertura_2026_(Colombia)",
+             "Liga1_2026_(Per%C3%BA)",
+             "Categor%C3%ADa_Primera_A_2026"):
+    try:
+        html = get(f"https://es.wikipedia.org/wiki/{slug}")
+    except Exception as e:
+        print(f"  {slug}: {type(e).__name__}"); continue
+    p = Tables(); p.feed(html)
+    nround = ndated = 0
+    for h, rows in p.out:
+        for k in range(min(3, len(rows))):
+            cells = [c.strip().lower() for c in rows[k]]
+            if any(c.startswith("local") for c in cells) and any(c.startswith("resultado") for c in cells):
+                nround += 1
+                ndated += sum(1 for r in rows[k+1:] if any(DATE.search(c) for c in r))
+                break
+    print(f"  {slug}: {len(p.out)} tables, {nround} round-tables, {ndated} rows with a date")
