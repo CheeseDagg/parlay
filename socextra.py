@@ -323,10 +323,14 @@ def cross_check(matrix, dated):
     """
     from collections import defaultdict
     mi, di = defaultdict(list), defaultdict(list)
+    collide = {}
     for h, a, hg, ag in matrix:
-        mi[(norm_team(h), norm_team(a))].append((hg, ag))
+        for nm in (h, a):
+            collide.setdefault(join_key(nm), set()).add(norm_team(nm))
+        mi[(join_key(h), join_key(a))].append((hg, ag))
     for _d, h, a, hg, ag in dated:
-        di[(norm_team(h), norm_team(a))].append((hg, ag))
+        di[(join_key(h), join_key(a))].append((hg, ag))
+    smashed = {k: sorted(v) for k, v in collide.items() if len(v) > 1}
     agree, bad = 0, []
     for k in set(mi) & set(di):
         if sorted(mi[k]) == sorted(di[k]):
@@ -346,7 +350,11 @@ def cross_check(matrix, dated):
     shared = set(mi) & set(di)
     superset = all(_contains(di[k], mi[k]) for k in shared)
     coverage = round(len(shared) / len(mi), 3) if mi else 0.0
-    return agree, len(bad), bad[:5], (superset, coverage)
+    if smashed:
+        # Stripping furniture merged two real clubs into one key -- the join
+        # is unsafe for this league, so report rather than claim agreement.
+        bad = bad + [('JOIN COLLISION', k, v, []) for k, v in list(smashed.items())[:3]]
+    return agree, len(bad), bad[:5], (superset and not smashed, coverage)
 
 
 def _contains(big, small):
@@ -355,11 +363,30 @@ def _contains(big, small):
     return all(b[k] >= v for k, v in s.items())
 
 
+# Club furniture, stripped ONLY for the cross-check join. The two wikis
+# write the same club as "Cusco" and "Cusco FC", "Melgar" and "FBC Melgar",
+# "Cajamarca" and "FC Cajamarca" -- 85 of Peru's 242 pairs failed to join on
+# that alone, and the coverage number said 65% when the readings agreed.
+# Stored names keep whatever the source published; this is a join key only.
+FURNITURE = {'fc', 'cf', 'sc', 'afc', 'cd', 'ca', 'ac', 'as', 'club', 'fbc',
+             'sd', 'ad', 'cs', 'sac', 'fbc', 'aa', 'cdsc'}
+
+
 def norm_team(s):
     import unicodedata
     s = unicodedata.normalize('NFKD', str(s or ''))
     s = ''.join(c for c in s if not unicodedata.combining(c)).lower()
     return ' '.join(s.replace('.', ' ').replace('-', ' ').split())
+
+
+def join_key(s):
+    """norm_team minus club furniture, for matching ACROSS sources.
+
+    Collision-guarded by the caller: if stripping ever maps two distinct
+    clubs in one league onto the same key, the cross-check says so instead
+    of reporting a false agreement."""
+    toks = [w for w in norm_team(s).split() if w not in FURNITURE]
+    return ' '.join(toks) or norm_team(s)
 
 
 def rates(matches):
@@ -597,6 +624,19 @@ def selftest():
     chk(d5 == 1 and sup5, 'a GRID missing one meeting is caught, and dated reads as the superset')
     _, _, _, (sup6, _c6) = cross_check([('A', 'B', 9, 9)], [('2026-01-01', 'A', 'B', 1, 0)])
     chk(not sup6, 'dated is NOT a superset when the grid holds a score it lacks')
+    chk(join_key('Cusco FC') == join_key('Cusco') == 'cusco',
+        'club furniture is stripped for the cross-source join')
+    chk(join_key('FBC Melgar') == 'melgar' and join_key('FC Cajamarca') == 'cajamarca',
+        'prefixes too, in either position')
+    chk(norm_team('Cusco FC') == 'cusco fc',
+        'but the STORED name keeps whatever the source published')
+    chk(join_key('FC') == 'fc', 'a club whose whole name is furniture keeps it')
+    _, dcol, scol, (supcol, _) = cross_check(
+        [('Nacional', 'X', 1, 0), ('Nacional FC', 'X', 2, 0)],
+        [('2026-01-01', 'Nacional', 'X', 1, 0)])
+    chk(any(s[0] == 'JOIN COLLISION' for s in scol) and not supcol,
+        'if stripping merges two DIFFERENT clubs, the join is reported unsafe')
+
     a3, d3, _, (_s3, _c3) = cross_check(mx, [('2026-01-30', 'alpha fc', 'BETA FC', 2, 1)])
     chk(a3 == 1 and d3 == 0, 'the cross-check joins on normalised names, not exact case')
 
