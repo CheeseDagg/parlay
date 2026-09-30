@@ -155,30 +155,58 @@ def probe(url, label, post=None, referer=None, note=''):
         return None
 
 
-print("=== ROUND 12: a PER-PLAYER PER-MATCH source the RUNNER can reach ===")
-print("Needed for 'scored in 5 of last 6'. player_shares_pin.json has season")
-print("totals only; understat.com Cloudflare-walls this runner, which is why")
-print("that file is a pin from 2026-08-03 carrying the 2025 season.\n")
+print("=== ROUND 13: does any reachable source carry PER-PLAYER PER-MATCH? ===")
 
-print("-- understat (the incumbent)")
-probe("https://understat.com/league/EPL/2026", "understat league page")
-probe("https://understat.com/getLeagueData/EPL/2026", "understat getLeagueData")
-probe("https://understat.com/main/getPlayersStats/",
-      "understat getPlayersStats (POST)",
-      post=urllib.parse.urlencode({"league": "EPL", "season": "2026"}).encode(),
-      referer="https://understat.com/league/EPL/2026")
+print("-- openfootball england: do the match lines carry goal scorers?")
+b = probe("https://raw.githubusercontent.com/openfootball/england/master/2025-26/1-premierleague.txt",
+          "openfootball england 2025-26")
+if b:
+    txt = b.decode('utf-8', 'replace')
+    lines = [l for l in txt.splitlines() if l.strip()]
+    print(f"     {len(lines)} non-blank lines; first 14:")
+    for l in lines[:14]:
+        print("       " + l[:100])
+    import re as _re
+    scorer = [l for l in lines if _re.search(r"\d{1,3}'", l)]
+    print(f"     lines containing a minute marker (goal events): {len(scorer)}")
+    for l in scorer[:4]:
+        print("       GOAL? " + l[:100])
 
-print("\n-- alternatives with per-player per-match")
-probe("https://fbref.com/en/comps/9/Premier-League-Stats", "fbref comp page")
-probe("https://www.fotmob.com/api/leagues?id=47", "fotmob leagues api")
-probe("https://api.sofascore.com/api/v1/unique-tournament/17/season/61627/events/last/0",
-      "sofascore events api")
-probe("https://raw.githubusercontent.com/openfootball/england/master/2025-26/1-premierleague.txt",
-      "openfootball england (goal events?)")
-probe("https://raw.githubusercontent.com/statsbomb/open-data/master/data/competitions.json",
-      "statsbomb open-data")
+print()
+print("-- understat: what is IN getPlayersStats, season totals or per-match?")
+b = probe("https://understat.com/main/getPlayersStats/", "understat getPlayersStats",
+          post=urllib.parse.urlencode({"league": "EPL", "season": "2026"}).encode(),
+          referer="https://understat.com/league/EPL/2026")
+if b:
+    import json as _j
+    try:
+        d = _j.loads(b.decode('utf-8', 'replace'))
+        rows = d.get('response', {}).get('players') or d
+        print("     top keys:", list(d)[:6] if isinstance(d, dict) else type(d).__name__)
+        if isinstance(rows, list) and rows:
+            print("     sample player:", _j.dumps(rows[0])[:320])
+            print(f"     {len(rows)} players")
+    except Exception as e:
+        print("     not json:", b[:180])
 
-print("\n-- and for the SOUTH AMERICAN leagues specifically")
-probe("https://es.wikipedia.org/wiki/Liga_de_Primera_2026", "es.wikipedia (already used)",
-      note="has goalscorer tables?")
-probe("https://api.sofascore.com/api/v1/search/all?q=Colo-Colo", "sofascore search")
+print()
+print("-- understat PLAYER page: does it carry a per-match log?")
+b = probe("https://understat.com/player/1250", "understat player 1250")
+if b:
+    t = b.decode('utf-8', 'replace')
+    for key in ('matchesData', 'groupsData', 'shotsData'):
+        i = t.find(key)
+        print(f"     {key}: {'FOUND at %d' % i if i > 0 else 'absent'}")
+        if i > 0:
+            print("       " + t[i:i+200])
+
+print()
+print("-- understat MATCH page: does it carry the rosters?")
+b = probe("https://understat.com/match/26000", "understat match 26000")
+if b:
+    t = b.decode('utf-8', 'replace')
+    for key in ('rostersData', 'shotsData', 'match_info'):
+        i = t.find(key)
+        print(f"     {key}: {'FOUND' if i > 0 else 'absent'}")
+        if i > 0:
+            print("       " + t[i:i+200])
