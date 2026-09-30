@@ -306,6 +306,39 @@ def form_table(dated, last=5):
     return out
 
 
+def cross_check(matrix, dated):
+    """Two independent readers of the same season must agree.
+
+    The matrix grid and the Spanish round tables are parsed by different code
+    off different pages. If both produce a result for the same ordered pair
+    and the SCORES differ, one reader is wrong -- and a scoreline that is
+    wrong in a way that still looks well-formed is exactly the failure this
+    file's diagonal guard exists to prevent elsewhere. Report, never merge.
+    Returns (agreed, disagreed, [samples]).
+    """
+    mi = {}
+    for h, a, hg, ag in matrix:
+        mi.setdefault((norm_team(h), norm_team(a)), (hg, ag))
+    agree = 0
+    bad = []
+    for _d, h, a, hg, ag in dated:
+        k = (norm_team(h), norm_team(a))
+        if k not in mi:
+            continue
+        if mi[k] == (hg, ag):
+            agree += 1
+        else:
+            bad.append((h, a, mi[k], (hg, ag)))
+    return agree, len(bad), bad[:5]
+
+
+def norm_team(s):
+    import unicodedata
+    s = unicodedata.normalize('NFKD', str(s or ''))
+    s = ''.join(c for c in s if not unicodedata.combining(c)).lower()
+    return ' '.join(s.replace('.', ' ').replace('-', ' ').split())
+
+
 def rates(matches):
     """socbase-shaped rates. Deliberately no 'form' key -- see the docstring."""
     n = len(matches)
@@ -405,6 +438,16 @@ def build(fetch=get):
             entry['dated'] = [list(d) for d in all_dated]
             entry['form'] = form_table(all_dated)
             entry['es_pages'] = pages
+            ag, dis, samples = cross_check(matches, all_dated)
+            entry['cross_check'] = {'agreed': ag, 'disagreed': dis, 'samples': samples}
+            if dis:
+                report.append(f'    !! {league}: {dis} scoreline(s) DISAGREE between the '
+                              f'grid and the round tables (agreed {ag})')
+                for s in samples:
+                    report.append(f'       {s[0]} v {s[1]}: grid {s[2]} vs rounds {s[3]}')
+            else:
+                report.append(f'    cross-check {league}: {ag} scorelines agree '
+                              f'across both readers, 0 disagree')
             newest = max(d[0] for d in all_dated)
             report.append(f'    es-rounds {league}: {len(all_dated)} dated results '
                           f'across {len(pages)} page(s), newest {newest}'
@@ -476,6 +519,16 @@ def selftest():
                   ['Beta', '0 \u2013 0', 'Gamma', 'Ground', '6 de febrero', '20:00'],
                   ['Gamma', '', 'Alpha', 'Ground', '13 de marzo', '20:00'],
                   ['Alpha', '1-0', 'Gamma', 'Ground', 'TBD', '20:00']])]
+    mx = [('Alpha FC', 'Beta FC', 2, 1), ('Beta FC', 'Gamma', 0, 0)]
+    dtd = [('2026-01-30', 'Alpha FC', 'Beta FC', 2, 1), ('2026-02-06', 'Beta FC', 'Gamma', 0, 0)]
+    a, d, _ = cross_check(mx, dtd)
+    chk(a == 2 and d == 0, 'identical readings agree')
+    a2, d2, s2 = cross_check(mx, [('2026-01-30', 'Alpha FC', 'Beta FC', 3, 1)])
+    chk(d2 == 1 and s2[0][2] == (2, 1) and s2[0][3] == (3, 1),
+        'a scoreline that differs between readers is REPORTED with both values')
+    a3, d3, _ = cross_check(mx, [('2026-01-30', 'alpha fc', 'BETA FC', 2, 1)])
+    chk(a3 == 1 and d3 == 0, 'the cross-check joins on normalised names, not exact case')
+
     # ROWSPAN: the exact shape that lost every second date. One 'Fecha' cell
     # spans three matches; rows 2 and 3 carry no date cell of their own.
     span_html = (
