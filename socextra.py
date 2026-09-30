@@ -496,6 +496,10 @@ def build(fetch=get):
             # grid stays as the fallback and as the cross-check's other half.
             if superset and delta >= 0:
                 dm = [(h, a, hg, ag) for _d, h, a, hg, ag in all_dated]
+                # KEEP THE SUPERSEDED READER. Overwriting 'matches' destroyed
+                # the evidence the cross-check had just run on, so Peru's 65%
+                # coverage could not be re-examined at all afterwards.
+                entry['grid_matches'] = entry.get('matches')
                 entry['rates'] = rates(dm)
                 entry['splits'] = splits(dm)
                 entry['matches'] = [list(m) for m in dm]
