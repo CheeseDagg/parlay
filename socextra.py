@@ -521,7 +521,20 @@ def build(fetch=get):
             # every score the grid has and at least as many, they are simply
             # the better reading -- and they are date-verified besides. The
             # grid stays as the fallback and as the cross-check's other half.
-            if superset and delta >= 0:
+            # WHICH READER WINS. Preferring the grid whenever the two
+            # disagree is backwards: it rejects the better source for
+            # disagreeing with the worse one. Peru proved it -- the grid said
+            # Cajamarca 2-1 Cusco, the rounds said Cajamarca 1-2 Cusco, and
+            # RPP, dsn.pe and the FIFA match centre all record Cusco winning
+            # 2-1 AWAY on 2026-09-19. The rounds were right and were being
+            # thrown away for it.
+            #
+            # The rounds are per-fixture rows carrying date, venue and kickoff;
+            # the grid is a hand-maintained summary cell. So the rounds win on
+            # count, and every disagreement is REPORTED with both values rather
+            # than silently resolved. A join collision still blocks the switch,
+            # because then the comparison itself is untrustworthy.
+            if delta >= 0 and not any(s[0] == 'JOIN COLLISION' for s in samples):
                 dm = [(h, a, hg, ag) for _d, h, a, hg, ag in all_dated]
                 # KEEP THE SUPERSEDED READER. Overwriting 'matches' destroyed
                 # the evidence the cross-check had just run on, so Peru's 65%
@@ -530,7 +543,8 @@ def build(fetch=get):
                 entry['rates'] = rates(dm)
                 entry['splits'] = splits(dm)
                 entry['matches'] = [list(m) for m in dm]
-                entry['rates_source'] = 'dated rounds (superset of the grid)'
+                entry['rates_source'] = ('dated rounds (per-fixture rows with dates; '
+                                         'the grid is kept as grid_matches)')
             else:
                 entry['rates_source'] = 'results grid (dated rounds not a superset)'
             newest = max(d[0] for d in all_dated)
