@@ -1024,6 +1024,15 @@ Fri Aug 15 2025
         long_roster, {'Bournemouth', 'Crystal Palace'})
     chk(len(k4) == 1 and m4 == 0 and u4 == 1 and bt4 == 0,
         'a name whose tokens match TWO current players resolves to neither')
+    # THE LENGTH FLOOR. Without it a name particle becomes a match: "Lucas Da
+    # Costa" would resolve against a roster entry spelled "Da" and the row would
+    # be dropped for being at the wrong club, on the strength of two letters.
+    k6, m6, u6, _ = drop_moved_players(
+        [{'player': 'Lucas Da Costa', 'team': 'Fulham'}],
+        {'da': {'Chelsea'}}, {'Fulham', 'Chelsea'})
+    chk(len(k6) == 1 and m6 == 0 and u6 == 1,
+        'a two-letter name particle is below the floor and matches nothing')
+
     k5, m5, u5, _ = drop_moved_players(
         [{'player': 'Evanilson', 'team': 'Crystal Palace'}],
         long_roster, {'Bournemouth', 'Crystal Palace'})
