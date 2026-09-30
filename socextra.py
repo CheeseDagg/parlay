@@ -335,8 +335,15 @@ def cross_check(matrix, dated):
     # America meetings that the round tables both carry. That is not a
     # conflict, it is one reader being more complete, and it decides which
     # source the rates are built from.
-    superset = all(_contains(di.get(k, []), mi[k]) for k in mi)
-    return agree, len(bad), bad[:5], superset
+    # Scoped to SHARED pairs. The two readers come off different wikis and
+    # spell clubs differently ("America de Cali" vs "America"), so a pair
+    # missing from one side is a NAME gap, not a data gap -- judging
+    # completeness on those would reject a reading that is strictly better.
+    # Coverage is reported instead, because low coverage is its own signal.
+    shared = set(mi) & set(di)
+    superset = all(_contains(di[k], mi[k]) for k in shared)
+    coverage = round(len(shared) / len(mi), 3) if mi else 0.0
+    return agree, len(bad), bad[:5], (superset, coverage)
 
 
 def _contains(big, small):
@@ -451,11 +458,12 @@ def build(fetch=get):
             entry['dated'] = [list(d) for d in all_dated]
             entry['form'] = form_table(all_dated)
             entry['es_pages'] = pages
-            ag, dis, samples, superset = cross_check(matches, all_dated)
+            ag, dis, samples, (superset, coverage) = cross_check(matches, all_dated)
             delta = len(all_dated) - len(matches)
             entry['cross_check'] = {'agreed_pairs': ag, 'disagreed_pairs': dis,
                                     'samples': samples, 'count_delta': delta,
-                                    'dated_is_superset': superset}
+                                    'dated_is_superset': superset,
+                                    'name_coverage': coverage}
             if dis:
                 report.append(f'    !! {league}: {dis} scoreline(s) DISAGREE between the '
                               f'grid and the round tables (agreed {ag})')
@@ -464,8 +472,9 @@ def build(fetch=get):
             else:
                 report.append(f'    cross-check {league}: {ag} fixture pairs agree '
                               f'across both readers, 0 disagree'
-                              + (f'; the round tables carry {delta:+d} result(s) vs the grid'
-                                 if delta else '; both readers see the same count'))
+                              + (f'; rounds carry {delta:+d} result(s)' if delta
+                                 else '; same count')
+                              + f'; names join on {coverage:.0%} of grid pairs')
             # PREFER THE MORE COMPLETE READER. When the dated rounds contain
             # every score the grid has and at least as many, they are simply
             # the better reading -- and they are date-verified besides. The
@@ -551,25 +560,25 @@ def selftest():
                   ['Alpha', '1-0', 'Gamma', 'Ground', 'TBD', '20:00']])]
     mx = [('Alpha FC', 'Beta FC', 2, 1), ('Beta FC', 'Gamma', 0, 0)]
     dtd = [('2026-01-30', 'Alpha FC', 'Beta FC', 2, 1), ('2026-02-06', 'Beta FC', 'Gamma', 0, 0)]
-    a, d, _, sup = cross_check(mx, dtd)
+    a, d, _, (sup, cov) = cross_check(mx, dtd)
     chk(a == 2 and d == 0 and sup, 'identical readings agree and count as a superset')
-    a2, d2, s2, _s2 = cross_check(mx, [('2026-01-30', 'Alpha FC', 'Beta FC', 3, 1)])
+    a2, d2, s2, (_s2, _c2) = cross_check(mx, [('2026-01-30', 'Alpha FC', 'Beta FC', 3, 1)])
     chk(d2 == 1 and s2[0][2] == [(2, 1)] and s2[0][3] == [(3, 1)],
         'a scoreline that differs between readers is REPORTED with both values')
     # SPLIT SEASON: the same pair meets twice at the same ground. Both readers
     # see both results, so this is agreement, not conflict.
-    a4, d4, _, sup4 = cross_check(
+    a4, d4, _, (sup4, _c4) = cross_check(
         [('Santa Fe', 'America', 4, 0), ('Santa Fe', 'America', 0, 0)],
         [('2026-05-12', 'Santa Fe', 'America', 4, 0),
          ('2026-08-22', 'Santa Fe', 'America', 0, 0)])
     chk(a4 == 1 and d4 == 0 and sup4, 'a pair that meets twice with different scores AGREES')
-    a5, d5, _, sup5 = cross_check([('Santa Fe', 'America', 4, 0)],
+    a5, d5, _, (sup5, _c5) = cross_check([('Santa Fe', 'America', 4, 0)],
                             [('2026-05-12', 'Santa Fe', 'America', 4, 0),
                              ('2026-08-22', 'Santa Fe', 'America', 0, 0)])
     chk(d5 == 1 and sup5, 'a GRID missing one meeting is caught, and dated reads as the superset')
-    _, _, _, sup6 = cross_check([('A', 'B', 9, 9)], [('2026-01-01', 'A', 'B', 1, 0)])
+    _, _, _, (sup6, _c6) = cross_check([('A', 'B', 9, 9)], [('2026-01-01', 'A', 'B', 1, 0)])
     chk(not sup6, 'dated is NOT a superset when the grid holds a score it lacks')
-    a3, d3, _, _s3 = cross_check(mx, [('2026-01-30', 'alpha fc', 'BETA FC', 2, 1)])
+    a3, d3, _, (_s3, _c3) = cross_check(mx, [('2026-01-30', 'alpha fc', 'BETA FC', 2, 1)])
     chk(a3 == 1 and d3 == 0, 'the cross-check joins on normalised names, not exact case')
 
     # ROWSPAN: the exact shape that lost every second date. One 'Fecha' cell
