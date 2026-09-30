@@ -41,7 +41,7 @@ played. Nothing here establishes that a run continues, and the page says so
 out loud, because "seven unders in a row" is exactly the shape that reads as
 a prediction when it is only a history.
 """
-import json, math, os, sys
+import datetime as dt, json, math, os, sys
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -117,6 +117,11 @@ def rarity(p, k):
 
 
 WINDOW = 10          # "of last 10" -- what a reader can hold in their head
+MAX_AGE_DAYS = 45    # a run whose newest match is older than this is not a run
+                     # a club is ON -- it is a record from a season that ended.
+                     # Peru's dated rounds stop in May for some clubs and
+                     # "conceded in all of the last 10 -- 16 in a row" shipped
+                     # with its newest evidence 123 days old, reading as live.
 MIN_N = 4            # fewer than this and "4 of last 4" is noise
 MIN_RATE = 0.80      # below this it is not something a club is DOING
 
@@ -190,23 +195,34 @@ BASE_KEY = {'under': 'under', 'over': 'over', 'btts_no': 'btts_no',
             'wins': 'win', 'by2': 'by2', 'lost_by2': 'by2'}
 
 
-def scan_league(league, entry):
+def scan_league(league, entry, today=None):
     """Every live "N of last M" a club is running, plus its head-to-head records.
 
     Returns (candidates, chances). Candidates carry their base rate so the
     caller can apply the one filter that needs the TOTAL number of chances.
     """
+    today = today or dt.date.today()
     dated = [tuple(x) for x in (entry.get('dated') or [])]
     if not dated:
         return [], 0
+
+    def fresh(newest):
+        """A run is only a run if it is still running."""
+        try:
+            return (today - dt.date.fromisoformat(newest)).days <= MAX_AGE_DAYS
+        except Exception:
+            return False
     base = league_rates(dated)
     tl = timeline(dated)
-    out, chances = [], 0
+    out, chances, stale = [], 0, 0
 
     for club, rows in tl.items():
         if len(rows) < MIN_N:
             continue
         newest = rows[-1][0]
+        if not fresh(newest):
+            stale += 1
+            continue
         for key, cat, pred, verb in PATTERNS:
             chances += 1
             hits, n, streak = window_stat(rows, pred)
@@ -251,7 +267,12 @@ def scan_league(league, entry):
            ('h2h_scored', 'scored', lambda r: r[1] > 0, 'scored'),
            ('h2h_cs', 'kept a clean sheet', lambda r: r[2] == 0, 'cs'))
     for (x, y), games in pair.items():
-        if len(games) < 2:
+        # THREE MEETINGS, NOT TWO. The comment above says most 3-of-3 records
+        # against one opponent do not survive the look-elsewhere filter -- and
+        # the floor underneath it was letting 2-of-2 through, which produced
+        # "kept a clean sheet in all 2 meetings" on the page. Two from two is
+        # a coin landing heads twice across a division's worth of pairings.
+        if len(games) < 3 or not fresh(max(g[0] for g in games)):
             continue
         for club in (x, y):
             opp = y if club == x else x
@@ -270,7 +291,7 @@ def scan_league(league, entry):
                     'newest': max(g[0] for g in games),
                     'evidence': [{'date': d, 'gf': gf, 'ga': ga, 'opp': opp, 'side': ''}
                                  for d, gf, ga in rows][::-1][:6]})
-    return out, chances
+    return out, chances, stale
 
 
 def expected(rows, chances):
@@ -287,17 +308,18 @@ def expected(rows, chances):
     return rows
 
 
-def build(doc):
+def build(doc, today=None):
     """Ranked by how clean the record is, then by how many matches back it.
 
     No rarity column reaches the page. The arithmetic runs here, decides what
     is worth saying, and stays out of the sentence.
     """
-    cand, chances = [], 0
+    cand, chances, stale = [], 0, 0
     for league, entry in (doc or {}).items():
-        got, ch = scan_league(league, entry)
+        got, ch, st = scan_league(league, entry, today=today)
         cand.extend(got)
         chances += ch
+        stale += st
     rows = []
     for r in cand:
         r['_u'] = unusualness(r.get('hits'), r.get('n'), r.pop('_p', None))
@@ -307,7 +329,7 @@ def build(doc):
     for r in rows:
         r.pop('_u', None)
     return {'chances': chances, 'shown': len(rows), 'considered': len(cand),
-            'patterns': rows}
+            'stale': stale, 'patterns': rows}
 
 
 def selftest():
@@ -337,7 +359,11 @@ def selftest():
              ['2026-03-01', 'Alpha', 'D', 2, 0], ['2026-04-01', 'E', 'Alpha', 0, 1],
              ['2026-05-01', 'Alpha', 'B', 1, 0], ['2026-06-01', 'B', 'Alpha', 0, 2],
              ['2026-07-01', 'C', 'D', 3, 3]]
-    res = build({'L': {'dated': dated}})
+    # PIN THE DATE. The staleness gate measures against today, so a fixture with
+    # hardcoded 2026 dates and a live clock is a test that passes now and starts
+    # failing on its own in July -- a decaying test is its own bug.
+    TODAY = dt.date(2026, 7, 5)
+    res = build({'L': {'dated': dated}}, today=TODAY)
     P = {(r['club'], r['key']): r for r in res['patterns']}
 
     chk(('Alpha', 'wins') in P, "Alpha's winning record is found")
@@ -368,14 +394,52 @@ def selftest():
     chk(unusualness(None, None, None) == 0.05,
         'a home/away split has no per-match rate and sits mid-list, not first')
 
-    thin = build({'L': {'dated': [['2026-01-01', 'X', 'Y', 1, 0],
-                                  ['2026-02-01', 'X', 'Y', 1, 0]]}})
+    thin = build({'L': {'dated': [['2026-06-01', 'X', 'Y', 1, 0],
+                                  ['2026-07-01', 'X', 'Y', 1, 0]]}},
+                 today=dt.date(2026, 7, 5))
     chk(not [r for r in thin['patterns'] if r['key'] == 'wins'],
         'two matches is not enough for a club-level record')
-    chk([r for r in thin['patterns'] if r['key'] == 'h2h_win'],
-        'but two meetings IS enough to say 2 of the last 2 vs that opponent')
+    # THIS CHECK USED TO ASSERT THE OPPOSITE. The reasoning was that a
+    # head-to-head is a different question from a form run, so a smaller sample
+    # is acceptable -- and the comment above the H2H table already said most
+    # 3-of-3 records do not survive the look-elsewhere filter. Both cannot be
+    # true. A 2-of-2 is a coin landing heads twice, and across a division's
+    # worth of pairings a scan will find dozens; "kept a clean sheet in all 2
+    # meetings with Independiente Petrolero" reached the page and reads as a
+    # pattern rather than as two matches.
+    chk(not [r for r in thin['patterns'] if r['key'] == 'h2h_win'],
+        'and two MEETINGS is not enough either -- it reads as a pattern and is not one')
 
     chk(build({})['patterns'] == [], 'an empty source yields nothing, not a crash')
+    # ------------------------------------------------------ the staleness gate
+    # Peru's dated rounds stop in May for some clubs, and "conceded in all of
+    # the last 10 -- 16 in a row" reached the page with its newest evidence 123
+    # days old. A run is only a run if it is still running.
+    old = build({'L': {'dated': dated}}, today=dt.date(2026, 7, 5) + dt.timedelta(days=60))
+    chk(not old['patterns'] and old['stale'] > 0,
+        'every club whose newest match is older than 45 days is refused and COUNTED')
+    chk(build({'L': {'dated': dated}}, today=dt.date(2026, 7, 5))['stale'] == 0,
+        'and a live league is not counted stale')
+    edge = [[f'2026-06-{i:02d}', 'Alpha', f'T{i}', 1, 0] for i in range(1, 8)]
+    chk(build({'L': {'dated': edge}}, today=dt.date(2026, 7, 21))['patterns'],
+        'a run 44 days old is still live')
+    chk(not build({'L': {'dated': edge}}, today=dt.date(2026, 7, 23))['patterns'],
+        'and 46 days old is not')
+
+    # ---------------------------------------------------- the head-to-head floor
+    two = [['2026-06-01', 'Alpha', 'B', 1, 0], ['2026-06-08', 'B', 'Alpha', 0, 1],
+           ['2026-06-15', 'Alpha', 'C', 1, 0], ['2026-06-22', 'Alpha', 'D', 1, 0],
+           ['2026-06-29', 'Alpha', 'E', 1, 0], ['2026-07-02', 'Alpha', 'F', 1, 0]]
+    r2 = build({'L': {'dated': two}}, today=dt.date(2026, 7, 5))
+    chk(not [r for r in r2['patterns'] if r['category'] == 'Head-to-head'],
+        'two meetings is not a head-to-head record -- "in all 2 meetings" shipped')
+    three = two + [['2026-07-03', 'B', 'Alpha', 0, 1]]
+    r3 = build({'L': {'dated': three}}, today=dt.date(2026, 7, 5))
+    chk([r for r in r3['patterns'] if r['category'] == 'Head-to-head'],
+        'three meetings clears the floor')
+    chk(not any('all 2 meetings' in r['text'] for r in r3['patterns']),
+        'no sentence on the page can read "in all 2 meetings"')
+
     print(f'\n{ok[0]}/{ok[1]} checks pass')
     return 0 if ok[0] == ok[1] else 1
 
