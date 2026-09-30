@@ -144,8 +144,12 @@ def card(league_key, home, away, socbase=None):
     out['Recent Form'] = _recent_form(name, home, away)
     for s in ('Injury Impact', 'Starter'):
         out[s] = {'value': UNAVAILABLE, 'measured': False,
-                  'why': 'lives in per-fixture team news, not in any results table; '
-                         'needs a lineup source or a manual read'}
+                  'why': 'not in any results table -- this lives in per-fixture team '
+                         'news (predicted XI, injury list, suspensions), which no '
+                         'season page carries. ACTION: ask for a team-news sweep on '
+                         'this fixture and it gets read per match, as on 8/19 when '
+                         'Malaga turned out to be missing five and Cruzeiro had two '
+                         'suspensions returning.'}
     return out
 
 
@@ -258,24 +262,34 @@ def selftest():
     chk(all(not c[s]['measured'] and c[s]['why'] for s in ('Injury Impact', 'Starter')),
         'Injury and Starter are dark WITH a reason, never blank')
 
+    # NOTE: this block swaps the module-level _form_store and MUST put it
+    # back. An earlier version left the stub installed for every check that
+    # followed, so the rest of the suite was silently testing a module with
+    # no form data -- a test harness that quietly changes what it is testing
+    # is worse than no test.
     import datetime as _d
-    store = {'Alpha FC': {'form': 'WWDLW', 'n': 5, 'gf': 9, 'ga': 4, 'newest': '2026-09-20'},
-             'Beta FC':  {'form': 'LLDWL', 'n': 5, 'gf': 3, 'ga': 8, 'newest': '2026-09-18'},
-             'Stale FC': {'form': 'WWWWW', 'n': 5, 'gf': 12, 'ga': 1, 'newest': '2026-05-12'}}
-    globals()['_form_store'] = lambda _lg: store
-    today = _d.date(2026, 9, 30)
-    fresh = _recent_form('L', 'Alpha FC', 'Beta FC', today=today)
-    chk(fresh['measured'] and 'WWDLW' in fresh['value'], 'fresh dated form IS measured')
-    stale = _recent_form('L', 'Alpha FC', 'Stale FC', today=today)
-    chk(not stale['measured'], 'form whose newest result is 4 months old is NOT measured')
-    chk('STALE' in stale['why'] and '2026-05-12' in stale['why'] and '141 days' in stale['why'],
-        'the stale reason names the date and the age')
-    chk(not _recent_form('L', 'Alpha FC', 'Ghost FC', today=today)['measured'],
-        'a club with no form row darkens Recent Form')
-    globals()['_form_store'] = lambda _lg: {}
-    chk('NO dates' in _recent_form('L', 'A', 'B', today=today)['why'].replace('NO dates', 'NO dates')
-        or 'no dates' in _recent_form('L', 'A', 'B', today=today)['why'].lower(),
-        'a league with no dated source says so')
+    _real_store = globals()['_form_store']
+    try:
+        store = {'Alpha FC': {'form': 'WWDLW', 'n': 5, 'gf': 9, 'ga': 4, 'newest': '2026-09-20'},
+                 'Beta FC':  {'form': 'LLDWL', 'n': 5, 'gf': 3, 'ga': 8, 'newest': '2026-09-18'},
+                 'Stale FC': {'form': 'WWWWW', 'n': 5, 'gf': 12, 'ga': 1, 'newest': '2026-05-12'}}
+        globals()['_form_store'] = lambda _lg: store
+        today = _d.date(2026, 9, 30)
+        fresh = _recent_form('L', 'Alpha FC', 'Beta FC', today=today)
+        chk(fresh['measured'] and 'WWDLW' in fresh['value'], 'fresh dated form IS measured')
+        stale = _recent_form('L', 'Alpha FC', 'Stale FC', today=today)
+        chk(not stale['measured'], 'form whose newest result is 4 months old is NOT measured')
+        chk('STALE' in stale['why'] and '2026-05-12' in stale['why'] and '141 days' in stale['why'],
+            'the stale reason names the date and the age')
+        chk(not _recent_form('L', 'Alpha FC', 'Ghost FC', today=today)['measured'],
+            'a club with no form row darkens Recent Form')
+        globals()['_form_store'] = lambda _lg: {}
+        chk('dates' in _recent_form('L', 'A', 'B', today=today)['why'].lower(),
+            'a league with no dated source says so')
+    finally:
+        globals()['_form_store'] = _real_store
+    chk(globals()['_form_store'] is _real_store,
+        'the real form store is restored before the rest of the suite runs')
 
     c2 = card('k', 'Alpha', 'Nobody FC', socbase=FakeSB(sp))
     chk(not c2['Head to Head']['measured'] and 'no club matching' in c2['Head to Head']['why'],

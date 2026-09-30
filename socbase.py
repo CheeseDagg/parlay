@@ -192,7 +192,16 @@ def rates(key):
 
 if __name__ == '__main__':
     import sys
-    for k in (sys.argv[1:] or list(MAP)):
+    # --selftest used to fall through as a LEAGUE KEY and print
+    # "--selftest is not in socbase.MAP", which reads exactly like a real
+    # coverage answer. A flag that silently means something else is a trap;
+    # socbase has no suite of its own, so say that.
+    if '--selftest' in sys.argv:
+        print('socbase has no selftest of its own -- it is covered through '
+              'preflight (82), edge (24) and socextra (40). '
+              'Run: python3 socbase.py <odds_api_key> to inspect one league.')
+        raise SystemExit(0)
+    for k in (sys.argv[1:] or list(MAP) + list(EXTRA)):
         n, r, note = rates(k)
         if r:
             print(f"  {k:<44} {n:<26} draw {r['result']['draw']*100:.1f}%  "
