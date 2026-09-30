@@ -300,36 +300,75 @@ def selftest():
     return 0 if ok[0] == ok[1] else 1
 
 
+ROUTES = [
+    # (name, params built from the player/league, what it would give us)
+    ('getPlayersStats',      lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
+    ('getPlayerStats',       lambda ctx: {'player_id': ctx['pid']}),
+    ('getPlayerMatches',     lambda ctx: {'player_id': ctx['pid']}),
+    ('getPlayerMatchesStats', lambda ctx: {'player_id': ctx['pid']}),
+    ('getPlayerShots',       lambda ctx: {'player_id': ctx['pid']}),
+    ('getPlayerGroupsStats', lambda ctx: {'player_id': ctx['pid']}),
+    ('getPlayerSeasons',     lambda ctx: {'player_id': ctx['pid']}),
+    ('getMatchesStats',      lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
+    ('getLeagueMatches',     lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
+    ('getDatesData',         lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
+    ('getTeamsStats',        lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
+    ('getMatchShots',        lambda ctx: {'match_id': ctx.get('mid') or '0'}),
+    ('getMatchRosters',      lambda ctx: {'match_id': ctx.get('mid') or '0'}),
+]
+
+
 def probe():
-    """One page, printed raw-ish. Run on the runner; understat is unreachable
-    from the dev container, so nothing about this source can be confirmed here."""
+    """WHICH ROUTE ACTUALLY SERVES PER-MATCH PLAYER DATA.
+
+    The first probe assumed the player page carried a matchesData block, the way
+    understat used to embed everything. It does not: the page comes back 19KB
+    with the right title and NO embedded JSON of any kind, which is the same
+    thing already known to be true of the league pages -- the data moved to AJAX
+    and the POST routes are the only way in.
+
+    getPlayersStats is the one route known to work, so it rides along as a
+    CONTROL: if it fails here too, the finding is about the session or the
+    headers and not about the other routes at all.
+    """
+    ctx = {'league': 'EPL', 'season': SEASON}
     ps = season_players('EPL')
-    print(f'season players: {len(ps)}')
-    top = sorted(ps, key=lambda p: -int(p.get('goals') or 0))[:3]
-    for p in top:
-        print(f"  {p.get('player_name')} id={p.get('id')} goals={p.get('goals')} "
-              f"team={p.get('team_title')}")
-    pid = top[0].get('id')
-    html = http(PLAYER.format(pid=pid), referer='https://understat.com/')
-    print(f'\nplayer page {pid}: {len(html)} bytes')
-    print('blocks present:', [n for n in ('matchesData', 'shotsData', 'groupsData',
-                                          'minMaxPlayerStats')
-                              if n + ' ' in html or n + '=' in html])
-    d = embedded(html, 'matchesData')
-    if not d:
-        print('matchesData did NOT decode -- dumping the surrounding text')
-        i = html.find('matchesData')
-        print(repr(html[max(0, i - 80):i + 400]))
-        return 1
-    print(f'matchesData rows: {len(d)}')
-    print('keys:', sorted(d[0].keys()))
-    print('seasons covered:', sorted({(r.get("date") or "")[:4] for r in d}))
-    for r in d[:3]:
-        print('  ', {k: r.get(k) for k in ('date', 'h_team', 'a_team', 'h_a', 'goals')})
-    ms = player_matches(pid)
-    print(f'\nparsed {len(ms)} appearances; sample h2h:')
-    for r in h2h_signals(top[0].get('player_name'), ms[-1][1], ms)[:6]:
-        print('   ', r['text'], '|', r['span'])
+    top = sorted(ps, key=lambda p: -int(p.get('goals') or 0))[:1]
+    ctx['pid'] = top[0].get('id') if top else '8260'
+    print(f"control: season_players -> {len(ps)} players; "
+          f"probing with id={ctx['pid']} ({top[0].get('player_name') if top else '?'})")
+    print(f"a season-totals row's keys: {sorted(top[0].keys()) if top else '?'}\n")
+
+    for name, mk in ROUTES:
+        url = f'https://understat.com/main/{name}/'
+        body = urllib.parse.urlencode(mk(ctx)).encode()
+        try:
+            txt = http(url, post=body, referer='https://understat.com/', timeout=25)
+        except Exception as e:
+            code = getattr(e, 'code', '')
+            print(f'  {name:24} POST  ERR {type(e).__name__} {code}')
+            continue
+        head = txt[:90].replace('\n', ' ')
+        try:
+            d = json.loads(txt)
+        except Exception:
+            print(f'  {name:24} POST  {len(txt):7} bytes, NOT json: {head!r}')
+            continue
+        # Report the SHAPE, deep enough to see whether per-match rows are in it.
+        def shape(o, depth=0):
+            if isinstance(o, dict):
+                ks = sorted(o.keys())[:8]
+                return '{' + ','.join(ks) + ('...' if len(o) > 8 else '') + '}'
+            if isinstance(o, list):
+                return f'[{len(o)}x ' + (shape(o[0], depth + 1) if o else '') + ']'
+            return type(o).__name__
+        print(f'  {name:24} POST  {len(txt):7} bytes, JSON {shape(d)}')
+        inner = d.get('response') if isinstance(d, dict) else None
+        if isinstance(inner, dict):
+            for k, v in list(inner.items())[:4]:
+                print(f'      response.{k}: {shape(v)}')
+                if isinstance(v, list) and v and isinstance(v[0], dict):
+                    print(f'        first row keys: {sorted(v[0].keys())[:14]}')
     return 0
 
 

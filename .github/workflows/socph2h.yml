@@ -3,6 +3,7 @@ on:
   workflow_dispatch: {}
   push: { branches: [main], paths: ['experiments/SOCPH2H.txt'] }
 permissions: { contents: write }
+env: { PROBE_ONLY: "1" }
 concurrency: { group: parlay-socph2h, cancel-in-progress: true }
 jobs:
   build:
@@ -19,11 +20,21 @@ jobs:
           # unreachable from the dev container, so this is the only place the
           # shape of the source can be seen at all.
           python3 socph2h.py --probe 2>&1 | tee probe.log || true
+          # PROBE ONLY until a route is confirmed. The first run spent four
+          # minutes fetching 180 player pages that could not possibly contain
+          # what it wanted, because the shape of the source was assumed rather
+          # than checked. The build step comes back on once the log names a
+          # route that serves per-match rows.
+          if [ "${PROBE_ONLY:-1}" = "1" ]; then
+            echo "probe-only run: not building until a route is confirmed"
+            exit 0
+          fi
           python3 socph2h.py 2>&1 | tee socph2h.new
           test -s socph2h.new
           grep -q "wrote" socph2h.new
           mv socph2h.new socph2h.txt
       - name: Publish
+        if: env.PROBE_ONLY != '1'
         run: |
           git config user.name "parlay-bot"
           git config user.email "actions@github.com"
