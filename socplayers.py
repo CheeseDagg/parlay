@@ -247,8 +247,24 @@ def rate_signals(rows, league_name, min_games=3):
     """Season-total signals: rates, never dressed as streaks.
 
     These CANNOT say "in 5 of last 6" -- the source does not know which games.
-    Every sentence here is a rate or a total, which is what the data supports.
+    Every sentence is a rate or a total, which is what the data supports.
+
+    RANKED, AND THE DURABILITY ONE IS LAST ON PURPOSE. The first build let
+    "has played 450 of a possible 450 minutes" through on any ever-present
+    player and it took twelve of the top twelve rows -- true of half a squad,
+    and not a signal. It now needs EVERY minute of a real run of games, and
+    goals outrank it.
     """
+    scored = [p for p in rows if str(p.get('goals', '0')).isdigit() and int(p['goals']) > 0]
+    # Key on id OR name: keying on id alone made every player without one
+    # collapse to None, and `None in {None}` flagged the whole league as top
+    # scorers. Real understat rows carry ids; a source that stops would not
+    # announce itself.
+    def pkey(p):
+        return p.get('id') or p.get('player_name')
+    top = sorted(scored, key=lambda p: -int(p['goals']))[:3]
+    top_ids = {pkey(p) for p in top if pkey(p)}
+    lead = int(top[0]['goals']) if top else 0
     out = []
     for p in rows:
         try:
@@ -256,31 +272,41 @@ def rate_signals(rows, league_name, min_games=3):
             mins, xg = int(p.get('time', 0)), float(p.get('xG', 0) or 0)
         except (TypeError, ValueError):
             continue
-        if games < min_games or g < 2:
+        if games < min_games:
             continue
         name = p.get('player_name') or '?'
         team = p.get('team_title') or ''
-        if g >= games:
-            out.append({'player': name, 'team': team, 'league': league_name,
-                        'category': 'Player rate',
-                        'text': f'{g} goals in {games} games — a goal a game or better',
-                        'goals': g, 'games': games, 'minutes': mins,
-                        'source': 'understat season totals'})
-        over = g - xg
-        if over >= 2.0 and g >= 3:
-            out.append({'player': name, 'team': team, 'league': league_name,
-                        'category': 'Player rate',
-                        'text': (f'{g} goals from {xg:.1f} expected — '
-                                 f'{over:+.1f} above the chances taken'),
-                        'goals': g, 'games': games, 'minutes': mins,
-                        'source': 'understat season totals'})
-        if mins and games >= 4 and mins / games >= 88:
-            out.append({'player': name, 'team': team, 'league': league_name,
-                        'category': 'Player rate',
-                        'text': f'has played {mins} of a possible {games * 90} minutes',
-                        'goals': g, 'games': games, 'minutes': mins,
-                        'source': 'understat season totals'})
-    out.sort(key=lambda r: (-(r.get('goals') or 0), -(r.get('games') or 0)))
+        base = {'player': name, 'team': team, 'league': league_name,
+                'category': 'Player rate', 'goals': g, 'games': games,
+                'minutes': mins, 'source': 'understat season totals'}
+
+        if pkey(p) in top_ids and g >= 3:
+            rank = 'leads the league' if g == lead else 'is among the top scorers'
+            out.append(dict(base, rank=0,
+                            text=f'{rank} with {g} goals in {games} games'))
+        elif g >= games and g >= 2:
+            out.append(dict(base, rank=1,
+                            text=f'{g} goals in {games} games — a goal a game or better'))
+        elif g >= 4:
+            out.append(dict(base, rank=2,
+                            text=f'{g} goals in {games} games'))
+
+        if g >= 3 and g - xg >= 2.0:
+            out.append(dict(base, rank=3,
+                            text=(f'{g} goals from {xg:.1f} expected — '
+                                  f'{g - xg:+.1f} above the chances he has had')))
+        elif g >= 3 and xg - g >= 2.0:
+            out.append(dict(base, rank=4,
+                            text=(f'{g} goals from {xg:.1f} expected — '
+                                  f'{g - xg:+.1f} below the chances he has had')))
+
+        # Durability: every minute of a real run, and it sorts beneath goals.
+        if games >= 5 and mins >= games * 90:
+            out.append(dict(base, rank=9,
+                            text=f'has played every minute of all {games} games'))
+    out.sort(key=lambda r: (r.get('rank', 5), -(r.get('goals') or 0)))
+    for r in out:
+        r.pop('rank', None)
     return out
 
 
@@ -408,9 +434,18 @@ Sat Aug 24
     rs = rate_signals(US, 'England Premier League')
     txt = ' | '.join(r['text'] for r in rs)
     chk('5 goals in 5 games' in txt, f'a goal-a-game rate is reported: {txt[:60]}')
+    chk(rs[0]['player'] in ('Erling Haaland', 'Overperformer') and 'goals' in rs[0]['text'],
+        'a GOAL signal leads, never the durability one')
+    mins_i = [i for i, r in enumerate(rs) if 'every minute' in r['text']]
+    goal_i = [i for i, r in enumerate(rs) if 'goals' in r['text']]
+    chk(not mins_i or not goal_i or min(mins_i) > max(goal_i),
+        'durability sorts beneath every goal signal -- it flooded the first build')
+    chk(all('rank' not in r for r in rs), 'the sort key is stripped before output')
     chk('Bench Warmer' not in {r['player'] for r in rs},
         'a player with no goals produces no signal')
-    chk('above the chances taken' in txt, 'overperformance against xG is reported')
+    chk('above the chances he has had' in txt, 'overperformance against xG is reported')
+    chk(sum(1 for r in rs if 'top scorers' in r['text'] or 'leads the league' in r['text']) <= 3,
+        'at most three players per league read as top scorers')
     chk(all('of last' not in r['text'] for r in rs),
         'NO rate signal is phrased as a streak -- season totals cannot support one')
 
