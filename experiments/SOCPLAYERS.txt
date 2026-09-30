@@ -3,3 +3,4 @@
 splits 2026-09-30T19:25:09Z
 resplit 2026-09-30T19:26:26Z
 resplit2 2026-09-30T19:26:57Z
+current-club check 2026-09-30T19:33:00Z
