@@ -1,0 +1,42 @@
+name: Player head to head
+on:
+  workflow_dispatch: {}
+  push: { branches: [main], paths: ['experiments/SOCPH2H.txt'] }
+permissions: { contents: write }
+concurrency: { group: parlay-socph2h, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          set -o pipefail
+          python3 socph2h.py --selftest | tail -2
+          # The PROBE runs first and its output is kept in the log. understat is
+          # unreachable from the dev container, so this is the only place the
+          # shape of the source can be seen at all.
+          python3 socph2h.py --probe 2>&1 | tee probe.log || true
+          python3 socph2h.py 2>&1 | tee socph2h.new
+          test -s socph2h.new
+          grep -q "wrote" socph2h.new
+          mv socph2h.new socph2h.txt
+      - name: Publish
+        run: |
+          git config user.name "parlay-bot"
+          git config user.email "actions@github.com"
+          cp socph2h.txt /tmp/h.txt; cp socph2h.json /tmp/h.json
+          for a in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/h.txt socph2h.txt; cp /tmp/h.json socph2h.json
+            git add socph2h.txt socph2h.json
+            git diff --cached --quiet && { echo "unchanged"; exit 0; }
+            git commit -m "player head to head $(date -u '+%Y-%m-%d %H:%M')"
+            git push origin HEAD:main && { echo "published on attempt $a"; exit 0; }
+            echo "remote advanced -- rebuilding the commit on the new tip"
+          done
+          echo "::error::could not publish after 5 attempts"
+          exit 1
