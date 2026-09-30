@@ -1,19 +1,23 @@
-socpatterns: 112 live patterns from 870 chances examined; 22 clear the look-elsewhere bar
-  * UTC                    winless in 21                                Peru Liga 1         [1 in 24,698; 0.04 expected by chance]
-  * Danubio                winless in 17                                Uruguay Primera     [1 in 2,598; 0.33 expected by chance]
-  * Colo-Colo              unbeaten in 14                               Chile Liga de Prim  [1 in 1,137; 0.77 expected by chance]
-    Always Ready           unbeaten in 13                               Bolivia Profesiona  [1 in 481; 1.81 expected by chance]
-    Albion                 winless in 11                                Uruguay Primera     [1 in 162; 5.37 expected by chance]
-    Deportivo Maldonado    both teams did NOT score, 7 straight         Uruguay Primera     [1 in 140; 6.21 expected by chance]
-    Deportes Concepción    under 2.5 in 6 straight                      Chile Liga de Prim  [1 in 124; 7.02 expected by chance]
-    FC Cajamarca           over 2.5 in 7 straight                       Peru Liga 1         [1 in 73; 11.92 expected by chance]
-    GV San José            winless in 9                                 Bolivia Profesiona  [1 in 72; 12.08 expected by chance]
-    Atlético Bucaramanga   unbeaten in 10                               Colombia Primera A  [1 in 69; 12.61 expected by chance]
-    Cerro Largo            winless in 9                                 Uruguay Primera     [1 in 64; 13.59 expected by chance]
-    Deportivo Maldonado    under 2.5 in 7 straight                      Uruguay Primera     [1 in 61; 14.26 expected by chance]
-    Deportivo Cali         clean sheet in 3 straight                    Colombia Primera A  [1 in 57; 15.26 expected by chance]
-    Bolívar                unbeaten in 8                                Bolivia Profesiona  [1 in 45; 19.33 expected by chance]
-    Cerro Largo            failed to score in 3 straight                Uruguay Primera     [1 in 42; 20.71 expected by chance]
-    Universitario          over 2.5 in 6 straight                       Peru Liga 1         [1 in 40; 21.75 expected by chance]
-    Bolívar                over 2.5 in 8 straight                       Bolivia Profesiona  [1 in 40; 21.75 expected by chance]
-    The Strongest          over 2.5 in 8 straight                       Bolivia Profesiona  [1 in 40; 21.75 expected by chance]
+socpatterns: 1186 live records across five leagues
+  Bolívar                won in 9 of last 10 (8 in a row)                       Bolivia Profesional
+  Colo-Colo              avoided defeat in all of the last 10 — 14 in a row     Chile Liga de Primer
+  Real Potosí            under 2.5 in 8 of last 10                              Bolivia Profesional
+  Montevideo City Torque won in 8 of last 10                                    Uruguay Primera
+  UTC                    failed to win in all of the last 10 — 21 in a row      Peru Liga 1
+  Always Ready           avoided defeat in all of the last 10 — 13 in a row     Bolivia Profesional
+  Deportivo Maldonado    no both-teams-score in 9 of last 10 (7 in a row)       Uruguay Primera
+  Albion                 failed to win in all of the last 10 — 11 in a row      Uruguay Primera
+  Danubio                failed to win in all of the last 10 — 17 in a row      Uruguay Primera
+  Atlético Bucaramanga   avoided defeat in all of the last 10                   Colombia Primera A
+  FC Cajamarca           over 2.5 in 9 of last 10 (7 in a row)                  Peru Liga 1
+  Liverpool              kept a clean sheet in all 3 meetings with Boston River Uruguay Primera
+  Racing                 kept a clean sheet in all 3 meetings with Liverpool    Uruguay Primera
+  Deportivo Maldonado    under 2.5 in 9 of last 10 (7 in a row)                 Uruguay Primera
+  Sport Boys             under 2.5 in 8 of last 10                              Peru Liga 1
+  Albion                 conceded in all of the last 10 — 14 in a row           Uruguay Primera
+  Universidad de Chile   scored in all of the last 10 — 11 in a row             Chile Liga de Primer
+  Águilas Doradas        conceded in all of the last 10 — 16 in a row           Colombia Primera A
+  Nacional Potosí        kept a clean sheet in all 2 meetings with Independient Bolivia Profesional
+  Aurora                 kept a clean sheet in all 2 meetings with Real Potosí  Bolivia Profesional
+  Real Potosí            kept a clean sheet in all 2 meetings with Aurora       Bolivia Profesional
+  Huachipato             failed to win in 9 of last 10                          Chile Liga de Primer

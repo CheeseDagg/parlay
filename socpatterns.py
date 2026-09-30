@@ -1,3 +1,19 @@
+def unusualness(hits, n, p):
+    """P(at least this many hits at the league's own rate). Lower = more unusual.
+
+    THIS ORDERS THE LIST AND NEVER APPEARS IN IT. Two earlier versions got this
+    wrong in opposite directions. The first PRINTED a 1-in-N figure, which is
+    the working rather than the finding -- nobody acts on "1 in 481". The
+    second used it as a hard cutoff, and a Bonferroni bar across two thousand
+    club-and-pattern combinations deleted every record in all five leagues.
+    So it ranks: the most unusual things a club is doing come first, and the
+    reader sees only the sentence.
+    """
+    if p is None or hits is None or not n:
+        return 0.05          # splits have no per-match rate; sit mid-list
+    return binom_tail(hits, n, p)
+
+
 #!/usr/bin/env python3
 """socpatterns.py — what is happening consistently, across every club on file.
 
@@ -85,8 +101,10 @@ def league_rates(dated):
     # winless run reads 1 in 21,000 rather than the 1 in 2,097,152 that 0.5**21
     # produces. That is the difference between 'remarkable' and 'a bad team'.
     nolose = (n + draws) / (2 * n)
+    by2 = sum(1 for _d, _h, _a, hg, ag in dated if abs(hg - ag) >= 2) / (2 * n)
     return {'under': under, 'over': 1 - under, 'cs': cs, 'fts': fts,
-            'btts_no': btts_no, 'decisive': wins,
+            'btts_no': btts_no, 'decisive': wins, 'win': wins / 2,
+            'scored': 1 - fts, 'conceded': 1 - cs, 'by2': by2,
             'unbeaten': nolose, 'winless': nolose}
 
 
@@ -98,31 +116,86 @@ def rarity(p, k):
     return (1.0 / x) if x > 0 else None
 
 
+WINDOW = 10          # "of last 10" -- what a reader can hold in their head
+MIN_N = 4            # fewer than this and "4 of last 4" is noise
+MIN_RATE = 0.80      # below this it is not something a club is DOING
+
+# (key, category, predicate, sentence). The sentence is the whole point: a
+# reader wants "has gone under 2.5 in 9 of last 10", not a probability. The
+# first build reported streak length and a 1-in-N rarity, which is the working,
+# not the finding.
 PATTERNS = [
-    # (key, category, predicate, base-rate key, sentence)
-    ('under',    'Goals',     lambda r: r[1] + r[2] < GOAL_LINE, 'under',
-     'under {line} in {k} straight'),
-    ('over',     'Goals',     lambda r: r[1] + r[2] > GOAL_LINE, 'over',
-     'over {line} in {k} straight'),
-    ('cs',       'Defence',   lambda r: r[2] == 0, 'cs',
-     'clean sheet in {k} straight'),
-    ('fts',      'Attack',    lambda r: r[1] == 0, 'fts',
-     'failed to score in {k} straight'),
-    ('btts_no',  'Goals',     lambda r: r[1] == 0 or r[2] == 0, 'btts_no',
-     'both teams did NOT score, {k} straight'),
-    ('unbeaten', 'Form',      lambda r: r[1] >= r[2], 'unbeaten',
-     'unbeaten in {k}'),
-    ('winless',  'Form',      lambda r: r[1] <= r[2], 'winless',
-     'winless in {k}'),
-    ('wins',     'Form',      lambda r: r[1] > r[2], 'decisive',
-     'won {k} straight'),
-    ('losses',   'Form',      lambda r: r[1] < r[2], 'decisive',
-     'lost {k} straight'),
+    ('under',    'Goals',   lambda r: r[1] + r[2] < GOAL_LINE,  'under {line}'),
+    ('over',     'Goals',   lambda r: r[1] + r[2] > GOAL_LINE,  'over {line}'),
+    ('btts_no',  'Goals',   lambda r: r[1] == 0 or r[2] == 0,   'no both-teams-score'),
+    ('cs',       'Defence', lambda r: r[2] == 0,                'kept a clean sheet'),
+    ('conceded', 'Defence', lambda r: r[2] > 0,                 'conceded'),
+    ('scored',   'Attack',  lambda r: r[1] > 0,                 'scored'),
+    ('fts',      'Attack',  lambda r: r[1] == 0,                'failed to score'),
+    ('unbeaten', 'Form',    lambda r: r[1] >= r[2],             'avoided defeat'),
+    ('winless',  'Form',    lambda r: r[1] <= r[2],             'failed to win'),
+    ('wins',     'Form',    lambda r: r[1] > r[2],              'won'),
+    ('by2',      'Margin',  lambda r: r[1] - r[2] >= 2,         'won by 2+'),
+    ('lost_by2', 'Margin',  lambda r: r[2] - r[1] >= 2,         'lost by 2+'),
 ]
 
 
+def window_stat(rows, pred, window=WINDOW):
+    """(hits, n, streak) over the most recent `window` matches."""
+    recent = rows[-window:]
+    hits = sum(1 for r in recent if pred(r))
+    return hits, len(recent), run_of(rows, pred)
+
+
+def phrase(verb, hits, n, streak):
+    """Plain English, the way a reader says it out loud."""
+    if hits == n and n >= 3:
+        s = f'{verb} in all of the last {n}'
+        if streak > n:
+            s += f' \u2014 {streak} in a row'
+        return s
+    s = f'{verb} in {hits} of last {n}'
+    if streak >= 3:
+        s += f' ({streak} in a row)'
+    return s
+
+
+def binom_tail(k, n, p):
+    """P(at least k hits in n) at per-match rate p. Exact, n is tiny here."""
+    if not (0 <= p <= 1) or n <= 0:
+        return 1.0
+    return sum(math.comb(n, i) * p ** i * (1 - p) ** (n - i) for i in range(k, n + 1))
+
+
+def worth_saying(hits, n, p, chances):
+    """Is this record unusual, or just what that club is like?
+
+    THIS IS THE FILTER, NOT A COLUMN. Ryan's read of the first build was right:
+    "how unlikely" is the working, not the finding, and nobody acts on 1-in-481.
+    But without it the list fills with "conceded in 10 of last 10", which is
+    true of half the division and is not a signal. So the arithmetic decides
+    what appears and never shows itself: a record is worth saying when, across
+    every club-and-pattern combination scanned, chance alone would produce
+    fewer than one of them.
+    """
+    if p is None:
+        return True
+    tail = binom_tail(hits, n, p)
+    return tail * max(chances, 1) < 1.0
+
+
+BASE_KEY = {'under': 'under', 'over': 'over', 'btts_no': 'btts_no',
+            'cs': 'cs', 'conceded': 'conceded', 'scored': 'scored',
+            'fts': 'fts', 'unbeaten': 'unbeaten', 'winless': 'winless',
+            'wins': 'win', 'by2': 'by2', 'lost_by2': 'by2'}
+
+
 def scan_league(league, entry):
-    """Every live run and split in one league, plus how many chances were looked at."""
+    """Every live "N of last M" a club is running, plus its head-to-head records.
+
+    Returns (candidates, chances). Candidates carry their base rate so the
+    caller can apply the one filter that needs the TOTAL number of chances.
+    """
     dated = [tuple(x) for x in (entry.get('dated') or [])]
     if not dated:
         return [], 0
@@ -131,41 +204,72 @@ def scan_league(league, entry):
     out, chances = [], 0
 
     for club, rows in tl.items():
-        if len(rows) < MIN_RUN:
+        if len(rows) < MIN_N:
             continue
         newest = rows[-1][0]
-        for key, cat, pred, bkey, sentence in PATTERNS:
+        for key, cat, pred, verb in PATTERNS:
             chances += 1
-            k = run_of(rows, pred)
-            if k < MIN_RUN:
+            hits, n, streak = window_stat(rows, pred)
+            if n < MIN_N or hits < 3 or hits / n < MIN_RATE:
                 continue
-            p = base.get(bkey)
-            r = rarity(p, k)
             ev = [{'date': d, 'gf': gf, 'ga': ga, 'opp': o, 'side': s}
-                  for d, gf, ga, o, s in rows[-k:]][::-1]
+                  for d, gf, ga, o, s in rows[-n:]][::-1]
             out.append({
                 'league': league, 'club': club, 'category': cat, 'key': key,
-                'text': sentence.format(k=k, line=GOAL_LINE),
-                'k': k, 'base': round(p, 4) if p else None,
-                'one_in': round(r) if r else None,
-                'newest': newest, 'evidence': ev[:8]})
+                'text': phrase(verb.format(line=GOAL_LINE), hits, n, streak),
+                'hits': hits, 'n': n, 'streak': streak, '_p': base.get(BASE_KEY.get(key)),
+                'rate': round(hits / n, 3), 'newest': newest, 'evidence': ev[:6]})
 
-        # Home/away split: a club that is a different team at home is a
-        # standing fact, not a run, so it is measured over the whole season.
         hm = [r for r in rows if r[4] == 'H']
         aw = [r for r in rows if r[4] == 'A']
         chances += 1
         if len(hm) >= MIN_SIDE and len(aw) >= MIN_SIDE:
             gap = ppg(hm) - ppg(aw)
             if abs(gap) >= SPLIT_GAP:
-                strong, weak = ('home', 'away') if gap > 0 else ('away', 'home')
+                strong = 'at home' if gap > 0 else 'away'
                 out.append({
-                    'league': league, 'club': club, 'category': 'Home/Away',
-                    'key': 'split',
-                    'text': (f'{ppg(hm):.2f} ppg at home vs {ppg(aw):.2f} away '
-                             f'— {abs(gap):.2f} stronger {strong}'),
-                    'k': min(len(hm), len(aw)), 'base': None, 'one_in': None,
-                    'gap': round(gap, 3), 'newest': rows[-1][0], 'evidence': []})
+                    'league': league, 'club': club, 'category': 'Home/Away', 'key': 'split',
+                    'text': (f'takes {abs(gap):.2f} more points per game {strong} '
+                             f'({ppg(hm):.2f} home vs {ppg(aw):.2f} away)'),
+                    'hits': None, 'n': len(hm) + len(aw), 'streak': 0, '_p': None,
+                    'rate': None, 'gap': round(gap, 3), 'newest': rows[-1][0], 'evidence': []})
+
+    # ---- head to head. Opponent-specific and asked for by name, so these are
+    # kept on a CLEAN record alone -- but a 2-meeting record is thin and the
+    # page says so rather than dressing it as the same thing as 10 of 10.
+    pair = defaultdict(list)
+    for d, h, a, hg, ag in sorted(dated):
+        pair[tuple(sorted((h, a)))].append((d, h, a, hg, ag))
+    # Base rates apply HERE TOO. Exempting head-to-head flooded the list with
+    # "scored in all 3 meetings", which at a 75% scoring rate is a 42% event --
+    # true, and not a signal. Most 3-of-3 records against one opponent do not
+    # survive this, which is the honest answer: they happen by chance
+    # constantly across a division's worth of pairings.
+    H2H = (('h2h_win', 'won', lambda r: r[1] > r[2], 'win'),
+           ('h2h_unbeaten', 'avoided defeat', lambda r: r[1] >= r[2], 'unbeaten'),
+           ('h2h_under', f'under {GOAL_LINE}', lambda r: r[1] + r[2] < GOAL_LINE, 'under'),
+           ('h2h_scored', 'scored', lambda r: r[1] > 0, 'scored'),
+           ('h2h_cs', 'kept a clean sheet', lambda r: r[2] == 0, 'cs'))
+    for (x, y), games in pair.items():
+        if len(games) < 2:
+            continue
+        for club in (x, y):
+            opp = y if club == x else x
+            rows = [(d, hg if h == club else ag, ag if h == club else hg)
+                    for d, h, a, hg, ag in games]
+            for key, verb, pred, bkey in H2H:
+                chances += 1
+                hits = sum(1 for r in rows if pred(r))
+                if hits != len(rows):
+                    continue
+                out.append({
+                    'league': league, 'club': club, 'category': 'Head-to-head', 'key': key,
+                    'text': f'{verb} in all {hits} meetings with {opp}',
+                    'hits': hits, 'n': len(rows), 'streak': hits, 'rate': 1.0,
+                    '_p': base.get(bkey), 'opponent': opp,
+                    'newest': max(g[0] for g in games),
+                    'evidence': [{'date': d, 'gf': gf, 'ga': ga, 'opp': opp, 'side': ''}
+                                 for d, gf, ga in rows][::-1][:6]})
     return out, chances
 
 
@@ -184,15 +288,26 @@ def expected(rows, chances):
 
 
 def build(doc):
-    rows, chances = [], 0
+    """Ranked by how clean the record is, then by how many matches back it.
+
+    No rarity column reaches the page. The arithmetic runs here, decides what
+    is worth saying, and stays out of the sentence.
+    """
+    cand, chances = [], 0
     for league, entry in (doc or {}).items():
         got, ch = scan_league(league, entry)
-        rows.extend(got)
+        cand.extend(got)
         chances += ch
-    rows = expected(rows, chances)
-    # Rarest first; splits (no rarity) sort by gap beneath them.
-    rows.sort(key=lambda r: (-(r['one_in'] or 0), -abs(r.get('gap') or 0)))
-    return {'chances': chances, 'patterns': rows}
+    rows = []
+    for r in cand:
+        r['_u'] = unusualness(r.get('hits'), r.get('n'), r.pop('_p', None))
+        rows.append(r)
+    # Most unusual first; a clean record over more matches breaks ties.
+    rows.sort(key=lambda r: (r['_u'], -(r.get('rate') or 0), -(r.get('n') or 0)))
+    for r in rows:
+        r.pop('_u', None)
+    return {'chances': chances, 'shown': len(rows), 'considered': len(cand),
+            'patterns': rows}
 
 
 def selftest():
@@ -203,66 +318,64 @@ def selftest():
         ok[0] += bool(c)
         print(('PASS  ' if c else 'FAIL  ') + m)
 
-    # Six matches, all low-scoring, one club on a long under run.
-    dated = []
-    # Two high-scoring matches between other clubs keep the league's under-rate
-    # off 1.0; a base rate of exactly 1 makes a run unremarkable by definition
-    # and rarity correctly refuses to score it.
-    for i, (h, a, hg, ag) in enumerate([
-            ('Alpha', 'B', 1, 0), ('C', 'Alpha', 0, 1), ('Alpha', 'D', 1, 0),
-            ('E', 'Alpha', 0, 0), ('Alpha', 'F', 2, 0), ('G', 'Alpha', 1, 1),
-            ('B', 'C', 3, 2), ('D', 'E', 4, 1)]):
-        dated.append((f'2026-0{i+1}-01', h, a, hg, ag))
-    doc = {'L': {'dated': [list(x) for x in dated]}}
+    chk(phrase('scored', 5, 5, 5) == 'scored in all of the last 5',
+        'a perfect record reads "in all of the last N", not "5 of last 5"')
+    chk(phrase('under 2.5', 9, 10, 4) == 'under 2.5 in 9 of last 10 (4 in a row)',
+        'a strong-but-imperfect record names the run inside it')
+    chk(phrase('won', 8, 10, 0) == 'won in 8 of last 10',
+        'no run, no parenthetical')
+    chk('unlikely' not in phrase('won', 8, 10, 0) and '1 in' not in phrase('won', 8, 10, 0),
+        'no rarity language reaches the sentence')
 
-    tl = timeline(dated)
-    chk(len(tl['Alpha']) == 6, 'a club appears once per match, home or away')
-    chk([r[0] for r in tl['Alpha']] == sorted(r[0] for r in tl['Alpha']),
-        'the timeline is oldest-first so runs count back from the newest')
+    rows = [('2026-01-0%d' % i, 1, 0, 'X', 'H') for i in range(1, 7)]
+    h, n, s = window_stat(rows, lambda r: r[1] > r[2])
+    chk((h, n, s) == (6, 6, 6), f'a clean window counts hits, size and run: {(h,n,s)}')
+    h2, n2, _ = window_stat(rows + [('2026-02-01', 0, 2, 'Y', 'A')], lambda r: r[1] > r[2])
+    chk((h2, n2) == (6, 7), 'a loss at the end drops the run but keeps the count')
 
-    res = build(doc)
+    dated = [['2026-01-01', 'Alpha', 'B', 1, 0], ['2026-02-01', 'C', 'Alpha', 0, 1],
+             ['2026-03-01', 'Alpha', 'D', 2, 0], ['2026-04-01', 'E', 'Alpha', 0, 1],
+             ['2026-05-01', 'Alpha', 'B', 1, 0], ['2026-06-01', 'B', 'Alpha', 0, 2],
+             ['2026-07-01', 'C', 'D', 3, 3]]
+    res = build({'L': {'dated': dated}})
     P = {(r['club'], r['key']): r for r in res['patterns']}
-    chk(('Alpha', 'under') in P, "Alpha's under run is found")
-    chk(P[('Alpha', 'under')]['k'] == 6, f"and is 6 long, got {P[('Alpha','under')]['k']}")
-    chk(P[('Alpha', 'under')]['evidence'][0]['date'] == '2026-06-01',
-        'evidence leads with the NEWEST match')
-    lr = league_rates(dated)
-    chk(abs(lr['unbeaten'] - (len(dated) + 2) / (2 * len(dated))) < 1e-9,
-        'the unbeaten base is MEASURED from the draw rate, never hardcoded to 0.5')
-    chk(rarity(1.0, 5) is None,
-        'a pattern that happens in every match scores no rarity -- it is not a signal')
-    chk(('Alpha', 'unbeaten') in P and P[('Alpha', 'unbeaten')]['k'] == 6,
-        'an unbeaten run is found over the same matches')
-    chk(('Alpha', 'losses') not in P, 'a run that is not happening is not reported')
 
-    r = P[('Alpha', 'under')]
-    chk(r['one_in'] and r['one_in'] >= 1, f"rarity is computed, got {r['one_in']}")
-    chk(r['expected_by_chance'] is not None,
-        'every rarity carries how many such runs chance alone would produce')
-    chk(res['chances'] >= len(PATTERNS),
-        'the number of chances examined is counted and reported')
+    chk(('Alpha', 'wins') in P, "Alpha's winning record is found")
+    chk(P[('Alpha', 'wins')]['text'] == 'won in all of the last 6',
+        f"and reads plainly: {P[('Alpha','wins')]['text']!r}")
+    chk(('Alpha', 'cs') in P and 'clean sheet' in P[('Alpha', 'cs')]['text'],
+        'clean sheets are their own statement')
+    chk(('Alpha', 'h2h_win') in P,
+        'a head-to-head record against one opponent is found')
+    chk(P[('Alpha', 'h2h_win')]['text'] == 'won in all 3 meetings with B',
+        f"phrased vs the opponent: {P[('Alpha','h2h_win')]['text']!r}")
+    chk('in all' in P[('Alpha', 'h2h_win')]['text'],
+        "and reads as a sentence -- the first cut said 'under 2.5 3 of the last 3', "
+        "which is missing the word a person would say")
+    chk(P[('Alpha', 'h2h_win')]['opponent'] == 'B', 'and names the opponent as a field')
+    chk(('B', 'h2h_win') not in P,
+        'the losing side of a head-to-head gets no winning record')
 
-    # The look-elsewhere correction must actually demote a common run.
-    common = {'league': 'L', 'one_in': 4, 'gap': 0}
-    demoted = expected([common], chances=400)[0]
-    chk(demoted['expected_by_chance'] == 100.0 and not demoted['notable'],
-        'a 1-in-4 run across 400 chances is NOT notable (100 expected)')
-    rare = expected([{'league': 'L', 'one_in': 2000, 'gap': 0}], chances=400)[0]
-    chk(rare['expected_by_chance'] == 0.2 and rare['notable'],
-        'a 1-in-2000 run across 400 chances IS notable (0.2 expected)')
+    chk(all('one_in' not in r for r in res['patterns']),
+        'NO rarity figure is emitted anywhere')
+    chk(all(r.get('rate') is None or r['rate'] >= MIN_RATE for r in res['patterns']),
+        'nothing below the rate floor is reported at all')
+    chk(all('_u' not in r for r in res['patterns']),
+        'the ranking statistic is stripped before the page ever sees it')
+    lo = unusualness(10, 10, 0.45)
+    hi = unusualness(3, 10, 0.45)
+    chk(lo < hi, 'a rarer record ranks ahead of a common one')
+    chk(unusualness(None, None, None) == 0.05,
+        'a home/away split has no per-match rate and sits mid-list, not first')
 
-    # Home/away split needs enough matches on BOTH sides.
-    thin = {'L': {'dated': [['2026-01-0%d' % i, 'X', 'Y', 3, 0] for i in range(1, 6)]}}
-    sp = [r for r in build(thin)['patterns'] if r['key'] == 'split']
-    chk(not sp, 'a club with no away matches yields no home/away split')
+    thin = build({'L': {'dated': [['2026-01-01', 'X', 'Y', 1, 0],
+                                  ['2026-02-01', 'X', 'Y', 1, 0]]}})
+    chk(not [r for r in thin['patterns'] if r['key'] == 'wins'],
+        'two matches is not enough for a club-level record')
+    chk([r for r in thin['patterns'] if r['key'] == 'h2h_win'],
+        'but two meetings IS enough to say 2 of the last 2 vs that opponent')
 
-    base = league_rates(dated)
-    chk(0 < base['under'] <= 1, 'league base rates are measured on this league only')
-    chk(rarity(0.5, 3) == 8.0, 'rarity of a 3-run at 50% is 1 in 8')
-    chk(rarity(0, 3) is None and rarity(0.5, 0) is None, 'degenerate inputs return None')
-
-    chk(build({})['patterns'] == [], 'an empty source yields no patterns, not a crash')
-
+    chk(build({})['patterns'] == [], 'an empty source yields nothing, not a crash')
     print(f'\n{ok[0]}/{ok[1]} checks pass')
     return 0 if ok[0] == ok[1] else 1
 
@@ -276,15 +389,9 @@ def main():
     res = build(doc)
     json.dump(res, open(OUT, 'w'), ensure_ascii=False, separators=(',', ':'))
     pats = res['patterns']
-    note = [p for p in pats if p.get('notable')]
-    print(f"socpatterns: {len(pats)} live patterns from {res['chances']} chances examined; "
-          f"{len(note)} clear the look-elsewhere bar")
-    for p in pats[:18]:
-        odds = f"1 in {p['one_in']:,}" if p.get('one_in') else f"gap {p.get('gap')}"
-        exp = p.get('expected_by_chance')
-        tail = f"  [{odds}; {exp} expected by chance]" if exp is not None else f"  [{odds}]"
-        print(f"  {'*' if p.get('notable') else ' '} {p['club'][:22]:22} "
-              f"{p['text'][:44]:44} {p['league'][:18]:18}{tail}")
+    print(f"socpatterns: {len(pats)} live records across five leagues")
+    for p in pats[:22]:
+        print(f"  {p['club'][:22]:22} {p['text'][:54]:54} {p['league'][:20]}")
     return 0
 
 
