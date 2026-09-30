@@ -1,35 +1,30 @@
-=== ROUND 9: a DATED or ORDERED results source ===
-Recent Form needs order. A matrix has none. Two routes tested:
-  (a) Spanish Wikipedia round-by-round pages
-  (b) the odds API /scores endpoint for these league keys
+=== ROUND 10a: WHY do half the scored rows have no date? ===
+  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
+     ROW(5): ['Universidad de Concepción', '1-0', 'Coquimbo Unido', 'Huachipato - CAP', '15:30']
+  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
+     ROW(5): ['Cobresal', '1-0', 'Huachipato', 'El Cobre', '18:00']
+  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
+     ROW(5): ['Palestino', '1-1', 'Ñublense', 'La Cisterna', '20:30']
+  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
+     ROW(5): ["O'Higgins", '2-1', 'Deportes Concepción', 'El Teniente', '20:30']
+  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
+     ROW(5): ["O'Higgins", '1-0', 'Deportes La Serena', 'El Teniente', '18:00']
+  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
+     ROW(5): ['Colo-Colo', '2-0', 'Everton', 'Monumental', '20:30']
+  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
+     ROW(5): ['Ñublense', '1-1', 'Deportes Limache', 'Nelson Oyarzún', '18:00']
+  Chile [Primera rueda] hdr=['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora']
+     ROW(5): ['Universidad Católica', '2-0', 'Deportes Concepción', 'Claro Arena', '20:30']
+  Colombia: HTTPError
 
---- (a) es.wikipedia season pages ---
-  Colombia: ['Categoría Primera B', 'Torneo Finalización 2002 (Colombia)', 'Torneo Finalización 2007 (Colombia)', 'Torneo Finalización 2013 (Colombia)', 'Torneo de Apertura y Clausura']
-  Peru: ['Liga1 2026 (Perú)', 'Liga1 (Perú)', 'Liga de Fútbol Profesional Peruana', 'Liga Femenina FPF', 'Segunda División del Perú']
-  Chile: ['Liga de Primera 2026', 'Liga de Ascenso de Chile 2026', 'Primeira Liga', 'Copa de la Liga de Chile 2026', 'Liga Femenina de baloncesto 2026-27']
-      [Liga de Primera 2026] ROUND TABLE [Primera rueda] 10r scores=14
-         hdr: Fecha 1
-         Local | Resultado | Visita | Estadio | Fecha | Hora
-         Universidad de Chi | 0-0 | Audax Italiano | Nacional | 30 de enero | 20:00
-      [Liga de Primera 2026] ROUND TABLE [Primera rueda] 10r scores=15
-         hdr: Fecha 2
-         Local | Resultado | Visita | Estadio | Fecha | Hora
-         Audax Italiano | 3-0 | Universidad de Con | La Florida | 6 de febrero | 20:00
-  Bolivia: ['Primera División de Bolivia', 'Copa Bolivia 2026', 'Primera División de Bolivia 2026', 'Segunda División de Bolivia', 'Primera División de Bolivia 2025']
-      [Copa Bolivia 2026] ROUND TABLE [Fixture] 10r scores=15
-         hdr: Fecha 1
-         Serie | Local | Resultado | Visitante | Estadio | Fecha | Hora
-         A | San Antonio Bulo B | 0 – 1 | Aurora | Dr. Carlos Villega | 18 de agosto | 15:00
-      [Copa Bolivia 2026] ROUND TABLE [Fixture] 10r scores=16
-         hdr: Fecha 2
-         Local | Resultado | Visitante | Estadio | Fecha | Hora
-         GV San José | 4 – 1 | Real Oruro | Jesús Bermúdez | 29 de agosto | 15:00
+=== ROUND 10b: Colombia Finalizacion + Peru round pages ===
+  'Torneo Finalizacion 2026 Colombia': ['Torneo Finalización 2002 (Colombia)', 'Torneo Finalización 2013 (Colombia)', 'Torneo Finalización 2026 (Colombia)', 'Torneo Finalización 2007 (Colombia)', 'Torneo de Apertura y Clausura', 'Superliga de Colombia']
+  'Categoria Primera A 2026 Colombia': ['Categoría Primera B', 'Categoría Primera C', 'Categoría Primera A', 'Primera C 2026 (Colombia)', 'Selección de fútbol de Colombia', 'Superliga de Colombia']
+  'Liga1 2026 Peru Torneo Clausura': ['Liga1 2026 (Perú)', 'Liga1 (Perú)', 'Torneo Clausura 2026 (Perú)', 'Liga1 2025 (Perú)', 'Liga de Fútbol Profesional Peruana', 'Liga1 2027 (Perú)']
+  'Liga1 2026 Peru': ['Liga1 2026 (Perú)', 'Liga1 (Perú)', 'Liga1 2025 (Perú)', 'Torneo Clausura 2026 (Perú)', 'Liga1 2027 (Perú)', 'Liga de Fútbol Profesional Peruana']
 
---- (b) odds API /scores for these leagues ---
-  catalog 'colombia': ABSENT
-  catalog 'peru': ABSENT
-  catalog 'chile': ['soccer_chile_campeonato']
-  catalog 'bolivia': ABSENT
-  catalog 'uruguay': ABSENT
-  catalog 'usl': ['soccer_finland_veikkausliiga']
-    soccer_chile_campeonato: 10 events, 0 completed, sample=[]
+=== ROUND 10c: do those pages carry Local/Resultado tables? ===
+  Torneo_Finalizaci%C3%B3n_2026_(Colombia): 24 tables, 19 round-tables, 94 rows with a date
+  Torneo_Apertura_2026_(Colombia): 27 tables, 20 round-tables, 88 rows with a date
+  Liga1_2026_(Per%C3%BA): 5 tables, 0 round-tables, 0 rows with a date
+  Categor%C3%ADa_Primera_A_2026: HTTPError
