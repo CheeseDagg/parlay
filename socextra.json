@@ -7406,7 +7406,25 @@
   "es_pages": [
    "Torneo_Finalizaci%C3%B3n_2026_(Colombia)",
    "Torneo_Apertura_2026_(Colombia)"
-  ]
+  ],
+  "cross_check": {
+   "agreed": 267,
+   "disagreed": 1,
+   "samples": [
+    [
+     "Santa Fe",
+     "Am\u00e9rica de Cali",
+     [
+      0,
+      0
+     ],
+     [
+      4,
+      0
+     ]
+    ]
+   ]
+  }
  },
  "Peru Liga 1": {
   "slug": "https://en.wikipedia.org/wiki/2026_Liga_1_(Peru)",
@@ -13621,7 +13639,12 @@
   "es_pages": [
    "Torneo_Clausura_2026_(Per%C3%BA)",
    "Torneo_Apertura_2026_(Per%C3%BA)"
-  ]
+  ],
+  "cross_check": {
+   "agreed": 157,
+   "disagreed": 0,
+   "samples": []
+  }
  },
  "Chile Liga de Primera": {
   "slug": "https://en.wikipedia.org/wiki/2026_Liga_de_Primera",
@@ -18410,7 +18433,12 @@
   },
   "es_pages": [
    "Liga_de_Primera_2026"
-  ]
+  ],
+  "cross_check": {
+   "agreed": 181,
+   "disagreed": 0,
+   "samples": []
+  }
  },
  "Bolivia Profesional": {
   "slug": "https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional",
@@ -22817,6 +22845,11 @@
   },
   "es_pages": [
    "Primera_Divisi%C3%B3n_de_Bolivia_2026"
-  ]
+  ],
+  "cross_check": {
+   "agreed": 160,
+   "disagreed": 0,
+   "samples": []
+  }
  }
 }

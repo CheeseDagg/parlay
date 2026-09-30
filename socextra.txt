@@ -1,12 +1,17 @@
 socextra -- leagues football-data does not publish
+    !! Colombia Primera A: 1 scoreline(s) DISAGREE between the grid and the round tables (agreed 267)
+       Santa Fe v América de Cali: grid (0, 0) vs rounds (4, 0)
     es-rounds Colombia Primera A: 298 dated results across 2 page(s), newest 2026-09-29
   OK      Colombia Primera A: 297 matches  home 0.451 draw 0.310 away 0.239 goals 2.569
     es-rounds Peru Liga 1: Liga1_2026_(Per%C3%BA) read, no dated rows
+    cross-check Peru Liga 1: 157 scorelines agree across both readers, 0 disagree
     es-rounds Peru Liga 1: 242 dated results across 2 page(s), newest 2026-09-23
   OK      Peru Liga 1: 242 matches  home 0.533 draw 0.236 away 0.231 goals 2.785
+    cross-check Chile Liga de Primera: 181 scorelines agree across both readers, 0 disagree
     es-rounds Chile Liga de Primera: 181 dated results across 1 page(s), newest 2026-09-16
   OK      Chile Liga de Primera: 181 matches  home 0.464 draw 0.210 away 0.326 goals 2.845
   EMPTY   Uruguay Primera: page found, no usable matrix
+    cross-check Bolivia Profesional: 160 scorelines agree across both readers, 0 disagree
     es-rounds Bolivia Profesional: 160 dated results across 1 page(s), newest 2026-09-18
   OK      Bolivia Profesional: 160 matches  home 0.487 draw 0.244 away 0.269 goals 3.119
 
