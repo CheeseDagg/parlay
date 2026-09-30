@@ -1,81 +1,12 @@
-=== ROUND 7: CHILE + URUGUAY, EN AND ES ===
+=== ROUND 8: why Uruguay's page yields no matrix ===
+  9 wikitables on the page
 
--- Chile
-   [en] '2026 Chilean Primera Division'
-        Liga de Primera
-        2026 Liga de Primera
-        Deportes Concepción (Chile)
-        Club Universidad de Chile
-        Campeonato Nacional Primera B
-        1996 Campeonato Nacional Primera División
-   [es] 'Campeonato Nacional 2026 Chile'
-        Campeonato de Chile de ajedrez
-        Campeonato Nacional de Rodeo
-        Liga Nacional de Básquetbol (Chile)
-        Liga de Ascenso de Chile 2026
-        Selección de fútbol de Chile
-        Campeonato de Apertura de la Segunda División de Chile
-   [es] 'Primera Division de Chile 2026'
-        Liga de Primera 2026
-        Liga de Ascenso de Chile
-        Liga de Primera
-        Tercera División A de Chile
-        Liga Femenina de Chile
-        Liga de Ascenso de Chile 2026
-
--- Uruguay
-   [en] '2026 Uruguayan Primera Division'
-        Liga AUF Uruguaya
-        2026 Copa Uruguay
-        Uruguayan Primera División Amateur
-        2026 Uruguayan Segunda División season
-        Uruguayan Segunda División
-        List of Uruguayan Primera División top scorers
-   [es] 'Campeonato Uruguayo 2026'
-        Campeonato Uruguayo de Primera División 2026
-        Primera División de Uruguay
-        Campeonato Uruguayo de Fútbol Femenino
-        Segunda División Profesional de Uruguay
-        Campeonato Uruguayo de Divisional D 2026
-        Sistema de ligas de fútbol de Uruguay
-   [es] 'Primera Division de Uruguay 2026'
-        Primera División de Uruguay
-        Primera División Amateur de Uruguay
-        Segunda División Profesional de Uruguay
-        Divisional D AUF
-        Primera División de Venezuela
-        Primera División de Paraguay
-
--- Bolivia
-   [es] 'Division de Futbol Profesional 2026'
-        Asociación Nacional de Fútbol Profesional
-        División Profesional del Fútbol Boliviano
-        Segunda División del Perú
-        División Mayor del Fútbol Colombiano
-        Liga Nacional de Fútbol Profesional
-        Liga de Fútbol Profesional Peruana
-   [en] '2026 Bolivian Primera Division'
-        2026 FBF División Profesional
-        1959 Bolivian Primera División
-        1967 Bolivian Primera División
-        1957 Bolivian Primera División
-        2021 FBF División Profesional
-        2026 Copa Libertadores
-
-=== PARENT-ARTICLE 2026 LINKS ===
-  [es] Primera División de Chile: none
-  [es] Primera División de Uruguay: ['Campeonato Uruguayo de Primera División 2026']
-  [en] Chilean Primera División: none
-  [en] Uruguayan Primera División: none
-
-=== DATED FIXTURE TABLES? (what Recent Form needs) ===
-  [en] 2026_Categor%C3%ADa_Primera_A_season
-        DATED TABLE [Managerial changes] 36 rows :: Team | Outgoing manager | Manner of departure | Date of vacancy | Position in table | Inco
-          Torneo Apertura
-          Deportivo Pereira | Cristian Galíndez | End of caretaker spe | 12 November 2025 | Pre-season | Arturo Reyes | 30 December 2025 [ 2
-  [es] Categor%C3%ADa_Primera_A_2026: HTTPError
-  [en] 2026_Liga_1_(Peru)
-        DATED TABLE [Managerial changes] 44 rows :: Team | Outgoing manager | Manner of departure | Date of vacancy | Position in table | Inco
-          Torneo Apertura
-          Deportivo Garcilaso | Carlos Bustos | Mutual agreement | 13 November 2025 [ 7 | Pre-season | Hernán Lisi | 5 December 2025 [ 8 
-  [es] Liga_1_2026: HTTPError
+  [Ascensos y descensos            ]   4x  2 scorecells=   0 corner='Club'
+  [Ascensos y descensos            ]   4x  2 scorecells=   0 corner='Club'
+  [Información general             ]  17x 12 scorecells=   0 corner='Identidad'
+  [Distribución geográfica de los e]   5x  3 scorecells=   0 corner='Ciudad'
+  [Entrenadores                    ]  17x  3 scorecells=   0 corner='Equipo'
+  [Evolución de la clasificación   ]  18x 38 scorecells=   0 corner='Jornada / Equipo'
+  [Evolución de la clasificación   ]  18x 38 scorecells=   0 corner='Jornada / Equipo'
+  [Definición del campeonato       ]   4x  2 scorecells=   0 corner='Equipo'
+  [Referencias                     ]   1x  3 scorecells=   0 corner='Predecesor: 2025'
