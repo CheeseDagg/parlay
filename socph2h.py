@@ -300,74 +300,73 @@ def selftest():
     return 0 if ok[0] == ok[1] else 1
 
 
-# getPlayerMatches IS THE ROUTE. The sweep found it is the only non-404 under
-# /main/ besides the season-totals control, and it answers with exactly the right
-# shape -- {response: {success, matches: [...]}} -- but an EMPTY matches list for
-# the parameters first tried. A real route answering emptily is a parameter
-# problem, not a dead end, so this sweep varies the parameters instead of the
-# route. The body is 42 bytes when empty, so it is printed whole: `success`
-# tells a rejected request apart from an accepted one that genuinely has no rows.
 ROUTE = 'https://understat.com/main/getPlayerMatches/'
-PARAM_SETS = [
-    lambda c: {'player_id': c['pid']},
-    lambda c: {'player': c['pid']},
-    lambda c: {'id': c['pid']},
-    lambda c: {'player_id': c['pid'], 'season': c['season']},
-    lambda c: {'player': c['pid'], 'season': c['season']},
-    lambda c: {'player_id': c['pid'], 'league': c['league'], 'season': c['season']},
-    lambda c: {'player_id': int(c['pid'])},
-    lambda c: {'player_id': c['pid'], 'position': 'FW'},
-]
 
 
 def probe():
-    """Vary the PARAMETERS of the one route that exists.
+    """READ THE PAGE'S OWN JAVASCRIPT. Stop guessing the call.
 
-    Two probes have now each cost a runner round trip because the shape of this
-    source was assumed rather than read: first that the player page embeds its
-    JSON (it carries none at all), then that the route takes `player_id`. Both
-    were answerable only from the runner, which is why the probe prints raw
-    bodies rather than a verdict.
+    Where this stands, all of it measured on the runner rather than assumed:
+
+      - understat player pages carry NO embedded JSON. 19KB, correct title,
+        `blocks present: []`. The old matchesData shape is gone.
+      - Of thirteen candidate /main/ routes, exactly one is not a 404:
+        getPlayerMatches. getPlayersStats (the control) works throughout, so
+        the 404s are about those routes and not about the session.
+      - getPlayerMatches answers {"response":{"success":true,"matches":[]}} --
+        42 bytes, success TRUE, zero rows -- for all eight parameter shapes
+        tried, including int and string ids, with and without season and
+        league.
+
+    A route that reports success and returns nothing for every guess is not
+    going to yield to a ninth guess. The page itself makes some call to fill
+    its match table, so this reads the page's scripts and prints every place
+    they mention /main/ or getPlayer, with context. If the call lives in a
+    bundle, the bundle is fetched and searched too.
     """
-    ps = season_players('EPL')
-    top = sorted(ps, key=lambda p: -int(p.get('goals') or 0))[:1]
-    ctx = {'league': 'EPL', 'season': SEASON,
-           'pid': top[0].get('id') if top else '8260'}
-    print(f"control: {len(ps)} players; id={ctx['pid']} "
-          f"({top[0].get('player_name') if top else '?'})\n")
+    pid = '8260'
+    page = http(PLAYER.format(pid=pid), referer='https://understat.com/')
+    print(f'player page {pid}: {len(page)} bytes')
 
-    winner = None
-    for mk in PARAM_SETS:
-        params = mk(ctx)
+    srcs = re.findall(r'<script[^>]+src=["\']([^"\']+)["\']', page)
+    print(f'script files referenced: {srcs}\n')
+
+    def scan(label, text):
+        hits = 0
+        for m in re.finditer(r'(getPlayer\w*|/main/[A-Za-z]+|ajax|\$\.post)', text):
+            i = m.start()
+            frag = re.sub(r'\s+', ' ', text[max(0, i - 180):i + 260])
+            print(f'  [{label}] ...{frag}...')
+            hits += 1
+            if hits >= 6:
+                break
+        if not hits:
+            print(f'  [{label}] no /main/, getPlayer*, ajax or $.post reference')
+        return hits
+
+    inline = ' '.join(re.findall(r'<script[^>]*>(.*?)</script>', page, re.S))
+    print(f'inline script bytes: {len(inline)}')
+    scan('inline', inline)
+
+    for src in srcs[:6]:
+        url = src if src.startswith('http') else 'https://understat.com/' + src.lstrip('/')
         try:
-            txt = http(ROUTE, post=urllib.parse.urlencode(params).encode(),
-                       referer='https://understat.com/', timeout=25)
+            js = http(url, referer=PLAYER.format(pid=pid), timeout=25)
         except Exception as e:
-            print(f'  {str(params):58} ERR {type(e).__name__} {getattr(e, "code", "")}')
+            print(f'\n  {src}: FETCH FAILED {type(e).__name__}')
             continue
+        print(f'\n  {src}: {len(js)} bytes')
+        scan(src.split('/')[-1], js)
+
+    # And one more request shape: the referer set to the player's OWN page,
+    # in case the route keys off it rather than off a parameter.
+    for ref in ('https://understat.com/', PLAYER.format(pid=pid)):
         try:
-            d = json.loads(txt)
-        except Exception:
-            print(f'  {str(params):58} {len(txt)} bytes, not json: {txt[:60]!r}')
-            continue
-        r = d.get('response') if isinstance(d, dict) else None
-        ms = (r or {}).get('matches') if isinstance(r, dict) else None
-        n = len(ms) if isinstance(ms, list) else None
-        print(f'  {str(params):58} {len(txt):7}b success={(r or {}).get("success")} '
-              f'matches={n}')
-        if n:
-            print(f'      first row keys: {sorted(ms[0].keys())}')
-            print(f'      first row: {ms[0]}')
-            print(f'      seasons: {sorted({(m.get("date") or "")[:4] for m in ms})}')
-            winner = params
-            break
-        if len(txt) < 200:
-            print(f'      raw: {txt!r}')
-    if not winner:
-        print('\nNO PARAMETER SET RETURNED ROWS. The route exists and answers, so '
-              'the next thing to read is the page\'s own JS for the call it makes.')
-        return 1
-    print(f'\nUSE: {winner}')
+            txt = http(ROUTE, post=urllib.parse.urlencode({'player_id': pid}).encode(),
+                       referer=ref, timeout=25)
+            print(f'\n  getPlayerMatches with referer {ref}: {txt[:120]!r}')
+        except Exception as e:
+            print(f'\n  getPlayerMatches with referer {ref}: ERR {type(e).__name__}')
     return 0
 
 
