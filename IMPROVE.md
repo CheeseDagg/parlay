@@ -67,6 +67,34 @@ with no measurable payoff written next to it does not belong on this list.
   Also removed the last two pieces of rarity language still on the Signals tab
   ("ranked by how unlikely", "most unusual of N") -- the stat orders the list
   and stays out of it.
+  A split is a record from a FINISHED season and the transfer window has run,
+  so understat's current season is used to check where each player is now: 14
+  of 118 rows named a club the player has left and were dropped. Getting that
+  check right took three passes and two wrong guesses, both of which cost a
+  runner round trip, and the fix that ended it was instrumentation rather than
+  code -- counting the failure REASONS separately instead of one "unchecked"
+  tally. Pass 1 resolved current clubs against the club list of the season the
+  splits were built from, so anyone who moved to a PROMOTED club matched
+  nothing (28 rows). Pass 2 fixed the universe and the failure simply moved to
+  the other side of the comparison (30 rows), because both passes matched names
+  by prefix and the difference between two sources is as often in the middle or
+  at the front: "Atletico de Madrid" vs "Atletico Madrid", "Deportivo Alaves"
+  vs "Alaves", "CA Osasuna" vs "Osasuna". Pass 3 matches on token subsets after
+  stripping furniture, plus a small explicit alias table for translated cities
+  ("1. FC Koln"/"FC Cologne", "FC Bayern Munchen"/"Bayern Munich") which share
+  no word at all. Unresolved clubs fell 30 -> 2, both relegated (Burnley,
+  Hellas Verona) and therefore correctly unverifiable. 27 of 104 rows remain
+  unverified -- 24 of them players understat's current season does not list --
+  and they are kept, unlabelled on the page, sorted beneath every verified row
+  (indices 77-103), because "I could not check" is not "he moved" and a badge
+  would be the third piece of furniture Ryan has rejected.
+  THE PREFIX RULE WAS DELETED, not kept alongside the new ones: all 18 real
+  pairs pass without it and a mutation removing it failed nothing, while it was
+  the most permissive of the rules (it compares concatenated strings, so it can
+  match a partial word -- the shape that marries Bayern to Bayer). Two of my
+  own tests also turned out to pass on the bugs they were written for (the
+  token length floor, and which club list build() used) and were rewritten
+  until mutation caught them.
 - **Five leagues football-data does not publish, and six of eight signals**
   (2026-09-30). An international break emptied the big-5 and the live slate
   was Colombia, Peru, Chile, Bolivia, Uruguay, El Salvador and USL --
