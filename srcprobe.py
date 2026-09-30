@@ -127,24 +127,89 @@ def looks_like_fixtures(rows):
     return ("date" in h) and any(k in h for k in ("score", "result", "home", "away"))
 
 
-URU = "https://es.wikipedia.org/wiki/Campeonato_Uruguayo_de_Primera_Divisi%C3%B3n_2026"
+import urllib.parse
 
-print("=== ROUND 8: why Uruguay's page yields no matrix ===")
-try:
-    html = get(URU)
-except Exception as e:
-    print("  FETCH FAIL", type(e).__name__)
-    raise SystemExit(0)
+API_ES = "https://es.wikipedia.org/w/api.php"
+API_EN = "https://en.wikipedia.org/w/api.php"
 
-p = Tables(); p.feed(html)
-print(f"  {len(p.out)} wikitables on the page\n")
-SC = re.compile(r"^\d{1,2}\s*[-\u2013\u2014]\s*\d{1,2}$")
-for h, t in p.out:
-    if not t or not t[0]:
-        continue
-    n = sum(1 for r in t for c in r if SC.match(c.strip()))
-    corner = t[0][0][:30]
-    print(f"  [{(h or '?')[:32]:32}] {len(t):3}x{len(t[0]):3} scorecells={n:4} corner={corner!r}")
-    if n >= 10:
-        for row in t[:4]:
-            print(f"        {' | '.join(c[:16] for c in row[:10])}")
+
+def api(base, **kw):
+    import json as _j, urllib.parse
+    kw.setdefault("format", "json")
+    return _j.loads(get(base + "?" + urllib.parse.urlencode(kw), timeout=25))
+
+
+def fulltext(base, q, n=6):
+    try:
+        r = api(base, action="query", list="search", srsearch=q, srlimit=n)
+        return [h["title"] for h in r["query"]["search"]]
+    except Exception as e:
+        return [f"<{type(e).__name__}>"]
+
+
+SC = re.compile(r"^\d{1,2}\s*[-\u2013\u2014:]\s*\d{1,2}$")
+ROUND_HDR = re.compile(r"(jornada|fecha|round|local|visitante)", re.I)
+
+print("=== ROUND 9: a DATED or ORDERED results source ===")
+print("Recent Form needs order. A matrix has none. Two routes tested:")
+print("  (a) Spanish Wikipedia round-by-round pages")
+print("  (b) the odds API /scores endpoint for these league keys\n")
+
+print("--- (a) es.wikipedia season pages ---")
+QS = {
+  "Colombia": "Categoria Primera A 2026 Torneo Finalizacion",
+  "Peru":     "Liga 1 2026 Peru temporada",
+  "Chile":    "Liga de Primera 2026",
+  "Bolivia":  "Division Profesional 2026 Bolivia",
+}
+for country, q in QS.items():
+    titles = fulltext(API_ES, q)
+    print(f"  {country}: {titles[:5]}")
+    for t in titles[:3]:
+        slug = t.replace(" ", "_")
+        try:
+            html = get(f"https://es.wikipedia.org/wiki/{urllib.parse.quote(slug)}")
+        except Exception as e:
+            continue
+        p = Tables(); p.feed(html)
+        dated = 0
+        for h, rows in p.out:
+            if not rows or not rows[0]:
+                continue
+            hdr = " | ".join(rows[0])
+            nsc = sum(1 for r in rows for c in r if SC.match(c.strip()))
+            if ROUND_HDR.search(hdr) and nsc >= 5:
+                dated += 1
+                if dated <= 2:
+                    print(f"      [{t}] ROUND TABLE [{(h or '?')[:24]}] {len(rows)}r scores={nsc}")
+                    print(f"         hdr: {hdr[:88]}")
+                    for row in rows[1:3]:
+                        print(f"         {' | '.join(c[:18] for c in row[:8])}")
+        if dated:
+            break
+
+print("\n--- (b) odds API /scores for these leagues ---")
+import os
+key = os.environ.get("ODDS_API_KEY", "")
+if not key:
+    print("  NO ODDS_API_KEY in this job -- cannot test")
+else:
+    try:
+        cat = api_url = None
+        raw = get(f"https://api.the-odds-api.com/v4/sports/?apiKey={key}&all=true")
+        import json as _j
+        cat = _j.loads(raw)
+        socc = [s["key"] for s in cat if s.get("group") == "Soccer"]
+        for want in ("colombia", "peru", "chile", "bolivia", "uruguay", "usl"):
+            hits = [k for k in socc if want in k]
+            print(f"  catalog '{want}': {hits if hits else 'ABSENT'}")
+        for k in [x for x in socc if any(w in x for w in ("colombia", "peru", "chile", "bolivia"))]:
+            try:
+                sc = _j.loads(get(f"https://api.the-odds-api.com/v4/sports/{k}/scores/?daysFrom=3&apiKey={key}"))
+                done = [e for e in sc if e.get("completed")]
+                print(f"    {k}: {len(sc)} events, {len(done)} completed, "
+                      f"sample={[(e.get('home_team'), e.get('commence_time')[:10]) for e in done[:2]]}")
+            except Exception as e:
+                print(f"    {k}: scores -> {type(e).__name__}")
+    except Exception as e:
+        print("  catalog fetch failed:", type(e).__name__, str(e)[:80])
