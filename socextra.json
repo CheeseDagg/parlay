@@ -7408,22 +7408,31 @@
    "Torneo_Apertura_2026_(Colombia)"
   ],
   "cross_check": {
-   "agreed": 267,
-   "disagreed": 1,
+   "agreed_pairs": 266,
+   "disagreed_pairs": 1,
    "samples": [
     [
-     "Santa Fe",
-     "Am\u00e9rica de Cali",
+     "santa fe",
+     "america de cali",
      [
-      0,
-      0
+      [
+       0,
+       0
+      ]
      ],
      [
-      4,
-      0
+      [
+       0,
+       0
+      ],
+      [
+       4,
+       0
+      ]
      ]
     ]
-   ]
+   ],
+   "count_delta": 1
   }
  },
  "Peru Liga 1": {
@@ -13641,9 +13650,10 @@
    "Torneo_Apertura_2026_(Per%C3%BA)"
   ],
   "cross_check": {
-   "agreed": 157,
-   "disagreed": 0,
-   "samples": []
+   "agreed_pairs": 157,
+   "disagreed_pairs": 0,
+   "samples": [],
+   "count_delta": 0
   }
  },
  "Chile Liga de Primera": {
@@ -18435,9 +18445,10 @@
    "Liga_de_Primera_2026"
   ],
   "cross_check": {
-   "agreed": 181,
-   "disagreed": 0,
-   "samples": []
+   "agreed_pairs": 181,
+   "disagreed_pairs": 0,
+   "samples": [],
+   "count_delta": 0
   }
  },
  "Bolivia Profesional": {
@@ -22847,9 +22858,10 @@
    "Primera_Divisi%C3%B3n_de_Bolivia_2026"
   ],
   "cross_check": {
-   "agreed": 160,
-   "disagreed": 0,
-   "samples": []
+   "agreed_pairs": 160,
+   "disagreed_pairs": 0,
+   "samples": [],
+   "count_delta": 0
   }
  }
 }
