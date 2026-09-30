@@ -33,6 +33,40 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- **Player home/away and head-to-head splits, and the parser bug they exposed**
+  (2026-09-30). The ask was splits; the finding was that a quarter of every
+  league had been mis-attributed since socplayers was written. openfootball
+  separates the two sides' scorers with a ';' and OMITS IT when only one side
+  scored -- `Wolves 0-4 Man City` then reads as a bare `(HAALAND 34', 61', ...)`
+  block. `str.partition` on a string with no ';' returns the whole thing as
+  the first part, so every goal in every one-sided away win went to the HOME
+  team: **95 of 380 Premier League matches**, 140 semicolon-less blocks across
+  the season (81 home, 59 away, none ambiguous). The symptom was visible in
+  the first splits run and looked like a *finding* rather than a bug --
+  "Raphinha: all 11 of his goals came at home, none in 19 away" -- which is
+  the dangerous shape: a parser fault that reads as a signal. It was caught
+  only by adding up the parsed scorers and comparing them against the
+  scoreline printed on the line directly above them (home 654/away 351 parsed
+  vs 577/465 actual). The parser now reconciles every match against its own
+  result and the build reports the counts; a semicolon-less block on a
+  two-sided scoreline is refused, not guessed.
+  Two more denominators were wrong in the same pass. Goalless draws were
+  filtered out before measuring, so Crystal Palace read as "14 home matches"
+  instead of 19 and every rate was quoted over a short season. And a
+  mid-season transfer kept the club's full fixture list as the denominator --
+  Semenyo read as "5 of Manchester City's 19 home matches" over a season he
+  spent half of at Bournemouth; spells are now derived from the changeover
+  the file already records, first goal to the day before the next club's
+  first goal (bounding by his own LAST goal, the obvious first try, shrinks
+  the window to the weeks he was hot and inflates every rate built on it).
+  Shipped: 118 venue splits across the big four, each stating both sides in
+  one sentence; head-to-head returns nothing today and says why (openfootball
+  carries goal events for one season only, and inside one season no two clubs
+  meet three times) and turns on by itself when a second year backfills.
+  socplayers 52/52, SoccerTool gate green, three UI mutations confirmed caught.
+  Also removed the last two pieces of rarity language still on the Signals tab
+  ("ranked by how unlikely", "most unusual of N") -- the stat orders the list
+  and stays out of it.
 - **Five leagues football-data does not publish, and six of eight signals**
   (2026-09-30). An international break emptied the big-5 and the live slate
   was Colombia, Peru, Chile, Bolivia, Uruguay, El Salvador and USL --
