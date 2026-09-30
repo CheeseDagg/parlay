@@ -59,7 +59,7 @@ PULL_FEEDS SELFTEST PASS — 39 checks (generators, round-trips, monotone refusa
   SOC soccer_uefa_europa_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_europa_conference_league: 0 fixtures — queried, 0 event(s) returned, none priced by fanduel
   SOC soccer_uefa_champs_league: 9 fixtures
-  legs representable: ~1380 · API credits remaining 16192
+  legs representable: ~1380 · API credits remaining 16111
   wrote times.py
   wrote mlbml.py
   wrote totals.py
@@ -279,4 +279,4 @@ soccer_conmebol_copa_libertadores: 3 matches
 soccer_conmebol_copa_sudamericana: 2 matches
 wrote /home/runner/work/parlay/parlay/scores.json
   PHI@ATL    through5=  -  current=  0  inning=1  
-run conclusion: success at 2026-09-30 15:29
+run conclusion: success at 2026-09-30 15:31
