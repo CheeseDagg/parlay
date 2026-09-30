@@ -307,31 +307,45 @@ def drop_moved_players(splits, roster, clubs):
     # A single name is not an identity, though, and two current players sharing
     # one is the ordinary case in football. So a token matching more than one
     # current player resolves to NOTHING rather than to whichever came first.
-    kept, moved, unchecked, by_sur = [], 0, 0, 0
+    # COUNT WHY, NOT JUST HOW MANY. One "unchecked" tally cannot tell a name the
+    # two sources spell differently from a club the prefix matcher cannot pin
+    # down, and those call for opposite fixes. Adding the token fallback moved
+    # the tally by one row out of fifty-four, which is only explicable once the
+    # reasons are separated. Exactly one reason is recorded per row.
+    why = defaultdict(int)
+    kept, moved, by_token = [], 0, 0
     for r in splits:
         player = r.get('player') or ''
         now = roster.get(norm_name(player))
+        reason = None
         if not now:
             toks = {norm_name(t) for t in re.split(r'[^0-9A-Za-z\u00c0-\u024f]+', player)}
             toks = {t for t in toks if len(t) >= 4}
             cands = {k for k in roster if k in toks}
             if len(cands) == 1:
                 now = roster[next(iter(cands))]
-                by_sur += 1
-        if not now:
-            unchecked += 1
-            kept.append(r)
-            continue
-        hits = {c for c in clubs if any(club_match(c, t) for t in now)}
-        if len(hits) != 1:
-            unchecked += 1
-            kept.append(r)
-            continue
-        if club_match(next(iter(hits)), r.get('team')):
-            kept.append(r)
-        else:
-            moved += 1
-    return kept, moved, unchecked, by_sur
+                by_token += 1
+            else:
+                reason = ('name matches several current players' if cands
+                          else 'name not found in the current season')
+        if now is not None and reason is None:
+            if len(now) > 1:
+                reason = 'listed at several clubs in the current season'
+            else:
+                hits = {c for c in clubs if any(club_match(c, t) for t in now)}
+                if not hits:
+                    reason = 'current club matches no club in the source data'
+                elif len(hits) > 1:
+                    reason = 'current club matches several clubs in the source data'
+                elif club_match(next(iter(hits)), r.get('team')):
+                    kept.append(r)          # still there -- the row stands
+                    continue
+                else:
+                    moved += 1              # he has left: the row goes
+                    continue
+        why[reason] += 1
+        kept.append(r)
+    return kept, moved, sum(why.values()), by_token, dict(why)
 
 
 def poss(name):
@@ -735,11 +749,13 @@ def build(of_fetch=None, us_fetch=None, today=None):
         clubs = {g[1] for gs in pooled.values() for g in gs} | \
                 {g[2] for gs in pooled.values() for g in gs}
         before = len(splits)
-        splits, moved, unchecked, by_tok = drop_moved_players(splits, roster, clubs)
+        splits, moved, unchecked, by_tok, why = drop_moved_players(splits, roster, clubs)
         report.append(f'  current-club check: {before} splits -> {len(splits)} '
                       f'({moved} dropped, the player has left that club; '
-                      f'{unchecked} could not be checked and were kept; '
-                      f'{by_tok} resolved on a single name rather than the full one)')
+                      f'{unchecked} kept unverified; {by_tok} resolved on one '
+                      f'name rather than the full one)')
+        for reason, k in sorted(why.items(), key=lambda kv: -kv[1]):
+            report.append(f'    {k:4} {reason}')
     else:
         # Say it. A silent skip here means the page shows last season's clubs
         # and looks exactly like a page that checked and found nothing wrong.
@@ -997,13 +1013,13 @@ Fri Aug 15 2025
     rows_ = [{'player': 'Harry WILSON', 'team': 'Fulham', 'text': 't'},
              {'player': 'Antoine SEMENYO', 'team': 'Bournemouth', 'text': 't'},
              {'player': 'Unknown GUY', 'team': 'Fulham', 'text': 't'}]
-    keep, moved_, unch, _bt = drop_moved_players(
+    keep, moved_, unch, _bt, _w = drop_moved_players(
         rows_, {'harrywilson': {'Fulham'},
                 'antoinesemenyo': {'Manchester City'}}, CLUBS)
     chk(moved_ == 1 and {r['player'] for r in keep} == {'Harry WILSON', 'Unknown GUY'},
         'a player now at another club loses his split; one still there keeps it')
     chk(unch == 1, 'a player absent from the current season is COUNTED as unchecked, not dropped')
-    keep2, moved2, unch2, _ = drop_moved_players(
+    keep2, moved2, unch2, _, _ = drop_moved_players(
         [{'player': 'Xavier', 'team': 'Fulham'}], {'xavier': {'Real'}},
         {'Fulham', 'Real Madrid', 'Real Sociedad'})
     chk(moved2 == 0 and unch2 == 1 and len(keep2) == 1,
@@ -1013,13 +1029,13 @@ Fri Aug 15 2025
     # The two sources spell the same player differently; a MIDDLE token is the
     # understat name in the Brazilian-style case, so a trailing-word match fails.
     long_roster = {'evanilson': {'Bournemouth'}, 'mateta': {'Crystal Palace'}}
-    k3, m3, u3, bt3 = drop_moved_players(
+    k3, m3, u3, bt3, _ = drop_moved_players(
         [{'player': 'Francisco Evanilson de Lima Barbosa', 'team': 'Bournemouth'},
          {'player': 'Jean-Philippe MATETA', 'team': 'Crystal Palace'}],
         long_roster, {'Bournemouth', 'Crystal Palace'})
     chk(len(k3) == 2 and m3 == 0 and u3 == 0 and bt3 == 2,
         'a one-word understat name resolves against a middle token of the full one')
-    k4, m4, u4, bt4 = drop_moved_players(
+    k4, m4, u4, bt4, w4 = drop_moved_players(
         [{'player': 'Evanilson Mateta', 'team': 'Bournemouth'}],
         long_roster, {'Bournemouth', 'Crystal Palace'})
     chk(len(k4) == 1 and m4 == 0 and u4 == 1 and bt4 == 0,
@@ -1027,17 +1043,26 @@ Fri Aug 15 2025
     # THE LENGTH FLOOR. Without it a name particle becomes a match: "Lucas Da
     # Costa" would resolve against a roster entry spelled "Da" and the row would
     # be dropped for being at the wrong club, on the strength of two letters.
-    k6, m6, u6, _ = drop_moved_players(
+    k6, m6, u6, _, w6 = drop_moved_players(
         [{'player': 'Lucas Da Costa', 'team': 'Fulham'}],
         {'da': {'Chelsea'}}, {'Fulham', 'Chelsea'})
     chk(len(k6) == 1 and m6 == 0 and u6 == 1,
         'a two-letter name particle is below the floor and matches nothing')
 
-    k5, m5, u5, _ = drop_moved_players(
+    k5, m5, u5, _, _ = drop_moved_players(
         [{'player': 'Evanilson', 'team': 'Crystal Palace'}],
         long_roster, {'Bournemouth', 'Crystal Palace'})
     chk(not k5 and m5 == 1 and u5 == 0,
         'and the fallback still drops a row when the club it resolves to is a different one')
+    chk(sum(w4.values()) == u4 and list(w4) == ['name matches several current players'],
+        'exactly one reason is recorded per unverified row, and it names the step')
+    chk(list(w6) == ['name not found in the current season'],
+        'a name the current season does not have is reported as that, not as a club problem')
+    _k, _m, _u, _b, w7 = drop_moved_players(
+        [{'player': 'Twoclub GUY', 'team': 'Fulham'}],
+        {'twoclubguy': {'Fulham', 'Chelsea'}}, {'Fulham', 'Chelsea'})
+    chk(list(w7) == ['listed at several clubs in the current season'] and _m == 0,
+        'a player the current season lists at two clubs is never called moved')
 
     # ------------------------------------------- every family reaches the file
     built = {k for k in build(of_fetch=lambda u: '= empty\n',
