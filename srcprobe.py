@@ -127,40 +127,64 @@ def looks_like_fixtures(rows):
     return ("date" in h) and any(k in h for k in ("score", "result", "home", "away"))
 
 
-print("=== HOST REACHABILITY ===")
-for u in HOSTS:
+SEARCH = "https://en.wikipedia.org/w/api.php?action=opensearch&search={}&limit=6&format=json"
+
+def find_slug(q):
+    """Ask Wikipedia what the page is actually called instead of guessing."""
+    import json as _j, urllib.parse
     try:
-        n = len(get(u, timeout=20))
-        print(f"  OK    {n:>9,}b  {u}")
+        raw = get(SEARCH.format(urllib.parse.quote(q)), timeout=20)
+        titles = _j.loads(raw)[1]
+        return [t.replace(" ", "_") for t in titles]
     except Exception as e:
-        print(f"  FAIL  {type(e).__name__:>9}  {u}  {str(e)[:60]}")
+        return []
+
+WANT = {
+    "Chile Primera":    "2026 Chilean Primera Division season",
+    "Uruguay Primera":  "2026 Uruguayan Primera Division season",
+    "Bolivia Primera":  "2026 Bolivian Primera Division season",
+    "USL Championship": "2026 USL Championship season",
+    "El Salvador":      "2026 Salvadoran Primera Division",
+}
+
+print("=== SLUG RESOLUTION VIA WIKIPEDIA SEARCH ===")
+resolved = {}
+for league, q in WANT.items():
+    cands = find_slug(q)
+    print(f"  {league:20} -> {cands}")
+    for c in cands:
+        try:
+            html = get(f"https://en.wikipedia.org/wiki/{c}")
+        except Exception:
+            continue
+        p = Tables(); p.feed(html)
+        mats = [(h, t) for h, t in p.out if looks_like_matrix(t)[0]]
+        if mats:
+            resolved[league] = (c, mats)
+            break
 
 print()
-print("=== LEAGUE SEASON PAGES ===")
-for league, slugs in LEAGUES.items():
-    got = None
-    for s in slugs:
-        try:
-            html = get(f"https://en.wikipedia.org/wiki/{s}")
-            got = (s, html)
-            break
-        except Exception as e:
-            print(f"  ..    {league}: {s} -> {type(e).__name__}")
-    if not got:
-        print(f"  NONE  {league}: no slug resolved")
-        continue
-    slug, html = got
-    p = Tables()
-    p.feed(html)
-    print(f"  PAGE  {league}  <- {slug}  ({len(p.out)} wikitables)")
-    for head, t in p.out:
-        if not t:
-            continue
-        ismat, nscore = looks_like_matrix(t)
-        isfix = looks_like_fixtures(t)
-        if not (ismat or isfix):
-            continue
-        kind = "MATRIX" if ismat else "FIXTURES"
-        print(f"        [{kind}] heading={head[:40]!r} rows={len(t)} scorecells={nscore}")
-        for row in t[:3]:
-            print(f"          {' | '.join(c[:18] for c in row[:9])}")
+print("=== WHAT RESOLVED ===")
+for league, (slug, mats) in resolved.items():
+    tot = sum(looks_like_matrix(t)[1] for _, t in mats)
+    print(f"  {league:20} {slug:52} {len(mats)} matrix/-es, {tot} scorecells")
+    for h, t in mats[:2]:
+        print(f"      [{h[:30]}] {len(t)}x{len(t[0])}")
+        for row in t[:2]:
+            print(f"        {' | '.join(c[:16] for c in row[:8])}")
+for league in WANT:
+    if league not in resolved:
+        print(f"  {league:20} NO MATRIX FOUND")
+
+print()
+print("=== USL: every table on the page ===")
+try:
+    html = get("https://en.wikipedia.org/wiki/2026_USL_Championship_season")
+    p = Tables(); p.feed(html)
+    for h, t in p.out:
+        if not t: continue
+        ism, n = looks_like_matrix(t)
+        print(f"  [{h[:34]:34}] {len(t):3}x{len(t[0]):2} scorecells={n:4} {'<< MATRIX' if ism else ''}")
+        print(f"        hdr: {' | '.join(c[:14] for c in t[0][:10])}")
+except Exception as e:
+    print("  FAIL", e)
