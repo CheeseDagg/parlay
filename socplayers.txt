@@ -1,12 +1,20 @@
 socplayers
   openfootball England Premier League 2026-27: 0 matches, NO goal events yet (backfilled after the season)
-  openfootball England Premier League 2025-26: 350 matches with scorers, 280 players, 0 live streaks, 2 too old to call form
+  openfootball England Premier League 2025-26: 380 matches (350 with scorers), 280 players, 0 live streaks, 4 too old to call form
+    reconciled 343 vs scoreline, 34 short (own goals and gaps at source)
   openfootball Spain La Liga 2026-27: 0 matches, NO goal events yet (backfilled after the season)
-  openfootball Spain La Liga 2025-26: 361 matches with scorers, 286 players, 0 live streaks, 1 too old to call form
+  openfootball Spain La Liga 2025-26: 380 matches (361 with scorers), 286 players, 0 live streaks, 3 too old to call form
+    reconciled 357 vs scoreline, 19 short (own goals and gaps at source)
   openfootball Germany Bundesliga 2026-27: 0 matches, NO goal events yet (backfilled after the season)
-  openfootball Germany Bundesliga 2025-26: 293 matches with scorers, 272 players, 0 live streaks, 1 too old to call form
+  openfootball Germany Bundesliga 2025-26: 306 matches (293 with scorers), 272 players, 0 live streaks, 4 too old to call form
+    reconciled 287 vs scoreline, 18 short (own goals and gaps at source)
   openfootball Italy Serie A 2026-27: 0 matches, NO goal events yet (backfilled after the season)
-  openfootball Italy Serie A 2025-26: 343 matches with scorers, 297 players, 0 live streaks
+  openfootball Italy Serie A 2025-26: 380 matches (343 with scorers), 297 players, 0 live streaks
+    reconciled 358 vs scoreline, 21 short (own goals and gaps at source)
+  splits England Premier League: 380 pooled matches, 26 venue, 0 head-to-head (no pair has met 3+ times in the seasons that carry scorers)
+  splits Spain La Liga: 380 pooled matches, 39 venue, 0 head-to-head (no pair has met 3+ times in the seasons that carry scorers)
+  splits Germany Bundesliga: 306 pooled matches, 23 venue, 0 head-to-head (no pair has met 3+ times in the seasons that carry scorers)
+  splits Italy Serie A: 380 pooled matches, 30 venue, 0 head-to-head (no pair has met 3+ times in the seasons that carry scorers)
   understat England Premier League: 421 players, 60 rate signals
   understat Spain La Liga: 461 players, 53 rate signals
   understat Germany Bundesliga: 367 players, 5 rate signals
