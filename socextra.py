@@ -53,12 +53,11 @@ LEAGUES = {
     # three probe rounds. The league did not vanish, its name moved.
     'Chile Liga de Primera': ['https://en.wikipedia.org/wiki/2026_Liga_de_Primera',
                               'https://es.wikipedia.org/wiki/Liga_de_Primera_2026'],
-    # Uruguay: the page EXISTS and is the right one (its parent article links
-    # to it), but srcprobe round 8 found nine tables and ZERO score cells --
-    # es.wikipedia publishes standings evolution for this league, never a
-    # results grid. Left in so each run re-tests it and reports EMPTY out
-    # loud; do not re-chase the slug, the slug was never the problem.
-    'Uruguay Primera':    ['https://es.wikipedia.org/wiki/Campeonato_Uruguayo_de_Primera_Divisi%C3%B3n_2026'],
+    # Uruguay publishes NO results grid anywhere (srcprobe round 8: nine
+    # tables, zero score cells -- standings evolution only). It does publish
+    # dated round tables, on three separate tournament pages. So it is a
+    # DATED-ONLY league: no matrix URL here, everything comes from ES_ROUNDS.
+    'Uruguay Primera':    [],
     'Bolivia Profesional': ['https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional'],
 }
 
@@ -79,6 +78,10 @@ ES_ROUNDS = {
     'Peru Liga 1':           ['https://es.wikipedia.org/wiki/Torneo_Clausura_2026_(Per%C3%BA)',
                               'https://es.wikipedia.org/wiki/Torneo_Apertura_2026_(Per%C3%BA)',
                               'https://es.wikipedia.org/wiki/Liga1_2026_(Per%C3%BA)'],
+    # Uruguay runs THREE tournaments in a year and pages each separately.
+    'Uruguay Primera':       ['https://es.wikipedia.org/wiki/Torneo_Apertura_2026_(Uruguay)',
+                              'https://es.wikipedia.org/wiki/Torneo_Intermedio_2026',
+                              'https://es.wikipedia.org/wiki/Torneo_Clausura_2026_(Uruguay)'],
 }
 
 MONTHS = {'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4, 'mayo': 5,
@@ -399,42 +402,30 @@ def splits(matches):
 def build(fetch=get):
     doc, report = {}, []
     for league, slugs in LEAGUES.items():
-        html = None
+        # THE MATRIX IS OPTIONAL. Uruguay publishes no results grid at all,
+        # only dated round tables across three tournament pages, so requiring
+        # a grid would drop a league whose data is strictly BETTER than a
+        # grid's -- it has dates. A league qualifies on either source.
+        matches, refused, used = [], [], None
         for s in slugs:
             try:
                 html = fetch(s)
-                used = s
-                break
             except Exception as e:
                 report.append(f'  {league}: {s.rsplit("/", 1)[-1]} -> {type(e).__name__}')
-        if html is None:
-            report.append(f'  ABSENT  {league}: no pinned slug resolved')
-            continue
-        p = Tables()
-        p.feed(html)
-        matches, refused = [], []
-        for head, rows in p.out:
-            if not is_matrix(rows):
                 continue
-            ok, bad = diagonal_ok(rows)
-            if not ok:
-                refused.append(f'{head or "?"} (diagonal: {bad[:2]})')
-                continue
-            matches.extend(read_matrix(rows))
-        # A club can meet another twice in a split season; the grid holds one
-        # cell per ordered pair per stage, so duplicates across stages are real
-        # fixtures, not double-counting. Identical rows are not deduped.
-        if not matches:
-            report.append(f'  EMPTY   {league}: page found, no usable matrix'
-                          + (f' (refused {len(refused)})' if refused else ''))
-            continue
-        entry = {'slug': used, 'rates': rates(matches),
-                 'splits': splits(matches),
-                 'matches': [list(m) for m in matches],
-                 'refused_matrices': refused}
-        # DATED ROUNDS, if this league publishes them in Spanish. Kept beside
-        # the matrix rather than replacing it: the matrix is the complete
-        # season, the rounds may lag, and only the rounds can carry form.
+            p = Tables()
+            p.feed(html)
+            for head, rows in p.out:
+                if not is_matrix(rows):
+                    continue
+                ok, bad = diagonal_ok(rows)
+                if not ok:
+                    refused.append(f'{head or "?"} (diagonal: {bad[:2]})')
+                    continue
+                matches.extend(read_matrix(rows))
+            if matches:
+                used = s
+                break
         all_dated, tot_und, pages = [], 0, []
         for u in ES_ROUNDS.get(league, []):
             try:
@@ -451,6 +442,16 @@ def build(fetch=get):
                 pages.append(u.rsplit('/', 1)[-1])
             else:
                 report.append(f'    es-rounds {league}: {u.rsplit("/", 1)[-1]} read, no dated rows')
+        if not matches and not all_dated:
+            report.append(f'  EMPTY   {league}: no usable matrix and no dated rounds'
+                          + (f' ({len(refused)} matrix refused)' if refused else ''))
+            continue
+        if matches:
+            entry = {'slug': used, 'rates': rates(matches), 'splits': splits(matches),
+                     'matches': [list(m) for m in matches], 'refused_matrices': refused}
+        else:
+            entry = {'slug': None, 'refused_matrices': refused,
+                     'rates_source': 'dated rounds only (this league publishes no grid)'}
         if all_dated:
             # A club can appear on both tournament pages; identical rows are
             # the same fixture listed twice, so dedupe on the whole tuple.
@@ -458,6 +459,20 @@ def build(fetch=get):
             entry['dated'] = [list(d) for d in all_dated]
             entry['form'] = form_table(all_dated)
             entry['es_pages'] = pages
+            if not matches:
+                dm = [(h, a, hg, ag) for _d, h, a, hg, ag in all_dated]
+                entry['rates'] = rates(dm)
+                entry['splits'] = splits(dm)
+                entry['matches'] = [list(m) for m in dm]
+                newest0 = max(d[0] for d in all_dated)
+                report.append(f'    es-rounds {league}: {len(all_dated)} dated results '
+                              f'across {len(pages)} page(s), newest {newest0} '
+                              f'[NO GRID -- dated rounds are the only source]')
+                r0 = entry['rates']['result']
+                report.append(f'  OK      {league}: {r0["n"]} matches  home {r0["home"]:.3f} '
+                              f'draw {r0["draw"]:.3f} away {r0["away"]:.3f} goals {r0["mean_goals"]}')
+                doc[league] = entry
+                continue
             ag, dis, samples, (superset, coverage) = cross_check(matches, all_dated)
             delta = len(all_dated) - len(matches)
             entry['cross_check'] = {'agreed_pairs': ag, 'disagreed_pairs': dis,
@@ -636,7 +651,10 @@ def selftest():
     doc, rep = build(fetch=fake)
     chk(list(doc) == ['Peru Liga 1'], 'only the league that resolved is written')
     chk(doc['Peru Liga 1']['rates']['result']['n'] == 56, 'the fake page yields all 56 pairs')
-    chk(any('ABSENT' in line for line in rep), 'leagues whose slug 404s are REPORTED, not dropped')
+    chk(any('EMPTY' in line for line in rep),
+        'a league with no usable source is REPORTED, not silently dropped')
+    chk(any('Colombia' in line and 'HTTPError' in line for line in rep),
+        'and each failed fetch is named with its error')
 
     print(f'\n{ok[0]}/{ok[1]} checks pass')
     return 0 if ok[0] == ok[1] else 1

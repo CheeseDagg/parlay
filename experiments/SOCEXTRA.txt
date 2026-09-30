@@ -7,3 +7,4 @@
 2026-09-30T16:28Z round 7: multiset cross-check
 2026-09-30T16:29Z round 8: prefer the more complete reader
 2026-09-30T16:30Z round 9: coverage-aware superset
+2026-09-30T16:34Z round 10: +Uruguay (dated-only), matrix now optional
