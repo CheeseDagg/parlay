@@ -255,22 +255,78 @@ def norm_name(s):
                   .encode('ascii', 'ignore').decode())
 
 
+# Clubs the two sources name differently in a way NO string rule can bridge --
+# a translated city, or a short form that is not a prefix. Everything else is
+# handled by the prefix and token rules below; this table is only for the cases
+# where the words themselves differ. Each line is one club, and any two names on
+# the same line match.
+CLUB_ALIASES = [
+    ('koln', 'cologne'),                       # 1. FC Köln / FC Cologne
+    ('munchen', 'munich'),                      # FC Bayern München / Bayern Munich
+    ('internazionale', 'inter'),                # FC Internazionale Milano / Inter
+    ('sportinglisbon', 'sportingcp'),
+    ('napoli', 'sscnapoli'),
+]
+
+CLUB_FURNITURE = {'fc', 'cf', 'ca', 'ac', 'as', 'ss', 'ssc', 'us', 'sc', 'sv', 'vfl',
+                  'vfb', 'tsg', 'fsv', 'bsc', 'club', 'calcio', 'de', 'do', 'the',
+                  'cd', 'ud', 'rc', 'rcd', 'afc', 'cfc', 'deportivo', 'real1'}
+
+
+def club_tokens(name):
+    """Meaning-carrying words of a club name: no furniture, no bare numbers."""
+    out = []
+    for t in re.split(r'[^0-9A-Za-z\u00c0-\u024f]+', name or ''):
+        t = norm_name(t)
+        if not t or t.isdigit() or t in CLUB_FURNITURE or len(t) < 3:
+            continue
+        out.append(t)
+    return set(out)
+
+
 def club_match(a, b, floor=4):
     """Do these two club names denote the same club?
 
-    understat abbreviates where openfootball does not -- Tottenham vs
-    Tottenham Hotspur, Brighton vs Brighton & Hove Albion, West Ham vs West Ham
-    United, Leeds vs Leeds United, Chelsea vs Chelsea FC. Every one of those is
-    a prefix, so prefix matching on the normalised string catches them all
-    while Manchester City and Manchester United stay distinct (neither is a
-    prefix of the other).
+    Two rules:
 
-    The floor keeps a two-letter fragment from matching half a division.
+      TOKEN SUBSET -- understat abbreviates where openfootball does not, and the
+        difference is as often in the MIDDLE or at the front as at the end:
+        Tottenham / Tottenham Hotspur, Chelsea / Chelsea FC, but also "Atlético
+        de Madrid" against "Atletico Madrid", "Deportivo Alavés" against
+        "Alaves", "CA Osasuna" against "Osasuna", "1. FSV Mainz 05" against
+        "Mainz 05". Dropping furniture and bare numbers, one name's words are a
+        subset of the other's. Manchester City and Manchester United survive
+        this -- {manchester, city} and {manchester, united} are subsets of
+        neither -- and so do Real Madrid and Real Sociedad.
+
+      ALIAS -- a translated city defeats every string rule there is. "1. FC
+        Köln" and "FC Cologne" share no word, nor do "FC Bayern München" and
+        "Bayern Munich", nor "FC Internazionale Milano" and "Inter". Those need
+        naming, and an explicit table is safer than a fuzzy threshold that would
+        also marry two clubs which merely look alike.
+
+    A PREFIX RULE WAS REMOVED HERE. It was the first version's only rule and it
+    is redundant: every one of the eighteen real pairs in the selftest is caught
+    by the two above, and a mutation deleting it failed nothing. It was also the
+    most permissive of the three -- it compares the concatenated strings, so it
+    can match a partial word, which is how a pair like Bayern / Bayer would
+    collide if either source ever shortened those names. A rule that earns
+    nothing and can only cost is not kept for luck; if some pair does turn out
+    to need it, the run log names the clubs that failed to resolve and it comes
+    back with a test.
+
+    `floor` is retained for callers and is unused by the token rules.
     """
     x, y = norm_name(a), norm_name(b)
-    if not x or not y or min(len(x), len(y)) < floor:
+    if not x or not y:
         return False
-    return x.startswith(y) or y.startswith(x)
+    tx, ty = club_tokens(a), club_tokens(b)
+    if tx and ty and (tx <= ty or ty <= tx):
+        return True
+    for group in CLUB_ALIASES:
+        if any(g in x for g in group) and any(g in y for g in group):
+            return True
+    return False
 
 
 def drop_moved_players(splits, roster, clubs):
@@ -780,6 +836,14 @@ def build(of_fetch=None, us_fetch=None, today=None):
                       f'name rather than the full one)')
         for reason, k in sorted(why.items(), key=lambda kv: -kv[1]):
             report.append(f'    {k:4} {reason}')
+        # NAME THE CLUBS THAT DID NOT RESOLVE. "30 rows unverified" cannot be
+        # acted on; "Atletico de Madrid did not resolve" can, and every entry in
+        # CLUB_ALIASES came from a list like this rather than from memory.
+        unres = sorted({r['team'] for r in splits
+                        if r.get('club_unverified') == "row's club is not in the current season"})
+        if unres:
+            report.append(f'    clubs that did not resolve: {", ".join(unres[:14])}'
+                          + (f' (+{len(unres) - 14} more)' if len(unres) > 14 else ''))
     else:
         # Say it. A silent skip here means the page shows last season's clubs
         # and looks exactly like a page that checked and found nothing wrong.
@@ -1036,14 +1100,33 @@ Fri Aug 15 2025
     chk(not sp2, 'a two-from-two is never a head-to-head signal')
 
     # ------------------------------------------------ the current-club check
-    chk(club_match('Tottenham Hotspur', 'Tottenham') and
-        club_match('Brighton & Hove Albion', 'Brighton') and
-        club_match('West Ham United', 'West Ham') and club_match('Chelsea FC', 'Chelsea'),
-        'understat\'s abbreviated club names resolve to openfootball\'s full ones')
-    chk(not club_match('Manchester City', 'Manchester United'),
-        'and the two Manchesters stay distinct')
-    chk(not club_match('Ajax', 'AZ') and not club_match('A', 'Arsenal'),
-        'a fragment shorter than the floor never matches')
+    SAME = [('Tottenham Hotspur', 'Tottenham'), ('Brighton & Hove Albion', 'Brighton'),
+            ('West Ham United', 'West Ham'), ('Chelsea FC', 'Chelsea'),
+            ('Elche CF', 'Elche'), ('Girona FC', 'Girona'), ('Getafe CF', 'Getafe'),
+            # middle and leading words -- prefix matching alone missed all four,
+            # and that was 30 rows left unverified
+            ('Atl\u00e9tico de Madrid', 'Atletico Madrid'),
+            ('Deportivo Alav\u00e9s', 'Alaves'), ('CA Osasuna', 'Osasuna'),
+            ('1. FSV Mainz 05', 'Mainz 05'), ('AS Roma', 'Roma'),
+            ('Athletic Club', 'Athletic Bilbao'), ('Real Madrid C.F.', 'Real Madrid'),
+            ("Borussia M'gladbach", 'Borussia M.Gladbach'),
+            # translated words -- no string rule reaches these
+            ('1. FC K\u00f6ln', 'FC Cologne'), ('FC Bayern M\u00fcnchen', 'Bayern Munich'),
+            ('FC Internazionale Milano', 'Inter')]
+    bad = [(a, b) for a, b in SAME if not club_match(a, b)]
+    chk(not bad, f'every club the two sources spell differently resolves: {bad[:3]}')
+    # THE NEGATIVES MATTER MORE THAN THE POSITIVES. Each rule added to reach the
+    # pairs above makes the matcher more permissive, and a matcher that marries
+    # two real clubs reports a player as transferred and deletes a good row.
+    DIFF = [('Manchester City', 'Manchester United'),
+            ('Real Madrid C.F.', 'Real Sociedad'),
+            ('Borussia Dortmund', 'Borussia M.Gladbach'),
+            ('Atalanta', 'Atlanta United'), ('Ajax', 'AZ'), ('A', 'Arsenal'),
+            # the partial-word shape a prefix rule would marry
+            ('Bayern Munich', 'Bayer Leverkusen'), ('Bayern', 'Bayer'),
+            ('Real Betis', 'Real Madrid'), ('Athletic Club', 'Atalanta')]
+    wrong = [(a, b) for a, b in DIFF if club_match(a, b)]
+    chk(not wrong, f'and no two distinct clubs are married by any of the rules: {wrong}')
     CLUBS = {'Fulham', 'Manchester City', 'Tottenham Hotspur', 'Bournemouth'}
     rows_ = [{'player': 'Harry WILSON', 'team': 'Fulham', 'text': 't'},
              {'player': 'Antoine SEMENYO', 'team': 'Bournemouth', 'text': 't'},
