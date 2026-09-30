@@ -70,9 +70,15 @@ LEAGUES = {
 ES_ROUNDS = {
     'Chile Liga de Primera': ['https://es.wikipedia.org/wiki/Liga_de_Primera_2026'],
     'Bolivia Profesional':   ['https://es.wikipedia.org/wiki/Primera_Divisi%C3%B3n_de_Bolivia_2026'],
-    'Peru Liga 1':           ['https://es.wikipedia.org/wiki/Liga1_2026_(Per%C3%BA)'],
-    'Colombia Primera A':    ['https://es.wikipedia.org/wiki/Categor%C3%ADa_Primera_A_2026',
+    # Colombia and Peru split the year into two tournaments and put the round
+    # tables on the TOURNAMENT pages, not the season page (which 404s). Both
+    # are read and merged -- Apertura alone stops in May, which is what made
+    # September's form look four months stale.
+    'Colombia Primera A':    ['https://es.wikipedia.org/wiki/Torneo_Finalizaci%C3%B3n_2026_(Colombia)',
                               'https://es.wikipedia.org/wiki/Torneo_Apertura_2026_(Colombia)'],
+    'Peru Liga 1':           ['https://es.wikipedia.org/wiki/Torneo_Clausura_2026_(Per%C3%BA)',
+                              'https://es.wikipedia.org/wiki/Torneo_Apertura_2026_(Per%C3%BA)',
+                              'https://es.wikipedia.org/wiki/Liga1_2026_(Per%C3%BA)'],
 }
 
 MONTHS = {'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4, 'mayo': 5,
@@ -94,6 +100,13 @@ class Tables(HTMLParser):
         self.t = self.row = self.cell = None
         self.in_h = 0
         self._hbuf = []
+        # ROWSPAN IS NOT COSMETIC HERE. These fixture tables print ONE date
+        # cell spanning every match played that day, so rows 2..N of a day
+        # arrive one cell short and a flat parser silently loses the date --
+        # which is precisely how half of every league's results came back
+        # "scored but undated" and Colombia's form looked four months stale.
+        self._spans = []
+        self._pending = {}
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -102,9 +115,13 @@ class Tables(HTMLParser):
         elif tag == 'table' and 'wikitable' in (a.get('class') or ''):
             self.t = []
         elif self.t is not None and tag == 'tr':
-            self.row = []
+            self.row, self._spans = [], []
         elif self.row is not None and tag in ('td', 'th'):
             self.cell = []
+            try:
+                self._cellspan = max(1, int(a.get('rowspan') or 1))
+            except (TypeError, ValueError):
+                self._cellspan = 1
 
     def handle_endtag(self, tag):
         if tag in ('h2', 'h3', 'h4') and self.in_h:
@@ -112,13 +129,32 @@ class Tables(HTMLParser):
         elif tag == 'table' and self.t is not None:
             self.out.append((self.head, self.t))
             self.t = None
+            self._pending = {}
         elif tag == 'tr' and self.row is not None:
+            self._close_row()
             if self.row:
                 self.t.append(self.row)
             self.row = None
         elif tag in ('td', 'th') and self.cell is not None:
             self.row.append(re.sub(r'\s+', ' ', ' '.join(self.cell)).strip())
-            self.cell = None
+            self._spans.append(getattr(self, '_cellspan', 1))
+            self.cell = self._cellspan = None
+
+    def _close_row(self):
+        """Re-insert cells that are still spanning down from an earlier row,
+        at the column they occupied, then tick their counters."""
+        for col in sorted(self._pending):
+            rem, txt = self._pending[col]
+            at = min(col, len(self.row))
+            self.row.insert(at, txt)
+            self._spans.insert(at, 1)
+        for col in list(self._pending):
+            self._pending[col][0] -= 1
+            if self._pending[col][0] <= 0:
+                del self._pending[col]
+        for i, sp in enumerate(self._spans):
+            if sp > 1 and i < len(self.row):
+                self._pending[i] = [sp - 1, self.row[i]]
 
     def handle_data(self, d):
         if self.in_h:
@@ -346,6 +382,7 @@ def build(fetch=get):
         # DATED ROUNDS, if this league publishes them in Spanish. Kept beside
         # the matrix rather than replacing it: the matrix is the complete
         # season, the rounds may lag, and only the rounds can carry form.
+        all_dated, tot_und, pages = [], 0, []
         for u in ES_ROUNDS.get(league, []):
             try:
                 eh = fetch(u)
@@ -355,14 +392,23 @@ def build(fetch=get):
             ep = Tables()
             ep.feed(eh)
             dated, undated = read_rounds(ep.out, YEAR)
+            tot_und += undated
             if dated:
-                entry['dated'] = [list(d) for d in dated]
-                entry['form'] = form_table(dated)
-                entry['es_page'] = u
-                report.append(f'    es-rounds {league}: {len(dated)} dated results'
-                              + (f' ({undated} rows had a score but no date)' if undated else ''))
-                break
-            report.append(f'    es-rounds {league}: page read, no dated rows')
+                all_dated.extend(dated)
+                pages.append(u.rsplit('/', 1)[-1])
+            else:
+                report.append(f'    es-rounds {league}: {u.rsplit("/", 1)[-1]} read, no dated rows')
+        if all_dated:
+            # A club can appear on both tournament pages; identical rows are
+            # the same fixture listed twice, so dedupe on the whole tuple.
+            all_dated = sorted(set(all_dated))
+            entry['dated'] = [list(d) for d in all_dated]
+            entry['form'] = form_table(all_dated)
+            entry['es_pages'] = pages
+            newest = max(d[0] for d in all_dated)
+            report.append(f'    es-rounds {league}: {len(all_dated)} dated results '
+                          f'across {len(pages)} page(s), newest {newest}'
+                          + (f' ({tot_und} scored rows still undated)' if tot_und else ''))
         doc[league] = entry
         r = doc[league]['rates']['result']
         report.append(f'  OK      {league}: {r["n"]} matches  home {r["home"]:.3f} '
@@ -430,6 +476,26 @@ def selftest():
                   ['Beta', '0 \u2013 0', 'Gamma', 'Ground', '6 de febrero', '20:00'],
                   ['Gamma', '', 'Alpha', 'Ground', '13 de marzo', '20:00'],
                   ['Alpha', '1-0', 'Gamma', 'Ground', 'TBD', '20:00']])]
+    # ROWSPAN: the exact shape that lost every second date. One 'Fecha' cell
+    # spans three matches; rows 2 and 3 carry no date cell of their own.
+    span_html = (
+        '<table class="wikitable">'
+        '<tr><th>Local</th><th>Resultado</th><th>Visita</th><th>Fecha</th><th>Hora</th></tr>'
+        '<tr><td>A</td><td>1-0</td><td>B</td><td rowspan="3">30 de enero</td><td>15:00</td></tr>'
+        '<tr><td>C</td><td>2-2</td><td>D</td><td>18:00</td></tr>'
+        '<tr><td>E</td><td>0-1</td><td>F</td><td>20:30</td></tr>'
+        '<tr><td>G</td><td>3-1</td><td>H</td><td>6 de febrero</td><td>17:00</td></tr>'
+        '</table>')
+    sp_p = Tables(); sp_p.feed(span_html)
+    rows = sp_p.out[0][1]
+    chk(all(len(r) == 5 for r in rows), f'every row is rebuilt to full width: {[len(r) for r in rows]}')
+    chk(rows[2][3] == '30 de enero' and rows[3][3] == '30 de enero',
+        'a rowspan date is carried into the rows it spans')
+    chk(rows[4][3] == '6 de febrero', 'the span stops when its count runs out')
+    sd, sund = read_rounds(sp_p.out, 2026)
+    chk(len(sd) == 4 and sund == 0, f'all four scored rows now carry dates ({len(sd)}, {sund} undated)')
+    chk(sd[1] == ('2026-01-30', 'C', 'D', 2, 2), f'the spanned row parses fully: {sd[1]}')
+
     titled = [(None, [['Fecha 1'],
                       ['Local', 'Resultado', 'Visita', 'Estadio', 'Fecha', 'Hora'],
                       ['U de Chile', '0-0', 'Audax', 'Nacional', '30 de enero', '20:00']])]
