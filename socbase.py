@@ -148,9 +148,20 @@ def rates(key):
     if key in EXTRA:
         r = _extra(EXTRA[key])
         if r:
-            return EXTRA[key], r, (
-                'socextra: measured off Wikipedia season grids, NOT closing '
-                'odds -- no de-vig, and no form is available for this league')
+            n = EXTRA[key]
+            note = ('socextra: measured off Wikipedia season grids, NOT '
+                    'closing odds -- no de-vig')
+            # Do not claim "no form" for a league that has it: Chile and
+            # Bolivia carry dated Spanish rounds, Colombia's dates stop in
+            # May, Peru has none. socsignals gates on the age; say only
+            # what is true here.
+            try:
+                with open(os.path.join(HERE, 'socextra.json')) as fh:
+                    if not (json.load(fh).get(n) or {}).get('form'):
+                        note += '; no dated results, so no form for this league'
+            except Exception:
+                pass
+            return n, r, note
     if key == 'soccer_concacaf_leagues_cup':
         a, b = _calib('USA MLS'), _calib('Mexico Liga MX')
         if a and b:

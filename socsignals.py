@@ -28,7 +28,15 @@ WHAT EACH SIGNAL COSTS, AND WHY TWO ARE DARK.
 
 A dark signal is a boundary, not a bug, and it is printed as one.
 """
+import datetime as _dt
 import json, os, sys, unicodedata
+
+# A form row is only "recent" if it is actually recent. Colombia's dated rows
+# stop on 2026-05-12 (the Apertura; the Finalización publishes no dates), and
+# presenting that in September as "Recent Form" would be a signal that is not
+# merely missing but WRONG -- last spring's team wearing this week's label.
+# Anything older than this is dark, and says how old it is.
+FORM_MAX_AGE_DAYS = 45
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 UNAVAILABLE = '—'
@@ -133,17 +141,54 @@ def card(league_key, home, away, socbase=None):
             for s in ('Home/Away Splits', 'Head to Head', 'Opponent Rank'):
                 out[s] = {'value': UNAVAILABLE, 'measured': False, 'why': why}
 
-    out['Recent Form'] = {
-        'value': UNAVAILABLE, 'measured': False,
-        'why': 'DATELESS SOURCE. socextra reads a results matrix, which has every '
-               'result and no dates, so "last five" cannot be ordered. socform has '
-               'dates but does not carry this league. Verified twice (srcprobe 7): '
-               'the only dated tables on these pages are managerial changes.'}
+    out['Recent Form'] = _recent_form(name, home, away)
     for s in ('Injury Impact', 'Starter'):
         out[s] = {'value': UNAVAILABLE, 'measured': False,
                   'why': 'lives in per-fixture team news, not in any results table; '
                          'needs a lineup source or a manual read'}
     return out
+
+
+def _form_store(league):
+    try:
+        with open(os.path.join(HERE, 'socextra.json')) as fh:
+            return (json.load(fh).get(league) or {}).get('form') or {}
+    except Exception:
+        return {}
+
+
+def _recent_form(league, home, away, today=None):
+    """Measured only when the newest result is inside FORM_MAX_AGE_DAYS."""
+    f = _form_store(league)
+    if not f:
+        return {'value': UNAVAILABLE, 'measured': False,
+                'why': 'no dated results for this league. The results matrix socextra '
+                       'reads has every score and NO dates, so "last five" cannot be '
+                       'ordered; the Spanish round-by-round tables that do carry dates '
+                       'were not found for this competition.'}
+    today = today or _dt.date.today()
+    parts, ages = [], []
+    for side, team in (('home', home), ('away', away)):
+        k, why = match_team(f, team)
+        if not k:
+            return {'value': UNAVAILABLE, 'measured': False, 'why': why}
+        v = f[k]
+        try:
+            age = (today - _dt.date.fromisoformat(v['newest'])).days
+        except Exception:
+            return {'value': UNAVAILABLE, 'measured': False,
+                    'why': f'{k}: unreadable date on the newest result'}
+        ages.append((k, v['newest'], age))
+        parts.append(f"{k} {v['form']} ({v['gf']}gf {v['ga']}ga, last {v['newest']})")
+    worst = max(ages, key=lambda x: x[2])
+    if worst[2] > FORM_MAX_AGE_DAYS:
+        return {'value': UNAVAILABLE, 'measured': False,
+                'why': (f'STALE: the newest dated result for {worst[0]} is {worst[1]}, '
+                        f'{worst[2]} days old (limit {FORM_MAX_AGE_DAYS}). This league '
+                        f'publishes dates for only part of the season, and last '
+                        f'season-half\'s form under a "recent" label is worse than none.')}
+    return {'value': '  |  '.join(parts), 'measured': True,
+            'why': None if worst[2] <= 14 else f'newest result is {worst[2]} days old'}
 
 
 ORDER = ['League base', 'Under ladder', 'Home/Away Splits', 'Head to Head',
@@ -208,9 +253,29 @@ def selftest():
         'opponent rank derives a table from the whole grid')
 
     chk(c['Recent Form']['measured'] is False, 'Recent Form is NOT reported as measured')
-    chk('DATELESS' in c['Recent Form']['why'], 'Recent Form states WHY it is dark')
+    chk('dates' in c['Recent Form']['why'].lower(),
+        'Recent Form states WHY it is dark (names the missing dates)')
     chk(all(not c[s]['measured'] and c[s]['why'] for s in ('Injury Impact', 'Starter')),
         'Injury and Starter are dark WITH a reason, never blank')
+
+    import datetime as _d
+    store = {'Alpha FC': {'form': 'WWDLW', 'n': 5, 'gf': 9, 'ga': 4, 'newest': '2026-09-20'},
+             'Beta FC':  {'form': 'LLDWL', 'n': 5, 'gf': 3, 'ga': 8, 'newest': '2026-09-18'},
+             'Stale FC': {'form': 'WWWWW', 'n': 5, 'gf': 12, 'ga': 1, 'newest': '2026-05-12'}}
+    globals()['_form_store'] = lambda _lg: store
+    today = _d.date(2026, 9, 30)
+    fresh = _recent_form('L', 'Alpha FC', 'Beta FC', today=today)
+    chk(fresh['measured'] and 'WWDLW' in fresh['value'], 'fresh dated form IS measured')
+    stale = _recent_form('L', 'Alpha FC', 'Stale FC', today=today)
+    chk(not stale['measured'], 'form whose newest result is 4 months old is NOT measured')
+    chk('STALE' in stale['why'] and '2026-05-12' in stale['why'] and '141 days' in stale['why'],
+        'the stale reason names the date and the age')
+    chk(not _recent_form('L', 'Alpha FC', 'Ghost FC', today=today)['measured'],
+        'a club with no form row darkens Recent Form')
+    globals()['_form_store'] = lambda _lg: {}
+    chk('NO dates' in _recent_form('L', 'A', 'B', today=today)['why'].replace('NO dates', 'NO dates')
+        or 'no dates' in _recent_form('L', 'A', 'B', today=today)['why'].lower(),
+        'a league with no dated source says so')
 
     c2 = card('k', 'Alpha', 'Nobody FC', socbase=FakeSB(sp))
     chk(not c2['Head to Head']['measured'] and 'no club matching' in c2['Head to Head']['why'],
