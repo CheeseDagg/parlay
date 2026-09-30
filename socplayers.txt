@@ -20,12 +20,13 @@ socplayers
   understat Germany Bundesliga: 367 players, 5 rate signals
   understat Italy Serie A: 448 players, 46 rate signals
   current-club universe: 90 clubs, from the CURRENT season
-  current-club check: 118 splits -> 107 (11 dropped, the player has left that club; 55 kept unverified; 1 resolved on one name rather than the full one)
-      30 row's club is not in the current season
+  current-club check: 118 splits -> 104 (14 dropped, the player has left that club; 27 kept unverified; 1 resolved on one name rather than the full one)
       24 name not found in the current season
+       2 row's club is not in the current season
        1 listed at several clubs in the current season
+    clubs that did not resolve: Burnley, Hellas Verona
 
-wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 107 splits, 164 rates
+wrote /home/runner/work/parlay/parlay/socplayers.json -- 0 streaks, 104 splits, 164 rates
   Antoine SEMENYO          scored in 5 of Manchester City's 8 home matches since joining, Manchester City
   Jean-Philippe MATETA     scored in 7 of Crystal Palace's 19 home matches, 2 of 19 away  Crystal Palace
   William Osula            scored in 5 of Newcastle United's 19 home matches, 1 of 19 awa Newcastle United
