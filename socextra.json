@@ -7432,8 +7432,10 @@
      ]
     ]
    ],
-   "count_delta": 1
-  }
+   "count_delta": 1,
+   "dated_is_superset": false
+  },
+  "rates_source": "results grid (dated rounds not a superset)"
  },
  "Peru Liga 1": {
   "slug": "https://en.wikipedia.org/wiki/2026_Liga_1_(Peru)",
@@ -13653,8 +13655,10 @@
    "agreed_pairs": 157,
    "disagreed_pairs": 0,
    "samples": [],
-   "count_delta": 0
-  }
+   "count_delta": 0,
+   "dated_is_superset": false
+  },
+  "rates_source": "results grid (dated rounds not a superset)"
  },
  "Chile Liga de Primera": {
   "slug": "https://en.wikipedia.org/wiki/2026_Liga_de_Primera",
@@ -13677,14 +13681,14 @@
   },
   "splits": {
    "home": {
-    "Audax Italiano": {
-     "p": 12,
-     "w": 5,
-     "d": 4,
-     "l": 3,
-     "gf": 19,
-     "ga": 13,
-     "ppg": 1.583
+    "Universidad de Chile": {
+     "p": 11,
+     "w": 7,
+     "d": 3,
+     "l": 1,
+     "gf": 21,
+     "ga": 9,
+     "ppg": 2.182
     },
     "Cobresal": {
      "p": 11,
@@ -13694,6 +13698,60 @@
      "gf": 18,
      "ga": 16,
      "ppg": 1.636
+    },
+    "Deportes Limache": {
+     "p": 11,
+     "w": 7,
+     "d": 0,
+     "l": 4,
+     "gf": 23,
+     "ga": 13,
+     "ppg": 1.909
+    },
+    "Universidad de Concepci\u00f3n": {
+     "p": 10,
+     "w": 5,
+     "d": 1,
+     "l": 4,
+     "gf": 8,
+     "ga": 10,
+     "ppg": 1.6
+    },
+    "Deportes La Serena": {
+     "p": 12,
+     "w": 4,
+     "d": 4,
+     "l": 4,
+     "gf": 19,
+     "ga": 18,
+     "ppg": 1.333
+    },
+    "Palestino": {
+     "p": 12,
+     "w": 7,
+     "d": 3,
+     "l": 2,
+     "gf": 26,
+     "ga": 13,
+     "ppg": 2.0
+    },
+    "O'Higgins": {
+     "p": 11,
+     "w": 5,
+     "d": 0,
+     "l": 6,
+     "gf": 11,
+     "ga": 14,
+     "ppg": 1.364
+    },
+    "Audax Italiano": {
+     "p": 12,
+     "w": 5,
+     "d": 4,
+     "l": 3,
+     "gf": 19,
+     "ga": 13,
+     "ppg": 1.583
     },
     "Colo-Colo": {
      "p": 12,
@@ -13713,42 +13771,6 @@
      "ga": 10,
      "ppg": 1.364
     },
-    "Deportes Concepci\u00f3n": {
-     "p": 12,
-     "w": 5,
-     "d": 3,
-     "l": 4,
-     "gf": 16,
-     "ga": 13,
-     "ppg": 1.5
-    },
-    "Deportes La Serena": {
-     "p": 12,
-     "w": 4,
-     "d": 4,
-     "l": 4,
-     "gf": 19,
-     "ga": 18,
-     "ppg": 1.333
-    },
-    "Deportes Limache": {
-     "p": 11,
-     "w": 7,
-     "d": 0,
-     "l": 4,
-     "gf": 23,
-     "ga": 13,
-     "ppg": 1.909
-    },
-    "Everton": {
-     "p": 11,
-     "w": 3,
-     "d": 4,
-     "l": 4,
-     "gf": 13,
-     "ga": 14,
-     "ppg": 1.182
-    },
     "Huachipato": {
      "p": 11,
      "w": 5,
@@ -13757,42 +13779,6 @@
      "gf": 21,
      "ga": 22,
      "ppg": 1.545
-    },
-    "\u00d1ublense": {
-     "p": 12,
-     "w": 4,
-     "d": 4,
-     "l": 4,
-     "gf": 15,
-     "ga": 16,
-     "ppg": 1.333
-    },
-    "O'Higgins": {
-     "p": 11,
-     "w": 5,
-     "d": 0,
-     "l": 6,
-     "gf": 11,
-     "ga": 14,
-     "ppg": 1.364
-    },
-    "Palestino": {
-     "p": 12,
-     "w": 7,
-     "d": 3,
-     "l": 2,
-     "gf": 26,
-     "ga": 13,
-     "ppg": 2.0
-    },
-    "Uni\u00f3n La Calera": {
-     "p": 11,
-     "w": 3,
-     "d": 3,
-     "l": 5,
-     "gf": 14,
-     "ga": 14,
-     "ppg": 1.091
     },
     "Universidad Cat\u00f3lica": {
      "p": 11,
@@ -13803,34 +13789,61 @@
      "ga": 16,
      "ppg": 1.818
     },
-    "Universidad de Chile": {
-     "p": 11,
-     "w": 7,
-     "d": 3,
-     "l": 1,
-     "gf": 21,
-     "ga": 9,
-     "ppg": 2.182
-    },
-    "Universidad de Concepci\u00f3n": {
-     "p": 10,
-     "w": 5,
-     "d": 1,
+    "\u00d1ublense": {
+     "p": 12,
+     "w": 4,
+     "d": 4,
      "l": 4,
-     "gf": 8,
-     "ga": 10,
-     "ppg": 1.6
+     "gf": 15,
+     "ga": 16,
+     "ppg": 1.333
+    },
+    "Everton": {
+     "p": 11,
+     "w": 3,
+     "d": 4,
+     "l": 4,
+     "gf": 13,
+     "ga": 14,
+     "ppg": 1.182
+    },
+    "Deportes Concepci\u00f3n": {
+     "p": 12,
+     "w": 5,
+     "d": 3,
+     "l": 4,
+     "gf": 16,
+     "ga": 13,
+     "ppg": 1.5
+    },
+    "Uni\u00f3n La Calera": {
+     "p": 11,
+     "w": 3,
+     "d": 3,
+     "l": 5,
+     "gf": 14,
+     "ga": 14,
+     "ppg": 1.091
     }
    },
    "away": {
-    "Cobresal": {
+    "Audax Italiano": {
      "p": 11,
-     "w": 0,
+     "w": 2,
      "d": 3,
-     "l": 8,
-     "gf": 13,
-     "ga": 28,
-     "ppg": 0.273
+     "l": 6,
+     "gf": 7,
+     "ga": 18,
+     "ppg": 0.818
+    },
+    "Huachipato": {
+     "p": 11,
+     "w": 3,
+     "d": 2,
+     "l": 6,
+     "gf": 9,
+     "ga": 17,
+     "ppg": 1.0
     },
     "Colo-Colo": {
      "p": 11,
@@ -13841,6 +13854,33 @@
      "ga": 12,
      "ppg": 2.545
     },
+    "Coquimbo Unido": {
+     "p": 12,
+     "w": 4,
+     "d": 2,
+     "l": 6,
+     "gf": 18,
+     "ga": 22,
+     "ppg": 1.167
+    },
+    "Universidad Cat\u00f3lica": {
+     "p": 12,
+     "w": 7,
+     "d": 1,
+     "l": 4,
+     "gf": 21,
+     "ga": 17,
+     "ppg": 1.833
+    },
+    "\u00d1ublense": {
+     "p": 11,
+     "w": 4,
+     "d": 4,
+     "l": 3,
+     "gf": 13,
+     "ga": 15,
+     "ppg": 1.455
+    },
     "Deportes Concepci\u00f3n": {
      "p": 11,
      "w": 4,
@@ -13850,23 +13890,14 @@
      "ga": 13,
      "ppg": 1.182
     },
-    "Deportes La Serena": {
-     "p": 11,
-     "w": 3,
-     "d": 5,
-     "l": 3,
-     "gf": 15,
-     "ga": 20,
-     "ppg": 1.273
-    },
-    "Deportes Limache": {
+    "Universidad de Concepci\u00f3n": {
      "p": 12,
-     "w": 3,
+     "w": 1,
      "d": 3,
-     "l": 6,
-     "gf": 20,
-     "ga": 22,
-     "ppg": 1.0
+     "l": 8,
+     "gf": 9,
+     "ga": 27,
+     "ppg": 0.5
     },
     "Everton": {
      "p": 11,
@@ -13877,14 +13908,41 @@
      "ga": 11,
      "ppg": 1.818
     },
-    "\u00d1ublense": {
+    "Palestino": {
      "p": 11,
      "w": 4,
-     "d": 4,
+     "d": 0,
+     "l": 7,
+     "gf": 10,
+     "ga": 20,
+     "ppg": 1.091
+    },
+    "Deportes La Serena": {
+     "p": 11,
+     "w": 3,
+     "d": 5,
      "l": 3,
-     "gf": 13,
-     "ga": 15,
-     "ppg": 1.455
+     "gf": 15,
+     "ga": 20,
+     "ppg": 1.273
+    },
+    "Universidad de Chile": {
+     "p": 12,
+     "w": 5,
+     "d": 3,
+     "l": 4,
+     "gf": 14,
+     "ga": 10,
+     "ppg": 1.5
+    },
+    "Deportes Limache": {
+     "p": 12,
+     "w": 3,
+     "d": 3,
+     "l": 6,
+     "gf": 20,
+     "ga": 22,
+     "ppg": 1.0
     },
     "O'Higgins": {
      "p": 12,
@@ -13904,198 +13962,112 @@
      "ga": 20,
      "ppg": 0.5
     },
-    "Universidad Cat\u00f3lica": {
-     "p": 12,
-     "w": 7,
-     "d": 1,
-     "l": 4,
-     "gf": 21,
-     "ga": 17,
-     "ppg": 1.833
-    },
-    "Universidad de Chile": {
-     "p": 12,
-     "w": 5,
-     "d": 3,
-     "l": 4,
-     "gf": 14,
-     "ga": 10,
-     "ppg": 1.5
-    },
-    "Universidad de Concepci\u00f3n": {
-     "p": 12,
-     "w": 1,
+    "Cobresal": {
+     "p": 11,
+     "w": 0,
      "d": 3,
      "l": 8,
-     "gf": 9,
-     "ga": 27,
-     "ppg": 0.5
-    },
-    "Coquimbo Unido": {
-     "p": 12,
-     "w": 4,
-     "d": 2,
-     "l": 6,
-     "gf": 18,
-     "ga": 22,
-     "ppg": 1.167
-    },
-    "Huachipato": {
-     "p": 11,
-     "w": 3,
-     "d": 2,
-     "l": 6,
-     "gf": 9,
-     "ga": 17,
-     "ppg": 1.0
-    },
-    "Palestino": {
-     "p": 11,
-     "w": 4,
-     "d": 0,
-     "l": 7,
-     "gf": 10,
-     "ga": 20,
-     "ppg": 1.091
-    },
-    "Audax Italiano": {
-     "p": 11,
-     "w": 2,
-     "d": 3,
-     "l": 6,
-     "gf": 7,
-     "ga": 18,
-     "ppg": 0.818
+     "gf": 13,
+     "ga": 28,
+     "ppg": 0.273
     }
    },
    "h2h": {
-    "Audax Italiano|Cobresal": [
-     {
-      "home": "Audax Italiano",
-      "away": "Cobresal",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Audax Italiano|Colo-Colo": [
-     {
-      "home": "Audax Italiano",
-      "away": "Colo-Colo",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "Colo-Colo",
-      "away": "Audax Italiano",
-      "hg": 5,
-      "ag": 1
-     }
-    ],
-    "Audax Italiano|Deportes Concepci\u00f3n": [
-     {
-      "home": "Audax Italiano",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 3,
-      "ag": 0
-     },
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "Audax Italiano",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Audax Italiano|Deportes La Serena": [
-     {
-      "home": "Audax Italiano",
-      "away": "Deportes La Serena",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Audax Italiano|Deportes Limache": [
-     {
-      "home": "Audax Italiano",
-      "away": "Deportes Limache",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Audax Italiano|Everton": [
-     {
-      "home": "Audax Italiano",
-      "away": "Everton",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Everton",
-      "away": "Audax Italiano",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Audax Italiano|\u00d1ublense": [
-     {
-      "home": "Audax Italiano",
-      "away": "\u00d1ublense",
-      "hg": 2,
-      "ag": 2
-     },
-     {
-      "home": "\u00d1ublense",
-      "away": "Audax Italiano",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Audax Italiano|O'Higgins": [
-     {
-      "home": "Audax Italiano",
-      "away": "O'Higgins",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "O'Higgins",
-      "away": "Audax Italiano",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Audax Italiano|Uni\u00f3n La Calera": [
-     {
-      "home": "Audax Italiano",
-      "away": "Uni\u00f3n La Calera",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "Uni\u00f3n La Calera",
-      "away": "Audax Italiano",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Audax Italiano|Universidad Cat\u00f3lica": [
-     {
-      "home": "Audax Italiano",
-      "away": "Universidad Cat\u00f3lica",
-      "hg": 3,
-      "ag": 4
-     }
-    ],
     "Audax Italiano|Universidad de Chile": [
+     {
+      "home": "Universidad de Chile",
+      "away": "Audax Italiano",
+      "hg": 0,
+      "ag": 0
+     },
      {
       "home": "Audax Italiano",
       "away": "Universidad de Chile",
       "hg": 1,
       "ag": 2
+     }
+    ],
+    "Cobresal|Huachipato": [
+     {
+      "home": "Cobresal",
+      "away": "Huachipato",
+      "hg": 1,
+      "ag": 0
      },
      {
-      "home": "Universidad de Chile",
-      "away": "Audax Italiano",
-      "hg": 0,
+      "home": "Huachipato",
+      "away": "Cobresal",
+      "hg": 3,
+      "ag": 3
+     }
+    ],
+    "Colo-Colo|Deportes Limache": [
+     {
+      "home": "Deportes Limache",
+      "away": "Colo-Colo",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Colo-Colo",
+      "away": "Deportes Limache",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Coquimbo Unido|Universidad de Concepci\u00f3n": [
+     {
+      "home": "Universidad de Concepci\u00f3n",
+      "away": "Coquimbo Unido",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Coquimbo Unido",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportes La Serena|Universidad Cat\u00f3lica": [
+     {
+      "home": "Deportes La Serena",
+      "away": "Universidad Cat\u00f3lica",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Universidad Cat\u00f3lica",
+      "away": "Deportes La Serena",
+      "hg": 3,
+      "ag": 3
+     }
+    ],
+    "Palestino|\u00d1ublense": [
+     {
+      "home": "Palestino",
+      "away": "\u00d1ublense",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "\u00d1ublense",
+      "away": "Palestino",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportes Concepci\u00f3n|O'Higgins": [
+     {
+      "home": "O'Higgins",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "O'Higgins",
+      "hg": 2,
       "ag": 0
      }
     ],
@@ -14113,180 +14085,6 @@
       "ag": 1
      }
     ],
-    "Cobresal|Coquimbo Unido": [
-     {
-      "home": "Cobresal",
-      "away": "Coquimbo Unido",
-      "hg": 3,
-      "ag": 2
-     },
-     {
-      "home": "Coquimbo Unido",
-      "away": "Cobresal",
-      "hg": 3,
-      "ag": 2
-     }
-    ],
-    "Cobresal|Deportes Concepci\u00f3n": [
-     {
-      "home": "Cobresal",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 0,
-      "ag": 2
-     },
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "Cobresal",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Cobresal|Deportes La Serena": [
-     {
-      "home": "Cobresal",
-      "away": "Deportes La Serena",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "Deportes La Serena",
-      "away": "Cobresal",
-      "hg": 3,
-      "ag": 3
-     }
-    ],
-    "Cobresal|Deportes Limache": [
-     {
-      "home": "Cobresal",
-      "away": "Deportes Limache",
-      "hg": 2,
-      "ag": 5
-     },
-     {
-      "home": "Deportes Limache",
-      "away": "Cobresal",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Cobresal|Huachipato": [
-     {
-      "home": "Cobresal",
-      "away": "Huachipato",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Huachipato",
-      "away": "Cobresal",
-      "hg": 3,
-      "ag": 3
-     }
-    ],
-    "Cobresal|\u00d1ublense": [
-     {
-      "home": "Cobresal",
-      "away": "\u00d1ublense",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Cobresal|O'Higgins": [
-     {
-      "home": "Cobresal",
-      "away": "O'Higgins",
-      "hg": 2,
-      "ag": 3
-     }
-    ],
-    "Cobresal|Palestino": [
-     {
-      "home": "Cobresal",
-      "away": "Palestino",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "Palestino",
-      "away": "Cobresal",
-      "hg": 4,
-      "ag": 2
-     }
-    ],
-    "Cobresal|Uni\u00f3n La Calera": [
-     {
-      "home": "Cobresal",
-      "away": "Uni\u00f3n La Calera",
-      "hg": 4,
-      "ag": 0
-     }
-    ],
-    "Cobresal|Universidad Cat\u00f3lica": [
-     {
-      "home": "Cobresal",
-      "away": "Universidad Cat\u00f3lica",
-      "hg": 3,
-      "ag": 2
-     },
-     {
-      "home": "Universidad Cat\u00f3lica",
-      "away": "Cobresal",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Cobresal|Universidad de Chile": [
-     {
-      "home": "Cobresal",
-      "away": "Universidad de Chile",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Cobresal|Colo-Colo": [
-     {
-      "home": "Colo-Colo",
-      "away": "Cobresal",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Colo-Colo|Coquimbo Unido": [
-     {
-      "home": "Colo-Colo",
-      "away": "Coquimbo Unido",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Colo-Colo|Deportes Concepci\u00f3n": [
-     {
-      "home": "Colo-Colo",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "Colo-Colo",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Colo-Colo|Deportes Limache": [
-     {
-      "home": "Colo-Colo",
-      "away": "Deportes Limache",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Deportes Limache",
-      "away": "Colo-Colo",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
     "Colo-Colo|Everton": [
      {
       "home": "Colo-Colo",
@@ -14299,144 +14097,6 @@
       "away": "Colo-Colo",
       "hg": 3,
       "ag": 4
-     }
-    ],
-    "Colo-Colo|Huachipato": [
-     {
-      "home": "Colo-Colo",
-      "away": "Huachipato",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "Huachipato",
-      "away": "Colo-Colo",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Colo-Colo|\u00d1ublense": [
-     {
-      "home": "Colo-Colo",
-      "away": "\u00d1ublense",
-      "hg": 6,
-      "ag": 2
-     }
-    ],
-    "Colo-Colo|O'Higgins": [
-     {
-      "home": "Colo-Colo",
-      "away": "O'Higgins",
-      "hg": 2,
-      "ag": 2
-     },
-     {
-      "home": "O'Higgins",
-      "away": "Colo-Colo",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Colo-Colo|Palestino": [
-     {
-      "home": "Colo-Colo",
-      "away": "Palestino",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Colo-Colo|Uni\u00f3n La Calera": [
-     {
-      "home": "Colo-Colo",
-      "away": "Uni\u00f3n La Calera",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Uni\u00f3n La Calera",
-      "away": "Colo-Colo",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Colo-Colo|Universidad de Chile": [
-     {
-      "home": "Colo-Colo",
-      "away": "Universidad de Chile",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "Universidad de Chile",
-      "away": "Colo-Colo",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Audax Italiano|Coquimbo Unido": [
-     {
-      "home": "Coquimbo Unido",
-      "away": "Audax Italiano",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Coquimbo Unido|Deportes Concepci\u00f3n": [
-     {
-      "home": "Coquimbo Unido",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "Coquimbo Unido",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Coquimbo Unido|Deportes La Serena": [
-     {
-      "home": "Coquimbo Unido",
-      "away": "Deportes La Serena",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Deportes La Serena",
-      "away": "Coquimbo Unido",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Coquimbo Unido|Huachipato": [
-     {
-      "home": "Coquimbo Unido",
-      "away": "Huachipato",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "Huachipato",
-      "away": "Coquimbo Unido",
-      "hg": 1,
-      "ag": 3
-     }
-    ],
-    "Coquimbo Unido|\u00d1ublense": [
-     {
-      "home": "Coquimbo Unido",
-      "away": "\u00d1ublense",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Coquimbo Unido|O'Higgins": [
-     {
-      "home": "Coquimbo Unido",
-      "away": "O'Higgins",
-      "hg": 0,
-      "ag": 0
      }
     ],
     "Coquimbo Unido|Palestino": [
@@ -14453,298 +14113,114 @@
       "ag": 1
      }
     ],
-    "Coquimbo Unido|Universidad Cat\u00f3lica": [
+    "Deportes La Serena|O'Higgins": [
      {
-      "home": "Coquimbo Unido",
-      "away": "Universidad Cat\u00f3lica",
+      "home": "O'Higgins",
+      "away": "Deportes La Serena",
       "hg": 1,
-      "ag": 2
+      "ag": 0
      },
      {
-      "home": "Universidad Cat\u00f3lica",
-      "away": "Coquimbo Unido",
-      "hg": 3,
-      "ag": 1
+      "home": "Deportes La Serena",
+      "away": "O'Higgins",
+      "hg": 1,
+      "ag": 2
      }
     ],
-    "Coquimbo Unido|Universidad de Chile": [
+    "Huachipato|Universidad de Chile": [
      {
-      "home": "Coquimbo Unido",
+      "home": "Huachipato",
       "away": "Universidad de Chile",
-      "hg": 0,
+      "hg": 2,
       "ag": 1
      },
      {
       "home": "Universidad de Chile",
-      "away": "Coquimbo Unido",
-      "hg": 4,
-      "ag": 2
-     }
-    ],
-    "Coquimbo Unido|Universidad de Concepci\u00f3n": [
-     {
-      "home": "Coquimbo Unido",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Universidad de Concepci\u00f3n",
-      "away": "Coquimbo Unido",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Deportes Concepci\u00f3n|Deportes La Serena": [
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "Deportes La Serena",
-      "hg": 3,
-      "ag": 3
-     }
-    ],
-    "Deportes Concepci\u00f3n|Deportes Limache": [
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "Deportes Limache",
-      "hg": 3,
-      "ag": 2
-     }
-    ],
-    "Deportes Concepci\u00f3n|Everton": [
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "Everton",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Deportes Concepci\u00f3n|Huachipato": [
-     {
-      "home": "Deportes Concepci\u00f3n",
       "away": "Huachipato",
       "hg": 2,
       "ag": 0
-     }
-    ],
-    "Deportes Concepci\u00f3n|\u00d1ublense": [
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "\u00d1ublense",
-      "hg": 0,
-      "ag": 2
-     },
-     {
-      "home": "\u00d1ublense",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Deportes Concepci\u00f3n|O'Higgins": [
-     {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "O'Higgins",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "O'Higgins",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 2,
-      "ag": 1
      }
     ],
     "Deportes Concepci\u00f3n|Universidad Cat\u00f3lica": [
      {
-      "home": "Deportes Concepci\u00f3n",
-      "away": "Universidad Cat\u00f3lica",
-      "hg": 3,
-      "ag": 0
-     },
-     {
       "home": "Universidad Cat\u00f3lica",
       "away": "Deportes Concepci\u00f3n",
       "hg": 2,
       "ag": 0
-     }
-    ],
-    "Deportes Concepci\u00f3n|Universidad de Concepci\u00f3n": [
+     },
      {
       "home": "Deportes Concepci\u00f3n",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Universidad de Concepci\u00f3n",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Colo-Colo|Deportes La Serena": [
-     {
-      "home": "Deportes La Serena",
-      "away": "Colo-Colo",
-      "hg": 2,
-      "ag": 4
-     }
-    ],
-    "Deportes La Serena|Deportes Limache": [
-     {
-      "home": "Deportes La Serena",
-      "away": "Deportes Limache",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "Deportes La Serena|Everton": [
-     {
-      "home": "Deportes La Serena",
-      "away": "Everton",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Deportes La Serena|Huachipato": [
-     {
-      "home": "Deportes La Serena",
-      "away": "Huachipato",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Deportes La Serena|\u00d1ublense": [
-     {
-      "home": "Deportes La Serena",
-      "away": "\u00d1ublense",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "\u00d1ublense",
-      "away": "Deportes La Serena",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Deportes La Serena|O'Higgins": [
-     {
-      "home": "Deportes La Serena",
-      "away": "O'Higgins",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "O'Higgins",
-      "away": "Deportes La Serena",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Deportes La Serena|Uni\u00f3n La Calera": [
-     {
-      "home": "Deportes La Serena",
-      "away": "Uni\u00f3n La Calera",
-      "hg": 3,
-      "ag": 0
-     },
-     {
-      "home": "Uni\u00f3n La Calera",
-      "away": "Deportes La Serena",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Deportes La Serena|Universidad Cat\u00f3lica": [
-     {
-      "home": "Deportes La Serena",
       "away": "Universidad Cat\u00f3lica",
-      "hg": 2,
-      "ag": 2
-     },
-     {
-      "home": "Universidad Cat\u00f3lica",
-      "away": "Deportes La Serena",
-      "hg": 3,
-      "ag": 3
-     }
-    ],
-    "Deportes La Serena|Universidad de Chile": [
-     {
-      "home": "Deportes La Serena",
-      "away": "Universidad de Chile",
-      "hg": 0,
-      "ag": 3
-     },
-     {
-      "home": "Universidad de Chile",
-      "away": "Deportes La Serena",
-      "hg": 4,
-      "ag": 0
-     }
-    ],
-    "Deportes La Serena|Universidad de Concepci\u00f3n": [
-     {
-      "home": "Deportes La Serena",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Universidad de Concepci\u00f3n",
-      "away": "Deportes La Serena",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Coquimbo Unido|Deportes Limache": [
-     {
-      "home": "Deportes Limache",
-      "away": "Coquimbo Unido",
-      "hg": 2,
-      "ag": 3
-     }
-    ],
-    "Deportes Limache|Everton": [
-     {
-      "home": "Deportes Limache",
-      "away": "Everton",
-      "hg": 0,
-      "ag": 3
-     },
-     {
-      "home": "Everton",
-      "away": "Deportes Limache",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Deportes Limache|Huachipato": [
-     {
-      "home": "Deportes Limache",
-      "away": "Huachipato",
       "hg": 3,
       "ag": 0
-     },
-     {
-      "home": "Huachipato",
-      "away": "Deportes Limache",
-      "hg": 1,
-      "ag": 3
      }
     ],
     "Deportes Limache|\u00d1ublense": [
      {
+      "home": "\u00d1ublense",
+      "away": "Deportes Limache",
+      "hg": 1,
+      "ag": 1
+     },
+     {
       "home": "Deportes Limache",
       "away": "\u00d1ublense",
       "hg": 2,
       "ag": 0
+     }
+    ],
+    "Everton|Huachipato": [
+     {
+      "home": "Everton",
+      "away": "Huachipato",
+      "hg": 0,
+      "ag": 3
      },
      {
-      "home": "\u00d1ublense",
-      "away": "Deportes Limache",
+      "home": "Huachipato",
+      "away": "Everton",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "Palestino|Universidad de Chile": [
+     {
+      "home": "Palestino",
+      "away": "Universidad de Chile",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Universidad de Chile",
+      "away": "Palestino",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Cobresal|Universidad Cat\u00f3lica": [
+     {
+      "home": "Cobresal",
+      "away": "Universidad Cat\u00f3lica",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Universidad Cat\u00f3lica",
+      "away": "Cobresal",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Coquimbo Unido|Deportes La Serena": [
+     {
+      "home": "Deportes La Serena",
+      "away": "Coquimbo Unido",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Coquimbo Unido",
+      "away": "Deportes La Serena",
       "hg": 1,
       "ag": 1
      }
@@ -14763,144 +14239,74 @@
       "ag": 3
      }
     ],
-    "Deportes Limache|Uni\u00f3n La Calera": [
+    "Colo-Colo|Uni\u00f3n La Calera": [
      {
-      "home": "Deportes Limache",
+      "home": "Colo-Colo",
       "away": "Uni\u00f3n La Calera",
-      "hg": 4,
+      "hg": 1,
       "ag": 0
      },
      {
       "home": "Uni\u00f3n La Calera",
-      "away": "Deportes Limache",
+      "away": "Colo-Colo",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportes Concepci\u00f3n|Universidad de Concepci\u00f3n": [
+     {
+      "home": "Universidad de Concepci\u00f3n",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "Universidad de Concepci\u00f3n",
       "hg": 1,
       "ag": 0
      }
     ],
-    "Deportes Limache|Universidad Cat\u00f3lica": [
+    "Audax Italiano|\u00d1ublense": [
      {
-      "home": "Deportes Limache",
-      "away": "Universidad Cat\u00f3lica",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Deportes Limache|Universidad de Chile": [
-     {
-      "home": "Deportes Limache",
-      "away": "Universidad de Chile",
+      "home": "\u00d1ublense",
+      "away": "Audax Italiano",
       "hg": 1,
-      "ag": 3
+      "ag": 0
      },
      {
-      "home": "Universidad de Chile",
-      "away": "Deportes Limache",
+      "home": "Audax Italiano",
+      "away": "\u00d1ublense",
       "hg": 2,
       "ag": 2
      }
     ],
-    "Deportes Limache|Universidad de Concepci\u00f3n": [
+    "Cobresal|Deportes Concepci\u00f3n": [
      {
-      "home": "Deportes Limache",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Cobresal|Everton": [
-     {
-      "home": "Everton",
+      "home": "Deportes Concepci\u00f3n",
       "away": "Cobresal",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Coquimbo Unido|Everton": [
-     {
-      "home": "Everton",
-      "away": "Coquimbo Unido",
       "hg": 1,
       "ag": 1
-     }
-    ],
-    "Everton|Huachipato": [
-     {
-      "home": "Everton",
-      "away": "Huachipato",
-      "hg": 0,
-      "ag": 3
      },
      {
-      "home": "Huachipato",
-      "away": "Everton",
-      "hg": 1,
-      "ag": 4
+      "home": "Cobresal",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 0,
+      "ag": 2
      }
     ],
-    "Everton|\u00d1ublense": [
+    "Uni\u00f3n La Calera|\u00d1ublense": [
      {
-      "home": "Everton",
+      "home": "Uni\u00f3n La Calera",
       "away": "\u00d1ublense",
       "hg": 0,
-      "ag": 0
+      "ag": 1
      },
      {
       "home": "\u00d1ublense",
-      "away": "Everton",
-      "hg": 1,
-      "ag": 3
-     }
-    ],
-    "Everton|Palestino": [
-     {
-      "home": "Everton",
-      "away": "Palestino",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Everton|Universidad Cat\u00f3lica": [
-     {
-      "home": "Everton",
-      "away": "Universidad Cat\u00f3lica",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "Universidad Cat\u00f3lica",
-      "away": "Everton",
+      "away": "Uni\u00f3n La Calera",
       "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Everton|Universidad de Chile": [
-     {
-      "home": "Everton",
-      "away": "Universidad de Chile",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Everton|Universidad de Concepci\u00f3n": [
-     {
-      "home": "Everton",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 3,
       "ag": 1
-     },
-     {
-      "home": "Universidad de Concepci\u00f3n",
-      "away": "Everton",
-      "hg": 0,
-      "ag": 3
-     }
-    ],
-    "Audax Italiano|Huachipato": [
-     {
-      "home": "Huachipato",
-      "away": "Audax Italiano",
-      "hg": 3,
-      "ag": 2
      }
     ],
     "Huachipato|Palestino": [
@@ -14917,85 +14323,171 @@
       "ag": 1
      }
     ],
-    "Huachipato|Uni\u00f3n La Calera": [
+    "Colo-Colo|O'Higgins": [
      {
-      "home": "Huachipato",
-      "away": "Uni\u00f3n La Calera",
+      "home": "O'Higgins",
+      "away": "Colo-Colo",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Colo-Colo",
+      "away": "O'Higgins",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Coquimbo Unido|Universidad Cat\u00f3lica": [
+     {
+      "home": "Universidad Cat\u00f3lica",
+      "away": "Coquimbo Unido",
       "hg": 3,
       "ag": 1
-     }
-    ],
-    "Huachipato|Universidad Cat\u00f3lica": [
+     },
      {
-      "home": "Huachipato",
+      "home": "Coquimbo Unido",
       "away": "Universidad Cat\u00f3lica",
-      "hg": 0,
-      "ag": 3
-     }
-    ],
-    "Huachipato|Universidad de Chile": [
-     {
-      "home": "Huachipato",
-      "away": "Universidad de Chile",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "Universidad de Chile",
-      "away": "Huachipato",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Huachipato|Universidad de Concepci\u00f3n": [
-     {
-      "home": "Huachipato",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 5,
-      "ag": 1
-     }
-    ],
-    "Huachipato|\u00d1ublense": [
-     {
-      "home": "\u00d1ublense",
-      "away": "Huachipato",
-      "hg": 2,
+      "hg": 1,
       "ag": 2
      }
     ],
-    "O'Higgins|\u00d1ublense": [
+    "Audax Italiano|Everton": [
      {
-      "home": "\u00d1ublense",
-      "away": "O'Higgins",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Palestino|\u00d1ublense": [
-     {
-      "home": "\u00d1ublense",
-      "away": "Palestino",
-      "hg": 2,
+      "home": "Audax Italiano",
+      "away": "Everton",
+      "hg": 1,
       "ag": 0
      },
      {
-      "home": "Palestino",
-      "away": "\u00d1ublense",
+      "home": "Everton",
+      "away": "Audax Italiano",
       "hg": 1,
       "ag": 1
      }
     ],
-    "Uni\u00f3n La Calera|\u00d1ublense": [
+    "Deportes La Serena|Universidad de Concepci\u00f3n": [
      {
-      "home": "\u00d1ublense",
-      "away": "Uni\u00f3n La Calera",
-      "hg": 2,
+      "home": "Deportes La Serena",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 1,
       "ag": 1
      },
      {
-      "home": "Uni\u00f3n La Calera",
-      "away": "\u00d1ublense",
+      "home": "Universidad de Concepci\u00f3n",
+      "away": "Deportes La Serena",
       "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Deportes Limache|Universidad de Chile": [
+     {
+      "home": "Universidad de Chile",
+      "away": "Deportes Limache",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Deportes Limache",
+      "away": "Universidad de Chile",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Cobresal|Deportes La Serena": [
+     {
+      "home": "Cobresal",
+      "away": "Deportes La Serena",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Deportes La Serena",
+      "away": "Cobresal",
+      "hg": 3,
+      "ag": 3
+     }
+    ],
+    "Audax Italiano|Uni\u00f3n La Calera": [
+     {
+      "home": "Uni\u00f3n La Calera",
+      "away": "Audax Italiano",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Audax Italiano",
+      "away": "Uni\u00f3n La Calera",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Coquimbo Unido|Deportes Concepci\u00f3n": [
+     {
+      "home": "Coquimbo Unido",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "Coquimbo Unido",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportes Limache|Huachipato": [
+     {
+      "home": "Deportes Limache",
+      "away": "Huachipato",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Huachipato",
+      "away": "Deportes Limache",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "O'Higgins|Palestino": [
+     {
+      "home": "Palestino",
+      "away": "O'Higgins",
+      "hg": 4,
+      "ag": 2
+     },
+     {
+      "home": "O'Higgins",
+      "away": "Palestino",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Colo-Colo|Universidad de Chile": [
+     {
+      "home": "Colo-Colo",
+      "away": "Universidad de Chile",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Universidad de Chile",
+      "away": "Colo-Colo",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Everton|Universidad de Concepci\u00f3n": [
+     {
+      "home": "Universidad de Concepci\u00f3n",
+      "away": "Everton",
+      "hg": 0,
+      "ag": 3
+     },
+     {
+      "home": "Everton",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 3,
       "ag": 1
      }
     ],
@@ -15013,64 +14505,74 @@
       "ag": 2
      }
     ],
-    "Universidad de Chile|\u00d1ublense": [
+    "Deportes Concepci\u00f3n|\u00d1ublense": [
      {
-      "home": "\u00d1ublense",
-      "away": "Universidad de Chile",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Universidad de Concepci\u00f3n|\u00d1ublense": [
-     {
-      "home": "\u00d1ublense",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Everton|O'Higgins": [
-     {
-      "home": "O'Higgins",
-      "away": "Everton",
-      "hg": 2,
-      "ag": 3
-     }
-    ],
-    "Huachipato|O'Higgins": [
-     {
-      "home": "O'Higgins",
-      "away": "Huachipato",
+      "home": "Deportes Concepci\u00f3n",
+      "away": "\u00d1ublense",
       "hg": 0,
       "ag": 2
-     }
-    ],
-    "O'Higgins|Palestino": [
-     {
-      "home": "O'Higgins",
-      "away": "Palestino",
-      "hg": 0,
-      "ag": 1
      },
      {
-      "home": "Palestino",
-      "away": "O'Higgins",
-      "hg": 4,
-      "ag": 2
+      "home": "\u00d1ublense",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 0,
+      "ag": 1
      }
     ],
-    "O'Higgins|Uni\u00f3n La Calera": [
+    "Deportes La Serena|Uni\u00f3n La Calera": [
      {
-      "home": "O'Higgins",
+      "home": "Deportes La Serena",
       "away": "Uni\u00f3n La Calera",
-      "hg": 2,
-      "ag": 1
+      "hg": 3,
+      "ag": 0
      },
      {
       "home": "Uni\u00f3n La Calera",
-      "away": "O'Higgins",
-      "hg": 3,
+      "away": "Deportes La Serena",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Audax Italiano|Colo-Colo": [
+     {
+      "home": "Audax Italiano",
+      "away": "Colo-Colo",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Colo-Colo",
+      "away": "Audax Italiano",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Deportes Limache|Everton": [
+     {
+      "home": "Everton",
+      "away": "Deportes Limache",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Deportes Limache",
+      "away": "Everton",
+      "hg": 0,
       "ag": 3
+     }
+    ],
+    "Coquimbo Unido|Huachipato": [
+     {
+      "home": "Huachipato",
+      "away": "Coquimbo Unido",
+      "hg": 1,
+      "ag": 3
+     },
+     {
+      "home": "Coquimbo Unido",
+      "away": "Huachipato",
+      "hg": 0,
+      "ag": 1
      }
     ],
     "O'Higgins|Universidad Cat\u00f3lica": [
@@ -15087,173 +14589,17 @@
       "ag": 2
      }
     ],
-    "O'Higgins|Universidad de Concepci\u00f3n": [
-     {
-      "home": "O'Higgins",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Audax Italiano|Palestino": [
+    "Cobresal|Palestino": [
      {
       "home": "Palestino",
-      "away": "Audax Italiano",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Deportes Concepci\u00f3n|Palestino": [
-     {
-      "home": "Palestino",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Deportes La Serena|Palestino": [
-     {
-      "home": "Palestino",
-      "away": "Deportes La Serena",
-      "hg": 5,
-      "ag": 1
-     }
-    ],
-    "Deportes Limache|Palestino": [
-     {
-      "home": "Palestino",
-      "away": "Deportes Limache",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Palestino|Universidad Cat\u00f3lica": [
-     {
-      "home": "Palestino",
-      "away": "Universidad Cat\u00f3lica",
-      "hg": 2,
-      "ag": 3
+      "away": "Cobresal",
+      "hg": 4,
+      "ag": 2
      },
      {
-      "home": "Universidad Cat\u00f3lica",
-      "away": "Palestino",
-      "hg": 6,
-      "ag": 1
-     }
-    ],
-    "Palestino|Universidad de Chile": [
-     {
-      "home": "Palestino",
-      "away": "Universidad de Chile",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "Universidad de Chile",
+      "home": "Cobresal",
       "away": "Palestino",
       "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Palestino|Universidad de Concepci\u00f3n": [
-     {
-      "home": "Palestino",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "Universidad de Concepci\u00f3n",
-      "away": "Palestino",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Coquimbo Unido|Uni\u00f3n La Calera": [
-     {
-      "home": "Uni\u00f3n La Calera",
-      "away": "Coquimbo Unido",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Deportes Concepci\u00f3n|Uni\u00f3n La Calera": [
-     {
-      "home": "Uni\u00f3n La Calera",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Everton|Uni\u00f3n La Calera": [
-     {
-      "home": "Uni\u00f3n La Calera",
-      "away": "Everton",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Palestino|Uni\u00f3n La Calera": [
-     {
-      "home": "Uni\u00f3n La Calera",
-      "away": "Palestino",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Universidad de Chile|Uni\u00f3n La Calera": [
-     {
-      "home": "Uni\u00f3n La Calera",
-      "away": "Universidad de Chile",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Colo-Colo|Universidad Cat\u00f3lica": [
-     {
-      "home": "Universidad Cat\u00f3lica",
-      "away": "Colo-Colo",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Universidad Cat\u00f3lica|Uni\u00f3n La Calera": [
-     {
-      "home": "Universidad Cat\u00f3lica",
-      "away": "Uni\u00f3n La Calera",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Universidad Cat\u00f3lica|Universidad de Concepci\u00f3n": [
-     {
-      "home": "Universidad Cat\u00f3lica",
-      "away": "Universidad de Concepci\u00f3n",
-      "hg": 5,
-      "ag": 1
-     }
-    ],
-    "Deportes Concepci\u00f3n|Universidad de Chile": [
-     {
-      "home": "Universidad de Chile",
-      "away": "Deportes Concepci\u00f3n",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "O'Higgins|Universidad de Chile": [
-     {
-      "home": "Universidad de Chile",
-      "away": "O'Higgins",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Universidad Cat\u00f3lica|Universidad de Chile": [
-     {
-      "home": "Universidad de Chile",
-      "away": "Universidad Cat\u00f3lica",
-      "hg": 1,
       "ag": 0
      }
     ],
@@ -15271,12 +14617,398 @@
       "ag": 1
      }
     ],
+    "Audax Italiano|Deportes Concepci\u00f3n": [
+     {
+      "home": "Audax Italiano",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 3,
+      "ag": 0
+     },
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "Audax Italiano",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Coquimbo Unido|Universidad de Chile": [
+     {
+      "home": "Coquimbo Unido",
+      "away": "Universidad de Chile",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Universidad de Chile",
+      "away": "Coquimbo Unido",
+      "hg": 4,
+      "ag": 2
+     }
+    ],
+    "Everton|Universidad Cat\u00f3lica": [
+     {
+      "home": "Universidad Cat\u00f3lica",
+      "away": "Everton",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Everton",
+      "away": "Universidad Cat\u00f3lica",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Cobresal|Deportes Limache": [
+     {
+      "home": "Cobresal",
+      "away": "Deportes Limache",
+      "hg": 2,
+      "ag": 5
+     },
+     {
+      "home": "Deportes Limache",
+      "away": "Cobresal",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Palestino|Universidad de Concepci\u00f3n": [
+     {
+      "home": "Universidad de Concepci\u00f3n",
+      "away": "Palestino",
+      "hg": 1,
+      "ag": 0
+     },
+     {
+      "home": "Palestino",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Deportes La Serena|\u00d1ublense": [
+     {
+      "home": "\u00d1ublense",
+      "away": "Deportes La Serena",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Deportes La Serena",
+      "away": "\u00d1ublense",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Colo-Colo|Huachipato": [
+     {
+      "home": "Colo-Colo",
+      "away": "Huachipato",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Huachipato",
+      "away": "Colo-Colo",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "O'Higgins|Uni\u00f3n La Calera": [
+     {
+      "home": "Uni\u00f3n La Calera",
+      "away": "O'Higgins",
+      "hg": 3,
+      "ag": 3
+     },
+     {
+      "home": "O'Higgins",
+      "away": "Uni\u00f3n La Calera",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Palestino|Universidad Cat\u00f3lica": [
+     {
+      "home": "Universidad Cat\u00f3lica",
+      "away": "Palestino",
+      "hg": 6,
+      "ag": 1
+     },
+     {
+      "home": "Palestino",
+      "away": "Universidad Cat\u00f3lica",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Cobresal|Coquimbo Unido": [
+     {
+      "home": "Coquimbo Unido",
+      "away": "Cobresal",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Cobresal",
+      "away": "Coquimbo Unido",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Audax Italiano|O'Higgins": [
+     {
+      "home": "O'Higgins",
+      "away": "Audax Italiano",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Audax Italiano",
+      "away": "O'Higgins",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportes Limache|Uni\u00f3n La Calera": [
+     {
+      "home": "Deportes Limache",
+      "away": "Uni\u00f3n La Calera",
+      "hg": 4,
+      "ag": 0
+     },
+     {
+      "home": "Uni\u00f3n La Calera",
+      "away": "Deportes Limache",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Everton|\u00d1ublense": [
+     {
+      "home": "Everton",
+      "away": "\u00d1ublense",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "\u00d1ublense",
+      "away": "Everton",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Colo-Colo|Deportes Concepci\u00f3n": [
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "Colo-Colo",
+      "hg": 0,
+      "ag": 1
+     },
+     {
+      "home": "Colo-Colo",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Deportes La Serena|Universidad de Chile": [
+     {
+      "home": "Universidad de Chile",
+      "away": "Deportes La Serena",
+      "hg": 4,
+      "ag": 0
+     },
+     {
+      "home": "Deportes La Serena",
+      "away": "Universidad de Chile",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Huachipato|Universidad de Concepci\u00f3n": [
+     {
+      "home": "Huachipato",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Huachipato|O'Higgins": [
+     {
+      "home": "O'Higgins",
+      "away": "Huachipato",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Audax Italiano|Universidad Cat\u00f3lica": [
+     {
+      "home": "Audax Italiano",
+      "away": "Universidad Cat\u00f3lica",
+      "hg": 3,
+      "ag": 4
+     }
+    ],
+    "Deportes La Serena|Everton": [
+     {
+      "home": "Deportes La Serena",
+      "away": "Everton",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportes Limache|Palestino": [
+     {
+      "home": "Palestino",
+      "away": "Deportes Limache",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
     "Cobresal|Universidad de Concepci\u00f3n": [
      {
       "home": "Universidad de Concepci\u00f3n",
       "away": "Cobresal",
       "hg": 1,
       "ag": 0
+     }
+    ],
+    "Universidad de Chile|\u00d1ublense": [
+     {
+      "home": "\u00d1ublense",
+      "away": "Universidad de Chile",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportes Concepci\u00f3n|Uni\u00f3n La Calera": [
+     {
+      "home": "Uni\u00f3n La Calera",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Deportes Limache|Universidad de Concepci\u00f3n": [
+     {
+      "home": "Deportes Limache",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Deportes Concepci\u00f3n|Deportes La Serena": [
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "Deportes La Serena",
+      "hg": 3,
+      "ag": 3
+     }
+    ],
+    "Everton|Universidad de Chile": [
+     {
+      "home": "Everton",
+      "away": "Universidad de Chile",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Cobresal|O'Higgins": [
+     {
+      "home": "Cobresal",
+      "away": "O'Higgins",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Colo-Colo|Palestino": [
+     {
+      "home": "Colo-Colo",
+      "away": "Palestino",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Coquimbo Unido|\u00d1ublense": [
+     {
+      "home": "Coquimbo Unido",
+      "away": "\u00d1ublense",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Audax Italiano|Huachipato": [
+     {
+      "home": "Huachipato",
+      "away": "Audax Italiano",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Universidad Cat\u00f3lica|Uni\u00f3n La Calera": [
+     {
+      "home": "Universidad Cat\u00f3lica",
+      "away": "Uni\u00f3n La Calera",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Deportes Concepci\u00f3n|Palestino": [
+     {
+      "home": "Palestino",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Audax Italiano|Deportes Limache": [
+     {
+      "home": "Audax Italiano",
+      "away": "Deportes Limache",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Coquimbo Unido|Uni\u00f3n La Calera": [
+     {
+      "home": "Uni\u00f3n La Calera",
+      "away": "Coquimbo Unido",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Universidad Cat\u00f3lica|Universidad de Chile": [
+     {
+      "home": "Universidad de Chile",
+      "away": "Universidad Cat\u00f3lica",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "O'Higgins|\u00d1ublense": [
+     {
+      "home": "\u00d1ublense",
+      "away": "O'Higgins",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Deportes La Serena|Huachipato": [
+     {
+      "home": "Deportes La Serena",
+      "away": "Huachipato",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Cobresal|Everton": [
+     {
+      "home": "Everton",
+      "away": "Cobresal",
+      "hg": 3,
+      "ag": 1
      }
     ],
     "Colo-Colo|Universidad de Concepci\u00f3n": [
@@ -15287,6 +15019,142 @@
       "ag": 2
      }
     ],
+    "Colo-Colo|Coquimbo Unido": [
+     {
+      "home": "Colo-Colo",
+      "away": "Coquimbo Unido",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Audax Italiano|Coquimbo Unido": [
+     {
+      "home": "Coquimbo Unido",
+      "away": "Audax Italiano",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Deportes La Serena|Palestino": [
+     {
+      "home": "Palestino",
+      "away": "Deportes La Serena",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Deportes Limache|Universidad Cat\u00f3lica": [
+     {
+      "home": "Deportes Limache",
+      "away": "Universidad Cat\u00f3lica",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "O'Higgins|Universidad de Concepci\u00f3n": [
+     {
+      "home": "O'Higgins",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Cobresal|Universidad de Chile": [
+     {
+      "home": "Cobresal",
+      "away": "Universidad de Chile",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Colo-Colo|\u00d1ublense": [
+     {
+      "home": "Colo-Colo",
+      "away": "\u00d1ublense",
+      "hg": 6,
+      "ag": 2
+     }
+    ],
+    "Deportes Concepci\u00f3n|Everton": [
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "Everton",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Huachipato|Uni\u00f3n La Calera": [
+     {
+      "home": "Huachipato",
+      "away": "Uni\u00f3n La Calera",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Coquimbo Unido|Everton": [
+     {
+      "home": "Everton",
+      "away": "Coquimbo Unido",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Audax Italiano|Cobresal": [
+     {
+      "home": "Audax Italiano",
+      "away": "Cobresal",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Palestino|Uni\u00f3n La Calera": [
+     {
+      "home": "Uni\u00f3n La Calera",
+      "away": "Palestino",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Universidad de Concepci\u00f3n|\u00d1ublense": [
+     {
+      "home": "\u00d1ublense",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportes Concepci\u00f3n|Huachipato": [
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "Huachipato",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Deportes La Serena|Deportes Limache": [
+     {
+      "home": "Deportes La Serena",
+      "away": "Deportes Limache",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Colo-Colo|Universidad Cat\u00f3lica": [
+     {
+      "home": "Universidad Cat\u00f3lica",
+      "away": "Colo-Colo",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Cobresal|\u00d1ublense": [
+     {
+      "home": "Cobresal",
+      "away": "\u00d1ublense",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
     "Universidad de Concepci\u00f3n|Uni\u00f3n La Calera": [
      {
       "home": "Universidad de Concepci\u00f3n",
@@ -15294,75 +15162,187 @@
       "hg": 0,
       "ag": 0
      }
+    ],
+    "Colo-Colo|Deportes La Serena": [
+     {
+      "home": "Deportes La Serena",
+      "away": "Colo-Colo",
+      "hg": 2,
+      "ag": 4
+     }
+    ],
+    "Deportes Concepci\u00f3n|Universidad de Chile": [
+     {
+      "home": "Universidad de Chile",
+      "away": "Deportes Concepci\u00f3n",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Coquimbo Unido|Deportes Limache": [
+     {
+      "home": "Deportes Limache",
+      "away": "Coquimbo Unido",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Huachipato|Universidad Cat\u00f3lica": [
+     {
+      "home": "Huachipato",
+      "away": "Universidad Cat\u00f3lica",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Everton|O'Higgins": [
+     {
+      "home": "O'Higgins",
+      "away": "Everton",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Audax Italiano|Palestino": [
+     {
+      "home": "Palestino",
+      "away": "Audax Italiano",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Audax Italiano|Deportes La Serena": [
+     {
+      "home": "Audax Italiano",
+      "away": "Deportes La Serena",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cobresal|Colo-Colo": [
+     {
+      "home": "Colo-Colo",
+      "away": "Cobresal",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Coquimbo Unido|O'Higgins": [
+     {
+      "home": "Coquimbo Unido",
+      "away": "O'Higgins",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Everton|Palestino": [
+     {
+      "home": "Everton",
+      "away": "Palestino",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Huachipato|\u00d1ublense": [
+     {
+      "home": "\u00d1ublense",
+      "away": "Huachipato",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Deportes Concepci\u00f3n|Deportes Limache": [
+     {
+      "home": "Deportes Concepci\u00f3n",
+      "away": "Deportes Limache",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Universidad Cat\u00f3lica|Universidad de Concepci\u00f3n": [
+     {
+      "home": "Universidad Cat\u00f3lica",
+      "away": "Universidad de Concepci\u00f3n",
+      "hg": 5,
+      "ag": 1
+     }
+    ],
+    "Universidad de Chile|Uni\u00f3n La Calera": [
+     {
+      "home": "Uni\u00f3n La Calera",
+      "away": "Universidad de Chile",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "O'Higgins|Universidad de Chile": [
+     {
+      "home": "Universidad de Chile",
+      "away": "O'Higgins",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Everton|Uni\u00f3n La Calera": [
+     {
+      "home": "Uni\u00f3n La Calera",
+      "away": "Everton",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Cobresal|Uni\u00f3n La Calera": [
+     {
+      "home": "Cobresal",
+      "away": "Uni\u00f3n La Calera",
+      "hg": 4,
+      "ag": 0
+     }
     ]
    }
   },
   "matches": [
    [
-    "Audax Italiano",
-    "Cobresal",
-    2,
-    1
-   ],
-   [
-    "Audax Italiano",
-    "Colo-Colo",
-    0,
-    1
-   ],
-   [
-    "Audax Italiano",
-    "Deportes Concepci\u00f3n",
-    3,
-    0
-   ],
-   [
-    "Audax Italiano",
-    "Deportes La Serena",
-    1,
-    1
-   ],
-   [
-    "Audax Italiano",
-    "Deportes Limache",
-    2,
-    2
-   ],
-   [
-    "Audax Italiano",
-    "Everton",
-    1,
-    0
-   ],
-   [
-    "Audax Italiano",
-    "\u00d1ublense",
-    2,
-    2
-   ],
-   [
-    "Audax Italiano",
-    "O'Higgins",
-    1,
-    0
-   ],
-   [
-    "Audax Italiano",
-    "Uni\u00f3n La Calera",
-    0,
-    0
-   ],
-   [
-    "Audax Italiano",
-    "Universidad Cat\u00f3lica",
-    3,
-    4
-   ],
-   [
-    "Audax Italiano",
     "Universidad de Chile",
+    "Audax Italiano",
+    0,
+    0
+   ],
+   [
+    "Cobresal",
+    "Huachipato",
     1,
+    0
+   ],
+   [
+    "Deportes Limache",
+    "Colo-Colo",
+    3,
+    1
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Coquimbo Unido",
+    1,
+    0
+   ],
+   [
+    "Deportes La Serena",
+    "Universidad Cat\u00f3lica",
+    2,
     2
+   ],
+   [
+    "Palestino",
+    "\u00d1ublense",
+    1,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Deportes Concepci\u00f3n",
+    2,
+    1
    ],
    [
     "Audax Italiano",
@@ -15371,15 +15351,135 @@
     0
    ],
    [
-    "Cobresal",
+    "Colo-Colo",
+    "Everton",
+    2,
+    0
+   ],
+   [
     "Coquimbo Unido",
+    "Palestino",
+    3,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Deportes La Serena",
+    1,
+    0
+   ],
+   [
+    "Huachipato",
+    "Universidad de Chile",
+    2,
+    1
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Deportes Concepci\u00f3n",
+    2,
+    0
+   ],
+   [
+    "\u00d1ublense",
+    "Deportes Limache",
+    1,
+    1
+   ],
+   [
+    "Everton",
+    "Huachipato",
+    0,
+    3
+   ],
+   [
+    "Palestino",
+    "Universidad de Chile",
+    0,
+    0
+   ],
+   [
+    "Cobresal",
+    "Universidad Cat\u00f3lica",
     3,
     2
    ],
    [
-    "Cobresal",
-    "Deportes Concepci\u00f3n",
+    "Deportes La Serena",
+    "Coquimbo Unido",
     0,
+    1
+   ],
+   [
+    "Deportes Limache",
+    "O'Higgins",
+    2,
+    1
+   ],
+   [
+    "Colo-Colo",
+    "Uni\u00f3n La Calera",
+    1,
+    0
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Deportes Concepci\u00f3n",
+    2,
+    1
+   ],
+   [
+    "\u00d1ublense",
+    "Audax Italiano",
+    1,
+    0
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Cobresal",
+    1,
+    1
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "\u00d1ublense",
+    0,
+    1
+   ],
+   [
+    "Huachipato",
+    "Palestino",
+    2,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Colo-Colo",
+    0,
+    1
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Coquimbo Unido",
+    3,
+    1
+   ],
+   [
+    "Audax Italiano",
+    "Everton",
+    1,
+    0
+   ],
+   [
+    "Deportes La Serena",
+    "Universidad de Concepci\u00f3n",
+    1,
+    1
+   ],
+   [
+    "Universidad de Chile",
+    "Deportes Limache",
+    2,
     2
    ],
    [
@@ -15387,6 +15487,114 @@
     "Deportes La Serena",
     0,
     1
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Audax Italiano",
+    3,
+    0
+   ],
+   [
+    "Coquimbo Unido",
+    "Deportes Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "Deportes Limache",
+    "Huachipato",
+    3,
+    0
+   ],
+   [
+    "Palestino",
+    "O'Higgins",
+    4,
+    2
+   ],
+   [
+    "Colo-Colo",
+    "Universidad de Chile",
+    0,
+    1
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Everton",
+    0,
+    3
+   ],
+   [
+    "\u00d1ublense",
+    "Universidad Cat\u00f3lica",
+    1,
+    2
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "\u00d1ublense",
+    0,
+    2
+   ],
+   [
+    "Deportes La Serena",
+    "Uni\u00f3n La Calera",
+    3,
+    0
+   ],
+   [
+    "Audax Italiano",
+    "Colo-Colo",
+    0,
+    1
+   ],
+   [
+    "Everton",
+    "Deportes Limache",
+    1,
+    0
+   ],
+   [
+    "Huachipato",
+    "Coquimbo Unido",
+    1,
+    3
+   ],
+   [
+    "O'Higgins",
+    "Universidad Cat\u00f3lica",
+    1,
+    0
+   ],
+   [
+    "Palestino",
+    "Cobresal",
+    4,
+    2
+   ],
+   [
+    "Universidad de Chile",
+    "Universidad de Concepci\u00f3n",
+    1,
+    1
+   ],
+   [
+    "Audax Italiano",
+    "Deportes Concepci\u00f3n",
+    3,
+    0
+   ],
+   [
+    "Coquimbo Unido",
+    "Universidad de Chile",
+    0,
+    1
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Everton",
+    2,
+    2
    ],
    [
     "Cobresal",
@@ -15395,16 +15603,136 @@
     5
    ],
    [
-    "Cobresal",
-    "Huachipato",
+    "Universidad de Concepci\u00f3n",
+    "Palestino",
     1,
     0
    ],
    [
+    "\u00d1ublense",
+    "Deportes La Serena",
+    2,
+    2
+   ],
+   [
+    "Colo-Colo",
+    "Huachipato",
+    2,
+    0
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "O'Higgins",
+    3,
+    3
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Palestino",
+    6,
+    1
+   ],
+   [
+    "Coquimbo Unido",
     "Cobresal",
+    3,
+    2
+   ],
+   [
+    "O'Higgins",
+    "Audax Italiano",
+    2,
+    1
+   ],
+   [
+    "Deportes Limache",
+    "Uni\u00f3n La Calera",
+    4,
+    0
+   ],
+   [
+    "Everton",
     "\u00d1ublense",
     0,
+    0
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Colo-Colo",
+    0,
     1
+   ],
+   [
+    "Universidad de Chile",
+    "Deportes La Serena",
+    4,
+    0
+   ],
+   [
+    "Huachipato",
+    "Universidad de Concepci\u00f3n",
+    5,
+    1
+   ],
+   [
+    "O'Higgins",
+    "Huachipato",
+    0,
+    2
+   ],
+   [
+    "Audax Italiano",
+    "Universidad Cat\u00f3lica",
+    3,
+    4
+   ],
+   [
+    "Deportes La Serena",
+    "Everton",
+    1,
+    0
+   ],
+   [
+    "Palestino",
+    "Deportes Limache",
+    1,
+    0
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Cobresal",
+    1,
+    0
+   ],
+   [
+    "\u00d1ublense",
+    "Universidad de Chile",
+    1,
+    0
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Deportes Concepci\u00f3n",
+    1,
+    0
+   ],
+   [
+    "Deportes Limache",
+    "Universidad de Concepci\u00f3n",
+    3,
+    0
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Deportes La Serena",
+    3,
+    3
+   ],
+   [
+    "Everton",
+    "Universidad de Chile",
+    0,
+    0
    ],
    [
     "Cobresal",
@@ -15413,40 +15741,76 @@
     3
    ],
    [
-    "Cobresal",
+    "Colo-Colo",
     "Palestino",
-    2,
-    0
+    0,
+    1
    ],
    [
-    "Cobresal",
-    "Uni\u00f3n La Calera",
-    4,
-    0
+    "Coquimbo Unido",
+    "\u00d1ublense",
+    1,
+    1
    ],
    [
-    "Cobresal",
-    "Universidad Cat\u00f3lica",
+    "Huachipato",
+    "Audax Italiano",
     3,
     2
    ],
    [
-    "Cobresal",
+    "Universidad Cat\u00f3lica",
+    "Uni\u00f3n La Calera",
+    1,
+    2
+   ],
+   [
+    "Palestino",
+    "Deportes Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "Audax Italiano",
+    "Deportes Limache",
+    2,
+    2
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Coquimbo Unido",
+    1,
+    2
+   ],
+   [
     "Universidad de Chile",
+    "Universidad Cat\u00f3lica",
     1,
     0
    ],
    [
-    "Colo-Colo",
-    "Audax Italiano",
-    5,
+    "\u00d1ublense",
+    "O'Higgins",
+    0,
+    2
+   ],
+   [
+    "Deportes La Serena",
+    "Huachipato",
+    0,
+    0
+   ],
+   [
+    "Everton",
+    "Cobresal",
+    3,
     1
    ],
    [
+    "Universidad de Concepci\u00f3n",
     "Colo-Colo",
-    "Cobresal",
-    3,
-    0
+    1,
+    2
    ],
    [
     "Colo-Colo",
@@ -15455,27 +15819,33 @@
     1
    ],
    [
-    "Colo-Colo",
-    "Deportes Concepci\u00f3n",
-    1,
-    1
-   ],
-   [
-    "Colo-Colo",
-    "Deportes Limache",
+    "Coquimbo Unido",
+    "Audax Italiano",
     3,
-    1
-   ],
-   [
-    "Colo-Colo",
-    "Everton",
-    2,
     0
    ],
    [
-    "Colo-Colo",
-    "Huachipato",
-    2,
+    "Palestino",
+    "Deportes La Serena",
+    5,
+    1
+   ],
+   [
+    "Deportes Limache",
+    "Universidad Cat\u00f3lica",
+    0,
+    2
+   ],
+   [
+    "O'Higgins",
+    "Universidad de Concepci\u00f3n",
+    0,
+    1
+   ],
+   [
+    "Cobresal",
+    "Universidad de Chile",
+    1,
     0
    ],
    [
@@ -15485,172 +15855,70 @@
     2
    ],
    [
-    "Colo-Colo",
-    "O'Higgins",
-    2,
-    2
-   ],
-   [
-    "Colo-Colo",
-    "Palestino",
-    0,
-    1
-   ],
-   [
-    "Colo-Colo",
-    "Uni\u00f3n La Calera",
-    1,
-    0
-   ],
-   [
-    "Colo-Colo",
-    "Universidad de Chile",
-    0,
-    1
-   ],
-   [
-    "Coquimbo Unido",
-    "Audax Italiano",
-    3,
-    0
-   ],
-   [
-    "Coquimbo Unido",
-    "Cobresal",
-    3,
-    2
-   ],
-   [
-    "Coquimbo Unido",
-    "Deportes Concepci\u00f3n",
-    0,
-    1
-   ],
-   [
-    "Coquimbo Unido",
-    "Deportes La Serena",
-    1,
-    1
-   ],
-   [
-    "Coquimbo Unido",
-    "Huachipato",
-    0,
-    1
-   ],
-   [
-    "Coquimbo Unido",
-    "\u00d1ublense",
-    1,
-    1
-   ],
-   [
-    "Coquimbo Unido",
-    "O'Higgins",
-    0,
-    0
-   ],
-   [
-    "Coquimbo Unido",
-    "Palestino",
-    3,
-    1
-   ],
-   [
-    "Coquimbo Unido",
-    "Universidad Cat\u00f3lica",
-    1,
-    2
-   ],
-   [
-    "Coquimbo Unido",
-    "Universidad de Chile",
-    0,
-    1
-   ],
-   [
-    "Coquimbo Unido",
-    "Universidad de Concepci\u00f3n",
-    1,
-    0
-   ],
-   [
-    "Deportes Concepci\u00f3n",
-    "Audax Italiano",
-    0,
-    1
-   ],
-   [
-    "Deportes Concepci\u00f3n",
-    "Cobresal",
-    1,
-    1
-   ],
-   [
-    "Deportes Concepci\u00f3n",
-    "Colo-Colo",
-    0,
-    1
-   ],
-   [
-    "Deportes Concepci\u00f3n",
-    "Coquimbo Unido",
-    1,
-    1
-   ],
-   [
-    "Deportes Concepci\u00f3n",
-    "Deportes La Serena",
-    3,
-    3
-   ],
-   [
-    "Deportes Concepci\u00f3n",
-    "Deportes Limache",
-    3,
-    2
-   ],
-   [
     "Deportes Concepci\u00f3n",
     "Everton",
     0,
     2
    ],
    [
+    "Huachipato",
+    "Uni\u00f3n La Calera",
+    3,
+    1
+   ],
+   [
+    "Everton",
+    "Coquimbo Unido",
+    1,
+    1
+   ],
+   [
+    "Audax Italiano",
+    "Cobresal",
+    2,
+    1
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Palestino",
+    1,
+    2
+   ],
+   [
+    "\u00d1ublense",
+    "Universidad de Concepci\u00f3n",
+    2,
+    2
+   ],
+   [
     "Deportes Concepci\u00f3n",
     "Huachipato",
     2,
     0
    ],
    [
-    "Deportes Concepci\u00f3n",
-    "\u00d1ublense",
-    0,
+    "Deportes La Serena",
+    "Deportes Limache",
+    4,
+    1
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Colo-Colo",
+    1,
     2
    ],
    [
-    "Deportes Concepci\u00f3n",
-    "O'Higgins",
-    2,
-    0
-   ],
-   [
-    "Deportes Concepci\u00f3n",
-    "Universidad Cat\u00f3lica",
-    3,
-    0
-   ],
-   [
-    "Deportes Concepci\u00f3n",
-    "Universidad de Concepci\u00f3n",
-    1,
-    0
-   ],
-   [
-    "Deportes La Serena",
     "Cobresal",
-    3,
-    3
+    "\u00d1ublense",
+    0,
+    1
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Uni\u00f3n La Calera",
+    0,
+    0
    ],
    [
     "Deportes La Serena",
@@ -15659,75 +15927,9 @@
     4
    ],
    [
-    "Deportes La Serena",
-    "Coquimbo Unido",
-    0,
-    1
-   ],
-   [
-    "Deportes La Serena",
-    "Deportes Limache",
-    4,
-    1
-   ],
-   [
-    "Deportes La Serena",
-    "Everton",
-    1,
-    0
-   ],
-   [
-    "Deportes La Serena",
-    "Huachipato",
-    0,
-    0
-   ],
-   [
-    "Deportes La Serena",
-    "\u00d1ublense",
-    2,
-    1
-   ],
-   [
-    "Deportes La Serena",
-    "O'Higgins",
-    1,
-    2
-   ],
-   [
-    "Deportes La Serena",
-    "Uni\u00f3n La Calera",
-    3,
-    0
-   ],
-   [
-    "Deportes La Serena",
-    "Universidad Cat\u00f3lica",
-    2,
-    2
-   ],
-   [
-    "Deportes La Serena",
     "Universidad de Chile",
-    0,
-    3
-   ],
-   [
-    "Deportes La Serena",
-    "Universidad de Concepci\u00f3n",
-    1,
-    1
-   ],
-   [
-    "Deportes Limache",
-    "Cobresal",
-    3,
-    0
-   ],
-   [
-    "Deportes Limache",
-    "Colo-Colo",
-    3,
+    "Deportes Concepci\u00f3n",
+    2,
     1
    ],
    [
@@ -15737,64 +15939,130 @@
     3
    ],
    [
-    "Deportes Limache",
-    "Everton",
-    0,
-    3
-   ],
-   [
-    "Deportes Limache",
     "Huachipato",
-    3,
-    0
-   ],
-   [
-    "Deportes Limache",
-    "\u00d1ublense",
-    2,
-    0
-   ],
-   [
-    "Deportes Limache",
-    "O'Higgins",
-    2,
-    1
-   ],
-   [
-    "Deportes Limache",
-    "Uni\u00f3n La Calera",
-    4,
-    0
-   ],
-   [
-    "Deportes Limache",
     "Universidad Cat\u00f3lica",
     0,
-    2
-   ],
-   [
-    "Deportes Limache",
-    "Universidad de Chile",
-    1,
     3
    ],
    [
-    "Deportes Limache",
-    "Universidad de Concepci\u00f3n",
-    3,
-    0
+    "O'Higgins",
+    "Everton",
+    2,
+    3
    ],
    [
-    "Everton",
+    "Palestino",
     "Audax Italiano",
+    0,
+    0
+   ],
+   [
+    "Audax Italiano",
+    "Deportes La Serena",
     1,
     1
    ],
    [
-    "Everton",
+    "Colo-Colo",
     "Cobresal",
     3,
+    0
+   ],
+   [
+    "Coquimbo Unido",
+    "O'Higgins",
+    0,
+    0
+   ],
+   [
+    "Everton",
+    "Palestino",
+    1,
+    2
+   ],
+   [
+    "\u00d1ublense",
+    "Huachipato",
+    2,
+    2
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Deportes Limache",
+    3,
+    2
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Universidad de Concepci\u00f3n",
+    5,
     1
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Universidad de Chile",
+    2,
+    2
+   ],
+   [
+    "Universidad de Chile",
+    "O'Higgins",
+    2,
+    0
+   ],
+   [
+    "Colo-Colo",
+    "Deportes Limache",
+    3,
+    1
+   ],
+   [
+    "Huachipato",
+    "Cobresal",
+    3,
+    3
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Deportes La Serena",
+    3,
+    3
+   ],
+   [
+    "Audax Italiano",
+    "Universidad de Chile",
+    1,
+    2
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "O'Higgins",
+    2,
+    0
+   ],
+   [
+    "\u00d1ublense",
+    "Palestino",
+    2,
+    0
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Everton",
+    1,
+    1
+   ],
+   [
+    "Universidad de Concepci\u00f3n",
+    "Audax Italiano",
+    0,
+    1
+   ],
+   [
+    "Cobresal",
+    "Uni\u00f3n La Calera",
+    4,
+    0
    ],
    [
     "Everton",
@@ -15803,82 +16071,40 @@
     4
    ],
    [
-    "Everton",
-    "Coquimbo Unido",
-    1,
-    1
-   ],
-   [
-    "Everton",
-    "Deportes Limache",
-    1,
-    0
-   ],
-   [
-    "Everton",
-    "Huachipato",
-    0,
-    3
-   ],
-   [
-    "Everton",
-    "\u00d1ublense",
-    0,
-    0
-   ],
-   [
-    "Everton",
     "Palestino",
-    1,
-    2
-   ],
-   [
-    "Everton",
-    "Universidad Cat\u00f3lica",
-    0,
-    1
-   ],
-   [
-    "Everton",
-    "Universidad de Chile",
-    0,
-    0
-   ],
-   [
-    "Everton",
-    "Universidad de Concepci\u00f3n",
-    3,
-    1
-   ],
-   [
-    "Huachipato",
-    "Audax Italiano",
-    3,
-    2
-   ],
-   [
-    "Huachipato",
-    "Cobresal",
-    3,
-    3
-   ],
-   [
-    "Huachipato",
-    "Colo-Colo",
-    0,
-    0
-   ],
-   [
-    "Huachipato",
     "Coquimbo Unido",
-    1,
-    3
+    2,
+    1
    ],
    [
-    "Huachipato",
-    "Deportes Limache",
+    "Deportes Concepci\u00f3n",
+    "Universidad Cat\u00f3lica",
+    3,
+    0
+   ],
+   [
+    "Deportes La Serena",
+    "O'Higgins",
     1,
-    3
+    2
+   ],
+   [
+    "Universidad de Chile",
+    "Huachipato",
+    2,
+    0
+   ],
+   [
+    "Universidad Cat\u00f3lica",
+    "Cobresal",
+    2,
+    0
+   ],
+   [
+    "Coquimbo Unido",
+    "Deportes La Serena",
+    1,
+    1
    ],
    [
     "Huachipato",
@@ -15887,208 +16113,70 @@
     4
    ],
    [
-    "Huachipato",
-    "Palestino",
-    2,
-    1
-   ],
-   [
-    "Huachipato",
-    "Uni\u00f3n La Calera",
-    3,
-    1
-   ],
-   [
-    "Huachipato",
-    "Universidad Cat\u00f3lica",
-    0,
-    3
-   ],
-   [
-    "Huachipato",
-    "Universidad de Chile",
-    2,
-    1
-   ],
-   [
-    "Huachipato",
+    "Deportes Concepci\u00f3n",
     "Universidad de Concepci\u00f3n",
-    5,
-    1
-   ],
-   [
-    "\u00d1ublense",
-    "Audax Italiano",
     1,
     0
    ],
    [
-    "\u00d1ublense",
-    "Deportes Concepci\u00f3n",
-    0,
-    1
-   ],
-   [
-    "\u00d1ublense",
-    "Deportes La Serena",
-    2,
-    2
-   ],
-   [
-    "\u00d1ublense",
+    "O'Higgins",
     "Deportes Limache",
     1,
-    1
-   ],
-   [
-    "\u00d1ublense",
-    "Everton",
-    1,
     3
    ],
    [
-    "\u00d1ublense",
-    "Huachipato",
-    2,
-    2
-   ],
-   [
-    "\u00d1ublense",
-    "O'Higgins",
-    0,
-    2
-   ],
-   [
-    "\u00d1ublense",
+    "Universidad de Chile",
     "Palestino",
     2,
-    0
+    1
    ],
    [
-    "\u00d1ublense",
     "Uni\u00f3n La Calera",
-    2,
-    1
-   ],
-   [
-    "\u00d1ublense",
-    "Universidad Cat\u00f3lica",
-    1,
-    2
-   ],
-   [
-    "\u00d1ublense",
-    "Universidad de Chile",
-    1,
-    0
-   ],
-   [
-    "\u00d1ublense",
-    "Universidad de Concepci\u00f3n",
-    2,
-    2
-   ],
-   [
-    "O'Higgins",
-    "Audax Italiano",
-    2,
-    1
-   ],
-   [
-    "O'Higgins",
     "Colo-Colo",
-    0,
-    1
+    1,
+    2
    ],
    [
-    "O'Higgins",
-    "Deportes Concepci\u00f3n",
+    "Audax Italiano",
+    "\u00d1ublense",
     2,
-    1
+    2
    ],
    [
-    "O'Higgins",
+    "Universidad de Concepci\u00f3n",
     "Deportes La Serena",
-    1,
-    0
-   ],
-   [
-    "O'Higgins",
-    "Deportes Limache",
-    1,
-    3
-   ],
-   [
-    "O'Higgins",
-    "Everton",
-    2,
-    3
-   ],
-   [
-    "O'Higgins",
-    "Huachipato",
     0,
     2
    ],
    [
-    "O'Higgins",
-    "Palestino",
-    0,
-    1
-   ],
-   [
-    "O'Higgins",
-    "Uni\u00f3n La Calera",
-    2,
-    1
-   ],
-   [
-    "O'Higgins",
-    "Universidad Cat\u00f3lica",
+    "Deportes Limache",
+    "Universidad de Chile",
     1,
-    0
+    3
    ],
    [
-    "O'Higgins",
-    "Universidad de Concepci\u00f3n",
-    0,
+    "Everton",
+    "Audax Italiano",
+    1,
     1
    ],
    [
-    "Palestino",
-    "Audax Italiano",
-    0,
-    0
-   ],
-   [
-    "Palestino",
     "Cobresal",
-    4,
+    "Deportes Concepci\u00f3n",
+    0,
     2
    ],
    [
-    "Palestino",
-    "Coquimbo Unido",
+    "Colo-Colo",
+    "O'Higgins",
+    2,
+    2
+   ],
+   [
+    "\u00d1ublense",
+    "Uni\u00f3n La Calera",
     2,
     1
-   ],
-   [
-    "Palestino",
-    "Deportes Concepci\u00f3n",
-    0,
-    1
-   ],
-   [
-    "Palestino",
-    "Deportes La Serena",
-    5,
-    1
-   ],
-   [
-    "Palestino",
-    "Deportes Limache",
-    1,
-    0
    ],
    [
     "Palestino",
@@ -16097,291 +16185,207 @@
     1
    ],
    [
-    "Palestino",
-    "\u00d1ublense",
-    1,
-    1
-   ],
-   [
-    "Palestino",
-    "O'Higgins",
-    4,
-    2
-   ],
-   [
-    "Palestino",
-    "Universidad Cat\u00f3lica",
-    2,
-    3
-   ],
-   [
-    "Palestino",
-    "Universidad de Chile",
-    0,
-    0
-   ],
-   [
-    "Palestino",
-    "Universidad de Concepci\u00f3n",
-    2,
-    1
-   ],
-   [
-    "Uni\u00f3n La Calera",
     "Audax Italiano",
-    3,
-    0
-   ],
-   [
     "Uni\u00f3n La Calera",
-    "Colo-Colo",
-    1,
-    2
-   ],
-   [
-    "Uni\u00f3n La Calera",
-    "Coquimbo Unido",
-    1,
-    2
-   ],
-   [
-    "Uni\u00f3n La Calera",
-    "Deportes Concepci\u00f3n",
-    1,
-    0
-   ],
-   [
-    "Uni\u00f3n La Calera",
-    "Deportes La Serena",
     0,
-    1
+    0
    ],
    [
-    "Uni\u00f3n La Calera",
+    "Huachipato",
     "Deportes Limache",
     1,
-    0
+    3
    ],
    [
-    "Uni\u00f3n La Calera",
-    "Everton",
+    "Universidad Cat\u00f3lica",
+    "\u00d1ublense",
+    1,
+    2
+   ],
+   [
+    "Deportes Concepci\u00f3n",
+    "Coquimbo Unido",
     1,
     1
    ],
    [
-    "Uni\u00f3n La Calera",
-    "\u00d1ublense",
-    0,
-    1
-   ],
-   [
-    "Uni\u00f3n La Calera",
-    "O'Higgins",
+    "Deportes La Serena",
+    "Cobresal",
     3,
     3
    ],
    [
-    "Uni\u00f3n La Calera",
+    "O'Higgins",
     "Palestino",
-    1,
-    2
+    0,
+    1
    ],
    [
-    "Uni\u00f3n La Calera",
     "Universidad de Chile",
-    2,
-    2
-   ],
-   [
-    "Universidad Cat\u00f3lica",
-    "Cobresal",
-    2,
-    0
-   ],
-   [
-    "Universidad Cat\u00f3lica",
     "Colo-Colo",
     1,
     2
    ],
    [
-    "Universidad Cat\u00f3lica",
-    "Coquimbo Unido",
+    "Everton",
+    "Universidad de Concepci\u00f3n",
     3,
     1
    ],
    [
+    "Coquimbo Unido",
     "Universidad Cat\u00f3lica",
-    "Deportes Concepci\u00f3n",
+    1,
+    2
+   ],
+   [
+    "Cobresal",
+    "Palestino",
     2,
     0
    ],
    [
-    "Universidad Cat\u00f3lica",
-    "Deportes La Serena",
-    3,
+    "Deportes Limache",
+    "Everton",
+    0,
     3
    ],
    [
-    "Universidad Cat\u00f3lica",
-    "Everton",
-    2,
-    2
-   ],
-   [
-    "Universidad Cat\u00f3lica",
     "\u00d1ublense",
-    1,
-    2
-   ],
-   [
-    "Universidad Cat\u00f3lica",
-    "O'Higgins",
-    3,
-    2
-   ],
-   [
-    "Universidad Cat\u00f3lica",
-    "Palestino",
-    6,
+    "Deportes Concepci\u00f3n",
+    0,
     1
    ],
    [
-    "Universidad Cat\u00f3lica",
-    "Uni\u00f3n La Calera",
-    1,
-    2
-   ],
-   [
-    "Universidad Cat\u00f3lica",
-    "Universidad de Concepci\u00f3n",
+    "Colo-Colo",
+    "Audax Italiano",
     5,
     1
    ],
    [
+    "Universidad de Concepci\u00f3n",
     "Universidad de Chile",
-    "Audax Italiano",
-    0,
-    0
-   ],
-   [
-    "Universidad de Chile",
-    "Colo-Colo",
-    1,
-    2
-   ],
-   [
-    "Universidad de Chile",
-    "Coquimbo Unido",
-    4,
-    2
-   ],
-   [
-    "Universidad de Chile",
-    "Deportes Concepci\u00f3n",
     2,
     1
    ],
    [
-    "Universidad de Chile",
-    "Deportes La Serena",
-    4,
-    0
-   ],
-   [
-    "Universidad de Chile",
-    "Deportes Limache",
-    2,
-    2
-   ],
-   [
-    "Universidad de Chile",
-    "Huachipato",
-    2,
-    0
-   ],
-   [
-    "Universidad de Chile",
-    "O'Higgins",
-    2,
-    0
-   ],
-   [
-    "Universidad de Chile",
-    "Palestino",
-    2,
-    1
-   ],
-   [
-    "Universidad de Chile",
     "Universidad Cat\u00f3lica",
+    "O'Higgins",
+    3,
+    2
+   ],
+   [
+    "Uni\u00f3n La Calera",
+    "Deportes La Serena",
+    0,
+    1
+   ],
+   [
+    "Coquimbo Unido",
+    "Universidad de Concepci\u00f3n",
     1,
     0
    ],
    [
-    "Universidad de Chile",
-    "Universidad de Concepci\u00f3n",
-    1,
-    1
+    "Deportes Limache",
+    "\u00d1ublense",
+    2,
+    0
    ],
    [
-    "Universidad de Concepci\u00f3n",
+    "Deportes Concepci\u00f3n",
     "Audax Italiano",
     0,
     1
    ],
    [
-    "Universidad de Concepci\u00f3n",
-    "Cobresal",
-    1,
-    0
+    "Everton",
+    "Universidad Cat\u00f3lica",
+    0,
+    1
    ],
    [
-    "Universidad de Concepci\u00f3n",
-    "Colo-Colo",
-    1,
+    "Universidad de Chile",
+    "Coquimbo Unido",
+    4,
     2
    ],
    [
-    "Universidad de Concepci\u00f3n",
-    "Coquimbo Unido",
-    1,
-    0
-   ],
-   [
-    "Universidad de Concepci\u00f3n",
-    "Deportes Concepci\u00f3n",
+    "Deportes La Serena",
+    "\u00d1ublense",
     2,
     1
    ],
    [
-    "Universidad de Concepci\u00f3n",
-    "Deportes La Serena",
+    "Huachipato",
+    "Colo-Colo",
     0,
+    0
+   ],
+   [
+    "O'Higgins",
+    "Uni\u00f3n La Calera",
+    2,
+    1
+   ],
+   [
+    "Palestino",
+    "Universidad de Concepci\u00f3n",
+    2,
+    1
+   ],
+   [
+    "Deportes Limache",
+    "Cobresal",
+    3,
+    0
+   ],
+   [
+    "Cobresal",
+    "Coquimbo Unido",
+    3,
     2
    ],
    [
-    "Universidad de Concepci\u00f3n",
+    "Palestino",
+    "Universidad Cat\u00f3lica",
+    2,
+    3
+   ],
+   [
+    "\u00d1ublense",
     "Everton",
+    1,
+    3
+   ],
+   [
+    "Audax Italiano",
+    "O'Higgins",
+    1,
+    0
+   ],
+   [
+    "Colo-Colo",
+    "Deportes Concepci\u00f3n",
+    1,
+    1
+   ],
+   [
+    "Deportes La Serena",
+    "Universidad de Chile",
     0,
     3
    ],
    [
-    "Universidad de Concepci\u00f3n",
-    "Palestino",
+    "Uni\u00f3n La Calera",
+    "Deportes Limache",
     1,
     0
    ],
    [
-    "Universidad de Concepci\u00f3n",
-    "Uni\u00f3n La Calera",
+    "Coquimbo Unido",
+    "Huachipato",
     0,
-    0
-   ],
-   [
-    "Universidad de Concepci\u00f3n",
-    "Universidad de Chile",
-    2,
     1
    ]
   ],
@@ -18448,8 +18452,10 @@
    "agreed_pairs": 181,
    "disagreed_pairs": 0,
    "samples": [],
-   "count_delta": 0
-  }
+   "count_delta": 0,
+   "dated_is_superset": true
+  },
+  "rates_source": "dated rounds (superset of the grid)"
  },
  "Bolivia Profesional": {
   "slug": "https://en.wikipedia.org/wiki/2026_FBF_Divisi%C3%B3n_Profesional",
@@ -18472,14 +18478,32 @@
   },
   "splits": {
    "home": {
-    "ABB": {
-     "p": 10,
+    "Blooming": {
+     "p": 11,
      "w": 5,
-     "d": 1,
-     "l": 4,
-     "gf": 19,
-     "ga": 15,
-     "ppg": 1.6
+     "d": 6,
+     "l": 0,
+     "gf": 21,
+     "ga": 6,
+     "ppg": 1.909
+    },
+    "Bolivar": {
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gf": 5,
+     "ga": 2,
+     "ppg": 3.0
+    },
+    "Independiente Petrolero": {
+     "p": 11,
+     "w": 4,
+     "d": 2,
+     "l": 5,
+     "gf": 13,
+     "ga": 18,
+     "ppg": 1.273
     },
     "Always Ready": {
      "p": 10,
@@ -18490,41 +18514,23 @@
      "ga": 6,
      "ppg": 2.3
     },
-    "Aurora": {
-     "p": 9,
-     "w": 4,
-     "d": 4,
-     "l": 1,
-     "gf": 19,
-     "ga": 13,
-     "ppg": 1.778
-    },
-    "Blooming": {
-     "p": 11,
+    "Real Potos\u00ed": {
+     "p": 10,
      "w": 5,
-     "d": 6,
-     "l": 0,
-     "gf": 21,
-     "ga": 6,
-     "ppg": 1.909
-    },
-    "Bol\u00edvar": {
-     "p": 10,
-     "w": 8,
-     "d": 1,
-     "l": 1,
-     "gf": 33,
-     "ga": 11,
-     "ppg": 2.5
-    },
-    "Guabir\u00e1": {
-     "p": 10,
-     "w": 6,
      "d": 3,
-     "l": 1,
-     "gf": 23,
-     "ga": 10,
-     "ppg": 2.1
+     "l": 2,
+     "gf": 17,
+     "ga": 6,
+     "ppg": 1.8
+    },
+    "San Antonio Bulo Bulo": {
+     "p": 10,
+     "w": 5,
+     "d": 1,
+     "l": 4,
+     "gf": 13,
+     "ga": 14,
+     "ppg": 1.6
     },
     "GV San Jos\u00e9": {
      "p": 10,
@@ -18535,14 +18541,41 @@
      "ga": 17,
      "ppg": 1.0
     },
-    "Independiente Petrolero": {
-     "p": 11,
+    "Universitario de Vinto": {
+     "p": 10,
      "w": 4,
      "d": 2,
-     "l": 5,
-     "gf": 13,
-     "ga": 18,
-     "ppg": 1.273
+     "l": 4,
+     "gf": 17,
+     "ga": 14,
+     "ppg": 1.4
+    },
+    "Guabir\u00e1": {
+     "p": 10,
+     "w": 6,
+     "d": 3,
+     "l": 1,
+     "gf": 23,
+     "ga": 10,
+     "ppg": 2.1
+    },
+    "ABB": {
+     "p": 10,
+     "w": 5,
+     "d": 1,
+     "l": 4,
+     "gf": 19,
+     "ga": 15,
+     "ppg": 1.6
+    },
+    "Aurora": {
+     "p": 9,
+     "w": 4,
+     "d": 4,
+     "l": 1,
+     "gf": 19,
+     "ga": 13,
+     "ppg": 1.778
     },
     "Nacional Potos\u00ed": {
      "p": 10,
@@ -18571,14 +18604,14 @@
      "ga": 25,
      "ppg": 1.0
     },
-    "Real Potos\u00ed": {
+    "The Strongest": {
      "p": 10,
-     "w": 5,
+     "w": 6,
      "d": 3,
-     "l": 2,
-     "gf": 17,
-     "ga": 6,
-     "ppg": 1.8
+     "l": 1,
+     "gf": 23,
+     "ga": 12,
+     "ppg": 2.1
     },
     "Real Tomayapo": {
      "p": 10,
@@ -18589,62 +18622,17 @@
      "ga": 12,
      "ppg": 1.0
     },
-    "San Antonio Bulo Bulo": {
-     "p": 10,
-     "w": 5,
+    "Bol\u00edvar": {
+     "p": 9,
+     "w": 7,
      "d": 1,
-     "l": 4,
-     "gf": 13,
-     "ga": 14,
-     "ppg": 1.6
-    },
-    "The Strongest": {
-     "p": 10,
-     "w": 6,
-     "d": 3,
      "l": 1,
-     "gf": 23,
-     "ga": 12,
-     "ppg": 2.1
-    },
-    "Universitario de Vinto": {
-     "p": 10,
-     "w": 4,
-     "d": 2,
-     "l": 4,
-     "gf": 17,
-     "ga": 14,
-     "ppg": 1.4
+     "gf": 28,
+     "ga": 9,
+     "ppg": 2.444
     }
    },
    "away": {
-    "Always Ready": {
-     "p": 10,
-     "w": 6,
-     "d": 4,
-     "l": 0,
-     "gf": 22,
-     "ga": 7,
-     "ppg": 2.2
-    },
-    "Blooming": {
-     "p": 9,
-     "w": 1,
-     "d": 3,
-     "l": 5,
-     "gf": 9,
-     "ga": 16,
-     "ppg": 0.667
-    },
-    "Bol\u00edvar": {
-     "p": 10,
-     "w": 6,
-     "d": 2,
-     "l": 2,
-     "gf": 21,
-     "ga": 11,
-     "ppg": 2.0
-    },
     "Guabir\u00e1": {
      "p": 10,
      "w": 2,
@@ -18653,33 +18641,6 @@
      "gf": 9,
      "ga": 29,
      "ppg": 0.8
-    },
-    "GV San Jos\u00e9": {
-     "p": 10,
-     "w": 0,
-     "d": 4,
-     "l": 6,
-     "gf": 8,
-     "ga": 20,
-     "ppg": 0.4
-    },
-    "Independiente Petrolero": {
-     "p": 9,
-     "w": 3,
-     "d": 2,
-     "l": 4,
-     "gf": 14,
-     "ga": 17,
-     "ppg": 1.222
-    },
-    "Oriente Petrolero": {
-     "p": 11,
-     "w": 3,
-     "d": 2,
-     "l": 6,
-     "gf": 16,
-     "ga": 20,
-     "ppg": 1.0
     },
     "Real Oruro": {
      "p": 10,
@@ -18690,33 +18651,6 @@
      "ga": 25,
      "ppg": 1.1
     },
-    "The Strongest": {
-     "p": 10,
-     "w": 6,
-     "d": 3,
-     "l": 1,
-     "gf": 16,
-     "ga": 10,
-     "ppg": 2.1
-    },
-    "Universitario de Vinto": {
-     "p": 10,
-     "w": 1,
-     "d": 1,
-     "l": 8,
-     "gf": 9,
-     "ga": 25,
-     "ppg": 0.4
-    },
-    "Aurora": {
-     "p": 11,
-     "w": 3,
-     "d": 5,
-     "l": 3,
-     "gf": 12,
-     "ga": 14,
-     "ppg": 1.273
-    },
     "Nacional Potos\u00ed": {
      "p": 10,
      "w": 2,
@@ -18725,15 +18659,6 @@
      "gf": 12,
      "ga": 14,
      "ppg": 0.8
-    },
-    "Real Potos\u00ed": {
-     "p": 10,
-     "w": 3,
-     "d": 5,
-     "l": 2,
-     "gf": 10,
-     "ga": 8,
-     "ppg": 1.4
     },
     "Real Tomayapo": {
      "p": 10,
@@ -18744,14 +18669,23 @@
      "ga": 27,
      "ppg": 0.6
     },
-    "San Antonio Bulo Bulo": {
-     "p": 10,
-     "w": 1,
-     "d": 1,
-     "l": 8,
-     "gf": 8,
-     "ga": 26,
-     "ppg": 0.4
+    "Aurora": {
+     "p": 11,
+     "w": 3,
+     "d": 5,
+     "l": 3,
+     "gf": 12,
+     "ga": 14,
+     "ppg": 1.273
+    },
+    "Oriente Petrolero": {
+     "p": 11,
+     "w": 3,
+     "d": 2,
+     "l": 6,
+     "gf": 16,
+     "ga": 20,
+     "ppg": 1.0
     },
     "ABB": {
      "p": 10,
@@ -18761,28 +18695,207 @@
      "gf": 12,
      "ga": 30,
      "ppg": 0.4
+    },
+    "The Strongest": {
+     "p": 10,
+     "w": 6,
+     "d": 3,
+     "l": 1,
+     "gf": 16,
+     "ga": 10,
+     "ppg": 2.1
+    },
+    "Independiente Petrolero": {
+     "p": 9,
+     "w": 3,
+     "d": 2,
+     "l": 4,
+     "gf": 14,
+     "ga": 17,
+     "ppg": 1.222
+    },
+    "Bol\u00edvar": {
+     "p": 10,
+     "w": 6,
+     "d": 2,
+     "l": 2,
+     "gf": 21,
+     "ga": 11,
+     "ppg": 2.0
+    },
+    "Always Ready": {
+     "p": 10,
+     "w": 6,
+     "d": 4,
+     "l": 0,
+     "gf": 22,
+     "ga": 7,
+     "ppg": 2.2
+    },
+    "Universitario de Vinto": {
+     "p": 10,
+     "w": 1,
+     "d": 1,
+     "l": 8,
+     "gf": 9,
+     "ga": 25,
+     "ppg": 0.4
+    },
+    "GV San Jos\u00e9": {
+     "p": 10,
+     "w": 0,
+     "d": 4,
+     "l": 6,
+     "gf": 8,
+     "ga": 20,
+     "ppg": 0.4
+    },
+    "Blooming": {
+     "p": 9,
+     "w": 1,
+     "d": 3,
+     "l": 5,
+     "gf": 9,
+     "ga": 16,
+     "ppg": 0.667
+    },
+    "San Antonio Bulo Bulo": {
+     "p": 10,
+     "w": 1,
+     "d": 1,
+     "l": 8,
+     "gf": 8,
+     "ga": 26,
+     "ppg": 0.4
+    },
+    "Real Potos\u00ed": {
+     "p": 10,
+     "w": 3,
+     "d": 5,
+     "l": 2,
+     "gf": 10,
+     "ga": 8,
+     "ppg": 1.4
     }
    },
    "h2h": {
-    "ABB|Always Ready": [
+    "Blooming|Guabir\u00e1": [
      {
-      "home": "ABB",
-      "away": "Always Ready",
+      "home": "Blooming",
+      "away": "Guabir\u00e1",
+      "hg": 5,
+      "ag": 0
+     },
+     {
+      "home": "Guabir\u00e1",
+      "away": "Blooming",
       "hg": 1,
-      "ag": 3
+      "ag": 1
      }
     ],
-    "ABB|Blooming": [
+    "Bolivar|Real Oruro": [
      {
-      "home": "ABB",
-      "away": "Blooming",
+      "home": "Bolivar",
+      "away": "Real Oruro",
+      "hg": 5,
+      "ag": 2
+     }
+    ],
+    "Independiente Petrolero|Nacional Potos\u00ed": [
+     {
+      "home": "Independiente Petrolero",
+      "away": "Nacional Potos\u00ed",
+      "hg": 0,
+      "ag": 3
+     },
+     {
+      "home": "Nacional Potos\u00ed",
+      "away": "Independiente Petrolero",
       "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Always Ready|Real Tomayapo": [
+     {
+      "home": "Always Ready",
+      "away": "Real Tomayapo",
+      "hg": 4,
+      "ag": 0
+     },
+     {
+      "home": "Real Tomayapo",
+      "away": "Always Ready",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Aurora|Real Potos\u00ed": [
+     {
+      "home": "Real Potos\u00ed",
+      "away": "Aurora",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "Aurora",
+      "away": "Real Potos\u00ed",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Oriente Petrolero|San Antonio Bulo Bulo": [
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "Oriente Petrolero",
+      "hg": 2,
+      "ag": 0
+     },
+     {
+      "home": "Oriente Petrolero",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "ABB|GV San Jos\u00e9": [
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "ABB",
+      "hg": 1,
       "ag": 2
      },
      {
-      "home": "Blooming",
-      "away": "ABB",
-      "hg": 6,
+      "home": "ABB",
+      "away": "GV San Jos\u00e9",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "The Strongest|Universitario de Vinto": [
+     {
+      "home": "Universitario de Vinto",
+      "away": "The Strongest",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "The Strongest",
+      "away": "Universitario de Vinto",
+      "hg": 4,
+      "ag": 3
+     }
+    ],
+    "Guabir\u00e1|Independiente Petrolero": [
+     {
+      "home": "Guabir\u00e1",
+      "away": "Independiente Petrolero",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Independiente Petrolero",
+      "away": "Guabir\u00e1",
+      "hg": 3,
       "ag": 1
      }
     ],
@@ -18800,742 +18913,18 @@
       "ag": 1
      }
     ],
-    "ABB|Guabir\u00e1": [
-     {
-      "home": "ABB",
-      "away": "Guabir\u00e1",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "ABB|GV San Jos\u00e9": [
-     {
-      "home": "ABB",
-      "away": "GV San Jos\u00e9",
-      "hg": 2,
-      "ag": 2
-     },
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "ABB",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "ABB|Independiente Petrolero": [
-     {
-      "home": "ABB",
-      "away": "Independiente Petrolero",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "ABB|Oriente Petrolero": [
-     {
-      "home": "ABB",
-      "away": "Oriente Petrolero",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "ABB|Real Oruro": [
-     {
-      "home": "ABB",
-      "away": "Real Oruro",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "ABB|The Strongest": [
-     {
-      "home": "ABB",
-      "away": "The Strongest",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "The Strongest",
-      "away": "ABB",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "ABB|Universitario de Vinto": [
-     {
-      "home": "ABB",
-      "away": "Universitario de Vinto",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "Universitario de Vinto",
-      "away": "ABB",
-      "hg": 5,
-      "ag": 2
-     }
-    ],
     "Always Ready|Aurora": [
      {
-      "home": "Always Ready",
-      "away": "Aurora",
-      "hg": 2,
-      "ag": 2
-     },
-     {
       "home": "Aurora",
       "away": "Always Ready",
       "hg": 1,
       "ag": 1
-     }
-    ],
-    "Always Ready|Bol\u00edvar": [
+     },
      {
       "home": "Always Ready",
-      "away": "Bol\u00edvar",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Always Ready|Guabir\u00e1": [
-     {
-      "home": "Always Ready",
-      "away": "Guabir\u00e1",
-      "hg": 6,
-      "ag": 0
-     },
-     {
-      "home": "Guabir\u00e1",
-      "away": "Always Ready",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Always Ready|Nacional Potos\u00ed": [
-     {
-      "home": "Always Ready",
-      "away": "Nacional Potos\u00ed",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Nacional Potos\u00ed",
-      "away": "Always Ready",
-      "hg": 0,
-      "ag": 4
-     }
-    ],
-    "Always Ready|Oriente Petrolero": [
-     {
-      "home": "Always Ready",
-      "away": "Oriente Petrolero",
-      "hg": 1,
-      "ag": 0
-     },
-     {
-      "home": "Oriente Petrolero",
-      "away": "Always Ready",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Always Ready|Real Potos\u00ed": [
-     {
-      "home": "Always Ready",
-      "away": "Real Potos\u00ed",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Always Ready|Real Tomayapo": [
-     {
-      "home": "Always Ready",
-      "away": "Real Tomayapo",
-      "hg": 4,
-      "ag": 0
-     },
-     {
-      "home": "Real Tomayapo",
-      "away": "Always Ready",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Always Ready|San Antonio Bulo Bulo": [
-     {
-      "home": "Always Ready",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Always Ready|The Strongest": [
-     {
-      "home": "Always Ready",
-      "away": "The Strongest",
-      "hg": 0,
-      "ag": 1
-     }
-    ],
-    "Always Ready|Universitario de Vinto": [
-     {
-      "home": "Always Ready",
-      "away": "Universitario de Vinto",
-      "hg": 4,
-      "ag": 0
-     }
-    ],
-    "ABB|Aurora": [
-     {
-      "home": "Aurora",
-      "away": "ABB",
-      "hg": 3,
-      "ag": 2
-     }
-    ],
-    "Aurora|Bol\u00edvar": [
-     {
-      "home": "Aurora",
-      "away": "Bol\u00edvar",
-      "hg": 2,
-      "ag": 4
-     }
-    ],
-    "Aurora|Guabir\u00e1": [
-     {
-      "home": "Aurora",
-      "away": "Guabir\u00e1",
-      "hg": 4,
-      "ag": 2
-     },
-     {
-      "home": "Guabir\u00e1",
-      "away": "Aurora",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Aurora|GV San Jos\u00e9": [
-     {
-      "home": "Aurora",
-      "away": "GV San Jos\u00e9",
-      "hg": 3,
-      "ag": 0
-     },
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "Aurora",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Aurora|Oriente Petrolero": [
-     {
-      "home": "Aurora",
-      "away": "Oriente Petrolero",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Aurora|Real Oruro": [
-     {
-      "home": "Aurora",
-      "away": "Real Oruro",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Aurora|Real Potos\u00ed": [
-     {
-      "home": "Aurora",
-      "away": "Real Potos\u00ed",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "Real Potos\u00ed",
-      "away": "Aurora",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Aurora|San Antonio Bulo Bulo": [
-     {
-      "home": "Aurora",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "Aurora",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Always Ready|Blooming": [
-     {
-      "home": "Blooming",
-      "away": "Always Ready",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Aurora|Blooming": [
-     {
-      "home": "Blooming",
-      "away": "Aurora",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Blooming|Bol\u00edvar": [
-     {
-      "home": "Blooming",
-      "away": "Bol\u00edvar",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Blooming|Guabir\u00e1": [
-     {
-      "home": "Blooming",
-      "away": "Guabir\u00e1",
-      "hg": 5,
-      "ag": 0
-     },
-     {
-      "home": "Guabir\u00e1",
-      "away": "Blooming",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Blooming|GV San Jos\u00e9": [
-     {
-      "home": "Blooming",
-      "away": "GV San Jos\u00e9",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Blooming|Nacional Potos\u00ed": [
-     {
-      "home": "Blooming",
-      "away": "Nacional Potos\u00ed",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "Nacional Potos\u00ed",
-      "away": "Blooming",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Blooming|Real Oruro": [
-     {
-      "home": "Blooming",
-      "away": "Real Oruro",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Real Oruro",
-      "away": "Blooming",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Blooming|Real Tomayapo": [
-     {
-      "home": "Blooming",
-      "away": "Real Tomayapo",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Blooming|The Strongest": [
-     {
-      "home": "Blooming",
-      "away": "The Strongest",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Blooming|Universitario de Vinto": [
-     {
-      "home": "Blooming",
-      "away": "Universitario de Vinto",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Universitario de Vinto",
-      "away": "Blooming",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Bol\u00edvar|Guabir\u00e1": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "Guabir\u00e1",
-      "hg": 4,
-      "ag": 0
-     }
-    ],
-    "Bol\u00edvar|GV San Jos\u00e9": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "GV San Jos\u00e9",
-      "hg": 4,
-      "ag": 2
-     },
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "Bol\u00edvar",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Bol\u00edvar|Independiente Petrolero": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "Independiente Petrolero",
-      "hg": 1,
-      "ag": 2
-     },
-     {
-      "home": "Independiente Petrolero",
-      "away": "Bol\u00edvar",
-      "hg": 0,
-      "ag": 4
-     }
-    ],
-    "Bol\u00edvar|Nacional Potos\u00ed": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "Nacional Potos\u00ed",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Bol\u00edvar|Oriente Petrolero": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "Oriente Petrolero",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Bol\u00edvar|Real Oruro": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "Real Oruro",
-      "hg": 5,
-      "ag": 2
-     },
-     {
-      "home": "Real Oruro",
-      "away": "Bol\u00edvar",
-      "hg": 2,
-      "ag": 4
-     }
-    ],
-    "Bol\u00edvar|Real Potos\u00ed": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "Real Potos\u00ed",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Bol\u00edvar|Real Tomayapo": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "Real Tomayapo",
-      "hg": 6,
-      "ag": 0
-     },
-     {
-      "home": "Real Tomayapo",
-      "away": "Bol\u00edvar",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Bol\u00edvar|San Antonio Bulo Bulo": [
-     {
-      "home": "Bol\u00edvar",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "GV San Jos\u00e9|Guabir\u00e1": [
-     {
-      "home": "Guabir\u00e1",
-      "away": "GV San Jos\u00e9",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Guabir\u00e1|Independiente Petrolero": [
-     {
-      "home": "Guabir\u00e1",
-      "away": "Independiente Petrolero",
-      "hg": 2,
-      "ag": 2
-     },
-     {
-      "home": "Independiente Petrolero",
-      "away": "Guabir\u00e1",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Guabir\u00e1|Nacional Potos\u00ed": [
-     {
-      "home": "Guabir\u00e1",
-      "away": "Nacional Potos\u00ed",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Guabir\u00e1|Real Oruro": [
-     {
-      "home": "Guabir\u00e1",
-      "away": "Real Oruro",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "Guabir\u00e1|Real Potos\u00ed": [
-     {
-      "home": "Guabir\u00e1",
-      "away": "Real Potos\u00ed",
-      "hg": 1,
-      "ag": 1
-     },
-     {
-      "home": "Real Potos\u00ed",
-      "away": "Guabir\u00e1",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Guabir\u00e1|Real Tomayapo": [
-     {
-      "home": "Guabir\u00e1",
-      "away": "Real Tomayapo",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Guabir\u00e1|The Strongest": [
-     {
-      "home": "Guabir\u00e1",
-      "away": "The Strongest",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Always Ready|GV San Jos\u00e9": [
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "Always Ready",
-      "hg": 2,
-      "ag": 3
-     }
-    ],
-    "GV San Jos\u00e9|Nacional Potos\u00ed": [
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "Nacional Potos\u00ed",
-      "hg": 0,
-      "ag": 3
-     },
-     {
-      "home": "Nacional Potos\u00ed",
-      "away": "GV San Jos\u00e9",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "GV San Jos\u00e9|Oriente Petrolero": [
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "Oriente Petrolero",
-      "hg": 3,
-      "ag": 3
-     },
-     {
-      "home": "Oriente Petrolero",
-      "away": "GV San Jos\u00e9",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "GV San Jos\u00e9|Real Tomayapo": [
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "Real Tomayapo",
-      "hg": 3,
-      "ag": 2
-     }
-    ],
-    "GV San Jos\u00e9|San Antonio Bulo Bulo": [
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "GV San Jos\u00e9|The Strongest": [
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "The Strongest",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "GV San Jos\u00e9|Universitario de Vinto": [
-     {
-      "home": "GV San Jos\u00e9",
-      "away": "Universitario de Vinto",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Always Ready|Independiente Petrolero": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "Always Ready",
-      "hg": 0,
-      "ag": 0
-     }
-    ],
-    "Aurora|Independiente Petrolero": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "Aurora",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Blooming|Independiente Petrolero": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "Blooming",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "GV San Jos\u00e9|Independiente Petrolero": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "GV San Jos\u00e9",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Independiente Petrolero|Nacional Potos\u00ed": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "Nacional Potos\u00ed",
-      "hg": 0,
-      "ag": 3
-     },
-     {
-      "home": "Nacional Potos\u00ed",
-      "away": "Independiente Petrolero",
-      "hg": 3,
-      "ag": 0
-     }
-    ],
-    "Independiente Petrolero|Oriente Petrolero": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "Oriente Petrolero",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Independiente Petrolero|Real Potos\u00ed": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "Real Potos\u00ed",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Independiente Petrolero|San Antonio Bulo Bulo": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 1,
-      "ag": 3
-     },
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "Independiente Petrolero",
-      "hg": 2,
-      "ag": 2
-     }
-    ],
-    "Independiente Petrolero|Universitario de Vinto": [
-     {
-      "home": "Independiente Petrolero",
-      "away": "Universitario de Vinto",
-      "hg": 2,
-      "ag": 1
-     },
-     {
-      "home": "Universitario de Vinto",
-      "away": "Independiente Petrolero",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "ABB|Nacional Potos\u00ed": [
-     {
-      "home": "Nacional Potos\u00ed",
-      "away": "ABB",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Aurora|Nacional Potos\u00ed": [
-     {
-      "home": "Nacional Potos\u00ed",
       "away": "Aurora",
       "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Nacional Potos\u00ed|Real Oruro": [
-     {
-      "home": "Nacional Potos\u00ed",
-      "away": "Real Oruro",
-      "hg": 1,
-      "ag": 4
-     }
-    ],
-    "Nacional Potos\u00ed|Real Tomayapo": [
-     {
-      "home": "Nacional Potos\u00ed",
-      "away": "Real Tomayapo",
-      "hg": 4,
-      "ag": 1
-     }
-    ],
-    "Nacional Potos\u00ed|The Strongest": [
-     {
-      "home": "Nacional Potos\u00ed",
-      "away": "The Strongest",
-      "hg": 2,
-      "ag": 3
+      "ag": 2
      }
     ],
     "Nacional Potos\u00ed|Universitario de Vinto": [
@@ -19552,28 +18941,242 @@
       "ag": 0
      }
     ],
-    "Blooming|Oriente Petrolero": [
+    "GV San Jos\u00e9|Oriente Petrolero": [
      {
       "home": "Oriente Petrolero",
+      "away": "GV San Jos\u00e9",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "Oriente Petrolero",
+      "hg": 3,
+      "ag": 3
+     }
+    ],
+    "Blooming|Real Oruro": [
+     {
+      "home": "Real Oruro",
       "away": "Blooming",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Blooming",
+      "away": "Real Oruro",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "San Antonio Bulo Bulo|The Strongest": [
+     {
+      "home": "The Strongest",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "The Strongest",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Real Potos\u00ed|Real Tomayapo": [
+     {
+      "home": "Real Tomayapo",
+      "away": "Real Potos\u00ed",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Real Potos\u00ed",
+      "away": "Real Tomayapo",
       "hg": 0,
       "ag": 1
      }
     ],
-    "Guabir\u00e1|Oriente Petrolero": [
+    "Bol\u00edvar|Independiente Petrolero": [
+     {
+      "home": "Bol\u00edvar",
+      "away": "Independiente Petrolero",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Independiente Petrolero",
+      "away": "Bol\u00edvar",
+      "hg": 0,
+      "ag": 4
+     }
+    ],
+    "Aurora|GV San Jos\u00e9": [
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "Aurora",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Aurora",
+      "away": "GV San Jos\u00e9",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "ABB|Universitario de Vinto": [
+     {
+      "home": "Universitario de Vinto",
+      "away": "ABB",
+      "hg": 5,
+      "ag": 2
+     },
+     {
+      "home": "ABB",
+      "away": "Universitario de Vinto",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Always Ready|Oriente Petrolero": [
+     {
+      "home": "Always Ready",
+      "away": "Oriente Petrolero",
+      "hg": 1,
+      "ag": 0
+     },
      {
       "home": "Oriente Petrolero",
-      "away": "Guabir\u00e1",
-      "hg": 2,
+      "away": "Always Ready",
+      "hg": 1,
       "ag": 2
      }
     ],
-    "Nacional Potos\u00ed|Oriente Petrolero": [
+    "Blooming|Nacional Potos\u00ed": [
      {
-      "home": "Oriente Petrolero",
+      "home": "Blooming",
       "away": "Nacional Potos\u00ed",
-      "hg": 1,
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Nacional Potos\u00ed",
+      "away": "Blooming",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Guabir\u00e1|Real Potos\u00ed": [
+     {
+      "home": "Real Potos\u00ed",
+      "away": "Guabir\u00e1",
+      "hg": 3,
       "ag": 0
+     },
+     {
+      "home": "Guabir\u00e1",
+      "away": "Real Potos\u00ed",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Real Tomayapo|The Strongest": [
+     {
+      "home": "Real Tomayapo",
+      "away": "The Strongest",
+      "hg": 0,
+      "ag": 0
+     },
+     {
+      "home": "The Strongest",
+      "away": "Real Tomayapo",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Real Oruro|San Antonio Bulo Bulo": [
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "Real Oruro",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Real Oruro",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Independiente Petrolero|Universitario de Vinto": [
+     {
+      "home": "Independiente Petrolero",
+      "away": "Universitario de Vinto",
+      "hg": 2,
+      "ag": 1
+     },
+     {
+      "home": "Universitario de Vinto",
+      "away": "Independiente Petrolero",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "ABB|Blooming": [
+     {
+      "home": "ABB",
+      "away": "Blooming",
+      "hg": 3,
+      "ag": 2
+     },
+     {
+      "home": "Blooming",
+      "away": "ABB",
+      "hg": 6,
+      "ag": 1
+     }
+    ],
+    "Always Ready|Guabir\u00e1": [
+     {
+      "home": "Guabir\u00e1",
+      "away": "Always Ready",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Always Ready",
+      "away": "Guabir\u00e1",
+      "hg": 6,
+      "ag": 0
+     }
+    ],
+    "GV San Jos\u00e9|Nacional Potos\u00ed": [
+     {
+      "home": "Nacional Potos\u00ed",
+      "away": "GV San Jos\u00e9",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "Nacional Potos\u00ed",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Bol\u00edvar|Real Tomayapo": [
+     {
+      "home": "Bol\u00edvar",
+      "away": "Real Tomayapo",
+      "hg": 6,
+      "ag": 0
+     },
+     {
+      "home": "Real Tomayapo",
+      "away": "Bol\u00edvar",
+      "hg": 1,
+      "ag": 2
      }
     ],
     "Oriente Petrolero|Real Potos\u00ed": [
@@ -19586,102 +19189,6 @@
      {
       "home": "Real Potos\u00ed",
       "away": "Oriente Petrolero",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Oriente Petrolero|Real Tomayapo": [
-     {
-      "home": "Oriente Petrolero",
-      "away": "Real Tomayapo",
-      "hg": 3,
-      "ag": 1
-     },
-     {
-      "home": "Real Tomayapo",
-      "away": "Oriente Petrolero",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Oriente Petrolero|San Antonio Bulo Bulo": [
-     {
-      "home": "Oriente Petrolero",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 4,
-      "ag": 0
-     },
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "Oriente Petrolero",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Oriente Petrolero|Universitario de Vinto": [
-     {
-      "home": "Oriente Petrolero",
-      "away": "Universitario de Vinto",
-      "hg": 5,
-      "ag": 0
-     }
-    ],
-    "Always Ready|Real Oruro": [
-     {
-      "home": "Real Oruro",
-      "away": "Always Ready",
-      "hg": 0,
-      "ag": 6
-     }
-    ],
-    "GV San Jos\u00e9|Real Oruro": [
-     {
-      "home": "Real Oruro",
-      "away": "GV San Jos\u00e9",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "Independiente Petrolero|Real Oruro": [
-     {
-      "home": "Real Oruro",
-      "away": "Independiente Petrolero",
-      "hg": 0,
-      "ag": 3
-     }
-    ],
-    "Oriente Petrolero|Real Oruro": [
-     {
-      "home": "Real Oruro",
-      "away": "Oriente Petrolero",
-      "hg": 2,
-      "ag": 3
-     }
-    ],
-    "Real Oruro|Real Potos\u00ed": [
-     {
-      "home": "Real Oruro",
-      "away": "Real Potos\u00ed",
-      "hg": 0,
-      "ag": 2
-     },
-     {
-      "home": "Real Potos\u00ed",
-      "away": "Real Oruro",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Real Oruro|San Antonio Bulo Bulo": [
-     {
-      "home": "Real Oruro",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 2,
-      "ag": 0
-     },
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "Real Oruro",
       "hg": 2,
       "ag": 1
      }
@@ -19700,6 +19207,292 @@
       "ag": 0
      }
     ],
+    "Aurora|San Antonio Bulo Bulo": [
+     {
+      "home": "Aurora",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "Aurora",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Real Oruro|Real Potos\u00ed": [
+     {
+      "home": "Real Potos\u00ed",
+      "away": "Real Oruro",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Real Oruro",
+      "away": "Real Potos\u00ed",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Independiente Petrolero|San Antonio Bulo Bulo": [
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "Independiente Petrolero",
+      "hg": 2,
+      "ag": 2
+     },
+     {
+      "home": "Independiente Petrolero",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Always Ready|Nacional Potos\u00ed": [
+     {
+      "home": "Always Ready",
+      "away": "Nacional Potos\u00ed",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Nacional Potos\u00ed",
+      "away": "Always Ready",
+      "hg": 0,
+      "ag": 4
+     }
+    ],
+    "Aurora|Guabir\u00e1": [
+     {
+      "home": "Aurora",
+      "away": "Guabir\u00e1",
+      "hg": 4,
+      "ag": 2
+     },
+     {
+      "home": "Guabir\u00e1",
+      "away": "Aurora",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Oriente Petrolero|Real Tomayapo": [
+     {
+      "home": "Oriente Petrolero",
+      "away": "Real Tomayapo",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "Real Tomayapo",
+      "away": "Oriente Petrolero",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Bol\u00edvar|GV San Jos\u00e9": [
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "Bol\u00edvar",
+      "hg": 1,
+      "ag": 2
+     },
+     {
+      "home": "Bol\u00edvar",
+      "away": "GV San Jos\u00e9",
+      "hg": 4,
+      "ag": 2
+     }
+    ],
+    "ABB|The Strongest": [
+     {
+      "home": "The Strongest",
+      "away": "ABB",
+      "hg": 3,
+      "ag": 1
+     },
+     {
+      "home": "ABB",
+      "away": "The Strongest",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Blooming|Universitario de Vinto": [
+     {
+      "home": "Universitario de Vinto",
+      "away": "Blooming",
+      "hg": 1,
+      "ag": 1
+     },
+     {
+      "home": "Blooming",
+      "away": "Universitario de Vinto",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "GV San Jos\u00e9|Guabir\u00e1": [
+     {
+      "home": "Guabir\u00e1",
+      "away": "GV San Jos\u00e9",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Real Tomayapo|San Antonio Bulo Bulo": [
+     {
+      "home": "Real Tomayapo",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Blooming|Bol\u00edvar": [
+     {
+      "home": "Blooming",
+      "away": "Bol\u00edvar",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Always Ready|Independiente Petrolero": [
+     {
+      "home": "Independiente Petrolero",
+      "away": "Always Ready",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Real Potos\u00ed|The Strongest": [
+     {
+      "home": "The Strongest",
+      "away": "Real Potos\u00ed",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "ABB|Oriente Petrolero": [
+     {
+      "home": "ABB",
+      "away": "Oriente Petrolero",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Aurora|Real Oruro": [
+     {
+      "home": "Aurora",
+      "away": "Real Oruro",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "San Antonio Bulo Bulo|Universitario de Vinto": [
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "Universitario de Vinto",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Bol\u00edvar|Nacional Potos\u00ed": [
+     {
+      "home": "Bol\u00edvar",
+      "away": "Nacional Potos\u00ed",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Blooming|Independiente Petrolero": [
+     {
+      "home": "Independiente Petrolero",
+      "away": "Blooming",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Always Ready|The Strongest": [
+     {
+      "home": "Always Ready",
+      "away": "The Strongest",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Guabir\u00e1|Oriente Petrolero": [
+     {
+      "home": "Oriente Petrolero",
+      "away": "Guabir\u00e1",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Aurora|Real Tomayapo": [
+     {
+      "home": "Real Tomayapo",
+      "away": "Aurora",
+      "hg": 0,
+      "ag": 2
+     }
+    ],
+    "Bol\u00edvar|Universitario de Vinto": [
+     {
+      "home": "Universitario de Vinto",
+      "away": "Bol\u00edvar",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
+    "Guabir\u00e1|Nacional Potos\u00ed": [
+     {
+      "home": "Guabir\u00e1",
+      "away": "Nacional Potos\u00ed",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Guabir\u00e1|San Antonio Bulo Bulo": [
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "Guabir\u00e1",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "ABB|Always Ready": [
+     {
+      "home": "ABB",
+      "away": "Always Ready",
+      "hg": 1,
+      "ag": 3
+     }
+    ],
+    "Blooming|Oriente Petrolero": [
+     {
+      "home": "Oriente Petrolero",
+      "away": "Blooming",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Aurora|Universitario de Vinto": [
+     {
+      "home": "Universitario de Vinto",
+      "away": "Aurora",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "GV San Jos\u00e9|Real Tomayapo": [
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "Real Tomayapo",
+      "hg": 3,
+      "ag": 2
+     }
+    ],
     "Real Oruro|Universitario de Vinto": [
      {
       "home": "Real Oruro",
@@ -19716,20 +19509,20 @@
       "ag": 1
      }
     ],
-    "Blooming|Real Potos\u00ed": [
+    "Aurora|Nacional Potos\u00ed": [
      {
-      "home": "Real Potos\u00ed",
-      "away": "Blooming",
+      "home": "Nacional Potos\u00ed",
+      "away": "Aurora",
       "hg": 2,
       "ag": 0
      }
     ],
-    "GV San Jos\u00e9|Real Potos\u00ed": [
+    "GV San Jos\u00e9|Real Oruro": [
      {
-      "home": "Real Potos\u00ed",
+      "home": "Real Oruro",
       "away": "GV San Jos\u00e9",
-      "hg": 0,
-      "ag": 0
+      "hg": 3,
+      "ag": 1
      }
     ],
     "Nacional Potos\u00ed|Real Potos\u00ed": [
@@ -19740,141 +19533,11 @@
       "ag": 1
      }
     ],
-    "Real Potos\u00ed|Real Tomayapo": [
-     {
-      "home": "Real Potos\u00ed",
-      "away": "Real Tomayapo",
-      "hg": 0,
-      "ag": 1
-     },
-     {
-      "home": "Real Tomayapo",
-      "away": "Real Potos\u00ed",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Real Potos\u00ed|San Antonio Bulo Bulo": [
-     {
-      "home": "Real Potos\u00ed",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 5,
-      "ag": 0
-     }
-    ],
-    "ABB|Real Tomayapo": [
-     {
-      "home": "Real Tomayapo",
-      "away": "ABB",
-      "hg": 1,
-      "ag": 1
-     }
-    ],
-    "Aurora|Real Tomayapo": [
-     {
-      "home": "Real Tomayapo",
-      "away": "Aurora",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
     "Independiente Petrolero|Real Tomayapo": [
      {
       "home": "Real Tomayapo",
       "away": "Independiente Petrolero",
       "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Real Oruro|Real Tomayapo": [
-     {
-      "home": "Real Tomayapo",
-      "away": "Real Oruro",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Real Tomayapo|San Antonio Bulo Bulo": [
-     {
-      "home": "Real Tomayapo",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 1,
-      "ag": 0
-     }
-    ],
-    "Real Tomayapo|The Strongest": [
-     {
-      "home": "Real Tomayapo",
-      "away": "The Strongest",
-      "hg": 0,
-      "ag": 0
-     },
-     {
-      "home": "The Strongest",
-      "away": "Real Tomayapo",
-      "hg": 3,
-      "ag": 1
-     }
-    ],
-    "ABB|San Antonio Bulo Bulo": [
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "ABB",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "Blooming|San Antonio Bulo Bulo": [
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "Blooming",
-      "hg": 2,
-      "ag": 0
-     }
-    ],
-    "Guabir\u00e1|San Antonio Bulo Bulo": [
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "Guabir\u00e1",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Nacional Potos\u00ed|San Antonio Bulo Bulo": [
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "Nacional Potos\u00ed",
-      "hg": 2,
-      "ag": 1
-     }
-    ],
-    "San Antonio Bulo Bulo|The Strongest": [
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "The Strongest",
-      "hg": 0,
-      "ag": 3
-     },
-     {
-      "home": "The Strongest",
-      "away": "San Antonio Bulo Bulo",
-      "hg": 3,
-      "ag": 2
-     }
-    ],
-    "San Antonio Bulo Bulo|Universitario de Vinto": [
-     {
-      "home": "San Antonio Bulo Bulo",
-      "away": "Universitario de Vinto",
-      "hg": 0,
-      "ag": 2
-     }
-    ],
-    "Aurora|The Strongest": [
-     {
-      "home": "The Strongest",
-      "away": "Aurora",
-      "hg": 1,
       "ag": 1
      }
     ],
@@ -19886,12 +19549,28 @@
       "ag": 1
      }
     ],
-    "Independiente Petrolero|The Strongest": [
+    "Blooming|GV San Jos\u00e9": [
      {
-      "home": "The Strongest",
-      "away": "Independiente Petrolero",
+      "home": "Blooming",
+      "away": "GV San Jos\u00e9",
       "hg": 1,
-      "ag": 2
+      "ag": 1
+     }
+    ],
+    "Always Ready|Real Oruro": [
+     {
+      "home": "Real Oruro",
+      "away": "Always Ready",
+      "hg": 0,
+      "ag": 6
+     }
+    ],
+    "Real Potos\u00ed|San Antonio Bulo Bulo": [
+     {
+      "home": "Real Potos\u00ed",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 5,
+      "ag": 0
      }
     ],
     "Oriente Petrolero|The Strongest": [
@@ -19902,42 +19581,156 @@
       "ag": 1
      }
     ],
-    "Real Potos\u00ed|The Strongest": [
+    "ABB|Independiente Petrolero": [
      {
-      "home": "The Strongest",
-      "away": "Real Potos\u00ed",
+      "home": "ABB",
+      "away": "Independiente Petrolero",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Bol\u00edvar|Guabir\u00e1": [
+     {
+      "home": "Bol\u00edvar",
+      "away": "Guabir\u00e1",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "Always Ready|Universitario de Vinto": [
+     {
+      "home": "Always Ready",
+      "away": "Universitario de Vinto",
+      "hg": 4,
+      "ag": 0
+     }
+    ],
+    "Aurora|Oriente Petrolero": [
+     {
+      "home": "Aurora",
+      "away": "Oriente Petrolero",
+      "hg": 2,
+      "ag": 2
+     }
+    ],
+    "Blooming|Real Tomayapo": [
+     {
+      "home": "Blooming",
+      "away": "Real Tomayapo",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "GV San Jos\u00e9|The Strongest": [
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "The Strongest",
       "hg": 0,
       "ag": 0
      }
     ],
-    "The Strongest|Universitario de Vinto": [
+    "Nacional Potos\u00ed|Real Oruro": [
      {
-      "home": "The Strongest",
-      "away": "Universitario de Vinto",
-      "hg": 4,
-      "ag": 3
-     },
+      "home": "Nacional Potos\u00ed",
+      "away": "Real Oruro",
+      "hg": 1,
+      "ag": 4
+     }
+    ],
+    "ABB|San Antonio Bulo Bulo": [
      {
-      "home": "Universitario de Vinto",
-      "away": "The Strongest",
+      "home": "San Antonio Bulo Bulo",
+      "away": "ABB",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Independiente Petrolero|Real Potos\u00ed": [
+     {
+      "home": "Independiente Petrolero",
+      "away": "Real Potos\u00ed",
       "hg": 1,
       "ag": 2
      }
     ],
-    "Aurora|Universitario de Vinto": [
+    "ABB|Aurora": [
      {
-      "home": "Universitario de Vinto",
-      "away": "Aurora",
-      "hg": 1,
-      "ag": 2
-     }
-    ],
-    "Bol\u00edvar|Universitario de Vinto": [
-     {
-      "home": "Universitario de Vinto",
-      "away": "Bol\u00edvar",
+      "home": "Aurora",
+      "away": "ABB",
       "hg": 3,
       "ag": 2
+     }
+    ],
+    "Always Ready|San Antonio Bulo Bulo": [
+     {
+      "home": "Always Ready",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Guabir\u00e1|Real Oruro": [
+     {
+      "home": "Guabir\u00e1",
+      "away": "Real Oruro",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Independiente Petrolero|Oriente Petrolero": [
+     {
+      "home": "Independiente Petrolero",
+      "away": "Oriente Petrolero",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Blooming|The Strongest": [
+     {
+      "home": "Blooming",
+      "away": "The Strongest",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Bol\u00edvar|Real Potos\u00ed": [
+     {
+      "home": "Bol\u00edvar",
+      "away": "Real Potos\u00ed",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Nacional Potos\u00ed|Real Tomayapo": [
+     {
+      "home": "Nacional Potos\u00ed",
+      "away": "Real Tomayapo",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "GV San Jos\u00e9|Universitario de Vinto": [
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "Universitario de Vinto",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "ABB|Real Tomayapo": [
+     {
+      "home": "Real Tomayapo",
+      "away": "ABB",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Aurora|The Strongest": [
+     {
+      "home": "The Strongest",
+      "away": "Aurora",
+      "hg": 1,
+      "ag": 1
      }
     ],
     "Guabir\u00e1|Universitario de Vinto": [
@@ -19948,12 +19741,180 @@
       "ag": 1
      }
     ],
+    "Independiente Petrolero|Real Oruro": [
+     {
+      "home": "Real Oruro",
+      "away": "Independiente Petrolero",
+      "hg": 0,
+      "ag": 3
+     }
+    ],
+    "Blooming|San Antonio Bulo Bulo": [
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "Blooming",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Always Ready|Bol\u00edvar": [
+     {
+      "home": "Always Ready",
+      "away": "Bol\u00edvar",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "Nacional Potos\u00ed|Oriente Petrolero": [
+     {
+      "home": "Oriente Petrolero",
+      "away": "Nacional Potos\u00ed",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "GV San Jos\u00e9|Real Potos\u00ed": [
+     {
+      "home": "Real Potos\u00ed",
+      "away": "GV San Jos\u00e9",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "ABB|Real Oruro": [
+     {
+      "home": "ABB",
+      "away": "Real Oruro",
+      "hg": 4,
+      "ag": 1
+     }
+    ],
+    "Guabir\u00e1|Real Tomayapo": [
+     {
+      "home": "Guabir\u00e1",
+      "away": "Real Tomayapo",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Aurora|Independiente Petrolero": [
+     {
+      "home": "Independiente Petrolero",
+      "away": "Aurora",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "Bol\u00edvar|Oriente Petrolero": [
+     {
+      "home": "Bol\u00edvar",
+      "away": "Oriente Petrolero",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "GV San Jos\u00e9|San Antonio Bulo Bulo": [
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
+    "Nacional Potos\u00ed|The Strongest": [
+     {
+      "home": "Nacional Potos\u00ed",
+      "away": "The Strongest",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Always Ready|Blooming": [
+     {
+      "home": "Blooming",
+      "away": "Always Ready",
+      "hg": 0,
+      "ag": 0
+     }
+    ],
     "Real Potos\u00ed|Universitario de Vinto": [
      {
       "home": "Universitario de Vinto",
       "away": "Real Potos\u00ed",
       "hg": 0,
       "ag": 2
+     }
+    ],
+    "ABB|Guabir\u00e1": [
+     {
+      "home": "ABB",
+      "away": "Guabir\u00e1",
+      "hg": 0,
+      "ag": 1
+     }
+    ],
+    "Real Oruro|Real Tomayapo": [
+     {
+      "home": "Real Tomayapo",
+      "away": "Real Oruro",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Aurora|Bol\u00edvar": [
+     {
+      "home": "Aurora",
+      "away": "Bol\u00edvar",
+      "hg": 2,
+      "ag": 4
+     }
+    ],
+    "Nacional Potos\u00ed|San Antonio Bulo Bulo": [
+     {
+      "home": "San Antonio Bulo Bulo",
+      "away": "Nacional Potos\u00ed",
+      "hg": 2,
+      "ag": 1
+     }
+    ],
+    "Independiente Petrolero|The Strongest": [
+     {
+      "home": "The Strongest",
+      "away": "Independiente Petrolero",
+      "hg": 1,
+      "ag": 2
+     }
+    ],
+    "Always Ready|GV San Jos\u00e9": [
+     {
+      "home": "GV San Jos\u00e9",
+      "away": "Always Ready",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Oriente Petrolero|Universitario de Vinto": [
+     {
+      "home": "Oriente Petrolero",
+      "away": "Universitario de Vinto",
+      "hg": 5,
+      "ag": 0
+     }
+    ],
+    "Blooming|Real Potos\u00ed": [
+     {
+      "home": "Real Potos\u00ed",
+      "away": "Blooming",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Bol\u00edvar|San Antonio Bulo Bulo": [
+     {
+      "home": "Bol\u00edvar",
+      "away": "San Antonio Bulo Bulo",
+      "hg": 4,
+      "ag": 1
      }
     ],
     "Real Tomayapo|Universitario de Vinto": [
@@ -19963,267 +19924,161 @@
       "hg": 0,
       "ag": 1
      }
+    ],
+    "Aurora|Blooming": [
+     {
+      "home": "Blooming",
+      "away": "Aurora",
+      "hg": 3,
+      "ag": 0
+     }
+    ],
+    "Guabir\u00e1|The Strongest": [
+     {
+      "home": "Guabir\u00e1",
+      "away": "The Strongest",
+      "hg": 3,
+      "ag": 1
+     }
+    ],
+    "Oriente Petrolero|Real Oruro": [
+     {
+      "home": "Real Oruro",
+      "away": "Oriente Petrolero",
+      "hg": 2,
+      "ag": 3
+     }
+    ],
+    "Always Ready|Real Potos\u00ed": [
+     {
+      "home": "Always Ready",
+      "away": "Real Potos\u00ed",
+      "hg": 1,
+      "ag": 1
+     }
+    ],
+    "GV San Jos\u00e9|Independiente Petrolero": [
+     {
+      "home": "Independiente Petrolero",
+      "away": "GV San Jos\u00e9",
+      "hg": 1,
+      "ag": 0
+     }
+    ],
+    "ABB|Nacional Potos\u00ed": [
+     {
+      "home": "Nacional Potos\u00ed",
+      "away": "ABB",
+      "hg": 2,
+      "ag": 0
+     }
+    ],
+    "Bol\u00edvar|Real Oruro": [
+     {
+      "home": "Real Oruro",
+      "away": "Bol\u00edvar",
+      "hg": 2,
+      "ag": 4
+     }
     ]
    }
   },
   "matches": [
    [
-    "ABB",
-    "Always Ready",
-    1,
+    "Blooming",
+    "Guabir\u00e1",
+    5,
+    0
+   ],
+   [
+    "Bolivar",
+    "Real Oruro",
+    5,
+    2
+   ],
+   [
+    "Independiente Petrolero",
+    "Nacional Potos\u00ed",
+    0,
     3
    ],
    [
-    "ABB",
-    "Blooming",
-    3,
-    2
+    "Always Ready",
+    "Real Tomayapo",
+    4,
+    0
    ],
    [
-    "ABB",
-    "Bol\u00edvar",
+    "Real Potos\u00ed",
+    "Aurora",
     0,
-    2
+    0
    ],
    [
-    "ABB",
-    "Guabir\u00e1",
-    0,
-    1
-   ],
-   [
-    "ABB",
-    "GV San Jos\u00e9",
+    "San Antonio Bulo Bulo",
+    "Oriente Petrolero",
     2,
+    0
+   ],
+   [
+    "GV San Jos\u00e9",
+    "ABB",
+    1,
     2
    ],
    [
-    "ABB",
+    "Universitario de Vinto",
+    "The Strongest",
+    1,
+    2
+   ],
+   [
+    "Guabir\u00e1",
     "Independiente Petrolero",
-    3,
-    1
-   ],
-   [
-    "ABB",
-    "Oriente Petrolero",
-    3,
-    1
-   ],
-   [
-    "ABB",
-    "Real Oruro",
-    4,
-    1
-   ],
-   [
-    "ABB",
-    "The Strongest",
-    1,
-    2
-   ],
-   [
-    "ABB",
-    "Universitario de Vinto",
-    2,
-    0
-   ],
-   [
-    "Always Ready",
-    "Aurora",
     2,
     2
    ],
    [
-    "Always Ready",
+    "ABB",
     "Bol\u00edvar",
+    0,
+    2
+   ],
+   [
+    "Aurora",
+    "Always Ready",
     1,
-    0
-   ],
-   [
-    "Always Ready",
-    "Guabir\u00e1",
-    6,
-    0
-   ],
-   [
-    "Always Ready",
-    "Nacional Potos\u00ed",
-    3,
     1
    ],
    [
-    "Always Ready",
-    "Oriente Petrolero",
+    "Nacional Potos\u00ed",
+    "Universitario de Vinto",
     1,
     0
    ],
    [
-    "Always Ready",
+    "Oriente Petrolero",
+    "GV San Jos\u00e9",
+    2,
+    1
+   ],
+   [
+    "Real Oruro",
+    "Blooming",
+    2,
+    2
+   ],
+   [
+    "The Strongest",
+    "San Antonio Bulo Bulo",
+    3,
+    2
+   ],
+   [
+    "Real Tomayapo",
     "Real Potos\u00ed",
     1,
     1
-   ],
-   [
-    "Always Ready",
-    "Real Tomayapo",
-    4,
-    0
-   ],
-   [
-    "Always Ready",
-    "San Antonio Bulo Bulo",
-    3,
-    1
-   ],
-   [
-    "Always Ready",
-    "The Strongest",
-    0,
-    1
-   ],
-   [
-    "Always Ready",
-    "Universitario de Vinto",
-    4,
-    0
-   ],
-   [
-    "Aurora",
-    "ABB",
-    3,
-    2
-   ],
-   [
-    "Aurora",
-    "Always Ready",
-    1,
-    1
-   ],
-   [
-    "Aurora",
-    "Bol\u00edvar",
-    2,
-    4
-   ],
-   [
-    "Aurora",
-    "Guabir\u00e1",
-    4,
-    2
-   ],
-   [
-    "Aurora",
-    "GV San Jos\u00e9",
-    3,
-    0
-   ],
-   [
-    "Aurora",
-    "Oriente Petrolero",
-    2,
-    2
-   ],
-   [
-    "Aurora",
-    "Real Oruro",
-    1,
-    1
-   ],
-   [
-    "Aurora",
-    "Real Potos\u00ed",
-    0,
-    0
-   ],
-   [
-    "Aurora",
-    "San Antonio Bulo Bulo",
-    3,
-    1
-   ],
-   [
-    "Blooming",
-    "ABB",
-    6,
-    1
-   ],
-   [
-    "Blooming",
-    "Always Ready",
-    0,
-    0
-   ],
-   [
-    "Blooming",
-    "Aurora",
-    3,
-    0
-   ],
-   [
-    "Blooming",
-    "Bol\u00edvar",
-    0,
-    0
-   ],
-   [
-    "Blooming",
-    "Guabir\u00e1",
-    5,
-    0
-   ],
-   [
-    "Blooming",
-    "GV San Jos\u00e9",
-    1,
-    1
-   ],
-   [
-    "Blooming",
-    "Nacional Potos\u00ed",
-    2,
-    1
-   ],
-   [
-    "Blooming",
-    "Real Oruro",
-    1,
-    1
-   ],
-   [
-    "Blooming",
-    "Real Tomayapo",
-    1,
-    0
-   ],
-   [
-    "Blooming",
-    "The Strongest",
-    1,
-    1
-   ],
-   [
-    "Blooming",
-    "Universitario de Vinto",
-    1,
-    1
-   ],
-   [
-    "Bol\u00edvar",
-    "ABB",
-    4,
-    1
-   ],
-   [
-    "Bol\u00edvar",
-    "Guabir\u00e1",
-    4,
-    0
-   ],
-   [
-    "Bol\u00edvar",
-    "GV San Jos\u00e9",
-    4,
-    2
    ],
    [
     "Bol\u00edvar",
@@ -20232,27 +20087,69 @@
     2
    ],
    [
-    "Bol\u00edvar",
-    "Nacional Potos\u00ed",
+    "GV San Jos\u00e9",
+    "Aurora",
     1,
     1
    ],
    [
-    "Bol\u00edvar",
-    "Oriente Petrolero",
-    2,
-    1
-   ],
-   [
-    "Bol\u00edvar",
-    "Real Oruro",
+    "Universitario de Vinto",
+    "ABB",
     5,
     2
    ],
    [
-    "Bol\u00edvar",
-    "Real Potos\u00ed",
+    "Always Ready",
+    "Oriente Petrolero",
+    1,
+    0
+   ],
+   [
+    "Blooming",
+    "Nacional Potos\u00ed",
     2,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "Guabir\u00e1",
+    3,
+    0
+   ],
+   [
+    "Real Tomayapo",
+    "The Strongest",
+    0,
+    0
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Real Oruro",
+    2,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "Universitario de Vinto",
+    2,
+    1
+   ],
+   [
+    "ABB",
+    "Blooming",
+    3,
+    2
+   ],
+   [
+    "Guabir\u00e1",
+    "Always Ready",
+    1,
+    2
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "GV San Jos\u00e9",
+    1,
     1
    ],
    [
@@ -20262,266 +20159,134 @@
     0
    ],
    [
-    "Bol\u00edvar",
-    "San Antonio Bulo Bulo",
-    4,
-    1
-   ],
-   [
-    "Guabir\u00e1",
-    "Always Ready",
-    1,
-    2
-   ],
-   [
-    "Guabir\u00e1",
-    "Aurora",
-    3,
-    1
-   ],
-   [
-    "Guabir\u00e1",
-    "Blooming",
-    1,
-    1
-   ],
-   [
-    "Guabir\u00e1",
-    "GV San Jos\u00e9",
-    3,
+    "Oriente Petrolero",
+    "Real Potos\u00ed",
+    2,
     0
    ],
    [
-    "Guabir\u00e1",
-    "Independiente Petrolero",
-    2,
-    2
-   ],
-   [
-    "Guabir\u00e1",
-    "Nacional Potos\u00ed",
-    2,
-    1
-   ],
-   [
-    "Guabir\u00e1",
     "Real Oruro",
-    4,
-    1
-   ],
-   [
-    "Guabir\u00e1",
-    "Real Potos\u00ed",
-    1,
-    1
-   ],
-   [
-    "Guabir\u00e1",
-    "Real Tomayapo",
-    3,
-    0
-   ],
-   [
-    "Guabir\u00e1",
     "The Strongest",
-    3,
-    1
-   ],
-   [
-    "GV San Jos\u00e9",
-    "ABB",
-    1,
-    2
-   ],
-   [
-    "GV San Jos\u00e9",
-    "Always Ready",
     2,
     3
    ],
    [
-    "GV San Jos\u00e9",
     "Aurora",
-    1,
-    1
-   ],
-   [
-    "GV San Jos\u00e9",
-    "Bol\u00edvar",
-    1,
-    2
-   ],
-   [
-    "GV San Jos\u00e9",
-    "Nacional Potos\u00ed",
-    0,
-    3
-   ],
-   [
-    "GV San Jos\u00e9",
-    "Oriente Petrolero",
-    3,
-    3
-   ],
-   [
-    "GV San Jos\u00e9",
-    "Real Tomayapo",
-    3,
-    2
-   ],
-   [
-    "GV San Jos\u00e9",
     "San Antonio Bulo Bulo",
-    0,
-    0
-   ],
-   [
-    "GV San Jos\u00e9",
-    "The Strongest",
-    0,
-    0
-   ],
-   [
-    "GV San Jos\u00e9",
-    "Universitario de Vinto",
-    2,
-    1
-   ],
-   [
-    "Independiente Petrolero",
-    "Always Ready",
-    0,
-    0
-   ],
-   [
-    "Independiente Petrolero",
-    "Aurora",
-    1,
-    1
-   ],
-   [
-    "Independiente Petrolero",
-    "Blooming",
     3,
     1
    ],
    [
-    "Independiente Petrolero",
-    "Bol\u00edvar",
-    0,
-    4
-   ],
-   [
-    "Independiente Petrolero",
-    "Guabir\u00e1",
-    3,
-    1
-   ],
-   [
-    "Independiente Petrolero",
-    "GV San Jos\u00e9",
-    1,
-    0
-   ],
-   [
-    "Independiente Petrolero",
-    "Nacional Potos\u00ed",
-    0,
-    3
-   ],
-   [
-    "Independiente Petrolero",
-    "Oriente Petrolero",
-    1,
-    2
-   ],
-   [
-    "Independiente Petrolero",
     "Real Potos\u00ed",
-    1,
-    2
-   ],
-   [
-    "Independiente Petrolero",
-    "San Antonio Bulo Bulo",
-    1,
-    3
-   ],
-   [
-    "Independiente Petrolero",
-    "Universitario de Vinto",
-    2,
-    1
-   ],
-   [
-    "Nacional Potos\u00ed",
-    "ABB",
-    2,
-    0
-   ],
-   [
-    "Nacional Potos\u00ed",
-    "Always Ready",
-    0,
-    4
-   ],
-   [
-    "Nacional Potos\u00ed",
-    "Aurora",
-    2,
-    0
-   ],
-   [
-    "Nacional Potos\u00ed",
-    "Blooming",
-    2,
-    1
-   ],
-   [
-    "Nacional Potos\u00ed",
-    "GV San Jos\u00e9",
-    1,
-    1
-   ],
-   [
-    "Nacional Potos\u00ed",
-    "Independiente Petrolero",
-    3,
-    0
-   ],
-   [
-    "Nacional Potos\u00ed",
     "Real Oruro",
     1,
-    4
+    2
    ],
    [
+    "San Antonio Bulo Bulo",
+    "Independiente Petrolero",
+    2,
+    2
+   ],
+   [
+    "Always Ready",
     "Nacional Potos\u00ed",
-    "Real Tomayapo",
-    4,
+    3,
     1
    ],
    [
-    "Nacional Potos\u00ed",
-    "The Strongest",
-    2,
-    3
-   ],
-   [
-    "Nacional Potos\u00ed",
-    "Universitario de Vinto",
-    1,
-    0
-   ],
-   [
-    "Oriente Petrolero",
-    "Always Ready",
-    1,
+    "Aurora",
+    "Guabir\u00e1",
+    4,
     2
    ],
    [
     "Oriente Petrolero",
+    "Real Tomayapo",
+    3,
+    1
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Bol\u00edvar",
+    1,
+    2
+   ],
+   [
+    "The Strongest",
+    "ABB",
+    3,
+    1
+   ],
+   [
+    "Universitario de Vinto",
     "Blooming",
+    1,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "GV San Jos\u00e9",
+    3,
+    0
+   ],
+   [
+    "Real Tomayapo",
+    "San Antonio Bulo Bulo",
+    1,
+    0
+   ],
+   [
+    "Blooming",
+    "Bol\u00edvar",
+    0,
+    0
+   ],
+   [
+    "Independiente Petrolero",
+    "Always Ready",
+    0,
+    0
+   ],
+   [
+    "The Strongest",
+    "Real Potos\u00ed",
+    0,
+    0
+   ],
+   [
+    "ABB",
+    "Oriente Petrolero",
+    3,
+    1
+   ],
+   [
+    "Aurora",
+    "Real Oruro",
+    1,
+    1
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Universitario de Vinto",
+    0,
+    2
+   ],
+   [
+    "Bol\u00edvar",
+    "Nacional Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "Blooming",
+    3,
+    1
+   ],
+   [
+    "Always Ready",
+    "The Strongest",
     0,
     1
    ],
@@ -20532,40 +20297,100 @@
     2
    ],
    [
-    "Oriente Petrolero",
-    "GV San Jos\u00e9",
+    "Real Tomayapo",
+    "Aurora",
+    0,
+    2
+   ],
+   [
+    "Universitario de Vinto",
+    "Bol\u00edvar",
+    3,
+    2
+   ],
+   [
+    "Guabir\u00e1",
+    "Nacional Potos\u00ed",
     2,
     1
    ],
    [
-    "Oriente Petrolero",
-    "Nacional Potos\u00ed",
+    "San Antonio Bulo Bulo",
+    "Guabir\u00e1",
     1,
-    0
+    2
+   ],
+   [
+    "ABB",
+    "Always Ready",
+    1,
+    3
    ],
    [
     "Oriente Petrolero",
-    "Real Potos\u00ed",
-    2,
-    0
+    "Blooming",
+    0,
+    1
    ],
    [
-    "Oriente Petrolero",
+    "Universitario de Vinto",
+    "Aurora",
+    1,
+    2
+   ],
+   [
+    "GV San Jos\u00e9",
     "Real Tomayapo",
+    3,
+    2
+   ],
+   [
+    "Real Oruro",
+    "Universitario de Vinto",
+    4,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "ABB",
     3,
     1
    ],
    [
-    "Oriente Petrolero",
-    "San Antonio Bulo Bulo",
-    4,
+    "Nacional Potos\u00ed",
+    "Aurora",
+    2,
     0
    ],
    [
-    "Oriente Petrolero",
-    "Universitario de Vinto",
-    5,
-    0
+    "Real Oruro",
+    "GV San Jos\u00e9",
+    3,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "Nacional Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Real Tomayapo",
+    "Independiente Petrolero",
+    2,
+    1
+   ],
+   [
+    "The Strongest",
+    "Bol\u00edvar",
+    1,
+    1
+   ],
+   [
+    "Blooming",
+    "GV San Jos\u00e9",
+    1,
+    1
    ],
    [
     "Real Oruro",
@@ -20574,10 +20399,346 @@
     6
    ],
    [
-    "Real Oruro",
-    "Blooming",
+    "Real Potos\u00ed",
+    "San Antonio Bulo Bulo",
+    5,
+    0
+   ],
+   [
+    "The Strongest",
+    "Oriente Petrolero",
+    2,
+    1
+   ],
+   [
+    "ABB",
+    "Independiente Petrolero",
+    3,
+    1
+   ],
+   [
+    "Bol\u00edvar",
+    "Guabir\u00e1",
+    4,
+    0
+   ],
+   [
+    "Always Ready",
+    "Universitario de Vinto",
+    4,
+    0
+   ],
+   [
+    "Aurora",
+    "Oriente Petrolero",
     2,
     2
+   ],
+   [
+    "Blooming",
+    "Real Tomayapo",
+    1,
+    0
+   ],
+   [
+    "GV San Jos\u00e9",
+    "The Strongest",
+    0,
+    0
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Real Oruro",
+    1,
+    4
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "ABB",
+    2,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "Real Potos\u00ed",
+    1,
+    2
+   ],
+   [
+    "Aurora",
+    "ABB",
+    3,
+    2
+   ],
+   [
+    "Always Ready",
+    "San Antonio Bulo Bulo",
+    3,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "Real Oruro",
+    4,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "Oriente Petrolero",
+    1,
+    2
+   ],
+   [
+    "Blooming",
+    "The Strongest",
+    1,
+    1
+   ],
+   [
+    "Bol\u00edvar",
+    "Real Potos\u00ed",
+    2,
+    1
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Real Tomayapo",
+    4,
+    1
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Universitario de Vinto",
+    2,
+    1
+   ],
+   [
+    "Real Tomayapo",
+    "ABB",
+    1,
+    1
+   ],
+   [
+    "The Strongest",
+    "Aurora",
+    1,
+    1
+   ],
+   [
+    "Universitario de Vinto",
+    "Guabir\u00e1",
+    1,
+    1
+   ],
+   [
+    "Real Oruro",
+    "Independiente Petrolero",
+    0,
+    3
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Blooming",
+    2,
+    0
+   ],
+   [
+    "Always Ready",
+    "Bol\u00edvar",
+    1,
+    0
+   ],
+   [
+    "Oriente Petrolero",
+    "Nacional Potos\u00ed",
+    1,
+    0
+   ],
+   [
+    "Real Potos\u00ed",
+    "GV San Jos\u00e9",
+    0,
+    0
+   ],
+   [
+    "ABB",
+    "Real Oruro",
+    4,
+    1
+   ],
+   [
+    "Guabir\u00e1",
+    "Real Tomayapo",
+    3,
+    0
+   ],
+   [
+    "Independiente Petrolero",
+    "Aurora",
+    1,
+    1
+   ],
+   [
+    "Bol\u00edvar",
+    "Oriente Petrolero",
+    2,
+    1
+   ],
+   [
+    "GV San Jos\u00e9",
+    "San Antonio Bulo Bulo",
+    0,
+    0
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "The Strongest",
+    2,
+    3
+   ],
+   [
+    "Blooming",
+    "Always Ready",
+    0,
+    0
+   ],
+   [
+    "Universitario de Vinto",
+    "Real Potos\u00ed",
+    0,
+    2
+   ],
+   [
+    "ABB",
+    "Guabir\u00e1",
+    0,
+    1
+   ],
+   [
+    "Real Tomayapo",
+    "Real Oruro",
+    1,
+    2
+   ],
+   [
+    "Aurora",
+    "Bol\u00edvar",
+    2,
+    4
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Nacional Potos\u00ed",
+    2,
+    1
+   ],
+   [
+    "The Strongest",
+    "Independiente Petrolero",
+    1,
+    2
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Always Ready",
+    2,
+    3
+   ],
+   [
+    "Oriente Petrolero",
+    "Universitario de Vinto",
+    5,
+    0
+   ],
+   [
+    "Real Potos\u00ed",
+    "Blooming",
+    2,
+    0
+   ],
+   [
+    "Bol\u00edvar",
+    "San Antonio Bulo Bulo",
+    4,
+    1
+   ],
+   [
+    "Universitario de Vinto",
+    "Real Tomayapo",
+    0,
+    1
+   ],
+   [
+    "Blooming",
+    "Aurora",
+    3,
+    0
+   ],
+   [
+    "Guabir\u00e1",
+    "The Strongest",
+    3,
+    1
+   ],
+   [
+    "Real Oruro",
+    "Oriente Petrolero",
+    2,
+    3
+   ],
+   [
+    "Always Ready",
+    "Real Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "GV San Jos\u00e9",
+    1,
+    0
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "ABB",
+    2,
+    0
+   ],
+   [
+    "Oriente Petrolero",
+    "San Antonio Bulo Bulo",
+    4,
+    0
+   ],
+   [
+    "The Strongest",
+    "Universitario de Vinto",
+    4,
+    3
+   ],
+   [
+    "ABB",
+    "GV San Jos\u00e9",
+    2,
+    2
+   ],
+   [
+    "Aurora",
+    "Real Potos\u00ed",
+    0,
+    0
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Independiente Petrolero",
+    3,
+    0
+   ],
+   [
+    "Guabir\u00e1",
+    "Blooming",
+    1,
+    1
    ],
    [
     "Real Oruro",
@@ -20586,213 +20747,33 @@
     4
    ],
    [
-    "Real Oruro",
-    "GV San Jos\u00e9",
-    3,
-    1
-   ],
-   [
-    "Real Oruro",
-    "Independiente Petrolero",
-    0,
-    3
-   ],
-   [
-    "Real Oruro",
-    "Oriente Petrolero",
-    2,
-    3
-   ],
-   [
-    "Real Oruro",
-    "Real Potos\u00ed",
-    0,
-    2
-   ],
-   [
-    "Real Oruro",
-    "San Antonio Bulo Bulo",
-    2,
-    0
-   ],
-   [
-    "Real Oruro",
-    "The Strongest",
-    2,
-    3
-   ],
-   [
-    "Real Oruro",
-    "Universitario de Vinto",
-    4,
-    1
-   ],
-   [
-    "Real Potos\u00ed",
-    "ABB",
-    3,
-    1
-   ],
-   [
-    "Real Potos\u00ed",
-    "Aurora",
-    0,
-    0
-   ],
-   [
-    "Real Potos\u00ed",
-    "Blooming",
-    2,
-    0
-   ],
-   [
-    "Real Potos\u00ed",
-    "Guabir\u00e1",
-    3,
-    0
-   ],
-   [
-    "Real Potos\u00ed",
-    "GV San Jos\u00e9",
-    0,
-    0
-   ],
-   [
-    "Real Potos\u00ed",
-    "Nacional Potos\u00ed",
-    1,
-    1
-   ],
-   [
-    "Real Potos\u00ed",
-    "Oriente Petrolero",
-    2,
-    1
-   ],
-   [
-    "Real Potos\u00ed",
-    "Real Oruro",
-    1,
-    2
-   ],
-   [
-    "Real Potos\u00ed",
-    "Real Tomayapo",
-    0,
-    1
-   ],
-   [
-    "Real Potos\u00ed",
-    "San Antonio Bulo Bulo",
-    5,
-    0
-   ],
-   [
-    "Real Tomayapo",
-    "ABB",
-    1,
-    1
-   ],
-   [
     "Real Tomayapo",
     "Always Ready",
     1,
     1
    ],
    [
-    "Real Tomayapo",
-    "Aurora",
-    0,
-    2
-   ],
-   [
-    "Real Tomayapo",
-    "Bol\u00edvar",
-    1,
-    2
-   ],
-   [
-    "Real Tomayapo",
-    "Independiente Petrolero",
-    2,
-    1
-   ],
-   [
-    "Real Tomayapo",
+    "GV San Jos\u00e9",
     "Oriente Petrolero",
-    0,
-    2
+    3,
+    3
    ],
    [
-    "Real Tomayapo",
-    "Real Oruro",
-    1,
-    2
-   ],
-   [
-    "Real Tomayapo",
-    "Real Potos\u00ed",
-    1,
-    1
-   ],
-   [
-    "Real Tomayapo",
-    "San Antonio Bulo Bulo",
-    1,
-    0
-   ],
-   [
-    "Real Tomayapo",
-    "The Strongest",
-    0,
-    0
-   ],
-   [
-    "San Antonio Bulo Bulo",
-    "ABB",
-    2,
-    1
-   ],
-   [
-    "San Antonio Bulo Bulo",
-    "Aurora",
-    0,
-    2
-   ],
-   [
-    "San Antonio Bulo Bulo",
-    "Blooming",
-    2,
-    0
-   ],
-   [
-    "San Antonio Bulo Bulo",
-    "Guabir\u00e1",
-    1,
-    2
-   ],
-   [
-    "San Antonio Bulo Bulo",
-    "Independiente Petrolero",
-    2,
-    2
-   ],
-   [
-    "San Antonio Bulo Bulo",
+    "Universitario de Vinto",
     "Nacional Potos\u00ed",
     2,
-    1
-   ],
-   [
-    "San Antonio Bulo Bulo",
-    "Oriente Petrolero",
-    2,
     0
    ],
    [
-    "San Antonio Bulo Bulo",
+    "Blooming",
     "Real Oruro",
-    2,
+    1,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "Real Tomayapo",
+    0,
     1
    ],
    [
@@ -20802,100 +20783,112 @@
     3
    ],
    [
-    "San Antonio Bulo Bulo",
-    "Universitario de Vinto",
-    0,
-    2
-   ],
-   [
-    "The Strongest",
-    "ABB",
-    3,
-    1
-   ],
-   [
-    "The Strongest",
+    "Always Ready",
     "Aurora",
-    1,
-    1
-   ],
-   [
-    "The Strongest",
-    "Bol\u00edvar",
-    1,
-    1
-   ],
-   [
-    "The Strongest",
-    "Independiente Petrolero",
-    1,
-    2
-   ],
-   [
-    "The Strongest",
-    "Oriente Petrolero",
     2,
-    1
-   ],
-   [
-    "The Strongest",
-    "Real Oruro",
-    5,
-    0
-   ],
-   [
-    "The Strongest",
-    "Real Potos\u00ed",
-    0,
-    0
-   ],
-   [
-    "The Strongest",
-    "Real Tomayapo",
-    3,
-    1
-   ],
-   [
-    "The Strongest",
-    "San Antonio Bulo Bulo",
-    3,
     2
    ],
    [
-    "The Strongest",
-    "Universitario de Vinto",
+    "Bol\u00edvar",
+    "ABB",
     4,
+    1
+   ],
+   [
+    "Independiente Petrolero",
+    "Guabir\u00e1",
+    3,
+    1
+   ],
+   [
+    "ABB",
+    "Universitario de Vinto",
+    2,
+    0
+   ],
+   [
+    "Real Oruro",
+    "San Antonio Bulo Bulo",
+    2,
+    0
+   ],
+   [
+    "Aurora",
+    "GV San Jos\u00e9",
+    3,
+    0
+   ],
+   [
+    "Guabir\u00e1",
+    "Real Potos\u00ed",
+    1,
+    1
+   ],
+   [
+    "Oriente Petrolero",
+    "Always Ready",
+    1,
+    2
+   ],
+   [
+    "Independiente Petrolero",
+    "Bol\u00edvar",
+    0,
+    4
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Blooming",
+    2,
+    1
+   ],
+   [
+    "The Strongest",
+    "Real Tomayapo",
+    3,
+    1
+   ],
+   [
+    "Real Potos\u00ed",
+    "Oriente Petrolero",
+    2,
+    1
+   ],
+   [
+    "San Antonio Bulo Bulo",
+    "Aurora",
+    0,
+    2
+   ],
+   [
+    "Blooming",
+    "ABB",
+    6,
+    1
+   ],
+   [
+    "GV San Jos\u00e9",
+    "Nacional Potos\u00ed",
+    0,
     3
    ],
    [
-    "Universitario de Vinto",
-    "ABB",
+    "The Strongest",
+    "Real Oruro",
     5,
-    2
+    0
    ],
    [
-    "Universitario de Vinto",
-    "Aurora",
-    1,
-    2
-   ],
-   [
-    "Universitario de Vinto",
-    "Blooming",
-    1,
-    1
-   ],
-   [
-    "Universitario de Vinto",
-    "Bol\u00edvar",
-    3,
-    2
-   ],
-   [
-    "Universitario de Vinto",
+    "Always Ready",
     "Guabir\u00e1",
+    6,
+    0
+   ],
+   [
+    "Real Tomayapo",
+    "Bol\u00edvar",
     1,
-    1
+    2
    ],
    [
     "Universitario de Vinto",
@@ -20904,28 +20897,52 @@
     1
    ],
    [
-    "Universitario de Vinto",
-    "Nacional Potos\u00ed",
-    2,
-    0
+    "ABB",
+    "The Strongest",
+    1,
+    2
    ],
    [
-    "Universitario de Vinto",
+    "Real Oruro",
     "Real Potos\u00ed",
     0,
     2
    ],
    [
+    "Blooming",
     "Universitario de Vinto",
-    "Real Tomayapo",
-    0,
+    1,
     1
    ],
    [
-    "Universitario de Vinto",
-    "The Strongest",
-    1,
+    "Guabir\u00e1",
+    "Aurora",
+    3,
+    1
+   ],
+   [
+    "Nacional Potos\u00ed",
+    "Always Ready",
+    0,
+    4
+   ],
+   [
+    "Bol\u00edvar",
+    "GV San Jos\u00e9",
+    4,
     2
+   ],
+   [
+    "Real Tomayapo",
+    "Oriente Petrolero",
+    0,
+    2
+   ],
+   [
+    "Independiente Petrolero",
+    "San Antonio Bulo Bulo",
+    1,
+    3
    ]
   ],
   "refused_matrices": [],
@@ -22861,7 +22878,9 @@
    "agreed_pairs": 160,
    "disagreed_pairs": 0,
    "samples": [],
-   "count_delta": 0
-  }
+   "count_delta": 0,
+   "dated_is_superset": true
+  },
+  "rates_source": "dated rounds (superset of the grid)"
  }
 }
