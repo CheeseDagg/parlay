@@ -1,5 +1,10 @@
-socpatterns: 250 live records across five leagues
+socpatterns: 332 live records across five leagues
   Bolívar                won in 9 of last 10 (8 in a row)                       Bolivia Profesional
+  Sport Boys             kept a clean sheet 9 of 14 at home, 3 of 13 away       Peru Liga 1
+  Deportivo Garcilaso    won 11 of 14 at home, 3 of 13 away                     Peru Liga 1
+  Alianza Lima           won 10 of 13 at home, 5 of 13 away                     Peru Liga 1
+  Blooming               avoided defeat 11 of 11 at home, 4 of 9 away           Bolivia Profesional
+  Liverpool              kept a clean sheet 9 of 14 at home, 5 of 16 away       Uruguay Primera
   Colo-Colo              avoided defeat in all of the last 10 — 14 in a row     Chile Liga de Primer
   Real Potosí            under 2.5 in 8 of last 10                              Bolivia Profesional
   Montevideo City Torque won in 8 of last 10                                    Uruguay Primera
@@ -8,16 +13,11 @@ socpatterns: 250 live records across five leagues
   Deportivo Maldonado    no both-teams-score in 9 of last 10 (7 in a row)       Uruguay Primera
   Albion                 failed to win in all of the last 10 — 11 in a row      Uruguay Primera
   Danubio                failed to win in all of the last 10 — 17 in a row      Uruguay Primera
+  Sport Boys             avoided defeat 13 of 14 at home, 5 of 13 away          Peru Liga 1
+  Peñarol                kept a clean sheet 2 of 16 at home, 8 of 13 away       Uruguay Primera
   Atlético Bucaramanga   avoided defeat in all of the last 10                   Colombia Primera A
+  Huachipato             went over 2.5 10 of 11 at home, 4 of 11 away           Chile Liga de Primer
+  Alianza Atlético       avoided defeat 12 of 13 at home, 6 of 14 away          Peru Liga 1
+  Atlético Nacional      kept a clean sheet 7 of 12 at home, 2 of 16 away       Colombia Primera A
   FC Cajamarca           over 2.5 in 9 of last 10 (7 in a row)                  Peru Liga 1
-  Liverpool              kept a clean sheet in all 3 meetings with Boston River Uruguay Primera
-  Racing                 kept a clean sheet in all 3 meetings with Liverpool    Uruguay Primera
-  Deportivo Maldonado    under 2.5 in 9 of last 10 (7 in a row)                 Uruguay Primera
-  Sport Boys             under 2.5 in 8 of last 10                              Peru Liga 1
-  Albion                 conceded in all of the last 10 — 14 in a row           Uruguay Primera
-  Universidad de Chile   scored in all of the last 10 — 11 in a row             Chile Liga de Primer
-  Águilas Doradas        conceded in all of the last 10 — 16 in a row           Colombia Primera A
-  Huachipato             failed to win in 9 of last 10                          Chile Liga de Primer
-  Universidad de Concepc failed to win in 9 of last 10                          Chile Liga de Primer
-  Unión La Calera        failed to win in 9 of last 10                          Chile Liga de Primer
-  América de Cali        takes 1.09 more points per game at home (2.40 home vs  Colombia Primera A
+  Deportes Tolima        won 10 of 16 at home, 3 of 14 away                     Colombia Primera A
