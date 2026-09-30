@@ -100,12 +100,55 @@ def _calib(name):
             'under': b.get('under'), 'src': 'sococalib'}
 
 
+# socextra: leagues football-data.co.uk does not publish at all (Colombia,
+# Peru and whatever else Wikipedia's results matrices yield). Kept as its own
+# source and its own lookup so the provenance never blurs -- these rows are
+# read off a season grid, not off closing odds, so they carry no de-vigged
+# market and MUST NOT be compared against sococalib rows as if they were.
+EXTRA = {
+    "soccer_colombia_primera_a": "Colombia Primera A",
+    "soccer_peru_liga_1":        "Peru Liga 1",
+}
+
+
+def _extra(name):
+    try:
+        with open(os.path.join(HERE, 'socextra.json')) as fh:
+            d = json.load(fh)
+    except Exception:
+        return None
+    v = d.get(name)
+    if not v or not v.get('rates'):
+        return None
+    r = dict(v['rates'])
+    r['src'] = 'socextra'
+    return r
+
+
+def extra_splits(name):
+    """(home, away, h2h) for a socextra league, or None. The two signals a
+    dateless results grid can honestly support -- never form."""
+    try:
+        with open(os.path.join(HERE, 'socextra.json')) as fh:
+            d = json.load(fh)
+    except Exception:
+        return None
+    v = d.get(name)
+    return v.get('splits') if v else None
+
+
 def rates(key):
     """(league_name, dict, note) or (None, None, why) if nothing fits."""
     if key in CALIB:
         r = _calib(CALIB[key])
         if r:
             return CALIB[key], r, None
+    if key in EXTRA:
+        r = _extra(EXTRA[key])
+        if r:
+            return EXTRA[key], r, (
+                'socextra: measured off Wikipedia season grids, NOT closing '
+                'odds -- no de-vig, and no form is available for this league')
     if key == 'soccer_concacaf_leagues_cup':
         a, b = _calib('USA MLS'), _calib('Mexico Liga MX')
         if a and b:
