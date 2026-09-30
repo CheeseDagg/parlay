@@ -127,90 +127,24 @@ def looks_like_fixtures(rows):
     return ("date" in h) and any(k in h for k in ("score", "result", "home", "away"))
 
 
-API_EN = "https://en.wikipedia.org/w/api.php"
-API_ES = "https://es.wikipedia.org/w/api.php"
+URU = "https://es.wikipedia.org/wiki/Campeonato_Uruguayo_de_Primera_Divisi%C3%B3n_2026"
 
+print("=== ROUND 8: why Uruguay's page yields no matrix ===")
+try:
+    html = get(URU)
+except Exception as e:
+    print("  FETCH FAIL", type(e).__name__)
+    raise SystemExit(0)
 
-def api(base, **kw):
-    import json as _j, urllib.parse
-    kw.setdefault("format", "json")
-    url = base + "?" + urllib.parse.urlencode(kw)
-    return _j.loads(get(url, timeout=25))
-
-
-def fulltext(base, q, n=8):
-    """action=query&list=search -- real full-text search. opensearch ranked
-    2012 above 2026 for these leagues, which is how round 6 nearly graded a
-    2026 slate against a fourteen-year-old season."""
-    try:
-        r = api(base, action="query", list="search", srsearch=q, srlimit=n)
-        return [h["title"] for h in r["query"]["search"]]
-    except Exception as e:
-        return [f"<{type(e).__name__}>"]
-
-
-def links_2026(base, title):
-    """Every outgoing link on a league's parent article that names 2026."""
-    try:
-        r = api(base, action="parse", page=title, prop="links")
-        return [l["*"] for l in r["parse"]["links"]
-                if "2026" in l["*"] and l.get("exists") is not None]
-    except Exception:
-        return []
-
-
-print("=== ROUND 7: CHILE + URUGUAY, EN AND ES ===")
-QUERIES = {
-    "Chile":   [(API_EN, "2026 Chilean Primera Division"),
-                (API_ES, "Campeonato Nacional 2026 Chile"),
-                (API_ES, "Primera Division de Chile 2026")],
-    "Uruguay": [(API_EN, "2026 Uruguayan Primera Division"),
-                (API_ES, "Campeonato Uruguayo 2026"),
-                (API_ES, "Primera Division de Uruguay 2026")],
-    "Bolivia": [(API_ES, "Division de Futbol Profesional 2026"),
-                (API_EN, "2026 Bolivian Primera Division")],
-}
-for country, qs in QUERIES.items():
-    print(f"\n-- {country}")
-    for base, q in qs:
-        wiki = "en" if base is API_EN else "es"
-        print(f"   [{wiki}] {q!r}")
-        for t in fulltext(base, q)[:6]:
-            print(f"        {t}")
-
-print("\n=== PARENT-ARTICLE 2026 LINKS ===")
-for base, page in ((API_ES, "Primera Divisi\u00f3n de Chile"),
-                   (API_ES, "Primera Divisi\u00f3n de Uruguay"),
-                   (API_EN, "Chilean Primera Divisi\u00f3n"),
-                   (API_EN, "Uruguayan Primera Divisi\u00f3n")):
-    wiki = "en" if base is API_EN else "es"
-    ls = links_2026(base, page)
-    print(f"  [{wiki}] {page}: {ls[:10] if ls else 'none'}")
-
-print("\n=== DATED FIXTURE TABLES? (what Recent Form needs) ===")
-# A results MATRIX has no dates. Do these pages carry a per-round fixture
-# list with a date column anywhere? Check the leagues we already parse.
-DATE_RE = re.compile(r"(date|fecha)", re.I)
-for wiki, slug in (("en", "2026_Categor%C3%ADa_Primera_A_season"),
-                   ("es", "Categor%C3%ADa_Primera_A_2026"),
-                   ("en", "2026_Liga_1_(Peru)"),
-                   ("es", "Liga_1_2026")):
-    try:
-        html = get(f"https://{wiki}.wikipedia.org/wiki/{slug}")
-    except Exception as e:
-        print(f"  [{wiki}] {slug}: {type(e).__name__}")
+p = Tables(); p.feed(html)
+print(f"  {len(p.out)} wikitables on the page\n")
+SC = re.compile(r"^\d{1,2}\s*[-\u2013\u2014]\s*\d{1,2}$")
+for h, t in p.out:
+    if not t or not t[0]:
         continue
-    p = Tables(); p.feed(html)
-    hits = 0
-    for h, t in p.out:
-        if not t or not t[0]:
-            continue
-        hdr = " | ".join(t[0])
-        if DATE_RE.search(hdr) and len(t) > 6:
-            hits += 1
-            print(f"  [{wiki}] {slug}")
-            print(f"        DATED TABLE [{h[:28]}] {len(t)} rows :: {hdr[:90]}")
-            for row in t[1:3]:
-                print(f"          {' | '.join(c[:20] for c in row[:7])}")
-    if not hits:
-        print(f"  [{wiki}] {slug}: no dated table (matrix only)")
+    n = sum(1 for r in t for c in r if SC.match(c.strip()))
+    corner = t[0][0][:30]
+    print(f"  [{(h or '?')[:32]:32}] {len(t):3}x{len(t[0]):3} scorecells={n:4} corner={corner!r}")
+    if n >= 10:
+        for row in t[:4]:
+            print(f"        {' | '.join(c[:16] for c in row[:10])}")

@@ -108,6 +108,8 @@ def _calib(name):
 EXTRA = {
     "soccer_colombia_primera_a": "Colombia Primera A",
     "soccer_peru_liga_1":        "Peru Liga 1",
+    "soccer_chile_campeonato":   "Chile Liga de Primera",
+    "soccer_bolivia_primera":    "Bolivia Profesional",
 }
 
 
