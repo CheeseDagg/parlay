@@ -300,73 +300,94 @@ def selftest():
     return 0 if ok[0] == ok[1] else 1
 
 
-ROUTE = 'https://understat.com/main/getPlayerMatches/'
+# ESPN'S BOX SCORES. Ryan's question -- "you can't look at box scores?" -- is
+# the right axis and I had the wrong one. Every source I probed was indexed BY
+# PLAYER: fbref player pages, understat's getPlayerMatches, sofascore, fotmob.
+# All rejected, and the rejection is recorded in socplayers.py so nobody
+# re-walks it, which I then re-walked three times.
+#
+# A box score is indexed BY MATCH. Walk the fixtures, read who scored in each,
+# and the player histories fall out of the pile. It is the same shape
+# openfootball already provides for one season -- there is just no reason the
+# only source of that shape has to be openfootball.
+#
+# nethunt.py already establishes that site.api.espn.com answers from the runner
+# and that its scoreboard parses as JSON with an `events` list. What it never
+# asked is whether the SUMMARY endpoint carries scorers. That is this probe.
+ESPN = 'https://site.api.espn.com/apis/site/v2/sports/soccer/{lg}/{path}'
+ESPN_LEAGUES = {'eng.1': 'England Premier League', 'esp.1': 'Spain La Liga',
+                'ger.1': 'Germany Bundesliga', 'ita.1': 'Italy Serie A'}
+
+
+def espn(lg, path, **q):
+    url = ESPN.format(lg=lg, path=path)
+    if q:
+        url += '?' + urllib.parse.urlencode(q)
+    return json.loads(http(url, referer='https://www.espn.com/'))
 
 
 def probe():
-    """READ THE PAGE'S OWN JAVASCRIPT. Stop guessing the call.
-
-    Where this stands, all of it measured on the runner rather than assumed:
-
-      - understat player pages carry NO embedded JSON. 19KB, correct title,
-        `blocks present: []`. The old matchesData shape is gone.
-      - Of thirteen candidate /main/ routes, exactly one is not a 404:
-        getPlayerMatches. getPlayersStats (the control) works throughout, so
-        the 404s are about those routes and not about the session.
-      - getPlayerMatches answers {"response":{"success":true,"matches":[]}} --
-        42 bytes, success TRUE, zero rows -- for all eight parameter shapes
-        tried, including int and string ids, with and without season and
-        league.
-
-    A route that reports success and returns nothing for every guess is not
-    going to yield to a ninth guess. The page itself makes some call to fill
-    its match table, so this reads the page's scripts and prints every place
-    they mention /main/ or getPlayer, with context. If the call lives in a
-    bundle, the bundle is fetched and searched too.
-    """
-    pid = '8260'
-    page = http(PLAYER.format(pid=pid), referer='https://understat.com/')
-    print(f'player page {pid}: {len(page)} bytes')
-
-    srcs = re.findall(r'<script[^>]+src=["\']([^"\']+)["\']', page)
-    print(f'script files referenced: {srcs}\n')
-
-    def scan(label, text):
-        hits = 0
-        for m in re.finditer(r'(getPlayer\w*|/main/[A-Za-z]+|ajax|\$\.post)', text):
-            i = m.start()
-            frag = re.sub(r'\s+', ' ', text[max(0, i - 180):i + 260])
-            print(f'  [{label}] ...{frag}...')
-            hits += 1
-            if hits >= 6:
-                break
-        if not hits:
-            print(f'  [{label}] no /main/, getPlayer*, ajax or $.post reference')
-        return hits
-
-    inline = ' '.join(re.findall(r'<script[^>]*>(.*?)</script>', page, re.S))
-    print(f'inline script bytes: {len(inline)}')
-    scan('inline', inline)
-
-    for src in srcs[:6]:
-        url = src if src.startswith('http') else 'https://understat.com/' + src.lstrip('/')
+    """Does ESPN's summary endpoint name the scorers, and how far back?"""
+    lg = 'eng.1'
+    # A date in the middle of last season, so the fixtures are finished.
+    for dates in ('20260214-20260216', '20250214-20250216', '20230214-20230216',
+                  '20190214-20190216'):
         try:
-            js = http(url, referer=PLAYER.format(pid=pid), timeout=25)
+            d = espn(lg, 'scoreboard', dates=dates)
         except Exception as e:
-            print(f'\n  {src}: FETCH FAILED {type(e).__name__}')
+            print(f'  scoreboard {dates}: ERR {type(e).__name__} '
+                  f'{getattr(e, "code", "")}')
             continue
-        print(f'\n  {src}: {len(js)} bytes')
-        scan(src.split('/')[-1], js)
+        evs = d.get('events') or []
+        print(f'  scoreboard {dates}: {len(evs)} events')
+        for e in evs[:2]:
+            print(f"      {e.get('id')}  {e.get('date','')[:10]}  {e.get('name')}")
+    print()
 
-    # And one more request shape: the referer set to the player's OWN page,
-    # in case the route keys off it rather than off a parameter.
-    for ref in ('https://understat.com/', PLAYER.format(pid=pid)):
-        try:
-            txt = http(ROUTE, post=urllib.parse.urlencode({'player_id': pid}).encode(),
-                       referer=ref, timeout=25)
-            print(f'\n  getPlayerMatches with referer {ref}: {txt[:120]!r}')
-        except Exception as e:
-            print(f'\n  getPlayerMatches with referer {ref}: ERR {type(e).__name__}')
+    d = espn(lg, 'scoreboard', dates='20260214-20260216')
+    evs = d.get('events') or []
+    if not evs:
+        print('no events to summarise -- stopping')
+        return 1
+    eid = evs[0].get('id')
+    try:
+        sm = espn(lg, 'summary', event=eid)
+    except Exception as e:
+        print(f'summary {eid}: ERR {type(e).__name__} {getattr(e, "code", "")}')
+        return 1
+    print(f'summary {eid}: top-level keys {sorted(sm.keys())}')
+
+    # Which of these carries "who scored"? Report each candidate's shape.
+    for k in ('scoringPlays', 'keyEvents', 'plays', 'boxscore', 'rosters',
+              'header', 'commentary'):
+        v = sm.get(k)
+        if v is None:
+            continue
+        if isinstance(v, list):
+            print(f'  {k}: [{len(v)}]' + (f' first keys {sorted(v[0].keys())[:12]}'
+                                          if v and isinstance(v[0], dict) else ''))
+        elif isinstance(v, dict):
+            print(f'  {k}: {{{",".join(sorted(v.keys())[:10])}}}')
+
+    for sp in (sm.get('scoringPlays') or [])[:4]:
+        who = (sp.get('athletesInvolved') or [{}])
+        print(f"    scoringPlay: {sp.get('clock', {}).get('displayValue')} "
+              f"{(sp.get('team') or {}).get('displayName')} "
+              f"{[a.get('displayName') for a in who]} "
+              f"type={(sp.get('type') or {}).get('text')}")
+
+    ros = sm.get('rosters') or []
+    if ros:
+        print(f'  rosters: {len(ros)} teams')
+        t0 = ros[0]
+        print(f"    team {(t0.get('team') or {}).get('displayName')} "
+              f"keys {sorted(t0.keys())}")
+        pl = (t0.get('roster') or [])[:1]
+        if pl:
+            print(f'    a roster entry: {sorted(pl[0].keys())[:14]}')
+            st = pl[0].get('stats')
+            if isinstance(st, list) and st:
+                print(f'      stats sample: {st[:6]}')
     return 0
 
 
