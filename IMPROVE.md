@@ -33,6 +33,54 @@ with no measurable payoff written next to it does not belong on this list.
    then there is nothing to fit.
 
 ## DONE (the number that justified it)
+- **Five leagues football-data does not publish, and six of eight signals**
+  (2026-09-30). An international break emptied the big-5 and the live slate
+  was Colombia, Peru, Chile, Bolivia, Uruguay, El Salvador and USL --
+  socbase priced NONE of them, because sococalib and socform are both fed by
+  football-data.co.uk, whose entire country list stops at ARG/AUT/BRA/CHN/
+  DNK/FIN/IRL/JPN/MEX/NOR/POL/ROU/RUS/SWE/SWZ/USA. Not thin data: no data.
+  Wikipedia publishes those seasons twice -- an undated results GRID and
+  dated Spanish ROUND tables -- and socextra now reads both. **1,120 matches
+  across five leagues**, all five building from the dated reader.
+  socsignals renders Ryan's six signals: Home/Away Splits, Head to Head and
+  Opponent Rank off the results; Recent Form off the dated rounds behind a
+  45-day staleness gate; Injury Impact and Starter stay dark and name the
+  action that resolves them. Every dark row prints its reason -- a card with
+  two invented rows is worse than one with two honest blanks.
+  Six bugs caught, four of them the silent kind:
+    * ROWSPAN. One date cell spans every match played that day, so rows 2..N
+      arrived a cell short and lost their date. Half of every league's
+      results were "scored but undated", and it was producing WRONG form,
+      not less: U de Chile read WLWWD off the holey subset and WWLLW off the
+      complete one, same newest date, no warning between them.
+    * HEADER ROW. These tables open with a one-cell title ('Fecha 1'), so
+      reading row 0 as the header matched no columns and skipped every table
+      while reporting "no dated rows" -- a parser bug wearing the costume of
+      an absent source.
+    * STALE FORM. Colombia's season page stops dating at 2026-05-12. Without
+      the gate, September's card would have shown 159-day-old results
+      labelled Recent Form: not a missing signal, a wrong one.
+    * A REVERSED SCORELINE. The cross-check found the grid saying Cajamarca
+      2-1 Cusco and the rounds saying 1-2. RPP, dsn.pe and the FIFA match
+      centre all record Cusco winning 2-1 away on 2026-09-19 -- the rounds
+      were right, and the guard was REJECTING the correct reader for
+      disagreeing with the wrong one. Policy inverted: per-fixture rows with
+      dates beat a hand-maintained summary cell.
+    * SPLIT CLUB. Bolivia writes 'Bolivar' and 'Bolívar', splitting one club
+      into two half-records. socsignals surfaced it by REFUSING the ambiguous
+      lookup instead of picking one.
+    * A NO-OP PATCH OF MINE. A str.replace anchor carried a trailing space
+      the file did not have, matched nothing, and shipped under a commit
+      message describing a fix that was not in the file.
+  Measured leftovers: Colombia 90% / Peru 95% / Chile 100% / Bolivia 100%
+  name coverage between the two readers, 598+ scorelines agreeing.
+  REFUSED, with reasons: Uruguay has no grid anywhere (nine tables, zero
+  score cells) so it is dated-only; USL's sole results table is a malformed
+  51x1 that fails the diagonal guard; El Salvador has no 2026 page. Recent
+  Form for Colombia is live via the per-TOURNAMENT pages, not the season page.
+  NEXT: Injury Impact and Starter need a lineup source, or stay a per-fixture
+  team-news sweep on request.
+
 - Eight leagues join the measured universe (the Segunda lesson): Ryan's LIVE
   25-leg slip carried five legs no table could price. Segunda, Serie B,
   League One, League Two, Bundesliga 2, Ligue 2, Turkey, Greece -- 22,023
