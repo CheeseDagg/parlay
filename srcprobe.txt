@@ -1,36 +1,9 @@
-=== ROUND 13: does any reachable source carry PER-PLAYER PER-MATCH? ===
--- openfootball england: do the match lines carry goal scorers?
-  OK       51,782b  openfootball england 2025-26  
-     1057 non-blank lines; first 14:
-       = England | Premier League 2025/26
-       # Dates    Fri Aug 15 2025 - Sun May 24 2026 (282d)
-       # Teams    20
-       # Matches  380
-       ▪ Regular Season - 1
-       Fri Aug 15 2025
-         19:00   Liverpool  4-2 (1-0)  Bournemouth   
-                         (Hugo EKITIKE 37', Cody GAKPO 49', Federico Chiesa 88', MOHAMED SALAH 90+4';
-                          Antoine SEMENYO 64', 76')
-       Sat Aug 16
-         12:30   Aston Villa  0-0 (0-0)  Newcastle United   
-         14:00   Sunderland  3-0 (0-0)  West Ham United   
-                         (Eliezer Mayenda 61', Daniel BALLARD 73', Wilson Isidor 90+2')
-         15:00   Brighton & Hove Albion  1-1 (0-0)  Fulham   
-     lines containing a minute marker (goal events): 519
-       GOAL?                   (Hugo EKITIKE 37', Cody GAKPO 49', Federico Chiesa 88', MOHAMED SALAH 90+4';
-       GOAL?                    Antoine SEMENYO 64', 76')
-       GOAL?                   (Eliezer Mayenda 61', Daniel BALLARD 73', Wilson Isidor 90+2')
-       GOAL?                   (Matt ORILEY 55'(p); RODRIGO MUNIZ 90+7')
+=== ROUND 14: can understat give CURRENT-season per-player per-match? ===
+openfootball's 2026-27 file carries results but ZERO goal events (0 minute
+markers); its scorers stop with 2025-26, which ended 2026-05-24.
 
--- understat: what is IN getPlayersStats, season totals or per-match?
-  OK       28,386b  understat getPlayersStats  
-     not json: b"\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03\xe5\xbdkw\x1cG\x92%\xf8W\xf2p\xcf\xd9O-\x1c\x7f?f?\xf1!QE\x89\x92F\xe4TM\xf5\xee\x9e>A \x04\x84\x90\xc8P'\x90TAs\xe6\xbf\xcf\xbd\x91T\xd1=\xdd=\x90\x01%K\x9c\xdd\xae\xeejU!%:,\xdd\xcd\xae\x99]\xbb\xf6?\x9e\xdc\xee\xce\xcf\xfb\xdb\xdb'\xff\xe5n\xbb\xeb\xff\xed\xc9/\xeb\xee\xbe\xdf\xe2?\xfe\xdf\xff\xe3\xc9p\xf1\xe4\xbf<\t\xca\x89'\xbf\xff\xf7\xff\xb1\xe9nz\xfc\x97_n\xd7\xc3\xe6r\xf5u\xd7\xad\xbb\xcd\x05~|\x89\xff\x1e\x7f\xd3\x13\x8b\xbf\xbe\x1b\xa6\xcf\x18\xcb\xbf\xefr\xec\xd6\xbf\xff\xe0\x1f/\xf9_\x9fy"
-
--- understat PLAYER page: does it carry a per-match log?
-  OK       20,730b  understat player 1250  
-     matchesData: absent
-     groupsData: absent
-     shotsData: absent
-
--- understat MATCH page: does it carry the rosters?
-  FAIL  HTTPError 404  understat match 26000  
+  OK       18,698b  understat EPL 2026 league page  
+     decoded 18,698 chars
+     datesData: absent
+     playersData: absent
+     teamsData: absent
