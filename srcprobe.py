@@ -155,58 +155,60 @@ def probe(url, label, post=None, referer=None, note=''):
         return None
 
 
-print("=== ROUND 13: does any reachable source carry PER-PLAYER PER-MATCH? ===")
+import gzip as _gz
 
-print("-- openfootball england: do the match lines carry goal scorers?")
-b = probe("https://raw.githubusercontent.com/openfootball/england/master/2025-26/1-premierleague.txt",
-          "openfootball england 2025-26")
-if b:
-    txt = b.decode('utf-8', 'replace')
-    lines = [l for l in txt.splitlines() if l.strip()]
-    print(f"     {len(lines)} non-blank lines; first 14:")
-    for l in lines[:14]:
-        print("       " + l[:100])
-    import re as _re
-    scorer = [l for l in lines if _re.search(r"\d{1,3}'", l)]
-    print(f"     lines containing a minute marker (goal events): {len(scorer)}")
-    for l in scorer[:4]:
-        print("       GOAL? " + l[:100])
 
-print()
-print("-- understat: what is IN getPlayersStats, season totals or per-match?")
-b = probe("https://understat.com/main/getPlayersStats/", "understat getPlayersStats",
-          post=urllib.parse.urlencode({"league": "EPL", "season": "2026"}).encode(),
-          referer="https://understat.com/league/EPL/2026")
-if b:
-    import json as _j
+def body_text(b):
+    if b[:2] == b'\x1f\x8b':
+        b = _gz.decompress(b)
+    return b.decode('utf-8', 'replace')
+
+
+print("=== ROUND 14: can understat give CURRENT-season per-player per-match? ===")
+print("openfootball's 2026-27 file carries results but ZERO goal events (0 minute")
+print("markers); its scorers stop with 2025-26, which ended 2026-05-24.\n")
+
+b = probe("https://understat.com/league/EPL/2026", "understat EPL 2026 league page")
+if not b:
+    raise SystemExit(0)
+t = body_text(b)
+print(f"     decoded {len(t):,} chars")
+for key in ('datesData', 'playersData', 'teamsData'):
+    i = t.find(key)
+    print(f"     {key}: {'FOUND' if i > 0 else 'absent'}")
+
+import re as _re, json as _j
+m = _re.search(r"datesData\s*=\s*JSON\.parse\('([^']+)'\)", t)
+ids = []
+if m:
+    raw = m.group(1).encode().decode('unicode_escape')
     try:
-        d = _j.loads(b.decode('utf-8', 'replace'))
-        rows = d.get('response', {}).get('players') or d
-        print("     top keys:", list(d)[:6] if isinstance(d, dict) else type(d).__name__)
-        if isinstance(rows, list) and rows:
-            print("     sample player:", _j.dumps(rows[0])[:320])
-            print(f"     {len(rows)} players")
+        games = _j.loads(raw)
+        played = [g for g in games if g.get('isResult')]
+        ids = [g['id'] for g in played][-3:]
+        print(f"     datesData parsed: {len(games)} fixtures, {len(played)} played")
+        if played:
+            g = played[-1]
+            print(f"     newest played: id={g['id']} {g['datetime'][:10]} "
+                  f"{g['h']['title']} {g['goals']['h']}-{g['goals']['a']} {g['a']['title']}")
     except Exception as e:
-        print("     not json:", b[:180])
+        print("     datesData parse failed:", type(e).__name__)
 
-print()
-print("-- understat PLAYER page: does it carry a per-match log?")
-b = probe("https://understat.com/player/1250", "understat player 1250")
-if b:
-    t = b.decode('utf-8', 'replace')
-    for key in ('matchesData', 'groupsData', 'shotsData'):
-        i = t.find(key)
-        print(f"     {key}: {'FOUND at %d' % i if i > 0 else 'absent'}")
-        if i > 0:
-            print("       " + t[i:i+200])
-
-print()
-print("-- understat MATCH page: does it carry the rosters?")
-b = probe("https://understat.com/match/26000", "understat match 26000")
-if b:
-    t = b.decode('utf-8', 'replace')
-    for key in ('rostersData', 'shotsData', 'match_info'):
-        i = t.find(key)
-        print(f"     {key}: {'FOUND' if i > 0 else 'absent'}")
-        if i > 0:
-            print("       " + t[i:i+200])
+for mid in ids[-1:]:
+    mb = probe(f"https://understat.com/match/{mid}", f"understat match {mid}")
+    if not mb:
+        continue
+    mt = body_text(mb)
+    i = mt.find('rostersData')
+    print(f"     rostersData: {'FOUND' if i > 0 else 'absent'}")
+    if i > 0:
+        mm = _re.search(r"rostersData\s*=\s*JSON\.parse\('([^']+)'\)", mt)
+        if mm:
+            r = _j.loads(mm.group(1).encode().decode('unicode_escape'))
+            side = r.get('h') or {}
+            pl = list(side.values())[:3]
+            print(f"     home roster: {len(side)} players; sample fields: "
+                  f"{sorted(pl[0])[:12] if pl else 'none'}")
+            for p in pl:
+                print(f"       {p.get('player')}: goals={p.get('goals')} "
+                      f"time={p.get('time')} position={p.get('position')}")
