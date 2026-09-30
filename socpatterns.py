@@ -51,7 +51,6 @@ OUT = os.path.join(HERE, 'socpatterns.json')
 MIN_RUN = 3          # below this, nothing is remarkable
 GOAL_LINE = 2.5
 MIN_SIDE = 4         # matches needed on each side before a split is a split
-SPLIT_GAP = 1.00     # points-per-game gap that makes a home/away split notable
 
 
 def timeline(dated):
@@ -72,11 +71,6 @@ def run_of(rows, pred):
         else:
             break
     return n
-
-
-def ppg(rows):
-    pts = sum(3 if gf > ga else (1 if gf == ga else 0) for _d, gf, ga, _o, _s in rows)
-    return pts / len(rows) if rows else 0.0
 
 
 def league_rates(dated):
@@ -238,17 +232,45 @@ def scan_league(league, entry, today=None):
 
         hm = [r for r in rows if r[4] == 'H']
         aw = [r for r in rows if r[4] == 'A']
-        chances += 1
         if len(hm) >= MIN_SIDE and len(aw) >= MIN_SIDE:
-            gap = ppg(hm) - ppg(aw)
-            if abs(gap) >= SPLIT_GAP:
-                strong = 'at home' if gap > 0 else 'away'
+            # COUNTS, NOT A POINTS-PER-GAME DIFFERENTIAL. This block used to emit
+            # "takes 1.09 more points per game at home (2.40 home vs 1.31 away)"
+            # and that is a season average of a derived quantity -- it is not a
+            # count of anything, there is nothing in it to bet, and it reads as
+            # exactly the vague team stat the list is supposed to replace. The
+            # same split said as a count is "won 8 of 10 at home, 2 of 10 away",
+            # which is the same shape as every other sentence on the page.
+            # The base key is carried explicitly rather than derived from the
+            # signal key: BASE_KEY spells the win rate 'wins' -> 'win', so
+            # stripping a prefix would have looked up 'win' and silently found
+            # nothing, leaving the ranking with no base rate for the family.
+            for key, verb, pred, bkey in (
+                    ('split_win', 'won', lambda r: r[1] > r[2], 'win'),
+                    ('split_unbeaten', 'avoided defeat', lambda r: r[1] >= r[2], 'unbeaten'),
+                    ('split_scored', 'scored', lambda r: r[1] > 0, 'scored'),
+                    ('split_cs', 'kept a clean sheet', lambda r: r[2] == 0, 'cs'),
+                    ('split_over', f'went over {GOAL_LINE}',
+                     lambda r: r[1] + r[2] > GOAL_LINE, 'over')):
+                chances += 1
+                kh = sum(1 for r in hm if pred(r))
+                ka = sum(1 for r in aw if pred(r))
+                rh, ra = kh / len(hm), ka / len(aw)
+                hi, lo = max(rh, ra), min(rh, ra)
+                # A split is only a split when the two sides actually differ. An
+                # even record home and away is a fact about the club, not about
+                # venue, and it does not belong in a venue list.
+                if max(kh, ka) < 3 or not (lo == 0 or hi >= 2 * lo):
+                    continue
                 out.append({
-                    'league': league, 'club': club, 'category': 'Home/Away', 'key': 'split',
-                    'text': (f'takes {abs(gap):.2f} more points per game {strong} '
-                             f'({ppg(hm):.2f} home vs {ppg(aw):.2f} away)'),
-                    'hits': None, 'n': len(hm) + len(aw), 'streak': 0, '_p': None,
-                    'rate': None, 'gap': round(gap, 3), 'newest': rows[-1][0], 'evidence': []})
+                    'league': league, 'club': club, 'category': 'Home/Away', 'key': key,
+                    'text': (f'{verb} {kh} of {len(hm)} at home, '
+                             f'{ka} of {len(aw)} away'),
+                    'hits': max(kh, ka), 'n': len(hm) if rh >= ra else len(aw),
+                    'home_hits': kh, 'home_n': len(hm), 'away_hits': ka, 'away_n': len(aw),
+                    'streak': 0, '_p': base.get(bkey),
+                    'rate': round(hi, 3), 'newest': rows[-1][0],
+                    'evidence': [{'date': d, 'gf': gf, 'ga': ga, 'opp': o, 'side': sd}
+                                 for d, gf, ga, o, sd in rows[-6:]][::-1]})
 
     # ---- head to head. Opponent-specific and asked for by name, so these are
     # kept on a CLEAN record alone -- but a 2-meeting record is thin and the
@@ -292,20 +314,6 @@ def scan_league(league, entry, today=None):
                     'evidence': [{'date': d, 'gf': gf, 'ga': ga, 'opp': opp, 'side': ''}
                                  for d, gf, ga in rows][::-1][:6]})
     return out, chances, stale
-
-
-def expected(rows, chances):
-    """How many runs this rare we'd EXPECT from chance alone, given how many
-    club-and-pattern combinations were examined. Without this the longest run
-    in a large sample always looks like a discovery."""
-    for r in rows:
-        if r.get('one_in'):
-            r['expected_by_chance'] = round(chances / r['one_in'], 2)
-            r['notable'] = r['expected_by_chance'] < 1.0
-        else:
-            r['expected_by_chance'] = None
-            r['notable'] = abs(r.get('gap') or 0) >= SPLIT_GAP
-    return rows
 
 
 def build(doc, today=None):
@@ -411,6 +419,35 @@ def selftest():
         'and two MEETINGS is not enough either -- it reads as a pattern and is not one')
 
     chk(build({})['patterns'] == [], 'an empty source yields nothing, not a crash')
+    # ------------------------------------------------- home/away reads as counts
+    # "takes 1.09 more points per game at home (2.40 home vs 1.31 away)" was the
+    # old sentence: a season average of a derived quantity, with nothing in it to
+    # count and nothing to bet. Ryan's words for the whole category were "still
+    # just vague team stats", and he was right.
+    ha = []
+    for i in range(10):
+        ha.append([f'2026-06-{i + 1:02d}', 'Cats', f'H{i}', 2, 0])      # wins every home
+    for i in range(10):
+        ha.append([f'2026-06-{i + 11:02d}', f'A{i}', 'Cats', 2, 0])     # loses every away
+    hres = build({'L': {'dated': ha}}, today=dt.date(2026, 6, 25))
+    hrows = [r for r in hres['patterns'] if r['category'] == 'Home/Away']
+    chk(hrows, 'a club with a real venue split still produces Home/Away rows')
+    chk(not any('points per game' in r['text'] for r in hres['patterns']),
+        'no row anywhere is a points-per-game differential')
+    chk(any(r['text'] == 'won 10 of 10 at home, 0 of 10 away' for r in hrows),
+        f'the split reads as counts on both sides: {[r["text"] for r in hrows][:3]}')
+    chk(all(r.get('home_n') and r.get('away_n') for r in hrows),
+        'and both denominators ride on the row as fields')
+    even = []
+    for i in range(10):
+        even.append([f'2026-06-{i + 1:02d}', 'Dogs', f'H{i}', 2, 0])
+    for i in range(10):
+        even.append([f'2026-06-{i + 11:02d}', f'A{i}', 'Dogs', 0, 2])   # wins every away too
+    erows = [r for r in build({'L': {'dated': even}}, today=dt.date(2026, 6, 25))['patterns']
+             if r['category'] == 'Home/Away']
+    chk(not erows,
+        'a club with the SAME record home and away has no venue split to report')
+
     # ------------------------------------------------------ the staleness gate
     # Peru's dated rounds stop in May for some clubs, and "conceded in all of
     # the last 10 -- 16 in a row" reached the page with its newest evidence 123
