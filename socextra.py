@@ -309,26 +309,27 @@ def form_table(dated, last=5):
 def cross_check(matrix, dated):
     """Two independent readers of the same season must agree.
 
-    The matrix grid and the Spanish round tables are parsed by different code
-    off different pages. If both produce a result for the same ordered pair
-    and the SCORES differ, one reader is wrong -- and a scoreline that is
-    wrong in a way that still looks well-formed is exactly the failure this
-    file's diagonal guard exists to prevent elsewhere. Report, never merge.
-    Returns (agreed, disagreed, [samples]).
+    Compared as MULTISETS per ordered pair, not single values. Colombia and
+    Peru play Apertura AND Finalizacion, so the same pair meets twice at the
+    same ground with different scores -- Santa Fe beat America 4-0 in May and
+    drew 0-0 in August. A single-value check called that a reader conflict on
+    the first run; it is a split season, and the fix is to compare the whole
+    bag of scores for a pair rather than one of them.
+
+    Returns (agreed_pairs, disagreed_pairs, [samples]).
     """
-    mi = {}
+    from collections import defaultdict
+    mi, di = defaultdict(list), defaultdict(list)
     for h, a, hg, ag in matrix:
-        mi.setdefault((norm_team(h), norm_team(a)), (hg, ag))
-    agree = 0
-    bad = []
+        mi[(norm_team(h), norm_team(a))].append((hg, ag))
     for _d, h, a, hg, ag in dated:
-        k = (norm_team(h), norm_team(a))
-        if k not in mi:
-            continue
-        if mi[k] == (hg, ag):
+        di[(norm_team(h), norm_team(a))].append((hg, ag))
+    agree, bad = 0, []
+    for k in set(mi) & set(di):
+        if sorted(mi[k]) == sorted(di[k]):
             agree += 1
         else:
-            bad.append((h, a, mi[k], (hg, ag)))
+            bad.append((k[0], k[1], sorted(mi[k]), sorted(di[k])))
     return agree, len(bad), bad[:5]
 
 
@@ -439,15 +440,19 @@ def build(fetch=get):
             entry['form'] = form_table(all_dated)
             entry['es_pages'] = pages
             ag, dis, samples = cross_check(matches, all_dated)
-            entry['cross_check'] = {'agreed': ag, 'disagreed': dis, 'samples': samples}
+            delta = len(all_dated) - len(matches)
+            entry['cross_check'] = {'agreed_pairs': ag, 'disagreed_pairs': dis,
+                                    'samples': samples, 'count_delta': delta}
             if dis:
                 report.append(f'    !! {league}: {dis} scoreline(s) DISAGREE between the '
                               f'grid and the round tables (agreed {ag})')
                 for s in samples:
                     report.append(f'       {s[0]} v {s[1]}: grid {s[2]} vs rounds {s[3]}')
             else:
-                report.append(f'    cross-check {league}: {ag} scorelines agree '
-                              f'across both readers, 0 disagree')
+                report.append(f'    cross-check {league}: {ag} fixture pairs agree '
+                              f'across both readers, 0 disagree'
+                              + (f'; the round tables carry {delta:+d} result(s) vs the grid'
+                                 if delta else '; both readers see the same count'))
             newest = max(d[0] for d in all_dated)
             report.append(f'    es-rounds {league}: {len(all_dated)} dated results '
                           f'across {len(pages)} page(s), newest {newest}'
@@ -524,8 +529,19 @@ def selftest():
     a, d, _ = cross_check(mx, dtd)
     chk(a == 2 and d == 0, 'identical readings agree')
     a2, d2, s2 = cross_check(mx, [('2026-01-30', 'Alpha FC', 'Beta FC', 3, 1)])
-    chk(d2 == 1 and s2[0][2] == (2, 1) and s2[0][3] == (3, 1),
+    chk(d2 == 1 and s2[0][2] == [(2, 1)] and s2[0][3] == [(3, 1)],
         'a scoreline that differs between readers is REPORTED with both values')
+    # SPLIT SEASON: the same pair meets twice at the same ground. Both readers
+    # see both results, so this is agreement, not conflict.
+    a4, d4, _ = cross_check(
+        [('Santa Fe', 'America', 4, 0), ('Santa Fe', 'America', 0, 0)],
+        [('2026-05-12', 'Santa Fe', 'America', 4, 0),
+         ('2026-08-22', 'Santa Fe', 'America', 0, 0)])
+    chk(a4 == 1 and d4 == 0, 'a pair that meets twice with different scores AGREES')
+    a5, d5, _ = cross_check([('Santa Fe', 'America', 4, 0)],
+                            [('2026-05-12', 'Santa Fe', 'America', 4, 0),
+                             ('2026-08-22', 'Santa Fe', 'America', 0, 0)])
+    chk(d5 == 1, 'but a reader MISSING one of the two meetings is still caught')
     a3, d3, _ = cross_check(mx, [('2026-01-30', 'alpha fc', 'BETA FC', 2, 1)])
     chk(a3 == 1 and d3 == 0, 'the cross-check joins on normalised names, not exact case')
 

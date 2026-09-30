@@ -4,3 +4,4 @@
 2026-09-30T16:20Z round 4: header row fix
 2026-09-30T16:25Z round 5: rowspan + per-tournament pages
 2026-09-30T16:26Z round 6: cross-check both readers
+2026-09-30T16:28Z round 7: multiset cross-check
