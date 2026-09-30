@@ -52,6 +52,12 @@ OF_LEAGUES = {
 }
 OF_YEARS = ['2026-27', '2025-26']
 
+# The signal families this file produces, in the order a reader can use them.
+# main() builds the published document from this and NOTHING ELSE: it used to
+# name its keys one at a time, and adding splits to build() shipped a runner
+# job that computed 118 of them and wrote a file without them.
+FAMILIES = ('streaks', 'splits', 'rates')
+
 WINDOW = 6           # "of last 6" -- a player's recent run
 MIN_PLAYED = 4
 MAX_AGE_DAYS = 45    # a streak older than this is last season's, not form
@@ -870,13 +876,15 @@ Fri Aug 15 2025
     chk(not sp2, 'a two-from-two is never a head-to-head signal')
 
     # ------------------------------------------- every family reaches the file
-    import inspect
-    src = inspect.getsource(main)
     built = {k for k in build(of_fetch=lambda u: '= empty\n',
                               us_fetch=lambda slug: []) if k != 'report'}
-    chk(all(f"'{k}'" in src for k in built),
-        'every family build() returns is named in main() -- splits were computed '
-        'and then not written, because the publish step listed the keys by hand')
+    # Compare the SETS. The first version of this check grepped main()'s source
+    # for each family name and passed with splits removed from the tuple,
+    # because the word still appeared in the print loop below it -- a test that
+    # passed on the bug it was written for.
+    chk(set(FAMILIES) == built,
+        f'every family build() returns is published: FAMILIES={sorted(FAMILIES)} '
+        f'vs build={sorted(built)}')
 
     # ------------------------------------------------------------- not form
     chk(not any('last' in r['text'] for r in sp + sph),
@@ -897,7 +905,6 @@ def main():
     # splits to build() shipped a runner job that computed 118 of them and
     # wrote a file without them -- the publish step had its own idea of what
     # the document contains, and nothing compared the two.
-    FAMILIES = ('streaks', 'splits', 'rates')
     doc = {k: res[k] for k in FAMILIES}
     missing = [k for k in res if k != 'report' and k not in FAMILIES]
     if missing:
