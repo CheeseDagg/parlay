@@ -12,3 +12,4 @@
 2026-09-30T16:44Z round 12: grid_matches, for real this time
 2026-09-30T16:45Z round 13: furniture-stripped join
 2026-09-30T16:47Z round 14: the dated reader wins disagreements
+2026-09-30T16:48Z round 15: canonicalise club spellings

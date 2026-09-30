@@ -289,6 +289,36 @@ def read_rounds(tables, year):
     return out, undated
 
 
+def canonicalise(rows, idx):
+    """One spelling per club, before anything is keyed on the name.
+
+    Bolivia's pages write the same club as 'Bolivar' AND 'Bolívar', which
+    split it into two half-records: two form strings, two home/away splits,
+    and a head-to-head that could find neither. The most frequent raw
+    spelling wins; ties break alphabetically so a rebuild is deterministic.
+    Returns (rows, {canonical: [variants]}) and reports what it merged.
+    """
+    from collections import Counter, defaultdict
+    seen = defaultdict(Counter)
+    for r in rows:
+        for i in idx:
+            seen[norm_team(r[i])][r[i]] += 1
+    canon, merged = {}, {}
+    for key, names in seen.items():
+        best = sorted(names.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+        for nm in names:
+            canon[nm] = best
+        if len(names) > 1:
+            merged[best] = sorted(names)
+    out = []
+    for r in rows:
+        r = list(r)
+        for i in idx:
+            r[i] = canon.get(r[i], r[i])
+        out.append(tuple(r))
+    return out, merged
+
+
 def form_table(dated, last=5):
     """Per team: the last N results newest-first, from DATED rows only."""
     by = {}
@@ -483,6 +513,12 @@ def build(fetch=get):
             # A club can appear on both tournament pages; identical rows are
             # the same fixture listed twice, so dedupe on the whole tuple.
             all_dated = sorted(set(all_dated))
+            all_dated, merged_names = canonicalise(all_dated, (1, 2))
+            all_dated = sorted(set(all_dated))
+            if merged_names:
+                entry['merged_names'] = merged_names
+                for c, vs in merged_names.items():
+                    report.append(f'    merged spellings {league}: {vs} -> {c!r}')
             entry['dated'] = [list(d) for d in all_dated]
             entry['form'] = form_table(all_dated)
             entry['es_pages'] = pages
@@ -687,6 +723,17 @@ def selftest():
     chk(d[0] == ('2026-01-30', 'Alpha', 'Beta', 2, 1), f'row parses in full: {d[0]}')
     chk(parse_es_date('6 de febrero', 2026) == '2026-02-06', 'spanish date -> iso')
     chk(parse_es_date('sometime', 2026) is None, 'an unparseable date returns None, never a guess')
+
+    rows_v = [('2026-01-01', 'Bolivar', 'X', 1, 0), ('2026-02-01', 'Bolívar', 'Y', 2, 0),
+              ('2026-03-01', 'Bolivar', 'Z', 0, 1)]
+    cv, mg = canonicalise(rows_v, (1, 2))
+    chk(len({r[1] for r in cv}) == 1 and cv[0][1] == 'Bolivar',
+        'accent variants collapse to the most frequent spelling')
+    chk(mg == {'Bolivar': ['Bolivar', 'Bolívar']}, f'and the merge is reported: {mg}')
+    fv = form_table(cv)
+    chk(fv['Bolivar']['n'] == 3, 'the club now has ONE form record, not two half ones')
+    cv2, mg2 = canonicalise([('2026-01-01', 'A', 'B', 1, 0)], (1, 2))
+    chk(mg2 == {} and cv2[0][1] == 'A', 'clubs with one spelling are untouched')
 
     f = form_table([('2026-01-30', 'Alpha', 'Beta', 2, 1),
                     ('2026-02-06', 'Beta', 'Alpha', 3, 0),
