@@ -300,75 +300,74 @@ def selftest():
     return 0 if ok[0] == ok[1] else 1
 
 
-ROUTES = [
-    # (name, params built from the player/league, what it would give us)
-    ('getPlayersStats',      lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
-    ('getPlayerStats',       lambda ctx: {'player_id': ctx['pid']}),
-    ('getPlayerMatches',     lambda ctx: {'player_id': ctx['pid']}),
-    ('getPlayerMatchesStats', lambda ctx: {'player_id': ctx['pid']}),
-    ('getPlayerShots',       lambda ctx: {'player_id': ctx['pid']}),
-    ('getPlayerGroupsStats', lambda ctx: {'player_id': ctx['pid']}),
-    ('getPlayerSeasons',     lambda ctx: {'player_id': ctx['pid']}),
-    ('getMatchesStats',      lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
-    ('getLeagueMatches',     lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
-    ('getDatesData',         lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
-    ('getTeamsStats',        lambda ctx: {'league': ctx['league'], 'season': ctx['season']}),
-    ('getMatchShots',        lambda ctx: {'match_id': ctx.get('mid') or '0'}),
-    ('getMatchRosters',      lambda ctx: {'match_id': ctx.get('mid') or '0'}),
+# getPlayerMatches IS THE ROUTE. The sweep found it is the only non-404 under
+# /main/ besides the season-totals control, and it answers with exactly the right
+# shape -- {response: {success, matches: [...]}} -- but an EMPTY matches list for
+# the parameters first tried. A real route answering emptily is a parameter
+# problem, not a dead end, so this sweep varies the parameters instead of the
+# route. The body is 42 bytes when empty, so it is printed whole: `success`
+# tells a rejected request apart from an accepted one that genuinely has no rows.
+ROUTE = 'https://understat.com/main/getPlayerMatches/'
+PARAM_SETS = [
+    lambda c: {'player_id': c['pid']},
+    lambda c: {'player': c['pid']},
+    lambda c: {'id': c['pid']},
+    lambda c: {'player_id': c['pid'], 'season': c['season']},
+    lambda c: {'player': c['pid'], 'season': c['season']},
+    lambda c: {'player_id': c['pid'], 'league': c['league'], 'season': c['season']},
+    lambda c: {'player_id': int(c['pid'])},
+    lambda c: {'player_id': c['pid'], 'position': 'FW'},
 ]
 
 
 def probe():
-    """WHICH ROUTE ACTUALLY SERVES PER-MATCH PLAYER DATA.
+    """Vary the PARAMETERS of the one route that exists.
 
-    The first probe assumed the player page carried a matchesData block, the way
-    understat used to embed everything. It does not: the page comes back 19KB
-    with the right title and NO embedded JSON of any kind, which is the same
-    thing already known to be true of the league pages -- the data moved to AJAX
-    and the POST routes are the only way in.
-
-    getPlayersStats is the one route known to work, so it rides along as a
-    CONTROL: if it fails here too, the finding is about the session or the
-    headers and not about the other routes at all.
+    Two probes have now each cost a runner round trip because the shape of this
+    source was assumed rather than read: first that the player page embeds its
+    JSON (it carries none at all), then that the route takes `player_id`. Both
+    were answerable only from the runner, which is why the probe prints raw
+    bodies rather than a verdict.
     """
-    ctx = {'league': 'EPL', 'season': SEASON}
     ps = season_players('EPL')
     top = sorted(ps, key=lambda p: -int(p.get('goals') or 0))[:1]
-    ctx['pid'] = top[0].get('id') if top else '8260'
-    print(f"control: season_players -> {len(ps)} players; "
-          f"probing with id={ctx['pid']} ({top[0].get('player_name') if top else '?'})")
-    print(f"a season-totals row's keys: {sorted(top[0].keys()) if top else '?'}\n")
+    ctx = {'league': 'EPL', 'season': SEASON,
+           'pid': top[0].get('id') if top else '8260'}
+    print(f"control: {len(ps)} players; id={ctx['pid']} "
+          f"({top[0].get('player_name') if top else '?'})\n")
 
-    for name, mk in ROUTES:
-        url = f'https://understat.com/main/{name}/'
-        body = urllib.parse.urlencode(mk(ctx)).encode()
+    winner = None
+    for mk in PARAM_SETS:
+        params = mk(ctx)
         try:
-            txt = http(url, post=body, referer='https://understat.com/', timeout=25)
+            txt = http(ROUTE, post=urllib.parse.urlencode(params).encode(),
+                       referer='https://understat.com/', timeout=25)
         except Exception as e:
-            code = getattr(e, 'code', '')
-            print(f'  {name:24} POST  ERR {type(e).__name__} {code}')
+            print(f'  {str(params):58} ERR {type(e).__name__} {getattr(e, "code", "")}')
             continue
-        head = txt[:90].replace('\n', ' ')
         try:
             d = json.loads(txt)
         except Exception:
-            print(f'  {name:24} POST  {len(txt):7} bytes, NOT json: {head!r}')
+            print(f'  {str(params):58} {len(txt)} bytes, not json: {txt[:60]!r}')
             continue
-        # Report the SHAPE, deep enough to see whether per-match rows are in it.
-        def shape(o, depth=0):
-            if isinstance(o, dict):
-                ks = sorted(o.keys())[:8]
-                return '{' + ','.join(ks) + ('...' if len(o) > 8 else '') + '}'
-            if isinstance(o, list):
-                return f'[{len(o)}x ' + (shape(o[0], depth + 1) if o else '') + ']'
-            return type(o).__name__
-        print(f'  {name:24} POST  {len(txt):7} bytes, JSON {shape(d)}')
-        inner = d.get('response') if isinstance(d, dict) else None
-        if isinstance(inner, dict):
-            for k, v in list(inner.items())[:4]:
-                print(f'      response.{k}: {shape(v)}')
-                if isinstance(v, list) and v and isinstance(v[0], dict):
-                    print(f'        first row keys: {sorted(v[0].keys())[:14]}')
+        r = d.get('response') if isinstance(d, dict) else None
+        ms = (r or {}).get('matches') if isinstance(r, dict) else None
+        n = len(ms) if isinstance(ms, list) else None
+        print(f'  {str(params):58} {len(txt):7}b success={(r or {}).get("success")} '
+              f'matches={n}')
+        if n:
+            print(f'      first row keys: {sorted(ms[0].keys())}')
+            print(f'      first row: {ms[0]}')
+            print(f'      seasons: {sorted({(m.get("date") or "")[:4] for m in ms})}')
+            winner = params
+            break
+        if len(txt) < 200:
+            print(f'      raw: {txt!r}')
+    if not winner:
+        print('\nNO PARAMETER SET RETURNED ROWS. The route exists and answers, so '
+              'the next thing to read is the page\'s own JS for the call it makes.')
+        return 1
+    print(f'\nUSE: {winner}')
     return 0
 
 
