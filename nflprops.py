@@ -300,6 +300,19 @@ def score(events, logs, min_gap=0.10):
                 # defence's side before the player's own form counts at all.
                 if drate < 0.50:
                     continue
+                # A DEFENCE TEST THAT PASSES EVERYTHING IS NOT A TEST. This
+                # measures the BEST player at the position each week, so any
+                # low bar -- over 0.5 receptions, over 4.5 receiving yards --
+                # comes back 20 of 20 and tells you nothing. Treating that as
+                # support put a wall of -300 to -850 near-locks at the top of
+                # the list. A line only earns the matchup read when the defence
+                # has actually stopped it sometimes.
+                if drate >= 0.95:
+                    continue
+                # And a price this short is not a bet, it is a toll. Ryan has
+                # said so every time the list drifted this way.
+                if imp > 0.70:
+                    continue
                 if rate - imp >= min_gap and (cn >= MIN_CURRENT and crate >= imp):
                     out.append({"game": ev.get("game"), "player": name,
                                 "market": label, "side": side, "point": point,
@@ -453,7 +466,7 @@ def selftest():
     # Carolina, the soft run defence built above -- the Jets fixture is the
     # stingy one and would correctly reject every line in here.
     ev = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {"player_rush_yds_alternate": [
-        ("Busy Guy",   "Over", 59.5, -250),   # 100% history vs 71% implied -> gap
+        ("Busy Guy",   "Over", 59.5, +120),   # 100% history vs 45% implied -> gap
         ("Busy Guy",   "Over", 89.5, +150),   #  31% history vs 40% implied -> none
         ("Gone Guy",   "Over", 10.5, -1000),  # not this season -> dropped
         ("Traded Guy", "Over", 10.5, -1000),  # too few at the new club -> dropped
@@ -544,6 +557,17 @@ def selftest():
         "and it carries the count and the club, so the sample is visible")
     chk(score(ev, logs, min_gap=0.99) == [],
         "raising the bar past any real gap yields nothing")
+    # A defence that allowed it in all ten is not evidence -- it is a bar so
+    # low the question does not discriminate, which is what buried the list
+    # under -300 to -850 locks.
+    base2 = dict(base)
+    base2.update(opp_games("DEN", "RB", "rushing_yards", [80]*10))
+    chk(score([{"game": "Buffalo Bills @ Denver Broncos", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 5.5, +120)]}}], base2) == [],
+        "a defence that allows it 10 of 10 gives no read, and the line is dropped")
+    chk(score([{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, -400)]}}], base) == [],
+        "and a price shorter than -233 is a toll, not a bet")
 
     # TWO ROWS FOR ONE PLAYER IN ONE WEEK. nflverse can carry a duplicate or a
     # correction row, and the third tuple element is a dict -- so a bare sort
