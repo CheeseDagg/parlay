@@ -1,4 +1,4 @@
-read 2026-10-02T20:42Z  FanDuel live
+read 2026-10-02T20:44Z  FanDuel live
 
 leg                                                    price     was       p  basis
 -----------------------------------------------------------------------------------
@@ -8,17 +8,19 @@ Marcus McGhee ML                                        -590    -520   83.9% dev
 Ateba Gautier ML                                        -245    -245   69.0% devig
 Payton Talbott ML                                       -750    -750   86.7% devig
 Jakobi Meyers Over 39.5 reception yds                   -114    -114   50.0% devig
-Javonte Williams Over 77.5 rush reception yds           -114    -113   50.0% devig  PRICE MOVED  LINE MOVED from 74.5
+Kyren Williams Over 74.5 rush reception yds             -113    -113   49.8% devig
 Brock Purdy Over 24.5 rush yds                          +198    +198   33.6% vig
 
 history at the posted line                                 all     2026
 -----------------------------------------------------------------------
 Jakobi Meyers Over 39.5 reception yds                   9/12     2/3     JAX
-Traceback (most recent call last):
-  File "/home/runner/work/parlay/parlay/ticket.py", line 504, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/parlay/parlay/ticket.py", line 455, in main
-    cols = nflprops.MARKETS[f"player_{lg['stat']}"][0]
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-KeyError: 'player_rush_reception_yds'
+Kyren Williams Over 74.5 rush reception yds            15/20     2/3     LA
+Brock Purdy Over 24.5 rush yds                          5/12     3/3     SF
+Kyren Williams Over 59.5 rush yds                      16/20     2/3     LA  (comparison)
+
+not on the ticket, for comparison:
+  Kyren Williams Over 59.5 rush yds  +104 p=49.0% vig
+  that ticket instead: +2682  p=3.1%  $33 -> $918
+
+8 legs   +2471   p=3.1%   $33 -> $848   fair +3125
+edge -20.3% of stake   (fair price is +3125, book pays +2471)
