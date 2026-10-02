@@ -76,6 +76,17 @@ COMPARE = [
     # `want_point` prints as LINE MOVED instead of passing quietly.
     {"kind": "prop", "who": "Kyren Williams", "stat": "rush_reception_yds",
      "side": "Over", "point": "main", "want_point": 74.5, "want": -113},
+    # The pass+rush question. Two rungs, because the ladder prices 224.5, 249.5
+    # and 274.5 at 67.7%, 52.8% and 38.8% while BOTH historical samples -- the
+    # 12 Purdy starts and the 17 quality starters Denver has faced -- have a
+    # hole between roughly 235 and 280 and therefore read identically at all
+    # three. Where a gap exists only because of that hole it is a sampling
+    # artifact, so the two rungs either side of it are priced together and the
+    # difference between them is the thing to look at.
+    {"kind": "prop", "who": "Brock Purdy", "stat": "pass_rush_yds",
+     "side": "Over", "point": 249.5, "want": -112},
+    {"kind": "prop", "who": "Brock Purdy", "stat": "pass_rush_yds",
+     "side": "Over", "point": 274.5, "want": 158},
 ]
 
 MARKETS = {  # a prop may be posted on the standard market, the alt ladder, or both
@@ -83,6 +94,8 @@ MARKETS = {  # a prop may be posted on the standard market, the alt ladder, or b
     "rush_yds": ("player_rush_yds", "player_rush_yds_alternate"),
     "rush_reception_yds": ("player_rush_reception_yds",
                            "player_rush_reception_yds_alternate"),
+    "pass_rush_yds": ("player_pass_rush_yds", "player_pass_rush_yds_alternate"),
+    "pass_yds": ("player_pass_yds", "player_pass_yds_alternate"),
 }
 
 
@@ -279,6 +292,27 @@ def parlay(legs):
     return d, slips.american(d), p
 
 
+def opponent(event, team, abbr):
+    """The other team in 'Away @ Home', as an nflverse abbreviation.
+
+    Returns None rather than a guess when the event names cannot both be
+    resolved or neither of them is the player's team -- a defence measured
+    against the wrong opponent is worse than no defence column, because it
+    looks like an answer."""
+    if not event or not team:
+        return None
+    parts = [x.strip() for x in str(event).split("@")]
+    if len(parts) != 2:
+        return None
+    abbrs = [abbr.get(x) for x in parts]
+    if None in abbrs:
+        return None
+    if team not in abbrs:
+        return None
+    a, b = abbrs
+    return b if a == team else a
+
+
 def model_p(legs, hist):
     """The ticket's probability using the HISTORICAL rate wherever there is
     one, and the de-vigged market everywhere else.
@@ -454,6 +488,31 @@ def selftest():
                           "side": "Over", "point": "main"})
     ck(tw and "more than one main line" in tw.get("err", ""), f"two main lines {tw}")
 
+    AB = {"Denver Broncos": "DEN", "San Francisco 49ers": "SF",
+          "Los Angeles Rams": "LA", "Los Angeles Chargers": "LAC"}
+    ck(opponent("Denver Broncos @ San Francisco 49ers", "SF", AB) == "DEN",
+       "home player's opponent")
+    ck(opponent("Denver Broncos @ San Francisco 49ers", "DEN", AB) == "SF",
+       "away player's opponent")
+    # LA/LAC share a city; a substring rule would cross them, so the map is
+    # exact and an unmapped name must refuse rather than resolve loosely.
+    ck(opponent("Los Angeles Rams @ Los Angeles Chargers", "LA", AB) == "LAC",
+       "the two Los Angeles teams must not cross")
+    ck(opponent("Denver Broncos @ San Francisco 49ers", "JAX", AB) is None,
+       "a player on neither side must refuse")
+    ck(opponent("Some Team @ San Francisco 49ers", "SF", AB) is None,
+       "an unmapped team name must refuse")
+    ck(opponent("Denver Broncos vs San Francisco 49ers", "SF", AB) is None,
+       "an unparseable event must refuse")
+    ck(opponent(None, "SF", AB) is None, "no event must refuse")
+    # The length check is what stops a three-part string from reaching the
+    # two-way unpack and raising instead of refusing.
+    try:
+        r3 = opponent("A @ B @ C", "AA", {"A": "AA", "B": "BB", "C": "CC"})
+    except Exception as ex:
+        r3 = f"raised {type(ex).__name__}"
+    ck(r3 is None, f"a three-part event must refuse, not raise: {r3}")
+
     # model_p: historical rate where there is one, market price elsewhere
     legs = [{"lab": "A", "p": 0.90}, {"lab": "B", "p": 0.50}]
     ck(abs(model_p(legs, {}) - 0.45) < 1e-9, "no history -> market")
@@ -554,8 +613,8 @@ def main():
             logs = snaps = inj = None
         if logs:
             print(f"\n{'history at the posted line':46s} {'all':>9s} {'2026':>7s}"
-                  f" {'snap':>6s} {'trend':>6s}  practice")
-            print("-" * 94)
+                  f" {'vs opp':>8s} {'snap':>6s} {'trend':>6s}  practice")
+            print("-" * 104)
             for lg in props:
                 # nflverse column lookup. Some stats appear in MARKETS only
                 # under the _alternate key (rush+rec is one), so both spellings
@@ -572,6 +631,18 @@ def main():
                     continue
                 h, n, team, ch, cn = r
                 hist[lg["lab"]] = (h / n, h, n, ch, cn)
+                # THE DEFENCE, AT THIS NUMBER, AGAINST THIS POSITION. The
+                # column that answers "should we be doing this at all": Purdy's
+                # own 3-for-3 on rushing yards means little against a defence
+                # that has allowed 4 of 17 quality starters over the same bar.
+                ppos = (logs.get(lg["who"]) or [(0, 0, {})])[-1][2].get("_pos")
+                opp = opponent(lg.get("event"), team, nflprops.TEAM_ABBR)
+                dtxt = f"{'   --':>8s}"
+                if opp and ppos in nflprops.POS_POOL:
+                    dr = nflprops.defense_at(logs, opp, nflprops.POS_POOL[ppos],
+                                             mk[0], lg["point"], lg["side"])
+                    if dr:
+                        dtxt = f"{dr[0]:3d}/{dr[1]:<2d} {opp:>3s}"
                 sp = (snaps or {}).get((team, lg["who"]))
                 sptxt = f"{sp[0]*100:5.0f}% {sp[1]*100:+5.0f}" if sp else f"{'  --':>6s} {'--':>6s}"
                 flag = (inj or {}).get((team, lg["who"]))
@@ -584,7 +655,7 @@ def main():
                 else:
                     prac = "clear"
                 print(f"{lg['lab'][:46]:46s} {h:>4d}/{n:<4d} {ch:>3d}/{cn:<3d}"
-                      f" {sptxt}  {prac}{tag}")
+                      f" {dtxt} {sptxt}  {prac}{tag}")
 
     # The comparison prints BEFORE any bail-out. The first live run bailed on
     # the rush+rec leg and swallowed the alternative with it, which left the

@@ -62,6 +62,13 @@ MARKETS = {
     "player_receptions":        (["receptions"], "receptions"),
     "player_reception_yds":     (["receiving_yards"], "rec yds"),
     "player_rush_yds":          (["rushing_yards"], "rush yds"),
+    # QB pass+rush. Worth stating what this market IS, because it reads like
+    # "his rushing with a cushion" and it is not: across Purdy's 12 starts his
+    # rushing is a median 8.5% of the pass+rush total. Betting pass+rush does
+    # not add the rushing angle to a ticket, it replaces it with a passing bet.
+    "player_pass_rush_yds":     (["passing_yards", "rushing_yards"], "pass+rush yds"),
+    "player_pass_rush_yds_alternate": (["passing_yards", "rushing_yards"],
+                                       "pass+rush yds"),
 }
 
 
