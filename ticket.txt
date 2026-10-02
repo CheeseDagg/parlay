@@ -1,4 +1,4 @@
-read 2026-10-02T20:47Z  FanDuel live
+read 2026-10-02T20:53Z  FanDuel live
 
 leg                                                    price     was       p  basis
 -----------------------------------------------------------------------------------
@@ -8,24 +8,24 @@ Marcus McGhee ML                                        -590    -520   83.9% dev
 Ateba Gautier ML                                        -245    -245   69.0% devig
 Payton Talbott ML                                       -750    -750   86.7% devig
 Jakobi Meyers Over 39.5 reception yds                   -114    -114   50.0% devig
-Kyren Williams Over 74.5 rush reception yds             -113    -113   49.8% devig
+Kyren Williams Over 59.5 rush yds                       +104    +104   49.0% vig
 Brock Purdy Over 24.5 rush yds                          +198    +198   33.6% vig
 
 history at the posted line                           all    2026   snap  trend  practice
 ----------------------------------------------------------------------------------------------
 Jakobi Meyers Over 39.5 reception yds             9/12     2/3      81%    +4  clear
-Kyren Williams Over 74.5 rush reception yds      15/20     2/3      71%   +12  clear
+Kyren Williams Over 59.5 rush yds                16/20     2/3      71%   +12  clear
 Brock Purdy Over 24.5 rush yds                    5/12     3/3     100%    +7  clear
-Kyren Williams Over 59.5 rush yds                16/20     2/3      71%   +12  clear  (comparison)
+Kyren Williams Over 74.5 rush reception yds      15/20     2/3      71%   +12  clear  (comparison)
 
 not on the ticket, for comparison:
-  Kyren Williams Over 59.5 rush yds  +104 p=49.0% vig
-  that ticket instead: +2682  market 3.1%  history 9.3%  $33 -> $918
+  Kyren Williams Over 74.5 rush reception yds  -113 p=49.8% devig
+  that ticket instead: +2471  market 3.1%  history 8.7%  $33 -> $848
 
-8 legs   +2471   $33 -> $848
-  market  p=  3.1%  fair  +3125   (the book's own view, de-vigged)
-  history p=  8.7%  fair  +1049   (props at their rate at this line, fights at market)
+8 legs   +2682   $33 -> $918
+  market  p=  3.1%  fair  +3174   (the book's own view, de-vigged)
+  history p=  9.3%  fair   +977   (props at their rate at this line, fights at market)
 
-On the historical rates this pays +124% of stake. That rests entirely on
+On the historical rates this pays +158% of stake. That rests entirely on
 those rates still describing the role each player has now -- the table above
 is how you check that, not the number.
