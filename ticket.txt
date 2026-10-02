@@ -1,8 +1,8 @@
-read 2026-10-02T21:02Z  FanDuel live
+read 2026-10-02T21:38Z  FanDuel live
 
 leg                                                    price     was       p  basis
 -----------------------------------------------------------------------------------
-Jacobe Smith ML                                         -950    -950   89.1% devig
+Jacobe Smith ML                                         -950    -950   89.4% devig
 Anthony Wint ML                                         -550    -550   83.0% devig
 Marcus McGhee ML                                        -590    -520   83.9% devig  PRICE MOVED
 Ateba Gautier ML                                        -245    -245   69.0% devig
@@ -40,12 +40,26 @@ not on the ticket, for comparison:
 
 not on the ticket, for comparison:
   Brock Purdy Over 199.5 pass rush yds  -380 p=79.2% vig
-  that ticket instead: +1079  market 7.2%  history 16.7%  $33 -> $389
+  that ticket instead: +1079  market 7.2%  history 16.8%  $33 -> $389
 
 8 legs   +2682   $33 -> $918
-  market  p=  3.1%  fair  +3174   (the book's own view, de-vigged)
-  history p=  9.3%  fair   +977   (props at their rate at this line, fights at market)
+  market  p=  3.1%  fair  +3165   (the book's own view, de-vigged)
+  history p=  9.3%  fair   +974   (props at their rate at this line, fights at market)
 
-On the historical rates this pays +158% of stake. That rests entirely on
+what each leg adds                                 adds    hits   risk   $/risk
+--------------------------------------------------------------------------------
+Kyren Williams Over 59.5 rush yds                  +468   80.0%  20.0%     2340
+Jakobi Meyers Over 39.5 reception yds              +429   75.0%  25.0%     1716
+Brock Purdy Over 24.5 rush yds                     +610   41.7%  58.3%     1046
+Ateba Gautier ML                                   +266   69.0%  31.0%      858
+Anthony Wint ML                                    +141   83.0%  17.0%      831
+Marcus McGhee ML                                   +133   83.9%  16.1%      827
+Jacobe Smith ML                                     +87   89.4%  10.6%      824
+Payton Talbott ML                                  +108   86.7%  13.3%      814
+  without Jakobi Meyers Over 39.5 reception yds  7 legs  +1382  $33 -> $489
+  without Kyren Williams Over 59.5 rush yds      7 legs  +1264  $33 -> $450
+  without Brock Purdy Over 24.5 rush yds         7 legs   +834  $33 -> $308
+
+On the historical rates this pays +159% of stake. That rests entirely on
 those rates still describing the role each player has now -- the table above
 is how you check that, not the number.
