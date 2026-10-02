@@ -1,13 +1,13 @@
 pulling alt props for up to 4 games
-  Indianapolis Colts @ Washington Commanders: 234 lines  (quota left 19989)
-  Arizona Cardinals @ New York Giants: 270 lines  (quota left 19984)
-  Tennessee Titans @ Baltimore Ravens: 236 lines  (quota left 19979)
-  New England Patriots @ Buffalo Bills: 302 lines  (quota left 19974)
+  Indianapolis Colts @ Washington Commanders: 234 lines  (quota left 19949)
+  Arizona Cardinals @ New York Giants: 270 lines  (quota left 19944)
+  Tennessee Titans @ Baltimore Ravens: 236 lines  (quota left 19939)
+  New England Patriots @ Buffalo Bills: 302 lines  (quota left 19934)
 
 loading game logs...
   2262 players with logs
 
-115 lines where the RECORD beats the PRICE by 10+ points
+76 lines where the RECORD beats the PRICE by 10+ points
 (hit rate is raw history; implied price still carries the vig)
 
   Calvin Ridley          Over    24.5 rec yds          550  hit  6/ 9 =  67%  vs  15%  (+51%)  Tennessee Titans @ Baltimore Raven
@@ -15,15 +15,9 @@ loading game logs...
   Calvin Ridley          Over    14.5 rec yds          225  hit  7/ 9 =  78%  vs  31%  (+47%)  Tennessee Titans @ Baltimore Raven
   Calvin Ridley          Over     9.5 rec yds          134  hit  8/ 9 =  89%  vs  43%  (+46%)  Tennessee Titans @ Baltimore Raven
   Calvin Ridley          Over    19.5 rec yds          370  hit  6/ 9 =  67%  vs  21%  (+45%)  Tennessee Titans @ Baltimore Raven
-  Darius Slayton         Over    24.5 rec yds          182  hit 11/14 =  79%  vs  35%  (+43%)  Indianapolis Colts @ Washington Co
-  Darius Slayton         Over    19.5 rec yds          134  hit 12/14 =  86%  vs  43%  (+43%)  Indianapolis Colts @ Washington Co
-  Darius Slayton         Over    29.5 rec yds          240  hit 10/14 =  71%  vs  29%  (+42%)  Indianapolis Colts @ Washington Co
-  Darius Slayton         Over     1.5 receptions       164  hit 11/14 =  79%  vs  38%  (+41%)  Indianapolis Colts @ Washington Co
   Theo Johnson           Over    24.5 rec yds          370  hit 10/17 =  59%  vs  21%  (+38%)  Arizona Cardinals @ New York Giant
   Theo Johnson           Over    19.5 rec yds          260  hit 11/17 =  65%  vs  28%  (+37%)  Arizona Cardinals @ New York Giant
   Keon Coleman           Over     1.5 receptions      -102  hit 13/15 =  87%  vs  50%  (+36%)  New England Patriots @ Buffalo Bil
-  Darius Slayton         Over     2.5 receptions       550  hit  7/14 =  50%  vs  15%  (+35%)  Indianapolis Colts @ Washington Co
-  Darius Slayton         Over    14.5 rec yds         -106  hit 12/14 =  86%  vs  51%  (+34%)  Indianapolis Colts @ Washington Co
   Keon Coleman           Over     2.5 receptions       280  hit  9/15 =  60%  vs  26%  (+34%)  New England Patriots @ Buffalo Bil
   Theo Johnson           Over    14.5 rec yds          168  hit 12/17 =  71%  vs  37%  (+33%)  Arizona Cardinals @ New York Giant
   Theo Johnson           Over     1.5 receptions       168  hit 12/17 =  71%  vs  37%  (+33%)  Arizona Cardinals @ New York Giant
@@ -35,18 +29,24 @@ loading game logs...
   Calvin Ridley          Over     4.5 rec yds         -158  hit  8/ 9 =  89%  vs  61%  (+28%)  Tennessee Titans @ Baltimore Raven
   Theo Johnson           Over     9.5 rec yds          100  hit 13/17 =  76%  vs  50%  (+26%)  Arizona Cardinals @ New York Giant
   Dawson Knox            Over     4.5 rec yds         -220  hit 18/19 =  95%  vs  69%  (+26%)  New England Patriots @ Buffalo Bil
-  Wan'Dale Robinson      Over     4.5 receptions       134  hit 13/19 =  68%  vs  43%  (+26%)  Tennessee Titans @ Baltimore Raven
   Dawson Knox            Over     9.5 rec yds         -114  hit 15/19 =  79%  vs  53%  (+26%)  New England Patriots @ Buffalo Bil
   Keon Coleman           Over     9.5 rec yds         -158  hit 13/15 =  87%  vs  61%  (+25%)  New England Patriots @ Buffalo Bil
-  Darnell Mooney         Over    14.5 rec yds         -174  hit 16/18 =  89%  vs  64%  (+25%)  Arizona Cardinals @ New York Giant
-  Wan'Dale Robinson      Over     5.5 receptions       265  hit 10/19 =  53%  vs  27%  (+25%)  Tennessee Titans @ Baltimore Raven
   Theo Johnson           Over    29.5 rec yds          520  hit  7/17 =  41%  vs  16%  (+25%)  Arizona Cardinals @ New York Giant
-  Darius Slayton         Over     9.5 rec yds         -160  hit 12/14 =  86%  vs  62%  (+24%)  Indianapolis Colts @ Washington Co
   Keon Coleman           Over    24.5 rec yds          235  hit  8/15 =  53%  vs  30%  (+23%)  New England Patriots @ Buffalo Bil
   Keon Coleman           Over    29.5 rec yds          320  hit  7/15 =  47%  vs  24%  (+23%)  New England Patriots @ Buffalo Bil
   Theo Johnson           Over     4.5 rec yds         -192  hit 15/17 =  88%  vs  66%  (+22%)  Arizona Cardinals @ New York Giant
-  Darius Slayton         Over    39.5 rec yds          390  hit  6/14 =  43%  vs  20%  (+22%)  Indianapolis Colts @ Washington Co
-  Darius Slayton         Over     4.5 rec yds         -260  hit 13/14 =  93%  vs  72%  (+21%)  Indianapolis Colts @ Washington Co
-  Darnell Mooney         Over     9.5 rec yds         -290  hit 17/18 =  94%  vs  74%  (+20%)  Arizona Cardinals @ New York Giant
   Jacoby Brissett        Over     1.5 pass TDs         124  hit 11/17 =  65%  vs  45%  (+20%)  Arizona Cardinals @ New York Giant
   Elic Ayomanor          Over     9.5 rec yds         -300  hit 18/19 =  95%  vs  75%  (+20%)  Tennessee Titans @ Baltimore Raven
+  Keon Coleman           Over    39.5 rec yds          630  hit  5/15 =  33%  vs  14%  (+20%)  New England Patriots @ Buffalo Bil
+  Dawson Knox            Over     0.5 receptions      -310  hit 18/19 =  95%  vs  76%  (+19%)  New England Patriots @ Buffalo Bil
+  Calvin Ridley          Over     1.5 receptions       174  hit  5/ 9 =  56%  vs  36%  (+19%)  Tennessee Titans @ Baltimore Raven
+  Dawson Knox            Over     1.5 receptions       152  hit 11/19 =  58%  vs  40%  (+18%)  New England Patriots @ Buffalo Bil
+  Calvin Ridley          Over     2.5 receptions       550  hit  3/ 9 =  33%  vs  15%  (+18%)  Tennessee Titans @ Baltimore Raven
+  Cam Skattebo           Over     9.5 rec yds         -275  hit 10/11 =  91%  vs  73%  (+18%)  Arizona Cardinals @ New York Giant
+  Jacoby Brissett        Over   249.5 pass yds         142  hit 10/17 =  59%  vs  41%  (+18%)  Arizona Cardinals @ New York Giant
+  Drake Maye             Over   249.5 pass yds         134  hit 12/20 =  60%  vs  43%  (+17%)  New England Patriots @ Buffalo Bil
+  Keon Coleman           Over     4.5 rec yds         -320  hit 14/15 =  93%  vs  76%  (+17%)  New England Patriots @ Buffalo Bil
+  Keon Coleman           Over     0.5 receptions      -490  hit 15/15 = 100%  vs  83%  (+17%)  New England Patriots @ Buffalo Bil
+  Terry McLaurin         Over    39.5 rec yds         -210  hit 11/13 =  85%  vs  68%  (+17%)  Indianapolis Colts @ Washington Co
+  Dawson Knox            Over    19.5 rec yds          225  hit  9/19 =  47%  vs  31%  (+17%)  New England Patriots @ Buffalo Bil
+  Calvin Ridley          Over     0.5 receptions      -270  hit  8/ 9 =  89%  vs  73%  (+16%)  Tennessee Titans @ Baltimore Raven
