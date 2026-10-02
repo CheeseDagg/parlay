@@ -1,331 +1,109 @@
 {
  "teams": {
-  "Jacobe Smith": {
+  "Roman Kopylov": {
    "profile": {
-    "record": "3-0 in UFC",
+    "record": "8-5 in UFC",
     "win_by": {
-     "dec": 0.0,
-     "ko": 0.667,
-     "sub": 0.333,
-     "n": 3
-    },
-    "lose_by": null
-   },
-   "last5": [
-    {
-     "opp": "Josiah Harrell",
-     "win": true,
-     "method": "ko",
-     "year": "2026-02-21"
-    },
-    {
-     "opp": "Niko Price",
-     "win": true,
-     "method": "sub",
-     "year": "2025-06-28"
-    },
-    {
-     "opp": "Preston Parsons",
-     "win": true,
-     "method": "ko",
-     "year": "2025-01-11"
-    }
-   ],
-   "matched_as": "Jacobe Smith"
-  },
-  "Anthony Wint": {
-   "profile": {
-    "record": "1-0 in UFC",
-    "win_by": {
-     "dec": 0.0,
-     "ko": 0.0,
-     "sub": 1.0,
-     "n": 1
-    },
-    "lose_by": null
-   },
-   "last5": [
-    {
-     "opp": "Terrance Chatman",
-     "win": true,
-     "method": "sub",
-     "year": "2026-08-22"
-    }
-   ],
-   "matched_as": "Anthony Wint"
-  },
-  "Marcus McGhee": {
-   "profile": {
-    "record": "5-1 in UFC",
-    "win_by": {
-     "dec": 0.4,
-     "ko": 0.4,
-     "sub": 0.2,
-     "n": 5
-    },
-    "lose_by": {
-     "dec": 1.0,
-     "ko": 0.0,
-     "sub": 0.0,
-     "n": 1
-    }
-   },
-   "last5": [
-    {
-     "opp": "John Yannis",
-     "win": true,
-     "method": "dec",
-     "year": "2026-06-06"
-    },
-    {
-     "opp": "Petr Yan",
-     "win": false,
-     "method": "dec",
-     "year": "2025-07-26"
-    },
-    {
-     "opp": "Jonathan Martinez",
-     "win": true,
-     "method": "dec",
-     "year": "2024-11-16"
-    },
-    {
-     "opp": "Gaston Bolanos",
-     "win": true,
-     "method": "ko",
-     "year": "2024-01-13"
-    },
-    {
-     "opp": "JP Buys",
-     "win": true,
-     "method": "ko",
-     "year": "2023-08-12"
-    }
-   ],
-   "matched_as": "Marcus McGhee"
-  },
-  "Damian Pinas": {
-   "profile": {
-    "record": "2-0 in UFC",
-    "win_by": {
-     "dec": 0.0,
-     "ko": 1.0,
-     "sub": 0.0,
-     "n": 2
-    },
-    "lose_by": null
-   },
-   "last5": [
-    {
-     "opp": "Cesar Almeida",
-     "win": true,
-     "method": "ko",
-     "year": "2026-07-11"
-    },
-    {
-     "opp": "Wes Schultz",
-     "win": true,
-     "method": "ko",
-     "year": "2026-02-28"
-    }
-   ],
-   "matched_as": "Damian Pinas"
-  },
-  "Esteban Ribovics": {
-   "profile": {
-    "record": "5-3 in UFC",
-    "win_by": {
-     "dec": 0.6,
-     "ko": 0.4,
-     "sub": 0.0,
-     "n": 5
-    },
-    "lose_by": {
-     "dec": 0.667,
-     "ko": 0.0,
-     "sub": 0.333,
-     "n": 3
-    }
-   },
-   "last5": [
-    {
-     "opp": "Edson Barboza",
-     "win": true,
-     "method": "ko",
-     "year": "2026-08-15"
-    },
-    {
-     "opp": "Mateusz Gamrot",
-     "win": false,
-     "method": "sub",
-     "year": "2026-04-11"
-    },
-    {
-     "opp": "Elves Brener",
-     "win": true,
-     "method": "dec",
-     "year": "2025-08-02"
-    },
-    {
-     "opp": "Nasrat Haqparast",
-     "win": false,
-     "method": "dec",
-     "year": "2025-03-01"
-    },
-    {
-     "opp": "Daniel Zellhuber",
-     "win": true,
-     "method": "dec",
-     "year": "2024-09-14"
-    }
-   ],
-   "matched_as": "Esteban Ribovics"
-  },
-  "Ateba Gautier": {
-   "profile": {
-    "record": "5-0 in UFC",
-    "win_by": {
-     "dec": 0.2,
-     "ko": 0.8,
-     "sub": 0.0,
-     "n": 5
-    },
-    "lose_by": null
-   },
-   "last5": [
-    {
-     "opp": "Ozzy Diaz",
-     "win": true,
-     "method": "ko",
-     "year": "2026-05-09"
-    },
-    {
-     "opp": "Andrey Pulyaev",
-     "win": true,
-     "method": "dec",
-     "year": "2026-01-24"
-    },
-    {
-     "opp": "Tre'ston Vines",
-     "win": true,
-     "method": "ko",
-     "year": "2025-10-04"
-    },
-    {
-     "opp": "Robert Valentin",
-     "win": true,
-     "method": "ko",
-     "year": "2025-07-19"
-    },
-    {
-     "opp": "Jose Daniel Medina",
-     "win": true,
-     "method": "ko",
-     "year": "2025-03-29"
-    }
-   ],
-   "matched_as": "Ateba Gautier"
-  },
-  "Eric Nolan": {
-   "profile": {
-    "record": "0-2 in UFC",
-    "win_by": null,
-    "lose_by": {
-     "dec": 0.5,
-     "ko": 0.0,
-     "sub": 0.5,
-     "n": 2
-    }
-   },
-   "last5": [
-    {
-     "opp": "Farman Hasanov",
-     "win": false,
-     "method": "dec",
-     "year": "2026-06-27"
-    },
-    {
-     "opp": "Baisangur Susurkaev",
-     "win": false,
-     "method": "sub",
-     "year": "2025-08-16"
-    }
-   ],
-   "matched_as": "Eric Nolan"
-  },
-  "Imanol Rodriguez": {
-   "profile": {
-    "record": "1-0 in UFC",
-    "win_by": {
-     "dec": 0.0,
-     "ko": 1.0,
-     "sub": 0.0,
-     "n": 1
-    },
-    "lose_by": null
-   },
-   "last5": [
-    {
-     "opp": "Kevin Borjas",
-     "win": true,
-     "method": "ko",
-     "year": "2026-02-28"
-    }
-   ],
-   "matched_as": "Imanol Rodriguez"
-  },
-  "Johnny Walker": {
-   "profile": {
-    "record": "8-7 in UFC",
-    "win_by": {
-     "dec": 0.125,
+     "dec": 0.25,
      "ko": 0.75,
-     "sub": 0.125,
+     "sub": 0.0,
      "n": 8
     },
     "lose_by": {
+     "dec": 0.6,
+     "ko": 0.0,
+     "sub": 0.4,
+     "n": 5
+    }
+   },
+   "last5": [
+    {
+     "opp": "Marco Tulio",
+     "win": true,
+     "method": "dec",
+     "year": "2026-05-09"
+    },
+    {
+     "opp": "Gregory Rodrigues",
+     "win": false,
+     "method": "dec",
+     "year": "2025-11-15"
+    },
+    {
+     "opp": "Paulo Costa",
+     "win": false,
+     "method": "dec",
+     "year": "2025-07-19"
+    },
+    {
+     "opp": "Chris Curtis",
+     "win": true,
+     "method": "ko",
+     "year": "2025-01-11"
+    },
+    {
+     "opp": "Cesar Almeida",
+     "win": true,
+     "method": "dec",
+     "year": "2024-06-01"
+    }
+   ],
+   "matched_as": "Roman Kopylov"
+  },
+  "Deiveson Figueiredo": {
+   "profile": {
+    "record": "14-7 in UFC",
+    "win_by": {
      "dec": 0.429,
-     "ko": 0.571,
-     "sub": 0.0,
+     "ko": 0.286,
+     "sub": 0.286,
+     "n": 14
+    },
+    "lose_by": {
+     "dec": 0.429,
+     "ko": 0.286,
+     "sub": 0.286,
      "n": 7
     }
    },
    "last5": [
     {
-     "opp": "Dominick Reyes",
+     "opp": "Song Yadong",
+     "win": false,
+     "method": "sub",
+     "year": "2026-05-30"
+    },
+    {
+     "opp": "Umar Nurmagomedov",
      "win": false,
      "method": "dec",
-     "year": "2026-04-11"
+     "year": "2026-01-24"
     },
     {
-     "opp": "Zhang Mingyang",
-     "win": true,
-     "method": "ko",
-     "year": "2025-08-23"
-    },
-    {
-     "opp": "Volkan Oezdemir",
-     "win": false,
-     "method": "ko",
-     "year": "2024-06-22"
-    },
-    {
-     "opp": "Magomed Ankalaev",
-     "win": false,
-     "method": "ko",
-     "year": "2024-01-13"
-    },
-    {
-     "opp": "Anthony Smith",
+     "opp": "Montel Jackson",
      "win": true,
      "method": "dec",
-     "year": "2023-05-13"
+     "year": "2025-10-11"
+    },
+    {
+     "opp": "Cory Sandhagen",
+     "win": false,
+     "method": "ko",
+     "year": "2025-05-03"
+    },
+    {
+     "opp": "Petr Yan",
+     "win": false,
+     "method": "dec",
+     "year": "2024-11-23"
     }
    ],
-   "matched_as": "Johnny Walker"
+   "matched_as": "Deiveson Figueiredo"
   }
  },
  "unmatched": [
-  "Roberto Soldic (unmatched)"
+  "Bruce Whitehead (unmatched)",
+  "Lucas Armand (unmatched)",
+  "Anthony Romero (unmatched)"
  ]
 }
