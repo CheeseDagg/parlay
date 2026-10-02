@@ -88,7 +88,12 @@ def game_logs(seasons=None, fetch=None):
             vals["_team"] = r.get("team") or ""
             out[nm].append((int(r["season"]), int(r["week"]), vals))
     for k in out:
-        out[k].sort()
+        # KEY ON (season, week), NOT THE WHOLE TUPLE. The third element is a
+        # dict, so any two rows sharing a season and week fall through to
+        # comparing dicts and raise. This is the SECOND place that bug
+        # appeared; the first was fixed in pull() without auditing the rest of
+        # the file, which is how it came back nine minutes later.
+        out[k].sort(key=lambda r: (r[0], r[1]))
     return out
 
 
@@ -300,6 +305,28 @@ def selftest():
         "and it carries the count and the club, so the sample is visible")
     chk(score(ev, logs, min_gap=0.99) == [],
         "raising the bar past any real gap yields nothing")
+
+    # TWO ROWS FOR ONE PLAYER IN ONE WEEK. nflverse can carry a duplicate or a
+    # correction row, and the third tuple element is a dict -- so a bare sort
+    # falls through to comparing dicts and raises. This crashed game_logs() on
+    # the runner nine minutes after the identical bug was fixed in pull(),
+    # because the first fix patched the call site instead of auditing the file.
+    CSV = ("season,week,season_type,player_display_name,team,receiving_yards\n"
+           "2026,1,REG,Dup Guy,BUF,40\n"
+           # DIFFERENT yardage on the duplicate, or the dicts compare EQUAL and
+           # Python never needs '<' -- the first version of this fixture used
+           # identical rows and passed with the bug still in place.
+           "2026,1,REG,Dup Guy,BUF,45\n"
+           "2026,2,REG,Dup Guy,BUF,55\n")
+    try:
+        gl = game_logs(seasons=[2026], fetch=lambda u: CSV)
+        crashed_logs = False
+    except TypeError:
+        crashed_logs = True
+    chk(not crashed_logs,
+        "two rows for one player in one week sort without comparing the dicts")
+    chk(len(gl.get("Dup Guy", [])) == 3 and gl["Dup Guy"][0][2]["_team"] == "BUF",
+        "and the rows survive with the team carried on each")
 
     # THE SUNDAY SLATE SHAPE: one kickoff time, many games. A plain sort over
     # (datetime, dict) pairs raises on the second comparison, and the board

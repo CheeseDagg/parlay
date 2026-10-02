@@ -86,7 +86,11 @@ def board(sport, fetch=None):
                                      d[i] if d else None))
         if outs:
             rows.append((t, ev.get("home_team"), ev.get("away_team"), outs))
-    rows.sort()
+    # Sort on time and the team names only. The fourth element is a list of
+    # outcome tuples; two events sharing a kickoff time and both team names
+    # cannot happen, but relying on that to avoid comparing lists is the kind
+    # of luck that breaks on a doubleheader or a feed duplicate.
+    rows.sort(key=lambda r: (r[0], str(r[1]), str(r[2])))
     return rows
 
 
