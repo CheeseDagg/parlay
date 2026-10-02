@@ -1,0 +1,42 @@
+name: Weekend board
+on:
+  workflow_dispatch: {}
+  push: { branches: [main], paths: ['experiments/WEEKEND.txt'] }
+permissions: { contents: write }
+concurrency: { group: parlay-weekend, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          set -o pipefail
+          python3 weekend.py --selftest | tail -2
+          python3 weekend.py 2>&1 | tee weekend.new
+          test -s weekend.new
+          # An empty board is a broken pull, not a quiet weekend -- there is
+          # always an NFL slate in October.
+          grep -qE "NFL . [1-9][0-9]* events" weekend.new
+          mv weekend.new weekend.txt
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+      - name: Publish
+        run: |
+          git config user.name "parlay-bot"
+          git config user.email "actions@github.com"
+          cp weekend.txt /tmp/w.txt
+          for a in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/w.txt weekend.txt
+            git add weekend.txt
+            git diff --cached --quiet && { echo "unchanged"; exit 0; }
+            git commit -m "weekend board $(date -u '+%Y-%m-%d %H:%M')"
+            git push origin HEAD:main && { echo "published on attempt $a"; exit 0; }
+            echo "remote advanced -- rebuilding on the new tip"
+          done
+          echo "::error::could not publish after 5 attempts"
+          exit 1
