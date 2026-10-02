@@ -1,63 +1,61 @@
 pulling alt props for up to 15 games, skipping the first 0
-  Indianapolis Colts @ Washington Commanders: 220 lines  (quota left 19781)
-  Arizona Cardinals @ New York Giants: 327 lines  (quota left 19772)
-  Tennessee Titans @ Baltimore Ravens: 288 lines  (quota left 19763)
-  New England Patriots @ Buffalo Bills: 368 lines  (quota left 19754)
-  New York Jets @ Chicago Bears: 252 lines  (quota left 19745)
-  Jacksonville Jaguars @ Cincinnati Bengals: 350 lines  (quota left 19736)
-  Dallas Cowboys @ Houston Texans: 335 lines  (quota left 19727)
-  Green Bay Packers @ Tampa Bay Buccaneers: 359 lines  (quota left 19718)
-  Los Angeles Rams @ Philadelphia Eagles: 271 lines  (quota left 19709)
-  Miami Dolphins @ Minnesota Vikings: 324 lines  (quota left 19700)
-  Denver Broncos @ San Francisco 49ers: 299 lines  (quota left 19691)
-  Kansas City Chiefs @ Las Vegas Raiders: 342 lines  (quota left 19682)
-  Los Angeles Chargers @ Seattle Seahawks: 282 lines  (quota left 19673)
-  Detroit Lions @ Carolina Panthers: 308 lines  (quota left 19664)
-  Atlanta Falcons @ New Orleans Saints: 318 lines  (quota left 19655)
+  Indianapolis Colts @ Washington Commanders: 220 lines  (quota left 19646)
+  Arizona Cardinals @ New York Giants: 327 lines  (quota left 19637)
+  Tennessee Titans @ Baltimore Ravens: 288 lines  (quota left 19628)
+  New England Patriots @ Buffalo Bills: 368 lines  (quota left 19619)
+  New York Jets @ Chicago Bears: 252 lines  (quota left 19610)
+  Jacksonville Jaguars @ Cincinnati Bengals: 350 lines  (quota left 19601)
+  Dallas Cowboys @ Houston Texans: 335 lines  (quota left 19592)
+  Green Bay Packers @ Tampa Bay Buccaneers: 359 lines  (quota left 19583)
+  Los Angeles Rams @ Philadelphia Eagles: 271 lines  (quota left 19574)
+  Miami Dolphins @ Minnesota Vikings: 324 lines  (quota left 19565)
+  Denver Broncos @ San Francisco 49ers: 299 lines  (quota left 19556)
+  Kansas City Chiefs @ Las Vegas Raiders: 342 lines  (quota left 19547)
+  Los Angeles Chargers @ Seattle Seahawks: 282 lines  (quota left 19538)
+  Detroit Lions @ Carolina Panthers: 308 lines  (quota left 19529)
+  Atlanta Falcons @ New Orleans Saints: 318 lines  (quota left 19520)
 
 loading game logs...
   2262 players with logs
 
-111 lines where the RECORD beats the PRICE by 10+ points
+38 lines where the RECORD beats the PRICE by 10+ points
 (hit rate is raw history; implied price still carries the vig)
 
-  Jonathan Taylor        Over     1.5 receptions      -400  all 19/20= 95%  2026 3/3=100%  vs  80% (+15%)  D 20/20=100%  Indianapolis Colts @ Washing
-  Elic Ayomanor          Over     4.5 rec yds         -580  all 19/19=100%  2026 3/3=100%  vs  85% (+15%)  D 20/20=100%  Tennessee Titans @ Baltimore
-  Elic Ayomanor          Over     9.5 rec yds         -300  all 18/19= 95%  2026 3/3=100%  vs  75% (+20%)  D 20/20=100%  Tennessee Titans @ Baltimore
-  Elic Ayomanor          Over     0.5 receptions      -850  all 19/19=100%  2026 3/3=100%  vs  89% (+11%)  D 20/20=100%  Tennessee Titans @ Baltimore
-  Dawson Knox            Over     4.5 rec yds         -225  all 18/19= 95%  2026 3/3=100%  vs  69% (+26%)  D 20/20=100%  New England Patriots @ Buffa
-  Dawson Knox            Over     0.5 receptions      -320  all 18/19= 95%  2026 3/3=100%  vs  76% (+19%)  D 20/20=100%  New England Patriots @ Buffa
-  Keon Coleman           Over     0.5 receptions      -470  all 15/15=100%  2026 3/3=100%  vs  82% (+18%)  D 20/20=100%  New England Patriots @ Buffa
-  Rome Odunze            Over    19.5 rec yds         -270  all 13/15= 87%  2026 3/3=100%  vs  73% (+14%)  D 20/20=100%  New York Jets @ Chicago Bear
-  Rome Odunze            Over    24.5 rec yds         -192  all 13/15= 87%  2026 3/3=100%  vs  66% (+21%)  D 20/20=100%  New York Jets @ Chicago Bear
-  Rome Odunze            Over     1.5 receptions      -380  all 14/15= 93%  2026 3/3=100%  vs  79% (+14%)  D 20/20=100%  New York Jets @ Chicago Bear
-  Brenton Strange        Over    14.5 rec yds         -580  all 15/15=100%  2026 3/3=100%  vs  85% (+15%)  D 20/20=100%  Jacksonville Jaguars @ Cinci
-  Jakobi Meyers          Over    14.5 rec yds         -800  all 12/12=100%  2026 3/3=100%  vs  89% (+11%)  D 20/20=100%  Jacksonville Jaguars @ Cinci
-  Jakobi Meyers          Over    19.5 rec yds         -470  all 12/12=100%  2026 3/3=100%  vs  82% (+18%)  D 20/20=100%  Jacksonville Jaguars @ Cinci
-  Chase Brown            Over     1.5 receptions      -670  all 20/20=100%  2026 3/3=100%  vs  87% (+13%)  D 20/20=100%  Jacksonville Jaguars @ Cinci
-  Cade Otton             Over    24.5 rec yds         -125  all 12/18= 67%  2026 3/3=100%  vs  56% (+11%)  D 20/20=100%  Green Bay Packers @ Tampa Ba
-  Cade Otton             Over     1.5 receptions      -440  all 17/18= 94%  2026 3/3=100%  vs  81% (+13%)  D 20/20=100%  Green Bay Packers @ Tampa Ba
-  Cade Otton             Over     2.5 receptions      -158  all 14/18= 78%  2026 3/3=100%  vs  61% (+17%)  D 20/20=100%  Green Bay Packers @ Tampa Ba
-  Cade Otton             Over     2.5 receptions      -158  all 14/18= 78%  2026 3/3=100%  vs  61% (+17%)  D 20/20=100%  Green Bay Packers @ Tampa Ba
-  Kyren Williams         Over    29.5 rush yds        -750  all 20/20=100%  2026 3/3=100%  vs  88% (+12%)  D 20/20=100%  Los Angeles Rams @ Philadelp
-  Greg Dulcich           Over     9.5 rec yds         -750  all 12/12=100%  2026 3/3=100%  vs  88% (+12%)  D 20/20=100%  Miami Dolphins @ Minnesota V
-  Greg Dulcich           Over    14.5 rec yds         -400  all 12/12=100%  2026 3/3=100%  vs  80% (+20%)  D 20/20=100%  Miami Dolphins @ Minnesota V
-  Cooper Kupp            Over     9.5 rec yds         -400  all 18/19= 95%  2026 3/3=100%  vs  80% (+15%)  D 20/20=100%  Los Angeles Chargers @ Seatt
-  Cooper Kupp            Over    14.5 rec yds         -245  all 18/19= 95%  2026 3/3=100%  vs  71% (+24%)  D 20/20=100%  Los Angeles Chargers @ Seatt
-  Cooper Kupp            Over    19.5 rec yds         -158  all 17/19= 89%  2026 3/3=100%  vs  61% (+28%)  D 20/20=100%  Los Angeles Chargers @ Seatt
-  Cooper Kupp            Over     1.5 receptions      -260  all 17/19= 89%  2026 3/3=100%  vs  72% (+17%)  D 20/20=100%  Los Angeles Chargers @ Seatt
-  Juwan Johnson          Over    14.5 rec yds         -850  all 20/20=100%  2026 3/3=100%  vs  89% (+11%)  D 20/20=100%  Atlanta Falcons @ New Orlean
-  Juwan Johnson          Over    24.5 rec yds         -320  all 18/20= 90%  2026 3/3=100%  vs  76% (+14%)  D 20/20=100%  Atlanta Falcons @ New Orlean
-  Juwan Johnson          Over    29.5 rec yds         -230  all 17/20= 85%  2026 3/3=100%  vs  70% (+15%)  D 20/20=100%  Atlanta Falcons @ New Orlean
-  Rome Odunze            Over    29.5 rec yds         -138  all 13/15= 87%  2026 3/3=100%  vs  58% (+29%)  D 19/20= 95%  New York Jets @ Chicago Bear
-  J.K. Dobbins           Over    29.5 rush yds        -850  all 13/13=100%  2026 3/3=100%  vs  89% (+11%)  D 19/20= 95%  Denver Broncos @ San Francis
-  Juwan Johnson          Over    39.5 rec yds         -122  all 13/20= 65%  2026 3/3=100%  vs  55% (+10%)  D 19/20= 95%  Atlanta Falcons @ New Orlean
-  Juwan Johnson          Over     2.5 receptions      -290  all 18/20= 90%  2026 3/3=100%  vs  74% (+16%)  D 19/20= 95%  Atlanta Falcons @ New Orlean
-  Juwan Johnson          Over    40.5 rec yds         -114  all 13/20= 65%  2026 3/3=100%  vs  53% (+12%)  D 19/20= 95%  Atlanta Falcons @ New Orlean
   Rome Odunze            Over    32.5 rec yds         -114  all 11/15= 73%  2026 3/3=100%  vs  53% (+20%)  D 18/20= 90%  New York Jets @ Chicago Bear
-  Jakobi Meyers          Over    24.5 rec yds         -310  all 12/12=100%  2026 3/3=100%  vs  76% (+24%)  D 18/20= 90%  Jacksonville Jaguars @ Cinci
-  Christian McCaffrey    Over    19.5 rec yds         -490  all 19/20= 95%  2026 3/3=100%  vs  83% (+12%)  D 18/20= 90%  Denver Broncos @ San Francis
   Juwan Johnson          Over    49.5 rec yds          142  all 11/20= 55%  2026 3/3=100%  vs  41% (+14%)  D 18/20= 90%  Atlanta Falcons @ New Orlean
   Rome Odunze            Over    39.5 rec yds          128  all 10/15= 67%  2026 3/3=100%  vs  44% (+23%)  D 17/20= 85%  New York Jets @ Chicago Bear
-  Bucky Irving           Over    39.5 rush yds        -260  all 11/13= 85%  2026 3/3=100%  vs  72% (+12%)  D 17/20= 85%  Green Bay Packers @ Tampa Ba
-  Christian McCaffrey    Over     3.5 receptions      -280  all 18/20= 90%  2026 3/3=100%  vs  74% (+16%)  D 17/20= 85%  Denver Broncos @ San Francis
+  Justin Herbert         Over     0.5 pass TDs        -225  all 18/19= 95%  2026 3/3=100%  vs  69% (+26%)  D 15/20= 75%  Los Angeles Chargers @ Seatt
+  Rhamondre Stevenson    Over    39.5 rush yds         144  all  9/17= 53%  2026 2/3= 67%  vs  41% (+12%)  D 16/20= 80%  New England Patriots @ Buffa
+  Rhamondre Stevenson    Over    32.5 rush yds        -114  all 11/17= 65%  2026 2/3= 67%  vs  53% (+11%)  D 17/20= 85%  New England Patriots @ Buffa
+  Garrett Wilson         Under    6.5 receptions      -130  all  7/10= 70%  2026 2/3= 67%  vs  57% (+13%)  D 14/20= 70%  New York Jets @ Chicago Bear
+  Jakobi Meyers          Over    39.5 rec yds         -114  all  9/12= 75%  2026 2/3= 67%  vs  53% (+22%)  D 15/20= 75%  Jacksonville Jaguars @ Cinci
+  Parker Washington      Under    5.5 receptions      -140  all 15/19= 79%  2026 2/3= 67%  vs  58% (+21%)  D 17/20= 85%  Jacksonville Jaguars @ Cinci
+  Jakobi Meyers          Over    39.5 rec yds         -114  all  9/12= 75%  2026 2/3= 67%  vs  53% (+22%)  D 15/20= 75%  Jacksonville Jaguars @ Cinci
+  Bucky Irving           Over     3.5 receptions       200  all  7/13= 54%  2026 2/3= 67%  vs  33% (+21%)  D 18/20= 90%  Green Bay Packers @ Tampa Ba
+  Kyren Williams         Over    49.5 rush yds        -172  all 18/20= 90%  2026 2/3= 67%  vs  63% (+27%)  D 16/20= 80%  Los Angeles Rams @ Philadelp
+  Kyren Williams         Over    56.5 rush yds        -114  all 16/20= 80%  2026 2/3= 67%  vs  53% (+27%)  D 14/20= 70%  Los Angeles Rams @ Philadelp
+  Pat Bryant             Over    39.5 rec yds          250  all  7/16= 44%  2026 2/3= 67%  vs  29% (+15%)  D 18/20= 90%  Denver Broncos @ San Francis
+  Christian McCaffrey    Over    39.5 rec yds         -114  all 15/20= 75%  2026 2/3= 67%  vs  53% (+22%)  D 14/20= 70%  Denver Broncos @ San Francis
+  Christian McCaffrey    Over    39.5 rec yds         -114  all 15/20= 75%  2026 2/3= 67%  vs  53% (+22%)  D 14/20= 70%  Denver Broncos @ San Francis
+  Juwan Johnson          Over     3.5 receptions      -114  all 14/20= 70%  2026 2/3= 67%  vs  53% (+17%)  D 16/20= 80%  Atlanta Falcons @ New Orlean
+  Juwan Johnson          Over     3.5 receptions      -114  all 14/20= 70%  2026 2/3= 67%  vs  53% (+17%)  D 16/20= 80%  Atlanta Falcons @ New Orlean
+  Kyren Williams         Over    59.5 rush yds         104  all 16/20= 80%  2026 2/3= 67%  vs  49% (+31%)  D 13/20= 65%  Los Angeles Rams @ Philadelp
+  Omarion Hampton        Over    39.5 rush yds        -168  all 10/12= 83%  2026 3/3=100%  vs  63% (+21%)  D 13/20= 65%  Los Angeles Chargers @ Seatt
+  Chuba Hubbard          Under   66.5 rush yds        -114  all 15/18= 83%  2026 2/3= 67%  vs  53% (+30%)  D 12/20= 60%  Detroit Lions @ Carolina Pan
+  Josh Downs             Under    5.5 receptions      -152  all 14/19= 74%  2026 2/3= 67%  vs  60% (+13%)  D 11/20= 55%  Indianapolis Colts @ Washing
+  Omarion Hampton        Over    45.5 rush yds        -114  all  8/12= 67%  2026 2/3= 67%  vs  53% (+13%)  D 11/20= 55%  Los Angeles Chargers @ Seatt
+  Jalen Hurts            Over     1.5 pass TDs         225  all 10/19= 53%  2026 2/3= 67%  vs  31% (+22%)  D 10/20= 50%  Los Angeles Rams @ Philadelp
+  Jordan Addison         Under   62.5 rec yds         -114  all 13/17= 76%  2026 2/3= 67%  vs  53% (+23%)  D 10/20= 50%  Miami Dolphins @ Minnesota V
+  Justin Herbert         Over   199.5 pass yds        -114  all 14/19= 74%  2026 2/3= 67%  vs  53% (+20%)  D 10/20= 50%  Los Angeles Chargers @ Seatt
+  Keon Coleman           Over    39.5 rec yds          630  all  5/15= 33%  2026 1/3= 33%  vs  14% (+20%)  D 17/20= 85%  New England Patriots @ Buffa
+  Rome Odunze            Over    49.5 rec yds          200  all  7/15= 47%  2026 1/3= 33%  vs  33% (+13%)  D 15/20= 75%  New York Jets @ Chicago Bear
+  C.J. Stroud            Over    24.5 rush yds         350  all  6/17= 35%  2026 1/3= 33%  vs  22% (+13%)  D 18/20= 90%  Dallas Cowboys @ Houston Tex
+  Jake Ferguson          Over    39.5 rec yds          300  all  8/20= 40%  2026 1/3= 33%  vs  25% (+15%)  D 18/20= 90%  Dallas Cowboys @ Houston Tex
+  Bucky Irving           Over    39.5 rec yds          750  all  3/13= 23%  2026 1/3= 33%  vs  12% (+11%)  D 18/20= 90%  Green Bay Packers @ Tampa Ba
+  Cade Otton             Over    49.5 rec yds          370  all  6/18= 33%  2026 1/3= 33%  vs  21% (+12%)  D 14/20= 70%  Green Bay Packers @ Tampa Ba
+  Tez Johnson            Over    39.5 rec yds          470  all  6/18= 33%  2026 1/3= 33%  vs  18% (+16%)  D 18/20= 90%  Green Bay Packers @ Tampa Ba
+  Bucky Irving           Over     4.5 receptions       400  all  4/13= 31%  2026 1/3= 33%  vs  20% (+11%)  D 12/20= 60%  Green Bay Packers @ Tampa Ba
+  Jalen Hurts            Over   224.5 pass yds         220  all  8/19= 42%  2026 1/3= 33%  vs  31% (+11%)  D 10/20= 50%  Los Angeles Rams @ Philadelp
+  Tank Bigsby            Over    24.5 rush yds         370  all  6/17= 35%  2026 1/3= 33%  vs  21% (+14%)  D 18/20= 90%  Los Angeles Rams @ Philadelp
+  Tank Bigsby            Over    29.5 rush yds         550  all  6/17= 35%  2026 1/3= 33%  vs  15% (+20%)  D 17/20= 85%  Los Angeles Rams @ Philadelp
+  Evan Engram            Over     3.5 receptions       265  all  9/19= 47%  2026 1/3= 33%  vs  27% (+20%)  D 17/20= 85%  Denver Broncos @ San Francis
