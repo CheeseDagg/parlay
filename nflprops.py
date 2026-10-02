@@ -157,15 +157,26 @@ SCRIPT_DOG = -0.32     # implied win prob below this and a rushing prop is fadin
 SCRIPT_FAV = 0.68      # above this and a receiving prop risks garbage-time clock
 
 
-def script_ok(label, win_prob):
-    """Does the likely game script help this prop, or fight it?"""
+def script_ok(label, win_prob, side="Over"):
+    """Does the likely game script help this prop, or fight it?
+
+    THE SIDE MATTERS AND I MISSED IT ONCE ALREADY, on the defence filter. A
+    trailing team throws, so being a big underdog helps a receiving OVER and
+    hurts a receiving UNDER. Garrett Wilson under 6.5 receptions came through
+    this gate for a Jets side priced at 38.7%, which is the shape of a team
+    that will be throwing all afternoon.
+    """
     if win_prob is None:
         return True                      # no price -> no opinion, not a veto
-    if label in ("rush yds", "rush att"):
-        return win_prob >= abs(SCRIPT_DOG)
-    if label in ("pass yds", "pass TDs", "rec yds", "receptions"):
-        return win_prob <= SCRIPT_FAV
-    return True
+    rush = label in ("rush yds", "rush att")
+    pass_ = label in ("pass yds", "pass TDs", "rec yds", "receptions")
+    if not (rush or pass_):
+        return True
+    if side == "Over":
+        return win_prob >= abs(SCRIPT_DOG) if rush else win_prob <= SCRIPT_FAV
+    # An UNDER wants the opposite script: a rushing under wants him behind and
+    # abandoning the run, a receiving under wants his side ahead and running.
+    return win_prob <= SCRIPT_FAV if rush else win_prob >= abs(SCRIPT_DOG)
 
 
 def pos_for(label, player_pos):
@@ -443,7 +454,7 @@ def score(events, logs, min_gap=0.10, inj=None, snaps=None):
                 # THE PLAYER, AND THE MAN THROWING HIM THE BALL. A resting-day
                 # DNP is a flag too: it still means he was not on the field,
                 # and the reason is the team's word rather than a diagnosis.
-                if not script_ok(label, (ev.get("wp") or {}).get(team)):
+                if not script_ok(label, (ev.get("wp") or {}).get(team), side):
                     continue
                 # ON THE FIELD ENOUGH TO MATTER, and not on the way out.
                 # ON THE FIELD ENOUGH TO MATTER, and not on the way out. When
@@ -779,6 +790,18 @@ def selftest():
         "and the same prop for a favourite stands, because a lead means carries")
     chk(len(score([dict(ev_i[0], wp={})], inj_logs, inj={}, snaps={})) == 1,
         "no moneyline means no opinion, not a veto")
+    # AN UNDER WANTS THE OPPOSITE SCRIPT. A receiving under for a heavy
+    # underdog is a bet against a team that will be throwing all afternoon --
+    # Garrett Wilson came through the first version of this gate exactly that
+    # way.
+    chk(not script_ok("receptions", 0.387, "Under"),
+        "a receiving UNDER for a heavy underdog is refused -- he will be targeted")
+    chk(script_ok("receptions", 0.387, "Over"),
+        "while the OVER on the same player in the same game is fine")
+    chk(not script_ok("rush yds", 0.75, "Under"),
+        "and a rushing UNDER for a heavy favourite is refused -- he will get carries")
+    chk(script_ok("rush yds", 0.75, "Over"),
+        "while the rushing OVER there is exactly right")
     chk(score(ev_i, inj_logs,
               inj={("BUF", "Busy Guy"): ("Out", "Knee", "RB")}, snaps={}) == [],
         "a player who is Out is dropped")
