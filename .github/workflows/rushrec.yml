@@ -1,0 +1,26 @@
+name: Rush+rec probe
+on:
+  workflow_dispatch: {}
+  push: { branches: [main], paths: ['experiments/RUSHREC.txt'] }
+permissions: { contents: write }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 experiments/rushrec.py 2>&1 | tee rushrec.txt
+        env: { ODDS_API_KEY: "${{ secrets.ODDS_API_KEY }}" }
+      - run: |
+          git config user.name "parlay-bot"; git config user.email "actions@github.com"
+          cp rushrec.txt /tmp/rr.txt
+          for a in 1 2 3; do
+            git fetch origin main; git reset --hard origin/main; cp /tmp/rr.txt rushrec.txt
+            git add rushrec.txt
+            git diff --cached --quiet && { echo unchanged; exit 0; }
+            git commit -m "rush+rec probe $(date -u '+%H:%M')"
+            git push origin HEAD:main && exit 0
+          done
+          exit 1
