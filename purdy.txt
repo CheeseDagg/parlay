@@ -1,0 +1,136 @@
+Denver Broncos @ San Francisco 49ers   2026-10-04T20:25:00Z
+
+AVAILABLE MARKETS
+  64 keys
+    player_pass_rush_yds
+    player_pass_rush_yds_alternate
+    player_pass_tds
+    player_pass_tds_alternate
+    player_pass_yds
+    player_pass_yds_alternate
+    player_rush_reception_yds
+    player_rush_yds
+    player_rush_yds_alternate
+
+GAME SCRIPT
+  h2h       Denver Broncos                       +126
+  h2h       San Francisco 49ers                  -148
+  spreads   Denver Broncos                  +2.5 -102
+  spreads   San Francisco 49ers             -2.5 -120
+  totals    Over                           +47.5 -112
+  totals    Under                          +47.5 -108
+
+PURDY OUTCOMES
+  alternate_spreads: no Purdy outcome
+  alternate_spreads_h1: no Purdy outcome
+  alternate_spreads_h2: no Purdy outcome
+  alternate_team_totals: no Purdy outcome
+  alternate_team_totals_h1: no Purdy outcome
+  alternate_team_totals_h2: no Purdy outcome
+  alternate_totals: no Purdy outcome
+  alternate_totals_h1: no Purdy outcome
+  alternate_totals_h2: no Purdy outcome
+  first_team_to_score: no Purdy outcome
+  h2h: no Purdy outcome
+  h2h_3_way_h1: no Purdy outcome
+  h2h_3_way_q1: no Purdy outcome
+  h2h_3_way_q2: no Purdy outcome
+  h2h_3_way_q3: no Purdy outcome
+  h2h_3_way_q4: no Purdy outcome
+  h2h_h1: no Purdy outcome
+  h2h_h2: no Purdy outcome
+  h2h_q1: no Purdy outcome
+  h2h_q2: no Purdy outcome
+  h2h_q3: no Purdy outcome
+  h2h_q4: no Purdy outcome
+  overtime: no Purdy outcome
+  player_1st_td:
+      Yes        0.0  +1900
+  player_anytime_td:
+      Yes        0.0  +330
+  player_anytime_td_h1:
+      Yes        0.0  +650
+  player_anytime_td_h2:
+      Yes        0.0  +600
+  player_anytime_td_q1:
+      Yes        0.0  +1600
+  player_anytime_td_q2:
+      Yes        0.0  +1000
+  player_anytime_td_q3:
+      Yes        0.0  +1400
+  player_anytime_td_q4:
+      Yes        0.0  +1000
+  player_last_td:
+      Yes        0.0  +1500
+  player_pass_rush_yds:
+      Over     248.5  -114
+      Under    248.5  -114
+  player_pass_rush_yds_alternate:
+      Over     149.5  -1800
+      Over     174.5  -750
+      Over     199.5  -380
+      Over     224.5  -210
+      Over     249.5  -112
+      Over     274.5  +158
+      Over     299.5  +270
+      Over     324.5  +430
+      Over     349.5  +750
+      Over     374.5  +1200
+  player_pass_tds:
+      Over       1.5  -114
+      Under      1.5  -114
+  player_pass_tds_alternate:
+      Over       0.5  -650
+      Over       1.5  -114
+      Over       2.5  +320
+      Over       3.5  +1100
+  player_pass_yds:
+      Over     229.5  -114
+      Under    229.5  -114
+  player_pass_yds_alternate:
+      Over     149.5  -1000
+      Over     174.5  -450
+      Over     199.5  -240
+      Over     224.5  -132
+      Over     249.5  +140
+      Over     274.5  +240
+      Over     299.5  +410
+      Over     324.5  +700
+      Over     349.5  +1200
+      Over     374.5  +1700
+  player_reception_longest_alternate: no Purdy outcome
+  player_reception_yds: no Purdy outcome
+  player_reception_yds_alternate: no Purdy outcome
+  player_receptions: no Purdy outcome
+  player_receptions_alternate: no Purdy outcome
+  player_rush_reception_yds: no Purdy outcome
+  player_rush_yds:
+      Over      16.5  -114
+      Under     16.5  -114
+  player_rush_yds_alternate:
+      Over       4.5  -700
+      Over       9.5  -290
+      Over      14.5  -146
+      Over      19.5  +122
+      Over      24.5  +198
+      Over      29.5  +300
+      Over      39.5  +640
+  player_tds_over:
+      Over       1.5  +3300
+  spreads: no Purdy outcome
+  spreads_h1: no Purdy outcome
+  spreads_h2: no Purdy outcome
+  spreads_q1: no Purdy outcome
+  spreads_q2: no Purdy outcome
+  spreads_q3: no Purdy outcome
+  spreads_q4: no Purdy outcome
+  team_totals: no Purdy outcome
+  team_totals_h1: no Purdy outcome
+  team_totals_h2: no Purdy outcome
+  totals: no Purdy outcome
+  totals_h1: no Purdy outcome
+  totals_h2: no Purdy outcome
+  totals_q1: no Purdy outcome
+  totals_q2: no Purdy outcome
+  totals_q3: no Purdy outcome
+  totals_q4: no Purdy outcome
