@@ -1,21 +1,16 @@
 pulling alt props for up to 4 games
-  Indianapolis Colts @ Washington Commanders: 234 lines  (quota left 19929)
-  Arizona Cardinals @ New York Giants: 270 lines  (quota left 19924)
-  Tennessee Titans @ Baltimore Ravens: 236 lines  (quota left 19919)
-  New England Patriots @ Buffalo Bills: 302 lines  (quota left 19914)
+  Indianapolis Colts @ Washington Commanders: 234 lines  (quota left 19909)
+  Arizona Cardinals @ New York Giants: 270 lines  (quota left 19904)
+  Tennessee Titans @ Baltimore Ravens: 236 lines  (quota left 19899)
+  New England Patriots @ Buffalo Bills: 302 lines  (quota left 19894)
 
 loading game logs...
   2262 players with logs
 
-35 lines where the RECORD beats the PRICE by 10+ points
+26 lines where the RECORD beats the PRICE by 10+ points
 (hit rate is raw history; implied price still carries the vig)
 
-  Calvin Ridley          Over    24.5 rec yds          550  all  6/ 9= 67%  2026 1/2= 50%  vs  15% (+51%)  Tennessee Titans @ Baltimore R
-  Calvin Ridley          Over    14.5 rec yds          225  all  7/ 9= 78%  2026 1/2= 50%  vs  31% (+47%)  Tennessee Titans @ Baltimore R
-  Calvin Ridley          Over     9.5 rec yds          134  all  8/ 9= 89%  2026 1/2= 50%  vs  43% (+46%)  Tennessee Titans @ Baltimore R
-  Calvin Ridley          Over    19.5 rec yds          370  all  6/ 9= 67%  2026 1/2= 50%  vs  21% (+45%)  Tennessee Titans @ Baltimore R
   Keon Coleman           Over     2.5 receptions       280  all  9/15= 60%  2026 1/3= 33%  vs  26% (+34%)  New England Patriots @ Buffalo
-  Calvin Ridley          Over    29.5 rec yds          750  all  4/ 9= 44%  2026 1/2= 50%  vs  12% (+33%)  Tennessee Titans @ Baltimore R
   Keon Coleman           Over    14.5 rec yds          108  all 12/15= 80%  2026 2/3= 67%  vs  48% (+32%)  New England Patriots @ Buffalo
   Keon Coleman           Over    19.5 rec yds          168  all 10/15= 67%  2026 2/3= 67%  vs  37% (+29%)  New England Patriots @ Buffalo
   Dawson Knox            Over     4.5 rec yds         -220  all 18/19= 95%  2026 3/3=100%  vs  69% (+26%)  New England Patriots @ Buffalo
@@ -25,12 +20,9 @@ loading game logs...
   Elic Ayomanor          Over     9.5 rec yds         -300  all 18/19= 95%  2026 3/3=100%  vs  75% (+20%)  Tennessee Titans @ Baltimore R
   Keon Coleman           Over    39.5 rec yds          630  all  5/15= 33%  2026 1/3= 33%  vs  14% (+20%)  New England Patriots @ Buffalo
   Dawson Knox            Over     0.5 receptions      -310  all 18/19= 95%  2026 3/3=100%  vs  76% (+19%)  New England Patriots @ Buffalo
-  Calvin Ridley          Over     1.5 receptions       174  all  5/ 9= 56%  2026 1/2= 50%  vs  36% (+19%)  Tennessee Titans @ Baltimore R
   Jacoby Brissett        Over   249.5 pass yds         142  all 10/17= 59%  2026 2/3= 67%  vs  41% (+18%)  Arizona Cardinals @ New York G
   Keon Coleman           Over     0.5 receptions      -490  all 15/15=100%  2026 3/3=100%  vs  83% (+17%)  New England Patriots @ Buffalo
-  TreVeyon Henderson     Over    59.5 rush yds         270  all  8/19= 42%  2026 1/2= 50%  vs  27% (+15%)  New England Patriots @ Buffalo
   Jonathan Taylor        Over     1.5 receptions      -400  all 19/20= 95%  2026 3/3=100%  vs  80% (+15%)  Indianapolis Colts @ Washingto
-  TreVeyon Henderson     Over    49.5 rush yds         164  all 10/19= 53%  2026 1/2= 50%  vs  38% (+15%)  New England Patriots @ Buffalo
   Elic Ayomanor          Over     4.5 rec yds         -580  all 19/19=100%  2026 3/3=100%  vs  85% (+15%)  Tennessee Titans @ Baltimore R
   Terry McLaurin         Over    49.5 rec yds         -122  all  9/13= 69%  2026 2/3= 67%  vs  55% (+14%)  Indianapolis Colts @ Washingto
   Jacoby Brissett        Over   224.5 pass yds        -132  all 12/17= 71%  2026 2/3= 67%  vs  57% (+14%)  Arizona Cardinals @ New York G
@@ -44,4 +36,3 @@ loading game logs...
   Drake Maye             Over   174.5 pass yds        -500  all 19/20= 95%  2026 3/3=100%  vs  83% (+12%)  New England Patriots @ Buffalo
   Michael Wilson         Over     9.5 receptions      1000  all  4/20= 20%  2026 1/3= 33%  vs   9% (+11%)  Arizona Cardinals @ New York G
   Elic Ayomanor          Over     0.5 receptions      -850  all 19/19=100%  2026 3/3=100%  vs  89% (+11%)  Tennessee Titans @ Baltimore R
-  Zay Flowers            Over    59.5 rec yds         -172  all 14/19= 74%  2026 2/2=100%  vs  63% (+10%)  Tennessee Titans @ Baltimore R
