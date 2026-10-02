@@ -198,7 +198,7 @@ def score(events, logs, min_gap=0.10):
     return out
 
 
-def pull(max_events=4):
+def pull(max_events=4, skip=0):
     evs, _ = _get(f"{BASE}/sports/{SPORT}/events?apiKey={KEY}")
     now = dt.datetime.now(dt.timezone.utc)
     keep = []
@@ -216,7 +216,9 @@ def pull(max_events=4):
     # board never has.
     keep.sort(key=lambda x: x[0])
     out = []
-    for t, e in keep[:max_events]:
+    # skip lets a later batch be pulled without re-spending quota on the
+    # early kickoffs already covered.
+    for t, e in keep[skip:skip + max_events]:
         url = (f"{BASE}/sports/{SPORT}/events/{e['id']}/odds/?apiKey={KEY}"
                f"&regions=us&bookmakers={BOOK}&oddsFormat=american"
                f"&markets={','.join(MARKETS)}")
@@ -251,12 +253,11 @@ def main():
     if not KEY:
         print("no ODDS_API_KEY -- this runs on the Actions runner")
         return 1
-    n = 4
-    for a in sys.argv[1:]:
-        if a.isdigit():
-            n = int(a)
-    print(f"pulling alt props for up to {n} games")
-    events = pull(n)
+    nums = [int(a) for a in sys.argv[1:] if a.isdigit()]
+    n = nums[0] if nums else 4
+    skip = nums[1] if len(nums) > 1 else 0
+    print(f"pulling alt props for up to {n} games, skipping the first {skip}")
+    events = pull(n, skip)
     if not events:
         print("no events pulled")
         return 1
