@@ -1,63 +1,63 @@
 pulling alt props for up to 15 games, skipping the first 0
-  Indianapolis Colts @ Washington Commanders: 221 lines  (quota left 18669)
-  Arizona Cardinals @ New York Giants: 327 lines  (quota left 18659)
-  Tennessee Titans @ Baltimore Ravens: 288 lines  (quota left 18649)
-  New England Patriots @ Buffalo Bills: 368 lines  (quota left 18639)
-  New York Jets @ Chicago Bears: 309 lines  (quota left 18629)
-  Jacksonville Jaguars @ Cincinnati Bengals: 350 lines  (quota left 18619)
-  Dallas Cowboys @ Houston Texans: 335 lines  (quota left 18609)
-  Green Bay Packers @ Tampa Bay Buccaneers: 359 lines  (quota left 18599)
-  Los Angeles Rams @ Philadelphia Eagles: 273 lines  (quota left 18589)
-  Miami Dolphins @ Minnesota Vikings: 323 lines  (quota left 18579)
-  Denver Broncos @ San Francisco 49ers: 299 lines  (quota left 18569)
-  Kansas City Chiefs @ Las Vegas Raiders: 342 lines  (quota left 18559)
-  Los Angeles Chargers @ Seattle Seahawks: 236 lines  (quota left 18549)
-  Detroit Lions @ Carolina Panthers: 309 lines  (quota left 18539)
-  Atlanta Falcons @ New Orleans Saints: 318 lines  (quota left 18529)
+  Indianapolis Colts @ Washington Commanders: 221 lines  (quota left 18519)
+  Arizona Cardinals @ New York Giants: 327 lines  (quota left 18509)
+  Tennessee Titans @ Baltimore Ravens: 288 lines  (quota left 18499)
+  New England Patriots @ Buffalo Bills: 368 lines  (quota left 18489)
+  New York Jets @ Chicago Bears: 309 lines  (quota left 18479)
+  Jacksonville Jaguars @ Cincinnati Bengals: 350 lines  (quota left 18469)
+  Dallas Cowboys @ Houston Texans: 335 lines  (quota left 18459)
+  Green Bay Packers @ Tampa Bay Buccaneers: 359 lines  (quota left 18449)
+  Los Angeles Rams @ Philadelphia Eagles: 273 lines  (quota left 18439)
+  Miami Dolphins @ Minnesota Vikings: 323 lines  (quota left 18429)
+  Denver Broncos @ San Francisco 49ers: 299 lines  (quota left 18419)
+  Kansas City Chiefs @ Las Vegas Raiders: 342 lines  (quota left 18409)
+  Los Angeles Chargers @ Seattle Seahawks: 236 lines  (quota left 18399)
+  Detroit Lions @ Carolina Panthers: 309 lines  (quota left 18389)
+  Atlanta Falcons @ New Orleans Saints: 318 lines  (quota left 18379)
 
 loading game logs...
   2262 players with logs
 
-43 lines where the RECORD beats the PRICE by 10+ points
+65 lines where the RECORD beats the PRICE by 10+ points
 (hit rate is raw history; implied price still carries the vig)
 
-  Kyren Williams         Over     9.5 rec yds         -188  all 15/20= 75%  2026 3/3=100%  vs  65% (+10%)  D 14/20= 70%  snap  71% role  54%  Los Angeles Rams @ Philadelp
   Justin Herbert         Over     0.5 pass TDs        -225  all 18/19= 95%  2026 3/3=100%  vs  69% (+26%)  D 15/20= 75%  snap 100% role  --   Los Angeles Chargers @ Seatt
+  Cam Ward               Over     0.5 pass TDs        -174  all 13/20= 65%  2026 2/3= 67%  vs  64% (+1%)  D 16/20= 80%  snap 100% role  --   Tennessee Titans @ Baltimore
+  Garrett Wilson         Under    6.5 receptions      -130  all  7/10= 70%  2026 2/3= 67%  vs  57% (+13%)  D 14/20= 70%  snap  94% role  34%  New York Jets @ Chicago Bear
+  Parker Washington      Under    5.5 receptions      -140  all 15/19= 79%  2026 2/3= 67%  vs  58% (+21%)  D 17/20= 85%  snap  81% role  36%  Jacksonville Jaguars @ Cinci
   Jalen Hurts            Over   174.5 pass yds        -160  all 13/19= 68%  2026 2/3= 67%  vs  62% (+7%)  D 16/20= 80%  snap  92% role  --   Los Angeles Rams @ Philadelp
-  Kyren Williams         Over    49.5 rush yds        -172  all 18/20= 90%  2026 2/3= 67%  vs  63% (+27%)  D 16/20= 80%  snap  71% role  54%  Los Angeles Rams @ Philadelp
-  Kyren Williams         Over    56.5 rush yds        -114  all 16/20= 80%  2026 2/3= 67%  vs  53% (+27%)  D 14/20= 70%  snap  71% role  54%  Los Angeles Rams @ Philadelp
+  Drake London           Under    5.5 receptions       102  all  8/15= 53%  2026 2/3= 67%  vs  50% (+4%)  D 17/20= 85%  snap  93% role  35%  Atlanta Falcons @ New Orlean
+  Bijan Robinson         Under   39.5 rec yds         -114  all 11/20= 55%  2026 2/3= 67%  vs  53% (+2%)  D 17/20= 85%  snap  72% role  69%  Atlanta Falcons @ New Orlean
+  Drake London           Under   78.5 rec yds         -114  all  9/15= 60%  2026 2/3= 67%  vs  53% (+7%)  D 15/20= 75%  snap  93% role  35%  Atlanta Falcons @ New Orlean
   Bijan Robinson         Under   85.5 rush yds        -114  all 12/20= 60%  2026 2/3= 67%  vs  53% (+7%)  D 15/20= 75%  snap  72% role  69%  Atlanta Falcons @ New Orlean
-  Kyren Williams         Over    59.5 rush yds         104  all 16/20= 80%  2026 2/3= 67%  vs  49% (+31%)  D 13/20= 65%  snap  71% role  54%  Los Angeles Rams @ Philadelp
+  George Kittle          Under    4.5 receptions       112  all  7/14= 50%  2026 2/3= 67%  vs  47% (+3%)  D 13/20= 65%  snap  85% role  28%  Denver Broncos @ San Francis
+  Jonathan Taylor        Over    19.5 rec yds         -114  all 11/20= 55%  2026 2/3= 67%  vs  53% (+2%)  D 12/20= 60%  snap  85% role  92%  Indianapolis Colts @ Washing
   Jordan Love            Over     1.5 pass TDs         110  all 10/18= 56%  2026 3/3=100%  vs  48% (+8%)  D 12/20= 60%  snap 100% role  --   Green Bay Packers @ Tampa Ba
+  Jalen Hurts            Over   199.5 pass yds         118  all  9/19= 47%  2026 2/3= 67%  vs  46% (+1%)  D 12/20= 60%  snap  92% role  --   Los Angeles Rams @ Philadelp
   Aaron Jones            Under    3.5 receptions      -154  all 13/15= 87%  2026 2/3= 67%  vs  61% (+26%)  D 12/20= 60%  snap  80% role  71%  Miami Dolphins @ Minnesota V
   Justin Herbert         Over   174.5 pass yds        -225  all 15/19= 79%  2026 3/3=100%  vs  69% (+10%)  D 12/20= 60%  snap 100% role  --   Los Angeles Chargers @ Seatt
   Chuba Hubbard          Under   66.5 rush yds        -114  all 15/18= 83%  2026 2/3= 67%  vs  53% (+30%)  D 12/20= 60%  snap  84% role  66%  Detroit Lions @ Carolina Pan
-  Parker Washington      Under    5.5 receptions      -140  all 15/19= 79%  2026 2/3= 67%  vs  58% (+21%)  D 17/20= 85%  snap  81% role  36%  Jacksonville Jaguars @ Cinci
-  Drake London           Under   78.5 rec yds         -114  all  9/15= 60%  2026 2/3= 67%  vs  53% (+7%)  D 15/20= 75%  snap  93% role  35%  Atlanta Falcons @ New Orlean
-  Garrett Wilson         Under    6.5 receptions      -130  all  7/10= 70%  2026 2/3= 67%  vs  57% (+13%)  D 14/20= 70%  snap  94% role  34%  New York Jets @ Chicago Bear
-  Jalen Hurts            Over     1.5 pass TDs         225  all 10/19= 53%  2026 2/3= 67%  vs  31% (+22%)  D 10/20= 50%  snap  92% role  --   Los Angeles Rams @ Philadelp
-  Justin Herbert         Over   199.5 pass yds        -114  all 14/19= 74%  2026 2/3= 67%  vs  53% (+20%)  D 10/20= 50%  snap 100% role  --   Los Angeles Chargers @ Seatt
+  Tyler Warren           Under   51.5 rec yds         -114  all 12/20= 60%  2026 2/3= 67%  vs  53% (+7%)  D 12/20= 60%  snap  94% role  27%  Indianapolis Colts @ Washing
+  Dalton Schultz         Under   40.5 rec yds         -114  all 11/20= 55%  2026 2/3= 67%  vs  53% (+2%)  D 12/20= 60%  snap  54% role  26%  Dallas Cowboys @ Houston Tex
+  Kyren Williams         Over    49.5 rush yds        -172  all 18/20= 90%  2026 2/3= 67%  vs  63% (+27%)  D 16/20= 80%  snap  71% role  54%  Los Angeles Rams @ Philadelp
+  Kyren Williams         Over    59.5 rush yds         104  all 16/20= 80%  2026 2/3= 67%  vs  49% (+31%)  D 13/20= 65%  snap  71% role  54%  Los Angeles Rams @ Philadelp
+  Kyren Williams         Over     9.5 rec yds         -188  all 15/20= 75%  2026 3/3=100%  vs  65% (+10%)  D 14/20= 70%  snap  71% role  54%  Los Angeles Rams @ Philadelp
+  Kyren Williams         Over    56.5 rush yds        -114  all 16/20= 80%  2026 2/3= 67%  vs  53% (+27%)  D 14/20= 70%  snap  71% role  54%  Los Angeles Rams @ Philadelp
+  Rashee Rice            Over    49.5 rec yds         -158  all  7/11= 64%  2026 2/3= 67%  vs  61% (+2%)  D 17/20= 85%  snap  77% role  25%  Kansas City Chiefs @ Las Veg
+  Rashee Rice            Over    59.5 rec yds          106  all  6/11= 55%  2026 2/3= 67%  vs  49% (+6%)  D 12/20= 60%  snap  77% role  25%  Kansas City Chiefs @ Las Veg
+  Rashee Rice            Over    55.5 rec yds         -114  all  6/11= 55%  2026 2/3= 67%  vs  53% (+1%)  D 14/20= 70%  snap  77% role  25%  Kansas City Chiefs @ Las Veg
   Josh Downs             Under    5.5 receptions      -152  all 14/19= 74%  2026 2/3= 67%  vs  60% (+13%)  D 11/20= 55%  snap  68% role  29%  Indianapolis Colts @ Washing
+  Cam Skattebo           Over    17.5 rec yds         -114  all  6/11= 55%  2026 2/3= 67%  vs  53% (+1%)  D 11/20= 55%  snap  77% role  67%  Arizona Cardinals @ New York
+  T.J. Hockenson         Under    4.5 receptions      -130  all 14/18= 78%  2026 3/3=100%  vs  57% (+21%)  D 11/20= 55%  snap  85% role  23%  Miami Dolphins @ Minnesota V
   CeeDee Lamb            Over    69.5 rec yds         -154  all 11/16= 69%  2026 2/3= 67%  vs  61% (+8%)  D 10/20= 50%  snap  82% role  28%  Dallas Cowboys @ Houston Tex
   George Pickens         Over     4.5 receptions      -148  all 13/20= 65%  2026 2/3= 67%  vs  60% (+5%)  D 10/20= 50%  snap  85% role  28%  Dallas Cowboys @ Houston Tex
+  Christian Watson       Over    79.5 rec yds          142  all  6/13= 46%  2026 2/3= 67%  vs  41% (+5%)  D 10/20= 50%  snap  80% role  27%  Green Bay Packers @ Tampa Ba
+  Jalen Hurts            Over     1.5 pass TDs         225  all 10/19= 53%  2026 2/3= 67%  vs  31% (+22%)  D 10/20= 50%  snap  92% role  --   Los Angeles Rams @ Philadelp
   Jordan Addison         Under   62.5 rec yds         -114  all 13/17= 76%  2026 2/3= 67%  vs  53% (+23%)  D 10/20= 50%  snap  98% role  28%  Miami Dolphins @ Minnesota V
-  Tyler Warren           Under   51.5 rec yds         -114  all 12/20= 60%  2026 2/3= 67%  vs  53% (+7%)  D 12/20= 60%  snap  94% role  27%  Indianapolis Colts @ Washing
-  Rashee Rice            Over    59.5 rec yds          106  all  6/11= 55%  2026 2/3= 67%  vs  49% (+6%)  D 12/20= 60%  snap  77% role  25%  Kansas City Chiefs @ Las Veg
-  T.J. Hockenson         Under    4.5 receptions      -130  all 14/18= 78%  2026 3/3=100%  vs  57% (+21%)  D 11/20= 55%  snap  85% role  23%  Miami Dolphins @ Minnesota V
+  Justin Herbert         Over   199.5 pass yds        -114  all 14/19= 74%  2026 2/3= 67%  vs  53% (+20%)  D 10/20= 50%  snap 100% role  --   Los Angeles Chargers @ Seatt
+  Jameson Williams       Over    39.5 rec yds         -200  all 14/20= 70%  2026 2/3= 67%  vs  67% (+3%)  D 18/20= 90%  snap  82% role  20%  Detroit Lions @ Carolina Pan
   Jameson Williams       Over     3.5 receptions      -102  all 12/20= 60%  2026 2/3= 67%  vs  50% (+10%)  D 15/20= 75%  snap  82% role  20%  Detroit Lions @ Carolina Pan
+  Michael Mayer          Over    29.5 rec yds          168  all  6/16= 38%  2026 2/3= 67%  vs  37% (+0%)  D 12/20= 60%  snap  87% role  20%  Kansas City Chiefs @ Las Veg
   Michael Mayer          Over     2.5 receptions      -130  all 10/16= 62%  2026 3/3=100%  vs  57% (+6%)  D 15/20= 75%  snap  87% role  20%  Kansas City Chiefs @ Las Veg
+  Michael Mayer          Over    21.5 rec yds         -114  all  9/16= 56%  2026 3/3=100%  vs  53% (+3%)  D 16/20= 80%  snap  87% role  20%  Kansas City Chiefs @ Las Veg
   Jakobi Meyers          Over    39.5 rec yds         -114  all  9/12= 75%  2026 2/3= 67%  vs  53% (+22%)  D 15/20= 75%  snap  81% role  17%  Jacksonville Jaguars @ Cinci
-  AJ Barner              Under    3.5 receptions      -166  all 15/20= 75%  2026 2/3= 67%  vs  62% (+13%)  D 14/20= 70%  snap  91% role  16%  Los Angeles Chargers @ Seatt
-  Pat Bryant             Over    39.5 rec yds          250  all  7/16= 44%  2026 2/3= 67%  vs  29% (+15%)  D 18/20= 90%  snap  70% role  14%  Denver Broncos @ San Francis
-  Tyjae Spears           Over    24.5 rec yds          240  all  6/16= 38%  2026 1/3= 33%  vs  29% (+8%)  D 12/20= 60%  snap  47% role  24%  Tennessee Titans @ Baltimore
-  C.J. Stroud            Over    24.5 rush yds         350  all  6/17= 35%  2026 1/3= 33%  vs  22% (+13%)  D 18/20= 90%  snap 100% role  --   Dallas Cowboys @ Houston Tex
-  Jalen Hurts            Over   224.5 pass yds         220  all  8/19= 42%  2026 1/3= 33%  vs  31% (+11%)  D 10/20= 50%  snap  92% role  --   Los Angeles Rams @ Philadelp
-  Evan Engram            Over    14.5 rec yds         -158  all 13/19= 68%  2026 2/3= 67%  vs  61% (+7%)  D 16/20= 80%  snap  60% role  12%  Denver Broncos @ San Francis
-  Evan Engram            Over    29.5 rec yds          235  all  9/19= 47%  2026 1/3= 33%  vs  30% (+18%)  D 12/20= 60%  snap  60% role  12%  Denver Broncos @ San Francis
-  Evan Engram            Over    39.5 rec yds          490  all  5/19= 26%  2026 1/3= 33%  vs  17% (+9%)  D 11/20= 55%  snap  60% role  12%  Denver Broncos @ San Francis
-  Evan Engram            Over     3.5 receptions       265  all  9/19= 47%  2026 1/3= 33%  vs  27% (+20%)  D 10/20= 50%  snap  60% role  12%  Denver Broncos @ San Francis
-  Tommy Tremble          Over    24.5 rec yds          270  all  6/18= 33%  2026 2/3= 67%  vs  27% (+6%)  D 13/20= 65%  snap  48% role  12%  Detroit Lions @ Carolina Pan
-  Tommy Tremble          Over    29.5 rec yds          400  all  5/18= 28%  2026 1/3= 33%  vs  20% (+8%)  D 12/20= 60%  snap  48% role  12%  Detroit Lions @ Carolina Pan
-  Tommy Tremble          Over    39.5 rec yds          800  all  3/18= 17%  2026 1/3= 33%  vs  11% (+6%)  D 11/20= 55%  snap  48% role  12%  Detroit Lions @ Carolina Pan
-  Tyquan Thornton        Over    49.5 rec yds          310  all  5/15= 33%  2026 1/3= 33%  vs  24% (+9%)  D 17/20= 85%  snap  46% role  10%  Kansas City Chiefs @ Las Veg
-  Tyquan Thornton        Over    59.5 rec yds          430  all  4/15= 27%  2026 1/3= 33%  vs  19% (+8%)  D 12/20= 60%  snap  46% role  10%  Kansas City Chiefs @ Las Veg
