@@ -17,7 +17,7 @@ jobs:
           python3 nflprops.py --selftest | tail -2
           # Four games, not fifteen: each event is its own API request and the
           # quota is shared with the board and scores pulls.
-          python3 nflprops.py 6 9 2>&1 | tee nflprops.new
+          python3 nflprops.py 15 0 2>&1 | tee nflprops.new
           test -s nflprops.new
           grep -q "lines where the RECORD" nflprops.new
           mv nflprops.new nflprops.txt

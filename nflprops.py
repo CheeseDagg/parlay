@@ -152,42 +152,46 @@ def pos_for(label, player_pos):
     if label == "anytime TD":
         return "RB" if player_pos == "RB" else "WR"
     return POS_FOR.get(label)
-GENEROUS_FRAC = 0.375  # a defence must sit in the most generous 37.5% -- 12 of
-                       # 32. A FRACTION, not a fixed rank: with fewer teams in
-                       # the pool (early weeks, a position with sparse data) a
-                       # hard "rank <= 12" passes everything, which is how a
-                       # three-team fixture let the stingiest defence through.
 
 
-def defense_allowed(logs, current=CURRENT_SEASON):
-    """{position: {defence: yards allowed per game}} for the current season.
+def defense_at(logs, opp, pos, col_sum, thresh, side):
+    """How often does this defence let a player at THIS position clear THIS
+    number? Two seasons, position-pure, measured at the actual line.
 
-    This is the check that would have caught Rome Odunze. His record cleared
-    every window -- 3 of 3 this season, 13 of 15 all time -- and he draws the
-    Jets, who are 29th of 32 in receiving yards allowed to wide receivers. A
-    rate measures what a player did against the schedule he happened to have;
-    it says nothing about the defence in front of him on Sunday.
+    Three upgrades on the first version, each from a hole the audit found:
+
+      * TWENTY GAMES, not three. Ranking a defence on three weeks is the same
+        small-sample error that has bitten this file at every stage.
+      * POSITION-PURE. Lumping tight ends into the receiver pool made Houston
+        look like the 7th-easiest defence to get 100 receiving yards against.
+        Receivers only, it is 5 of 20 -- exactly league average.
+      * AT THE ACTUAL NUMBER. A defence that bleeds short catches is not the
+        same as one that gives up chunk yardage, and "yards allowed per game"
+        cannot tell them apart. The Chargers allow 90+ yards to a receiver 40%
+        of the time and 8+ catches 15% of the time. Same defence, opposite
+        answer depending on the prop.
+
+    Returns (hits, games) over the best line that position put up each week.
     """
-    tot = defaultdict(lambda: defaultdict(float))
-    games = defaultdict(set)
+    wk = {}
     for player, rows in logs.items():
-        for sn, wk, v in rows:
-            if sn != current:
+        for sn, w, v in rows:
+            if v.get("_opp") != opp or v.get("_pos") not in pos:
                 continue
-            opp, pos = v.get("_opp"), v.get("_pos")
-            if not opp:
-                continue
-            games[opp].add((sn, wk))
-            if pos in ("WR", "TE"):
-                tot["WR"][opp] += v.get("receiving_yards", 0.0)
-            elif pos == "RB":
-                tot["RB"][opp] += v.get("rushing_yards", 0.0)
-            elif pos == "QB":
-                tot["QB"][opp] += v.get("passing_yards", 0.0)
-    out = {}
-    for pos, d in tot.items():
-        out[pos] = {t: v / len(games[t]) for t, v in d.items() if games[t]}
-    return out
+            tot = sum(v.get(c, 0.0) for c in col_sum)
+            k = (sn, w)
+            wk[k] = max(wk.get(k, 0.0), tot)
+    if not wk:
+        return None
+    vals = list(wk.values())
+    hits = sum(1 for z in vals if ((z > thresh) if side == "Over" else (z < thresh)))
+    return hits, len(vals)
+
+
+POS_POOL = {"QB": ("QB",), "RB": ("RB",), "WR": ("WR",)}
+
+
+POS_POOL = {"QB": ("QB",), "RB": ("RB",), "WR": ("WR",)}
 
 
 def generosity(defn, pos, opp):
@@ -256,10 +260,9 @@ def hit_rate(logs, player, cols, point, side, current=CURRENT_SEASON):
     return hits, n, team, ch, cn
 
 
-def score(events, logs, min_gap=0.10, defn=None, frac=GENEROUS_FRAC):
+def score(events, logs, min_gap=0.10):
     """Lines where the record disagrees with the price by at least min_gap."""
     out = []
-    defn = defense_allowed(logs) if defn is None else defn
     for ev in events:
         for mk, (cols, label) in MARKETS.items():
             for name, side, point, price in ev.get("lines", {}).get(mk, []):
@@ -283,35 +286,32 @@ def score(events, logs, min_gap=0.10, defn=None, frac=GENEROUS_FRAC):
                 # no amount of history can see.
                 ppos = (logs.get(name) or [(0, 0, {})])[-1][2].get("_pos")
                 pos = pos_for(label, ppos)
-                gen = None
-                if pos and defn:
-                    teams = [TEAM_ABBR.get(x.strip()) for x in
-                             (ev.get("game") or "").split(" @ ")]
-                    opp = next((t for t in teams if t and t != team), None)
-                    gen = generosity(defn, pos, opp) if opp else None
-                # THE FILTER INVERTS ON AN UNDER. A generous defence helps an
-                # OVER and hurts an UNDER, and the first version applied the
-                # same test to both -- so it surfaced "Sione Vaki under 11.5
-                # rush yards" against Carolina, the single most generous run
-                # defence in the league, as though that were a point in its
-                # favour.
-                lim = max(1, round(frac * gen[2])) if gen else 0
-                if gen is None:
+                teams = [TEAM_ABBR.get(x.strip()) for x in
+                         (ev.get("game") or "").split(" @ ")]
+                opp = next((t for t in teams if t and t != team), None)
+                dres = (defense_at(logs, opp, POS_POOL.get(pos, (pos,)), cols,
+                                   point, side) if (pos and opp) else None)
+                if not dres or dres[1] < 8:
                     continue
-                if side == "Over" and gen[0] > lim:
-                    continue
-                if side == "Under" and gen[0] < gen[2] - lim + 1:
+                drate = dres[0] / dres[1]
+                # THE DEFENCE HAS TO ALLOW IT TOO. Not "is this defence
+                # generous in general" -- does it give up THIS number to THIS
+                # position. A 50% floor means better than a coin flip from the
+                # defence's side before the player's own form counts at all.
+                if drate < 0.50:
                     continue
                 if rate - imp >= min_gap and (cn >= MIN_CURRENT and crate >= imp):
                     out.append({"game": ev.get("game"), "player": name,
                                 "market": label, "side": side, "point": point,
                                 "price": price, "hits": hits, "n": n, "team": team,
                                 "chits": ch, "cn": cn, "crate": crate,
-                                "def_rank": gen[0], "def_allowed": gen[1],
-                                "def_of": gen[2], "pos": pos,
+                                "dhits": dres[0], "dn": dres[1],
+                                "drate": drate, "pos": pos,
                                 "rate": rate, "implied": imp,
                                 "gap": rate - imp})
-    out.sort(key=lambda r: -r["gap"])
+    # Rank by the WEAKER of the two sides -- a prop is only as good as
+    # whichever of player form and matchup is softer.
+    out.sort(key=lambda r: -min(r['crate'], r['drate']))
     return out
 
 
@@ -389,7 +389,7 @@ def main():
               f" {int(r['price']):>6}  all {r['hits']:2}/{r['n']:2}={r['rate']:4.0%}"
               f"  {CURRENT_SEASON} {r['chits']}/{r['cn']}={r['crate']:4.0%}"
               f"  vs {r['implied']:4.0%} (+{r['gap']:.0%})"
-              f"  D#{r['def_rank']}/{r['def_of']} {r['def_allowed']:.0f}{r['pos']}"
+              f"  D {r['dhits']:2}/{r['dn']:2}={r['drate']:4.0%}"
               f"  {r['game'][:28]}")
     return 0
 
@@ -404,8 +404,6 @@ def selftest():
 
     chk(abs(implied(-110) - 0.5238) < 1e-3, "a -110 price implies 52.4%, vig included")
     chk(abs(implied(+200) - 1/3) < 1e-6, "and +200 implies 33.3%")
-
-    SOFT_WR = {"WR": {"NYJ": 200.0, "ATL": 80.0, "BUF": 90.0}}
 
     def gl(rows):
         return [(sn, w, dict(v, _team=t)) for sn, w, t, v in rows]
@@ -452,7 +450,9 @@ def selftest():
     chk(hit_rate(logs, "Nobody", ["rushing_yards"], 10.5, "Over") is None,
         "and an unknown name yields None rather than raising")
 
-    ev = [{"game": "Buffalo Bills @ New York Jets", "lines": {"player_rush_yds_alternate": [
+    # Carolina, the soft run defence built above -- the Jets fixture is the
+    # stingy one and would correctly reject every line in here.
+    ev = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {"player_rush_yds_alternate": [
         ("Busy Guy",   "Over", 59.5, -250),   # 100% history vs 71% implied -> gap
         ("Busy Guy",   "Over", 89.5, +150),   #  31% history vs 40% implied -> none
         ("Gone Guy",   "Over", 10.5, -1000),  # not this season -> dropped
@@ -462,7 +462,7 @@ def selftest():
     # The collapsed-role player must NOT survive on his pooled history alone.
     ev_faded = [{"game": "Tennessee Titans @ New York Jets", "lines": {"player_reception_yds_alternate": [
         ("Faded", "Over", 24.5, +300)]}}]      # 80% pooled, 0% this season
-    chk(score(ev_faded, logs, defn=SOFT_WR) == [],
+    chk(score(ev_faded, logs) == [],
         "a gap that exists only in the pooled history is dropped -- that is a "
         "gap about a role he no longer has")
 
@@ -472,36 +472,72 @@ def selftest():
                         + [(2026, 2, "TEN", {"receiving_yards": 60}),
                            (2026, 3, "TEN", {"receiving_yards": 0})])
     chk(score([{"game": "Tennessee Titans @ New York Jets", "lines": {"player_reception_yds_alternate": [
-        ("Spotty", "Over", 24.5, +550)]}}], logs, defn=SOFT_WR) == [],
+        ("Spotty", "Over", 24.5, +550)]}}], logs) == [],
         "a player with two games this season is dropped, however good the pool")
 
-    # THE ODUNZE CHECK. A line that clears every history window is still
-    # dropped when the defence it faces is one of the stingiest at that
-    # position -- the one thing a hit rate structurally cannot see. Busy Guy is
-    # a BUF rusher, so the fixture game must contain Buffalo or the opponent
-    # cannot be resolved at all (the first version of this test put him in a
-    # Bears-Jets game and "passed" for the wrong reason).
-    ev_def = [{"game": "Buffalo Bills @ New York Jets", "lines": {
-        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}]
-    STINGY = {"RB": {"NYJ": 50.0, "ATL": 150.0, "CAR": 140.0}}
-    SOFT = {"RB": {"NYJ": 150.0, "ATL": 50.0, "CAR": 60.0}}
-    chk(score(ev_def, logs, defn=STINGY) == [],
-        "a prop into the stingiest defence is dropped however good the record")
-    chk(len(score(ev_def, logs, defn=SOFT)) == 1,
-        "and the same prop into the most generous defence survives")
-    chk(score(ev_def, logs, defn={"RB": {"ATL": 150.0}}) == [],
-        "a defence with no data at all is a refusal, not a free pass")
-    # An UNDER wants the OPPOSITE defence. The first version applied the same
-    # test to both sides and surfaced an under into the most generous run
-    # defence in the league as if that supported it.
-    ev_u = [{"game": "Buffalo Bills @ New York Jets", "lines": {
-        "player_rush_yds_alternate": [("Busy Guy", "Under", 200.5, +200)]}}]
-    chk(score(ev_u, logs, defn=SOFT) == [],
-        "an under into the most GENEROUS defence is dropped")
-    chk(len(score(ev_u, logs, defn=STINGY)) == 1,
-        "and the same under into the stingiest defence survives")
+    # THE ODUNZE CHECK, rebuilt on the audited test. The defence rate now comes
+    # from what OTHER players actually did against that opponent, measured at
+    # this exact number, so the fixture has to contain those games.
+    def opp_games(opp, pos, col, vals, team="OTH"):
+        # Key on the COLUMN too, or two calls for the same opponent overwrite
+        # each other and the second silently wipes the first.
+        return {f"{opp}-{col}-foe{i}": [(2026, i + 1,
+                {col: v, "_team": team, "_opp": opp, "_pos": pos})]
+                for i, v in enumerate(vals)}
 
-    sc = score(ev, logs, defn=SOFT)
+    base = dict(logs)
+    # NYJ have let a back clear 59.5 once in ten -> a stingy run defence
+    base.update(opp_games("NYJ", "RB", "rushing_yards",
+                          [20, 30, 25, 40, 35, 22, 28, 31, 90, 18]))
+    # CAR have let a back clear it in nine of ten -> a soft one
+    base.update(opp_games("CAR", "RB", "rushing_yards",
+                          [80, 90, 70, 65, 95, 72, 88, 61, 30, 77]))
+    ev_stingy = [{"game": "Buffalo Bills @ New York Jets", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}]
+    ev_soft = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}]
+    chk(score(ev_stingy, base) == [],
+        "a prop the defence allows once in ten is dropped however good his record")
+    got_soft = score(ev_soft, base)
+    chk(len(got_soft) == 1 and got_soft[0]["dhits"] == 9,
+        "and the same prop into a defence that allows it 9 of 10 survives, "
+        "carrying the defence's own count")
+    # A defence with a handful of games is not a sample. Three weeks of
+    # defensive data is the error that has bitten this file at every stage, so
+    # the floor has to actually bite: MIA below gets four soft games, which a
+    # missing floor would happily report as 4 of 4.
+    base.update(opp_games("MIA", "RB", "rushing_yards", [80, 90, 85, 95]))
+    chk(score([{"game": "Buffalo Bills @ Miami Dolphins", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}], base) == [],
+        "a defence with four games is refused -- three weeks of defensive data "
+        "is the error that has bitten this file at every stage")
+
+    # THE SAME DEFENCE, TWO DIFFERENT ANSWERS. This is the Chargers finding:
+    # they allow chunk yardage and limit catch volume, so the matchup supports
+    # the yards line and not the receptions line.
+    split = dict(logs)
+    split.update(opp_games("LAC", "WR", "receiving_yards",
+                           [99, 100, 130, 118, 96, 95, 98, 119, 35, 22]))
+    split.update(opp_games("LAC", "WR", "receptions",
+                           [5, 6, 4, 5, 6, 3, 9, 5, 6, 4]))
+    logs_wr = dict(split)
+    logs_wr["WR Guy"] = [(2025, w, {"receiving_yards": 120, "receptions": 9,
+                                    "_team": "SEA", "_opp": "X", "_pos": "WR"})
+                         for w in range(1, 13)] + \
+                        [(2026, w, {"receiving_yards": 120, "receptions": 9,
+                                    "_team": "SEA", "_opp": "X", "_pos": "WR"})
+                         for w in (1, 2, 3)]
+    ev_y = [{"game": "Seattle Seahawks @ Los Angeles Chargers", "lines": {
+        "player_reception_yds_alternate": [("WR Guy", "Over", 91.5, -114)]}}]
+    ev_r = [{"game": "Seattle Seahawks @ Los Angeles Chargers", "lines": {
+        "player_receptions_alternate": [("WR Guy", "Over", 7.5, +132)]}}]
+    chk(len(score(ev_y, logs_wr)) == 1,
+        "the yards line survives a defence that gives up chunk yardage")
+    chk(score(ev_r, logs_wr) == [],
+        "and the receptions line on the SAME player against the SAME defence "
+        "does not -- which is the Chargers in one check")
+
+    sc = score(ev, base)
     chk(len(sc) == 1 and sc[0]["point"] == 59.5,
         "only the line whose record beats its price by 10+ points survives")
     chk(sc[0]["hits"] == 13 and sc[0]["n"] == 13 and sc[0]["team"] == "BUF",
