@@ -58,8 +58,13 @@ LEGS = [
      "side": "Over", "point": 39.5, "want": -114},
     {"kind": "prop", "who": "Brock Purdy",    "stat": "rush_yds",
      "side": "Over", "point": 24.5, "want": 198},
+    # "main" rather than 74.5: the rush+rec line moved 74.5 -> 77.5 inside
+    # seven minutes of the first read. Pinning the number means every move
+    # breaks the ticket; snapping silently to a new number is the bug this
+    # file's selftest exists to prevent. So the leg asks for the MAIN posted
+    # line explicitly, and any change from `want_point` prints as LINE MOVED.
     {"kind": "prop", "who": "Kyren Williams", "stat": "rush_reception_yds",
-     "side": "Over", "point": 74.5, "want": -113},
+     "side": "Over", "point": "main", "want_point": 74.5, "want": -113},
 ]
 
 # Priced alongside but NOT in the ticket: the line this one replaced. Ryan
@@ -166,7 +171,8 @@ def price_prop(ev_payload, spec):
     """ev_payload: one event's /odds response. Finds the exact point on either
     the standard market or the alt ladder."""
     keys = MARKETS[spec["stat"]]
-    rows = []
+    std_key = keys[0]                      # the standard market, not the ladder
+    rows, main_rows = [], []
     for bk in ev_payload.get("bookmakers") or []:
         if bk.get("key") != BOOK:
             continue
@@ -175,6 +181,8 @@ def price_prop(ev_payload, spec):
                 continue
             for o in m.get("outcomes") or []:
                 rows.append(o)
+                if m.get("key") == std_key:
+                    main_rows.append(o)
     if not rows:
         return None
     # Dedupe before matching: one player has a row per side and per ladder
@@ -184,17 +192,32 @@ def price_prop(ev_payload, spec):
     hit, how = find_name(descs, spec["who"])
     if hit is None:
         return {"err": how} if how.startswith("ambiguous") else None
+    if spec["point"] == "main":
+        # The MAIN line lives on the standard market key; the alt ladder is a
+        # fan of numbers around it. Reading the ladder here would make "main"
+        # mean "whichever rung sorted first", so only the standard key counts.
+        std = [o for o in main_rows if o.get("description") == hit
+               and o.get("point") is not None]
+        pts = sorted({float(o["point"]) for o in std})
+        if not pts:
+            return {"err": "no main line posted (alt ladder only)"}
+        if len(pts) > 1:
+            return {"err": f"more than one main line posted: {pts}"}
+        point = pts[0]
+    else:
+        point = float(spec["point"])
     mine = [o for o in rows if o.get("description") == hit
-            and float(o.get("point") or -1) == float(spec["point"])]
+            and float(o.get("point") or -1) == point]
     side = [o for o in mine if str(o.get("name")) == spec["side"]]
     if not side:
         posted = sorted({float(o.get("point")) for o in rows
                          if o.get("description") == hit and o.get("point") is not None})
-        return {"err": f"{spec['point']} not posted; board has {posted}"}
+        return {"err": f"{point} not posted; board has {posted}"}
     price = side[0].get("price")
     other = [o for o in mine if str(o.get("name")) != spec["side"]]
-    leg = {"lab": f"{hit} {spec['side']} {spec['point']} {spec['stat'].replace('_',' ')}",
+    leg = {"lab": f"{hit} {spec['side']} {point:g} {spec['stat'].replace('_',' ')}",
            "price": price, "sport": "PROP", "how": how, "who": spec["who"],
+           "point": point, "side": spec["side"], "stat": spec["stat"],
            "event": f"{ev_payload.get('away_team')} @ {ev_payload.get('home_team')}",
            "start": ev_payload.get("commence_time")}
     if len(other) == 1 and other[0].get("price") is not None:
@@ -313,6 +336,37 @@ def selftest():
     ck(price_prop(ev, {"who": "Nobody Here", "stat": "rush_yds",
                        "side": "Over", "point": 59.5}) is None, "absent player")
 
+    # "main" must read the STANDARD market, never a ladder rung. The fixture
+    # puts 77.5 on the standard key and 59.5/90.5 on the ladder; resolving to
+    # anything but 77.5 means the ladder leaked in.
+    mix = {"away_team": "LAR", "home_team": "PHI", "bookmakers": [{"key": "fanduel",
+           "markets": [
+             {"key": "player_rush_reception_yds", "outcomes": [
+                 {"description": "Kyren Williams", "name": "Over", "point": 77.5, "price": -110},
+                 {"description": "Kyren Williams", "name": "Under", "point": 77.5, "price": -110}]},
+             {"key": "player_rush_reception_yds_alternate", "outcomes": [
+                 {"description": "Kyren Williams", "name": "Over", "point": 59.5, "price": -250},
+                 {"description": "Kyren Williams", "name": "Over", "point": 90.5, "price": 180}]}]}]}
+    m = price_prop(mix, {"who": "Kyren Williams", "stat": "rush_reception_yds",
+                         "side": "Over", "point": "main"})
+    ck(m.get("point") == 77.5 and m.get("price") == -110, f"main line {m}")
+    ck("77.5" in m["lab"] and "59.5" not in m["lab"], f"label carries the live line: {m['lab']}")
+    # ladder only -> there is no main line, and that must be said, not invented
+    ladder = {"away_team": "a", "home_team": "b", "bookmakers": [{"key": "fanduel",
+              "markets": [{"key": "player_rush_yds_alternate", "outcomes": [
+                  {"description": "Kyren Williams", "name": "Over", "point": 59.5, "price": 104}]}]}]}
+    lo = price_prop(ladder, {"who": "Kyren Williams", "stat": "rush_yds",
+                             "side": "Over", "point": "main"})
+    ck(lo and "no main line" in lo.get("err", ""), f"ladder-only main {lo}")
+    # two numbers on the standard key is not a main line either
+    two = {"away_team": "a", "home_team": "b", "bookmakers": [{"key": "fanduel",
+           "markets": [{"key": "player_rush_yds", "outcomes": [
+               {"description": "Kyren Williams", "name": "Over", "point": 59.5, "price": 104},
+               {"description": "Kyren Williams", "name": "Over", "point": 64.5, "price": 130}]}]}]}
+    tw = price_prop(two, {"who": "Kyren Williams", "stat": "rush_yds",
+                          "side": "Over", "point": "main"})
+    ck(tw and "more than one main line" in tw.get("err", ""), f"two main lines {tw}")
+
     # same-event detection
     ck(same_event([{"event": "A @ B"}, {"event": "A @ B"}]) == ["A @ B"], "same event caught")
     ck(same_event([{"event": "A @ B"}, {"event": "C @ D"}]) == [], "distinct events fine")
@@ -334,6 +388,7 @@ def main():
         if "err" in lg:
             missing.append((spec["who"], lg["err"])); continue
         lg["want"] = spec["want"]
+        lg["want_point"] = None
         out.append(lg)
 
     props = [l for l in LEGS + COMPARE if l["kind"] == "prop"]
@@ -358,6 +413,7 @@ def main():
                 if "err" in lg:
                     missing.append((spec["who"], lg["err"])); continue
                 lg["want"] = spec["want"]
+                lg["want_point"] = spec.get("want_point")
                 lg["compare"] = spec in COMPARE
                 out.append(lg)
             todo = still
@@ -371,9 +427,55 @@ def main():
     hdr = f"{'leg':52s} {'price':>7s} {'was':>7s} {'p':>7s}  basis"
     print(hdr); print("-" * len(hdr))
     for lg in tick:
-        moved = "" if lg["price"] == lg["want"] else "  MOVED"
+        flags = ""
+        if lg["price"] != lg["want"]:
+            flags += "  PRICE MOVED"
+        if lg.get("want_point") is not None and lg.get("point") != lg["want_point"]:
+            flags += f"  LINE MOVED from {lg['want_point']:g}"
         print(f"{lg['lab'][:52]:52s} {lg['price']:+7d} {lg['want']:+7d} "
-              f"{lg['p']*100:6.1f}% {lg['basis']}{moved}")
+              f"{lg['p']*100:6.1f}% {lg['basis']}{flags}")
+
+    # HISTORY AT THE LINE THAT IS ACTUALLY POSTED. A hit rate counted at 74.5
+    # says nothing about a bet graded at 77.5, and the two got three yards
+    # apart inside seven minutes. Counting here, off the same payload that
+    # produced the price, is the only way the record and the number cannot
+    # drift apart in a quote.
+    props = [l for l in tick + cmps if l.get("stat")]
+    if props:
+        try:
+            import nflprops
+            logs = nflprops.game_logs(nflprops.SEASONS)
+        except Exception as ex:
+            print(f"\nno history: {type(ex).__name__}: {ex}")
+            logs = None
+        if logs:
+            print(f"\n{'history at the posted line':52s} {'all':>9s} {'2026':>8s}")
+            print("-" * 71)
+            for lg in props:
+                cols = nflprops.MARKETS[f"player_{lg['stat']}"][0]
+                r = nflprops.hit_rate(logs, lg["who"], cols, lg["point"], lg["side"])
+                tag = "  (comparison)" if lg.get("compare") else ""
+                if not r:
+                    print(f"{lg['lab'][:52]:52s} {'no usable log':>18s}{tag}")
+                    continue
+                h, n, team, ch, cn = r
+                print(f"{lg['lab'][:52]:52s} {h:>4d}/{n:<4d} {ch:>3d}/{cn:<4d}"
+                      f"  {team}{tag}")
+
+    # The comparison prints BEFORE any bail-out. The first live run bailed on
+    # the rush+rec leg and swallowed the alternative with it, which left the
+    # one decision Ryan actually asked about with nothing under it.
+    for lg in cmps:
+        swap = [x for x in tick if x.get("who") == lg.get("who")]
+        print("\nnot on the ticket, for comparison:")
+        moved = "" if lg["price"] == lg["want"] else f"  (was {lg['want']:+d})"
+        print(f"  {lg['lab']}  {lg['price']:+d}{moved} "
+              f"p={lg['p']*100:.1f}% {lg['basis']}")
+        if swap and not missing:
+            rest = [x for x in tick if x not in swap]
+            d2, am2, p2 = parlay(rest + [lg])
+            print(f"  that ticket instead: {am2:+d}  p={p2*100:.1f}%  "
+                  f"$33 -> ${33*d2:,.0f}")
 
     if missing:
         print("\nCOULD NOT READ -- ticket is incomplete, do not bet this quote:")
@@ -393,17 +495,6 @@ def main():
     ev = p * (d - 1) - (1 - p)
     print(f"edge {ev*100:+.1f}% of stake   "
           f"(fair price is {slips.american(1/p):+d}, book pays {am:+d})")
-
-    for lg in cmps:
-        swap = [x for x in tick if x.get("who") == lg.get("who")]
-        print("\nnot on the ticket, for comparison:")
-        moved = "" if lg["price"] == lg["want"] else "  MOVED"
-        print(f"  {lg['lab']}  {lg['price']:+d} (was {lg['want']:+d}) "
-              f"p={lg['p']*100:.1f}% {lg['basis']}{moved}")
-        if swap:
-            rest = [x for x in tick if x not in swap]
-            d2, am2, p2 = parlay(rest + [lg])
-            print(f"  that ticket instead: {am2:+d}  p={p2*100:.1f}%  $33 -> ${33*d2:,.0f}")
     return 0
 
 
