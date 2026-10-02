@@ -46,6 +46,23 @@ BASE = "https://api.the-odds-api.com/v4"
 KEY = os.environ.get("ODDS_API_KEY", "")
 BOOK = "fanduel"
 
+# A player's own baseline needs a LONGER window than the defence he is facing.
+#
+# nflprops reads two seasons, for a good reason: Darius Slayton and Calvin
+# Ridley both scored well off production in a role they no longer had. But the
+# guard over-corrected. Purdy's rushing read 5-of-12 (41.7%) over two seasons
+# against a 33.6% price, and looked like value. Over his 49 career starts it is
+# 12 -- 24%, BELOW the price -- and before this season 9 of 46, 20%. His
+# carries have not risen at all; his yards per carry went from 4.5 to 9.3 on
+# ten carries. Three games had become "a rate" because the window was short
+# enough to hold nothing else.
+#
+# So both windows print. The recent one answers "what is his role now", the
+# career one answers "is this number normal for him", and a leg needs to
+# survive both. The DEFENCE stays on two seasons -- a secondary from four years
+# ago is a different unit, and that is not the same question.
+CAREER_SEASONS = [2026, 2025, 2024, 2023, 2022]
+
 # The ticket as Ryan has built it. `want` is the last price seen, for drift
 # detection only -- never for the maths.
 LEGS = [
@@ -70,6 +87,11 @@ LEGS = [
 # asked for rush+rec; the rushing line is printed next to it so the swap is
 # documented with two live numbers instead of my say-so.
 COMPARE = [
+    # Purdy is off the ticket. His rungs stay here so adding one back is a live
+    # price rather than a re-run, the rushing line among them -- it is Ryan's
+    # pick and it does not get deleted, it gets priced.
+    {"kind": "prop", "who": "Brock Purdy", "stat": "rush_yds",
+     "side": "Over", "point": 24.5, "want": 198},
     # The rush+rec line he swapped off, kept on the board so the decision stays
     # two live numbers. "main" rather than a pinned number because this one
     # moved 74.5 -> 77.5 -> 74.5 inside ten minutes; any change from
@@ -322,6 +344,29 @@ def opponent(event, team, abbr):
     return b if a == team else a
 
 
+def pick_rate(recent, career, tol=0.15):
+    """(rate to use, flagged) given the short-window and career hit rates.
+
+    Where the two windows disagree by more than `tol` the SHORTER one is the
+    suspect: it is the one three games can move. Purdy read 41.7% over two
+    seasons and 24% over 49 starts against a 33.6% price -- the short window
+    was the only one that made the leg look like value, and it was the one
+    built from ten carries.
+
+    So a disagreement resolves DOWNWARD, not to an average. Averaging would
+    still have left that leg above its price, and the question a ticket asks is
+    not "what is the best reading of this player" but "can this leg carry the
+    other seven". A spike is not evidence; it is the absence of it.
+
+    Agreement inside the tolerance leaves the recent rate alone, because then
+    the short window is the better answer to what his role is NOW."""
+    if career is None:
+        return recent, False
+    if abs(career - recent) <= tol:
+        return recent, False
+    return min(recent, career), True
+
+
 def model_p(legs, hist):
     """The ticket's probability using the HISTORICAL rate wherever there is
     one, and the de-vigged market everywhere else.
@@ -560,6 +605,20 @@ def selftest():
         r3 = f"raised {type(ex).__name__}"
     ck(r3 is None, f"a three-part event must refuse, not raise: {r3}")
 
+    # pick_rate: THE BUG THAT SHIPPED. 41.7% over two seasons, 24.5% over a
+    # career, against a 33.6% price. The short window was the only reading that
+    # made the leg look like value and it came from ten carries.
+    ck(pick_rate(0.417, 0.245) == (0.245, True), "a 17-point gap resolves down")
+    ck(pick_rate(0.75, 0.70) == (0.75, False), "agreement keeps the recent rate")
+    ck(pick_rate(0.50, None) == (0.50, False), "no career data changes nothing")
+    # resolving DOWN, not to an average: the average of 41.7 and 24.5 is 33.1,
+    # which still sits on top of the price and would have kept the leg alive.
+    ck(pick_rate(0.417, 0.245)[0] < 0.331, "must not average")
+    # and it resolves down in the other direction too -- a career rate ABOVE a
+    # collapsed recent one is the Ridley case, where recent is right
+    ck(pick_rate(0.20, 0.60) == (0.20, True), "a collapsed recent role wins too")
+    ck(pick_rate(0.50, 0.65, tol=0.20) == (0.50, False), "tolerance is honoured")
+
     # model_p: historical rate where there is one, market price elsewhere
     legs = [{"lab": "A", "p": 0.90}, {"lab": "B", "p": 0.50}]
     ck(abs(model_p(legs, {}) - 0.45) < 1e-9, "no history -> market")
@@ -683,15 +742,16 @@ def main():
         try:
             import nflprops
             logs = nflprops.game_logs(nflprops.SEASONS)
+            clogs = nflprops.game_logs(CAREER_SEASONS)
             snaps = nflprops.snap_share()
             inj = nflprops.injuries()
         except Exception as ex:
             print(f"\nno history: {type(ex).__name__}: {ex}")
-            logs = snaps = inj = None
+            logs = clogs = snaps = inj = None
         if logs:
-            print(f"\n{'history at the posted line':46s} {'all':>9s} {'2026':>7s}"
-                  f" {'vs opp':>8s} {'snap':>6s} {'trend':>6s}  practice")
-            print("-" * 104)
+            print(f"\n{'history at the posted line':44s} {'2yr':>8s} {'2026':>6s}"
+                  f" {'career':>9s} {'vs opp':>8s} {'snap':>6s}  practice")
+            print("-" * 108)
             for lg in props:
                 # nflverse column lookup. Some stats appear in MARKETS only
                 # under the _alternate key (rush+rec is one), so both spellings
@@ -707,7 +767,19 @@ def main():
                     print(f"{lg['lab'][:46]:46s} {'no usable log':>18s}{tag}")
                     continue
                 h, n, team, ch, cn = r
-                hist[lg["lab"]] = (h / n, h, n, ch, cn)
+                # The career line, and the rule that comes with it: where the
+                # two windows disagree by more than 15 points the SHORTER one
+                # is the suspect, because it is the one a three-game run can
+                # move. hist[] therefore carries the more conservative of the
+                # two, so the ticket's probability cannot be lifted by a spike.
+                cr = nflprops.hit_rate(clogs, lg["who"], mk[0], lg["point"],
+                                       lg["side"]) if clogs else None
+                crtxt = f"{'     --':>9s}"
+                rate, flagged = pick_rate(h / n, (cr[0] / cr[1]) if cr else None)
+                if cr:
+                    crtxt = (f"{cr[0]:3d}/{cr[1]:<2d} {cr[0]/cr[1]*100:3.0f}%"
+                             + ("*" if flagged else ""))
+                hist[lg["lab"]] = (rate, h, n, ch, cn)
                 # THE DEFENCE, AT THIS NUMBER, AGAINST THIS POSITION. The
                 # column that answers "should we be doing this at all": Purdy's
                 # own 3-for-3 on rushing yards means little against a defence
@@ -731,8 +803,10 @@ def main():
                     prac = f"{flag[0]} ({flag[1]})"
                 else:
                     prac = "clear"
-                print(f"{lg['lab'][:46]:46s} {h:>4d}/{n:<4d} {ch:>3d}/{cn:<3d}"
-                      f" {dtxt} {sptxt}  {prac}{tag}")
+                print(f"{lg['lab'][:44]:44s} {h:>3d}/{n:<4d} {ch:>2d}/{cn:<3d}"
+                      f" {crtxt} {dtxt} {sptxt}  {prac}{tag}")
+            print("  * career and 2-season rates differ by 15+ points -- the "
+                  "lower one is used below")
 
     # The comparison prints BEFORE any bail-out. The first live run bailed on
     # the rush+rec leg and swallowed the alternative with it, which left the
@@ -745,12 +819,15 @@ def main():
                   else f"  LINE MOVED from {lg['want_point']:g}")
         print(f"  {lg['lab']}  {lg['price']:+d}{moved} "
               f"p={lg['p']*100:.1f}% {lg['basis']}{lmoved}")
-        if not swap:
-            # A comparison leg exists to replace something. If it matches no
-            # player on the ticket the reprice would silently print the ticket
-            # unchanged, which reads as "the swap costs nothing".
-            print("  replaces no leg on this ticket -- nothing to reprice "
-                  "against")
+        if not swap and not missing:
+            # Nobody on the ticket to replace, so this is an ADD. Printing
+            # "nothing to reprice" here would hide the only number that
+            # matters once a leg has been taken off: what putting it back
+            # costs and buys.
+            d2, am2, p2 = parlay(tick + [lg])
+            m2 = model_p(tick + [lg], hist)
+            print(f"  add it back: {len(tick)+1} legs {am2:+d}  market "
+                  f"{p2*100:.1f}%  history {m2*100:.1f}%  $33 -> ${33*d2:,.0f}")
         elif not missing:
             rest = [x for x in tick if x not in swap]
             d2, am2, p2 = parlay(rest + [lg])
