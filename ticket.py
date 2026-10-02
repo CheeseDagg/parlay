@@ -38,7 +38,7 @@ ACROSS sports and that is close to true -- a UFC bout and an NFL game share no
 script. Two legs inside one NFL game would not be independent; this ticket has
 none, and the script says so if that ever stops being the case.
 """
-import datetime as dt, json, os, sys, urllib.error, urllib.parse, urllib.request
+import datetime as dt, json, os, sys, time, urllib.error, urllib.parse, urllib.request
 
 import slips
 
@@ -134,6 +134,26 @@ def _get(url, fetch=None):
         return fetch(url)
     with urllib.request.urlopen(url, timeout=40) as r:
         return json.loads(r.read().decode())
+
+
+def retry(fn, tries=3, wait=4.0, label=""):
+    """Call fn, retrying on any exception with a flat pause between attempts.
+
+    This run downloads seven release CSVs plus snaps and injuries, and a single
+    HTTPError on one of them emptied the entire history table -- the columns
+    that decide whether a leg belongs on the ticket. A transient 403 should
+    cost four seconds, not the analysis."""
+    last = None
+    for i in range(tries):
+        try:
+            return fn()
+        except Exception as ex:
+            last = ex
+            if i + 1 < tries:
+                time.sleep(wait)
+    print(f"  {label or 'fetch'} failed after {tries} tries: "
+          f"{type(last).__name__}: {last}")
+    return None
 
 
 def surname(name):
@@ -369,6 +389,30 @@ def spec_conflicts(legs, compare):
     if both:
         out.append(f"in BOTH lists, which drops it off the ticket: {sorted(both)}")
     return out
+
+
+def history_lines(tick, hist, mp):
+    """The summary's history block, as lines. Empty coverage must SAY so.
+
+    model_p falls back to the market price for any leg it has no rate for, so
+    when the log pull fails every leg falls back and the history figure comes
+    out equal to the market figure -- which reads as the two methods agreeing.
+    They are not agreeing. One of them is missing. This is the unread injury
+    file printing "clear" wearing different clothes, and it is the second time
+    the same mistake has reached output in this file."""
+    covered = [lg for lg in tick if lg.get("lab") in hist]
+    if not covered:
+        return ["  history  UNAVAILABLE -- no game logs were readable this "
+                "run, so nothing",
+                "           below is checked against what these players "
+                "actually do"], False
+    lines = [f"  history p={mp*100:5.1f}%  fair {slips.american(1/mp):+6d}   "
+             f"(props at their rate at this line, fights at market)"]
+    short = [lg["lab"] for lg in tick
+             if lg.get("stat") and lg.get("lab") not in hist]
+    if short:
+        lines.append(f"           no rate for: {', '.join(short)}")
+    return lines, True
 
 
 def prop_specs(legs, compare):
@@ -685,6 +729,43 @@ def selftest():
     # is what spec_key captures and what a value match would have missed in the
     # other direction. Both failure modes now sit behind spec_key.
     ck(A != B, "A and B differ as dicts while naming one bet")
+    # history_lines: absent history must never render as a probability.
+    T = [{"lab": "W", "stat": "rush_yds", "p": 0.49},
+         {"lab": "F", "p": 0.83}]
+    lines, cov = history_lines(T, {}, 0.41)
+    ck(cov is False, "no coverage must report as uncovered")
+    ck(any("UNAVAILABLE" in l for l in lines), f"must say so: {lines}")
+    ck(not any("%" in l for l in lines),
+       f"and must print NO percentage at all: {lines}")
+    lines2, cov2 = history_lines(T, {"W": (0.66, 37, 56, 2, 3)}, 0.55)
+    ck(cov2 is True and any("55.0%" in l for l in lines2), f"covered: {lines2}")
+    ck(any("no rate for" not in l for l in lines2), "covered prop needs no caveat")
+    # a prop with no rate while another HAS one must still be named
+    T3 = T + [{"lab": "M", "stat": "reception_yds", "p": 0.50}]
+    lines3, _ = history_lines(T3, {"W": (0.66, 37, 56, 2, 3)}, 0.55)
+    ck(any("no rate for: M" in l for l in lines3), f"must name it: {lines3}")
+    # a FIGHT with no rate is normal and must not be named
+    ck(not any("F" in l.split("no rate for:")[-1] for l in lines3 if "no rate" in l),
+       f"fights have no historical rate by design: {lines3}")
+
+    # retry: returns the value on first success, retries on exception, and
+    # returns None rather than raising once it gives up -- a failed pull must
+    # degrade the table, not kill the price.
+    calls = []
+    def flaky():
+        calls.append(1)
+        if len(calls) < 3:
+            raise urllib.error.HTTPError("u", 403, "no", None, None)
+        return "payload"
+    ck(retry(flaky, tries=3, wait=0, label="t") == "payload", "retry succeeds late")
+    ck(len(calls) == 3, f"must retry until success, called {len(calls)}")
+    ck(retry(lambda: (_ for _ in ()).throw(ValueError("x")), tries=2, wait=0,
+             label="t") is None, "exhausted retry returns None, never raises")
+    one = []
+    ck(retry(lambda: (one.append(1), "ok")[1], tries=3, wait=0) == "ok",
+       "a first-try success returns immediately")
+    ck(len(one) == 1, "and must not retry a success")
+
     # prop_specs: ticket legs are False, comparisons True, and nothing else
     # gets in. Inverting these two booleans swaps the ticket with its own
     # comparison section.
@@ -848,8 +929,10 @@ def main():
     if props:
         try:
             import nflprops
-            logs = nflprops.game_logs(nflprops.SEASONS)
-            clogs = nflprops.game_logs(CAREER_SEASONS)
+            logs = retry(lambda: nflprops.game_logs(nflprops.SEASONS),
+                         label="2-season game logs")
+            clogs = retry(lambda: nflprops.game_logs(CAREER_SEASONS),
+                          label="career game logs")
             snaps = nflprops.snap_share()
             inj = nflprops.injuries()
         except Exception as ex:
@@ -959,11 +1042,18 @@ def main():
     print(f"\n{len(tick)} legs   {am:+d}   $33 -> ${33*d:,.0f}")
     print(f"  market  p={p*100:5.1f}%  fair {slips.american(1/p):+6d}   "
           f"(the book's own view, de-vigged)")
-    print(f"  history p={mp*100:5.1f}%  fair {slips.american(1/mp):+6d}   "
-          f"(props at their rate at this line, fights at market)")
+    # NO HISTORY IS NOT AGREEMENT WITH THE MARKET. model_p falls back to the
+    # market price for any leg it has no rate for, so when the log pull fails
+    # every leg falls back and the "history" line prints the market number --
+    # which reads as the two methods agreeing. They are not agreeing; one of
+    # them is missing. Same error as an unread injury file printing "clear".
+    hlines, covered = history_lines(tick, hist, mp)
+    for line in hlines:
+        print(line)
     # WHAT EACH LEG IS ACTUALLY BUYING
+    src = "measured" if covered else "PRICED ONLY -- no logs this run"
     print(f"\n{'what each leg adds':46s} {'adds':>8s} {'hits':>7s} "
-          f"{'risk':>6s} {'$/risk':>8s}")
+          f"{'risk':>6s} {'$/risk':>8s}   [{src}]")
     print("-" * 80)
     rows = marginal(tick, hist)
     for lg, added, pr, per in sorted(rows, key=lambda r: -r[3]):
