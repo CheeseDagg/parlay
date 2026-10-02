@@ -147,6 +147,27 @@ POS_FOR = {"pass yds": "QB", "pass TDs": "QB", "rush yds": "RB",
            "rush att": "RB"}
 
 
+# GAME SCRIPT. A rushing prop wants his team AHEAD -- a leading team runs clock,
+# a trailing one throws it away. Omarion Hampton was recommended as a rushing
+# prop for a team priced at +295, which is the shape of a side that spends the
+# fourth quarter passing. I had flagged that risk for this exact game hours
+# earlier and then did not apply it, because the check lived in my head instead
+# of in the file.
+SCRIPT_DOG = -0.32     # implied win prob below this and a rushing prop is fading
+SCRIPT_FAV = 0.68      # above this and a receiving prop risks garbage-time clock
+
+
+def script_ok(label, win_prob):
+    """Does the likely game script help this prop, or fight it?"""
+    if win_prob is None:
+        return True                      # no price -> no opinion, not a veto
+    if label in ("rush yds", "rush att"):
+        return win_prob >= abs(SCRIPT_DOG)
+    if label in ("pass yds", "pass TDs", "rec yds", "receptions"):
+        return win_prob <= SCRIPT_FAV
+    return True
+
+
 def pos_for(label, player_pos):
     """The pool a prop is measured against: the player's OWN position.
 
@@ -379,6 +400,8 @@ def score(events, logs, min_gap=0.10, inj=None):
                 # THE PLAYER, AND THE MAN THROWING HIM THE BALL. A resting-day
                 # DNP is a flag too: it still means he was not on the field,
                 # and the reason is the team's word rather than a diagnosis.
+                if not script_ok(label, (ev.get("wp") or {}).get(team)):
+                    continue
                 hurt = inj.get((team, name))
                 qb = qb_of(logs, team)
                 qhurt = inj.get((team, qb)) if qb else None
@@ -426,7 +449,7 @@ def pull(max_events=4, skip=0):
     for t, e in keep[skip:skip + max_events]:
         url = (f"{BASE}/sports/{SPORT}/events/{e['id']}/odds/?apiKey={KEY}"
                f"&regions=us&bookmakers={BOOK}&oddsFormat=american"
-               f"&markets={','.join(MARKETS)}")
+               f"&markets={','.join(list(MARKETS) + ['h2h'])}")
         try:
             d, h = _get(url)
         except urllib.error.HTTPError as err:
@@ -437,16 +460,28 @@ def pull(max_events=4, skip=0):
                 pass
             print(f"  {e.get('away_team')} @ {e.get('home_team')}: HTTP {err.code} {body}")
             continue
+        # The moneyline rides along so the game script can be judged. One extra
+        # market on a request already being made, not an extra request.
+        wp = {}
         lines = defaultdict(list)
         for bk in d.get("bookmakers") or []:
             for m in bk.get("markets") or []:
+                if m.get("key") == "h2h":
+                    outs = m.get("outcomes") or []
+                    if len(outs) == 2:
+                        ps = [implied(o.get("price")) for o in outs
+                              if o.get("price") is not None]
+                        if len(ps) == 2 and 1.0 < sum(ps) < 1.35:
+                            for o, pv in zip(outs, ps):
+                                wp[TEAM_ABBR.get(o.get("name"))] = pv / sum(ps)
+                    continue
                 for o in m.get("outcomes") or []:
                     if o.get("point") is None or o.get("price") is None:
                         continue
                     lines[m["key"]].append((o.get("description") or o.get("name"),
                                             o.get("name"), float(o["point"]),
                                             float(o["price"])))
-        out.append({"game": f"{e.get('away_team')} @ {e.get('home_team')}",
+        out.append({"game": f"{e.get('away_team')} @ {e.get('home_team')}", "wp": wp,
                     "kick": t.strftime("%a %m-%d %H:%MZ"), "lines": lines,
                     "quota": h.get("x-requests-remaining")})
         print(f"  {out[-1]['game']}: {sum(len(v) for v in lines.values())} lines"
@@ -643,6 +678,16 @@ def selftest():
     ev_i = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
         "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +120)]}}]
     chk(len(score(ev_i, inj_logs, inj={})) == 1, "a clean player is reported")
+    # GAME SCRIPT. Hampton was recommended as a rushing prop for a side priced
+    # at +295; a team that far behind spends the fourth quarter throwing.
+    dog = [dict(ev_i[0], wp={"BUF": 0.24})]
+    chk(score(dog, inj_logs, inj={}) == [],
+        "a rushing prop for a heavy underdog is dropped -- he will be throwing")
+    fav = [dict(ev_i[0], wp={"BUF": 0.63})]
+    chk(len(score(fav, inj_logs, inj={})) == 1,
+        "and the same prop for a favourite stands, because a lead means carries")
+    chk(len(score([dict(ev_i[0], wp={})], inj_logs, inj={})) == 1,
+        "no moneyline means no opinion, not a veto")
     chk(score(ev_i, inj_logs,
               inj={("BUF", "Busy Guy"): ("Out", "Knee", "RB")}) == [],
         "a player who is Out is dropped")
