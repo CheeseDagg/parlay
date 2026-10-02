@@ -343,6 +343,44 @@ def model_p(legs, hist):
     return p
 
 
+def marginal(legs, hist, stake=33.0):
+    """What each leg ADDS to the ticket, and what it risks to add it.
+
+    WHAT THIS SHOWS, AND WHAT I WRONGLY EXPECTED IT TO SHOW. I built this
+    column believing it would prove that a near-lock is a bad buy: Purdy over
+    199.5 pass+rush is a 75% leg that lifts the payout from $308 to $389, which
+    LOOKS like $81 in exchange for a one-in-four chance of losing everything.
+    The selftest refused the claim, and it was right to.
+
+    The arithmetic: added = stake * without * (dec - 1), and for a leg priced
+    at its own probability dec - 1 = (1 - p)/p, so added / (1 - p) collapses to
+    stake * without / p -- the same number for every rung of a consistently
+    priced ladder. Moving up or down it changes HOW OFTEN you collect and HOW
+    MUCH, in exact proportion. It does not change the bet's value.
+
+    So the column is still worth printing, for the opposite reason to the one I
+    built it for: where $/risk is flat across the ticket, the book is pricing
+    consistently and there is no free lunch in picking a safer or longer rung.
+    Where one leg's figure stands out, that is a leg whose HISTORICAL rate
+    disagrees with its price -- which is the only thing that can make one rung
+    genuinely better than another.
+
+    Returns per leg: (added payout, probability used, dollars added per point
+    of failure risk)."""
+    full = 1.0
+    for lg in legs:
+        full *= slips.dec(lg["price"])
+    out = []
+    for lg in legs:
+        without = full / slips.dec(lg["price"])
+        h = hist.get(lg.get("lab"))
+        pr = h[0] if h else lg["p"]
+        added = stake * (full - without)
+        risk = 1.0 - pr
+        out.append((lg, added, pr, (added / risk) if risk > 1e-9 else float("inf")))
+    return out
+
+
 def same_event(legs):
     """Legs sharing one event are NOT independent -- the product would be wrong.
     Returns the offending event names."""
@@ -530,6 +568,36 @@ def selftest():
     ck(abs(model_p(legs, {"Z": (0.1, 1, 10, 0, 0)}) - 0.45) < 1e-9,
        "history for an absent leg must not be applied")
 
+    # marginal: a leg that doubles the payout adds the stake back; a near-lock
+    # that barely moves the price must show a tiny $/risk even at a high hit
+    # rate. Both directions are pinned because the whole point of the column
+    # is that it disagrees with the hit rate.
+    mlegs = [{"lab": "big", "price": 198, "p": 0.336},
+             {"lab": "lock", "price": -380, "p": 0.792}]
+    mg = {r[0]["lab"]: r for r in marginal(mlegs, {}, stake=100.0)}
+    # full = 2.98 * 1.26316 = 3.7642; without big = 1.26316
+    ck(abs(mg["big"][1] - 100 * (3.76421 - 1.26316)) < 0.5, f"big adds {mg['big'][1]}")
+    ck(abs(mg["lock"][1] - 100 * (3.76421 - 2.98)) < 0.5, f"lock adds {mg['lock'][1]}")
+    ck(mg["big"][1] > mg["lock"][1], "the longshot must add more payout")
+    # THE DEGENERACY, PINNED. When each leg's probability IS its implied
+    # price, $/risk is the same for every rung -- the ladder trades frequency
+    # for size at a fixed rate. This is the assertion I originally got
+    # backwards, so it is pinned tightly enough that a change in either
+    # direction fails.
+    ck(abs(mg["big"][3] - mg["lock"][3]) < 2.0,
+       f"a consistently priced ladder must give a flat $/risk: "
+       f"{mg['big'][3]:.0f} vs {mg['lock'][3]:.0f}")
+    ck(abs(mg["lock"][3] - mg["lock"][1] / 0.208) < 1.0, "$/risk divides by failure odds")
+    # history overrides the market price in the probability, same as model_p
+    mg2 = {r[0]["lab"]: r for r in marginal(mlegs, {"lock": (0.50, 6, 12, 1, 3)},
+                                            stake=100.0)}
+    ck(abs(mg2["lock"][2] - 0.50) < 1e-9, "marginal must use the historical rate")
+    ck(mg2["lock"][3] < mg["lock"][3], "a worse hit rate must worsen $/risk")
+    # ...and the column must then stop being flat, which is the ONE case where
+    # it tells you something.
+    ck(abs(mg2["big"][3] - mg2["lock"][3]) > 50,
+       "history disagreeing with the price must break the flat line")
+
     # same-event detection
     ck(same_event([{"event": "A @ B"}, {"event": "A @ B"}]) == ["A @ B"], "same event caught")
     ck(same_event([{"event": "A @ B"}, {"event": "C @ D"}]) == [], "distinct events fine")
@@ -709,6 +777,29 @@ def main():
           f"(the book's own view, de-vigged)")
     print(f"  history p={mp*100:5.1f}%  fair {slips.american(1/mp):+6d}   "
           f"(props at their rate at this line, fights at market)")
+    # WHAT EACH LEG IS ACTUALLY BUYING
+    print(f"\n{'what each leg adds':46s} {'adds':>8s} {'hits':>7s} "
+          f"{'risk':>6s} {'$/risk':>8s}")
+    print("-" * 80)
+    rows = marginal(tick, hist)
+    for lg, added, pr, per in sorted(rows, key=lambda r: -r[3]):
+        print(f"{lg['lab'][:46]:46s} {added:+8.0f} {pr*100:6.1f}% "
+              f"{(1-pr)*100:5.1f}% {per:8.0f}")
+    spread = max(r[3] for r in rows) - min(r[3] for r in rows)
+    mid = sorted(r[3] for r in rows)[len(rows) // 2]
+    if mid > 0 and spread / mid < 0.25:
+        print("  $/risk is flat across the ticket: the book is pricing these "
+              "consistently, so\n  moving a leg up or down its ladder buys "
+              "frequency with payout at a fixed rate\n  and changes variance, "
+              "not value.")
+    # And what the ticket looks like with each prop leg taken off, since a leg
+    # worth less than the risk it adds should simply not be there.
+    for lg in [x for x in tick if x.get("stat")]:
+        wo = [x for x in tick if x is not lg]
+        dw, aw, _ = parlay(wo)
+        print(f"  without {lg['lab'][:38]:38s} {len(wo)} legs {aw:+6d}  "
+              f"$33 -> ${33*dw:,.0f}")
+
     ev = mp * (d - 1) - (1 - mp)
     print(f"\nOn the historical rates this pays {ev*100:+.0f}% of stake. That "
           f"rests entirely on\nthose rates still describing the role each "
