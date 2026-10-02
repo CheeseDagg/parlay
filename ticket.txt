@@ -1,20 +1,23 @@
-read 2026-10-02T22:01Z  FanDuel live
+read 2026-10-02T22:16Z  FanDuel live
 
 leg                                                    price     was       p  basis
 -----------------------------------------------------------------------------------
 Jacobe Smith ML                                         -950    -950   89.4% devig
-Anthony Wint ML                                         -550    -550   83.0% devig
+Anthony Wint ML                                         -550    -550   83.3% devig
 Marcus McGhee ML                                        -590    -520   83.9% devig  PRICE MOVED
 Ateba Gautier ML                                        -245    -245   69.0% devig
 Payton Talbott ML                                       -750    -750   86.7% devig
 Jakobi Meyers Over 39.5 reception yds                   -114    -114   50.0% devig
 Kyren Williams Over 59.5 rush yds                       +104    +104   49.0% vig
+RJ Harvey Over 3.5 receptions                           +102      +0   45.8% devig  PRICE MOVED
 
 history at the posted line                        2yr   2026    career   vs opp   snap  practice
 ------------------------------------------------------------------------------------------------------------
 Jakobi Meyers Over 39.5 reception yds          9/12    2/3     9/12  75%  15/20 CIN    81%    +4  clear
 Kyren Williams Over 59.5 rush yds             16/20    2/3    37/56  66%  13/20 PHI    71%   +12  clear
+RJ Harvey Over 3.5 receptions                  8/19    2/2     8/19  42%   8/20  SF    36%   -15  clear
 Kyren Williams Over 74.5 rush reception yds   15/20    2/3    36/56  64%  12/20 PHI    71%   +12  clear  (comparison)
+RJ Harvey Over 2.5 receptions                 12/19    2/2    12/19  63%  17/20  SF    36%   -15  clear  (comparison)
 Brock Purdy Over 24.5 rush yds                 5/12    3/3    12/52  23%*   5/20 DEN   100%    +7  clear  (comparison)
 Brock Purdy Over 249.5 pass rush yds           7/12    2/3    28/52  54%   9/20 DEN   100%    +7  clear  (comparison)
 Brock Purdy Over 274.5 pass rush yds           7/12    2/3    25/52  48%   9/20 DEN   100%    +7  clear  (comparison)
@@ -24,44 +27,50 @@ Brock Purdy Over 199.5 pass rush yds           9/12    3/3    40/52  77%  12/20 
 
 not on the ticket, for comparison:
   Kyren Williams Over 74.5 rush reception yds  -113 p=49.8% devig
-  that ticket instead: +763  market 9.3%  history 20.9%  $33 -> $285
+  that ticket instead: +1643  market 4.3%  history 8.8%  $33 -> $575
+
+not on the ticket, for comparison:
+  RJ Harvey Over 2.5 receptions  -230  (was +0) p=69.7% vig
+  that ticket instead: +1240  market 6.4%  history 14.2%  $33 -> $442
 
 not on the ticket, for comparison:
   Brock Purdy Over 24.5 rush yds  +198 p=33.6% vig
-  add it back: 8 legs +2682  market 3.1%  history 5.2%  $33 -> $918
+  add it back: 9 legs +5520  market 1.4%  history 2.2%  $33 -> $1,855
 
 not on the ticket, for comparison:
   Brock Purdy Over 249.5 pass rush yds  -112 p=52.8% vig
-  add it back: 8 legs +1667  market 4.8%  history 13.0%  $33 -> $583
+  add it back: 9 legs +3470  market 2.2%  history 5.5%  $33 -> $1,178
 
 not on the ticket, for comparison:
   Brock Purdy Over 274.5 pass rush yds  +158 p=38.8% vig
-  add it back: 8 legs +2309  market 3.5%  history 13.0%  $33 -> $795
+  add it back: 9 legs +4766  market 1.6%  history 5.5%  $33 -> $1,606
 
 not on the ticket, for comparison:
   Brock Purdy Over 224.5 pass rush yds  -210 p=67.7% vig
-  add it back: 8 legs +1278  market 6.2%  history 14.9%  $33 -> $455
+  add it back: 9 legs +2684  market 2.8%  history 6.3%  $33 -> $919
 
 not on the ticket, for comparison:
   Brock Purdy Over 199.5 pass rush yds  -380 p=79.2% vig
-  add it back: 8 legs +1079  market 7.2%  history 16.8%  $33 -> $389
+  add it back: 9 legs +2282  market 3.3%  history 7.1%  $33 -> $786
 
-7 legs   +834   $33 -> $308
-  market  p=  9.1%  fair   +996   (the book's own view, de-vigged)
-  history p= 22.3%  fair   +348   (props at their rate at this line, fights at market)
+8 legs   +1786   $33 -> $622
+  market  p=  4.2%  fair  +2285   (the book's own view, de-vigged)
+  history p=  9.4%  fair   +960   (props at their rate at this line, fights at market)
 
 what each leg adds                                 adds    hits   risk   $/risk   [measured]
 --------------------------------------------------------------------------------
-Kyren Williams Over 59.5 rush yds                  +157   80.0%  20.0%      785
-Jakobi Meyers Over 39.5 reception yds              +144   75.0%  25.0%      576
-Ateba Gautier ML                                    +89   69.0%  31.0%      288
-Anthony Wint ML                                     +47   83.0%  17.0%      279
-Marcus McGhee ML                                    +45   83.9%  16.1%      277
-Jacobe Smith ML                                     +29   89.4%  10.6%      277
-Payton Talbott ML                                   +36   86.7%  13.3%      273
-  without Jakobi Meyers Over 39.5 reception yds  6 legs   +397  $33 -> $164
-  without Kyren Williams Over 59.5 rush yds      6 legs   +358  $33 -> $151
+Kyren Williams Over 59.5 rush yds                  +317   80.0%  20.0%     1586
+Jakobi Meyers Over 39.5 reception yds              +291   75.0%  25.0%     1163
+Ateba Gautier ML                                   +180   69.0%  31.0%      581
+Anthony Wint ML                                     +96   83.3%  16.7%      572
+Marcus McGhee ML                                    +90   83.9%  16.1%      560
+Jacobe Smith ML                                     +59   89.4%  10.6%      559
+Payton Talbott ML                                   +73   86.7%  13.3%      552
+RJ Harvey Over 3.5 receptions                      +314   42.1%  57.9%      543
+  without Jakobi Meyers Over 39.5 reception yds  7 legs   +905  $33 -> $332
+  without Kyren Williams Over 59.5 rush yds      7 legs   +824  $33 -> $305
+  without RJ Harvey Over 3.5 receptions          7 legs   +834  $33 -> $308
 
-On the historical rates this pays +109% of stake. That rests entirely on
+On the historical rates this pays +78% of stake. That rests entirely on
 those rates still describing the role each player has now -- the table above
 is how you check that, not the number.
