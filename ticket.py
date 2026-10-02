@@ -276,6 +276,27 @@ def parlay(legs):
     return d, slips.american(d), p
 
 
+def model_p(legs, hist):
+    """The ticket's probability using the HISTORICAL rate wherever there is
+    one, and the de-vigged market everywhere else.
+
+    WHY BOTH NUMBERS GET PRINTED. Multiplying de-vigged market probabilities
+    gives the book's own view of the ticket, and comparing that against the
+    book's payout is a tautology -- it returns the vig as a negative "edge"
+    every time, for every ticket, which is information about parlays in general
+    and none about this one.
+
+    The historical rate is a different claim and it can be wrong in a way the
+    market is not: it describes the role a player HAD. So the two numbers are
+    printed side by side and the gap between them is the actual content. Where
+    they disagree, the role table above says which one to distrust."""
+    p = 1.0
+    for lg in legs:
+        h = hist.get(lg.get("lab"))
+        p *= h[0] if h else lg["p"]
+    return p
+
+
 def same_event(legs):
     """Legs sharing one event are NOT independent -- the product would be wrong.
     Returns the offending event names."""
@@ -430,6 +451,14 @@ def selftest():
                           "side": "Over", "point": "main"})
     ck(tw and "more than one main line" in tw.get("err", ""), f"two main lines {tw}")
 
+    # model_p: historical rate where there is one, market price elsewhere
+    legs = [{"lab": "A", "p": 0.90}, {"lab": "B", "p": 0.50}]
+    ck(abs(model_p(legs, {}) - 0.45) < 1e-9, "no history -> market")
+    ck(abs(model_p(legs, {"B": (0.75, 9, 12, 2, 3)}) - 0.675) < 1e-9,
+       "history replaces the market price for that leg only")
+    ck(abs(model_p(legs, {"Z": (0.1, 1, 10, 0, 0)}) - 0.45) < 1e-9,
+       "history for an absent leg must not be applied")
+
     # same-event detection
     ck(same_event([{"event": "A @ B"}, {"event": "A @ B"}]) == ["A @ B"], "same event caught")
     ck(same_event([{"event": "A @ B"}, {"event": "C @ D"}]) == [], "distinct events fine")
@@ -498,40 +527,61 @@ def main():
         print(f"{lg['lab'][:52]:52s} {lg['price']:+7d} {lg['want']:+7d} "
               f"{lg['p']*100:6.1f}% {lg['basis']}{flags}")
 
-    # HISTORY AT THE LINE THAT IS ACTUALLY POSTED. A hit rate counted at 74.5
-    # says nothing about a bet graded at 77.5, and the two got three yards
-    # apart inside seven minutes. Counting here, off the same payload that
-    # produced the price, is the only way the record and the number cannot
-    # drift apart in a quote.
+    # HISTORY AT THE LINE THAT IS ACTUALLY POSTED, AND THE ROLE BEHIND IT.
+    #
+    # A hit rate counted at 74.5 says nothing about a bet graded at 77.5, and
+    # the two got three yards apart inside seven minutes. Counting here, off
+    # the same payload that produced the price, is the only way the record and
+    # the number cannot drift apart inside one quote.
+    #
+    # Snap share and the practice report sit in the same table on purpose. A
+    # historical rate is a claim about a role, so the role has to be visible
+    # next to it or the rate is unreadable: 9-of-12 means one thing at 81% of
+    # snaps and something else entirely for a man who did not practice.
     props = [l for l in tick + cmps if l.get("stat")]
+    hist = {}
     if props:
         try:
             import nflprops
             logs = nflprops.game_logs(nflprops.SEASONS)
+            snaps = nflprops.snap_share()
+            inj = nflprops.injuries()
         except Exception as ex:
             print(f"\nno history: {type(ex).__name__}: {ex}")
-            logs = None
+            logs = snaps = inj = None
         if logs:
-            print(f"\n{'history at the posted line':52s} {'all':>9s} {'2026':>8s}")
-            print("-" * 71)
+            print(f"\n{'history at the posted line':46s} {'all':>9s} {'2026':>7s}"
+                  f" {'snap':>6s} {'trend':>6s}  practice")
+            print("-" * 94)
             for lg in props:
-                # nflverse column lookup. Some stats are only present in the
-                # MARKETS table under the _alternate key (rush+rec is), so both
-                # spellings are tried rather than assuming one exists.
+                # nflverse column lookup. Some stats appear in MARKETS only
+                # under the _alternate key (rush+rec is one), so both spellings
+                # are tried rather than one being assumed to exist.
                 mk = nflprops.MARKETS.get(f"player_{lg['stat']}") or \
                      nflprops.MARKETS.get(f"player_{lg['stat']}_alternate")
                 if not mk:
-                    print(f"{lg['lab'][:52]:52s} {'no stat mapping':>18s}")
+                    print(f"{lg['lab'][:46]:46s} {'no stat mapping':>18s}")
                     continue
-                cols = mk[0]
-                r = nflprops.hit_rate(logs, lg["who"], cols, lg["point"], lg["side"])
+                r = nflprops.hit_rate(logs, lg["who"], mk[0], lg["point"], lg["side"])
                 tag = "  (comparison)" if lg.get("compare") else ""
                 if not r:
-                    print(f"{lg['lab'][:52]:52s} {'no usable log':>18s}{tag}")
+                    print(f"{lg['lab'][:46]:46s} {'no usable log':>18s}{tag}")
                     continue
                 h, n, team, ch, cn = r
-                print(f"{lg['lab'][:52]:52s} {h:>4d}/{n:<4d} {ch:>3d}/{cn:<4d}"
-                      f"  {team}{tag}")
+                hist[lg["lab"]] = (h / n, h, n, ch, cn)
+                sp = (snaps or {}).get((team, lg["who"]))
+                sptxt = f"{sp[0]*100:5.0f}% {sp[1]*100:+5.0f}" if sp else f"{'  --':>6s} {'--':>6s}"
+                flag = (inj or {}).get((team, lg["who"]))
+                # inj is None when the file could not be read -- which is not
+                # the same as a clean report, and must not print as one.
+                if inj is None:
+                    prac = "UNKNOWN (report unread)"
+                elif flag:
+                    prac = f"{flag[0]} ({flag[1]})"
+                else:
+                    prac = "clear"
+                print(f"{lg['lab'][:46]:46s} {h:>4d}/{n:<4d} {ch:>3d}/{cn:<3d}"
+                      f" {sptxt}  {prac}{tag}")
 
     # The comparison prints BEFORE any bail-out. The first live run bailed on
     # the rush+rec leg and swallowed the alternative with it, which left the
@@ -545,8 +595,9 @@ def main():
         if swap and not missing:
             rest = [x for x in tick if x not in swap]
             d2, am2, p2 = parlay(rest + [lg])
-            print(f"  that ticket instead: {am2:+d}  p={p2*100:.1f}%  "
-                  f"$33 -> ${33*d2:,.0f}")
+            m2 = model_p(rest + [lg], hist)
+            print(f"  that ticket instead: {am2:+d}  market {p2*100:.1f}%  "
+                  f"history {m2*100:.1f}%  $33 -> ${33*d2:,.0f}")
 
     if missing:
         print("\nCOULD NOT READ -- ticket is incomplete, do not bet this quote:")
@@ -561,11 +612,17 @@ def main():
               "honest number:", dupes)
 
     d, am, p = parlay(tick)
-    print(f"\n{len(tick)} legs   {am:+d}   p={p*100:.1f}%   "
-          f"$33 -> ${33*d:,.0f}   fair {slips.american(1/p):+d}")
-    ev = p * (d - 1) - (1 - p)
-    print(f"edge {ev*100:+.1f}% of stake   "
-          f"(fair price is {slips.american(1/p):+d}, book pays {am:+d})")
+    mp = model_p(tick, hist)
+    print(f"\n{len(tick)} legs   {am:+d}   $33 -> ${33*d:,.0f}")
+    print(f"  market  p={p*100:5.1f}%  fair {slips.american(1/p):+6d}   "
+          f"(the book's own view, de-vigged)")
+    print(f"  history p={mp*100:5.1f}%  fair {slips.american(1/mp):+6d}   "
+          f"(props at their rate at this line, fights at market)")
+    ev = mp * (d - 1) - (1 - mp)
+    print(f"\nOn the historical rates this pays {ev*100:+.0f}% of stake. That "
+          f"rests entirely on\nthose rates still describing the role each "
+          f"player has now -- the table above\nis how you check that, not the "
+          f"number.")
     return 0
 
 
