@@ -1,38 +1,53 @@
-pulling alt props for up to 4 games
-  Indianapolis Colts @ Washington Commanders: 234 lines  (quota left 19909)
-  Arizona Cardinals @ New York Giants: 270 lines  (quota left 19904)
-  Tennessee Titans @ Baltimore Ravens: 236 lines  (quota left 19899)
-  New England Patriots @ Buffalo Bills: 302 lines  (quota left 19894)
+pulling alt props for up to 5 games, skipping the first 4
+  New York Jets @ Chicago Bears: 206 lines  (quota left 19889)
+  Jacksonville Jaguars @ Cincinnati Bengals: 284 lines  (quota left 19884)
+  Dallas Cowboys @ Houston Texans: 273 lines  (quota left 19879)
+  Green Bay Packers @ Tampa Bay Buccaneers: 294 lines  (quota left 19874)
+  Los Angeles Rams @ Philadelphia Eagles: 225 lines  (quota left 19869)
 
 loading game logs...
   2262 players with logs
 
-26 lines where the RECORD beats the PRICE by 10+ points
+51 lines where the RECORD beats the PRICE by 10+ points
 (hit rate is raw history; implied price still carries the vig)
 
-  Keon Coleman           Over     2.5 receptions       280  all  9/15= 60%  2026 1/3= 33%  vs  26% (+34%)  New England Patriots @ Buffalo
-  Keon Coleman           Over    14.5 rec yds          108  all 12/15= 80%  2026 2/3= 67%  vs  48% (+32%)  New England Patriots @ Buffalo
-  Keon Coleman           Over    19.5 rec yds          168  all 10/15= 67%  2026 2/3= 67%  vs  37% (+29%)  New England Patriots @ Buffalo
-  Dawson Knox            Over     4.5 rec yds         -220  all 18/19= 95%  2026 3/3=100%  vs  69% (+26%)  New England Patriots @ Buffalo
-  Keon Coleman           Over     9.5 rec yds         -158  all 13/15= 87%  2026 2/3= 67%  vs  61% (+25%)  New England Patriots @ Buffalo
-  Keon Coleman           Over    24.5 rec yds          235  all  8/15= 53%  2026 2/3= 67%  vs  30% (+23%)  New England Patriots @ Buffalo
-  Keon Coleman           Over    29.5 rec yds          320  all  7/15= 47%  2026 2/3= 67%  vs  24% (+23%)  New England Patriots @ Buffalo
-  Elic Ayomanor          Over     9.5 rec yds         -300  all 18/19= 95%  2026 3/3=100%  vs  75% (+20%)  Tennessee Titans @ Baltimore R
-  Keon Coleman           Over    39.5 rec yds          630  all  5/15= 33%  2026 1/3= 33%  vs  14% (+20%)  New England Patriots @ Buffalo
-  Dawson Knox            Over     0.5 receptions      -310  all 18/19= 95%  2026 3/3=100%  vs  76% (+19%)  New England Patriots @ Buffalo
-  Jacoby Brissett        Over   249.5 pass yds         142  all 10/17= 59%  2026 2/3= 67%  vs  41% (+18%)  Arizona Cardinals @ New York G
-  Keon Coleman           Over     0.5 receptions      -490  all 15/15=100%  2026 3/3=100%  vs  83% (+17%)  New England Patriots @ Buffalo
-  Jonathan Taylor        Over     1.5 receptions      -400  all 19/20= 95%  2026 3/3=100%  vs  80% (+15%)  Indianapolis Colts @ Washingto
-  Elic Ayomanor          Over     4.5 rec yds         -580  all 19/19=100%  2026 3/3=100%  vs  85% (+15%)  Tennessee Titans @ Baltimore R
-  Terry McLaurin         Over    49.5 rec yds         -122  all  9/13= 69%  2026 2/3= 67%  vs  55% (+14%)  Indianapolis Colts @ Washingto
-  Jacoby Brissett        Over   224.5 pass yds        -132  all 12/17= 71%  2026 2/3= 67%  vs  57% (+14%)  Arizona Cardinals @ New York G
-  James Cook             Over    99.5 rush yds         142  all 11/20= 55%  2026 2/3= 67%  vs  41% (+14%)  New England Patriots @ Buffalo
-  Tony Pollard           Over    59.5 rush yds         138  all 11/20= 55%  2026 2/3= 67%  vs  42% (+13%)  Tennessee Titans @ Baltimore R
-  James Cook             Over     2.5 receptions       270  all  8/20= 40%  2026 1/3= 33%  vs  27% (+13%)  New England Patriots @ Buffalo
-  Marvin Harrison Jr.    Over    29.5 rec yds         -154  all 11/15= 73%  2026 2/3= 67%  vs  61% (+13%)  Arizona Cardinals @ New York G
-  Rhamondre Stevenson    Over    39.5 rush yds         146  all  9/17= 53%  2026 2/3= 67%  vs  41% (+12%)  New England Patriots @ Buffalo
-  Jacoby Brissett        Over   274.5 pass yds         240  all  7/17= 41%  2026 2/3= 67%  vs  29% (+12%)  Arizona Cardinals @ New York G
-  James Cook             Over   109.5 rush yds         200  all  9/20= 45%  2026 2/3= 67%  vs  33% (+12%)  New England Patriots @ Buffalo
-  Drake Maye             Over   174.5 pass yds        -500  all 19/20= 95%  2026 3/3=100%  vs  83% (+12%)  New England Patriots @ Buffalo
-  Michael Wilson         Over     9.5 receptions      1000  all  4/20= 20%  2026 1/3= 33%  vs   9% (+11%)  Arizona Cardinals @ New York G
-  Elic Ayomanor          Over     0.5 receptions      -850  all 19/19=100%  2026 3/3=100%  vs  89% (+11%)  Tennessee Titans @ Baltimore R
+  Kyren Williams         Over    59.5 rush yds         102  all 16/20= 80%  2026 2/3= 67%  vs  50% (+30%)  Los Angeles Rams @ Philadelphi
+  Matthew Stafford       Over     1.5 pass TDs        -122  all 17/20= 85%  2026 2/3= 67%  vs  55% (+30%)  Los Angeles Rams @ Philadelphi
+  Rome Odunze            Over    29.5 rec yds         -138  all 13/15= 87%  2026 3/3=100%  vs  58% (+29%)  New York Jets @ Chicago Bears
+  Kyren Williams         Over    49.5 rush yds        -180  all 18/20= 90%  2026 2/3= 67%  vs  64% (+26%)  Los Angeles Rams @ Philadelphi
+  Matthew Stafford       Over     2.5 pass TDs         310  all 10/20= 50%  2026 1/3= 33%  vs  24% (+26%)  Los Angeles Rams @ Philadelphi
+  Jakobi Meyers          Over    24.5 rec yds         -310  all 12/12=100%  2026 3/3=100%  vs  76% (+24%)  Jacksonville Jaguars @ Cincinn
+  CeeDee Lamb            Over   109.5 rec yds          280  all  8/16= 50%  2026 2/3= 67%  vs  26% (+24%)  Dallas Cowboys @ Houston Texan
+  Kyren Williams         Over    39.5 rush yds        -330  all 20/20=100%  2026 3/3=100%  vs  77% (+23%)  Los Angeles Rams @ Philadelphi
+  Rome Odunze            Over    39.5 rec yds          128  all 10/15= 67%  2026 3/3=100%  vs  44% (+23%)  New York Jets @ Chicago Bears
+  Kyren Williams         Over    69.5 rush yds         168  all 12/20= 60%  2026 2/3= 67%  vs  37% (+23%)  Los Angeles Rams @ Philadelphi
+  Jalen Hurts            Over     1.5 pass TDs         225  all 10/19= 53%  2026 2/3= 67%  vs  31% (+22%)  Los Angeles Rams @ Philadelphi
+  Jakobi Meyers          Over    39.5 rec yds         -114  all  9/12= 75%  2026 2/3= 67%  vs  53% (+22%)  Jacksonville Jaguars @ Cincinn
+  Rome Odunze            Over    24.5 rec yds         -192  all 13/15= 87%  2026 3/3=100%  vs  66% (+21%)  New York Jets @ Chicago Bears
+  Bucky Irving           Over     3.5 receptions       198  all  7/13= 54%  2026 2/3= 67%  vs  34% (+20%)  Green Bay Packers @ Tampa Bay 
+  Tank Bigsby            Over    29.5 rush yds         550  all  6/17= 35%  2026 1/3= 33%  vs  15% (+20%)  Los Angeles Rams @ Philadelphi
+  Cole Kmet              Over    24.5 rec yds          320  all  8/19= 42%  2026 1/3= 33%  vs  24% (+18%)  New York Jets @ Chicago Bears
+  Jakobi Meyers          Over    19.5 rec yds         -470  all 12/12=100%  2026 3/3=100%  vs  82% (+18%)  Jacksonville Jaguars @ Cincinn
+  CeeDee Lamb            Over    99.5 rec yds          205  all  8/16= 50%  2026 2/3= 67%  vs  33% (+17%)  Dallas Cowboys @ Houston Texan
+  Bucky Irving           Over     9.5 rec yds         -152  all 10/13= 77%  2026 2/3= 67%  vs  60% (+17%)  Green Bay Packers @ Tampa Bay 
+  Tez Johnson            Over    39.5 rec yds          490  all  6/18= 33%  2026 1/3= 33%  vs  17% (+16%)  Green Bay Packers @ Tampa Bay 
+  Jalen Hurts            Over     2.5 pass TDs         880  all  5/19= 26%  2026 1/3= 33%  vs  10% (+16%)  Los Angeles Rams @ Philadelphi
+  Cade Otton             Over     2.5 receptions      -162  all 14/18= 78%  2026 3/3=100%  vs  62% (+16%)  Green Bay Packers @ Tampa Bay 
+  Matthew Stafford       Over     3.5 pass TDs        1000  all  5/20= 25%  2026 1/3= 33%  vs   9% (+16%)  Los Angeles Rams @ Philadelphi
+  Jake Ferguson          Over    39.5 rec yds          300  all  8/20= 40%  2026 1/3= 33%  vs  25% (+15%)  Dallas Cowboys @ Houston Texan
+  Brenton Strange        Over    14.5 rec yds         -580  all 15/15=100%  2026 3/3=100%  vs  85% (+15%)  Jacksonville Jaguars @ Cincinn
+  Javonte Williams       Over    79.5 rush yds         205  all  9/19= 47%  2026 1/3= 33%  vs  33% (+15%)  Dallas Cowboys @ Houston Texan
+  Matthew Stafford       Over   349.5 pass yds         850  all  5/20= 25%  2026 1/3= 33%  vs  11% (+14%)  Los Angeles Rams @ Philadelphi
+  Rome Odunze            Over     1.5 receptions      -380  all 14/15= 93%  2026 3/3=100%  vs  79% (+14%)  New York Jets @ Chicago Bears
+  CeeDee Lamb            Over     4.5 receptions      -275  all 14/16= 88%  2026 3/3=100%  vs  73% (+14%)  Dallas Cowboys @ Houston Texan
+  Cole Kmet              Over    29.5 rec yds          470  all  6/19= 32%  2026 1/3= 33%  vs  18% (+14%)  New York Jets @ Chicago Bears
+  Tank Bigsby            Over    24.5 rush yds         370  all  6/17= 35%  2026 1/3= 33%  vs  21% (+14%)  Los Angeles Rams @ Philadelphi
+  Rome Odunze            Over    19.5 rec yds         -270  all 13/15= 87%  2026 3/3=100%  vs  73% (+14%)  New York Jets @ Chicago Bears
+  Rome Odunze            Over    49.5 rec yds          200  all  7/15= 47%  2026 1/3= 33%  vs  33% (+13%)  New York Jets @ Chicago Bears
+  C.J. Stroud            Over    24.5 rush yds         350  all  6/17= 35%  2026 1/3= 33%  vs  22% (+13%)  Dallas Cowboys @ Houston Texan
+  Chase Brown            Over     1.5 receptions      -670  all 20/20=100%  2026 3/3=100%  vs  87% (+13%)  Jacksonville Jaguars @ Cincinn
+  Bucky Irving           Over    24.5 rec yds          290  all  5/13= 38%  2026 1/3= 33%  vs  26% (+13%)  Green Bay Packers @ Tampa Bay 
+  Matthew Stafford       Over   374.5 pass yds        1280  all  4/20= 20%  2026 1/3= 33%  vs   7% (+13%)  Los Angeles Rams @ Philadelphi
+  Cade Otton             Over     1.5 receptions      -450  all 17/18= 94%  2026 3/3=100%  vs  82% (+13%)  Green Bay Packers @ Tampa Bay 
+  Matthew Stafford       Over   324.5 pass yds         470  all  6/20= 30%  2026 2/3= 67%  vs  18% (+12%)  Los Angeles Rams @ Philadelphi
+  Cade Otton             Over    49.5 rec yds          370  all  6/18= 33%  2026 1/3= 33%  vs  21% (+12%)  Green Bay Packers @ Tampa Bay 
