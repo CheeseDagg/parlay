@@ -1,0 +1,27 @@
+name: Purdy market probe
+on:
+  workflow_dispatch: {}
+  push: { branches: [main], paths: ['experiments/PURDY.txt'] }
+permissions: { contents: write }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 experiments/purdy.py 2>&1 | tee purdy.txt
+        env: { ODDS_API_KEY: "${{ secrets.ODDS_API_KEY }}" }
+      - if: always()
+        run: |
+          git config user.name "parlay-bot"; git config user.email "actions@github.com"
+          cp purdy.txt /tmp/pd.txt
+          for a in 1 2 3; do
+            git fetch origin main; git reset --hard origin/main; cp /tmp/pd.txt purdy.txt
+            git add purdy.txt
+            git diff --cached --quiet && { echo unchanged; exit 0; }
+            git commit -m "purdy probe $(date -u '+%H:%M')"
+            git push origin HEAD:main && exit 0
+          done
+          exit 1
