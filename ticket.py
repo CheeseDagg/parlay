@@ -1,0 +1,413 @@
+#!/usr/bin/env python3
+"""ticket.py -- price the open ticket off LIVE prices, not remembered ones.
+
+    ODDS_API_KEY=... python3 ticket.py        # runner does this
+    python3 ticket.py --selftest
+
+WHY THIS FILE EXISTS.
+
+Every price I have quoted on this ticket so far was quoted from the scroll-back
+of an earlier run. That is the same failure as naming a starting quarterback
+from memory: by the time it is said out loud, nobody has checked it. A price
+that moved two hours ago makes the parlay quote wrong, and the quote is the
+whole deliverable -- Ryan is deciding whether to put money down on the number
+this prints.
+
+So: every leg here is looked up by NAME in the live FanDuel board. The stored
+`want` price is not used for the maths. It is used for exactly one thing --
+comparing against what came back, so a line that has moved gets flagged as
+MOVED instead of silently repricing the ticket under the old headline.
+
+A leg that cannot be found is not dropped and it is not guessed. The ticket
+prints as incomplete, because an 8-leg quote built from 7 readable legs is a
+lie about a number Ryan is about to bet.
+
+DE-VIG, AND WHERE IT IS REFUSED.
+
+Where both sides of a market are posted, the pair is de-vigged (power, via
+slips.py -- books load margin on the longshot side and these legs are mostly
+heavy favourites, which multiplicative de-vig systematically understates).
+Where only one side is posted -- the usual case for an alternate prop ladder --
+there is nothing to de-vig against, so the implied probability is printed RAW
+and marked `vig`. It is too high by the book's margin and saying otherwise
+would be inventing the other half of a market that is not there.
+
+The parlay price is the product of the decimal prices actually read. The
+probability is the product of the leg probabilities. Independence is assumed
+ACROSS sports and that is close to true -- a UFC bout and an NFL game share no
+script. Two legs inside one NFL game would not be independent; this ticket has
+none, and the script says so if that ever stops being the case.
+"""
+import datetime as dt, json, os, sys, urllib.error, urllib.parse, urllib.request
+
+import slips
+
+BASE = "https://api.the-odds-api.com/v4"
+KEY = os.environ.get("ODDS_API_KEY", "")
+BOOK = "fanduel"
+
+# The ticket as Ryan has built it. `want` is the last price seen, for drift
+# detection only -- never for the maths.
+LEGS = [
+    {"kind": "mma", "who": "Jacobe Smith",   "want": -950},
+    {"kind": "mma", "who": "Anthony Wint",   "want": -550},
+    {"kind": "mma", "who": "Marcus McGhee",  "want": -520},
+    {"kind": "mma", "who": "Ateba Gautier",  "want": -245},
+    {"kind": "mma", "who": "Payton Talbott", "want": -750},
+    {"kind": "prop", "who": "Jakobi Meyers",  "stat": "reception_yds",
+     "side": "Over", "point": 39.5, "want": -114},
+    {"kind": "prop", "who": "Brock Purdy",    "stat": "rush_yds",
+     "side": "Over", "point": 24.5, "want": 198},
+    {"kind": "prop", "who": "Kyren Williams", "stat": "rush_reception_yds",
+     "side": "Over", "point": 74.5, "want": -113},
+]
+
+# Priced alongside but NOT in the ticket: the line this one replaced. Ryan
+# asked for rush+rec; the rushing line is printed next to it so the swap is
+# documented with two live numbers instead of my say-so.
+COMPARE = [
+    {"kind": "prop", "who": "Kyren Williams", "stat": "rush_yds",
+     "side": "Over", "point": 59.5, "want": 104},
+]
+
+MARKETS = {  # a prop may be posted on the standard market, the alt ladder, or both
+    "reception_yds": ("player_reception_yds", "player_reception_yds_alternate"),
+    "rush_yds": ("player_rush_yds", "player_rush_yds_alternate"),
+    "rush_reception_yds": ("player_rush_reception_yds",
+                           "player_rush_reception_yds_alternate"),
+}
+
+
+# ------------------------------------------------------------------ transport
+def _get(url, fetch=None):
+    if fetch is not None:
+        return fetch(url)
+    with urllib.request.urlopen(url, timeout=40) as r:
+        return json.loads(r.read().decode())
+
+
+def surname(name):
+    """Last token, lowercased. Fighter and player names come back from the API
+    in a different shape than a book prints them ('Jacobe Smith' vs
+    'J. Smith'), and a surname match is the part that survives that. It is also
+    why `who` is checked against the FULL string first -- two Smiths on one
+    card would otherwise collide, and the caller is told rather than guessing."""
+    return str(name).strip().split()[-1].lower() if str(name).strip() else ""
+
+
+def find_name(cands, who):
+    """Match `who` against candidate strings. Exact-ish first, surname second.
+    Returns (match, 'exact'|'surname') or (None, reason)."""
+    low = who.lower()
+    hits = [c for c in cands if low in str(c).lower()]
+    if len(hits) == 1:
+        return hits[0], "exact"
+    if len(hits) > 1:
+        return None, f"ambiguous: {sorted(set(map(str, hits)))}"
+    sn = surname(who)
+    hits = [c for c in cands if surname(c) == sn]
+    if len(hits) == 1:
+        return hits[0], "surname"
+    if len(hits) > 1:
+        return None, f"ambiguous on surname: {sorted(set(map(str, hits)))}"
+    return None, "not on the board"
+
+
+# ------------------------------------------------------------------- mma legs
+def price_mma(board, who):
+    """board: the /odds h2h payload. Returns a priced leg dict or {'err':...}."""
+    for ev in board:
+        names = []
+        for bk in ev.get("bookmakers") or []:
+            if bk.get("key") != BOOK:
+                continue
+            for m in bk.get("markets") or []:
+                if m.get("key") == "h2h":
+                    names = [o.get("name") for o in (m.get("outcomes") or [])]
+        if not names:
+            continue
+        hit, how = find_name(names, who)
+        if hit is None:
+            if how.startswith("ambiguous"):
+                return {"err": how}
+            continue
+        outs = {}
+        for bk in ev.get("bookmakers") or []:
+            if bk.get("key") != BOOK:
+                continue
+            for m in bk.get("markets") or []:
+                if m.get("key") == "h2h":
+                    for o in m.get("outcomes") or []:
+                        outs[o.get("name")] = o.get("price")
+        mine = outs.get(hit)
+        other = [p for n, p in outs.items() if n != hit]
+        if mine is None:
+            return {"err": "no price posted"}
+        leg = {"lab": f"{hit} ML", "price": mine, "sport": "MMA",
+               "event": f"{ev.get('away_team')} / {ev.get('home_team')}",
+               "start": ev.get("commence_time"), "how": how}
+        if len(other) == 1 and other[0] is not None:
+            pair = slips.devig([_imp(mine), _imp(other[0])])
+            leg["p"], leg["basis"] = pair[0], "devig"
+            leg["opp"] = other[0]
+        else:
+            leg["p"], leg["basis"] = _imp(mine), "vig"
+        return leg
+    return {"err": "not on the board"}
+
+
+def _imp(american):
+    a = float(american)
+    return 100.0 / (a + 100.0) if a > 0 else -a / (-a + 100.0)
+
+
+# ------------------------------------------------------------------ prop legs
+def price_prop(ev_payload, spec):
+    """ev_payload: one event's /odds response. Finds the exact point on either
+    the standard market or the alt ladder."""
+    keys = MARKETS[spec["stat"]]
+    rows = []
+    for bk in ev_payload.get("bookmakers") or []:
+        if bk.get("key") != BOOK:
+            continue
+        for m in bk.get("markets") or []:
+            if m.get("key") not in keys:
+                continue
+            for o in m.get("outcomes") or []:
+                rows.append(o)
+    if not rows:
+        return None
+    # Dedupe before matching: one player has a row per side and per ladder
+    # point, so the raw list is full of legitimate repeats and every match
+    # would read as ambiguous.
+    descs = sorted({str(o.get("description")) for o in rows if o.get("description")})
+    hit, how = find_name(descs, spec["who"])
+    if hit is None:
+        return {"err": how} if how.startswith("ambiguous") else None
+    mine = [o for o in rows if o.get("description") == hit
+            and float(o.get("point") or -1) == float(spec["point"])]
+    side = [o for o in mine if str(o.get("name")) == spec["side"]]
+    if not side:
+        posted = sorted({float(o.get("point")) for o in rows
+                         if o.get("description") == hit and o.get("point") is not None})
+        return {"err": f"{spec['point']} not posted; board has {posted}"}
+    price = side[0].get("price")
+    other = [o for o in mine if str(o.get("name")) != spec["side"]]
+    leg = {"lab": f"{hit} {spec['side']} {spec['point']} {spec['stat'].replace('_',' ')}",
+           "price": price, "sport": "PROP", "how": how, "who": spec["who"],
+           "event": f"{ev_payload.get('away_team')} @ {ev_payload.get('home_team')}",
+           "start": ev_payload.get("commence_time")}
+    if len(other) == 1 and other[0].get("price") is not None:
+        pair = slips.devig([_imp(price), _imp(other[0]["price"])])
+        leg["p"], leg["basis"] = pair[0], "devig"
+        leg["opp"] = other[0]["price"]
+    else:
+        leg["p"], leg["basis"] = _imp(price), "vig"
+    return leg
+
+
+# ---------------------------------------------------------------------- maths
+def parlay(legs):
+    """(decimal, american, probability). Raises if a leg has no price."""
+    d, p = 1.0, 1.0
+    for lg in legs:
+        d *= slips.dec(lg["price"])
+        p *= lg["p"]
+    return d, slips.american(d), p
+
+
+def same_event(legs):
+    """Legs sharing one event are NOT independent -- the product would be wrong.
+    Returns the offending event names."""
+    seen, dup = {}, []
+    for lg in legs:
+        ev = lg.get("event")
+        if not ev:
+            continue
+        seen.setdefault(ev, 0)
+        seen[ev] += 1
+    return [ev for ev, n in seen.items() if n > 1]
+
+
+# ------------------------------------------------------------------- selftest
+def selftest():
+    f = 0
+
+    def ck(cond, msg):
+        nonlocal f
+        if not cond:
+            print(f"  FAIL {msg}"); f += 1
+
+    ck(abs(_imp(-110) - 0.5238) < 1e-3, "imp(-110)")
+    ck(abs(_imp(+200) - 1 / 3) < 1e-6, "imp(+200)")
+    d, am, p = parlay([{"price": 100, "p": 0.5}, {"price": 100, "p": 0.5}])
+    ck(abs(d - 4.0) < 1e-9 and am == 300 and abs(p - 0.25) < 1e-9, f"parlay {d} {am} {p}")
+
+    # name matching
+    ck(find_name(["Jacobe Smith", "Kevin Jones"], "Jacobe Smith")[0] == "Jacobe Smith", "exact")
+    ck(find_name(["J. Smith", "Kevin Jones"], "Jacobe Smith")[1] == "surname", "surname fallback")
+    ck(find_name(["Jacobe Smith", "Ian Smith"], "Jon Smith")[0] is None, "two surnames must refuse")
+    ck("ambiguous" in find_name(["Jacobe Smith", "Ian Smith"], "Jon Smith")[1], "refusal names both")
+    ck(find_name(["Kevin Jones"], "Jacobe Smith")[1] == "not on the board", "absent")
+
+    # mma: two-way de-vig, and the favourite must come back BELOW its raw implied
+    board = [{"away_team": "A Guy", "home_team": "Jacobe Smith",
+              "commence_time": "2026-10-04T02:00:00Z",
+              "bookmakers": [{"key": "fanduel", "markets": [{"key": "h2h", "outcomes": [
+                  {"name": "Jacobe Smith", "price": -950},
+                  {"name": "A Guy", "price": 620}]}]}]}]
+    lg = price_mma(board, "Jacobe Smith")
+    ck(lg.get("price") == -950 and lg.get("basis") == "devig", f"mma leg {lg}")
+    ck(lg["p"] < _imp(-950), f"devig must reduce the favourite: {lg['p']} vs {_imp(-950)}")
+    # Power vs multiplicative is not a stylistic choice on this ticket. On
+    # -950/+620 multiplicative returns 0.867 and power 0.893 -- it shaves the
+    # favourite 2.6 points harder, and five favourite legs compound that into
+    # a materially wrong parlay number. Both answers are pinned so a silent
+    # switch of method cannot pass.
+    ck(abs(lg["p"] - 0.8929) < 2e-3, f"power de-vig expected ~0.893, got {lg['p']}")
+    ck(abs(slips.devig([_imp(-950), _imp(620)], "mult")[0] - 0.8669) < 2e-3,
+       "multiplicative reference moved")
+
+    # the prop path must ignore every book that is not FanDuel, same as h2h
+    dk = {"away_team": "LAR", "home_team": "PHI",
+          "bookmakers": [{"key": "draftkings", "markets": [
+              {"key": "player_rush_yds", "outcomes": [
+                  {"description": "Kyren Williams", "name": "Over",
+                   "point": 59.5, "price": 104}]}]}]}
+    ck(price_prop(dk, {"who": "Kyren Williams", "stat": "rush_yds",
+                       "side": "Over", "point": 59.5}) is None,
+       "prop path must ignore non-FanDuel books")
+    ck(price_mma(board, "Payton Talbott").get("err") == "not on the board", "absent fighter")
+    # one-sided h2h cannot be de-vigged
+    solo = [{"away_team": "x", "home_team": "y", "bookmakers": [{"key": "fanduel",
+            "markets": [{"key": "h2h", "outcomes": [{"name": "Lone Guy", "price": -300}]}]}]}]
+    ck(price_mma(solo, "Lone Guy")["basis"] == "vig", "one-sided h2h is raw")
+    # a book other than FanDuel must not be read
+    other = [{"away_team": "x", "home_team": "y", "bookmakers": [{"key": "draftkings",
+             "markets": [{"key": "h2h", "outcomes": [{"name": "Lone Guy", "price": -300}]}]}]}]
+    ck(price_mma(other, "Lone Guy").get("err") == "not on the board", "non-FanDuel ignored")
+
+    # prop: exact point on the alt ladder, one-sided -> vig
+    ev = {"away_team": "LAR", "home_team": "PHI",
+          "bookmakers": [{"key": "fanduel", "markets": [
+              {"key": "player_rush_reception_yds", "outcomes": [
+                  {"description": "Kyren Williams", "name": "Over", "point": 74.5, "price": -113},
+                  {"description": "Kyren Williams", "name": "Under", "point": 74.5, "price": -115}]},
+              {"key": "player_rush_yds_alternate", "outcomes": [
+                  {"description": "Kyren Williams", "name": "Over", "point": 59.5, "price": 104}]}]}]}
+    lg = price_prop(ev, {"who": "Kyren Williams", "stat": "rush_reception_yds",
+                         "side": "Over", "point": 74.5})
+    ck(lg["price"] == -113 and lg["basis"] == "devig", f"rush+rec {lg}")
+    lg2 = price_prop(ev, {"who": "Kyren Williams", "stat": "rush_yds",
+                          "side": "Over", "point": 59.5})
+    ck(lg2["price"] == 104 and lg2["basis"] == "vig", f"one-sided alt must stay raw: {lg2}")
+    # wrong number must report what IS posted, not snap to the nearest
+    bad = price_prop(ev, {"who": "Kyren Williams", "stat": "rush_reception_yds",
+                          "side": "Over", "point": 69.5})
+    ck(bad and "not posted" in bad.get("err", ""), f"absent point {bad}")
+    ck(bad and "74.5" in bad.get("err", ""), "refusal must name the posted line")
+    # wrong side must not fall through to the other side's price
+    uns = price_prop(ev, {"who": "Kyren Williams", "stat": "rush_yds",
+                          "side": "Under", "point": 59.5})
+    ck(uns and "err" in uns, f"missing side must refuse, got {uns}")
+    ck(price_prop(ev, {"who": "Nobody Here", "stat": "rush_yds",
+                       "side": "Over", "point": 59.5}) is None, "absent player")
+
+    # same-event detection
+    ck(same_event([{"event": "A @ B"}, {"event": "A @ B"}]) == ["A @ B"], "same event caught")
+    ck(same_event([{"event": "A @ B"}, {"event": "C @ D"}]) == [], "distinct events fine")
+
+    print("ticket selftest:", "ok" if f == 0 else f"{f} FAILURES")
+    return 1 if f else 0
+
+
+# ------------------------------------------------------------------------ run
+def main():
+    if not KEY:
+        print("no ODDS_API_KEY"); return 1
+    out, missing = [], []
+
+    mma = _get(f"{BASE}/sports/mma_mixed_martial_arts/odds/?apiKey={KEY}"
+               f"&regions=us&bookmakers={BOOK}&oddsFormat=american&markets=h2h")
+    for spec in [l for l in LEGS if l["kind"] == "mma"]:
+        lg = price_mma(mma, spec["who"])
+        if "err" in lg:
+            missing.append((spec["who"], lg["err"])); continue
+        lg["want"] = spec["want"]
+        out.append(lg)
+
+    props = [l for l in LEGS + COMPARE if l["kind"] == "prop"]
+    if props:
+        evs = _get(f"{BASE}/sports/americanfootball_nfl/events?apiKey={KEY}")
+        want_keys = sorted({k for p in props for k in MARKETS[p["stat"]]})
+        todo = list(props)
+        for ev in evs:
+            if not todo:
+                break
+            try:
+                d = _get(f"{BASE}/sports/americanfootball_nfl/events/{ev['id']}/odds/"
+                         f"?apiKey={KEY}&regions=us&bookmakers={BOOK}"
+                         f"&oddsFormat=american&markets={','.join(want_keys)}")
+            except urllib.error.HTTPError:
+                continue
+            still = []
+            for spec in todo:
+                lg = price_prop(d, spec)
+                if lg is None:
+                    still.append(spec); continue
+                if "err" in lg:
+                    missing.append((spec["who"], lg["err"])); continue
+                lg["want"] = spec["want"]
+                lg["compare"] = spec in COMPARE
+                out.append(lg)
+            todo = still
+        for spec in todo:
+            missing.append((spec["who"], "no FanDuel line found on the slate"))
+
+    tick = [l for l in out if not l.get("compare")]
+    cmps = [l for l in out if l.get("compare")]
+
+    print(f"read {dt.datetime.now(dt.timezone.utc):%Y-%m-%dT%H:%MZ}  FanDuel live\n")
+    hdr = f"{'leg':52s} {'price':>7s} {'was':>7s} {'p':>7s}  basis"
+    print(hdr); print("-" * len(hdr))
+    for lg in tick:
+        moved = "" if lg["price"] == lg["want"] else "  MOVED"
+        print(f"{lg['lab'][:52]:52s} {lg['price']:+7d} {lg['want']:+7d} "
+              f"{lg['p']*100:6.1f}% {lg['basis']}{moved}")
+
+    if missing:
+        print("\nCOULD NOT READ -- ticket is incomplete, do not bet this quote:")
+        for who, why in missing:
+            print(f"  {who}: {why}")
+        print("\nno parlay price printed")
+        return 1
+
+    dupes = same_event(tick)
+    if dupes:
+        print("\nWARNING -- legs share an event, the product below is NOT the "
+              "honest number:", dupes)
+
+    d, am, p = parlay(tick)
+    print(f"\n{len(tick)} legs   {am:+d}   p={p*100:.1f}%   "
+          f"$33 -> ${33*d:,.0f}   fair {slips.american(1/p):+d}")
+    ev = p * (d - 1) - (1 - p)
+    print(f"edge {ev*100:+.1f}% of stake   "
+          f"(fair price is {slips.american(1/p):+d}, book pays {am:+d})")
+
+    for lg in cmps:
+        swap = [x for x in tick if x.get("who") == lg.get("who")]
+        print("\nnot on the ticket, for comparison:")
+        moved = "" if lg["price"] == lg["want"] else "  MOVED"
+        print(f"  {lg['lab']}  {lg['price']:+d} (was {lg['want']:+d}) "
+              f"p={lg['p']*100:.1f}% {lg['basis']}{moved}")
+        if swap:
+            rest = [x for x in tick if x not in swap]
+            d2, am2, p2 = parlay(rest + [lg])
+            print(f"  that ticket instead: {am2:+d}  p={p2*100:.1f}%  $33 -> ${33*d2:,.0f}")
+    return 0
+
+
+if __name__ == "__main__":
+    if "--selftest" in sys.argv[1:]:
+        sys.exit(selftest())
+    sys.exit(main())
