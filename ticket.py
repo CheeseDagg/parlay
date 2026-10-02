@@ -79,12 +79,22 @@ LEGS = [
     # refusal rather than quietly becoming the next rung up.
     {"kind": "prop", "who": "Kyren Williams", "stat": "rush_yds",
      "side": "Over", "point": 59.5, "want": 104},
+    # Harvey 4+ catches per Ryan. `want` is 0 because this line has never been
+    # read -- the drift check compares against the last price SEEN, and there
+    # is no such price yet, so the first run will flag it as moved. That is
+    # correct: it has no history to be stable against.
+    {"kind": "prop", "who": "RJ Harvey", "stat": "receptions",
+     "side": "Over", "point": 3.5, "want": 0},
 ]
 
 # Priced alongside but NOT in the ticket: the line this one replaced. Ryan
 # asked for rush+rec; the rushing line is printed next to it so the swap is
 # documented with two live numbers instead of my say-so.
 COMPARE = [
+    # The 3+ version alongside it. My read was ~55% at 4+ and ~75-80% at 3+,
+    # so the two prices are the whole trade and he should see both.
+    {"kind": "prop", "who": "RJ Harvey", "stat": "receptions",
+     "side": "Over", "point": 2.5, "want": 0},
     # Purdy is off the ticket. His rungs stay here so adding one back is a live
     # price rather than a re-run, the rushing line among them -- it is Ryan's
     # pick and it does not get deleted, it gets priced.
@@ -125,6 +135,7 @@ MARKETS = {  # a prop may be posted on the standard market, the alt ladder, or b
                            "player_rush_reception_yds_alternate"),
     "pass_rush_yds": ("player_pass_rush_yds", "player_pass_rush_yds_alternate"),
     "pass_yds": ("player_pass_yds", "player_pass_yds_alternate"),
+    "receptions": ("player_receptions", "player_receptions_alternate"),
 }
 
 
