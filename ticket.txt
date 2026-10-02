@@ -1,4 +1,4 @@
-read 2026-10-02T21:00Z  FanDuel live
+read 2026-10-02T21:02Z  FanDuel live
 
 leg                                                    price     was       p  basis
 -----------------------------------------------------------------------------------
@@ -19,6 +19,8 @@ Brock Purdy Over 24.5 rush yds                    5/12     3/3     5/20 DEN   10
 Kyren Williams Over 74.5 rush reception yds      15/20     2/3    12/20 PHI    71%   +12  clear  (comparison)
 Brock Purdy Over 249.5 pass rush yds              7/12     2/3     9/20 DEN   100%    +7  clear  (comparison)
 Brock Purdy Over 274.5 pass rush yds              7/12     2/3     9/20 DEN   100%    +7  clear  (comparison)
+Brock Purdy Over 224.5 pass rush yds              8/12     3/3     9/20 DEN   100%    +7  clear  (comparison)
+Brock Purdy Over 199.5 pass rush yds              9/12     3/3    12/20 DEN   100%    +7  clear  (comparison)
 
 not on the ticket, for comparison:
   Kyren Williams Over 74.5 rush reception yds  -113 p=49.8% devig
@@ -31,6 +33,14 @@ not on the ticket, for comparison:
 not on the ticket, for comparison:
   Brock Purdy Over 274.5 pass rush yds  +158 p=38.8% vig
   that ticket instead: +2309  market 3.5%  history 13.0%  $33 -> $795
+
+not on the ticket, for comparison:
+  Brock Purdy Over 224.5 pass rush yds  -210 p=67.7% vig
+  that ticket instead: +1278  market 6.2%  history 14.9%  $33 -> $455
+
+not on the ticket, for comparison:
+  Brock Purdy Over 199.5 pass rush yds  -380 p=79.2% vig
+  that ticket instead: +1079  market 7.2%  history 16.7%  $33 -> $389
 
 8 legs   +2682   $33 -> $918
   market  p=  3.1%  fair  +3174   (the book's own view, de-vigged)
