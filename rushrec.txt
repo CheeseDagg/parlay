@@ -1,0 +1,8 @@
+Los Angeles Rams @ Philadelphia Eagles  2026-10-04T17:00:00Z
+
+  market player_anytime_td:
+     Kyren Williams  Yes None  -115
+
+  market player_rush_reception_yds:
+     Kyren Williams  Over 74.5  -113
+     Kyren Williams  Under 74.5  -115
