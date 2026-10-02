@@ -1,29 +1,51 @@
-pulling alt props for up to 5 games, skipping the first 4
-  New York Jets @ Chicago Bears: 206 lines  (quota left 19864)
-  Jacksonville Jaguars @ Cincinnati Bengals: 284 lines  (quota left 19859)
-  Dallas Cowboys @ Houston Texans: 273 lines  (quota left 19854)
-  Green Bay Packers @ Tampa Bay Buccaneers: 294 lines  (quota left 19849)
-  Los Angeles Rams @ Philadelphia Eagles: 225 lines  (quota left 19844)
+pulling alt props for up to 6 games, skipping the first 9
+  Miami Dolphins @ Minnesota Vikings: 314 lines  (quota left 19835)
+  Denver Broncos @ San Francisco 49ers: 299 lines  (quota left 19826)
+  Kansas City Chiefs @ Las Vegas Raiders: 342 lines  (quota left 19817)
+  Los Angeles Chargers @ Seattle Seahawks: 282 lines  (quota left 19808)
+  Detroit Lions @ Carolina Panthers: 308 lines  (quota left 19799)
+  Atlanta Falcons @ New Orleans Saints: 318 lines  (quota left 19790)
 
 loading game logs...
   2262 players with logs
 
-16 lines where the RECORD beats the PRICE by 10+ points
+37 lines where the RECORD beats the PRICE by 10+ points
 (hit rate is raw history; implied price still carries the vig)
 
-  Kyren Williams         Over    59.5 rush yds         102  all 16/20= 80%  2026 2/3= 67%  vs  50% (+30%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
-  Kyren Williams         Over    49.5 rush yds        -180  all 18/20= 90%  2026 2/3= 67%  vs  64% (+26%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
-  Jakobi Meyers          Over    24.5 rec yds         -310  all 12/12=100%  2026 3/3=100%  vs  76% (+24%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
-  CeeDee Lamb            Over   109.5 rec yds          280  all  8/16= 50%  2026 2/3= 67%  vs  26% (+24%)  D#4/32 247WR  Dallas Cowboys @ Houston Tex
-  Kyren Williams         Over    39.5 rush yds        -330  all 20/20=100%  2026 3/3=100%  vs  77% (+23%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
-  Kyren Williams         Over    69.5 rush yds         168  all 12/20= 60%  2026 2/3= 67%  vs  37% (+23%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
-  Jakobi Meyers          Over    39.5 rec yds         -114  all  9/12= 75%  2026 2/3= 67%  vs  53% (+22%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
-  Jakobi Meyers          Over    19.5 rec yds         -470  all 12/12=100%  2026 3/3=100%  vs  82% (+18%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
-  CeeDee Lamb            Over    99.5 rec yds          205  all  8/16= 50%  2026 2/3= 67%  vs  33% (+17%)  D#4/32 247WR  Dallas Cowboys @ Houston Tex
-  Jake Ferguson          Over    39.5 rec yds          300  all  8/20= 40%  2026 1/3= 33%  vs  25% (+15%)  D#4/32 247WR  Dallas Cowboys @ Houston Tex
-  Brenton Strange        Over    14.5 rec yds         -580  all 15/15=100%  2026 3/3=100%  vs  85% (+15%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
-  CeeDee Lamb            Over     4.5 receptions      -275  all 14/16= 88%  2026 3/3=100%  vs  73% (+14%)  D#4/32 247WR  Dallas Cowboys @ Houston Tex
-  C.J. Stroud            Over    24.5 rush yds         350  all  6/17= 35%  2026 1/3= 33%  vs  22% (+13%)  D#5/32 114RB  Dallas Cowboys @ Houston Tex
-  Bucky Irving           Over    39.5 rush yds        -270  all 11/13= 85%  2026 3/3=100%  vs  73% (+12%)  D#3/32 126RB  Green Bay Packers @ Tampa Ba
-  Jakobi Meyers          Over    14.5 rec yds         -800  all 12/12=100%  2026 3/3=100%  vs  89% (+11%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
-  Kyren Williams         Over    29.5 rush yds        -800  all 20/20=100%  2026 3/3=100%  vs  89% (+11%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
+  Sione Vaki             Under   11.5 rush yds        -114  all 10/11= 91%  2026 2/3= 67%  vs  53% (+38%)  D#1/32 145RB  Detroit Lions @ Carolina Pan
+  George Holani          Under    7.5 rec yds         -114  all 11/13= 85%  2026 2/3= 67%  vs  53% (+31%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Brock Purdy            Over   274.5 pass yds         240  all  7/12= 58%  2026 2/3= 67%  vs  29% (+29%)  D#9/32 254QB  Denver Broncos @ San Francis
+  Cooper Kupp            Over    19.5 rec yds         -158  all 17/19= 89%  2026 3/3=100%  vs  61% (+28%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Jaxon Smith-Njigba     Over    91.5 rec yds         -114  all 16/20= 80%  2026 3/3=100%  vs  53% (+27%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Brock Purdy            Over     2.5 pass TDs         320  all  6/12= 50%  2026 2/3= 67%  vs  24% (+26%)  D#9/32 254QB  Denver Broncos @ San Francis
+  Cooper Kupp            Over    23.5 rec yds         -114  all 15/19= 79%  2026 2/3= 67%  vs  53% (+26%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Jaxon Smith-Njigba     Over    89.5 rec yds         -125  all 16/20= 80%  2026 3/3=100%  vs  56% (+24%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  George Holani          Under    1.5 receptions      -154  all 11/13= 85%  2026 2/3= 67%  vs  61% (+24%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Cooper Kupp            Over    14.5 rec yds         -245  all 18/19= 95%  2026 3/3=100%  vs  71% (+24%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Jaxon Smith-Njigba     Over     7.5 receptions       132  all 13/20= 65%  2026 3/3=100%  vs  43% (+22%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Brock Purdy            Over     1.5 pass TDs        -114  all  9/12= 75%  2026 3/3=100%  vs  53% (+22%)  D#9/32 254QB  Denver Broncos @ San Francis
+  Jaxon Smith-Njigba     Over    69.5 rec yds         -280  all 19/20= 95%  2026 3/3=100%  vs  74% (+21%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Greg Dulcich           Over    14.5 rec yds         -400  all 12/12=100%  2026 3/3=100%  vs  80% (+20%)  D#7/32 235WR  Miami Dolphins @ Minnesota V
+  Jaxon Smith-Njigba     Over    79.5 rec yds         -188  all 17/20= 85%  2026 3/3=100%  vs  65% (+20%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Cooper Kupp            Over     1.5 receptions      -260  all 17/19= 89%  2026 3/3=100%  vs  72% (+17%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Jaxon Smith-Njigba     Over     6.5 receptions      -138  all 15/20= 75%  2026 3/3=100%  vs  58% (+17%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Jaxon Smith-Njigba     Over     6.5 receptions      -138  all 15/20= 75%  2026 3/3=100%  vs  58% (+17%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Cooper Kupp            Over    24.5 rec yds         -106  all 13/19= 68%  2026 2/3= 67%  vs  51% (+17%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Juwan Johnson          Over     3.5 receptions      -114  all 14/20= 70%  2026 2/3= 67%  vs  53% (+17%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
+  Juwan Johnson          Over     3.5 receptions      -114  all 14/20= 70%  2026 2/3= 67%  vs  53% (+17%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
+  Brock Purdy            Over   249.5 pass yds         140  all  7/12= 58%  2026 2/3= 67%  vs  42% (+17%)  D#9/32 254QB  Denver Broncos @ San Francis
+  Juwan Johnson          Over     2.5 receptions      -290  all 18/20= 90%  2026 3/3=100%  vs  74% (+16%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
+  Juwan Johnson          Over    29.5 rec yds         -230  all 17/20= 85%  2026 3/3=100%  vs  70% (+15%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
+  Cooper Kupp            Over    29.5 rec yds          132  all 11/19= 58%  2026 2/3= 67%  vs  43% (+15%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Cooper Kupp            Over     9.5 rec yds         -400  all 18/19= 95%  2026 3/3=100%  vs  80% (+15%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Jaxon Smith-Njigba     Over    99.5 rec yds          118  all 12/20= 60%  2026 3/3=100%  vs  46% (+14%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Juwan Johnson          Over    24.5 rec yds         -320  all 18/20= 90%  2026 3/3=100%  vs  76% (+14%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
+  Juwan Johnson          Over    49.5 rec yds          142  all 11/20= 55%  2026 3/3=100%  vs  41% (+14%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
+  Rashid Shaheed         Under   21.5 rec yds         -114  all  8/12= 67%  2026 2/3= 67%  vs  53% (+13%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Jaxon Smith-Njigba     Over    59.5 rec yds         -450  all 19/20= 95%  2026 3/3=100%  vs  82% (+13%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  AJ Barner              Under    3.5 receptions      -166  all 15/20= 75%  2026 2/3= 67%  vs  62% (+13%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Jaxon Smith-Njigba     Over   109.5 rec yds          164  all 10/20= 50%  2026 3/3=100%  vs  38% (+12%)  D#12/32 217WR  Los Angeles Chargers @ Seatt
+  Greg Dulcich           Over     9.5 rec yds         -750  all 12/12=100%  2026 3/3=100%  vs  88% (+12%)  D#7/32 235WR  Miami Dolphins @ Minnesota V
+  Juwan Johnson          Over    40.5 rec yds         -114  all 13/20= 65%  2026 3/3=100%  vs  53% (+12%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
+  Juwan Johnson          Over    14.5 rec yds         -850  all 20/20=100%  2026 3/3=100%  vs  89% (+11%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
+  Juwan Johnson          Over    39.5 rec yds         -122  all 13/20= 65%  2026 3/3=100%  vs  55% (+10%)  D#3/32 253WR  Atlanta Falcons @ New Orlean
