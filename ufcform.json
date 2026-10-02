@@ -1,158 +1,8 @@
 {
  "teams": {
-  "Islam Makhachev": {
-   "profile": {
-    "record": "17-1 in UFC",
-    "win_by": {
-     "dec": 0.353,
-     "ko": 0.176,
-     "sub": 0.471,
-     "n": 17
-    },
-    "lose_by": {
-     "dec": 0.0,
-     "ko": 1.0,
-     "sub": 0.0,
-     "n": 1
-    }
-   },
-   "last5": [
-    {
-     "opp": "Jack Della Maddalena",
-     "win": true,
-     "method": "dec",
-     "year": "2025-11-15"
-    },
-    {
-     "opp": "Renato Moicano",
-     "win": true,
-     "method": "sub",
-     "year": "2025-01-18"
-    },
-    {
-     "opp": "Dustin Poirier",
-     "win": true,
-     "method": "sub",
-     "year": "2024-06-01"
-    },
-    {
-     "opp": "Alexander Volkanovski",
-     "win": true,
-     "method": "ko",
-     "year": "2023-10-21"
-    },
-    {
-     "opp": "Alexander Volkanovski",
-     "win": true,
-     "method": "dec",
-     "year": "2023-02-11"
-    }
-   ],
-   "matched_as": "Islam Makhachev"
-  },
-  "Ian Machado Garry": {
-   "profile": {
-    "record": "10-1 in UFC",
-    "win_by": {
-     "dec": 0.7,
-     "ko": 0.3,
-     "sub": 0.0,
-     "n": 10
-    },
-    "lose_by": {
-     "dec": 1.0,
-     "ko": 0.0,
-     "sub": 0.0,
-     "n": 1
-    }
-   },
-   "last5": [
-    {
-     "opp": "Belal Muhammad",
-     "win": true,
-     "method": "dec",
-     "year": "2025-11-22"
-    },
-    {
-     "opp": "Carlos Prates",
-     "win": true,
-     "method": "dec",
-     "year": "2025-04-26"
-    },
-    {
-     "opp": "Shavkat Rakhmonov",
-     "win": false,
-     "method": "dec",
-     "year": "2024-12-07"
-    },
-    {
-     "opp": "Michael Page",
-     "win": true,
-     "method": "dec",
-     "year": "2024-06-29"
-    },
-    {
-     "opp": "Geoff Neal",
-     "win": true,
-     "method": "dec",
-     "year": "2024-02-17"
-    }
-   ],
-   "matched_as": "Ian Machado Garry"
-  },
-  "Myktybek Orolbai": {
+  "Payton Talbott": {
    "profile": {
     "record": "5-1 in UFC",
-    "win_by": {
-     "dec": 0.4,
-     "ko": 0.2,
-     "sub": 0.4,
-     "n": 5
-    },
-    "lose_by": {
-     "dec": 1.0,
-     "ko": 0.0,
-     "sub": 0.0,
-     "n": 1
-    }
-   },
-   "last5": [
-    {
-     "opp": "Chris Curtis",
-     "win": true,
-     "method": "dec",
-     "year": "2026-03-14"
-    },
-    {
-     "opp": "Jack Hermansson",
-     "win": true,
-     "method": "ko",
-     "year": "2025-11-22"
-    },
-    {
-     "opp": "Tofiq Musayev",
-     "win": true,
-     "method": "sub",
-     "year": "2025-06-21"
-    },
-    {
-     "opp": "Mateusz Rebecki",
-     "win": false,
-     "method": "dec",
-     "year": "2024-10-26"
-    },
-    {
-     "opp": "Elves Brener",
-     "win": true,
-     "method": "dec",
-     "year": "2024-05-04"
-    }
-   ],
-   "matched_as": "Myktybek Orolbai"
-  },
-  "Jeremiah Wells": {
-   "profile": {
-    "record": "5-2 in UFC",
     "win_by": {
      "dec": 0.4,
      "ko": 0.4,
@@ -160,141 +10,292 @@
      "n": 5
     },
     "lose_by": {
-     "dec": 0.5,
+     "dec": 1.0,
      "ko": 0.0,
-     "sub": 0.5,
-     "n": 2
-    }
-   },
-   "last5": [
-    {
-     "opp": "Themba Gorimbo",
-     "win": true,
-     "method": "dec",
-     "year": "2025-11-01"
-    },
-    {
-     "opp": "Max Griffin",
-     "win": false,
-     "method": "dec",
-     "year": "2024-02-10"
-    },
-    {
-     "opp": "Carlston Harris",
-     "win": false,
-     "method": "sub",
-     "year": "2023-08-05"
-    },
-    {
-     "opp": "Matthew Semelsberger",
-     "win": true,
-     "method": "dec",
-     "year": "2023-04-22"
-    },
-    {
-     "opp": "Court McGee",
-     "win": true,
-     "method": "ko",
-     "year": "2022-06-18"
-    }
-   ],
-   "matched_as": "Jeremiah Wells"
-  },
-  "Mansur Abdul-Malik": {
-   "profile": {
-    "record": "3-1 in UFC",
-    "win_by": {
-     "dec": 0.0,
-     "ko": 0.667,
-     "sub": 0.333,
-     "n": 3
-    },
-    "lose_by": {
-     "dec": 0.0,
-     "ko": 1.0,
      "sub": 0.0,
      "n": 1
     }
    },
    "last5": [
     {
-     "opp": "Yousri Belgaroui",
-     "win": false,
-     "method": "ko",
-     "year": "2026-03-28"
-    },
-    {
-     "opp": "Antonio Trocoli",
+     "opp": "Henry Cejudo",
      "win": true,
-     "method": "sub",
+     "method": "dec",
      "year": "2025-12-06"
     },
     {
-     "opp": "Nick Klein",
+     "opp": "Felipe Lima",
      "win": true,
-     "method": "ko",
-     "year": "2025-02-22"
+     "method": "dec",
+     "year": "2025-06-28"
     },
     {
-     "opp": "Dusko Todorovic",
+     "opp": "Raoni Barcelos",
+     "win": false,
+     "method": "dec",
+     "year": "2025-01-18"
+    },
+    {
+     "opp": "Yanis Ghemmouri",
      "win": true,
      "method": "ko",
-     "year": "2024-11-09"
+     "year": "2024-06-29"
+    },
+    {
+     "opp": "Cameron Saaiman",
+     "win": true,
+     "method": "ko",
+     "year": "2024-03-23"
     }
    ],
-   "matched_as": "Mansur Abdul-Malik"
+   "matched_as": "Payton Talbott"
   },
-  "Dustin Stoltzfus": {
+  "Deiveson Figueiredo": {
    "profile": {
-    "record": "3-8 in UFC",
+    "record": "14-7 in UFC",
     "win_by": {
-     "dec": 0.333,
-     "ko": 0.333,
-     "sub": 0.333,
-     "n": 3
+     "dec": 0.429,
+     "ko": 0.286,
+     "sub": 0.286,
+     "n": 14
     },
     "lose_by": {
-     "dec": 0.5,
+     "dec": 0.429,
+     "ko": 0.286,
+     "sub": 0.286,
+     "n": 7
+    }
+   },
+   "last5": [
+    {
+     "opp": "Song Yadong",
+     "win": false,
+     "method": "sub",
+     "year": "2026-05-30"
+    },
+    {
+     "opp": "Umar Nurmagomedov",
+     "win": false,
+     "method": "dec",
+     "year": "2026-01-24"
+    },
+    {
+     "opp": "Montel Jackson",
+     "win": true,
+     "method": "dec",
+     "year": "2025-10-11"
+    },
+    {
+     "opp": "Cory Sandhagen",
+     "win": false,
+     "method": "ko",
+     "year": "2025-05-03"
+    },
+    {
+     "opp": "Petr Yan",
+     "win": false,
+     "method": "dec",
+     "year": "2024-11-23"
+    }
+   ],
+   "matched_as": "Deiveson Figueiredo"
+  },
+  "Natalia Silva": {
+   "profile": {
+    "record": "8-0 in UFC",
+    "win_by": {
+     "dec": 0.75,
      "ko": 0.25,
-     "sub": 0.25,
+     "sub": 0.0,
+     "n": 8
+    },
+    "lose_by": null
+   },
+   "last5": [
+    {
+     "opp": "Rose Namajunas",
+     "win": true,
+     "method": "dec",
+     "year": "2026-01-24"
+    },
+    {
+     "opp": "Alexa Grasso",
+     "win": true,
+     "method": "dec",
+     "year": "2025-05-10"
+    },
+    {
+     "opp": "Jessica Andrade",
+     "win": true,
+     "method": "dec",
+     "year": "2024-09-07"
+    },
+    {
+     "opp": "Viviane Araujo",
+     "win": true,
+     "method": "dec",
+     "year": "2024-02-03"
+    },
+    {
+     "opp": "Andrea Lee",
+     "win": true,
+     "method": "dec",
+     "year": "2023-08-19"
+    }
+   ],
+   "matched_as": "Natalia Silva"
+  },
+  "Wang Cong": {
+   "profile": {
+    "record": "5-1 in UFC",
+    "win_by": {
+     "dec": 0.8,
+     "ko": 0.2,
+     "sub": 0.0,
+     "n": 5
+    },
+    "lose_by": {
+     "dec": 0.0,
+     "ko": 0.0,
+     "sub": 1.0,
+     "n": 1
+    }
+   },
+   "last5": [
+    {
+     "opp": "Tracy Cortez",
+     "win": true,
+     "method": "dec",
+     "year": "2026-07-11"
+    },
+    {
+     "opp": "Eduarda Moura",
+     "win": true,
+     "method": "dec",
+     "year": "2026-02-07"
+    },
+    {
+     "opp": "Ariane da Silva",
+     "win": true,
+     "method": "dec",
+     "year": "2025-06-07"
+    },
+    {
+     "opp": "Bruna Brasil",
+     "win": true,
+     "method": "dec",
+     "year": "2025-02-08"
+    },
+    {
+     "opp": "Gabriella Fernandes",
+     "win": false,
+     "method": "sub",
+     "year": "2024-11-23"
+    }
+   ],
+   "matched_as": "Wang Cong"
+  },
+  "Rafael dos Anjos": {
+   "profile": {
+    "record": "21-15 in UFC",
+    "win_by": {
+     "dec": 0.571,
+     "ko": 0.19,
+     "sub": 0.238,
+     "n": 21
+    },
+    "lose_by": {
+     "dec": 0.667,
+     "ko": 0.267,
+     "sub": 0.067,
+     "n": 15
+    }
+   },
+   "last5": [
+    {
+     "opp": "Geoff Neal",
+     "win": false,
+     "method": "ko",
+     "year": "2024-10-26"
+    },
+    {
+     "opp": "Mateusz Gamrot",
+     "win": false,
+     "method": "dec",
+     "year": "2024-03-09"
+    },
+    {
+     "opp": "Vicente Luque",
+     "win": false,
+     "method": "dec",
+     "year": "2023-08-12"
+    },
+    {
+     "opp": "Bryan Barberena",
+     "win": true,
+     "method": "sub",
+     "year": "2022-12-03"
+    },
+    {
+     "opp": "Rafael Fiziev",
+     "win": false,
+     "method": "ko",
+     "year": "2022-07-09"
+    }
+   ],
+   "matched_as": "Rafael Dos Anjos"
+  },
+  "Marvin Vettori": {
+   "profile": {
+    "record": "9-8 in UFC",
+    "win_by": {
+     "dec": 0.778,
+     "ko": 0.0,
+     "sub": 0.222,
+     "n": 9
+    },
+    "lose_by": {
+     "dec": 1.0,
+     "ko": 0.0,
+     "sub": 0.0,
      "n": 8
     }
    },
    "last5": [
     {
-     "opp": "Kelvin Gastelum",
-     "win": false,
-     "method": "dec",
-     "year": "2025-09-13"
-    },
-    {
-     "opp": "Nursulton Ruziboev",
-     "win": false,
-     "method": "dec",
-     "year": "2025-05-17"
-    },
-    {
-     "opp": "Marc-Andre Barriault",
-     "win": true,
-     "method": "ko",
-     "year": "2024-11-02"
-    },
-    {
      "opp": "Brunno Ferreira",
      "win": false,
-     "method": "ko",
-     "year": "2024-06-08"
+     "method": "dec",
+     "year": "2025-12-06"
     },
     {
-     "opp": "Punahele Soriano",
+     "opp": "Brendan Allen",
+     "win": false,
+     "method": "dec",
+     "year": "2025-07-19"
+    },
+    {
+     "opp": "Roman Dolidze",
+     "win": false,
+     "method": "dec",
+     "year": "2025-03-15"
+    },
+    {
+     "opp": "Jared Cannonier",
+     "win": false,
+     "method": "dec",
+     "year": "2023-06-17"
+    },
+    {
+     "opp": "Roman Dolidze",
      "win": true,
-     "method": "sub",
-     "year": "2023-12-02"
+     "method": "dec",
+     "year": "2023-03-18"
     }
    ],
-   "matched_as": "Dustin Stoltzfus"
+   "matched_as": "Marvin Vettori"
   },
-  "Esteban Ribovics": {
+  "Ismail Naurdiev": {
    "profile": {
     "record": "4-3 in UFC",
     "win_by": {
@@ -304,96 +305,48 @@
      "n": 4
     },
     "lose_by": {
-     "dec": 0.667,
+     "dec": 1.0,
      "ko": 0.0,
-     "sub": 0.333,
+     "sub": 0.0,
      "n": 3
     }
    },
    "last5": [
     {
-     "opp": "Mateusz Gamrot",
-     "win": false,
-     "method": "sub",
-     "year": "2026-04-11"
-    },
-    {
-     "opp": "Elves Brener",
-     "win": true,
-     "method": "dec",
-     "year": "2025-08-02"
-    },
-    {
-     "opp": "Nasrat Haqparast",
-     "win": false,
-     "method": "dec",
-     "year": "2025-03-01"
-    },
-    {
-     "opp": "Daniel Zellhuber",
-     "win": true,
-     "method": "dec",
-     "year": "2024-09-14"
-    },
-    {
-     "opp": "Terrance McKinney",
+     "opp": "Ryan Loder",
      "win": true,
      "method": "ko",
-     "year": "2024-05-11"
+     "year": "2025-11-22"
+    },
+    {
+     "opp": "JunYong Park",
+     "win": false,
+     "method": "dec",
+     "year": "2025-06-21"
+    },
+    {
+     "opp": "Bruno Silva",
+     "win": true,
+     "method": "dec",
+     "year": "2024-10-26"
+    },
+    {
+     "opp": "Sean Brady",
+     "win": false,
+     "method": "dec",
+     "year": "2020-02-29"
+    },
+    {
+     "opp": "Siyar Bahadurzada",
+     "win": true,
+     "method": "dec",
+     "year": "2019-09-28"
     }
    ],
-   "matched_as": "Esteban Ribovics"
-  },
-  "Edson Barboza": {
-   "profile": {
-    "record": "18-14 in UFC",
-    "win_by": {
-     "dec": 0.5,
-     "ko": 0.5,
-     "sub": 0.0,
-     "n": 18
-    },
-    "lose_by": {
-     "dec": 0.5,
-     "ko": 0.357,
-     "sub": 0.143,
-     "n": 14
-    }
-   },
-   "last5": [
-    {
-     "opp": "Jalin Turner",
-     "win": false,
-     "method": "ko",
-     "year": "2025-12-06"
-    },
-    {
-     "opp": "Drakkar Klose",
-     "win": false,
-     "method": "dec",
-     "year": "2025-08-16"
-    },
-    {
-     "opp": "Lerone Murphy",
-     "win": false,
-     "method": "dec",
-     "year": "2024-05-18"
-    },
-    {
-     "opp": "Sodiq Yusuff",
-     "win": true,
-     "method": "dec",
-     "year": "2023-10-14"
-    },
-    {
-     "opp": "Billy Quarantillo",
-     "win": true,
-     "method": "ko",
-     "year": "2023-04-15"
-    }
-   ],
-   "matched_as": "Edson Barboza"
+   "matched_as": "Ismail Naurdiev"
   }
  },
- "unmatched": []
+ "unmatched": [
+  "Alex Hernandez (unmatched)"
+ ]
 }
