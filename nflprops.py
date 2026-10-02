@@ -97,7 +97,7 @@ def game_logs(seasons=None, fetch=None):
             vals = {}
             for k in ("passing_yards", "rushing_yards", "receiving_yards",
                       "receptions", "passing_tds", "rushing_tds",
-                      "receiving_tds", "carries", "attempts"):
+                      "receiving_tds", "carries", "attempts", "targets"):
                 try:
                     vals[k] = float(r.get(k) or 0)
                 except (TypeError, ValueError):
@@ -238,6 +238,38 @@ def injuries(season=CURRENT_SEASON, fetch=None):
 SNAPS = ("https://github.com/nflverse/nflverse-data/releases/download/"
          "snap_counts/snap_counts_{yr}.csv")
 MIN_SNAP_PCT = 0.45    # below this he is a rotational piece, not a volume bet
+
+
+def role_share(logs, season=CURRENT_SEASON):
+    """{(team, player): share} of the team's carries (RB) or targets (pass-catchers).
+
+    WORKLOAD SECURITY, which the ranking ignored entirely. Kyren Williams came
+    out top of the board on 58% of his backfield's carries while James Cook at
+    97%, Jonathan Taylor at 92% and Jahmyr Gibbs at 88% never appeared -- their
+    prices are efficient, so a gap-based sort buries them under a committee
+    back with a bigger apparent edge. A big edge on a player who might get
+    eight carries is worth less than a small one on a player who will get
+    twenty-five.
+    """
+    car, tgt = defaultdict(float), defaultdict(float)
+    tc, tt = defaultdict(float), defaultdict(float)
+    for name, rows in logs.items():
+        for sn, _w, v in rows:
+            if sn != season:
+                continue
+            t, pos = v.get("_team"), v.get("_pos")
+            if pos == "RB":
+                car[(t, name)] += v.get("carries", 0.0); tc[t] += v.get("carries", 0.0)
+            elif pos in ("WR", "TE"):
+                tgt[(t, name)] += v.get("targets", 0.0); tt[t] += v.get("targets", 0.0)
+    out = {}
+    for (t, n), v in car.items():
+        if tc[t]:
+            out[(t, n)] = v / tc[t]
+    for (t, n), v in tgt.items():
+        if tt[t]:
+            out[(t, n)] = v / tt[t]
+    return out
 
 
 def snap_share(season=CURRENT_SEASON, fetch=None):
@@ -398,13 +430,18 @@ def hit_rate(logs, player, cols, point, side, current=CURRENT_SEASON):
     return hits, n, team, ch, cn
 
 
-def score(events, logs, min_gap=0.10, inj=None, snaps=None):
+def score(events, logs, min_gap=None, inj=None, snaps=None):
+    """min_gap defaults to MIN_GAP: 10 points was arbitrary and it hid every
+    efficiently-priced workhorse behind a committee back with a bigger number."""
+    if min_gap is None:
+        min_gap = float(os.environ.get("MIN_GAP", "0.08"))
     """Lines where the record disagrees with the price by at least min_gap."""
     out = []
     if inj is None:
         inj = injuries() or {}
     if snaps is None:
         snaps = snap_share()
+    roles = role_share(logs)
     for ev in events:
         for mk, (cols, label) in MARKETS.items():
             for name, side, point, price in ev.get("lines", {}).get(mk, []):
@@ -477,6 +514,7 @@ def score(events, logs, min_gap=0.10, inj=None, snaps=None):
                                 "market": label, "side": side, "point": point,
                                 "price": price, "hits": hits, "n": n, "team": team,
                                 "chits": ch, "cn": cn, "crate": crate,
+                                "role": roles.get((team, name)),
                                 "snap": sh[0] if sh else None,
                                 "snap_trend": sh[1] if sh else None,
                                 "dhits": dres[0], "dn": dres[1],
@@ -495,7 +533,10 @@ def score(events, logs, min_gap=0.10, inj=None, snaps=None):
         seen.add(k)
         uniq.append(r)
     out = uniq
-    out.sort(key=lambda r: -min(r['crate'], r['drate']))
+    # Rank on the weakest of the three: form, matchup, and workload security.
+    # A prop is only as good as whichever leg of it is softest, and role share
+    # was not in that calculation at all.
+    out.sort(key=lambda r: -min(r['crate'], r['drate'], (r.get('role') or 0.5) + 0.2))
     return out
 
 
@@ -587,6 +628,7 @@ def main():
               f"  vs {r['implied']:4.0%} (+{r['gap']:.0%})"
               f"  D {r['dhits']:2}/{r['dn']:2}={r['drate']:4.0%}"
               f"  snap {('%3.0f%%' % (r['snap']*100)) if r['snap'] else ' -- '}"
+              f" role {('%3.0f%%' % (r['role']*100)) if r.get('role') else ' -- '}"
               f"  {r['game'][:28]}")
     return 0
 
@@ -780,6 +822,28 @@ def selftest():
                 ("Busy Guy", "Over", 59.5, +120)]}}]
     chk(len(score(dup, inj_logs, inj={}, snaps=SN_OK)) == 1,
         "a line repeated by the feed is reported once")
+
+    # WORKLOAD SHARE. Kyren Williams topped the board on 58% of his backfield's
+    # carries while James Cook at 97% never appeared, because the ranking only
+    # asked whether the record beat the price.
+    rl = dict(inj_logs)
+    rl["Hog"] = [(2026, w, {"carries": 20.0, "rushing_yards": 90.0,
+                            "_team": "BUF", "_opp": "X", "_pos": "RB"})
+                 for w in (1, 2, 3)]
+    rl["Committee"] = [(2026, w, {"carries": 20.0, "rushing_yards": 90.0,
+                                  "_team": "BUF", "_opp": "X", "_pos": "RB"})
+                       for w in (1, 2, 3)]
+    sh = role_share(rl)
+    chk(abs(sh[("BUF", "Hog")] - 0.5) < 0.2,
+        "two backs splitting evenly each read about half the carries")
+    rl["Committee"] = [(2026, w, {"carries": 1.0, "rushing_yards": 5.0,
+                                  "_team": "BUF", "_opp": "X", "_pos": "RB"})
+                       for w in (1, 2, 3)]
+    sh2 = role_share(rl)
+    chk(sh2[("BUF", "Hog")] > 0.9,
+        "and a workhorse taking twenty of twenty-one reads as a workhorse")
+    chk(sh2[("BUF", "Hog")] > sh[("BUF", "Hog")],
+        "role share moves with the split, which is the whole point")
     # GAME SCRIPT. Hampton was recommended as a rushing prop for a side priced
     # at +295; a team that far behind spends the fourth quarter throwing.
     dog = [dict(ev_i[0], wp={"BUF": 0.24})]
