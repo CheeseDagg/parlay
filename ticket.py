@@ -58,21 +58,24 @@ LEGS = [
      "side": "Over", "point": 39.5, "want": -114},
     {"kind": "prop", "who": "Brock Purdy",    "stat": "rush_yds",
      "side": "Over", "point": 24.5, "want": 198},
-    # "main" rather than 74.5: the rush+rec line moved 74.5 -> 77.5 inside
-    # seven minutes of the first read. Pinning the number means every move
-    # breaks the ticket; snapping silently to a new number is the bug this
-    # file's selftest exists to prevent. So the leg asks for the MAIN posted
-    # line explicitly, and any change from `want_point` prints as LINE MOVED.
-    {"kind": "prop", "who": "Kyren Williams", "stat": "rush_reception_yds",
-     "side": "Over", "point": "main", "want_point": 74.5, "want": -113},
+    # Back on the rushing line per Ryan. 59.5 is a rung on the alt ladder, not
+    # a main line, so the number is pinned exactly -- there is no "main" to
+    # track and a ladder rung can be pulled outright, which must read as a
+    # refusal rather than quietly becoming the next rung up.
+    {"kind": "prop", "who": "Kyren Williams", "stat": "rush_yds",
+     "side": "Over", "point": 59.5, "want": 104},
 ]
 
 # Priced alongside but NOT in the ticket: the line this one replaced. Ryan
 # asked for rush+rec; the rushing line is printed next to it so the swap is
 # documented with two live numbers instead of my say-so.
 COMPARE = [
-    {"kind": "prop", "who": "Kyren Williams", "stat": "rush_yds",
-     "side": "Over", "point": 59.5, "want": 104},
+    # The rush+rec line he swapped off, kept on the board so the decision stays
+    # two live numbers. "main" rather than a pinned number because this one
+    # moved 74.5 -> 77.5 -> 74.5 inside ten minutes; any change from
+    # `want_point` prints as LINE MOVED instead of passing quietly.
+    {"kind": "prop", "who": "Kyren Williams", "stat": "rush_reception_yds",
+     "side": "Over", "point": "main", "want_point": 74.5, "want": -113},
 ]
 
 MARKETS = {  # a prop may be posted on the standard market, the alt ladder, or both
@@ -590,9 +593,17 @@ def main():
         swap = [x for x in tick if x.get("who") == lg.get("who")]
         print("\nnot on the ticket, for comparison:")
         moved = "" if lg["price"] == lg["want"] else f"  (was {lg['want']:+d})"
+        lmoved = ("" if lg.get("want_point") in (None, lg.get("point"))
+                  else f"  LINE MOVED from {lg['want_point']:g}")
         print(f"  {lg['lab']}  {lg['price']:+d}{moved} "
-              f"p={lg['p']*100:.1f}% {lg['basis']}")
-        if swap and not missing:
+              f"p={lg['p']*100:.1f}% {lg['basis']}{lmoved}")
+        if not swap:
+            # A comparison leg exists to replace something. If it matches no
+            # player on the ticket the reprice would silently print the ticket
+            # unchanged, which reads as "the swap costs nothing".
+            print("  replaces no leg on this ticket -- nothing to reprice "
+                  "against")
+        elif not missing:
             rest = [x for x in tick if x not in swap]
             d2, am2, p2 = parlay(rest + [lg])
             m2 = model_p(rest + [lg], hist)
