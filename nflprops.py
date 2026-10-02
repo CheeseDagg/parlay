@@ -794,10 +794,16 @@ def selftest():
     # underdog is a bet against a team that will be throwing all afternoon --
     # Garrett Wilson came through the first version of this gate exactly that
     # way.
-    chk(not script_ok("receptions", 0.387, "Under"),
+    # 0.24 is a HEAVY underdog; 0.387 is not, and the Jets at 38.7% pass this
+    # gate legitimately. I called Garrett Wilson a bug on the first read and he
+    # is not one -- the threshold is 32% and he is above it.
+    chk(not script_ok("receptions", 0.24, "Under"),
         "a receiving UNDER for a heavy underdog is refused -- he will be targeted")
-    chk(script_ok("receptions", 0.387, "Over"),
-        "while the OVER on the same player in the same game is fine")
+    chk(script_ok("receptions", 0.387, "Under"),
+        "but a moderate underdog at 38.7% is not refused, which is where the "
+        "Jets actually sit")
+    chk(script_ok("receptions", 0.24, "Over"),
+        "while the OVER for that same heavy underdog is fine")
     chk(not script_ok("rush yds", 0.75, "Under"),
         "and a rushing UNDER for a heavy favourite is refused -- he will get carries")
     chk(script_ok("rush yds", 0.75, "Over"),
