@@ -137,12 +137,26 @@ def hit_rate(logs, player, cols, point, side, current=CURRENT_SEASON):
     rows = [r for r in rows if r[2].get("_team") == team]
     if len(rows) < MIN_GAMES:
         return None
-    hits = 0
-    for _s, _w, v in rows:
-        tot = sum(v.get(c, 0.0) for c in cols)
-        if (tot > point) if side == "Over" else (tot < point):
-            hits += 1
-    return hits, len(rows), team
+
+    def rate(rs):
+        h = 0
+        for _s, _w, v in rs:
+            tot = sum(v.get(c, 0.0) for c in cols)
+            if (tot > point) if side == "Over" else (tot < point):
+                h += 1
+        return h, len(rs)
+
+    hits, n = rate(rows)
+    # THE CURRENT SEASON ON ITS OWN. A rate pooled across two seasons weights a
+    # 131-yard game from last October the same as a 0-yard game last Sunday,
+    # and that is how Calvin Ridley read 89% while the book had him at -158 --
+    # the book is pricing the role he has NOW. Reporting both windows makes a
+    # changed role visible instead of averaging it away. This is the Judkins
+    # error from the soccer work in a third costume: one number over two
+    # regimes.
+    cur = [r for r in rows if r[0] == current]
+    ch, cn = rate(cur) if cur else (0, 0)
+    return hits, n, team, ch, cn
 
 
 def score(events, logs, min_gap=0.10):
@@ -154,15 +168,22 @@ def score(events, logs, min_gap=0.10):
                 hr = hit_rate(logs, name, cols, point, side)
                 if not hr:
                     continue
-                hits, n, team = hr
+                hits, n, team, ch, cn = hr
                 rate = hits / n
                 imp = implied(price)
                 # The book's number carries vig, so a gap in the book's favour
                 # is expected and only a gap the OTHER way is interesting.
-                if rate - imp >= min_gap:
+                # BOTH WINDOWS MUST BEAT THE PRICE. A gap that exists only
+                # in the pooled history is a gap about a role the player no
+                # longer has. Requiring this season to clear the price too
+                # costs some real edges in exchange for dropping every stale
+                # one, which is the right side to err on.
+                crate = (ch / cn) if cn else 0.0
+                if rate - imp >= min_gap and (cn >= 2 and crate >= imp):
                     out.append({"game": ev.get("game"), "player": name,
                                 "market": label, "side": side, "point": point,
                                 "price": price, "hits": hits, "n": n, "team": team,
+                                "chits": ch, "cn": cn, "crate": crate,
                                 "rate": rate, "implied": imp,
                                 "gap": rate - imp})
     out.sort(key=lambda r: -r["gap"])
@@ -239,8 +260,9 @@ def main():
     print(f"(hit rate is raw history; implied price still carries the vig)\n")
     for r in rows[:40]:
         print(f"  {r['player'][:22]:22} {r['side']:5} {r['point']:6.1f} {r['market']:13}"
-              f" {int(r['price']):>6}  hit {r['hits']:2}/{r['n']:2} = {r['rate']:4.0%}"
-              f"  vs {r['implied']:4.0%}  (+{r['gap']:.0%})  {r['game'][:34]}")
+              f" {int(r['price']):>6}  all {r['hits']:2}/{r['n']:2}={r['rate']:4.0%}"
+              f"  {CURRENT_SEASON} {r['chits']}/{r['cn']}={r['crate']:4.0%}"
+              f"  vs {r['implied']:4.0%} (+{r['gap']:.0%})  {r['game'][:30]}")
     return 0
 
 
@@ -280,6 +302,15 @@ def selftest():
         "the under is counted as its own side, not one minus the over")
     chk(hit_rate(logs, "Busy Guy", ["rushing_yards"], 59.5, "Over")[2] == "BUF",
         "the team the rate belongs to rides on the answer")
+    hr = hit_rate(logs, "Busy Guy", ["rushing_yards"], 59.5, "Over")
+    chk(hr[3:] == (3, 3),
+        "and the CURRENT season is reported separately, not folded into the pool")
+    # a player whose role collapsed: strong history, nothing this year
+    logs["Faded"] = gl([(2025, w, "TEN", {"receiving_yards": 90}) for w in range(1, 13)]
+                       + [(2026, w, "TEN", {"receiving_yards": 2}) for w in (1, 2, 3)])
+    fh = hit_rate(logs, "Faded", ["receiving_yards"], 24.5, "Over")
+    chk(fh[:2] == (12, 15) and fh[3:] == (0, 3),
+        "a collapsed role shows 12/15 pooled and 0/3 this season")
     chk(hit_rate(logs, "Gone Guy", ["rushing_yards"], 10.5, "Over") is None,
         "fourteen games and none this season is refused -- that is injured, cut "
         "or moved, and the book knows which")
@@ -298,6 +329,13 @@ def selftest():
         ("Traded Guy", "Over", 10.5, -1000),  # too few at the new club -> dropped
         ("Rookie",     "Over", 10.5, -1000),  # too few games -> dropped
     ]}}]
+    # The collapsed-role player must NOT survive on his pooled history alone.
+    ev_faded = [{"game": "C @ D", "lines": {"player_reception_yds_alternate": [
+        ("Faded", "Over", 24.5, +300)]}}]      # 80% pooled, 0% this season
+    chk(score(ev_faded, logs) == [],
+        "a gap that exists only in the pooled history is dropped -- that is a "
+        "gap about a role he no longer has")
+
     sc = score(ev, logs)
     chk(len(sc) == 1 and sc[0]["point"] == 59.5,
         "only the line whose record beats its price by 10+ points survives")
