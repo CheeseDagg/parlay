@@ -148,9 +148,14 @@ POS_FOR = {"pass yds": "QB", "pass TDs": "QB", "rush yds": "RB",
 
 
 def pos_for(label, player_pos):
-    """Anytime TD is scored against whichever side of the ball he plays."""
-    if label == "anytime TD":
-        return "RB" if player_pos == "RB" else "WR"
+    """The pool a prop is measured against: the player's OWN position.
+
+    A receiving line for a tight end is a question about tight ends. The first
+    version mapped every receiving market to WR whoever the player was, which
+    is how a TE came back carrying a receiver's matchup read.
+    """
+    if label in ("rec yds", "receptions", "anytime TD"):
+        return player_pos if player_pos in ("TE", "WR", "RB") else "WR"
     return POS_FOR.get(label)
 
 
@@ -243,10 +248,15 @@ def defense_at(logs, opp, pos, col_sum, thresh, side):
     return hits, len(vals)
 
 
-POS_POOL = {"QB": ("QB",), "RB": ("RB",), "WR": ("WR",)}
 
 
-POS_POOL = {"QB": ("QB",), "RB": ("RB",), "WR": ("WR",)}
+
+# A TIGHT END IS NOT A WIDE RECEIVER, in either direction. Lumping TEs into the
+# WR pool made Houston look soft to receivers; stripping them out without giving
+# tight ends a pool of their own then scored Juwan Johnson -- a TE -- against
+# receiver data and reported Atlanta at 18/20 (90%) when the tight end number is
+# 6/20 (30%). Each position is measured against its own.
+POS_POOL = {"QB": ("QB",), "RB": ("RB",), "WR": ("WR",), "TE": ("TE",)}
 
 
 def generosity(defn, pos, opp):
@@ -652,6 +662,25 @@ def selftest():
         "player_reception_yds_alternate": [("Busy Guy", "Over", 5.5, +120)]}}]
     chk(len(score(ev_rec, inj_logs, inj={})) == 1,
         "the receiving fixture itself is live when nobody is hurt")
+
+    # A TIGHT END IS MEASURED AGAINST TIGHT ENDS. Atlanta allowed a receiver
+    # 50+ yards in 18 of 20 games and a tight end in 6 of 20; scoring Juwan
+    # Johnson -- a TE -- against the receiver pool reported 90% for a 30%
+    # matchup, and he was on the ticket because of it.
+    te = dict(base)
+    te.update({f"ATL-wr{i}": [(2026, i + 1, {"receiving_yards": 90.0,
+               "_team": "OTH", "_opp": "ATL", "_pos": "WR"})] for i in range(10)})
+    te.update({f"ATL-te{i}": [(2026, i + 1, {"receiving_yards": 20.0,
+               "_team": "OTH", "_opp": "ATL", "_pos": "TE"})] for i in range(10)})
+    te["TE Guy"] = [(2025, w, {"receiving_yards": 70.0, "_team": "NO",
+                               "_opp": "X", "_pos": "TE"}) for w in range(1, 13)] + \
+                   [(2026, w, {"receiving_yards": 70.0, "_team": "NO",
+                               "_opp": "X", "_pos": "TE"}) for w in (1, 2, 3)]
+    chk(score([{"game": "New Orleans Saints @ Atlanta Falcons", "lines": {
+        "player_reception_yds_alternate": [("TE Guy", "Over", 49.5, +142)]}}],
+        te, inj={}) == [],
+        "a tight end is scored against TIGHT ENDS, not the receiver pool that "
+        "happens to look generous")
     chk(score(ev_rec, inj_logs,
               inj={("BUF", "QB1"): ("Did Not Participate In Practice",
                                     "Thumb", "QB")}) == [],
