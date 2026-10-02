@@ -536,7 +536,18 @@ def score(events, logs, min_gap=None, inj=None, snaps=None):
     # Rank on the weakest of the three: form, matchup, and workload security.
     # A prop is only as good as whichever leg of it is softest, and role share
     # was not in that calculation at all.
-    out.sort(key=lambda r: -min(r['crate'], r['drate'], (r.get('role') or 0.5) + 0.2))
+    # NO NUDGE. The first version added 0.2 to role share before taking the
+    # minimum, which turned Kyren Williams' 54% into 0.74 -- above his own
+    # defence rate, so workload never became the binding constraint it was
+    # added to be. A pass-catcher's target share is naturally lower than a
+    # back's carry share, so it is scaled rather than padded.
+    def floor(r):
+        role = r.get('role')
+        if role is None:
+            return min(r['crate'], r['drate'])
+        scaled = role / 0.95 if r['pos'] == 'RB' else role / 0.45
+        return min(r['crate'], r['drate'], min(scaled, 1.0))
+    out.sort(key=lambda r: -floor(r))
     return out
 
 
