@@ -1,0 +1,91 @@
+
+UFC — 14 events in the next 120h
+  Sat 10-03 21:20Z  Bruce Whitehead @ Jacobe Smith
+      Bruce Whitehead                     590    13.8%
+      Jacobe Smith                       -950    86.2%
+  Sat 10-03 22:15Z  Anthony Wint @ Lucas Armand
+      Anthony Wint                       -550    80.6%
+      Lucas Armand                        390    19.4%
+  Sat 10-03 22:45Z  Anthony Romero @ Marcus McGhee
+      Anthony Romero                      370    20.2%
+      Marcus McGhee                      -520    79.8%
+  Sun 10-04 00:00Z  Eric Nolan @ Court McGee
+      Court McGee                         194    32.4%
+      Eric Nolan                         -245    67.6%
+  Sun 10-04 00:00Z  Andrey Pulyaev @ Damian Pinas
+      Andrey Pulyaev                      410    18.7%
+      Damian Pinas                       -590    81.3%
+  Sun 10-04 00:00Z  Alden Coria @ Imanol Rodriguez
+      Alden Coria                         124    42.5%
+      Imanol Rodriguez                   -152    57.5%
+  Sun 10-04 00:00Z  Michael Parkin @ Johnny Walker
+      Johnny Walker                      -134    54.6%
+      Michael Parkin                      110    45.4%
+  Sun 10-04 00:00Z  Roberto Soldic @ Khaos Williams
+      Khaos Williams                      210    30.8%
+      Roberto Soldic                     -265    69.2%
+  Sun 10-04 00:00Z  Esteban Ribovics @ King Green
+      Esteban Ribovics                   -240    67.2%
+      King Green                          190    32.8%
+  Sun 10-04 00:00Z  Ismail Naurdiev @ Marvin Vettori
+      Ismail Naurdiev                    -140    55.5%
+      Marvin Vettori                      114    44.5%
+  Sun 10-04 00:00Z  Alex Hernandez @ Rafael dos Anjos
+      Alex Hernandez                     -300    71.5%
+      Rafael dos Anjos                    235    28.5%
+  Sun 10-04 00:15Z  Roman Kopylov @ Ateba Gautier
+      Ateba Gautier                      -245    67.6%
+      Roman Kopylov                       194    32.4%
+  Sun 10-04 01:45Z  Payton Talbott @ Deiveson Figueiredo
+      Deiveson Figueiredo                 490    16.1%
+      Payton Talbott                     -750    83.9%
+  Sun 10-04 02:15Z  Wang Cong @ Natalia Silva
+      Natalia Silva                      -205    64.0%
+      Wang Cong                           164    36.0%
+
+NFL — 15 events in the next 120h
+  Sun 10-04 13:30Z  Indianapolis Colts @ Washington Commanders
+      Indianapolis Colts                 -220    66.1%
+      Washington Commanders               184    33.9%
+  Sun 10-04 17:00Z  Tennessee Titans @ Baltimore Ravens
+      Baltimore Ravens                   -800    85.4%
+      Tennessee Titans                    560    14.6%
+  Sun 10-04 17:00Z  New England Patriots @ Buffalo Bills
+      Buffalo Bills                      -340    74.3%
+      New England Patriots                275    25.7%
+  Sun 10-04 17:00Z  New York Jets @ Chicago Bears
+      Chicago Bears                      -176    61.3%
+      New York Jets                       148    38.7%
+  Sun 10-04 17:00Z  Jacksonville Jaguars @ Cincinnati Bengals
+      Cincinnati Bengals                 -134    55.1%
+      Jacksonville Jaguars                114    44.9%
+  Sun 10-04 17:00Z  Dallas Cowboys @ Houston Texans
+      Dallas Cowboys                      130    41.8%
+      Houston Texans                     -154    58.2%
+  Sun 10-04 17:00Z  Arizona Cardinals @ New York Giants
+      Arizona Cardinals                  -134    55.1%
+      New York Giants                     114    44.9%
+  Sun 10-04 17:00Z  Los Angeles Rams @ Philadelphia Eagles
+      Los Angeles Rams                   -190    63.0%
+      Philadelphia Eagles                 160    37.0%
+  Sun 10-04 17:00Z  Green Bay Packers @ Tampa Bay Buccaneers
+      Green Bay Packers                  -180    61.8%
+      Tampa Bay Buccaneers                152    38.2%
+  Sun 10-04 20:05Z  Miami Dolphins @ Minnesota Vikings
+      Miami Dolphins                      480    16.6%
+      Minnesota Vikings                  -650    83.4%
+  Sun 10-04 20:25Z  Kansas City Chiefs @ Las Vegas Raiders
+      Kansas City Chiefs                 -225    66.6%
+      Las Vegas Raiders                   188    33.4%
+  Sun 10-04 20:25Z  Denver Broncos @ San Francisco 49ers
+      Denver Broncos                      126    42.6%
+      San Francisco 49ers                -148    57.4%
+  Sun 10-04 20:25Z  Los Angeles Chargers @ Seattle Seahawks
+      Los Angeles Chargers                295    24.3%
+      Seattle Seahawks                   -370    75.7%
+  Mon 10-05 00:20Z  Detroit Lions @ Carolina Panthers
+      Carolina Panthers                   168    35.9%
+      Detroit Lions                      -200    64.1%
+  Tue 10-06 00:15Z  Atlanta Falcons @ New Orleans Saints
+      Atlanta Falcons                     122    43.3%
+      New Orleans Saints                 -144    56.7%
