@@ -1,4 +1,4 @@
-read 2026-10-02T20:44Z  FanDuel live
+read 2026-10-02T20:47Z  FanDuel live
 
 leg                                                    price     was       p  basis
 -----------------------------------------------------------------------------------
@@ -11,16 +11,21 @@ Jakobi Meyers Over 39.5 reception yds                   -114    -114   50.0% dev
 Kyren Williams Over 74.5 rush reception yds             -113    -113   49.8% devig
 Brock Purdy Over 24.5 rush yds                          +198    +198   33.6% vig
 
-history at the posted line                                 all     2026
------------------------------------------------------------------------
-Jakobi Meyers Over 39.5 reception yds                   9/12     2/3     JAX
-Kyren Williams Over 74.5 rush reception yds            15/20     2/3     LA
-Brock Purdy Over 24.5 rush yds                          5/12     3/3     SF
-Kyren Williams Over 59.5 rush yds                      16/20     2/3     LA  (comparison)
+history at the posted line                           all    2026   snap  trend  practice
+----------------------------------------------------------------------------------------------
+Jakobi Meyers Over 39.5 reception yds             9/12     2/3      81%    +4  clear
+Kyren Williams Over 74.5 rush reception yds      15/20     2/3      71%   +12  clear
+Brock Purdy Over 24.5 rush yds                    5/12     3/3     100%    +7  clear
+Kyren Williams Over 59.5 rush yds                16/20     2/3      71%   +12  clear  (comparison)
 
 not on the ticket, for comparison:
   Kyren Williams Over 59.5 rush yds  +104 p=49.0% vig
-  that ticket instead: +2682  p=3.1%  $33 -> $918
+  that ticket instead: +2682  market 3.1%  history 9.3%  $33 -> $918
 
-8 legs   +2471   p=3.1%   $33 -> $848   fair +3125
-edge -20.3% of stake   (fair price is +3125, book pays +2471)
+8 legs   +2471   $33 -> $848
+  market  p=  3.1%  fair  +3125   (the book's own view, de-vigged)
+  history p=  8.7%  fair  +1049   (props at their rate at this line, fights at market)
+
+On the historical rates this pays +124% of stake. That rests entirely on
+those rates still describing the role each player has now -- the table above
+is how you check that, not the number.
