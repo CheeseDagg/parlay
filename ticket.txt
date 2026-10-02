@@ -1,4 +1,4 @@
-read 2026-10-02T20:53Z  FanDuel live
+read 2026-10-02T21:00Z  FanDuel live
 
 leg                                                    price     was       p  basis
 -----------------------------------------------------------------------------------
@@ -11,16 +11,26 @@ Jakobi Meyers Over 39.5 reception yds                   -114    -114   50.0% dev
 Kyren Williams Over 59.5 rush yds                       +104    +104   49.0% vig
 Brock Purdy Over 24.5 rush yds                          +198    +198   33.6% vig
 
-history at the posted line                           all    2026   snap  trend  practice
-----------------------------------------------------------------------------------------------
-Jakobi Meyers Over 39.5 reception yds             9/12     2/3      81%    +4  clear
-Kyren Williams Over 59.5 rush yds                16/20     2/3      71%   +12  clear
-Brock Purdy Over 24.5 rush yds                    5/12     3/3     100%    +7  clear
-Kyren Williams Over 74.5 rush reception yds      15/20     2/3      71%   +12  clear  (comparison)
+history at the posted line                           all    2026   vs opp   snap  trend  practice
+--------------------------------------------------------------------------------------------------------
+Jakobi Meyers Over 39.5 reception yds             9/12     2/3    15/20 CIN    81%    +4  clear
+Kyren Williams Over 59.5 rush yds                16/20     2/3    13/20 PHI    71%   +12  clear
+Brock Purdy Over 24.5 rush yds                    5/12     3/3     5/20 DEN   100%    +7  clear
+Kyren Williams Over 74.5 rush reception yds      15/20     2/3    12/20 PHI    71%   +12  clear  (comparison)
+Brock Purdy Over 249.5 pass rush yds              7/12     2/3     9/20 DEN   100%    +7  clear  (comparison)
+Brock Purdy Over 274.5 pass rush yds              7/12     2/3     9/20 DEN   100%    +7  clear  (comparison)
 
 not on the ticket, for comparison:
   Kyren Williams Over 74.5 rush reception yds  -113 p=49.8% devig
   that ticket instead: +2471  market 3.1%  history 8.7%  $33 -> $848
+
+not on the ticket, for comparison:
+  Brock Purdy Over 249.5 pass rush yds  -112 p=52.8% vig
+  that ticket instead: +1667  market 4.8%  history 13.0%  $33 -> $583
+
+not on the ticket, for comparison:
+  Brock Purdy Over 274.5 pass rush yds  +158 p=38.8% vig
+  that ticket instead: +2309  market 3.5%  history 13.0%  $33 -> $795
 
 8 legs   +2682   $33 -> $918
   market  p=  3.1%  fair  +3174   (the book's own view, de-vigged)
