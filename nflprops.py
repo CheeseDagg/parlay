@@ -54,6 +54,14 @@ MARKETS = {
     "player_pass_tds_alternate":       (["passing_tds"], "pass TDs"),
     "player_rush_reception_yds_alternate": (["rushing_yards", "receiving_yards"],
                                             "rush+rec yds"),
+    # ANYTIME TD is the market most parlays are actually built from and the
+    # first pull had none of it. It is a 0.5 threshold on rushing+receiving
+    # touchdowns, which the same "did he clear it" machinery already handles.
+    "player_anytime_td":        (["rushing_tds", "receiving_tds"], "anytime TD"),
+    "player_rush_attempts":     (["carries"], "rush att"),
+    "player_receptions":        (["receptions"], "receptions"),
+    "player_reception_yds":     (["receiving_yards"], "rec yds"),
+    "player_rush_yds":          (["rushing_yards"], "rush yds"),
 }
 
 
@@ -88,7 +96,8 @@ def game_logs(seasons=None, fetch=None):
                 continue
             vals = {}
             for k in ("passing_yards", "rushing_yards", "receiving_yards",
-                      "receptions", "passing_tds"):
+                      "receptions", "passing_tds", "rushing_tds",
+                      "receiving_tds", "carries"):
                 try:
                     vals[k] = float(r.get(k) or 0)
                 except (TypeError, ValueError):
@@ -134,7 +143,15 @@ TEAM_ABBR = {
 }
 # A position is only worth ranking a defence against if the prop depends on it.
 POS_FOR = {"pass yds": "QB", "pass TDs": "QB", "rush yds": "RB",
-           "rec yds": "WR", "receptions": "WR", "rush+rec yds": "RB"}
+           "rec yds": "WR", "receptions": "WR", "rush+rec yds": "RB",
+           "rush att": "RB"}
+
+
+def pos_for(label, player_pos):
+    """Anytime TD is scored against whichever side of the ball he plays."""
+    if label == "anytime TD":
+        return "RB" if player_pos == "RB" else "WR"
+    return POS_FOR.get(label)
 GENEROUS_FRAC = 0.375  # a defence must sit in the most generous 37.5% -- 12 of
                        # 32. A FRACTION, not a fixed rank: with fewer teams in
                        # the pool (early weeks, a position with sparse data) a
@@ -264,7 +281,8 @@ def score(events, logs, min_gap=0.10, defn=None, frac=GENEROUS_FRAC):
                 # schedule he happened to have. Rome Odunze cleared every window
                 # and draws the 29th-most-generous defence to receivers, which
                 # no amount of history can see.
-                pos = POS_FOR.get(label)
+                ppos = (logs.get(name) or [(0, 0, {})])[-1][2].get("_pos")
+                pos = pos_for(label, ppos)
                 gen = None
                 if pos and defn:
                     teams = [TEAM_ABBR.get(x.strip()) for x in
