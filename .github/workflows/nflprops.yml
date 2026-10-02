@@ -1,0 +1,42 @@
+name: NFL alt props
+on:
+  workflow_dispatch: {}
+  push: { branches: [main], paths: ['experiments/NFLPROPS.txt'] }
+permissions: { contents: write }
+concurrency: { group: parlay-nflprops, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          set -o pipefail
+          python3 nflprops.py --selftest | tail -2
+          # Four games, not fifteen: each event is its own API request and the
+          # quota is shared with the board and scores pulls.
+          python3 nflprops.py 4 2>&1 | tee nflprops.new
+          test -s nflprops.new
+          grep -q "lines where the RECORD" nflprops.new
+          mv nflprops.new nflprops.txt
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+      - name: Publish
+        run: |
+          git config user.name "parlay-bot"
+          git config user.email "actions@github.com"
+          cp nflprops.txt /tmp/p.txt
+          for a in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/p.txt nflprops.txt
+            git add nflprops.txt
+            git diff --cached --quiet && { echo "unchanged"; exit 0; }
+            git commit -m "nfl alt props $(date -u '+%Y-%m-%d %H:%M')"
+            git push origin HEAD:main && { echo "published on attempt $a"; exit 0; }
+            echo "remote advanced -- rebuilding on the new tip"
+          done
+          echo "::error::could not publish after 5 attempts"
+          exit 1
