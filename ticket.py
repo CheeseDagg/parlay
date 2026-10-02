@@ -87,6 +87,15 @@ COMPARE = [
      "side": "Over", "point": 249.5, "want": -112},
     {"kind": "prop", "who": "Brock Purdy", "stat": "pass_rush_yds",
      "side": "Over", "point": 274.5, "want": 158},
+    # The two rungs BELOW the hole, which is where the yards-per-attempt
+    # arithmetic actually lands. Denver has held its three 2026 starters to
+    # 6.5, 6.8 and 7.1 yards an attempt; at 7.0 on Purdy's 2026 attempt counts
+    # that is around 203 passing plus about 25 rushing, so what the defence
+    # permits sits near 225 -- not near 275.
+    {"kind": "prop", "who": "Brock Purdy", "stat": "pass_rush_yds",
+     "side": "Over", "point": 224.5, "want": -210},
+    {"kind": "prop", "who": "Brock Purdy", "stat": "pass_rush_yds",
+     "side": "Over", "point": 199.5, "want": -380},
 ]
 
 MARKETS = {  # a prop may be posted on the standard market, the alt ladder, or both
