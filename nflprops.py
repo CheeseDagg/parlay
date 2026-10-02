@@ -668,10 +668,15 @@ def selftest():
     # Johnson -- a TE -- against the receiver pool reported 90% for a 30%
     # matchup, and he was on the ticket because of it.
     te = dict(base)
-    te.update({f"ATL-wr{i}": [(2026, i + 1, {"receiving_yards": 90.0,
-               "_team": "OTH", "_opp": "ATL", "_pos": "WR"})] for i in range(10)})
-    te.update({f"ATL-te{i}": [(2026, i + 1, {"receiving_yards": 20.0,
-               "_team": "OTH", "_opp": "ATL", "_pos": "TE"})] for i in range(10)})
+    # 8 of 10 over 49.5, not 10 of 10: at 100% the line is dropped by the
+    # uninformative-defence gate and the test passes for the wrong reason,
+    # which is exactly what happened on the first attempt.
+    te.update({f"ATL-wr{i}": [(2026, i + 1, {"receiving_yards": v,
+               "_team": "OTH", "_opp": "ATL", "_pos": "WR"})]
+               for i, v in enumerate([90, 90, 90, 90, 90, 90, 90, 90, 10, 10])})
+    te.update({f"ATL-te{i}": [(2026, i + 1, {"receiving_yards": v,
+               "_team": "OTH", "_opp": "ATL", "_pos": "TE"})]
+               for i, v in enumerate([70, 60, 55, 20, 20, 20, 20, 20, 20, 20])})
     te["TE Guy"] = [(2025, w, {"receiving_yards": 70.0, "_team": "NO",
                                "_opp": "X", "_pos": "TE"}) for w in range(1, 13)] + \
                    [(2026, w, {"receiving_yards": 70.0, "_team": "NO",
