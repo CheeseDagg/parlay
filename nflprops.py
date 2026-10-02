@@ -34,6 +34,7 @@ SPORT = "americanfootball_nfl"
 BOOK = "fanduel"
 HORIZON_H = 120
 MIN_GAMES = 8          # below this a hit rate is noise, not a rate
+CURRENT_SEASON = 2026  # absent from it = injured, cut, or moved; not evidence
 SEASONS = [2026, 2025]
 
 # market key -> (nflverse stat columns to sum, human label)
@@ -84,6 +85,7 @@ def game_logs(seasons=None, fetch=None):
                     vals[k] = float(r.get(k) or 0)
                 except (TypeError, ValueError):
                     vals[k] = 0.0
+            vals["_team"] = r.get("team") or ""
             out[nm].append((int(r["season"]), int(r["week"]), vals))
     for k in out:
         out[k].sort()
@@ -98,9 +100,36 @@ def _raw(url):
     return b.decode("utf-8", "replace")
 
 
-def hit_rate(logs, player, cols, point, side):
-    """(hits, n) over the player's games — how often he cleared this number."""
+def hit_rate(logs, player, cols, point, side, current=CURRENT_SEASON):
+    """(hits, n, team) over the games that can speak to THIS week's line.
+
+    The first version pooled every game it had and produced nonsense. Darius
+    Slayton scored 11 of 14 over 24.5 receiving yards off fourteen 2025 GIANTS
+    games, against a line posted in a Colts-Commanders game, with no 2026
+    appearances at all. Calvin Ridley read 67% off nine games spread across two
+    seasons he mostly missed, while the book had him at +550 because he gained
+    zero yards last week.
+
+    Those gaps were 40 and 50 points. A gap that size against a major book is a
+    broken count, not a mispriced market: the book is pricing injuries, snap
+    shares and depth charts that a historical tally cannot see. Three guards,
+    one per failure --
+
+      * MUST HAVE PLAYED THIS SEASON. Absent from it means injured, cut, or
+        moved somewhere the log does not know, and old production is not
+        evidence about this week.
+      * ONE TEAM ONLY, his current one. Production is a joint fact about a
+        player and an offence, not a property he carries between them.
+      * MIN_GAMES APPLIES AFTER those cuts, not before, or the floor passes on
+        games that were just thrown away.
+    """
     rows = logs.get(player) or []
+    if not rows:
+        return None
+    if current not in {s for s, _w, _v in rows}:
+        return None
+    team = rows[-1][2].get("_team")
+    rows = [r for r in rows if r[2].get("_team") == team]
     if len(rows) < MIN_GAMES:
         return None
     hits = 0
@@ -108,7 +137,7 @@ def hit_rate(logs, player, cols, point, side):
         tot = sum(v.get(c, 0.0) for c in cols)
         if (tot > point) if side == "Over" else (tot < point):
             hits += 1
-    return hits, len(rows)
+    return hits, len(rows), team
 
 
 def score(events, logs, min_gap=0.10):
@@ -120,7 +149,7 @@ def score(events, logs, min_gap=0.10):
                 hr = hit_rate(logs, name, cols, point, side)
                 if not hr:
                     continue
-                hits, n = hr
+                hits, n, team = hr
                 rate = hits / n
                 imp = implied(price)
                 # The book's number carries vig, so a gap in the book's favour
@@ -128,7 +157,7 @@ def score(events, logs, min_gap=0.10):
                 if rate - imp >= min_gap:
                     out.append({"game": ev.get("game"), "player": name,
                                 "market": label, "side": side, "point": point,
-                                "price": price, "hits": hits, "n": n,
+                                "price": price, "hits": hits, "n": n, "team": team,
                                 "rate": rate, "implied": imp,
                                 "gap": rate - imp})
     out.sort(key=lambda r: -r["gap"])
@@ -221,32 +250,56 @@ def selftest():
     chk(abs(implied(-110) - 0.5238) < 1e-3, "a -110 price implies 52.4%, vig included")
     chk(abs(implied(+200) - 1/3) < 1e-6, "and +200 implies 33.3%")
 
-    logs = {"Busy Guy": [(2025, w, {"rushing_yards": v}) for w, v in
-                         enumerate([80, 90, 70, 100, 85, 60, 95, 75, 88, 92], 1)],
-            "Rookie": [(2026, w, {"rushing_yards": 99}) for w in range(1, 4)]}
-    chk(hit_rate(logs, "Busy Guy", ["rushing_yards"], 59.5, "Over") == (10, 10),
-        "a line under every game he has played reads 10 of 10")
-    chk(hit_rate(logs, "Busy Guy", ["rushing_yards"], 89.5, "Over") == (4, 10),
+    def gl(rows):
+        return [(sn, w, dict(v, _team=t)) for sn, w, t, v in rows]
+
+    logs = {
+        # plays this season, one team, long record -> usable
+        "Busy Guy": gl([(2025, w, "BUF", {"rushing_yards": v}) for w, v in
+                        enumerate([80, 90, 70, 100, 85, 60, 95, 75, 88, 92], 1)]
+                       + [(2026, w, "BUF", {"rushing_yards": 85}) for w in (1, 2, 3)]),
+        # fourteen games, all last season, none this one -- Darius Slayton's exact
+        # shape, which the first version scored as 11 of 14 against another
+        # team's game
+        "Gone Guy": gl([(2025, w, "NYG", {"rushing_yards": 90}) for w in range(1, 15)]),
+        # moved clubs: plenty of history, three games with the new one
+        "Traded Guy": gl([(2025, w, "NYG", {"rushing_yards": 90}) for w in range(1, 13)]
+                         + [(2026, w, "IND", {"rushing_yards": 10}) for w in (1, 2, 3)]),
+        "Rookie": gl([(2026, w, "LAC", {"rushing_yards": 99}) for w in (1, 2, 3)]),
+    }
+    chk(hit_rate(logs, "Busy Guy", ["rushing_yards"], 59.5, "Over")[:2] == (13, 13),
+        "a line under every game he has played reads 13 of 13")
+    chk(hit_rate(logs, "Busy Guy", ["rushing_yards"], 89.5, "Over")[:2] == (4, 13),
         "and a line through the middle of his record splits it")
-    chk(hit_rate(logs, "Busy Guy", ["rushing_yards"], 89.5, "Under") == (6, 10),
+    chk(hit_rate(logs, "Busy Guy", ["rushing_yards"], 89.5, "Under")[:2] == (9, 13),
         "the under is counted as its own side, not one minus the over")
+    chk(hit_rate(logs, "Busy Guy", ["rushing_yards"], 59.5, "Over")[2] == "BUF",
+        "the team the rate belongs to rides on the answer")
+    chk(hit_rate(logs, "Gone Guy", ["rushing_yards"], 10.5, "Over") is None,
+        "fourteen games and none this season is refused -- that is injured, cut "
+        "or moved, and the book knows which")
+    chk(hit_rate(logs, "Traded Guy", ["rushing_yards"], 10.5, "Over") is None,
+        "a player with three games at his NEW club is refused: the floor applies "
+        "AFTER the old club's games are dropped, not before")
     chk(hit_rate(logs, "Rookie", ["rushing_yards"], 10.5, "Over") is None,
         "a three-game player is refused -- 3 of 3 against a soft line is not a rate")
     chk(hit_rate(logs, "Nobody", ["rushing_yards"], 10.5, "Over") is None,
         "and an unknown name yields None rather than raising")
 
     ev = [{"game": "A @ B", "lines": {"player_rush_yds_alternate": [
-        ("Busy Guy", "Over", 59.5, -250),    # 100% history vs 71% implied -> gap
-        ("Busy Guy", "Over", 89.5, +150),    #  40% history vs 40% implied -> no gap
-        ("Rookie",   "Over", 10.5, -1000),   # too few games -> dropped
+        ("Busy Guy",   "Over", 59.5, -250),   # 100% history vs 71% implied -> gap
+        ("Busy Guy",   "Over", 89.5, +150),   #  31% history vs 40% implied -> none
+        ("Gone Guy",   "Over", 10.5, -1000),  # not this season -> dropped
+        ("Traded Guy", "Over", 10.5, -1000),  # too few at the new club -> dropped
+        ("Rookie",     "Over", 10.5, -1000),  # too few games -> dropped
     ]}}]
-    s = score(ev, logs)
-    chk(len(s) == 1 and s[0]["point"] == 59.5,
-        "only the line whose record beats its price by 10+ points is reported")
-    chk(s[0]["hits"] == 10 and s[0]["n"] == 10,
-        "and it carries the count, so the sample size is visible")
-    tight = score(ev, logs, min_gap=0.99)
-    chk(tight == [], "raising the bar past any real gap yields nothing")
+    sc = score(ev, logs)
+    chk(len(sc) == 1 and sc[0]["point"] == 59.5,
+        "only the line whose record beats its price by 10+ points survives")
+    chk(sc[0]["hits"] == 13 and sc[0]["n"] == 13 and sc[0]["team"] == "BUF",
+        "and it carries the count and the club, so the sample is visible")
+    chk(score(ev, logs, min_gap=0.99) == [],
+        "raising the bar past any real gap yields nothing")
 
     # THE SUNDAY SLATE SHAPE: one kickoff time, many games. A plain sort over
     # (datetime, dict) pairs raises on the second comparison, and the board
@@ -254,19 +307,14 @@ def selftest():
     import datetime as _dt
     now = _dt.datetime.now(_dt.timezone.utc)
     same = (now + _dt.timedelta(hours=24)).isoformat().replace("+00:00", "Z")
-    feed = [{"id": str(i), "commence_time": same, "home_team": f"H{i}",
-             "away_team": f"A{i}"} for i in range(4)]
     try:
-        keep = []
-        for e in feed:
-            t = _dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00"))
-            keep.append((t, e))
+        keep = [(_dt.datetime.fromisoformat(same.replace("Z", "+00:00")),
+                 {"id": str(i)}) for i in range(4)]
         keep.sort(key=lambda x: x[0])
         crashed = False
     except TypeError:
         crashed = True
-    chk(not crashed,
-        "four games at one kickoff time sort without comparing the dicts")
+    chk(not crashed, "four games at one kickoff time sort without comparing dicts")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
