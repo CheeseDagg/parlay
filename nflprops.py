@@ -146,7 +146,12 @@ def pull(max_events=4):
             continue
         if now <= t <= now + dt.timedelta(hours=HORIZON_H):
             keep.append((t, e))
-    keep.sort()
+    # SORT ON THE TIME ONLY. These are (datetime, dict) tuples, and a Sunday
+    # slate has many games kicking at exactly the same minute -- so a plain
+    # sort falls through to comparing the dicts and raises. The fixture that
+    # tested this had distinct timestamps, which is the one shape the real
+    # board never has.
+    keep.sort(key=lambda x: x[0])
     out = []
     for t, e in keep[:max_events]:
         url = (f"{BASE}/sports/{SPORT}/events/{e['id']}/odds/?apiKey={KEY}"
@@ -242,6 +247,26 @@ def selftest():
         "and it carries the count, so the sample size is visible")
     tight = score(ev, logs, min_gap=0.99)
     chk(tight == [], "raising the bar past any real gap yields nothing")
+
+    # THE SUNDAY SLATE SHAPE: one kickoff time, many games. A plain sort over
+    # (datetime, dict) pairs raises on the second comparison, and the board
+    # always looks like this at 1pm ET.
+    import datetime as _dt
+    now = _dt.datetime.now(_dt.timezone.utc)
+    same = (now + _dt.timedelta(hours=24)).isoformat().replace("+00:00", "Z")
+    feed = [{"id": str(i), "commence_time": same, "home_team": f"H{i}",
+             "away_team": f"A{i}"} for i in range(4)]
+    try:
+        keep = []
+        for e in feed:
+            t = _dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00"))
+            keep.append((t, e))
+        keep.sort(key=lambda x: x[0])
+        crashed = False
+    except TypeError:
+        crashed = True
+    chk(not crashed,
+        "four games at one kickoff time sort without comparing the dicts")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
