@@ -289,7 +289,18 @@ def score(events, logs, min_gap=0.10, defn=None, frac=GENEROUS_FRAC):
                              (ev.get("game") or "").split(" @ ")]
                     opp = next((t for t in teams if t and t != team), None)
                     gen = generosity(defn, pos, opp) if opp else None
-                if gen is None or gen[0] > max(1, round(frac * gen[2])):
+                # THE FILTER INVERTS ON AN UNDER. A generous defence helps an
+                # OVER and hurts an UNDER, and the first version applied the
+                # same test to both -- so it surfaced "Sione Vaki under 11.5
+                # rush yards" against Carolina, the single most generous run
+                # defence in the league, as though that were a point in its
+                # favour.
+                lim = max(1, round(frac * gen[2])) if gen else 0
+                if gen is None:
+                    continue
+                if side == "Over" and gen[0] > lim:
+                    continue
+                if side == "Under" and gen[0] < gen[2] - lim + 1:
                     continue
                 if rate - imp >= min_gap and (cn >= MIN_CURRENT and crate >= imp):
                     out.append({"game": ev.get("game"), "player": name,
@@ -480,6 +491,15 @@ def selftest():
         "and the same prop into the most generous defence survives")
     chk(score(ev_def, logs, defn={"RB": {"ATL": 150.0}}) == [],
         "a defence with no data at all is a refusal, not a free pass")
+    # An UNDER wants the OPPOSITE defence. The first version applied the same
+    # test to both sides and surfaced an under into the most generous run
+    # defence in the league as if that supported it.
+    ev_u = [{"game": "Buffalo Bills @ New York Jets", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Under", 200.5, +200)]}}]
+    chk(score(ev_u, logs, defn=SOFT) == [],
+        "an under into the most GENEROUS defence is dropped")
+    chk(len(score(ev_u, logs, defn=STINGY)) == 1,
+        "and the same under into the stingiest defence survives")
 
     sc = score(ev, logs, defn=SOFT)
     chk(len(sc) == 1 and sc[0]["point"] == 59.5,
