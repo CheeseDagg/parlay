@@ -224,6 +224,47 @@ def injuries(season=CURRENT_SEASON, fetch=None):
     return out
 
 
+SNAPS = ("https://github.com/nflverse/nflverse-data/releases/download/"
+         "snap_counts/snap_counts_{yr}.csv")
+MIN_SNAP_PCT = 0.45    # below this he is a rotational piece, not a volume bet
+
+
+def snap_share(season=CURRENT_SEASON, fetch=None):
+    """{(team, player): (latest_pct, trend)} -- is he actually on the field?
+
+    THE VOLUME SIGNAL I NEVER PULLED. Every prop here is a bet on opportunity,
+    and snap share is the most direct measure of it there is -- more direct
+    than targets, which are themselves downstream of being on the field. It
+    has been published all along next to the injury file.
+
+    trend is latest minus the mean of the earlier weeks: a player whose share
+    is collapsing is being phased out, and his season-long rate is describing
+    a role he no longer has. That is the same regime problem that has bitten
+    every other part of this file, measured at its source.
+    """
+    try:
+        txt = fetch(SNAPS.format(yr=season)) if fetch else _raw(SNAPS.format(yr=season))
+    except Exception:
+        return None
+    import csv as _csv
+    by = defaultdict(list)
+    for r in _csv.DictReader(io.StringIO(txt)):
+        if not (r.get("week") or "").isdigit():
+            continue
+        try:
+            pct = float(r.get("offense_pct") or 0)
+        except (TypeError, ValueError):
+            continue
+        by[(r.get("team"), r.get("player"))].append((int(r["week"]), pct))
+    out = {}
+    for k, v in by.items():
+        v.sort()
+        latest = v[-1][1]
+        prior = [p for _w, p in v[:-1]]
+        out[k] = (latest, latest - (sum(prior) / len(prior) if prior else latest))
+    return out or None
+
+
 def qb_of(logs, team, season=CURRENT_SEASON):
     """The team's most-used quarterback this season."""
     best, most = None, -1
@@ -346,11 +387,13 @@ def hit_rate(logs, player, cols, point, side, current=CURRENT_SEASON):
     return hits, n, team, ch, cn
 
 
-def score(events, logs, min_gap=0.10, inj=None):
+def score(events, logs, min_gap=0.10, inj=None, snaps=None):
     """Lines where the record disagrees with the price by at least min_gap."""
     out = []
     if inj is None:
         inj = injuries() or {}
+    if snaps is None:
+        snaps = snap_share()
     for ev in events:
         for mk, (cols, label) in MARKETS.items():
             for name, side, point, price in ev.get("lines", {}).get(mk, []):
@@ -402,6 +445,13 @@ def score(events, logs, min_gap=0.10, inj=None):
                 # and the reason is the team's word rather than a diagnosis.
                 if not script_ok(label, (ev.get("wp") or {}).get(team)):
                     continue
+                # ON THE FIELD ENOUGH TO MATTER, and not on the way out.
+                # ON THE FIELD ENOUGH TO MATTER, and not on the way out. When
+                # the feed is unavailable this cannot veto -- an absent source
+                # is not evidence a player is benched.
+                sh = (snaps or {}).get((team, name))
+                if snaps and ((not sh) or sh[0] < MIN_SNAP_PCT or sh[1] < -0.20):
+                    continue
                 hurt = inj.get((team, name))
                 qb = qb_of(logs, team)
                 qhurt = inj.get((team, qb)) if qb else None
@@ -416,12 +466,24 @@ def score(events, logs, min_gap=0.10, inj=None):
                                 "market": label, "side": side, "point": point,
                                 "price": price, "hits": hits, "n": n, "team": team,
                                 "chits": ch, "cn": cn, "crate": crate,
+                                "snap": sh[0] if sh else None,
+                                "snap_trend": sh[1] if sh else None,
                                 "dhits": dres[0], "dn": dres[1],
                                 "drate": drate, "pos": pos,
                                 "rate": rate, "implied": imp,
                                 "gap": rate - imp})
     # Rank by the WEAKER of the two sides -- a prop is only as good as
     # whichever of player form and matchup is softer.
+    # The feed repeats a line when more than one book or market key carries it,
+    # and the list showed the same prop twice more than once.
+    seen, uniq = set(), []
+    for r in out:
+        k = (r["game"], r["player"], r["market"], r["side"], r["point"])
+        if k in seen:
+            continue
+        seen.add(k)
+        uniq.append(r)
+    out = uniq
     out.sort(key=lambda r: -min(r['crate'], r['drate']))
     return out
 
@@ -513,6 +575,7 @@ def main():
               f"  {CURRENT_SEASON} {r['chits']}/{r['cn']}={r['crate']:4.0%}"
               f"  vs {r['implied']:4.0%} (+{r['gap']:.0%})"
               f"  D {r['dhits']:2}/{r['dn']:2}={r['drate']:4.0%}"
+              f"  snap {('%3.0f%%' % (r['snap']*100)) if r['snap'] else ' -- '}"
               f"  {r['game'][:28]}")
     return 0
 
@@ -585,7 +648,7 @@ def selftest():
     # The collapsed-role player must NOT survive on his pooled history alone.
     ev_faded = [{"game": "Tennessee Titans @ New York Jets", "lines": {"player_reception_yds_alternate": [
         ("Faded", "Over", 24.5, +300)]}}]      # 80% pooled, 0% this season
-    chk(score(ev_faded, logs) == [],
+    chk(score(ev_faded, logs, snaps={}) == [],
         "a gap that exists only in the pooled history is dropped -- that is a "
         "gap about a role he no longer has")
 
@@ -595,7 +658,7 @@ def selftest():
                         + [(2026, 2, "TEN", {"receiving_yards": 60}),
                            (2026, 3, "TEN", {"receiving_yards": 0})])
     chk(score([{"game": "Tennessee Titans @ New York Jets", "lines": {"player_reception_yds_alternate": [
-        ("Spotty", "Over", 24.5, +550)]}}], logs) == [],
+        ("Spotty", "Over", 24.5, +550)]}}], logs, snaps={}) == [],
         "a player with two games this season is dropped, however good the pool")
 
     # THE ODUNZE CHECK, rebuilt on the audited test. The defence rate now comes
@@ -619,9 +682,9 @@ def selftest():
         "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}]
     ev_soft = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
         "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}]
-    chk(score(ev_stingy, base) == [],
+    chk(score(ev_stingy, base, snaps={}) == [],
         "a prop the defence allows once in ten is dropped however good his record")
-    got_soft = score(ev_soft, base)
+    got_soft = score(ev_soft, base, snaps={})
     chk(len(got_soft) == 1 and got_soft[0]["dhits"] == 9,
         "and the same prop into a defence that allows it 9 of 10 survives, "
         "carrying the defence's own count")
@@ -631,7 +694,7 @@ def selftest():
     # missing floor would happily report as 4 of 4.
     base.update(opp_games("MIA", "RB", "rushing_yards", [80, 90, 85, 95]))
     chk(score([{"game": "Buffalo Bills @ Miami Dolphins", "lines": {
-        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}], base) == [],
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}], base, snaps={}) == [],
         "a defence with four games is refused -- three weeks of defensive data "
         "is the error that has bitten this file at every stage")
 
@@ -654,18 +717,18 @@ def selftest():
         "player_reception_yds_alternate": [("WR Guy", "Over", 91.5, -114)]}}]
     ev_r = [{"game": "Seattle Seahawks @ Los Angeles Chargers", "lines": {
         "player_receptions_alternate": [("WR Guy", "Over", 7.5, +132)]}}]
-    chk(len(score(ev_y, logs_wr)) == 1,
+    chk(len(score(ev_y, logs_wr, snaps={})) == 1,
         "the yards line survives a defence that gives up chunk yardage")
-    chk(score(ev_r, logs_wr) == [],
+    chk(score(ev_r, logs_wr, snaps={}) == [],
         "and the receptions line on the SAME player against the SAME defence "
         "does not -- which is the Chargers in one check")
 
-    sc = score(ev, base)
+    sc = score(ev, base, snaps={})
     chk(len(sc) == 1 and sc[0]["point"] == 59.5,
         "only the line whose record beats its price by 10+ points survives")
     chk(sc[0]["hits"] == 13 and sc[0]["n"] == 13 and sc[0]["team"] == "BUF",
         "and it carries the count and the club, so the sample is visible")
-    chk(score(ev, logs, min_gap=0.99) == [],
+    chk(score(ev, logs, min_gap=0.99, snaps={}) == [],
         "raising the bar past any real gap yields nothing")
 
     # THE INJURY GATE. Bucky Irving was recommended in a week where Baker
@@ -677,23 +740,51 @@ def selftest():
                                   "_opp": "X", "_pos": "QB"}) for w in (1, 2, 3)]
     ev_i = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
         "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +120)]}}]
-    chk(len(score(ev_i, inj_logs, inj={})) == 1, "a clean player is reported")
+    chk(len(score(ev_i, inj_logs, inj={}, snaps={})) == 1, "a clean player is reported")
+
+    # SNAP SHARE. Every prop is a bet on opportunity and this is the most
+    # direct measure of it; it was published next to the injury file all along.
+    SN_OK = {("BUF", "Busy Guy"): (0.72, +0.05)}
+    SN_LOW = {("BUF", "Busy Guy"): (0.30, +0.05)}
+    SN_FALL = {("BUF", "Busy Guy"): (0.60, -0.28)}
+    SN_MISS = {("BUF", "Someone Else"): (0.80, 0.0)}
+    chk(len(score(ev_i, inj_logs, inj={}, snaps=SN_OK)) == 1,
+        "a player on 72% of snaps is reported")
+    chk(score(ev_i, inj_logs, inj={}, snaps=SN_LOW) == [],
+        "a player on 30% of snaps is a rotational piece, not a volume bet")
+    chk(score(ev_i, inj_logs, inj={}, snaps=SN_FALL) == [],
+        "and a share collapsing 28 points is a role being phased out -- his "
+        "season rate describes a job he no longer has")
+    chk(score(ev_i, inj_logs, inj={}, snaps=SN_MISS) == [],
+        "a player absent from a LIVE snap feed is dropped, not assumed to play")
+    chk(len(score(ev_i, inj_logs, inj={}, snaps=None if False else {})) == 1,
+        "but an unavailable feed cannot veto -- absence of a source is not "
+        "evidence he is benched")
+
+    # DEDUP. The feed repeats a line across books and market keys, and the
+    # same prop showed up twice in the output more than once.
+    dup = [{"game": "Buffalo Bills @ Carolina Panthers", "wp": {"BUF": 0.63},
+            "lines": {"player_rush_yds_alternate": [
+                ("Busy Guy", "Over", 59.5, +120),
+                ("Busy Guy", "Over", 59.5, +120)]}}]
+    chk(len(score(dup, inj_logs, inj={}, snaps=SN_OK)) == 1,
+        "a line repeated by the feed is reported once")
     # GAME SCRIPT. Hampton was recommended as a rushing prop for a side priced
     # at +295; a team that far behind spends the fourth quarter throwing.
     dog = [dict(ev_i[0], wp={"BUF": 0.24})]
-    chk(score(dog, inj_logs, inj={}) == [],
+    chk(score(dog, inj_logs, inj={}, snaps={}) == [],
         "a rushing prop for a heavy underdog is dropped -- he will be throwing")
     fav = [dict(ev_i[0], wp={"BUF": 0.63})]
-    chk(len(score(fav, inj_logs, inj={})) == 1,
+    chk(len(score(fav, inj_logs, inj={}, snaps={})) == 1,
         "and the same prop for a favourite stands, because a lead means carries")
-    chk(len(score([dict(ev_i[0], wp={})], inj_logs, inj={})) == 1,
+    chk(len(score([dict(ev_i[0], wp={})], inj_logs, inj={}, snaps={})) == 1,
         "no moneyline means no opinion, not a veto")
     chk(score(ev_i, inj_logs,
-              inj={("BUF", "Busy Guy"): ("Out", "Knee", "RB")}) == [],
+              inj={("BUF", "Busy Guy"): ("Out", "Knee", "RB")}, snaps={}) == [],
         "a player who is Out is dropped")
     chk(score(ev_i, inj_logs,
               inj={("BUF", "Busy Guy"): ("Did Not Participate In Practice",
-                                         "Glute", "RB")}) == [],
+                                         "Glute", "RB")}, snaps={}) == [],
         "and so is one who did not practice, even without a game status")
     # The receiving fixture needs CAR to have a WR defensive record, or the
     # line is dropped for a missing matchup and the QB check never runs --
@@ -705,7 +796,7 @@ def selftest():
                             for sn, w, v in logs["Busy Guy"]]
     ev_rec = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
         "player_reception_yds_alternate": [("Busy Guy", "Over", 5.5, +120)]}}]
-    chk(len(score(ev_rec, inj_logs, inj={})) == 1,
+    chk(len(score(ev_rec, inj_logs, inj={}, snaps={})) == 1,
         "the receiving fixture itself is live when nobody is hurt")
 
     # A TIGHT END IS MEASURED AGAINST TIGHT ENDS. Atlanta allowed a receiver
@@ -728,16 +819,16 @@ def selftest():
                                "_opp": "X", "_pos": "TE"}) for w in (1, 2, 3)]
     chk(score([{"game": "New Orleans Saints @ Atlanta Falcons", "lines": {
         "player_reception_yds_alternate": [("TE Guy", "Over", 49.5, +142)]}}],
-        te, inj={}) == [],
+        te, inj={}, snaps={}) == [],
         "a tight end is scored against TIGHT ENDS, not the receiver pool that "
         "happens to look generous")
     chk(score(ev_rec, inj_logs,
               inj={("BUF", "QB1"): ("Did Not Participate In Practice",
-                                    "Thumb", "QB")}) == [],
+                                    "Thumb", "QB")}, snaps={}) == [],
         "a RECEIVING prop dies with the quarterback -- the Bucky Irving case")
     chk(len(score(ev_i, inj_logs,
                   inj={("BUF", "QB1"): ("Did Not Participate In Practice",
-                                        "Thumb", "QB")})) == 1,
+                                        "Thumb", "QB")}, snaps={})) == 1,
         "but a RUSHING prop survives him, because the handoff does not need him")
     # A defence that allowed it in all ten is not evidence -- it is a bar so
     # low the question does not discriminate, which is what buried the list
@@ -745,10 +836,10 @@ def selftest():
     base2 = dict(base)
     base2.update(opp_games("DEN", "RB", "rushing_yards", [80]*10))
     chk(score([{"game": "Buffalo Bills @ Denver Broncos", "lines": {
-        "player_rush_yds_alternate": [("Busy Guy", "Over", 5.5, +120)]}}], base2) == [],
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 5.5, +120)]}}], base2, snaps={}) == [],
         "a defence that allows it 10 of 10 gives no read, and the line is dropped")
     chk(score([{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
-        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, -400)]}}], base) == [],
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, -400)]}}], base, snaps={}) == [],
         "and a price shorter than -233 is a toll, not a bet")
 
     # TWO ROWS FOR ONE PLAYER IN ONE WEEK. nflverse can carry a duplicate or a
