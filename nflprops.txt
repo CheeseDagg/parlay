@@ -1,53 +1,29 @@
 pulling alt props for up to 5 games, skipping the first 4
-  New York Jets @ Chicago Bears: 206 lines  (quota left 19889)
-  Jacksonville Jaguars @ Cincinnati Bengals: 284 lines  (quota left 19884)
-  Dallas Cowboys @ Houston Texans: 273 lines  (quota left 19879)
-  Green Bay Packers @ Tampa Bay Buccaneers: 294 lines  (quota left 19874)
-  Los Angeles Rams @ Philadelphia Eagles: 225 lines  (quota left 19869)
+  New York Jets @ Chicago Bears: 206 lines  (quota left 19864)
+  Jacksonville Jaguars @ Cincinnati Bengals: 284 lines  (quota left 19859)
+  Dallas Cowboys @ Houston Texans: 273 lines  (quota left 19854)
+  Green Bay Packers @ Tampa Bay Buccaneers: 294 lines  (quota left 19849)
+  Los Angeles Rams @ Philadelphia Eagles: 225 lines  (quota left 19844)
 
 loading game logs...
   2262 players with logs
 
-51 lines where the RECORD beats the PRICE by 10+ points
+16 lines where the RECORD beats the PRICE by 10+ points
 (hit rate is raw history; implied price still carries the vig)
 
-  Kyren Williams         Over    59.5 rush yds         102  all 16/20= 80%  2026 2/3= 67%  vs  50% (+30%)  Los Angeles Rams @ Philadelphi
-  Matthew Stafford       Over     1.5 pass TDs        -122  all 17/20= 85%  2026 2/3= 67%  vs  55% (+30%)  Los Angeles Rams @ Philadelphi
-  Rome Odunze            Over    29.5 rec yds         -138  all 13/15= 87%  2026 3/3=100%  vs  58% (+29%)  New York Jets @ Chicago Bears
-  Kyren Williams         Over    49.5 rush yds        -180  all 18/20= 90%  2026 2/3= 67%  vs  64% (+26%)  Los Angeles Rams @ Philadelphi
-  Matthew Stafford       Over     2.5 pass TDs         310  all 10/20= 50%  2026 1/3= 33%  vs  24% (+26%)  Los Angeles Rams @ Philadelphi
-  Jakobi Meyers          Over    24.5 rec yds         -310  all 12/12=100%  2026 3/3=100%  vs  76% (+24%)  Jacksonville Jaguars @ Cincinn
-  CeeDee Lamb            Over   109.5 rec yds          280  all  8/16= 50%  2026 2/3= 67%  vs  26% (+24%)  Dallas Cowboys @ Houston Texan
-  Kyren Williams         Over    39.5 rush yds        -330  all 20/20=100%  2026 3/3=100%  vs  77% (+23%)  Los Angeles Rams @ Philadelphi
-  Rome Odunze            Over    39.5 rec yds          128  all 10/15= 67%  2026 3/3=100%  vs  44% (+23%)  New York Jets @ Chicago Bears
-  Kyren Williams         Over    69.5 rush yds         168  all 12/20= 60%  2026 2/3= 67%  vs  37% (+23%)  Los Angeles Rams @ Philadelphi
-  Jalen Hurts            Over     1.5 pass TDs         225  all 10/19= 53%  2026 2/3= 67%  vs  31% (+22%)  Los Angeles Rams @ Philadelphi
-  Jakobi Meyers          Over    39.5 rec yds         -114  all  9/12= 75%  2026 2/3= 67%  vs  53% (+22%)  Jacksonville Jaguars @ Cincinn
-  Rome Odunze            Over    24.5 rec yds         -192  all 13/15= 87%  2026 3/3=100%  vs  66% (+21%)  New York Jets @ Chicago Bears
-  Bucky Irving           Over     3.5 receptions       198  all  7/13= 54%  2026 2/3= 67%  vs  34% (+20%)  Green Bay Packers @ Tampa Bay 
-  Tank Bigsby            Over    29.5 rush yds         550  all  6/17= 35%  2026 1/3= 33%  vs  15% (+20%)  Los Angeles Rams @ Philadelphi
-  Cole Kmet              Over    24.5 rec yds          320  all  8/19= 42%  2026 1/3= 33%  vs  24% (+18%)  New York Jets @ Chicago Bears
-  Jakobi Meyers          Over    19.5 rec yds         -470  all 12/12=100%  2026 3/3=100%  vs  82% (+18%)  Jacksonville Jaguars @ Cincinn
-  CeeDee Lamb            Over    99.5 rec yds          205  all  8/16= 50%  2026 2/3= 67%  vs  33% (+17%)  Dallas Cowboys @ Houston Texan
-  Bucky Irving           Over     9.5 rec yds         -152  all 10/13= 77%  2026 2/3= 67%  vs  60% (+17%)  Green Bay Packers @ Tampa Bay 
-  Tez Johnson            Over    39.5 rec yds          490  all  6/18= 33%  2026 1/3= 33%  vs  17% (+16%)  Green Bay Packers @ Tampa Bay 
-  Jalen Hurts            Over     2.5 pass TDs         880  all  5/19= 26%  2026 1/3= 33%  vs  10% (+16%)  Los Angeles Rams @ Philadelphi
-  Cade Otton             Over     2.5 receptions      -162  all 14/18= 78%  2026 3/3=100%  vs  62% (+16%)  Green Bay Packers @ Tampa Bay 
-  Matthew Stafford       Over     3.5 pass TDs        1000  all  5/20= 25%  2026 1/3= 33%  vs   9% (+16%)  Los Angeles Rams @ Philadelphi
-  Jake Ferguson          Over    39.5 rec yds          300  all  8/20= 40%  2026 1/3= 33%  vs  25% (+15%)  Dallas Cowboys @ Houston Texan
-  Brenton Strange        Over    14.5 rec yds         -580  all 15/15=100%  2026 3/3=100%  vs  85% (+15%)  Jacksonville Jaguars @ Cincinn
-  Javonte Williams       Over    79.5 rush yds         205  all  9/19= 47%  2026 1/3= 33%  vs  33% (+15%)  Dallas Cowboys @ Houston Texan
-  Matthew Stafford       Over   349.5 pass yds         850  all  5/20= 25%  2026 1/3= 33%  vs  11% (+14%)  Los Angeles Rams @ Philadelphi
-  Rome Odunze            Over     1.5 receptions      -380  all 14/15= 93%  2026 3/3=100%  vs  79% (+14%)  New York Jets @ Chicago Bears
-  CeeDee Lamb            Over     4.5 receptions      -275  all 14/16= 88%  2026 3/3=100%  vs  73% (+14%)  Dallas Cowboys @ Houston Texan
-  Cole Kmet              Over    29.5 rec yds          470  all  6/19= 32%  2026 1/3= 33%  vs  18% (+14%)  New York Jets @ Chicago Bears
-  Tank Bigsby            Over    24.5 rush yds         370  all  6/17= 35%  2026 1/3= 33%  vs  21% (+14%)  Los Angeles Rams @ Philadelphi
-  Rome Odunze            Over    19.5 rec yds         -270  all 13/15= 87%  2026 3/3=100%  vs  73% (+14%)  New York Jets @ Chicago Bears
-  Rome Odunze            Over    49.5 rec yds          200  all  7/15= 47%  2026 1/3= 33%  vs  33% (+13%)  New York Jets @ Chicago Bears
-  C.J. Stroud            Over    24.5 rush yds         350  all  6/17= 35%  2026 1/3= 33%  vs  22% (+13%)  Dallas Cowboys @ Houston Texan
-  Chase Brown            Over     1.5 receptions      -670  all 20/20=100%  2026 3/3=100%  vs  87% (+13%)  Jacksonville Jaguars @ Cincinn
-  Bucky Irving           Over    24.5 rec yds          290  all  5/13= 38%  2026 1/3= 33%  vs  26% (+13%)  Green Bay Packers @ Tampa Bay 
-  Matthew Stafford       Over   374.5 pass yds        1280  all  4/20= 20%  2026 1/3= 33%  vs   7% (+13%)  Los Angeles Rams @ Philadelphi
-  Cade Otton             Over     1.5 receptions      -450  all 17/18= 94%  2026 3/3=100%  vs  82% (+13%)  Green Bay Packers @ Tampa Bay 
-  Matthew Stafford       Over   324.5 pass yds         470  all  6/20= 30%  2026 2/3= 67%  vs  18% (+12%)  Los Angeles Rams @ Philadelphi
-  Cade Otton             Over    49.5 rec yds          370  all  6/18= 33%  2026 1/3= 33%  vs  21% (+12%)  Green Bay Packers @ Tampa Bay 
+  Kyren Williams         Over    59.5 rush yds         102  all 16/20= 80%  2026 2/3= 67%  vs  50% (+30%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
+  Kyren Williams         Over    49.5 rush yds        -180  all 18/20= 90%  2026 2/3= 67%  vs  64% (+26%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
+  Jakobi Meyers          Over    24.5 rec yds         -310  all 12/12=100%  2026 3/3=100%  vs  76% (+24%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
+  CeeDee Lamb            Over   109.5 rec yds          280  all  8/16= 50%  2026 2/3= 67%  vs  26% (+24%)  D#4/32 247WR  Dallas Cowboys @ Houston Tex
+  Kyren Williams         Over    39.5 rush yds        -330  all 20/20=100%  2026 3/3=100%  vs  77% (+23%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
+  Kyren Williams         Over    69.5 rush yds         168  all 12/20= 60%  2026 2/3= 67%  vs  37% (+23%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
+  Jakobi Meyers          Over    39.5 rec yds         -114  all  9/12= 75%  2026 2/3= 67%  vs  53% (+22%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
+  Jakobi Meyers          Over    19.5 rec yds         -470  all 12/12=100%  2026 3/3=100%  vs  82% (+18%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
+  CeeDee Lamb            Over    99.5 rec yds          205  all  8/16= 50%  2026 2/3= 67%  vs  33% (+17%)  D#4/32 247WR  Dallas Cowboys @ Houston Tex
+  Jake Ferguson          Over    39.5 rec yds          300  all  8/20= 40%  2026 1/3= 33%  vs  25% (+15%)  D#4/32 247WR  Dallas Cowboys @ Houston Tex
+  Brenton Strange        Over    14.5 rec yds         -580  all 15/15=100%  2026 3/3=100%  vs  85% (+15%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
+  CeeDee Lamb            Over     4.5 receptions      -275  all 14/16= 88%  2026 3/3=100%  vs  73% (+14%)  D#4/32 247WR  Dallas Cowboys @ Houston Tex
+  C.J. Stroud            Over    24.5 rush yds         350  all  6/17= 35%  2026 1/3= 33%  vs  22% (+13%)  D#5/32 114RB  Dallas Cowboys @ Houston Tex
+  Bucky Irving           Over    39.5 rush yds        -270  all 11/13= 85%  2026 3/3=100%  vs  73% (+12%)  D#3/32 126RB  Green Bay Packers @ Tampa Ba
+  Jakobi Meyers          Over    14.5 rec yds         -800  all 12/12=100%  2026 3/3=100%  vs  89% (+11%)  D#6/32 240WR  Jacksonville Jaguars @ Cinci
+  Kyren Williams         Over    29.5 rush yds        -800  all 20/20=100%  2026 3/3=100%  vs  89% (+11%)  D#7/32 110RB  Los Angeles Rams @ Philadelp
