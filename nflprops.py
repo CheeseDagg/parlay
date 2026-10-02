@@ -94,6 +94,8 @@ def game_logs(seasons=None, fetch=None):
                 except (TypeError, ValueError):
                     vals[k] = 0.0
             vals["_team"] = r.get("team") or ""
+            vals["_opp"] = r.get("opponent_team") or ""
+            vals["_pos"] = (r.get("position") or "").upper()
             out[nm].append((int(r["season"]), int(r["week"]), vals))
     for k in out:
         # KEY ON (season, week), NOT THE WHOLE TUPLE. The third element is a
@@ -111,6 +113,76 @@ def _raw(url):
     if b[:2] == b"\x1f\x8b":
         b = gzip.decompress(b)
     return b.decode("utf-8", "replace")
+
+
+# Odds-API team names -> nflverse abbreviations. Spelled out rather than
+# derived: "Los Angeles Rams" and "Los Angeles Chargers" share a city, and
+# nflverse writes the Rams as LA and the Chargers as LAC, so any clever
+# substring rule gets that pair wrong in silence.
+TEAM_ABBR = {
+    "Arizona Cardinals": "ARI", "Atlanta Falcons": "ATL", "Baltimore Ravens": "BAL",
+    "Buffalo Bills": "BUF", "Carolina Panthers": "CAR", "Chicago Bears": "CHI",
+    "Cincinnati Bengals": "CIN", "Cleveland Browns": "CLE", "Dallas Cowboys": "DAL",
+    "Denver Broncos": "DEN", "Detroit Lions": "DET", "Green Bay Packers": "GB",
+    "Houston Texans": "HOU", "Indianapolis Colts": "IND", "Jacksonville Jaguars": "JAX",
+    "Kansas City Chiefs": "KC", "Las Vegas Raiders": "LV", "Los Angeles Chargers": "LAC",
+    "Los Angeles Rams": "LA", "Miami Dolphins": "MIA", "Minnesota Vikings": "MIN",
+    "New England Patriots": "NE", "New Orleans Saints": "NO", "New York Giants": "NYG",
+    "New York Jets": "NYJ", "Philadelphia Eagles": "PHI", "Pittsburgh Steelers": "PIT",
+    "San Francisco 49ers": "SF", "Seattle Seahawks": "SEA", "Tampa Bay Buccaneers": "TB",
+    "Tennessee Titans": "TEN", "Washington Commanders": "WAS",
+}
+# A position is only worth ranking a defence against if the prop depends on it.
+POS_FOR = {"pass yds": "QB", "pass TDs": "QB", "rush yds": "RB",
+           "rec yds": "WR", "receptions": "WR", "rush+rec yds": "RB"}
+GENEROUS_FRAC = 0.375  # a defence must sit in the most generous 37.5% -- 12 of
+                       # 32. A FRACTION, not a fixed rank: with fewer teams in
+                       # the pool (early weeks, a position with sparse data) a
+                       # hard "rank <= 12" passes everything, which is how a
+                       # three-team fixture let the stingiest defence through.
+
+
+def defense_allowed(logs, current=CURRENT_SEASON):
+    """{position: {defence: yards allowed per game}} for the current season.
+
+    This is the check that would have caught Rome Odunze. His record cleared
+    every window -- 3 of 3 this season, 13 of 15 all time -- and he draws the
+    Jets, who are 29th of 32 in receiving yards allowed to wide receivers. A
+    rate measures what a player did against the schedule he happened to have;
+    it says nothing about the defence in front of him on Sunday.
+    """
+    tot = defaultdict(lambda: defaultdict(float))
+    games = defaultdict(set)
+    for player, rows in logs.items():
+        for sn, wk, v in rows:
+            if sn != current:
+                continue
+            opp, pos = v.get("_opp"), v.get("_pos")
+            if not opp:
+                continue
+            games[opp].add((sn, wk))
+            if pos in ("WR", "TE"):
+                tot["WR"][opp] += v.get("receiving_yards", 0.0)
+            elif pos == "RB":
+                tot["RB"][opp] += v.get("rushing_yards", 0.0)
+            elif pos == "QB":
+                tot["QB"][opp] += v.get("passing_yards", 0.0)
+    out = {}
+    for pos, d in tot.items():
+        out[pos] = {t: v / len(games[t]) for t, v in d.items() if games[t]}
+    return out
+
+
+def generosity(defn, pos, opp):
+    """(rank, allowed, n) where rank 1 is the MOST generous defence."""
+    d = defn.get(pos) or {}
+    if opp not in d:
+        return None
+    order = sorted(d.items(), key=lambda kv: -kv[1])
+    for i, (t, v) in enumerate(order, 1):
+        if t == opp:
+            return i, v, len(order)
+    return None
 
 
 def hit_rate(logs, player, cols, point, side, current=CURRENT_SEASON):
@@ -167,9 +239,10 @@ def hit_rate(logs, player, cols, point, side, current=CURRENT_SEASON):
     return hits, n, team, ch, cn
 
 
-def score(events, logs, min_gap=0.10):
+def score(events, logs, min_gap=0.10, defn=None, frac=GENEROUS_FRAC):
     """Lines where the record disagrees with the price by at least min_gap."""
     out = []
+    defn = defense_allowed(logs) if defn is None else defn
     for ev in events:
         for mk, (cols, label) in MARKETS.items():
             for name, side, point, price in ev.get("lines", {}).get(mk, []):
@@ -187,11 +260,26 @@ def score(events, logs, min_gap=0.10):
                 # costs some real edges in exchange for dropping every stale
                 # one, which is the right side to err on.
                 crate = (ch / cn) if cn else 0.0
+                # THE DEFENCE IN FRONT OF HIM ON SUNDAY. A hit rate measures the
+                # schedule he happened to have. Rome Odunze cleared every window
+                # and draws the 29th-most-generous defence to receivers, which
+                # no amount of history can see.
+                pos = POS_FOR.get(label)
+                gen = None
+                if pos and defn:
+                    teams = [TEAM_ABBR.get(x.strip()) for x in
+                             (ev.get("game") or "").split(" @ ")]
+                    opp = next((t for t in teams if t and t != team), None)
+                    gen = generosity(defn, pos, opp) if opp else None
+                if gen is None or gen[0] > max(1, round(frac * gen[2])):
+                    continue
                 if rate - imp >= min_gap and (cn >= MIN_CURRENT and crate >= imp):
                     out.append({"game": ev.get("game"), "player": name,
                                 "market": label, "side": side, "point": point,
                                 "price": price, "hits": hits, "n": n, "team": team,
                                 "chits": ch, "cn": cn, "crate": crate,
+                                "def_rank": gen[0], "def_allowed": gen[1],
+                                "def_of": gen[2], "pos": pos,
                                 "rate": rate, "implied": imp,
                                 "gap": rate - imp})
     out.sort(key=lambda r: -r["gap"])
@@ -271,7 +359,9 @@ def main():
         print(f"  {r['player'][:22]:22} {r['side']:5} {r['point']:6.1f} {r['market']:13}"
               f" {int(r['price']):>6}  all {r['hits']:2}/{r['n']:2}={r['rate']:4.0%}"
               f"  {CURRENT_SEASON} {r['chits']}/{r['cn']}={r['crate']:4.0%}"
-              f"  vs {r['implied']:4.0%} (+{r['gap']:.0%})  {r['game'][:30]}")
+              f"  vs {r['implied']:4.0%} (+{r['gap']:.0%})"
+              f"  D#{r['def_rank']}/{r['def_of']} {r['def_allowed']:.0f}{r['pos']}"
+              f"  {r['game'][:28]}")
     return 0
 
 
@@ -285,6 +375,8 @@ def selftest():
 
     chk(abs(implied(-110) - 0.5238) < 1e-3, "a -110 price implies 52.4%, vig included")
     chk(abs(implied(+200) - 1/3) < 1e-6, "and +200 implies 33.3%")
+
+    SOFT_WR = {"WR": {"NYJ": 200.0, "ATL": 80.0, "BUF": 90.0}}
 
     def gl(rows):
         return [(sn, w, dict(v, _team=t)) for sn, w, t, v in rows]
@@ -331,7 +423,7 @@ def selftest():
     chk(hit_rate(logs, "Nobody", ["rushing_yards"], 10.5, "Over") is None,
         "and an unknown name yields None rather than raising")
 
-    ev = [{"game": "A @ B", "lines": {"player_rush_yds_alternate": [
+    ev = [{"game": "Buffalo Bills @ New York Jets", "lines": {"player_rush_yds_alternate": [
         ("Busy Guy",   "Over", 59.5, -250),   # 100% history vs 71% implied -> gap
         ("Busy Guy",   "Over", 89.5, +150),   #  31% history vs 40% implied -> none
         ("Gone Guy",   "Over", 10.5, -1000),  # not this season -> dropped
@@ -339,9 +431,9 @@ def selftest():
         ("Rookie",     "Over", 10.5, -1000),  # too few games -> dropped
     ]}}]
     # The collapsed-role player must NOT survive on his pooled history alone.
-    ev_faded = [{"game": "C @ D", "lines": {"player_reception_yds_alternate": [
+    ev_faded = [{"game": "Tennessee Titans @ New York Jets", "lines": {"player_reception_yds_alternate": [
         ("Faded", "Over", 24.5, +300)]}}]      # 80% pooled, 0% this season
-    chk(score(ev_faded, logs) == [],
+    chk(score(ev_faded, logs, defn=SOFT_WR) == [],
         "a gap that exists only in the pooled history is dropped -- that is a "
         "gap about a role he no longer has")
 
@@ -350,11 +442,28 @@ def selftest():
     logs["Spotty"] = gl([(2025, w, "TEN", {"receiving_yards": 60}) for w in range(1, 10)]
                         + [(2026, 2, "TEN", {"receiving_yards": 60}),
                            (2026, 3, "TEN", {"receiving_yards": 0})])
-    chk(score([{"game": "E @ F", "lines": {"player_reception_yds_alternate": [
-        ("Spotty", "Over", 24.5, +550)]}}], logs) == [],
+    chk(score([{"game": "Tennessee Titans @ New York Jets", "lines": {"player_reception_yds_alternate": [
+        ("Spotty", "Over", 24.5, +550)]}}], logs, defn=SOFT_WR) == [],
         "a player with two games this season is dropped, however good the pool")
 
-    sc = score(ev, logs)
+    # THE ODUNZE CHECK. A line that clears every history window is still
+    # dropped when the defence it faces is one of the stingiest at that
+    # position -- the one thing a hit rate structurally cannot see. Busy Guy is
+    # a BUF rusher, so the fixture game must contain Buffalo or the opponent
+    # cannot be resolved at all (the first version of this test put him in a
+    # Bears-Jets game and "passed" for the wrong reason).
+    ev_def = [{"game": "Buffalo Bills @ New York Jets", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +200)]}}]
+    STINGY = {"RB": {"NYJ": 50.0, "ATL": 150.0, "CAR": 140.0}}
+    SOFT = {"RB": {"NYJ": 150.0, "ATL": 50.0, "CAR": 60.0}}
+    chk(score(ev_def, logs, defn=STINGY) == [],
+        "a prop into the stingiest defence is dropped however good the record")
+    chk(len(score(ev_def, logs, defn=SOFT)) == 1,
+        "and the same prop into the most generous defence survives")
+    chk(score(ev_def, logs, defn={"RB": {"ATL": 150.0}}) == [],
+        "a defence with no data at all is a refusal, not a free pass")
+
+    sc = score(ev, logs, defn=SOFT)
     chk(len(sc) == 1 and sc[0]["point"] == 59.5,
         "only the line whose record beats its price by 10+ points survives")
     chk(sc[0]["hits"] == 13 and sc[0]["n"] == 13 and sc[0]["team"] == "BUF",
