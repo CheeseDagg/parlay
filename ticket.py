@@ -73,8 +73,6 @@ LEGS = [
     {"kind": "mma", "who": "Payton Talbott", "want": -750},
     {"kind": "prop", "who": "Jakobi Meyers",  "stat": "reception_yds",
      "side": "Over", "point": 39.5, "want": -114},
-    {"kind": "prop", "who": "Brock Purdy",    "stat": "rush_yds",
-     "side": "Over", "point": 24.5, "want": 198},
     # Back on the rushing line per Ryan. 59.5 is a rung on the alt ladder, not
     # a main line, so the number is pinned exactly -- there is no "main" to
     # track and a ladder rung can be pulled outright, which must read as a
@@ -344,6 +342,62 @@ def opponent(event, team, abbr):
     return b if a == team else a
 
 
+def spec_key(l):
+    """Identity of a leg as a bet: who, what market, which side, what number."""
+    return (l.get("kind"), l.get("who"), l.get("stat"), l.get("side"),
+            str(l.get("point")))
+
+
+def spec_conflicts(legs, compare):
+    """Problems in the two spec lists, as a list of strings. Empty is clean.
+
+    THE DEFECT THIS EXISTS FOR. Purdy was left in LEGS while also being added
+    to COMPARE. Comparison status was then decided by `spec in COMPARE`, which
+    is dict EQUALITY -- so the LEGS copy matched, Purdy silently dropped off
+    the ticket, and printed twice underneath it. An eight-leg ticket rendered
+    as seven legs and the arithmetic was right by luck.
+
+    Two things went wrong and both are checked here: a leg living in both
+    lists, and a leg duplicated inside either one."""
+    out = []
+    lk, ck_ = [spec_key(l) for l in legs], [spec_key(l) for l in compare]
+    for name, keys in (("LEGS", lk), ("COMPARE", ck_)):
+        dupes = {k for k in keys if keys.count(k) > 1}
+        if dupes:
+            out.append(f"{name} contains the same bet twice: {sorted(dupes)}")
+    both = set(lk) & set(ck_)
+    if both:
+        out.append(f"in BOTH lists, which drops it off the ticket: {sorted(both)}")
+    return out
+
+
+def prop_specs(legs, compare):
+    """The prop specs to price, each paired with whether it is a comparison.
+
+    One line, extracted only so it is reachable from the selftest. Inverting
+    the two booleans here would move every ticket leg into the comparison
+    section and vice versa -- the exact shape of the defect this all came
+    from -- and inside main() nothing could catch it."""
+    return ([(l, False) for l in legs if l["kind"] == "prop"]
+            + [(l, True) for l in compare if l["kind"] == "prop"])
+
+
+def prepare(legs, compare):
+    """(problems, ok) -- validate the two spec lists and stamp their origin.
+
+    It lives out here rather than inside main() for one reason: main() does
+    live network I/O and the selftest cannot run it, so a rule written there is
+    a rule nothing checks. That is precisely how `spec in COMPARE` survived --
+    and how the fix for it silently failed to apply the first time.
+
+    It no longer stamps anything. The pricing loop now carries each spec paired
+    with the list it came from, so there is no classification step left to get
+    wrong; a duplicate across the lists is merely confusing rather than
+    silently destructive, and this still refuses it."""
+    problems = spec_conflicts(legs, compare)
+    return problems, not problems
+
+
 def pick_rate(recent, career, tol=0.15):
     """(rate to use, flagged) given the short-window and career hit rates.
 
@@ -605,6 +659,49 @@ def selftest():
         r3 = f"raised {type(ex).__name__}"
     ck(r3 is None, f"a three-part event must refuse, not raise: {r3}")
 
+    # LEGS AND COMPARE MUST NOT OVERLAP. With the same leg in both, `spec in
+    # COMPARE` matched the LEGS copy by dict equality, so Purdy dropped off the
+    # ticket silently and printed twice underneath it. The eight-leg ticket
+    # rendered as seven and the arithmetic was right by luck.
+    # the real lists must be clean...
+    ck(spec_conflicts(LEGS, COMPARE) == [],
+       f"live spec lists conflict: {spec_conflicts(LEGS, COMPARE)}")
+    # ...and the check must actually catch each way they can conflict
+    A = {"kind": "prop", "who": "Brock Purdy", "stat": "rush_yds",
+         "side": "Over", "point": 24.5, "want": 198}
+    B = dict(A, want=200)          # same BET, different last-seen price
+    ck(any("BOTH" in x for x in spec_conflicts([A], [B])),
+       "the same bet in both lists must be caught whatever the stored price")
+    ck(any("twice" in x for x in spec_conflicts([A, B], [])),
+       "the same bet twice inside LEGS must be caught")
+    ck(any("twice" in x for x in spec_conflicts([], [A, B])),
+       "the same bet twice inside COMPARE must be caught")
+    # prepare(): the pre-flight main() actually runs, tested here because
+    # main() cannot be. Both halves matter -- the refusal AND the stamp.
+    pb, pok = prepare([A], [B])
+    ck(pb and not pok, f"conflicting lists must not be ok: {pb} {pok}")
+    ck(spec_key(A) == spec_key(B), "A and B must be the SAME bet for this test")
+    # A == B as dicts? No -- different `want`. But they are the same BET, which
+    # is what spec_key captures and what a value match would have missed in the
+    # other direction. Both failure modes now sit behind spec_key.
+    ck(A != B, "A and B differ as dicts while naming one bet")
+    # prop_specs: ticket legs are False, comparisons True, and nothing else
+    # gets in. Inverting these two booleans swaps the ticket with its own
+    # comparison section.
+    fight = {"kind": "mma", "who": "Someone", "want": -200}
+    ps = prop_specs([A, fight], [dict(A, point=29.5)])
+    ck([c for _s, c in ps] == [False, True], f"origin flags: {[c for _s,c in ps]}")
+    ck(all(sp["kind"] == "prop" for sp, _c in ps), "fights must not enter props")
+    ck(ps[0][0] is A, "the ticket leg must come first and be the same object")
+
+    pb2, pok2 = prepare([A], [dict(A, point=29.5)])
+    ck(pb2 == [] and pok2, f"clean lists must be ok: {pb2}")
+
+    C = dict(A, point=29.5)
+    ck(spec_conflicts([A], [C]) == [], "different rungs are not a conflict")
+    ck(spec_conflicts([A], [dict(A, side="Under")]) == [],
+       "opposite sides are not a conflict")
+
     # pick_rate: THE BUG THAT SHIPPED. 41.7% over two seasons, 24.5% over a
     # career, against a 33.6% price. The short window was the only reading that
     # made the leg look like value and it came from ten carries.
@@ -669,6 +766,12 @@ def selftest():
 def main():
     if not KEY:
         print("no ODDS_API_KEY"); return 1
+    bad, ok = prepare(LEGS, COMPARE)
+    if not ok:
+        print("the ticket spec is self-contradictory, refusing to price it:")
+        for b in bad:
+            print(f"  {b}")
+        return 1
     out, missing = [], []
 
     mma = _get(f"{BASE}/sports/mma_mixed_martial_arts/odds/?apiKey={KEY}"
@@ -681,10 +784,14 @@ def main():
         lg["want_point"] = None
         out.append(lg)
 
-    props = [l for l in LEGS + COMPARE if l["kind"] == "prop"]
+    # (spec, is_comparison) pairs. The origin travels WITH the spec instead of
+    # being looked up later -- the lookup is what went wrong, and a flag read
+    # from the spec can still be replaced by a value match. Paired at the
+    # source, there is nothing left to misfile.
+    props = prop_specs(LEGS, COMPARE)
     if props:
         evs = _get(f"{BASE}/sports/americanfootball_nfl/events?apiKey={KEY}")
-        want_keys = sorted({k for p in props for k in MARKETS[p["stat"]]})
+        want_keys = sorted({k for p, _c in props for k in MARKETS[p["stat"]]})
         todo = list(props)
         for ev in evs:
             if not todo:
@@ -696,18 +803,18 @@ def main():
             except urllib.error.HTTPError:
                 continue
             still = []
-            for spec in todo:
+            for spec, is_cmp in todo:
                 lg = price_prop(d, spec)
                 if lg is None:
-                    still.append(spec); continue
+                    still.append((spec, is_cmp)); continue
                 if "err" in lg:
                     missing.append((spec["who"], lg["err"])); continue
                 lg["want"] = spec["want"]
                 lg["want_point"] = spec.get("want_point")
-                lg["compare"] = spec in COMPARE
+                lg["compare"] = is_cmp
                 out.append(lg)
             todo = still
-        for spec in todo:
+        for spec, _c in todo:
             missing.append((spec["who"], "no FanDuel line found on the slate"))
 
     tick = [l for l in out if not l.get("compare")]
