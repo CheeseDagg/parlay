@@ -97,7 +97,7 @@ def game_logs(seasons=None, fetch=None):
             vals = {}
             for k in ("passing_yards", "rushing_yards", "receiving_yards",
                       "receptions", "passing_tds", "rushing_tds",
-                      "receiving_tds", "carries"):
+                      "receiving_tds", "carries", "attempts"):
                 try:
                     vals[k] = float(r.get(k) or 0)
                 except (TypeError, ValueError):
@@ -152,6 +152,61 @@ def pos_for(label, player_pos):
     if label == "anytime TD":
         return "RB" if player_pos == "RB" else "WR"
     return POS_FOR.get(label)
+
+
+INJ = ("https://github.com/nflverse/nflverse-data/releases/download/"
+       "injuries/injuries_{yr}.csv")
+BAD_STATUS = ("Out", "Doubtful")
+BAD_PRACTICE = ("Did Not Participate In Practice",)
+
+
+def injuries(season=CURRENT_SEASON, fetch=None):
+    """{(team, name): status} for the latest week on the report.
+
+    THE GAP THAT MADE EVERY PROP ABOVE SUSPECT. I kept noting that I had no
+    injury data and then recommending props anyway -- and recommended Bucky
+    Irving in a week where Baker Mayfield did not practice at all with a thumb
+    injury, and Irving himself was limited with a glute. A running back's
+    receiving prop without his quarterback is a different bet; a receiver with
+    a thumb injury is a different bet. nflverse publishes this and I never
+    looked.
+
+    'Did not participate' on the Friday report is the signal that matters most
+    here, not just the Out/Doubtful tag, because the official game status is
+    often still blank two days out.
+    """
+    try:
+        txt = fetch(INJ.format(yr=season)) if fetch else _raw(INJ.format(yr=season))
+    except Exception:
+        return None                       # unavailable -> refuse, never assume fit
+    import csv as _csv
+    rows = [r for r in _csv.DictReader(io.StringIO(txt))
+            if (r.get("week") or "").isdigit()]
+    if not rows:
+        return None
+    wk = max(int(r["week"]) for r in rows)
+    out = {}
+    for r in rows:
+        if int(r["week"]) != wk:
+            continue
+        st, pr = (r.get("report_status") or ""), (r.get("practice_status") or "")
+        flag = st if st in BAD_STATUS else (pr if pr in BAD_PRACTICE else "")
+        if flag:
+            out[(r.get("team"), r.get("full_name"))] = (
+                flag, r.get("report_primary_injury")
+                or r.get("practice_primary_injury") or "", r.get("position"))
+    return out
+
+
+def qb_of(logs, team, season=CURRENT_SEASON):
+    """The team's most-used quarterback this season."""
+    best, most = None, -1
+    for name, rows in logs.items():
+        n = sum(v.get("attempts", 0.0) for sn, _w, v in rows
+                if sn == season and v.get("_team") == team and v.get("_pos") == "QB")
+        if n > most:
+            best, most = name, n
+    return best if most > 0 else None
 
 
 def defense_at(logs, opp, pos, col_sum, thresh, side):
@@ -260,9 +315,11 @@ def hit_rate(logs, player, cols, point, side, current=CURRENT_SEASON):
     return hits, n, team, ch, cn
 
 
-def score(events, logs, min_gap=0.10):
+def score(events, logs, min_gap=0.10, inj=None):
     """Lines where the record disagrees with the price by at least min_gap."""
     out = []
+    if inj is None:
+        inj = injuries() or {}
     for ev in events:
         for mk, (cols, label) in MARKETS.items():
             for name, side, point, price in ev.get("lines", {}).get(mk, []):
@@ -308,6 +365,14 @@ def score(events, logs, min_gap=0.10):
                 # the list. A line only earns the matchup read when the defence
                 # has actually stopped it sometimes.
                 if drate >= 0.95:
+                    continue
+                # THE PLAYER, AND THE MAN THROWING HIM THE BALL. A resting-day
+                # DNP is a flag too: it still means he was not on the field,
+                # and the reason is the team's word rather than a diagnosis.
+                hurt = inj.get((team, name))
+                qb = qb_of(logs, team)
+                qhurt = inj.get((team, qb)) if qb else None
+                if hurt or (qhurt and label not in ("rush yds", "rush att")):
                     continue
                 # And a price this short is not a bet, it is a toll. Ryan has
                 # said so every time the list drifted this way.
@@ -557,6 +622,34 @@ def selftest():
         "and it carries the count and the club, so the sample is visible")
     chk(score(ev, logs, min_gap=0.99) == [],
         "raising the bar past any real gap yields nothing")
+
+    # THE INJURY GATE. Bucky Irving was recommended in a week where Baker
+    # Mayfield did not practice at all and Irving himself was limited. A
+    # receiving prop without the quarterback is a different bet, and the data
+    # to know that was published the whole time.
+    inj_logs = dict(base)
+    inj_logs["QB1"] = [(2026, w, {"attempts": 30.0, "_team": "BUF",
+                                  "_opp": "X", "_pos": "QB"}) for w in (1, 2, 3)]
+    ev_i = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, +120)]}}]
+    chk(len(score(ev_i, inj_logs, inj={})) == 1, "a clean player is reported")
+    chk(score(ev_i, inj_logs,
+              inj={("BUF", "Busy Guy"): ("Out", "Knee", "RB")}) == [],
+        "a player who is Out is dropped")
+    chk(score(ev_i, inj_logs,
+              inj={("BUF", "Busy Guy"): ("Did Not Participate In Practice",
+                                         "Glute", "RB")}) == [],
+        "and so is one who did not practice, even without a game status")
+    ev_rec = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
+        "player_reception_yds_alternate": [("Busy Guy", "Over", 5.5, +120)]}}]
+    chk(score(ev_rec, inj_logs,
+              inj={("BUF", "QB1"): ("Did Not Participate In Practice",
+                                    "Thumb", "QB")}) == [],
+        "a RECEIVING prop dies with the quarterback -- the Bucky Irving case")
+    chk(len(score(ev_i, inj_logs,
+                  inj={("BUF", "QB1"): ("Did Not Participate In Practice",
+                                        "Thumb", "QB")})) == 1,
+        "but a RUSHING prop survives him, because the handoff does not need him")
     # A defence that allowed it in all ten is not evidence -- it is a bar so
     # low the question does not discriminate, which is what buried the list
     # under -300 to -850 locks.
