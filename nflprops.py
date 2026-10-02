@@ -640,8 +640,18 @@ def selftest():
               inj={("BUF", "Busy Guy"): ("Did Not Participate In Practice",
                                          "Glute", "RB")}) == [],
         "and so is one who did not practice, even without a game status")
+    # The receiving fixture needs CAR to have a WR defensive record, or the
+    # line is dropped for a missing matchup and the QB check never runs --
+    # which is why the "ignore the quarterback" mutation slipped through.
+    inj_logs.update({f"CAR-rec-foe{i}": [(2026, i + 1, {"receiving_yards": v,
+                     "_team": "OTH", "_opp": "CAR", "_pos": "WR"})]
+                     for i, v in enumerate([40, 50, 35, 60, 45, 38, 55, 42, 5, 48])})
+    inj_logs["Busy Guy"] = [(sn, w, dict(v, receiving_yards=40.0))
+                            for sn, w, v in logs["Busy Guy"]]
     ev_rec = [{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
         "player_reception_yds_alternate": [("Busy Guy", "Over", 5.5, +120)]}}]
+    chk(len(score(ev_rec, inj_logs, inj={})) == 1,
+        "the receiving fixture itself is live when nobody is hurt")
     chk(score(ev_rec, inj_logs,
               inj={("BUF", "QB1"): ("Did Not Participate In Practice",
                                     "Thumb", "QB")}) == [],
@@ -698,6 +708,28 @@ def selftest():
     except TypeError:
         crashed = True
     chk(not crashed, "four games at one kickoff time sort without comparing dicts")
+
+    # injuries() ITSELF -- the parsing and the failure mode. Injecting a dict
+    # skips both, which is how three mutations in this area passed.
+    CSV_INJ = ("season,season_type,team,week,position,full_name,report_status,"
+               "practice_status,report_primary_injury,practice_primary_injury\n"
+               "2026,REG,TB,4,QB,Baker Mayfield,,Did Not Participate In Practice,,Thumb\n"
+               "2026,REG,LA,4,RB,Kyren Williams,,Full Participation in Practice,,\n"
+               "2026,REG,NE,3,RB,Old Week,Out,,Knee,\n")
+    got = injuries(2026, fetch=lambda u: CSV_INJ)
+    chk(got is not None and ("TB", "Baker Mayfield") in got,
+        "a did-not-practice quarterback is flagged even with a blank game status")
+    chk(("LA", "Kyren Williams") not in got,
+        "a full participant is not flagged")
+    chk(("NE", "Old Week") not in got,
+        "and only the LATEST week counts -- last week's report is not this week's")
+    def boom(u):
+        raise OSError("feed down")
+    chk(injuries(2026, fetch=boom) is None,
+        "a feed that cannot be read returns None, so the caller refuses rather "
+        "than calling everyone fit")
+    chk(injuries(2026, fetch=lambda u: "season,week\n") is None,
+        "and an empty report is a refusal too")
 
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
