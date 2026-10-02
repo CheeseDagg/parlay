@@ -486,7 +486,18 @@ def score(events, logs, min_gap=None, inj=None, snaps=None):
                 # support put a wall of -300 to -850 near-locks at the top of
                 # the list. A line only earns the matchup read when the defence
                 # has actually stopped it sometimes.
-                if drate >= 0.95:
+                # THIS RULE WAS KILLING THE WORKHORSES. It exists because a low
+                # bar -- over 0.5 receptions -- is cleared by somebody every
+                # week and comes back 100%, which is a dead test. But a defence
+                # that lets its best back past 50 rushing yards in 20 of 20 is
+                # not a dead test, it is the finding, and James Cook, Jahmyr
+                # Gibbs and Derrick Henry were all dropped by it.
+                #
+                # The near-locks it was added to stop were priced -300 to -850,
+                # and the price ceiling already catches every one of them. So
+                # it only bites when the market ALSO thinks the line is free:
+                # a 100% defence rate next to plus money is an edge, not noise.
+                if drate >= 0.95 and imp >= 0.60:
                     continue
                 # THE PLAYER, AND THE MAN THROWING HIM THE BALL. A resting-day
                 # DNP is a flag too: it still means he was not on the field,
@@ -940,8 +951,12 @@ def selftest():
     base2 = dict(base)
     base2.update(opp_games("DEN", "RB", "rushing_yards", [80]*10))
     chk(score([{"game": "Buffalo Bills @ Denver Broncos", "lines": {
-        "player_rush_yds_alternate": [("Busy Guy", "Over", 5.5, +120)]}}], base2, snaps={}) == [],
-        "a defence that allows it 10 of 10 gives no read, and the line is dropped")
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 5.5, -250)]}}], base2, snaps={}) == [],
+        "a 100% defence rate next to a SHORT price is a dead test, and dropped")
+    chk(len(score([{"game": "Buffalo Bills @ Denver Broncos", "lines": {
+        "player_rush_yds_alternate": [("Busy Guy", "Over", 5.5, +150)]}}], base2, snaps={})) == 1,
+        "but a 100% defence rate next to PLUS money is an edge -- this rule was "
+        "dropping James Cook, Gibbs and Henry")
     chk(score([{"game": "Buffalo Bills @ Carolina Panthers", "lines": {
         "player_rush_yds_alternate": [("Busy Guy", "Over", 59.5, -400)]}}], base, snaps={}) == [],
         "and a price shorter than -233 is a toll, not a bet")
