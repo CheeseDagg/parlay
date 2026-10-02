@@ -100,17 +100,54 @@ def surname(name):
     return str(name).strip().split()[-1].lower() if str(name).strip() else ""
 
 
-def find_name(cands, who):
-    """Match `who` against candidate strings. Exact-ish first, surname second.
-    Returns (match, 'exact'|'surname') or (None, reason)."""
+def first(name):
+    """First token, lowercased, trailing period stripped."""
+    t = str(name).strip().split()
+    return t[0].rstrip(".").lower() if t and t[0] else ""
+
+
+def first_ok(a, b):
+    """Are these two first names the same name, one of them possibly
+    abbreviated? True for ('J', 'Jacobe') -- which is the whole reason the
+    surname fallback exists -- and False for ('Kyren', 'Javonte') or
+    ('Jon', 'Jacobe'). Prefix-compatibility, not initial-equality: matching on
+    the initial alone still lets Jon Smith become Jacobe Smith."""
+    fa, fb = first(a), first(b)
+    if not fa or not fb:
+        return False
+    return fa.startswith(fb) or fb.startswith(fa)
+
+
+def find_name(cands, who, allow_surname=True):
+    """Match `who` against candidate strings. Exact first; then surname, but
+    ONLY when the first initial agrees too.
+
+    THE INITIAL IS NOT A NICETY. A bare surname fallback put Javonte Williams
+    on this ticket in place of Kyren Williams: the event list is ordered by
+    kickoff, the Cowboys game came first, "Williams" matched inside it, and the
+    leg filled with a Dallas running back's price while the Rams game was never
+    even read. Nothing flagged it, because within that one event there was no
+    second Williams to look ambiguous against.
+
+    So surname alone is never enough. 'J. Smith' still resolves to 'Jacobe
+    Smith' -- the abbreviation the fallback exists for -- while 'Kyren
+    Williams' can no longer reach 'Javonte Williams', and nor can 'Jon Smith'
+    reach 'Jacobe Smith': matching on the shared initial alone would allow
+    that second one straight through.
+
+    allow_surname=False turns the fallback off entirely, which is what the prop
+    path uses: the Odds API writes player props with full names, so there is
+    nothing to recover and an unreadable leg should fail loudly instead."""
     low = who.lower()
     hits = [c for c in cands if low in str(c).lower()]
     if len(hits) == 1:
         return hits[0], "exact"
     if len(hits) > 1:
         return None, f"ambiguous: {sorted(set(map(str, hits)))}"
+    if not allow_surname:
+        return None, "not on the board under that exact name"
     sn = surname(who)
-    hits = [c for c in cands if surname(c) == sn]
+    hits = [c for c in cands if surname(c) == sn and first_ok(c, who)]
     if len(hits) == 1:
         return hits[0], "surname"
     if len(hits) > 1:
@@ -189,7 +226,7 @@ def price_prop(ev_payload, spec):
     # point, so the raw list is full of legitimate repeats and every match
     # would read as ambiguous.
     descs = sorted({str(o.get("description")) for o in rows if o.get("description")})
-    hit, how = find_name(descs, spec["who"])
+    hit, how = find_name(descs, spec["who"], allow_surname=False)
     if hit is None:
         return {"err": how} if how.startswith("ambiguous") else None
     if spec["point"] == "main":
@@ -269,8 +306,23 @@ def selftest():
     # name matching
     ck(find_name(["Jacobe Smith", "Kevin Jones"], "Jacobe Smith")[0] == "Jacobe Smith", "exact")
     ck(find_name(["J. Smith", "Kevin Jones"], "Jacobe Smith")[1] == "surname", "surname fallback")
-    ck(find_name(["Jacobe Smith", "Ian Smith"], "Jon Smith")[0] is None, "two surnames must refuse")
-    ck("ambiguous" in find_name(["Jacobe Smith", "Ian Smith"], "Jon Smith")[1], "refusal names both")
+    ck(find_name(["Jacobe Smith", "Ian Smith"], "Jon Smith")[0] is None,
+       "a different first name must not ride the surname in")
+    # THE JAVONTE CASE. A bare surname fallback filled this ticket's rush+rec
+    # leg with Javonte Williams' price because the Cowboys game kicks off
+    # first and "Williams" matched inside it. Nothing looked ambiguous -- there
+    # was only one Williams in that event.
+    ck(find_name(["Javonte Williams", "Jake Ferguson"], "Kyren Williams")[0] is None,
+       "Kyren must not resolve to Javonte")
+    ck(find_name(["J. Smith", "Kevin Jones"], "Jacobe Smith")[0] == "J. Smith",
+       "an abbreviated first name must still resolve")
+    # genuinely ambiguous: two candidates both compatible with an abbreviation
+    amb = find_name(["Jacobe Smith", "Jon Smith"], "J Smith")
+    ck(amb[0] is None and "ambiguous" in amb[1], f"two compatible Smiths {amb}")
+    ck("Jacobe Smith" in amb[1] and "Jon Smith" in amb[1], "refusal names both")
+    # the prop path takes exact names only
+    ck(find_name(["J. Smith"], "Jacobe Smith", allow_surname=False)[0] is None,
+       "prop path must not fall back to surname")
     ck(find_name(["Kevin Jones"], "Jacobe Smith")[1] == "not on the board", "absent")
 
     # mma: two-way de-vig, and the favourite must come back BELOW its raw implied
@@ -300,6 +352,17 @@ def selftest():
     ck(price_prop(dk, {"who": "Kyren Williams", "stat": "rush_yds",
                        "side": "Over", "point": 59.5}) is None,
        "prop path must ignore non-FanDuel books")
+
+    # The prop path takes the full name or nothing. An abbreviated description
+    # must fail loudly rather than be recovered by surname -- that recovery is
+    # what crossed Kyren with Javonte.
+    abbr = {"away_team": "a", "home_team": "b", "bookmakers": [{"key": "fanduel",
+            "markets": [{"key": "player_rush_yds", "outcomes": [
+                {"description": "K. Williams", "name": "Over",
+                 "point": 59.5, "price": 104}]}]}]}
+    ck(price_prop(abbr, {"who": "Kyren Williams", "stat": "rush_yds",
+                         "side": "Over", "point": 59.5}) is None,
+       "prop path must not surname-match an abbreviated description")
     ck(price_mma(board, "Payton Talbott").get("err") == "not on the board", "absent fighter")
     # one-sided h2h cannot be de-vigged
     solo = [{"away_team": "x", "home_team": "y", "bookmakers": [{"key": "fanduel",
@@ -452,7 +515,15 @@ def main():
             print(f"\n{'history at the posted line':52s} {'all':>9s} {'2026':>8s}")
             print("-" * 71)
             for lg in props:
-                cols = nflprops.MARKETS[f"player_{lg['stat']}"][0]
+                # nflverse column lookup. Some stats are only present in the
+                # MARKETS table under the _alternate key (rush+rec is), so both
+                # spellings are tried rather than assuming one exists.
+                mk = nflprops.MARKETS.get(f"player_{lg['stat']}") or \
+                     nflprops.MARKETS.get(f"player_{lg['stat']}_alternate")
+                if not mk:
+                    print(f"{lg['lab'][:52]:52s} {'no stat mapping':>18s}")
+                    continue
+                cols = mk[0]
                 r = nflprops.hit_rate(logs, lg["who"], cols, lg["point"], lg["side"])
                 tag = "  (comparison)" if lg.get("compare") else ""
                 if not r:
