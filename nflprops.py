@@ -35,6 +35,14 @@ BOOK = "fanduel"
 HORIZON_H = 120
 MIN_GAMES = 8          # below this a hit rate is noise, not a rate
 CURRENT_SEASON = 2026  # absent from it = injured, cut, or moved; not evidence
+MIN_CURRENT = 3        # games THIS season before the recent window means anything.
+                       # At two, "1 of 2 = 50%" clears almost any implied price,
+                       # which is how Calvin Ridley survived the first two-window
+                       # filter: nine games across two seasons, two of them this
+                       # year, zero yards in the most recent one. Four weeks in,
+                       # three games is also a decent proxy for "he plays every
+                       # week", which is most of what the book is pricing on a
+                       # low bar.
 SEASONS = [2026, 2025]
 
 # market key -> (nflverse stat columns to sum, human label)
@@ -179,7 +187,7 @@ def score(events, logs, min_gap=0.10):
                 # costs some real edges in exchange for dropping every stale
                 # one, which is the right side to err on.
                 crate = (ch / cn) if cn else 0.0
-                if rate - imp >= min_gap and (cn >= 2 and crate >= imp):
+                if rate - imp >= min_gap and (cn >= MIN_CURRENT and crate >= imp):
                     out.append({"game": ev.get("game"), "player": name,
                                 "market": label, "side": side, "point": point,
                                 "price": price, "hits": hits, "n": n, "team": team,
@@ -335,6 +343,15 @@ def selftest():
     chk(score(ev_faded, logs) == [],
         "a gap that exists only in the pooled history is dropped -- that is a "
         "gap about a role he no longer has")
+
+    # A two-game current window is not a window. "1 of 2 = 50%" clears nearly
+    # any implied price, which is exactly how Ridley survived the first version.
+    logs["Spotty"] = gl([(2025, w, "TEN", {"receiving_yards": 60}) for w in range(1, 10)]
+                        + [(2026, 2, "TEN", {"receiving_yards": 60}),
+                           (2026, 3, "TEN", {"receiving_yards": 0})])
+    chk(score([{"game": "E @ F", "lines": {"player_reception_yds_alternate": [
+        ("Spotty", "Over", 24.5, +550)]}}], logs) == [],
+        "a player with two games this season is dropped, however good the pool")
 
     sc = score(ev, logs)
     chk(len(sc) == 1 and sc[0]["point"] == 59.5,
