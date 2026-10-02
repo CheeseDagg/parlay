@@ -1,0 +1,16 @@
+read 2026-10-02T20:39Z  FanDuel live
+
+leg                                                    price     was       p  basis
+-----------------------------------------------------------------------------------
+Jacobe Smith ML                                         -950    -950   89.1% devig
+Anthony Wint ML                                         -550    -550   83.0% devig
+Marcus McGhee ML                                        -590    -520   83.9% devig  MOVED
+Ateba Gautier ML                                        -245    -245   69.0% devig
+Payton Talbott ML                                       -750    -750   86.7% devig
+Jakobi Meyers Over 39.5 reception yds                   -114    -114   50.0% devig
+Brock Purdy Over 24.5 rush yds                          +198    +198   33.6% vig
+
+COULD NOT READ -- ticket is incomplete, do not bet this quote:
+  Kyren Williams: 74.5 not posted; board has [77.5]
+
+no parlay price printed
