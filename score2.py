@@ -50,6 +50,23 @@ MK = {
 # needing to know who the other back was.
 DRIFT_MAX = 0.103     # the shifting tercile starts here
 
+# RECENT GAMES COUNT FOR MORE. A flat average weighted a 2025 game the same as
+# last Sunday's, which is how Tyler Shough projected at 253.9 passing yards while
+# throwing 56, 34 and 42 times in 2026 against a 35-per-game career rate, and how
+# Chris Olave projected at 91.5 receiving yards off 182, 86 and 107. Both made an
+# under look good by averaging away the role each player has now.
+#
+# Tested as an exponential decay over the prior games, five seasons, by Brier:
+#
+#   half-life       flat      8      5      3      2
+#   receptions 3.5  .1373  .1367  .1366  .1370  .1380
+#   rush yds  87.5  .0819  .0813  .0809  .0808  .0808
+#   pass yds 249.5  .2266  .2266  .2267  .2259  .2266
+#
+# Five games is best or near-best everywhere, and the gain is real but small --
+# third decimal. It is in because it is free, not because it is large.
+HALF_LIFE = 5.0
+
 
 def _f(v):
     try:
@@ -140,9 +157,13 @@ def project(rows, who, stat, qb_games=None):
            and (qb_games is None or (y, int(r.get("week") or 0)) in qb_games)]
     if len(sel) < 4:
         return None
-    vol = sum(_f(r.get(volcol)) for _y, r in sel) / len(sel)
-    rate = (sum(_f(r.get(stat)) for _y, r in sel)
-            / max(1e-9, sum(_f(r.get(volcol)) for _y, r in sel)))
+    sel.sort(key=lambda t: (t[0], int(t[1].get("week") or 0)))
+    w = [0.5 ** ((len(sel) - 1 - j) / HALF_LIFE) for j in range(len(sel))]
+    sw = sum(w)
+    vol = sum(_f(r.get(volcol)) * wt for (_y, r), wt in zip(sel, w)) / sw
+    tv = sum(_f(r.get(volcol)) * wt for (_y, r), wt in zip(sel, w))
+    ts = sum(_f(r.get(stat)) * wt for (_y, r), wt in zip(sel, w))
+    rate = ts / max(1e-9, tv)
     pos = (sel[-1][1].get("position") or "").upper()
     return vol * rate, vol, len(sel), tm, pos
 
@@ -205,6 +226,25 @@ def selftest():
     ck(a is not None and b is None, f"a 1-game QB split must refuse: {b}")
     b2 = project(fake, "X", "receptions", qb_games={(2026, w) for w in (1, 2, 3, 4)})
     ck(b2 is not None and b2[1] != a[1], f"QB filter must change volume: {b2} vs {a}")
+    # recency: a player whose last game spiked must project ABOVE his flat mean
+    rising = [(2026, {"player_display_name": "R", "position": "WR", "team": "ATL",
+                      "week": str(w), "targets": str(2 + 2 * w),
+                      "receptions": str(1 + w), "season_type": "REG",
+                      "opponent_team": "NO"})
+              for w in (1, 2, 3, 4, 5, 6)]
+    pr = project(rising, "R", "receptions")
+    flat = sum(1 + w for w in (1, 2, 3, 4, 5, 6)) / 6
+    ck(pr is not None and pr[0] > flat,
+       f"a rising role must project above the flat mean: {pr[0]:.2f} vs {flat:.2f}")
+    falling = [(2026, {"player_display_name": "F", "position": "WR", "team": "ATL",
+                       "week": str(w), "targets": str(14 - 2 * w),
+                       "receptions": str(7 - w), "season_type": "REG",
+                       "opponent_team": "NO"})
+               for w in (1, 2, 3, 4, 5, 6)]
+    pf = project(falling, "F", "receptions")
+    flat2 = sum(7 - w for w in (1, 2, 3, 4, 5, 6)) / 6
+    ck(pf is not None and pf[0] < flat2,
+       f"a falling role must project below the flat mean: {pf[0]:.2f} vs {flat2:.2f}")
     print("score2 selftest:", "ok" if f == 0 else f"{f} FAILURES")
     return 1 if f else 0
 
