@@ -1,0 +1,44 @@
+Atlanta Falcons @ New Orleans Saints   2026-10-06T00:15:00Z
+
+  spreads  Atlanta Falcons               +1.5 -110
+  spreads  New Orleans Saints            -1.5 -110
+  totals   Over                         +47.5 -110
+  totals   Under                        +47.5 -110
+
+  player_rush_yds:
+      Bijan Robinson     Over      87.5  -113
+      Bijan Robinson     Under     87.5  -113
+      Brian Robinson Jr. Over      28.5  -113
+      Brian Robinson Jr. Under     28.5  -113
+  player_rush_yds_alternate:
+      Bijan Robinson     Over      49.5  -1000
+      Bijan Robinson     Over      59.5  -470
+      Bijan Robinson     Over      69.5  -270
+      Bijan Robinson     Over      79.5  -166
+      Bijan Robinson     Over      89.5  -106
+      Bijan Robinson     Over      99.5  +142
+      Bijan Robinson     Over     109.5  +205
+      Bijan Robinson     Over     124.5  +350
+      Bijan Robinson     Over     149.5  +750
+      Bijan Robinson     Over     174.5  +1400
+      Brian Robinson Jr. Over       9.5  -1100
+      Brian Robinson Jr. Over      14.5  -450
+      Brian Robinson Jr. Over      19.5  -260
+      Brian Robinson Jr. Over      24.5  -160
+      Brian Robinson Jr. Over      29.5  -106
+      Brian Robinson Jr. Over      39.5  +188
+      Brian Robinson Jr. Over      49.5  +320
+      Brian Robinson Jr. Over      59.5  +550
+      Brian Robinson Jr. Over      69.5  +850
+      Brian Robinson Jr. Over      79.5  +1200
+      Brian Robinson Jr. Over      89.5  +1500
+  player_rush_attempts: no Robinson outcome
+  player_rush_reception_yds:
+      Bijan Robinson     Over     131.5  -113
+      Bijan Robinson     Under    131.5  -113
+  player_receptions:
+      Bijan Robinson     Over       4.5  +102
+      Bijan Robinson     Under      4.5  -136
+  player_anytime_td:
+      Bijan Robinson     Yes        0.0  -210
+      Brian Robinson Jr. Yes        0.0  +370
