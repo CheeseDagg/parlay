@@ -54,6 +54,46 @@ MK = {
 # needing to know who the other back was.
 DRIFT_MAX = 0.103     # the shifting tercile starts here
 
+# DID THE PEOPLE AROUND HIM CHANGE? Ryan asked whether Kamara's unders were
+# hitting because a different running back had been playing, and the drift gate
+# missed it: a back's share of his TEAM's targets is tiny and noisy, so his went
+# 4.0 -> 12.5 -> 11.5 -> 4.7 -> 18.8 -> 2.5% and the recent-vs-earlier means
+# cancelled to 0.007, comfortably inside the gate.
+#
+# Measured directly instead: 1 - Jaccard overlap between the top three OTHERS
+# taking his position group's volume in his last three games and in the earlier
+# ones. Brier by tercile, five seasons:
+#
+#   receptions 3.5   stable .1247   CHANGED .1585   (+27%)
+#   rushing   87.5   stable .0767   CHANGED .0975   (+27%)
+#
+# It is a weaker signal than drift on its own but it is independent, and the two
+# together beat either alone:
+#
+#   receptions 3.5  ungated .1366  drift .1334  cast .1315  BOTH .1289
+#   rushing   87.5  ungated .0809  drift .0745  cast .0769  BOTH .0689
+#
+# Kamara scores 0.67 on receptions and 0.75 on rushing: his earlier cast is
+# Devin Neal alone, his recent one is Neal plus Kendre Miller plus Travis
+# Etienne. Both refused.
+CAST_MAX = 0.50
+CAST_TOP = 3
+
+# ...BUT ONLY FOR A ROTATIONAL PLAYER. Who else is in the room matters when the
+# player is one of several and not at all when he is the focal point. Brier for
+# a changed cast against a stable one, by his share of the team's volume:
+#
+#   share of team targets   receptions 3.5   receptions 4.5
+#     under 8%                   +17%             +8%
+#     8-15%                      +16%            +33%
+#     15-22%                      -3%             -2%
+#     over 22%                    +3%             +1%
+#
+# The first version gated everyone and removed Drake London, who takes 31% of
+# Atlanta's targets and is the most clearly-defined role on the board. Kamara
+# takes about 9% and is exactly who the gate is for.
+CAST_SHARE_MAX = 0.15
+
 # RECENT GAMES COUNT FOR MORE. A flat average weighted a 2025 game the same as
 # last Sunday's, which is how Tyler Shough projected at 253.9 passing yards while
 # throwing 56, 34 and 42 times in 2026 against a 35-per-game career rate, and how
@@ -70,6 +110,77 @@ DRIFT_MAX = 0.103     # the shifting tercile starts here
 # Five games is best or near-best everywhere, and the gain is real but small --
 # third decimal. It is in because it is free, not because it is large.
 HALF_LIFE = 5.0
+
+# THE MODEL HAS NO SKILL ON A MAIN LINE, and this is the measurement that says
+# so. Skill = how much of a base-rate guess's error the projection bucket
+# removes, by how far the bar sits from the projection:
+#
+#   distance from projection   receptions 3.5   receptions 4.5   rec yds 84.5
+#   within 10%                     +0.8%            -0.1%          -0.3%
+#   10-30%                         +5.9%            +7.5%          +2.9%
+#   30-60%                        +26.9%           +21.4%          +0.4%
+#   >60% away                      +6.6%            +4.4%          +4.8%
+#
+# Zero inside 10%. A book sets the main line AT the projection on purpose, so
+# that is exactly where it posts -110 both ways and exactly where the model
+# knows nothing. Every main-line edge I quoted tonight -- Shough under 257.5 at
+# 5% away, Olave under 84.5, Bijan under 87.5 -- came out of that dead zone and
+# was noise dressed as a number.
+#
+# The real skill is on RECEPTIONS alt rungs 30-60% off the projection. Receiving
+# yards and rushing yards never clear +5% anywhere, so their edges are reported
+# with the skill figure attached rather than silently.
+SKILL = {
+    ("receptions", 0.30, 0.60): 0.25,
+    ("receptions", 0.10, 0.30): 0.07,
+    ("receptions", 0.60, 9.99): 0.05,
+    ("receiving_yards", 0.60, 9.99): 0.05,
+    ("rushing_yards", 0.60, 9.99): 0.05,
+}
+MIN_SKILL = 0.05      # below this the edge is not reported as an edge
+
+
+def gate(stat, proj, bar, starter, qb_games_n, dr, cc, share=None):
+    """(ok, reason). The whole admission chain in one testable place.
+
+    It lives out here because the last three times I put a rule inside main() --
+    `spec in COMPARE`, the history-unavailable line, and these gates -- the
+    selftest could not reach it and the rule shipped broken. main() reads files;
+    a rule that only runs there is a rule nothing checks."""
+    if starter is None:
+        return False, "no identified starter"
+    if qb_games_n is None or qb_games_n < 4:
+        return False, f"under 4 games with {starter}"
+    if dr is None:
+        return False, "role drift unmeasurable"
+    if dr > DRIFT_MAX:
+        return False, f"role shifting (share moved {dr:.3f})"
+    # The cast check applies only to a rotational player; above CAST_SHARE_MAX
+    # he is the focal point and the turnover around him does not predict error.
+    if share is None or share < CAST_SHARE_MAX:
+        if cc is None:
+            return False, "cast change unmeasurable"
+        if cc > CAST_MAX:
+            return False, (f"rotational player ({share*100:.0f}% share) and the "
+                           f"players around him changed (turnover {cc:.2f})"
+                           if share is not None else
+                           f"the players around him changed (turnover {cc:.2f})")
+    sk = skill_of(stat, proj, bar)
+    if sk < MIN_SKILL:
+        d = abs(proj - bar) / proj * 100 if proj else 0.0
+        return False, f"no measured skill at {d:.0f}% from the projection"
+    return True, sk
+
+
+def skill_of(stat, proj, bar):
+    """The measured skill for a line this far from its projection, or 0.0."""
+    if proj <= 0:
+        return 0.0
+    d = abs(proj - bar) / proj
+    for (st, lo, hi), v in SKILL.items():
+        if st == stat and lo <= d < hi:
+            return v
+    return 0.0
 
 
 def _f(v):
@@ -157,6 +268,67 @@ def team_volume(rows):
     return tt
 
 
+def position_cast(rows):
+    """(season, week, team, position, volume column) -> [(volume, player), ...]."""
+    c = defaultdict(list)
+    for y, r in rows:
+        tm = r.get("team") or r.get("recent_team")
+        w = int(r.get("week") or 0)
+        pos = r.get("position") or ""
+        for col in ("targets", "carries"):
+            v = _f(r.get(col))
+            if v > 0:
+                c[(y, w, tm, pos, col)].append((v, r.get("player_display_name")))
+    return c
+
+
+def cast_change(rows, who, stat, cst, qb_games=None):
+    """How much the position group's personnel around him has turned over."""
+    volcol, _ = STATS[stat]
+    hist = [(y, r) for y, r in rows if r.get("player_display_name") == who]
+    if not hist:
+        return None
+    tm = hist[-1][1].get("team") or hist[-1][1].get("recent_team")
+    sel = [(y, int(r.get("week") or 0), r.get("position") or "") for y, r in hist
+           if (r.get("team") or r.get("recent_team")) == tm
+           and (qb_games is None or (y, int(r.get("week") or 0)) in qb_games)]
+    if len(sel) < 4:
+        return None
+    sel.sort()
+
+    def others(games):
+        s = set()
+        for y, w, pos in games:
+            top = sorted(cst.get((y, w, tm, pos, volcol), []), reverse=True)
+            s |= {nm for _v, nm in top[:CAST_TOP]} - {who}
+        return s
+
+    a, b = others(sel[-3:]), others(sel[:-3] or sel)
+    if not (a | b):
+        return 0.0
+    return 1.0 - len(a & b) / len(a | b)
+
+
+def share_of(rows, who, stat, tt, qb_games=None):
+    """His average share of the team's volume over the games used."""
+    volcol, _ = STATS[stat]
+    hist = [(y, r) for y, r in rows if r.get("player_display_name") == who]
+    if not hist:
+        return None
+    tm = hist[-1][1].get("team") or hist[-1][1].get("recent_team")
+    sel = [(y, int(r.get("week") or 0), r) for y, r in hist
+           if (r.get("team") or r.get("recent_team")) == tm
+           and (qb_games is None or (y, int(r.get("week") or 0)) in qb_games)]
+    if not sel:
+        return None
+    vals = []
+    for y, w, r in sel:
+        den = tt.get((y, w, tm, volcol), 0.0)
+        if den > 0:
+            vals.append(_f(r.get(volcol)) / den)
+    return sum(vals) / len(vals) if vals else None
+
+
 def drift(rows, who, stat, tt, qb_games=None):
     """How much his share of the team's volume has moved. None if unmeasurable."""
     volcol, _ = STATS[stat]
@@ -236,6 +408,79 @@ def selftest():
             print(f"  FAIL {m}"); f += 1
 
     ck(abs(imp(-110) - 0.5238) < 1e-3, "imp")
+    # the skill gate: a main line must score zero, an alt rung in the measured
+    # band must score the band's value
+    ck(skill_of("receptions", 7.2, 7.0) == 0.0,
+       f"a bar at the projection has no skill: {skill_of('receptions',7.2,7.0)}")
+    ck(skill_of("receptions", 7.2, 4.5) == 0.25,
+       f"38% away is the 30-60% band: {skill_of('receptions',7.2,4.5)}")
+    # 6.5 is only 9.7% from 7.2, which is the DEAD ZONE, not the 10-30% band --
+    # worth pinning, because that is the rung a book posts as the main line.
+    ck(skill_of("receptions", 7.2, 6.5) == 0.0,
+       f"9.7% away is still the dead zone: {skill_of('receptions',7.2,6.5)}")
+    ck(skill_of("receptions", 7.2, 6.0) == 0.07,
+       f"17% away is the 10-30% band: {skill_of('receptions',7.2,6.0)}")
+    ck(skill_of("receiving_yards", 114.6, 84.5) == 0.0,
+       "receiving yards at 26% away has no measured skill")
+    ck(skill_of("receiving_yards", 114.6, 39.5) == 0.05, "66% away does")
+    ck(skill_of("receptions", 0.0, 4.5) == 0.0, "a zero projection is no skill")
+    # cast_change: a stable room scores 0, a fully replaced one scores 1
+    def mk(who, week, mates):
+        return [(2026, {"player_display_name": n, "position": "RB", "team": "NO",
+                        "week": str(week), "targets": str(v), "carries": str(v),
+                        "receptions": "1", "rushing_yards": "10",
+                        "receiving_yards": "10", "season_type": "REG",
+                        "opponent_team": "ATL"})
+                for n, v in [(who, 5)] + mates]
+    stable = []
+    for w in (1, 2, 3, 4, 5, 6):
+        stable += mk("K", w, [("Neal", 4)])
+    cs = position_cast(stable)
+    ck(cast_change(stable, "K", "receptions", cs) == 0.0,
+       f"an unchanged room is 0: {cast_change(stable,'K','receptions',cs)}")
+    swapped = []
+    for w in (1, 2, 3):
+        swapped += mk("K", w, [("Neal", 4)])
+    for w in (4, 5, 6):
+        swapped += mk("K", w, [("Etienne", 4)])
+    cs2 = position_cast(swapped)
+    v = cast_change(swapped, "K", "receptions", cs2)
+    ck(v == 1.0,
+       f"a fully replaced room is 1.0 exactly -- 0.67 means the player himself "
+       f"is being counted as his own competition: {v}")
+    ck(cast_change(swapped, "Nobody", "receptions", cs2) is None, "absent player")
+
+    # gate(): every refusal reachable, in the order they fire
+    ok, why = gate("receptions", 7.2, 4.5, None, 10, 0.01, 0.0)
+    ck(not ok and "starter" in why, f"no starter: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 3, 0.01, 0.0)
+    ck(not ok and "under 4 games" in why, f"thin QB sample: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, None, 0.0)
+    ck(not ok and "unmeasurable" in why, f"drift unmeasurable: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.25, 0.0)
+    ck(not ok and "shifting" in why, f"drift too high: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, None)
+    ck(not ok and "unmeasurable" in why, f"cast unmeasurable: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, 0.75, share=0.09)
+    ck(not ok and "around him changed" in why,
+       f"a rotational player with a changed cast is refused: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, 0.75, share=0.31)
+    ck(ok, f"a 31%-share focal player must NOT be gated on cast: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, None, share=0.31)
+    ck(ok, "a focal player needs no cast measurement at all")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, None, share=0.09)
+    ck(not ok and "unmeasurable" in why, f"a rotational player does: {why}")
+    ok, why = gate("receptions", 7.2, 7.0, "QB", 10, 0.01, 0.0)
+    ck(not ok and "no measured skill" in why, f"dead zone: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, 0.0)
+    ck(ok and why == 0.25, f"a clean line passes and returns its skill: {ok} {why}")
+    # a DIFFERENT band must return a DIFFERENT skill -- otherwise the pass
+    # branch could be returning a constant and every line would read 25%.
+    ok2, why2 = gate("receptions", 7.2, 6.0, "QB", 10, 0.01, 0.0)
+    ck(ok2 and why2 == 0.07,
+       f"the 10-30% band must return 0.07, not a constant: {why2}")
+    ok3, why3 = gate("receiving_yards", 114.6, 39.5, "QB", 10, 0.01, 0.0)
+    ck(ok3 and why3 == 0.05, f"receiving yards far out returns 0.05: {why3}")
     # parse: a market key we do not map must be ignored, a mapped one kept
     import tempfile
     txt = ("  player_receptions  (2)\n"
@@ -310,6 +555,7 @@ def main(path, min_edge=0.03):
                                                    or r.get("recent_team"))
     print(f"schedule: {len(TOT)} team-games with a posted total\n")
     tt = team_volume(rows)
+    cst = position_cast(rows)
     models, biases, defs, envs = {}, {}, {}, {}
     for stat in STATS:
         rs = build(rows, stat)
@@ -349,21 +595,22 @@ def main(path, min_edge=0.03):
         # was added to remove. A silent fallback to the thing you filtered out
         # is worse than no filter, because it looks filtered.
         st = starter.get(tm)
-        if not st:
-            skipped["no identified starter"] += 1
-            continue
-        pj2 = project(rows, who, stat, qb_games=st[2])
+        pj2 = project(rows, who, stat, qb_games=st[2]) if st else None
         if pj2 is None:
-            skipped[f"under 4 games with {st[0]}"] += 1
+            ok, why = gate(stat, proj, bar, st[0] if st else None, None, None, None)
+            skipped[why] += 1
             continue
         proj, vol, ng = pj2[0], pj2[1], pj2[2]
         if proj <= 0:
             continue
         d = drift(rows, who, stat, tt, qb_games=st[2])
-        if d is None or d > DRIFT_MAX:
-            skipped[f"role shifting (share moved {d:.3f})" if d is not None
-                    else "role drift unmeasurable"] += 1
+        cc = cast_change(rows, who, stat, cst, qb_games=st[2])
+        shr = share_of(rows, who, stat, tt, qb_games=st[2])
+        ok, why = gate(stat, proj, bar, st[0], ng, d, cc, share=shr)
+        if not ok:
+            skipped[why] += 1
             continue
+        sk = why
         dfn, league = defs[stat][bar]
         erate, eleague, emode = envs[stat][bar]
         ek = TONIGHT.get((tm, "spread" if emode == "spread" else "total"))
@@ -377,17 +624,19 @@ def main(path, min_edge=0.03):
                               envrate=erate, envleague=eleague, envkey=ekey)
         if p is None:
             continue
-        out.append((p - imp(price), p, n, who, side, bar, stat, price, proj, ng, tm))
+        out.append((p - imp(price), p, n, who, side, bar, stat, price, proj, ng,
+                    tm, sk))
     out.sort(reverse=True)
     print(f"{len(out)} priced.  EDGE = calibrated probability minus the price\n")
-    print(f"  {'edge':>6s} {'hits':>6s} {'bet':40s} {'price':>6s} {'proj':>7s} {'gms':>4s}")
-    print("-" * 78)
-    for e, p, n, who, side, bar, stat, price, proj, ng, tm in out:
+    print(f"  {'edge':>6s} {'hits':>6s} {'bet':38s} {'price':>6s} {'proj':>7s} "
+          f"{'gms':>4s} {'skill':>6s}")
+    print("-" * 84)
+    for e, p, n, who, side, bar, stat, price, proj, ng, tm, sk in out:
         if e < min_edge:
             continue
         lab = f"{who} {side} {bar:g} {stat.replace('_',' ')}"
-        print(f"  {e*100:+5.1f} {p*100:5.1f}%  {lab[:40]:40s} {price:+6d} "
-              f"{proj:7.1f} {ng:4d}")
+        print(f"  {e*100:+5.1f} {p*100:5.1f}%  {lab[:38]:38s} {price:+6d} "
+              f"{proj:7.1f} {ng:4d} {sk*100:5.0f}%")
     neg = sum(1 for r in out if r[0] < min_edge)
     print(f"\n  {neg} of {len(out)} fall below the {min_edge*100:.0f}-point cutoff")
     if skipped:
