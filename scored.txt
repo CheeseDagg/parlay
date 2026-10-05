@@ -2,18 +2,140 @@
 
 schedule: 14710 team-games with a posted total
 
-(read as an nflprops board rather than a sweep)
-10 outcomes parsed
+read 28 posted environment values from the board
+1055 outcomes parsed
 
-5 priced.  EDGE = calibrated probability minus the price
+391 priced.  EDGE = calibrated probability minus the price
 
     edge   hits bet                                     price    proj  gms  skill
 ------------------------------------------------------------------------------------
+  +15.3  68.6%  Bhayshul Tuten Under 1.5 receptions      -114     1.1   19    29%
+  +14.1  58.0%  Drake London Over 89.5 receiving yards   +128   114.6   13     5%
+  +12.1  65.2%  Drake London Over 79.5 receiving yards   -113   114.6   13    21%
+  +11.4  74.7%  Drake London Over 69.5 receiving yards   -172   114.6   13    21%
+  +10.7  64.0%  Bhayshul Tuten Under 9.5 receiving yar   -114     8.6   19     5%
+   +9.4  28.2%  Juwan Johnson Over 79.5 receiving yard   +430    59.5   13    21%
+   +9.2  34.8%  Juwan Johnson Over 69.5 receiving yard   +290    59.5   13     5%
+   +9.2  55.9%  Juwan Johnson Over 49.5 receiving yard   +114    59.5   13     5%
+   +9.0  44.4%  Drake London Over 99.5 receiving yards   +182   114.6   13     5%
+   +8.8  62.1%  Javonte Williams Under 73.5 rushing ya   -114    65.2   20     8%
+   +7.9  60.9%  Juwan Johnson Over 44.5 receiving yard   -113    59.5   13     5%
+   +7.8  21.3%  Juwan Johnson Over 89.5 receiving yard   +640    59.5   13    21%
+   +7.3  34.4%  Juwan Johnson Over 5.5 receptions        +270     4.8   13     7%
+   +7.1  65.4%  Drake London Over 5.5 receptions         -140     7.2   13     7%
+   +7.0  53.3%  CeeDee Lamb Over 6.5 receptions          +116     7.4   54     7%
+   +6.5  79.5%  Drake London Over 59.5 receiving yards   -270   114.6   13    21%
+   +6.0  67.3%  Juwan Johnson Over 39.5 receiving yard   -158    59.5   13    21%
+   +5.7  21.8%  Juwan Johnson Over 6.5 receptions        +520     4.8   13    29%
+   +5.4  66.7%  Juwan Johnson Over 3.5 receptions        -158     4.8   13     7%
+   +5.0  32.0%  Brock Purdy Over 274.5 passing yards     +270   247.0   50    20%
+   +4.9  15.1%  Juwan Johnson Over 99.5 receiving yard   +880    59.5   13    32%
+   +4.9  73.6%  Brock Purdy Over 199.5 passing yards     -220   247.0   50    20%
+   +4.8  17.6%  Drake London Over 9.5 receptions         +680     7.2   13    29%
+   +4.8  86.3%  Drake London Over 49.5 receiving yards   -440   114.6   13    21%
+   +4.5  42.7%  Michael Penix Jr. Over 249.5 passing y   +162   224.5   13    20%
+   +4.4  12.1%  Juwan Johnson Over 109.5 receiving yar  +1200    59.5   13    32%
+   +4.2  17.9%  Tyler Shough Over 39.5 rushing yards     +630    21.8   13    23%
+   +4.0  57.3%  Christian McCaffrey Over 53.5 rushing    -114    68.6   38     8%
+   +4.0  29.0%  Christian McCaffrey Over 79.5 rushing    +300    68.6   38     8%
+   +3.8  23.5%  Drake London Over 8.5 receptions         +410     7.2   13     7%
+   +3.8  23.8%  Tyler Shough Over 324.5 passing yards    +400   272.2   13    20%
+   +3.7  78.0%  Juwan Johnson Over 29.5 receiving yard   -290    59.5   13    21%
    +3.7  28.7%  Tyler Shough Over 29.5 rushing yards     +300    21.8   13    28%
+   +3.6  66.0%  CeeDee Lamb Over 5.5 receptions          -166     7.4   54     7%
+   +3.6  56.7%  Bijan Robinson Under 87.5 rushing yard   -113   105.5   13     8%
+   +3.6  14.7%  Drake London Over 149.5 receiving yard   +800   114.6   13    21%
+   +3.6  34.3%  George Kittle Over 79.5 receiving yard   +225    69.5   46     5%
+   +3.5  93.0%  Drake London Over 39.5 receiving yards   -850   114.6   13    32%
+   +3.5  17.2%  Devaughn Vele Over 89.5 receiving yard   +630    52.1    9    32%
+   +3.4  13.6%  Juwan Johnson Over 7.5 receptions        +880     4.8   13    29%
+   +3.3  78.3%  Drake London Over 4.5 receptions         -300     7.2   13    29%
+   +3.2  48.7%  Christian McCaffrey Over 59.5 rushing    +120    68.6   38     8%
+   +2.9  21.8%  Christian McCaffrey Over 89.5 rushing    +430    68.6   38    28%
+   +2.8  16.3%  Christian McCaffrey Over 99.5 rushing    +640    68.6   38    28%
+   +2.8  16.5%  CeeDee Lamb Over 9.5 receptions          +630     7.4   54     7%
+   +2.7  90.2%  Drake London Over 3.5 receptions         -700     7.2   13    29%
+   +2.7   9.3%  Drake London Over 174.5 receiving yard  +1400   114.6   13    21%
+   +2.5  22.1%  Devaughn Vele Over 79.5 receiving yard   +410    52.1    9    21%
+   +2.5  26.3%  George Kittle Over 89.5 receiving yard   +320    69.5   46     5%
+   +2.4  83.1%  Juwan Johnson Over 24.5 receiving yard   -420    59.5   13    21%
+   +2.2  36.2%  Tyler Shough Over 24.5 rushing yards     +194    21.8   13     8%
+   +2.1  61.4%  Christian McCaffrey Over 49.5 rushing    -146    68.6   38     8%
+   +2.1  10.4%  Drake London Over 10.5 receptions       +1100     7.2   13    29%
+   +2.0  30.5%  Sam Darnold Over 274.5 passing yards     +250   237.3   19    20%
+   +1.7  19.8%  Brock Purdy Over 299.5 passing yards     +450   247.0   50    20%
+   +1.6  88.6%  Juwan Johnson Over 19.5 receiving yard   -670    59.5   13    32%
+   +1.6  15.1%  George Kittle Over 109.5 receiving yar   +640    69.5   46    21%
+   +1.5  14.0%  Kyle Pitts Over 5.5 receptions           +700     3.3   13    46%
+   +1.5  11.7%  Devaughn Vele Over 99.5 receiving yard   +880    52.1    9    32%
+   +1.5  31.8%  Tyler Shough Over 299.5 passing yards    +230   272.2   13    20%
+   +1.4  66.5%  CeeDee Lamb Over 69.5 receiving yards    -186    98.9   54     5%
+   +1.4   8.1%  Juwan Johnson Over 8.5 receptions       +1400     4.8   13    46%
+   +1.4  18.9%  George Kittle Over 99.5 receiving yard   +470    69.5   46    21%
+   +1.4  23.6%  Kyle Pitts Over 4.5 receptions           +350     3.3   13    29%
+   +1.3   6.8%  Tyler Shough Over 399.5 passing yards   +1700   272.2   13    42%
+   +1.1   8.8%  Devaughn Vele Over 109.5 receiving yar  +1200    52.1    9    32%
+   +1.1  27.4%  Devaughn Vele Over 69.5 receiving yard   +280    52.1    9    21%
+   +1.0  12.8%  Brock Purdy Over 324.5 passing yards     +750   247.0   50    42%
+   +1.0  37.0%  Jalen Hurts Over 224.5 passing yards     +178   185.1   66    20%
+   +1.0  78.3%  CeeDee Lamb Over 4.5 receptions          -340     7.4   54    29%
+   +0.9  92.6%  Tyler Shough Over 174.5 passing yards   -1100   272.2   13    42%
+   +0.9   7.2%  Drake London Over 11.5 receptions       +1500     7.2   13    29%
+   +0.9  10.7%  Christian McCaffrey Over 109.5 rushing   +920    68.6   38    28%
+   +0.9  38.8%  Jakobi Meyers Over 4.5 receptions        +164     4.1   13     7%
+   +0.8  81.6%  Brock Purdy Over 174.5 passing yards     -420   247.0   50    20%
+   +0.8  22.6%  CeeDee Lamb Over 8.5 receptions          +360     7.4   54     7%
+   +0.6  55.2%  CeeDee Lamb Over 79.5 receiving yards    -120    98.9   54     5%
+   +0.6  36.1%  Devaughn Vele Over 59.5 receiving yard   +182    52.1    9     5%
+   +0.5  81.3%  Juwan Johnson Over 2.5 receptions        -420     4.8   13    29%
+   +0.5  29.1%  Devaughn Vele Over 5.5 receptions        +250     4.3    9     7%
+   +0.5  15.2%  Jalen Hurts Over 274.5 passing yards     +580   185.1   66    42%
+   +0.5  83.8%  Tyler Shough Over 199.5 passing yards    -500   272.2   13    20%
+   +0.4  20.9%  CeeDee Lamb Over 124.5 receiving yards   +390    98.9   54     5%
+   +0.4  70.1%  Sam Darnold Over 199.5 passing yards     -230   237.3   19    20%
+   +0.4  26.7%  Michael Penix Jr. Over 274.5 passing y   +280   224.5   13    20%
+   +0.4  53.6%  CeeDee Lamb Over 80.5 receiving yards    -114    98.9   54     5%
+   +0.3   6.9%  Christian McCaffrey Over 124.5 rushing  +1400    68.6   38    23%
+   +0.2  17.2%  Bijan Robinson Over 69.5 receiving yar   +490    39.5   13    32%
+   +0.2   7.9%  Kyle Pitts Over 6.5 receptions          +1200     3.3   13    46%
+   +0.2   7.4%  Chris Olave Over 174.5 receiving yards  +1280   101.8   12    32%
+   +0.2  75.2%  George Kittle Over 39.5 receiving yard   -300    69.5   46    21%
+   +0.1   6.4%  CeeDee Lamb Over 11.5 receptions        +1500     7.4   54    29%
+   +0.1  53.4%  George Kittle Over 57.5 receiving yard   -114    69.5   46     5%
+   +0.1  51.1%  George Kittle Over 59.5 receiving yard   -104    69.5   46     5%
+   +0.1   7.4%  Brock Purdy Over 349.5 passing yards    +1260   247.0   50    42%
+   +0.0  92.3%  Juwan Johnson Over 14.5 receiving yard  -1200    59.5   13    32%
+   +0.0   6.3%  CeeDee Lamb Over 174.5 receiving yards  +1500    98.9   54    32%
 
-  4 of 5 fall below the 0-point cutoff
+  294 of 391 fall below the 0-point cutoff
 
   refused rather than guessed:
-       3  rotational player (12% share) and the players around him changed (turnover 0.80)
-       1  no measured skill at 7% from the projection
-       1  rotational player (11% share) and the players around him changed (turnover 1.00)
+     128  under 4 games with Jalon Daniels
+      23  role shifting (share moved 0.110)
+      21  rotational player (11% share) and the players around him changed (turnover 0.60)
+      20  rotational player (15% share) and the players around him changed (turnover 0.60)
+      19  rotational player (9% share) and the players around him changed (turnover 0.67)
+      19  rotational player (14% share) and the players around him changed (turnover 0.67)
+      17  rotational player (9% share) and the players around him changed (turnover 0.80)
+      14  under 4 games with Michael Penix Jr.
+      13  role shifting (share moved 0.220)
+      13  under 4 games with Tyler Shough
+      13  role shifting (share moved 0.351)
+      13  under 4 games with Sam Darnold
+      11  no measured skill at 9% from the projection
+      10  rotational player (8% share) and the players around him changed (turnover 0.60)
+       9  no measured skill at 6% from the projection
+       9  role shifting (share moved 0.265)
+       9  rotational player (12% share) and the players around him changed (turnover 0.80)
+       8  no measured skill at 1% from the projection
+       8  no measured skill at 7% from the projection
+       7  no measured skill at 8% from the projection
+       7  rotational player (11% share) and the players around him changed (turnover 1.00)
+       6  no measured skill at 5% from the projection
+       6  no measured skill at 2% from the projection
+       6  rotational player (8% share) and the players around him changed (turnover 1.00)
+       6  rotational player (7% share) and the players around him changed (turnover 1.00)
+       5  no measured skill at 0% from the projection
+       4  no measured skill at 4% from the projection
+       2  no measured skill at 10% from the projection
+       2  no measured skill at 3% from the projection
