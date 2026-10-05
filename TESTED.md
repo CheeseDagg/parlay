@@ -299,3 +299,37 @@ The mutation harness itself was also wrong: a search string that does not appear
 leaves the file unchanged, the suite passes, and the run prints **caught** for a
 rule nothing tests. It now reports that case as BROKEN. That is what the
 long-standing "history not sorted" MISS actually was.
+
+## A zero-touch game leaves no row, so the projection deletes it
+
+The weekly stat file has a row for a player only when he recorded something.
+A receiver who played and touched nothing produces **no row at all**, so every
+volume projection in this repo averages over his productive games only.
+
+244 of 603 players who took an offensive snap in 2026 have at least one week
+missing from the stat file. Most are linemen, who never record stats. But it
+reaches skill players, and it reaches them **exactly where the model claims its
+biggest edges**:
+
+| player | 2026 games played | rows in the stat file | touches/game as modelled | true |
+|---|---|---|---|---|
+| Kevin Austin Jr. | 3 | 1 | 1.0 | **0.3** |
+| Charlie Woerner | 3 | 1 | 1.0 | **0.3** |
+| every other board player | 3 | 3 | — | unchanged |
+
+Austin's snap share is 6%, 7%, 14% — fourth in a room behind Vele (91/96/88),
+Olave (86/84/84) and Lance (69/79/72). His 4.5-touch projection came from 2025
+weeks 16-18 at 86/81/97% snaps with the room hurt, and the two 2026 games where
+he touched nothing were invisible. He was the **largest edge on the touchdown
+board at +1300**, and Woerner at +3000 was third. Both are artifacts.
+
+The bias is strictly upward and strictly concentrated in marginal players, which
+is why the long-shot end of every board here has looked attractive. The drift gate
+does not catch it: a high-snap player who drew few touches never moves his *touch*
+share by the 0.103 threshold, so Austin passes.
+
+The fix is to reconstruct the missing games from the snap-count file — a player
+with offensive snaps and no stat row played a zero-touch game — and it has to be
+applied to score2.py as well as anytd.py, then everything re-measured. Until then
+the board prints `last3`, his actual touches in his most recent three games, and
+flags any line where it sits under half the projection.
