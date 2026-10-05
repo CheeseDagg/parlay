@@ -168,18 +168,67 @@ SKILL = {
 }
 MIN_SKILL = 0.05      # below this the edge is not reported as an edge
 
+# FOUR PRIOR GAMES WAS COSTING MOST OF THE BOARD IN WEEK 4. Anyone in his first
+# season with a team has at most three, so Jahan Dotson, Austin Hooper,
+# Zachariah Branch, Noah Fant and Bryce Lance were all refused on tonight's game
+# for having joined their clubs this year. Skill by sample size says three is
+# nearly as good as four:
+#
+#   prior games       2-3     4-5     6-9   10-15    16+
+#   receptions 3.5  +24.4%  +29.2%  +29.7%  +28.6%  +23.2%
+#   rush yds  69.5  +25.0%  +17.9%  +19.2%  +20.8%     --
+#
+# Three it is. Two is where it starts to thin out and the projection is one
+# game's efficiency.
+MIN_GAMES = 3
 
-def gate(stat, proj, bar, starter, qb_games_n, dr, cc, share=None):
+
+# WHAT AN INJURY REPORT IS WORTH, measured over 2022-2025 on every designated
+# skill player with four prior games, against his OWN trailing six-game volume:
+#
+#   status                 listings  played   play%   volume   production
+#   Out                         399       0    0.0%        -            -
+#   Doubtful                     25       0    0.0%        -            -
+#   Questionable                328     196   59.8%    95.1%       102.5%
+#   on the report, no status     904     783   86.6%   103.2%       107.2%
+#
+# Out and Doubtful are absolute: 0 of 424. Those lines are refused.
+#
+# Questionable is a coin flip on him taking the field, and the practice column
+# does not break it open -- Limited 61.2% (n=209), Full 58.2% (n=67), DNP 51.2%
+# (n=43). But CONDITIONAL ON PLAYING he is himself: 98.5% of his usual volume
+# and 111.3% of his usual production on the Limited line. So the cost of
+# Questionable is not a worse player, it is a 40% chance of no game at all.
+# That does not make the price wrong, so it is not refused -- it is flagged, and
+# the board may not print it without the flag.
+GONE = ("out", "doubtful")
+
+
+def avail(status):
+    """(ok, flag). Reads a report_status as the data says to read it."""
+    st = (status or "").strip().lower()
+    if st in GONE:
+        return False, None
+    if st == "questionable":
+        return True, "QUESTIONABLE -- played 60% of the time (n=328)"
+    return True, None
+
+
+def gate(stat, proj, bar, starter, qb_games_n, dr, cc, share=None,
+         status=None):
     """(ok, reason). The whole admission chain in one testable place.
 
     It lives out here because the last three times I put a rule inside main() --
     `spec in COMPARE`, the history-unavailable line, and these gates -- the
     selftest could not reach it and the rule shipped broken. main() reads files;
     a rule that only runs there is a rule nothing checks."""
+    ok, flag = avail(status)
+    if not ok:
+        return False, f"listed {status.strip().lower()} (0 of 424 such players played)"
     if starter is None:
         return False, "no identified starter"
-    if qb_games_n is None or qb_games_n < 4:
-        return False, f"under 4 games with {starter}"
+    if qb_games_n is None or qb_games_n < MIN_GAMES:
+        return False, f"under {MIN_GAMES} games with {starter}"
     if dr is None:
         return False, "role drift unmeasurable"
     if dr > DRIFT_MAX:
@@ -210,6 +259,18 @@ def skill_of(stat, proj, bar):
         if st == stat and lo <= d < hi:
             return v
     return 0.0
+
+
+# THE BOOK AND THE STATS SPELL NAMES DIFFERENTLY. FanDuel posts "Brian Robinson
+# Jr." and "Kyle Pitts Sr."; nflverse has "Brian Robinson" and "Kyle Pitts". The
+# first version matched on the exact string, found nothing for Robinson, resolved
+# his team to None and refused every line he had -- for a back with 30 carries
+# this season. Suffixes are stripped from both sides before matching.
+SUFFIX = re.compile(r"\s+(jr|sr|ii|iii|iv|v)\.?$", re.I)
+
+
+def norm_name(n):
+    return SUFFIX.sub("", (n or "").strip()).lower()
 
 
 def _f(v):
@@ -243,7 +304,7 @@ def build(rows, stat):
     for y, r in rows:
         if (r.get("position") or "") not in pos:
             continue
-        by[(y, r.get("player_display_name"))].append(
+        by[(y, norm_name(r.get("player_display_name")))].append(
             (int(r.get("week") or 0), _f(r.get(volcol)), _f(r.get(stat)),
              r.get("opponent_team"), r.get("position")))
     out = []
@@ -260,6 +321,34 @@ def build(rows, stat):
             out.append((who, vol * rt, vol, v[i][2], v[i][3], v[i][4], y,
                         TOT.get(k), SPD.get(k)))
     return out
+
+
+def injuries(path="inj26b.csv", week=None):
+    """norm_name -> (report_status, injury) for the latest week on file.
+
+    Only the latest week: an "Out" from week 1 says nothing about tonight, and
+    carrying it forward would refuse healthy players all season."""
+    rep = {}
+    if not os.path.exists(path):
+        return rep
+    rows = []
+    with open(path, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if (r.get("season_type") or "REG") != "REG":
+                continue
+            if int(r.get("season") or 0) != CURRENT:
+                continue
+            rows.append(r)
+    if not rows:
+        return rep
+    wk = week if week is not None else max(int(r.get("week") or 0) for r in rows)
+    for r in rows:
+        if int(r.get("week") or 0) != wk:
+            continue
+        rep[norm_name(r.get("full_name"))] = (
+            (r.get("report_status") or "").strip(),
+            (r.get("report_primary_injury") or "").strip())
+    return rep
 
 
 def schedule(path="sched26b.csv"):
@@ -314,14 +403,17 @@ def position_cast(rows):
 def cast_change(rows, who, stat, cst, qb_games=None):
     """How much the position group's personnel around him has turned over."""
     volcol, _ = STATS[stat]
-    hist = [(y, r) for y, r in rows if r.get("player_display_name") == who]
+    key = norm_name(who)
+    hist = [(y, r) for y, r in rows
+            if norm_name(r.get("player_display_name")) == key]
     if not hist:
         return None
+    hist.sort(key=lambda t: (t[0], int(t[1].get("week") or 0)))
     tm = hist[-1][1].get("team") or hist[-1][1].get("recent_team")
     sel = [(y, int(r.get("week") or 0), r.get("position") or "") for y, r in hist
            if (r.get("team") or r.get("recent_team")) == tm
            and (qb_games is None or (y, int(r.get("week") or 0)) in qb_games)]
-    if len(sel) < 4:
+    if len(sel) < MIN_GAMES:
         return None
     sel.sort()
 
@@ -341,9 +433,12 @@ def cast_change(rows, who, stat, cst, qb_games=None):
 def share_of(rows, who, stat, tt, qb_games=None):
     """His average share of the team's volume over the games used."""
     volcol, _ = STATS[stat]
-    hist = [(y, r) for y, r in rows if r.get("player_display_name") == who]
+    key = norm_name(who)
+    hist = [(y, r) for y, r in rows
+            if norm_name(r.get("player_display_name")) == key]
     if not hist:
         return None
+    hist.sort(key=lambda t: (t[0], int(t[1].get("week") or 0)))
     tm = hist[-1][1].get("team") or hist[-1][1].get("recent_team")
     sel = [(y, int(r.get("week") or 0), r) for y, r in hist
            if (r.get("team") or r.get("recent_team")) == tm
@@ -361,14 +456,17 @@ def share_of(rows, who, stat, tt, qb_games=None):
 def drift(rows, who, stat, tt, qb_games=None):
     """How much his share of the team's volume has moved. None if unmeasurable."""
     volcol, _ = STATS[stat]
-    hist = [(y, r) for y, r in rows if r.get("player_display_name") == who]
+    key = norm_name(who)
+    hist = [(y, r) for y, r in rows
+            if norm_name(r.get("player_display_name")) == key]
     if not hist:
         return None
+    hist.sort(key=lambda t: (t[0], int(t[1].get("week") or 0)))
     tm = hist[-1][1].get("team") or hist[-1][1].get("recent_team")
     sel = [(y, int(r.get("week") or 0), r) for y, r in hist
            if (r.get("team") or r.get("recent_team")) == tm
            and (qb_games is None or (y, int(r.get("week") or 0)) in qb_games)]
-    if len(sel) < 4:
+    if len(sel) < MIN_GAMES:
         return None
     sel.sort()
     shares = []
@@ -384,14 +482,19 @@ def project(rows, who, stat, qb_games=None):
     given quarterback started -- the split that turned London's 2.7 targets a
     game into 10.4 and made every Atlanta number tonight wrong."""
     volcol, _ = STATS[stat]
-    hist = [(y, r) for y, r in rows if r.get("player_display_name") == who]
+    key = norm_name(who)
+    hist = [(y, r) for y, r in rows
+            if norm_name(r.get("player_display_name")) == key]
     if not hist:
         return None
+    # his LATEST game decides the team, so sort before taking the last one --
+    # file order is not chronological across seasons.
+    hist.sort(key=lambda t: (t[0], int(t[1].get("week") or 0)))
     tm = hist[-1][1].get("team") or hist[-1][1].get("recent_team")
     sel = [(y, r) for y, r in hist
            if (r.get("team") or r.get("recent_team")) == tm
            and (qb_games is None or (y, int(r.get("week") or 0)) in qb_games)]
-    if len(sel) < 4:
+    if len(sel) < MIN_GAMES:
         return None
     sel.sort(key=lambda t: (t[0], int(t[1].get("week") or 0)))
     w = [0.5 ** ((len(sel) - 1 - j) / HALF_LIFE) for j in range(len(sel))]
@@ -449,6 +552,11 @@ def parse(path):
         m = re.match(r"^# game (.+?)\s*$", line)
         if m:
             game = m.group(1); continue
+        # a single-game sweep heads its file with "Away @ Home   <kickoff>"
+        # instead of a # game line, and without this the game column reads "?"
+        m = re.match(r"^(\w[\w .'-]+ @ \w[\w .'-]+?)\s{2,}\d{4}-\d\d-\d\d", line)
+        if m and not game:
+            game = m.group(1).strip(); continue
         m = re.match(r"^  ([a-z0-9_]+)  \(\d+\)\s*$", line)
         if m:
             cur = m.group(1); continue
@@ -470,6 +578,16 @@ def imp(a):
     return 100.0 / (a + 100.0) if a > 0 else -a / (-a + 100.0)
 
 
+def money(price, p, stake=10.0):
+    """(profit if it wins, expected profit) on `stake`.
+
+    One function, used by both the board and its test. The test used to carry
+    its own copy of the formula, which meant breaking the real one changed
+    nothing -- a duplicated calculation is an untested calculation."""
+    win = stake * price / 100.0 if price > 0 else stake * 100.0 / -price
+    return win, p * win - (1 - p) * stake
+
+
 def selftest():
     f = 0
 
@@ -479,6 +597,18 @@ def selftest():
             print(f"  FAIL {m}"); f += 1
 
     ck(abs(imp(-110) - 0.5238) < 1e-3, "imp")
+    # the money columns: profit on a win, and expected profit per $10 staked
+    w, r = money(100, 0.50)
+    ck(abs(w - 10.0) < 1e-9 and abs(r) < 1e-9,
+       f"even money at 50% returns nothing: {w} {r}")
+    w, r = money(-200, 0.75)
+    ck(abs(w - 5.0) < 1e-9 and abs(r - 1.25) < 1e-9,
+       f"-200 at 75%: wins $5, expects +$1.25, got {w} {r}")
+    w, r = money(300, 0.20)
+    ck(abs(w - 30.0) < 1e-9 and abs(r - (-2.0)) < 1e-9,
+       f"+300 at 20% loses money: {w} {r}")
+    w, r = money(-113, 0.652)
+    ck(r > 0, f"a +12-point edge must show a positive return: {r}")
     # the skill gate: a main line must score zero, an alt rung in the measured
     # band must score the band's value
     ck(skill_of("receptions", 7.2, 7.0) == 0.0,
@@ -497,6 +627,24 @@ def selftest():
     ck(skill_of("receiving_yards", 114.6, 39.5) == 0.32,
        f"66% away is the far band: {skill_of('receiving_yards',114.6,39.5)}")
     ck(skill_of("receptions", 0.0, 4.5) == 0.0, "a zero projection is no skill")
+    # name normalisation: the book's suffixes must not hide a player's history
+    ck(norm_name("Brian Robinson Jr.") == norm_name("Brian Robinson"),
+       "Jr. must not split a player in two")
+    ck(norm_name("Kyle Pitts Sr.") == norm_name("Kyle Pitts"), "Sr. likewise")
+    ck(norm_name("Odell Beckham Jr") == norm_name("Odell Beckham"), "no full stop")
+    ck(norm_name("Robert Griffin III") == norm_name("Robert Griffin"), "numerals")
+    ck(norm_name("Drake London") != norm_name("Drake Londonn"),
+       "it must not collapse different players")
+    ck(norm_name(None) == "", "a missing name is empty, not a crash")
+    # a player whose only games are with the current starter must still price
+    fake = [(2026, {"player_display_name": "New Guy Jr.", "position": "WR",
+                    "team": "ATL", "week": str(w), "targets": "6",
+                    "receptions": "4", "receiving_yards": "50",
+                    "season_type": "REG", "opponent_team": "NO"})
+            for w in (1, 2, 3)]
+    pj = project(fake, "New Guy", "receptions")
+    ck(pj is not None and pj[2] == 3,
+       f"three games must be enough, and the suffix must not matter: {pj}")
     # cast_change: a stable room scores 0, a fully replaced one scores 1
     def mk(who, week, mates):
         return [(2026, {"player_display_name": n, "position": "RB", "team": "NO",
@@ -526,8 +674,10 @@ def selftest():
     # gate(): every refusal reachable, in the order they fire
     ok, why = gate("receptions", 7.2, 4.5, None, 10, 0.01, 0.0)
     ck(not ok and "starter" in why, f"no starter: {why}")
-    ok, why = gate("receptions", 7.2, 4.5, "QB", 3, 0.01, 0.0)
-    ck(not ok and "under 4 games" in why, f"thin QB sample: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 2, 0.01, 0.0)
+    ck(not ok and f"under {MIN_GAMES} games" in why, f"thin QB sample: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", MIN_GAMES, 0.01, 0.0)
+    ck(ok, f"exactly the minimum must pass: {why}")
     ok, why = gate("receptions", 7.2, 4.5, "QB", 10, None, 0.0)
     ck(not ok and "unmeasurable" in why, f"drift unmeasurable: {why}")
     ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.25, 0.0)
@@ -541,6 +691,50 @@ def selftest():
     ck(ok, f"a 31%-share focal player must NOT be gated on cast: {why}")
     ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, None, share=0.31)
     ck(ok, "a focal player needs no cast measurement at all")
+    # the injury report. Out and Doubtful never played (0 of 424); Questionable
+    # played 59.8% of 328 listings, so it is flagged and priced, not refused.
+    ck(avail("Out") == (False, None), "Out is out")
+    ck(avail("out")[0] is False, "and the file's casing must not matter")
+    ck(avail("Doubtful") == (False, None), "Doubtful never played either")
+    ck(avail("Questionable")[0] is True,
+       "Questionable must still be PRICED -- 60% of them played")
+    ck(avail("Questionable")[1] is not None,
+       "but it must never reach the board unflagged")
+    ck(avail("") == (True, None) and avail(None) == (True, None),
+       "no designation is no flag")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, 0.0, share=0.31,
+                   status="Out")
+    ck(not ok and "out" in why.lower(),
+       f"an Out player is refused before anything else is measured: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, 0.0, share=0.31,
+                   status="Doubtful")
+    ck(not ok and "doubtful" in why.lower(), f"so is Doubtful: {why}")
+    # ...and refused EVEN WHEN every other measurement is missing, because the
+    # reason has to name the injury, not a data gap
+    ok, why = gate("receptions", 7.2, 4.5, None, None, None, None, status="Out")
+    ck(not ok and "out" in why.lower(),
+       f"the reason must be the injury, not the missing starter: {why}")
+    ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, 0.0, share=0.31,
+                   status="Questionable")
+    ck(ok, f"Questionable must pass the gate: {why}")
+    # the loader takes the LATEST week only
+    import tempfile as _tf
+    fd, ip = _tf.mkstemp(suffix=".csv")
+    os.write(fd, (b"season,season_type,week,team,position,full_name,"
+                  b"report_primary_injury,report_status\n"
+                  b"2026,REG,1,NO,TE,Healed Guy,Ankle,Out\n"
+                  b"2026,REG,4,NO,TE,Noah Fant,Abdomen,Questionable\n"
+                  b"2025,REG,4,NO,TE,Last Year,Knee,Out\n"))
+    os.close(fd)
+    rep = injuries(ip)
+    ck(norm_name("Noah Fant") in rep, f"the latest week must be read: {rep}")
+    ck(norm_name("Healed Guy") not in rep,
+       f"a week-1 Out must NOT follow a player all season: {rep}")
+    ck(norm_name("Last Year") not in rep,
+       f"and last season's report is not this week's: {rep}")
+    ck(rep[norm_name("Noah Fant")] == ("Questionable", "Abdomen"),
+       f"status and injury both: {rep}")
+    os.unlink(ip)
     ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, None, share=0.09)
     ck(not ok and "unmeasurable" in why, f"a rotational player does: {why}")
     ok, why = gate("receptions", 7.2, 7.0, "QB", 10, 0.01, 0.0)
@@ -602,6 +796,43 @@ def selftest():
         "# game Tampa Bay Buccaneers @ Dallas Cowboys\n"
         "  player_receptions  (1)\n"
         "      CeeDee Lamb          Over                      6.5   +116  0.0%\n")
+    # a sweep's own header line must also be recognised as the game
+    p5 = tempfile.mktemp(suffix=".txt")
+    open(p5, "w").write(
+        "Atlanta Falcons @ New Orleans Saints   2026-10-06T00:15:00Z\n\n"
+        "  player_receptions  (1)\n"
+        "      Drake London         Over                      5.5   -140  0.0%\n")
+    r5 = parse(p5)
+    ck(len(r5) == 1 and r5[0][5] == "Atlanta Falcons @ New Orleans Saints",
+       f"a sweep header must name the game, not leave it blank: {r5}")
+    os.unlink(p5)
+    # the team must come from his LATEST game, and file order is not
+    # chronological: a 2025 row for an old club can sit after a 2026 row.
+    jumbled = [
+        (2026, {"player_display_name": "Mover", "position": "WR", "team": "NEW",
+                "week": "3", "targets": "8", "receptions": "6",
+                "receiving_yards": "70", "season_type": "REG",
+                "opponent_team": "X"}),
+        (2026, {"player_display_name": "Mover", "position": "WR", "team": "NEW",
+                "week": "2", "targets": "7", "receptions": "5",
+                "receiving_yards": "60", "season_type": "REG",
+                "opponent_team": "X"}),
+        (2026, {"player_display_name": "Mover", "position": "WR", "team": "NEW",
+                "week": "1", "targets": "9", "receptions": "7",
+                "receiving_yards": "80", "season_type": "REG",
+                "opponent_team": "X"}),
+    ] + [
+        (2025, {"player_display_name": "Mover", "position": "WR", "team": "OLD",
+                "week": str(w), "targets": "1", "receptions": "0",
+                "receiving_yards": "0", "season_type": "REG",
+                "opponent_team": "X"}) for w in (1, 2, 3, 4, 5)
+    ]
+    pm = project(jumbled, "Mover", "receptions")
+    ck(pm is not None and pm[3] == "NEW",
+       f"the team must be his latest, not whatever sorted last in the file: "
+       f"{pm[3] if pm else None}")
+    ck(pm is not None and pm[2] == 3,
+       f"and only the NEW-team games count: {pm[2] if pm else None}")
     r4 = parse(p4)
     ck(len(r4) == 2, f"two rows: {r4}")
     ck(r4[0][5] == "Atlanta Falcons @ New Orleans Saints", f"first game: {r4[0]}")
@@ -650,7 +881,10 @@ def selftest():
     return 1 if f else 0
 
 
-def main(path, min_edge=0.03):
+def main(path, min_edge=0.03, only=None):
+    """only: substring of the game to keep. A board that spans four fixtures and
+    does not let you ask for one of them is a board you cannot bet from -- Ryan
+    had to tell me that Tuten plays Sunday."""
     rows = load()
     if not rows:
         print(f"no spw*.csv found in {SPW}"); return 1
@@ -671,6 +905,8 @@ def main(path, min_edge=0.03):
             starter[tm] = (who, max(cur), gs)
     global TOT, SPD, TEAM
     TOT, SPD = schedule()
+    hurt = injuries()
+    print(f"injury report: {len(hurt)} players listed this week\n")
     for y, r in rows:
         TEAM[(y, r.get("player_display_name"))] = (r.get("team")
                                                    or r.get("recent_team"))
@@ -690,6 +926,8 @@ def main(path, min_edge=0.03):
         TONIGHT.update(env_posted)
         print(f"read {len(env_posted)} posted environment values from the board")
     board = parse(path)
+    if only:
+        print(f"filtered to games matching {only!r}")
     if not board:
         board = parse_nflprops(path)
         if board:
@@ -709,6 +947,8 @@ def main(path, min_edge=0.03):
     out, seen = [], set()
     skipped = defaultdict(int)
     for stat, who, side, bar, price, gm in board:
+        if only and only.lower() not in (gm or "").lower():
+            continue
         if stat not in models or (who, stat, side, bar) in seen:
             continue
         seen.add((who, stat, side, bar))
@@ -726,7 +966,8 @@ def main(path, min_edge=0.03):
         st = starter.get(tm)
         pj2 = project(rows, who, stat, qb_games=st[2]) if st else None
         if pj2 is None:
-            ok, why = gate(stat, proj, bar, st[0] if st else None, None, None, None)
+            ok, why = gate(stat, proj, bar, st[0] if st else None, None, None, None,
+                           status=hurt.get(norm_name(who), ('', ''))[0])
             skipped[why] += 1
             continue
         proj, vol, ng = pj2[0], pj2[1], pj2[2]
@@ -735,7 +976,9 @@ def main(path, min_edge=0.03):
         d = drift(rows, who, stat, tt, qb_games=st[2])
         cc = cast_change(rows, who, stat, cst, qb_games=st[2])
         shr = share_of(rows, who, stat, tt, qb_games=st[2])
-        ok, why = gate(stat, proj, bar, st[0], ng, d, cc, share=shr)
+        status, hurtwith = hurt.get(norm_name(who), ('', ''))
+        ok, why = gate(stat, proj, bar, st[0], ng, d, cc, share=shr,
+                       status=status)
         if not ok:
             skipped[why] += 1
             continue
@@ -754,19 +997,34 @@ def main(path, min_edge=0.03):
         if p is None:
             continue
         out.append((p - imp(price), p, n, who, side, bar, stat, price, proj, ng,
-                    tm, sk, gm))
+                    tm, sk, gm, avail(status)[1], hurtwith))
     out.sort(reverse=True)
-    print(f"{len(out)} priced.  EDGE = calibrated probability minus the price\n")
-    print(f"  {'edge':>6s} {'hits':>6s} {'bet':36s} {'price':>6s} {'proj':>7s} "
-          f"{'skill':>6s}  game")
-    print("-" * 96)
-    for e, p, n, who, side, bar, stat, price, proj, ng, tm, sk, gm in out:
+    print(f"{len(out)} priced.\n")
+    print("  hits   my probability this wins.")
+    print("  edge   that probability MINUS the one the price implies, in")
+    print("         percentage points. -113 implies 53.1%, so a 65.2% line is")
+    print("         +12.1. It is not a return on money.")
+    print("  skill  how much better the model is than guessing the band average,")
+    print("         for lines this far from the projection. 21% means it removes")
+    print("         21% of that guess's error. ZERO MEANS THE MODEL KNOWS")
+    print("         NOTHING HERE and the edge figure above is meaningless.")
+    print("  $10    what ten dollars returns in profit if it wins.")
+    print("  ret    expected profit per $10 staked, at my probability. This is")
+    print("         the money number; edge is not.\n")
+    print(f"  {'edge':>6s} {'hits':>6s} {'bet':34s} {'price':>6s} {'proj':>7s} "
+          f"{'skill':>6s} {'$10':>7s} {'ret':>7s}  game")
+    print("-" * 104)
+    for e, p, n, who, side, bar, stat, price, proj, ng, tm, sk, gm, flag, hw in out:
         if e < min_edge:
             continue
         lab = f"{who} {side} {bar:g} {stat.replace('_',' ')}"
         short = " @ ".join(w.split()[-1] for w in gm.split(" @ ")) if gm else "?"
-        print(f"  {e*100:+5.1f} {p*100:5.1f}%  {lab[:36]:36s} {price:+6d} "
-              f"{proj:7.1f} {sk*100:5.0f}%  {short}")
+        win, ret = money(price, p)
+        print(f"  {e*100:+5.1f} {p*100:5.1f}%  {lab[:34]:34s} {price:+6d} "
+              f"{proj:7.1f} {sk*100:5.0f}% {win:7.2f} {ret:+7.2f}  {short}")
+        if flag:
+            print(f"         ^^ {who} is {flag}"
+                  f"{' -- ' + hw if hw else ''}")
     neg = sum(1 for r in out if r[0] < min_edge)
     print(f"\n  {neg} of {len(out)} fall below the {min_edge*100:.0f}-point cutoff")
     if skipped:
@@ -783,4 +1041,7 @@ if __name__ == "__main__":
     me = 0.03
     if "--min-edge" in sys.argv:
         me = float(sys.argv[sys.argv.index("--min-edge") + 1])
-    sys.exit(main(a[0] if a else "sweep.txt", me))
+    only = None
+    if "--game" in sys.argv:
+        only = sys.argv[sys.argv.index("--game") + 1]
+    sys.exit(main(a[0] if a else "sweep.txt", me, only))
