@@ -1,0 +1,19 @@
+76836 player-weeks loaded from .
+
+schedule: 14710 team-games with a posted total
+
+(read as an nflprops board rather than a sweep)
+10 outcomes parsed
+
+5 priced.  EDGE = calibrated probability minus the price
+
+    edge   hits bet                                     price    proj  gms  skill
+------------------------------------------------------------------------------------
+   +3.7  28.7%  Tyler Shough Over 29.5 rushing yards     +300    21.8   13    28%
+
+  4 of 5 fall below the 0-point cutoff
+
+  refused rather than guessed:
+       3  rotational player (12% share) and the players around him changed (turnover 0.80)
+       1  no measured skill at 7% from the projection
+       1  rotational player (11% share) and the players around him changed (turnover 1.00)

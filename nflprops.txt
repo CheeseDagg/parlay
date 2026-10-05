@@ -1,6 +1,6 @@
 pulling alt props for up to 15 games, skipping the first 0
-  Atlanta Falcons @ New Orleans Saints: 380 lines  (quota left 17073)
-  Tampa Bay Buccaneers @ Dallas Cowboys: 357 lines  (quota left 17061)
+  Atlanta Falcons @ New Orleans Saints: 380 lines  (quota left 16993)
+  Tampa Bay Buccaneers @ Dallas Cowboys: 357 lines  (quota left 16981)
 
 loading game logs...
   2287 players with logs
