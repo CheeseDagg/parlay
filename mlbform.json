@@ -1,106 +1,56 @@
 {
- "date": "2026-09-30",
+ "date": "2026-10-05",
  "hr9_warn": 1.8,
  "games": {
-  "PHI@ATL": {
+  "CWS@CLE": {
    "away_sp": {
-    "name": "Cristopher S\u00e1nchez",
-    "hr9_5": 1.42,
-    "r_start": 3.6,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Tyler Mahle",
-    "hr9_5": 1.17,
-    "r_start": 2.0,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 2.1,
-    "f5_ag": 2.4
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 1.6,
-    "f5_ag": 1.5
-   },
-   "f5_env": 3.8
-  },
-  "CWS@HOU": {
-   "away_sp": {
-    "name": "Sean Burke",
+    "name": "Anthony Kay",
     "hr9_5": 0.84,
-    "r_start": 2.2,
+    "r_start": 3.0,
     "starts": 5
    },
    "home_sp": {
-    "name": "Hunter Brown",
-    "hr9_5": 0.34,
-    "r_start": 2.0,
+    "name": "Gavin Williams",
+    "hr9_5": 0.32,
+    "r_start": 1.8,
     "starts": 5
    },
    "away_form": {
     "n": 10,
-    "f5_for": 5.2,
-    "f5_ag": 2.4
+    "f5_for": 4.8,
+    "f5_ag": 2.1
    },
    "home_form": {
     "n": 10,
-    "f5_for": 2.8,
-    "f5_ag": 1.6
+    "f5_for": 3.2,
+    "f5_ag": 2.2
    },
-   "f5_env": 6.0
+   "f5_env": 6.15
   },
-  "BOS@NYY": {
+  "NYY@TB": {
    "away_sp": {
-    "name": "Sonny Gray",
-    "hr9_5": 0.3,
-    "r_start": 1.6,
+    "name": "Cam Schlittler",
+    "hr9_5": 0.6,
+    "r_start": 1.4,
     "starts": 5
    },
    "home_sp": {
-    "name": "Max Fried",
-    "hr9_5": 0.68,
-    "r_start": 1.6,
-    "starts": 5
-   },
-   "away_form": {
-    "n": 10,
-    "f5_for": 1.1,
-    "f5_ag": 1.8
-   },
-   "home_form": {
-    "n": 10,
-    "f5_for": 2.5,
-    "f5_ag": 2.3
-   },
-   "f5_env": 3.85
-  },
-  "CHC@SD": {
-   "away_sp": {
-    "name": "Kevin Gausman",
-    "hr9_5": 2.63,
-    "r_start": 3.4,
-    "starts": 5
-   },
-   "home_sp": {
-    "name": "Nick Pivetta",
-    "hr9_5": 0.83,
+    "name": "Freddy Peralta",
+    "hr9_5": 0.32,
     "r_start": 0.6,
     "starts": 5
    },
    "away_form": {
     "n": 10,
-    "f5_for": 2.1,
+    "f5_for": 2.0,
     "f5_ag": 2.0
    },
    "home_form": {
     "n": 10,
-    "f5_for": 3.9,
-    "f5_ag": 2.3
+    "f5_for": 2.3,
+    "f5_ag": 1.8
    },
-   "f5_env": 5.15
+   "f5_env": 4.05
   }
  }
 }
