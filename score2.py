@@ -35,6 +35,20 @@ STATS = {
     "receiving_yards": ("targets", ("TE", "WR", "RB")),
     "rushing_yards": ("carries", ("RB", "QB")),
     "passing_yards": ("attempts", ("QB",)),
+    # COMBINED MARKETS. The weekly file has no column for either, so they are
+    # derived onto every row before anything reads them. They were ungraded
+    # purely because nothing summed two columns -- 28 lines on a one-game board.
+    "rush_reception_yards": ("rush_reception_vol", ("RB", "WR", "TE")),
+    "pass_rush_yards": ("pass_rush_vol", ("QB",)),
+}
+VOL_COLS = ("targets", "carries", "attempts",
+            "rush_reception_vol", "pass_rush_vol")
+# (derived outcome column, the two columns it adds, the volume column it needs)
+DERIVED = {
+    "rush_reception_yards": (("rushing_yards", "receiving_yards"),
+                             "rush_reception_vol", ("carries", "targets")),
+    "pass_rush_yards": (("passing_yards", "rushing_yards"),
+                        "pass_rush_vol", ("attempts", "carries")),
 }
 MK = {
     "player_receptions": "receptions", "player_receptions_alternate": "receptions",
@@ -42,6 +56,10 @@ MK = {
     "player_reception_yds_alternate": "receiving_yards",
     "player_rush_yds": "rushing_yards", "player_rush_yds_alternate": "rushing_yards",
     "player_pass_yds": "passing_yards", "player_pass_yds_alternate": "passing_yards",
+    "player_rush_reception_yds": "rush_reception_yards",
+    "player_rush_reception_yds_alternate": "rush_reception_yards",
+    "player_pass_rush_yds": "pass_rush_yards",
+    "player_pass_rush_yds_alternate": "pass_rush_yards",
 }
 
 
@@ -165,6 +183,28 @@ SKILL = {
     ("passing_yards", 0.60, 9.99): 0.08,
     ("carries", 0.10, 0.30): 0.15,
     ("carries", 0.30, 0.60): 0.41,
+    # THE COMBINED MARKETS. Added with the markets themselves missing from here,
+    # which auto-refused every combined line as "no measured skill" -- Kamara's
+    # rush+reception and Shough's pass+rush among them. Measured the same way:
+    #
+    #   rush_reception_yards   0.10-0.30  4.7% (n=13,140)
+    #                          0.30-0.60 21.8% (n=18,205)
+    #   pass_rush_yards        0.10-0.30 22.2% (n=4,748)
+    #                          0.30-0.60 54.6% (n=3,561)
+    #
+    # A rushing_yards control run through the same code returned 4.7% and 20.8%
+    # against the 8% and 28% stored above, so the method agrees in these bands.
+    # It returned 63.5% in the 0.60+ band against the stored 23%, because the bar
+    # sweep reaches numbers no book would post and an outcome that is nearly
+    # certain scores as skill. So the 0.60+ figures from that run are NOT used;
+    # each combined stat takes its single-stat counterpart's value instead, which
+    # is the conservative choice and is marked as borrowed, not measured.
+    ("rush_reception_yards", 0.10, 0.30): 0.05,
+    ("rush_reception_yards", 0.30, 0.60): 0.22,
+    ("rush_reception_yards", 0.60, 9.99): 0.32,   # borrowed from receiving_yards
+    ("pass_rush_yards", 0.10, 0.30): 0.22,
+    ("pass_rush_yards", 0.30, 0.60): 0.55,
+    ("pass_rush_yards", 0.60, 9.99): 0.08,        # borrowed from passing_yards
 }
 MIN_SKILL = 0.05      # below this the edge is not reported as an edge
 
@@ -290,6 +330,19 @@ def load():
             for r in csv.DictReader(f):
                 if (r.get("season_type") or "REG") == "REG":
                     rows.append((y, r))
+    derive(rows)
+    return rows
+
+
+def derive(rows):
+    """Add the combined outcome and volume columns the file does not carry.
+
+    Written as strings because every reader downstream goes through
+    _f(r.get(col)) and must not need to know which columns are real."""
+    for _y, r in rows:
+        for stat, (parts, volcol, volparts) in DERIVED.items():
+            r[stat] = str(sum(_f(r.get(c)) for c in parts))
+            r[volcol] = str(sum(_f(r.get(c)) for c in volparts))
     return rows
 
 
@@ -381,7 +434,7 @@ def team_volume(rows):
     for y, r in rows:
         tm = r.get("team") or r.get("recent_team")
         w = int(r.get("week") or 0)
-        for col in ("targets", "carries"):
+        for col in VOL_COLS:
             tt[(y, w, tm, col)] += _f(r.get(col))
     return tt
 
@@ -393,7 +446,7 @@ def position_cast(rows):
         tm = r.get("team") or r.get("recent_team")
         w = int(r.get("week") or 0)
         pos = r.get("position") or ""
-        for col in ("targets", "carries"):
+        for col in VOL_COLS:
             v = _f(r.get(col))
             if v > 0:
                 c[(y, w, tm, pos, col)].append((v, r.get("player_display_name")))
@@ -691,6 +744,72 @@ def selftest():
     ck(ok, f"a 31%-share focal player must NOT be gated on cast: {why}")
     ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, None, share=0.31)
     ck(ok, "a focal player needs no cast measurement at all")
+    # the combined markets. The file has no column for either; they are derived.
+    row = {"carries": "10", "targets": "4", "rushing_yards": "50",
+           "receiving_yards": "30", "attempts": "25", "passing_yards": "240",
+           "position": "RB", "player_display_name": "Combo Guy", "team": "NO",
+           "week": "1", "season_type": "REG"}
+    derive([(2026, row)])
+    ck(row["rush_reception_yards"] == "80.0",
+       f"rush+rec yards must SUM, not pick one: {row['rush_reception_yards']}")
+    ck(row["rush_reception_vol"] == "14.0",
+       f"and so must its volume, carries plus targets: {row['rush_reception_vol']}")
+    ck(row["pass_rush_yards"] == "290.0",
+       f"pass+rush yards: {row['pass_rush_yards']}")
+    ck(row["pass_rush_vol"] == "35.0",
+       f"attempts plus carries: {row['pass_rush_vol']}")
+    empty = {"position": "WR", "season_type": "REG"}
+    derive([(2026, empty)])
+    ck(empty["rush_reception_yards"] == "0.0",
+       f"missing columns are zero, not a crash: {empty}")
+    for st in ("rush_reception_yards", "pass_rush_yards"):
+        ck(st in STATS, f"{st} must be a gradeable stat")
+        ck(STATS[st][0] in VOL_COLS,
+           f"{st}'s volume column must be one team_volume actually sums, or "
+           f"every share is zero and every line is refused: {STATS[st][0]}")
+    ck(MK.get("player_rush_reception_yds") == "rush_reception_yards"
+       and MK.get("player_pass_rush_yds") == "pass_rush_yards",
+       "the board's market names must map to them")
+    # a derived stat must flow all the way through team_volume and share
+    combo = []
+    for w in (1, 2, 3, 4, 5):
+        combo.append((2026, dict(row, week=str(w))))
+        combo.append((2026, {"player_display_name": "Other", "position": "RB",
+                             "team": "NO", "week": str(w), "carries": "10",
+                             "targets": "4", "rushing_yards": "40",
+                             "receiving_yards": "10", "season_type": "REG"}))
+    derive(combo)
+    tv = team_volume(combo)
+    ck(tv[(2026, 1, "NO", "rush_reception_vol")] == 28.0,
+       f"the team's combined volume must sum both players: "
+       f"{tv.get((2026, 1, 'NO', 'rush_reception_vol'))}")
+    sh = share_of(combo, "Combo Guy", "rush_reception_yards", tv)
+    ck(sh is not None and abs(sh - 0.5) < 1e-9,
+       f"and his share of it must come out at a half: {sh}")
+    pj = project(combo, "Combo Guy", "rush_reception_yards")
+    ck(pj is not None and abs(pj[0] - 80.0) < 1e-6,
+       f"the projection must be the combined 80, not either half: {pj}")
+    # ...and load() must actually CALL it. Testing derive() directly left the
+    # call site inside load() untested: removing it caught nothing.
+    import tempfile as _t2
+    sd = _t2.mkdtemp()
+    with open(os.path.join(sd, "spw2026.csv"), "w") as fh:
+        fh.write("season_type,position,player_display_name,team,week,carries,"
+                 "targets,rushing_yards,receiving_yards,attempts,passing_yards\n")
+        fh.write("REG,RB,Loaded Guy,NO,1,10,4,50,30,0,0\n")
+    _old_spw = globals()["SPW"]
+    globals()["SPW"] = sd
+    try:
+        lrows = load()
+    finally:
+        globals()["SPW"] = _old_spw
+    ck(len(lrows) == 1, f"one row loaded: {lrows}")
+    ck(lrows[0][1].get("rush_reception_yards") == "80.0",
+       f"load() must derive the combined columns, not just define them: "
+       f"{lrows[0][1].get('rush_reception_yards')}")
+    ck(lrows[0][1].get("pass_rush_vol") == "10.0",
+       f"both of them: {lrows[0][1].get('pass_rush_vol')}")
+    os.unlink(os.path.join(sd, "spw2026.csv")); os.rmdir(sd)
     # the injury report. Out and Doubtful never played (0 of 424); Questionable
     # played 59.8% of 328 listings, so it is flagged and priced, not refused.
     ck(avail("Out") == (False, None), "Out is out")
