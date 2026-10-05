@@ -20,7 +20,7 @@ jobs:
           # Four games, not fifteen: each event is its own API request and the
           # quota is shared with the board and scores pulls.
           MIN_GAP="${MIN_GAP:-0.0}" python3 nflprops.py 15 0 2>&1 | tee nflprops.new
-          HORIZON_H=200 MIN_GAP=0.0 python3 nflprops.py 15 0 2>&1 | tee nflprops.wide || true
+          HORIZON_H=200 MIN_GAP=0.0 python3 nflprops.py 15 0 --dump-board board.txt 2>&1 | tee nflprops.wide || true
           test -s nflprops.new
           grep -q "lines where the RECORD" nflprops.new
           mv nflprops.new nflprops.txt
@@ -34,7 +34,10 @@ jobs:
           done
           curl -sS -L --max-time 60 -o sched26b.csv \
             "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv" || true
-          python3 score2.py nflprops_wide.txt --min-edge 0.0 2>&1 | tee scored.new || true
+          # board.txt is EVERY posted outcome. Feeding score2 nflprops_wide.txt
+          # fed it nflprops' own shortlist -- ten lines out of fifteen hundred,
+          # pre-filtered by the rules the testing says are wrong.
+          python3 score2.py board.txt --min-edge 0.0 2>&1 | tee scored.new || true
           test -s scored.new && mv scored.new scored.txt || cp nflprops.txt scored.txt
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}

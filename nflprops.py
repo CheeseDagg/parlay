@@ -632,15 +632,52 @@ def pull(max_events=4, skip=0):
     return out
 
 
+def dump_board(events, path):
+    """Every posted outcome, in the format score2.py parses.
+
+    WHY: the workflow was feeding score2 nflprops' SHORTLIST -- the handful of
+    lines that cleared this file's own gates, which five seasons of testing say
+    are wrong. Ten outcomes instead of fifteen hundred. The tested scorer has to
+    see the whole board or it is just re-ranking someone else's mistakes.
+
+    Also writes the game environment, so score2 reads the posted total and
+    spread instead of carrying them hardcoded.
+    """
+    with open(path, "w", encoding="utf-8") as f:
+        for ev in events:
+            f.write(f"# game {ev['game']}\n")
+            wp = ev.get("wp") or {}
+            for tm, pv in wp.items():
+                if tm:
+                    # win probability -> a spread in points, roughly 14 points
+                    # per 50 points of probability either side of even. Crude,
+                    # and only used to pick an environment band three points
+                    # wide, so crude is enough.
+                    f.write(f"# env {tm} spread {(pv - 0.5) * 28:+.1f}\n")
+            for key, rows in sorted(ev["lines"].items()):
+                f.write(f"  {key}  ({len(rows)})\n")
+                for desc, name, point, price in rows:
+                    f.write(f"      {str(desc)[:20]:20s} {str(name)[:22]:22s}"
+                            f"{point:7.1f} {int(price):+6d}  0.0%\n")
+    print(f"wrote the full board to {path}")
+
+
 def main():
     if not KEY:
         print("no ODDS_API_KEY -- this runs on the Actions runner")
         return 1
     nums = [int(a) for a in sys.argv[1:] if a.isdigit()]
     n = nums[0] if nums else 4
+    dump_to = None
+    if "--dump-board" in sys.argv:
+        i = sys.argv.index("--dump-board")
+        if i + 1 < len(sys.argv):
+            dump_to = sys.argv[i + 1]
     skip = nums[1] if len(nums) > 1 else 0
     print(f"pulling alt props for up to {n} games, skipping the first {skip}")
     events = pull(n, skip)
+    if dump_to:
+        dump_board(events, dump_to)
     if not events:
         print("no events pulled")
         return 1
@@ -660,6 +697,35 @@ def main():
               f" role {('%3.0f%%' % (r['role']*100)) if r.get('role') else ' -- '}"
               f"  {r['game'][:28]}")
     return 0
+
+
+def _selftest_dump_board():
+    """The dump must be readable by score2 -- the two files are a contract, and
+    the workflow silently fed score2 the wrong file for a whole run because
+    nothing checked it."""
+    import tempfile as _tf, os as _os
+    ev = [{"game": "A @ B", "wp": {"ATL": 0.48, "NO": 0.52},
+           "lines": {"player_receptions": [("Drake London", "Over", 5.5, -140),
+                                           ("Drake London", "Under", 5.5, 106)]}}]
+    p = _tf.mktemp(suffix=".txt")
+    dump_board(ev, p)
+    txt = open(p).read()
+    _os.unlink(p)
+    ok = True
+    if "# env ATL spread" not in txt:
+        print("  FAIL dump_board omits the environment lines"); ok = False
+    if "  player_receptions  (2)" not in txt:
+        print("  FAIL dump_board omits the market header"); ok = False
+    if "Drake London" not in txt or "-140" not in txt:
+        print("  FAIL dump_board omits an outcome"); ok = False
+    # the exact column layout score2's regex depends on
+    import re as _re
+    hits = _re.findall(r"^      (.{20}) (.{22})\s*([-\d.]*)\s*([+-]\d+)\s+[\d.]+%\s*$",
+                       txt, _re.M)
+    if len(hits) != 2:
+        print(f"  FAIL dump_board layout does not match score2's parser: {len(hits)}")
+        ok = False
+    return ok
 
 
 def selftest():
@@ -1027,6 +1093,10 @@ def selftest():
     chk(injuries(2026, fetch=lambda u: "season,week\n") is None,
         "and an empty report is a refusal too")
 
+    if not _selftest_dump_board():
+        ok[1] += 1
+    else:
+        ok[0] += 1; ok[1] += 1
     print(f"\n{ok[0]}/{ok[1]} checks pass")
     return 0 if ok[0] == ok[1] else 1
 

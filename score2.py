@@ -427,6 +427,18 @@ def parse_nflprops(path):
     return out
 
 
+def parse_env(path):
+    """`# env <team> spread <x>` and `# env <team> total <x>` lines a board dump
+    writes. Replaces a hardcoded table that had to be edited per slate and was
+    silently wrong for every game it had not been updated for."""
+    out = {}
+    for line in open(path, encoding="utf-8"):
+        m = re.match(r"^# env (\S+) (spread|total) ([-+]?[\d.]+)\s*$", line)
+        if m:
+            out[(m.group(1), m.group(2))] = float(m.group(3))
+    return out
+
+
 def parse(path):
     cur, out = None, []
     for line in open(path, encoding="utf-8"):
@@ -564,6 +576,15 @@ def selftest():
             "  not a candidate line at all\n")
     p2 = tempfile.mktemp(suffix=".txt")
     open(p2, "w").write(txt2)
+    # the env lines a board dump writes
+    p3 = tempfile.mktemp(suffix=".txt")
+    open(p3, "w").write("# game A @ B\n# env ATL spread -1.5\n"
+                        "# env NO total 47.5\nnot an env line\n")
+    e3 = parse_env(p3)
+    ck(e3 == {("ATL", "spread"): -1.5, ("NO", "total"): 47.5},
+       f"env parsed: {e3}")
+    ck(parse_env(p2) == {}, "a board with no env lines yields nothing")
+    os.unlink(p3)
     r2 = parse_nflprops(p2)
     ck(len(r2) == 3, f"three candidates parsed, got {len(r2)}: {r2}")
     ck(r2[0] == ("rushing_yards", "Brock Purdy", "Over", 19.5, -102),
@@ -640,6 +661,10 @@ def main(path, min_edge=0.03):
         m = calib.Model(rs)
         models[stat] = m
         defs[stat] = {}
+    env_posted = parse_env(path)
+    if env_posted:
+        TONIGHT.update(env_posted)
+        print(f"read {len(env_posted)} posted environment values from the board")
     board = parse(path)
     if not board:
         board = parse_nflprops(path)
