@@ -1,0 +1,1467 @@
+Atlanta Falcons @ New Orleans Saints   2026-10-06T00:15:00Z
+
+66 market keys posted
+
+pricing 46 of them (skipping quarter markets)
+
+  alternate_spreads  (102)
+                           New Orleans Saints       -28.5  +3500   2.8%
+                           New Orleans Saints       -27.5  +2500   3.8%
+                           New Orleans Saints       -26.5  +2000   4.8%
+                           New Orleans Saints       -25.5  +1800   5.3%
+                           New Orleans Saints       -24.5  +1700   5.6%
+                           Atlanta Falcons          -23.5  +1800   5.3%
+                           New Orleans Saints       -23.5  +1500   6.2%
+                           Atlanta Falcons          -22.5  +1700   5.6%
+                           New Orleans Saints       -22.5  +1400   6.7%
+                           Atlanta Falcons          -21.5  +1500   6.2%
+                           New Orleans Saints       -21.5  +1300   7.1%
+                           Atlanta Falcons          -20.5  +1400   6.7%
+                           New Orleans Saints       -20.5  +1060   8.6%
+                           Atlanta Falcons          -19.5  +1300   7.1%
+                           New Orleans Saints       -19.5  +1000   9.1%
+                           Atlanta Falcons          -18.5  +1100   8.3%
+                           New Orleans Saints       -18.5   +900  10.0%
+                           Atlanta Falcons          -17.5  +1060   8.6%
+                           New Orleans Saints       -17.5   +800  11.1%
+                           Atlanta Falcons          -16.5   +870  10.3%
+                           New Orleans Saints       -16.5   +680  12.8%
+                           Atlanta Falcons          -15.5   +830  10.8%
+                           New Orleans Saints       -15.5   +600  14.3%
+                           Atlanta Falcons          -14.5   +750  11.8%
+                           New Orleans Saints       -14.5   +560  15.2%
+                           Atlanta Falcons          -13.5   +630  13.7%
+                           New Orleans Saints       -13.5   +480  17.2%
+                           Atlanta Falcons          -12.5   +560  15.2%
+                           New Orleans Saints       -12.5   +430  18.9%
+                           Atlanta Falcons          -11.5   +520  16.1%
+                           New Orleans Saints       -11.5   +400  20.0%
+                           Atlanta Falcons          -10.5   +480  17.2%
+                           New Orleans Saints       -10.5   +360  21.7%
+                           Atlanta Falcons           -9.5   +400  20.0%
+                           New Orleans Saints        -9.5   +320  23.8%
+                           Atlanta Falcons           -8.5   +390  20.4%
+                           New Orleans Saints        -8.5   +300  25.0%
+                           Atlanta Falcons           -7.5   +330  23.3%
+                           New Orleans Saints        -7.5   +260  27.8%
+                           Atlanta Falcons           -6.5   +255  28.2%
+                           New Orleans Saints        -6.5   +200  33.3%
+                           Atlanta Falcons           -5.5   +220  31.2%
+                           New Orleans Saints        -5.5   +172  36.8%
+                           Atlanta Falcons           -4.5   +200  33.3%
+                           New Orleans Saints        -4.5   +152  39.7%
+                           Atlanta Falcons           -3.5   +172  36.8%
+                           New Orleans Saints        -3.5   +134  42.7%
+                           Atlanta Falcons           -2.5   +122  45.0%
+                           New Orleans Saints        -2.5   +102  49.5%
+                           Atlanta Falcons           -1.5   +110  47.6%
+                           New Orleans Saints        -1.5   -111  52.6%
+                           Atlanta Falcons            1.5   -115  53.5%
+                           New Orleans Saints         1.5   -140  58.3%
+                           Atlanta Falcons            2.5   -130  56.5%
+                           New Orleans Saints         2.5   -156  60.9%
+                           Atlanta Falcons            3.5   -172  63.2%
+                           New Orleans Saints         3.5   -225  69.2%
+                           Atlanta Falcons            4.5   -196  66.2%
+                           New Orleans Saints         4.5   -265  72.6%
+                           Atlanta Falcons            5.5   -225  69.2%
+                           New Orleans Saints         5.5   -295  74.7%
+                           Atlanta Falcons            6.5   -265  72.6%
+                           New Orleans Saints         6.5   -350  77.8%
+                           Atlanta Falcons            7.5   -360  78.3%
+                           New Orleans Saints         7.5   -480  82.8%
+                           Atlanta Falcons            8.5   -430  81.1%
+                           New Orleans Saints         8.5   -590  85.5%
+                           Atlanta Falcons            9.5   -460  82.1%
+                           New Orleans Saints         9.5   -620  86.1%
+                           Atlanta Falcons           10.5   -530  84.1%
+                           New Orleans Saints        10.5   -800  88.9%
+                           Atlanta Falcons           11.5   -620  86.1%
+                           New Orleans Saints        11.5   -900  90.0%
+                           Atlanta Falcons           12.5   -670  87.0%
+                           New Orleans Saints        12.5  -1000  90.9%
+                           Atlanta Falcons           13.5   -770  88.5%
+                           New Orleans Saints        13.5  -1200  92.3%
+                           Atlanta Falcons           14.5  -1000  90.9%
+                           New Orleans Saints        14.5  -1600  94.1%
+                           Atlanta Falcons           15.5  -1100  91.7%
+                           New Orleans Saints        15.5  -2000  95.2%
+                           Atlanta Falcons           16.5  -1400  93.3%
+                           New Orleans Saints        16.5  -2500  96.2%
+                           Atlanta Falcons           17.5  -1800  94.7%
+                           New Orleans Saints        17.5  -3500  97.2%
+                           Atlanta Falcons           18.5  -2500  96.2%
+                           New Orleans Saints        18.5  -4000  97.6%
+                           Atlanta Falcons           19.5  -3000  96.8%
+                           New Orleans Saints        19.5  -5000  98.0%
+                           Atlanta Falcons           20.5  -3500  97.2%
+                           New Orleans Saints        20.5  -6000  98.4%
+                           Atlanta Falcons           21.5  -5000  98.0%
+                           New Orleans Saints        21.5  -7000  98.6%
+                           Atlanta Falcons           22.5  -6000  98.4%
+                           New Orleans Saints        22.5 -10000  99.0%
+                           Atlanta Falcons           23.5  -7000  98.6%
+                           New Orleans Saints        23.5 -10000  99.0%
+                           Atlanta Falcons           24.5 -10000  99.0%
+                           Atlanta Falcons           25.5 -10000  99.0%
+                           Atlanta Falcons           26.5 -20000  99.5%
+                           Atlanta Falcons           27.5 -20000  99.5%
+                           Atlanta Falcons           28.5 -50000  99.8%
+  alternate_spreads_h1  (42)
+                           New Orleans Saints       -10.5   +500  16.7%
+                           Atlanta Falcons           -9.5   +430  18.9%
+                           New Orleans Saints        -9.5   +390  20.4%
+                           Atlanta Falcons           -8.5   +400  20.0%
+                           New Orleans Saints        -8.5   +350  22.2%
+                           Atlanta Falcons           -7.5   +360  21.7%
+                           New Orleans Saints        -7.5   +320  23.8%
+                           Atlanta Falcons           -6.5   +265  27.4%
+                           New Orleans Saints        -6.5   +235  29.9%
+                           Atlanta Falcons           -5.5   +235  29.9%
+                           New Orleans Saints        -5.5   +200  33.3%
+                           Atlanta Falcons           -4.5   +220  31.2%
+                           New Orleans Saints        -4.5   +196  33.8%
+                           Atlanta Falcons           -3.5   +176  36.2%
+                           New Orleans Saints        -3.5   +152  39.7%
+                           Atlanta Falcons           -2.5   +136  42.4%
+                           New Orleans Saints        -2.5   +118  45.9%
+                           Atlanta Falcons           -1.5   +128  43.9%
+                           New Orleans Saints        -1.5   +110  47.6%
+                           Atlanta Falcons           -0.5   +114  46.7%
+                           New Orleans Saints        -0.5   -102  50.5%
+                           Atlanta Falcons            0.5   -125  55.6%
+                           New Orleans Saints         0.5   -146  59.3%
+                           Atlanta Falcons            1.5   -140  58.3%
+                           New Orleans Saints         1.5   -166  62.4%
+                           Atlanta Falcons            2.5   -150  60.0%
+                           New Orleans Saints         2.5   -174  63.5%
+                           Atlanta Falcons            3.5   -196  66.2%
+                           New Orleans Saints         3.5   -230  69.7%
+                           Atlanta Falcons            4.5   -260  72.2%
+                           New Orleans Saints         4.5   -295  74.7%
+                           Atlanta Falcons            5.5   -265  72.6%
+                           New Orleans Saints         5.5   -320  76.2%
+                           Atlanta Falcons            6.5   -320  76.2%
+                           New Orleans Saints         6.5   -370  78.7%
+                           Atlanta Falcons            7.5   -460  82.1%
+                           New Orleans Saints         7.5   -530  84.1%
+                           Atlanta Falcons            8.5   -520  83.9%
+                           New Orleans Saints         8.5   -620  86.1%
+                           Atlanta Falcons            9.5   -590  85.5%
+                           New Orleans Saints         9.5   -670  87.0%
+                           Atlanta Falcons           10.5   -850  89.5%
+  alternate_spreads_h2  (42)
+                           New Orleans Saints       -10.5   +560  15.2%
+                           Atlanta Falcons           -9.5   +520  16.1%
+                           New Orleans Saints        -9.5   +430  18.9%
+                           Atlanta Falcons           -8.5   +470  17.5%
+                           New Orleans Saints        -8.5   +390  20.4%
+                           Atlanta Falcons           -7.5   +420  19.2%
+                           New Orleans Saints        -7.5   +340  22.7%
+                           Atlanta Falcons           -6.5   +300  25.0%
+                           New Orleans Saints        -6.5   +255  28.2%
+                           Atlanta Falcons           -5.5   +260  27.8%
+                           New Orleans Saints        -5.5   +215  31.7%
+                           Atlanta Falcons           -4.5   +240  29.4%
+                           New Orleans Saints        -4.5   +200  33.3%
+                           Atlanta Falcons           -3.5   +190  34.5%
+                           New Orleans Saints        -3.5   +154  39.4%
+                           Atlanta Falcons           -2.5   +146  40.7%
+                           New Orleans Saints        -2.5   +122  45.0%
+                           Atlanta Falcons           -1.5   +134  42.7%
+                           New Orleans Saints        -1.5   +110  47.6%
+                           Atlanta Falcons           -0.5   +114  46.7%
+                           New Orleans Saints        -0.5   -106  51.5%
+                           Atlanta Falcons            0.5   -120  54.5%
+                           New Orleans Saints         0.5   -146  59.3%
+                           Atlanta Falcons            1.5   -140  58.3%
+                           New Orleans Saints         1.5   -172  63.2%
+                           Atlanta Falcons            2.5   -156  60.9%
+                           New Orleans Saints         2.5   -188  65.3%
+                           Atlanta Falcons            3.5   -200  66.7%
+                           New Orleans Saints         3.5   -250  71.4%
+                           Atlanta Falcons            4.5   -265  72.6%
+                           New Orleans Saints         4.5   -330  76.7%
+                           Atlanta Falcons            5.5   -290  74.4%
+                           New Orleans Saints         5.5   -360  78.3%
+                           Atlanta Falcons            6.5   -350  77.8%
+                           New Orleans Saints         6.5   -430  81.1%
+                           Atlanta Falcons            7.5   -500  83.3%
+                           New Orleans Saints         7.5   -650  86.7%
+                           Atlanta Falcons            8.5   -590  85.5%
+                           New Orleans Saints         8.5   -770  88.5%
+                           Atlanta Falcons            9.5   -670  87.0%
+                           New Orleans Saints         9.5   -900  90.0%
+                           Atlanta Falcons           10.5  -1000  90.9%
+  alternate_team_totals  (160)
+      Atlanta Falcons      Over                       3.5 -50000  99.8%
+      Atlanta Falcons      Under                      3.5  +3500   2.8%
+      Atlanta Falcons      Over                       4.5 -50000  99.8%
+      Atlanta Falcons      Under                      4.5  +3500   2.8%
+      Atlanta Falcons      Over                       5.5 -50000  99.8%
+      Atlanta Falcons      Under                      5.5  +3500   2.8%
+      Atlanta Falcons      Over                       6.5 -10000  99.0%
+      Atlanta Falcons      Under                      6.5  +1800   5.3%
+      Atlanta Falcons      Over                       7.5  -7000  98.6%
+      Atlanta Falcons      Under                      7.5  +1500   6.2%
+      Atlanta Falcons      Over                       8.5  -6000  98.4%
+      Atlanta Falcons      Under                      8.5  +1400   6.7%
+      Atlanta Falcons      Over                       9.5  -4500  97.8%
+      Atlanta Falcons      Under                      9.5  +1200   7.7%
+      Atlanta Falcons      Over                      10.5  -2200  95.7%
+      Atlanta Falcons      Under                     10.5   +870  10.3%
+      Atlanta Falcons      Over                      11.5  -2200  95.7%
+      Atlanta Falcons      Under                     11.5   +870  10.3%
+      Atlanta Falcons      Over                      12.5  -1600  94.1%
+      Atlanta Falcons      Under                     12.5   +750  11.8%
+      Atlanta Falcons      Over                      13.5   -900  90.0%
+      Atlanta Falcons      Under                     13.5   +520  16.1%
+      Atlanta Falcons      Over                      14.5   -670  87.0%
+      Atlanta Falcons      Under                     14.5   +430  18.9%
+      Atlanta Falcons      Over                      15.5   -620  86.1%
+      Atlanta Falcons      Under                     15.5   +400  20.0%
+      Atlanta Falcons      Over                      16.5   -480  82.8%
+      Atlanta Falcons      Under                     16.5   +330  23.3%
+      Atlanta Falcons      Over                      17.5   -330  76.7%
+      Atlanta Falcons      Under                     17.5   +240  29.4%
+      Atlanta Falcons      Over                      18.5   -310  75.6%
+      Atlanta Falcons      Under                     18.5   +230  30.3%
+      Atlanta Falcons      Over                      19.5   -265  72.6%
+      Atlanta Falcons      Under                     19.5   +200  33.3%
+      Atlanta Falcons      Over                      20.5   -186  65.0%
+      Atlanta Falcons      Under                     20.5   +144  41.0%
+      Atlanta Falcons      Over                      21.5   -158  61.2%
+      Atlanta Falcons      Under                     21.5   +124  44.6%
+      Atlanta Falcons      Over                      22.5   -142  58.7%
+      Atlanta Falcons      Under                     22.5   +112  47.2%
+      Atlanta Falcons      Over                      23.5   -113  53.1%
+      Atlanta Falcons      Under                     23.5   -113  53.1%
+      Atlanta Falcons      Over                      24.5   +122  45.0%
+      Atlanta Falcons      Under                     24.5   -156  60.9%
+      Atlanta Falcons      Over                      25.5   +128  43.9%
+      Atlanta Falcons      Under                     25.5   -164  62.1%
+      Atlanta Falcons      Over                      26.5   +146  40.7%
+      Atlanta Falcons      Under                     26.5   -188  65.3%
+      Atlanta Falcons      Over                      27.5   +200  33.3%
+      Atlanta Falcons      Under                     27.5   -265  72.6%
+      Atlanta Falcons      Over                      28.5   +235  29.9%
+      Atlanta Falcons      Under                     28.5   -320  76.2%
+      Atlanta Falcons      Over                      29.5   +255  28.2%
+      Atlanta Falcons      Under                     29.5   -350  77.8%
+      Atlanta Falcons      Over                      30.5   +320  23.8%
+      Atlanta Falcons      Under                     30.5   -460  82.1%
+      Atlanta Falcons      Over                      31.5   +420  19.2%
+      Atlanta Falcons      Under                     31.5   -650  86.7%
+      Atlanta Falcons      Over                      32.5   +440  18.5%
+      Atlanta Falcons      Under                     32.5   -700  87.5%
+      Atlanta Falcons      Over                      33.5   +500  16.7%
+      Atlanta Falcons      Under                     33.5   -850  89.5%
+      Atlanta Falcons      Over                      34.5   +680  12.8%
+      Atlanta Falcons      Under                     34.5  -1400  93.3%
+      Atlanta Falcons      Over                      35.5   +800  11.1%
+      Atlanta Falcons      Under                     35.5  -1800  94.7%
+      Atlanta Falcons      Over                      36.5   +830  10.8%
+      Atlanta Falcons      Under                     36.5  -2000  95.2%
+      Atlanta Falcons      Over                      37.5  +1000   9.1%
+      Atlanta Falcons      Under                     37.5  -3000  96.8%
+      Atlanta Falcons      Over                      38.5  +1300   7.1%
+      Atlanta Falcons      Under                     38.5  -5000  98.0%
+      Atlanta Falcons      Over                      39.5  +1400   6.7%
+      Atlanta Falcons      Under                     39.5  -6000  98.4%
+      Atlanta Falcons      Over                      40.5  +1500   6.2%
+      Atlanta Falcons      Under                     40.5  -7000  98.6%
+      Atlanta Falcons      Over                      41.5  +1700   5.6%
+      Atlanta Falcons      Under                     41.5 -10000  99.0%
+      Atlanta Falcons      Over                      42.5  +2200   4.3%
+      Atlanta Falcons      Under                     42.5 -20000  99.5%
+      Atlanta Falcons      Over                      43.5  +2500   3.8%
+      Atlanta Falcons      Under                     43.5 -20000  99.5%
+      New Orleans Saints   Over                       6.5 -20000  99.5%
+      New Orleans Saints   Under                      6.5  +2500   3.8%
+      New Orleans Saints   Over                       7.5 -10000  99.0%
+      New Orleans Saints   Under                      7.5  +1700   5.6%
+      New Orleans Saints   Over                       8.5 -10000  99.0%
+      New Orleans Saints   Under                      8.5  +1700   5.6%
+      New Orleans Saints   Over                       9.5  -6000  98.4%
+      New Orleans Saints   Under                      9.5  +1400   6.7%
+      New Orleans Saints   Over                      10.5  -3000  96.8%
+      New Orleans Saints   Under                     10.5  +1000   9.1%
+      New Orleans Saints   Over                      11.5  -3000  96.8%
+      New Orleans Saints   Under                     11.5  +1000   9.1%
+      New Orleans Saints   Over                      12.5  -2500  96.2%
+      New Orleans Saints   Under                     12.5   +870  10.3%
+      New Orleans Saints   Over                      13.5  -1200  92.3%
+      New Orleans Saints   Under                     13.5   +630  13.7%
+      New Orleans Saints   Over                      14.5   -900  90.0%
+      New Orleans Saints   Under                     14.5   +520  16.1%
+      New Orleans Saints   Over                      15.5   -770  88.5%
+      New Orleans Saints   Under                     15.5   +470  17.5%
+      New Orleans Saints   Over                      16.5   -590  85.5%
+      New Orleans Saints   Under                     16.5   +390  20.4%
+      New Orleans Saints   Over                      17.5   -400  80.0%
+      New Orleans Saints   Under                     17.5   +285  26.0%
+      New Orleans Saints   Over                      18.5   -370  78.7%
+      New Orleans Saints   Under                     18.5   +265  27.4%
+      New Orleans Saints   Over                      19.5   -330  76.7%
+      New Orleans Saints   Under                     19.5   +240  29.4%
+      New Orleans Saints   Over                      20.5   -230  69.7%
+      New Orleans Saints   Under                     20.5   +176  36.2%
+      New Orleans Saints   Over                      21.5   -188  65.3%
+      New Orleans Saints   Under                     21.5   +146  40.7%
+      New Orleans Saints   Over                      22.5   -172  63.2%
+      New Orleans Saints   Under                     22.5   +134  42.7%
+      New Orleans Saints   Over                      23.5   -136  57.6%
+      New Orleans Saints   Under                     23.5   +106  48.5%
+      New Orleans Saints   Over                      24.5   -102  50.5%
+      New Orleans Saints   Under                     24.5   -125  55.6%
+      New Orleans Saints   Over                      25.5   +104  49.0%
+      New Orleans Saints   Under                     25.5   -132  56.9%
+      New Orleans Saints   Over                      26.5   +124  44.6%
+      New Orleans Saints   Under                     26.5   -158  61.2%
+      New Orleans Saints   Over                      27.5   +164  37.9%
+      New Orleans Saints   Under                     27.5   -215  68.3%
+      New Orleans Saints   Over                      28.5   +196  33.8%
+      New Orleans Saints   Under                     28.5   -260  72.2%
+      New Orleans Saints   Over                      29.5   +215  31.7%
+      New Orleans Saints   Under                     29.5   -290  74.4%
+      New Orleans Saints   Over                      30.5   +265  27.4%
+      New Orleans Saints   Under                     30.5   -370  78.7%
+      New Orleans Saints   Over                      31.5   +340  22.7%
+      New Orleans Saints   Under                     31.5   -500  83.3%
+      New Orleans Saints   Over                      32.5   +360  21.7%
+      New Orleans Saints   Under                     32.5   -530  84.1%
+      New Orleans Saints   Over                      33.5   +420  19.2%
+      New Orleans Saints   Under                     33.5   -650  86.7%
+      New Orleans Saints   Over                      34.5   +560  15.2%
+      New Orleans Saints   Under                     34.5  -1000  90.9%
+      New Orleans Saints   Over                      35.5   +630  13.7%
+      New Orleans Saints   Under                     35.5  -1200  92.3%
+      New Orleans Saints   Over                      36.5   +750  11.8%
+      New Orleans Saints   Under                     36.5  -1600  94.1%
+      New Orleans Saints   Over                      37.5   +900  10.0%
+      New Orleans Saints   Under                     37.5  -2500  96.2%
+      New Orleans Saints   Over                      38.5  +1100   8.3%
+      New Orleans Saints   Under                     38.5  -4000  97.6%
+      New Orleans Saints   Over                      39.5  +1200   7.7%
+      New Orleans Saints   Under                     39.5  -4500  97.8%
+      New Orleans Saints   Over                      40.5  +1300   7.1%
+      New Orleans Saints   Under                     40.5  -5000  98.0%
+      New Orleans Saints   Over                      41.5  +1700   5.6%
+      New Orleans Saints   Under                     41.5 -10000  99.0%
+      New Orleans Saints   Over                      42.5  +1800   5.3%
+      New Orleans Saints   Under                     42.5 -10000  99.0%
+      New Orleans Saints   Over                      43.5  +2000   4.8%
+      New Orleans Saints   Under                     43.5 -20000  99.5%
+      New Orleans Saints   Over                      44.5  +2500   3.8%
+      New Orleans Saints   Under                     44.5 -20000  99.5%
+  alternate_team_totals_h1  (81)
+      Atlanta Falcons      Under                      0.5  +1600   5.9%
+      Atlanta Falcons      Under                      1.5  +1600   5.9%
+      Atlanta Falcons      Under                      2.5  +1600   5.9%
+      Atlanta Falcons      Over                       3.5   -900  90.0%
+      Atlanta Falcons      Under                      3.5   +500  16.7%
+      Atlanta Falcons      Over                       4.5   -900  90.0%
+      Atlanta Falcons      Under                      4.5   +500  16.7%
+      Atlanta Falcons      Over                       5.5   -900  90.0%
+      Atlanta Falcons      Under                      5.5   +500  16.7%
+      Atlanta Falcons      Over                       6.5   -500  83.3%
+      Atlanta Falcons      Under                      6.5   +320  23.8%
+      Atlanta Falcons      Over                       7.5   -270  73.0%
+      Atlanta Falcons      Under                      7.5   +180  35.7%
+      Atlanta Falcons      Over                       8.5   -270  73.0%
+      Atlanta Falcons      Under                      8.5   +180  35.7%
+      Atlanta Falcons      Over                       9.5   -230  69.7%
+      Atlanta Falcons      Under                      9.5   +155  39.2%
+      Atlanta Falcons      Over                      10.5   -125  55.6%
+      Atlanta Falcons      Under                     10.5   -130  56.5%
+      Atlanta Falcons      Over                      11.5   -120  54.5%
+      Atlanta Falcons      Under                     11.5   -130  56.5%
+      Atlanta Falcons      Over                      12.5   -115  53.5%
+      Atlanta Falcons      Under                     12.5   -135  57.4%
+      Atlanta Falcons      Over                      13.5   +125  44.4%
+      Atlanta Falcons      Under                     13.5   -195  66.1%
+      Atlanta Falcons      Over                      14.5   +200  33.3%
+      Atlanta Falcons      Under                     14.5   -310  75.6%
+      Atlanta Falcons      Over                      15.5   +210  32.3%
+      Atlanta Falcons      Under                     15.5   -320  76.2%
+      Atlanta Falcons      Over                      16.5   +240  29.4%
+      Atlanta Falcons      Under                     16.5   -370  78.7%
+      Atlanta Falcons      Over                      17.5   +460  17.9%
+      Atlanta Falcons      Under                     17.5   -750  88.2%
+      Atlanta Falcons      Over                      18.5   +470  17.5%
+      Atlanta Falcons      Under                     18.5   -750  88.2%
+      Atlanta Falcons      Over                      19.5   +500  16.7%
+      Atlanta Falcons      Under                     19.5   -800  88.9%
+      Atlanta Falcons      Over                      20.5   +650  13.3%
+      Atlanta Falcons      Under                     20.5  -1250  92.6%
+      New Orleans Saints   Over                       3.5  -1000  90.9%
+      New Orleans Saints   Under                      3.5   +600  14.3%
+      New Orleans Saints   Over                       4.5  -1000  90.9%
+      New Orleans Saints   Under                      4.5   +600  14.3%
+      New Orleans Saints   Over                       5.5  -1000  90.9%
+      New Orleans Saints   Under                      5.5   +600  14.3%
+      New Orleans Saints   Over                       6.5   -600  85.7%
+      New Orleans Saints   Under                      6.5   +360  21.7%
+      New Orleans Saints   Over                       7.5   -310  75.6%
+      New Orleans Saints   Under                      7.5   +200  33.3%
+      New Orleans Saints   Over                       8.5   -300  75.0%
+      New Orleans Saints   Under                      8.5   +200  33.3%
+      New Orleans Saints   Over                       9.5   -260  72.2%
+      New Orleans Saints   Under                      9.5   +170  37.0%
+      New Orleans Saints   Over                      10.5   -135  57.4%
+      New Orleans Saints   Under                     10.5   -120  54.5%
+      New Orleans Saints   Over                      11.5   -135  57.4%
+      New Orleans Saints   Under                     11.5   -120  54.5%
+      New Orleans Saints   Over                      12.5   -125  55.6%
+      New Orleans Saints   Under                     12.5   -125  55.6%
+      New Orleans Saints   Over                      13.5   +115  46.5%
+      New Orleans Saints   Under                     13.5   -180  64.3%
+      New Orleans Saints   Over                      14.5   +185  35.1%
+      New Orleans Saints   Under                     14.5   -280  73.7%
+      New Orleans Saints   Over                      15.5   +190  34.5%
+      New Orleans Saints   Under                     15.5   -290  74.4%
+      New Orleans Saints   Over                      16.5   +220  31.2%
+      New Orleans Saints   Under                     16.5   -330  76.7%
+      New Orleans Saints   Over                      17.5   +410  19.6%
+      New Orleans Saints   Under                     17.5   -650  86.7%
+      New Orleans Saints   Over                      18.5   +410  19.6%
+      New Orleans Saints   Under                     18.5   -650  86.7%
+      New Orleans Saints   Over                      19.5   +440  18.5%
+      New Orleans Saints   Under                     19.5   -700  87.5%
+      New Orleans Saints   Over                      20.5   +600  14.3%
+      New Orleans Saints   Under                     20.5  -1100  91.7%
+      New Orleans Saints   Over                      21.5   +950   9.5%
+      New Orleans Saints   Under                     21.5  -2000  95.2%
+      New Orleans Saints   Over                      22.5  +1000   9.1%
+      New Orleans Saints   Under                     22.5  -2000  95.2%
+      New Orleans Saints   Over                      23.5  +1100   8.3%
+      New Orleans Saints   Under                     23.5  -2500  96.2%
+  alternate_team_totals_h2  (84)
+      Atlanta Falcons      Over                       0.5  -3000  96.8%
+      Atlanta Falcons      Under                      0.5  +1200   7.7%
+      Atlanta Falcons      Over                       1.5  -3000  96.8%
+      Atlanta Falcons      Under                      1.5  +1200   7.7%
+      Atlanta Falcons      Over                       2.5  -3000  96.8%
+      Atlanta Falcons      Under                      2.5  +1200   7.7%
+      Atlanta Falcons      Over                       3.5  -1000  90.9%
+      Atlanta Falcons      Under                      3.5   +550  15.4%
+      Atlanta Falcons      Over                       4.5  -1000  90.9%
+      Atlanta Falcons      Under                      4.5   +550  15.4%
+      Atlanta Falcons      Over                       5.5  -1000  90.9%
+      Atlanta Falcons      Under                      5.5   +550  15.4%
+      Atlanta Falcons      Over                       6.5   -550  84.6%
+      Atlanta Falcons      Under                      6.5   +340  22.7%
+      Atlanta Falcons      Over                       7.5   -270  73.0%
+      Atlanta Falcons      Under                      7.5   +180  35.7%
+      Atlanta Falcons      Over                       8.5   -250  71.4%
+      Atlanta Falcons      Under                      8.5   +170  37.0%
+      Atlanta Falcons      Over                       9.5   -220  68.8%
+      Atlanta Falcons      Under                      9.5   +140  41.7%
+      Atlanta Falcons      Over                      10.5   -130  56.5%
+      Atlanta Falcons      Under                     10.5   -125  55.6%
+      Atlanta Falcons      Over                      11.5   -120  54.5%
+      Atlanta Falcons      Under                     11.5   -135  57.4%
+      Atlanta Falcons      Over                      12.5   -115  53.5%
+      Atlanta Falcons      Under                     12.5   -140  58.3%
+      Atlanta Falcons      Over                      13.5   +125  44.4%
+      Atlanta Falcons      Under                     13.5   -190  65.5%
+      Atlanta Falcons      Over                      14.5   +200  33.3%
+      Atlanta Falcons      Under                     14.5   -310  75.6%
+      Atlanta Falcons      Over                      15.5   +220  31.2%
+      Atlanta Falcons      Under                     15.5   -350  77.8%
+      Atlanta Falcons      Over                      16.5   +260  27.8%
+      Atlanta Falcons      Under                     16.5   -400  80.0%
+      Atlanta Falcons      Over                      17.5   +430  18.9%
+      Atlanta Falcons      Under                     17.5   -700  87.5%
+      Atlanta Falcons      Over                      18.5   +470  17.5%
+      Atlanta Falcons      Under                     18.5   -750  88.2%
+      Atlanta Falcons      Over                      19.5   +500  16.7%
+      Atlanta Falcons      Under                     19.5   -900  90.0%
+      Atlanta Falcons      Over                      20.5   +650  13.3%
+      Atlanta Falcons      Under                     20.5  -1250  92.6%
+      New Orleans Saints   Over                       2.5  -4000  97.6%
+      New Orleans Saints   Under                      2.5  +1400   6.7%
+      New Orleans Saints   Over                       3.5  -1100  91.7%
+      New Orleans Saints   Under                      3.5   +650  13.3%
+      New Orleans Saints   Over                       4.5  -1100  91.7%
+      New Orleans Saints   Under                      4.5   +650  13.3%
+      New Orleans Saints   Over                       5.5  -1100  91.7%
+      New Orleans Saints   Under                      5.5   +600  14.3%
+      New Orleans Saints   Over                       6.5   -600  85.7%
+      New Orleans Saints   Under                      6.5   +390  20.4%
+      New Orleans Saints   Over                       7.5   -320  76.2%
+      New Orleans Saints   Under                      7.5   +210  32.3%
+      New Orleans Saints   Over                       8.5   -300  75.0%
+      New Orleans Saints   Under                      8.5   +195  33.9%
+      New Orleans Saints   Over                       9.5   -250  71.4%
+      New Orleans Saints   Under                      9.5   +165  37.7%
+      New Orleans Saints   Over                      10.5   -155  60.8%
+      New Orleans Saints   Under                     10.5   -105  51.2%
+      New Orleans Saints   Over                      11.5   -145  59.2%
+      New Orleans Saints   Under                     11.5   -110  52.4%
+      New Orleans Saints   Over                      12.5   -135  57.4%
+      New Orleans Saints   Under                     12.5   -115  53.5%
+      New Orleans Saints   Over                      13.5   +105  48.8%
+      New Orleans Saints   Under                     13.5   -165  62.3%
+      New Orleans Saints   Over                      14.5   +175  36.4%
+      New Orleans Saints   Under                     14.5   -260  72.2%
+      New Orleans Saints   Over                      15.5   +190  34.5%
+      New Orleans Saints   Under                     15.5   -290  74.4%
+      New Orleans Saints   Over                      16.5   +230  30.3%
+      New Orleans Saints   Under                     16.5   -350  77.8%
+      New Orleans Saints   Over                      17.5   +370  21.3%
+      New Orleans Saints   Under                     17.5   -600  85.7%
+      New Orleans Saints   Over                      18.5   +410  19.6%
+      New Orleans Saints   Under                     18.5   -650  86.7%
+      New Orleans Saints   Over                      19.5   +450  18.2%
+      New Orleans Saints   Under                     19.5   -700  87.5%
+      New Orleans Saints   Over                      20.5   +600  14.3%
+      New Orleans Saints   Under                     20.5  -1000  90.9%
+      New Orleans Saints   Over                      21.5   +950   9.5%
+      New Orleans Saints   Under                     21.5  -2000  95.2%
+      New Orleans Saints   Over                      22.5  +1100   8.3%
+      New Orleans Saints   Under                     22.5  -2500  96.2%
+  alternate_totals  (116)
+                           Over                      20.5 -50000  99.8%
+                           Under                     20.5  +3500   2.8%
+                           Over                      21.5 -50000  99.8%
+                           Under                     21.5  +3000   3.2%
+                           Over                      22.5 -20000  99.5%
+                           Under                     22.5  +2500   3.8%
+                           Over                      23.5 -10000  99.0%
+                           Under                     23.5  +1700   5.6%
+                           Over                      24.5 -10000  99.0%
+                           Under                     24.5  +1700   5.6%
+                           Over                      25.5  -7000  98.6%
+                           Under                     25.5  +1500   6.2%
+                           Over                      26.5  -5000  98.0%
+                           Under                     26.5  +1300   7.1%
+                           Over                      27.5  -4000  97.6%
+                           Under                     27.5  +1100   8.3%
+                           Over                      28.5  -3500  97.2%
+                           Under                     28.5  +1060   8.6%
+                           Over                      29.5  -2500  96.2%
+                           Under                     29.5   +900  10.0%
+                           Over                      30.5  -1800  94.7%
+                           Under                     30.5   +800  11.1%
+                           Over                      31.5  -1600  94.1%
+                           Under                     31.5   +750  11.8%
+                           Over                      32.5  -1200  92.3%
+                           Under                     32.5   +630  13.7%
+                           Over                      33.5   -900  90.0%
+                           Under                     33.5   +520  16.1%
+                           Over                      34.5   -770  88.5%
+                           Under                     34.5   +470  17.5%
+                           Over                      35.5   -650  86.7%
+                           Under                     35.5   +420  19.2%
+                           Over                      36.5   -530  84.1%
+                           Under                     36.5   +360  21.7%
+                           Over                      37.5   -440  81.5%
+                           Under                     37.5   +310  24.4%
+                           Over                      38.5   -400  80.0%
+                           Under                     38.5   +285  26.0%
+                           Over                      39.5   -340  77.3%
+                           Under                     39.5   +250  28.6%
+                           Over                      40.5   -295  74.7%
+                           Under                     40.5   +220  31.2%
+                           Over                      41.5   -250  71.4%
+                           Under                     41.5   +190  34.5%
+                           Over                      42.5   -230  69.7%
+                           Under                     42.5   +176  36.2%
+                           Over                      43.5   -196  66.2%
+                           Under                     43.5   +152  39.7%
+                           Over                      44.5   -170  63.0%
+                           Under                     44.5   +132  43.1%
+                           Over                      45.5   -150  60.0%
+                           Under                     45.5   +118  45.9%
+                           Over                      46.5   -136  57.6%
+                           Under                     46.5   +106  48.5%
+                           Over                      47.5   -113  53.1%
+                           Under                     47.5   -113  53.1%
+                           Over                      48.5   +100  50.0%
+                           Under                     48.5   -128  56.1%
+                           Over                      49.5   +112  47.2%
+                           Under                     49.5   -142  58.7%
+                           Over                      50.5   +126  44.2%
+                           Under                     50.5   -162  61.8%
+                           Over                      51.5   +146  40.7%
+                           Under                     51.5   -188  65.3%
+                           Over                      52.5   +164  37.9%
+                           Under                     52.5   -215  68.3%
+                           Over                      53.5   +182  35.5%
+                           Under                     53.5   -240  70.6%
+                           Over                      54.5   +210  32.3%
+                           Under                     54.5   -280  73.7%
+                           Over                      55.5   +235  29.9%
+                           Under                     55.5   -320  76.2%
+                           Over                      56.5   +255  28.2%
+                           Under                     56.5   -350  77.8%
+                           Over                      57.5   +285  26.0%
+                           Under                     57.5   -400  80.0%
+                           Over                      58.5   +330  23.3%
+                           Under                     58.5   -480  82.8%
+                           Over                      59.5   +360  21.7%
+                           Under                     59.5   -530  84.1%
+                           Over                      60.5   +400  20.0%
+                           Under                     60.5   -620  86.1%
+                           Over                      61.5   +460  17.9%
+                           Under                     61.5   -750  88.2%
+                           Over                      62.5   +520  16.1%
+                           Under                     62.5   -900  90.0%
+                           Over                      63.5   +560  15.2%
+                           Under                     63.5  -1000  90.9%
+                           Over                      64.5   +630  13.7%
+                           Under                     64.5  -1200  92.3%
+                           Over                      65.5   +750  11.8%
+                           Under                     65.5  -1600  94.1%
+                           Over                      66.5   +830  10.8%
+                           Under                     66.5  -2000  95.2%
+                           Over                      67.5   +900  10.0%
+                           Under                     67.5  -2500  96.2%
+                           Over                      68.5  +1000   9.1%
+                           Under                     68.5  -3000  96.8%
+                           Over                      69.5  +1100   8.3%
+                           Under                     69.5  -4000  97.6%
+                           Over                      70.5  +1200   7.7%
+                           Under                     70.5  -4000  97.6%
+                           Over                      71.5  +1300   7.1%
+                           Under                     71.5  -5000  98.0%
+                           Over                      72.5  +1400   6.7%
+                           Under                     72.5  -6000  98.4%
+                           Over                      73.5  +1500   6.2%
+                           Under                     73.5  -7000  98.6%
+                           Over                      74.5  +1700   5.6%
+                           Under                     74.5 -10000  99.0%
+                           Over                      75.5  +1700   5.6%
+                           Under                     75.5 -10000  99.0%
+                           Over                      76.5  +2000   4.8%
+                           Under                     76.5 -20000  99.5%
+                           Over                      77.5  +2500   3.8%
+                           Under                     77.5 -20000  99.5%
+  alternate_totals_h1  (68)
+                           Under                      6.5  +2500   3.8%
+                           Under                      7.5  +1800   5.3%
+                           Under                      8.5  +1800   5.3%
+                           Under                      9.5  +1400   6.7%
+                           Over                      10.5  -3500  97.2%
+                           Under                     10.5  +1060   8.6%
+                           Over                      11.5  -3000  96.8%
+                           Under                     11.5  +1000   9.1%
+                           Over                      12.5  -2200  95.7%
+                           Under                     12.5   +870  10.3%
+                           Over                      13.5  -1000  90.9%
+                           Under                     13.5   +560  15.2%
+                           Over                      14.5   -800  88.9%
+                           Under                     14.5   +480  17.2%
+                           Over                      15.5   -750  88.2%
+                           Under                     15.5   +450  18.2%
+                           Over                      16.5   -500  83.3%
+                           Under                     16.5   +340  22.7%
+                           Over                      17.5   -340  77.3%
+                           Under                     17.5   +250  28.6%
+                           Over                      18.5   -330  76.7%
+                           Under                     18.5   +240  29.4%
+                           Over                      19.5   -290  74.4%
+                           Under                     19.5   +215  31.7%
+                           Over                      20.5   -186  65.0%
+                           Under                     20.5   +144  41.0%
+                           Over                      21.5   -166  62.4%
+                           Under                     21.5   +130  43.5%
+                           Over                      22.5   -156  60.9%
+                           Under                     22.5   +122  45.0%
+                           Over                      23.5   -115  53.5%
+                           Under                     23.5   -111  52.6%
+                           Over                      24.5   +116  46.3%
+                           Under                     24.5   -148  59.7%
+                           Over                      25.5   +122  45.0%
+                           Under                     25.5   -156  60.9%
+                           Over                      26.5   +140  41.7%
+                           Under                     26.5   -180  64.3%
+                           Over                      27.5   +196  33.8%
+                           Under                     27.5   -260  72.2%
+                           Over                      28.5   +220  31.2%
+                           Under                     28.5   -295  74.7%
+                           Over                      29.5   +240  29.4%
+                           Under                     29.5   -330  76.7%
+                           Over                      30.5   +300  25.0%
+                           Under                     30.5   -430  81.1%
+                           Over                      31.5   +390  20.4%
+                           Under                     31.5   -590  85.5%
+                           Over                      32.5   +400  20.0%
+                           Under                     32.5   -620  86.1%
+                           Over                      33.5   +450  18.2%
+                           Under                     33.5   -720  87.8%
+                           Over                      34.5   +600  14.3%
+                           Under                     34.5  -1100  91.7%
+                           Over                      35.5   +680  12.8%
+                           Under                     35.5  -1400  93.3%
+                           Over                      36.5   +750  11.8%
+                           Under                     36.5  -1600  94.1%
+                           Over                      37.5   +900  10.0%
+                           Under                     37.5  -2500  96.2%
+                           Over                      38.5  +1100   8.3%
+                           Under                     38.5  -4000  97.6%
+                           Over                      39.5  +1200   7.7%
+                           Under                     39.5  -4000  97.6%
+                           Over                      40.5  +1300   7.1%
+                           Over                      41.5  +1500   6.2%
+                           Over                      42.5  +1700   5.6%
+                           Over                      43.5  +1800   5.3%
+  alternate_totals_h2  (63)
+                           Under                      6.5  +1800   5.3%
+                           Under                      7.5  +1500   6.2%
+                           Under                      8.5  +1500   6.2%
+                           Under                      9.5  +1200   7.7%
+                           Under                     10.5   +830  10.8%
+                           Under                     11.5   +830  10.8%
+                           Over                      12.5  -1600  94.1%
+                           Under                     12.5   +750  11.8%
+                           Over                      13.5   -900  90.0%
+                           Under                     13.5   +520  16.1%
+                           Over                      14.5   -700  87.5%
+                           Under                     14.5   +440  18.5%
+                           Over                      15.5   -620  86.1%
+                           Under                     15.5   +400  20.0%
+                           Over                      16.5   -460  82.1%
+                           Under                     16.5   +320  23.8%
+                           Over                      17.5   -330  76.7%
+                           Under                     17.5   +235  29.9%
+                           Over                      18.5   -295  74.7%
+                           Under                     18.5   +220  31.2%
+                           Over                      19.5   -260  72.2%
+                           Under                     19.5   +196  33.8%
+                           Over                      20.5   -186  65.0%
+                           Under                     20.5   +144  41.0%
+                           Over                      21.5   -158  61.2%
+                           Under                     21.5   +124  44.6%
+                           Over                      22.5   -142  58.7%
+                           Under                     22.5   +112  47.2%
+                           Over                      23.5   -113  53.1%
+                           Under                     23.5   -113  53.1%
+                           Over                      24.5   +114  46.7%
+                           Under                     24.5   -146  59.3%
+                           Over                      25.5   +126  44.2%
+                           Under                     25.5   -162  61.8%
+                           Over                      26.5   +142  41.3%
+                           Under                     26.5   -184  64.8%
+                           Over                      27.5   +180  35.7%
+                           Under                     27.5   -235  70.1%
+                           Over                      28.5   +210  32.3%
+                           Under                     28.5   -280  73.7%
+                           Over                      29.5   +230  30.3%
+                           Under                     29.5   -310  75.6%
+                           Over                      30.5   +280  26.3%
+                           Under                     30.5   -390  79.6%
+                           Over                      31.5   +340  22.7%
+                           Under                     31.5   -500  83.3%
+                           Over                      32.5   +370  21.3%
+                           Under                     32.5   -560  84.8%
+                           Over                      33.5   +420  19.2%
+                           Under                     33.5   -650  86.7%
+                           Over                      34.5   +520  16.1%
+                           Under                     34.5   -900  90.0%
+                           Over                      35.5   +600  14.3%
+                           Under                     35.5  -1100  91.7%
+                           Over                      36.5   +680  12.8%
+                           Under                     36.5  -1400  93.3%
+                           Over                      37.5   +830  10.8%
+                           Over                      38.5  +1000   9.1%
+                           Over                      39.5  +1060   8.6%
+                           Over                      40.5  +1100   8.3%
+                           Over                      41.5  +1400   6.7%
+                           Over                      42.5  +1500   6.2%
+                           Over                      43.5  +1700   5.6%
+  first_team_to_score  (2)
+                           Atlanta Falcons                  -106  51.5%
+                           New Orleans Saints               -116  53.7%
+  h2h  (2)
+                           Atlanta Falcons                  +100  50.0%
+                           New Orleans Saints               -118  54.1%
+  h2h_3_way_h1  (3)
+                           Atlanta Falcons                  +115  46.5%
+                           Draw                             +850  10.5%
+                           New Orleans Saints               +100  50.0%
+  h2h_h1  (2)
+                           Atlanta Falcons                  -102  50.5%
+                           New Orleans Saints               -120  54.5%
+  h2h_h2  (2)
+                           Atlanta Falcons                  +102  49.5%
+                           New Orleans Saints               -120  54.5%
+  overtime  (2)
+                           No                              -3000  96.8%
+                           Yes                             +1120   8.2%
+  player_1st_td  (27)
+      Alvin Kamara         Yes                              +800  11.1%
+      Atlanta Falcons Defe Yes                             +3500   2.8%
+      Austin Hooper        Yes                             +3500   2.8%
+      Barion Brown         Yes                             +5500   1.8%
+      Bijan Robinson       Yes                              +360  21.7%
+      Brian Robinson Jr.   Yes                             +2200   4.3%
+      Bryce Lance          Yes                             +2700   3.6%
+      CJ Donaldson         Yes                             +2700   3.6%
+      Charlie Woerner      Yes                            +10000   1.0%
+      Chris Blair          Yes                            +10000   1.0%
+      Chris Olave          Yes                              +850  10.5%
+      Devaughn Vele        Yes                             +1400   6.7%
+      Drake London         Yes                              +750  11.8%
+      Jahan Dotson         Yes                             +2500   3.8%
+      Juwan Johnson        Yes                             +1300   7.1%
+      Kendre Miller        Yes                             +1500   6.2%
+      Kevin Austin         Yes                             +5500   1.8%
+      Kyle Pitts           Yes                             +1600   5.9%
+      Michael Penix Jr.    Yes                             +4500   2.2%
+      New Orleans Saints D Yes                             +4000   2.4%
+      Nick Muse            Yes                            +10000   1.0%
+      Noah Fant            Yes                             +2700   3.6%
+      Olamide Zaccheaus    Yes                             +3500   2.8%
+      Oscar Delp           Yes                             +4000   2.4%
+      Treyton Welch        Yes                             +4000   2.4%
+      Tyler Shough         Yes                             +1500   6.2%
+      Zachariah Branch     Yes                             +5500   1.8%
+  player_anytime_td  (27)
+      Alvin Kamara         Yes                              +140  41.7%
+      Atlanta Falcons Defe Yes                              +700  12.5%
+      Austin Hooper        Yes                              +800  11.1%
+      Barion Brown         Yes                             +1300   7.1%
+      Bijan Robinson       Yes                              -210  67.7%
+      Brian Robinson Jr.   Yes                              +370  21.3%
+      Bryce Lance          Yes                              +500  16.7%
+      CJ Donaldson         Yes                              +600  14.3%
+      Charlie Woerner      Yes                             +3000   3.2%
+      Chris Blair          Yes                             +1900   5.0%
+      Chris Olave          Yes                              +125  44.4%
+      Devaughn Vele        Yes                              +230  30.3%
+      Drake London         Yes                              +115  46.5%
+      Jahan Dotson         Yes                              +430  18.9%
+      Juwan Johnson        Yes                              +220  31.2%
+      Kendre Miller        Yes                              +300  25.0%
+      Kevin Austin         Yes                             +1300   7.1%
+      Kyle Pitts           Yes                              +300  25.0%
+      Michael Penix Jr.    Yes                             +1000   9.1%
+      New Orleans Saints D Yes                              +850  10.5%
+      Nick Muse            Yes                             +5000   2.0%
+      Noah Fant            Yes                              +550  15.4%
+      Olamide Zaccheaus    Yes                              +750  11.8%
+      Oscar Delp           Yes                              +900  10.0%
+      Treyton Welch        Yes                              +900  10.0%
+      Tyler Shough         Yes                              +290  25.6%
+      Zachariah Branch     Yes                             +1000   9.1%
+  player_anytime_td_h1  (25)
+      Alvin Kamara         Yes                              +320  23.8%
+      Atlanta Falcons Defe Yes                             +1200   7.7%
+      Austin Hooper        Yes                             +1400   6.7%
+      Barion Brown         Yes                             +2200   4.3%
+      Bijan Robinson       Yes                              +130  43.5%
+      Brian Robinson Jr.   Yes                              +750  11.8%
+      Bryce Lance          Yes                             +1000   9.1%
+      CJ Donaldson         Yes                             +1200   7.7%
+      Chris Blair          Yes                             +4000   2.4%
+      Chris Olave          Yes                              +300  25.0%
+      Devaughn Vele        Yes                              +500  16.7%
+      Drake London         Yes                              +280  26.3%
+      Jahan Dotson         Yes                              +850  10.5%
+      Juwan Johnson        Yes                              +490  16.9%
+      Kendre Miller        Yes                              +600  14.3%
+      Kevin Austin         Yes                             +2200   4.3%
+      Kyle Pitts           Yes                              +600  14.3%
+      Michael Penix Jr.    Yes                             +1800   5.3%
+      New Orleans Saints D Yes                             +1400   6.7%
+      Noah Fant            Yes                             +1000   9.1%
+      Olamide Zaccheaus    Yes                             +1400   6.7%
+      Oscar Delp           Yes                             +1600   5.9%
+      Treyton Welch        Yes                             +1600   5.9%
+      Tyler Shough         Yes                              +550  15.4%
+      Zachariah Branch     Yes                             +2000   4.8%
+  player_anytime_td_h2  (26)
+      Alvin Kamara         Yes                              +320  23.8%
+      Atlanta Falcons Defe Yes                             +1200   7.7%
+      Austin Hooper        Yes                             +1300   7.1%
+      Barion Brown         Yes                             +2000   4.8%
+      Bijan Robinson       Yes                              +135  42.6%
+      Brian Robinson Jr.   Yes                              +650  13.3%
+      Bryce Lance          Yes                              +900  10.0%
+      CJ Donaldson         Yes                              +950   9.5%
+      Charlie Woerner      Yes                             +4000   2.4%
+      Chris Blair          Yes                             +2500   3.8%
+      Chris Olave          Yes                              +280  26.3%
+      Devaughn Vele        Yes                              +480  17.2%
+      Drake London         Yes                              +280  26.3%
+      Jahan Dotson         Yes                              +750  11.8%
+      Juwan Johnson        Yes                              +470  17.5%
+      Kendre Miller        Yes                              +550  15.4%
+      Kevin Austin         Yes                             +2000   4.8%
+      Kyle Pitts           Yes                              +600  14.3%
+      Michael Penix Jr.    Yes                             +1600   5.9%
+      New Orleans Saints D Yes                             +1400   6.7%
+      Noah Fant            Yes                              +950   9.5%
+      Olamide Zaccheaus    Yes                             +1200   7.7%
+      Oscar Delp           Yes                             +1400   6.7%
+      Treyton Welch        Yes                             +1400   6.7%
+      Tyler Shough         Yes                              +550  15.4%
+      Zachariah Branch     Yes                             +1500   6.2%
+  player_last_td  (27)
+      Alvin Kamara         Yes                              +850  10.5%
+      Atlanta Falcons Defe Yes                             +3300   2.9%
+      Austin Hooper        Yes                             +3000   3.2%
+      Barion Brown         Yes                             +5000   2.0%
+      Bijan Robinson       Yes                              +440  18.5%
+      Brian Robinson Jr.   Yes                             +1700   5.6%
+      Bryce Lance          Yes                             +2200   4.3%
+      CJ Donaldson         Yes                             +2200   4.3%
+      Charlie Woerner      Yes                             +8000   1.2%
+      Chris Blair          Yes                             +5500   1.8%
+      Chris Olave          Yes                              +800  11.1%
+      Devaughn Vele        Yes                             +1200   7.7%
+      Drake London         Yes                              +700  12.5%
+      Jahan Dotson         Yes                             +1800   5.3%
+      Juwan Johnson        Yes                             +1200   7.7%
+      Kendre Miller        Yes                             +1500   6.2%
+      Kevin Austin         Yes                             +5000   2.0%
+      Kyle Pitts           Yes                             +1400   6.7%
+      Michael Penix Jr.    Yes                             +4000   2.4%
+      New Orleans Saints D Yes                             +3500   2.8%
+      Nick Muse            Yes                            +10000   1.0%
+      Noah Fant            Yes                             +2200   4.3%
+      Olamide Zaccheaus    Yes                             +3000   3.2%
+      Oscar Delp           Yes                             +3500   2.8%
+      Treyton Welch        Yes                             +3500   2.8%
+      Tyler Shough         Yes                             +1400   6.7%
+      Zachariah Branch     Yes                             +3300   2.9%
+  player_pass_interceptions_alternate  (17)
+      Avieon Terrell       Over                       0.5   +950   9.5%
+      C.J. Henderson       Over                       0.5   +950   9.5%
+      Jessie Bates III     Over                       0.5   +470  17.5%
+      Jessie Bates III     Over                       1.5  +6500   1.5%
+      Jonas Sanker         Over                       0.5   +700  12.5%
+      Jonas Sanker         Over                       1.5 +10000   1.0%
+      Julian Blackmon      Over                       0.5   +600  14.3%
+      Julian Blackmon      Over                       1.5  +8000   1.2%
+      Justin Reid          Over                       0.5   +700  12.5%
+      Justin Reid          Over                       1.5 +10000   1.0%
+      Kool-Aid McKinstry   Over                       0.5   +650  13.3%
+      Kool-Aid McKinstry   Over                       1.5  +8000   1.2%
+      Mike Hughes          Over                       0.5   +900  10.0%
+      Mike Reid            Over                       0.5  +1000   9.1%
+      Quincy Riley         Over                       0.5   +800  11.1%
+      Xavier Watts         Over                       0.5   +430  18.9%
+      Xavier Watts         Over                       1.5  +6000   1.6%
+  player_pass_rush_yds  (4)
+      Michael Penix Jr.    Over                     231.5   -113  53.1%
+      Michael Penix Jr.    Under                    231.5   -113  53.1%
+      Tyler Shough         Over                     277.5   -113  53.1%
+      Tyler Shough         Under                    277.5   -113  53.1%
+  player_pass_rush_yds_alternate  (20)
+      Michael Penix Jr.    Over                     149.5  -1100  91.7%
+      Michael Penix Jr.    Over                     174.5   -470  82.5%
+      Michael Penix Jr.    Over                     199.5   -260  72.2%
+      Michael Penix Jr.    Over                     224.5   -138  58.0%
+      Michael Penix Jr.    Over                     249.5   +132  43.1%
+      Michael Penix Jr.    Over                     274.5   +225  30.8%
+      Michael Penix Jr.    Over                     299.5   +390  20.4%
+      Michael Penix Jr.    Over                     324.5   +640  13.5%
+      Michael Penix Jr.    Over                     349.5  +1000   9.1%
+      Michael Penix Jr.    Over                     374.5  +1700   5.6%
+      Tyler Shough         Over                     199.5   -900  90.0%
+      Tyler Shough         Over                     224.5   -440  81.5%
+      Tyler Shough         Over                     249.5   -230  69.7%
+      Tyler Shough         Over                     274.5   -125  55.6%
+      Tyler Shough         Over                     299.5   +146  40.7%
+      Tyler Shough         Over                     324.5   +260  27.8%
+      Tyler Shough         Over                     349.5   +410  19.6%
+      Tyler Shough         Over                     374.5   +750  11.8%
+      Tyler Shough         Over                     399.5  +1200   7.7%
+      Tyler Shough         Over                     424.5  +1700   5.6%
+  player_pass_tds  (4)
+      Michael Penix Jr.    Over                       1.5   +104  49.0%
+      Michael Penix Jr.    Under                      1.5   -135  57.4%
+      Tyler Shough         Over                       1.5   -138  58.0%
+      Tyler Shough         Under                      1.5   +106  48.5%
+  player_pass_tds_alternate  (8)
+      Michael Penix Jr.    Over                       0.5   -500  83.3%
+      Michael Penix Jr.    Over                       1.5   +102  49.5%
+      Michael Penix Jr.    Over                       2.5   +390  20.4%
+      Michael Penix Jr.    Over                       3.5  +1260   7.4%
+      Tyler Shough         Over                       0.5   -800  88.9%
+      Tyler Shough         Over                       1.5   -138  58.0%
+      Tyler Shough         Over                       2.5   +280  26.3%
+      Tyler Shough         Over                       3.5   +920   9.8%
+  player_pass_yds  (4)
+      Michael Penix Jr.    Over                     224.5   -113  53.1%
+      Michael Penix Jr.    Under                    224.5   -113  53.1%
+      Tyler Shough         Over                     257.5   -113  53.1%
+      Tyler Shough         Under                    257.5   -113  53.1%
+  player_pass_yds_alternate  (19)
+      Michael Penix Jr.    Over                     149.5   -850  89.5%
+      Michael Penix Jr.    Over                     174.5   -400  80.0%
+      Michael Penix Jr.    Over                     199.5   -215  68.3%
+      Michael Penix Jr.    Over                     224.5   -114  53.3%
+      Michael Penix Jr.    Over                     249.5   +162  38.2%
+      Michael Penix Jr.    Over                     274.5   +280  26.3%
+      Michael Penix Jr.    Over                     299.5   +470  17.5%
+      Michael Penix Jr.    Over                     324.5   +750  11.8%
+      Michael Penix Jr.    Over                     349.5  +1260   7.4%
+      Tyler Shough         Over                     174.5  -1100  91.7%
+      Tyler Shough         Over                     199.5   -500  83.3%
+      Tyler Shough         Over                     224.5   -260  72.2%
+      Tyler Shough         Over                     249.5   -138  58.0%
+      Tyler Shough         Over                     274.5   +130  43.5%
+      Tyler Shough         Over                     299.5   +230  30.3%
+      Tyler Shough         Over                     324.5   +400  20.0%
+      Tyler Shough         Over                     349.5   +640  13.5%
+      Tyler Shough         Over                     374.5  +1000   9.1%
+      Tyler Shough         Over                     399.5  +1700   5.6%
+  player_reception_longest_alternate  (44)
+      Alvin Kamara         Over                       9.5   -115  53.5%
+      Alvin Kamara         Over                      14.5   +280  26.3%
+      Alvin Kamara         Over                      19.5   +650  13.3%
+      Austin Hooper        Over                       9.5   +150  40.0%
+      Austin Hooper        Over                      14.5   +360  21.7%
+      Austin Hooper        Over                      19.5   +750  11.8%
+      Bijan Robinson       Over                       9.5   -400  80.0%
+      Bijan Robinson       Over                      14.5   -135  57.4%
+      Bijan Robinson       Over                      19.5   +170  37.0%
+      Bijan Robinson       Over                      29.5   +500  16.7%
+      Bryce Lance          Over                       9.5   -165  62.3%
+      Bryce Lance          Over                      14.5   +120  45.5%
+      Bryce Lance          Over                      19.5   +220  31.2%
+      Bryce Lance          Over                      29.5   +550  15.4%
+      Chris Olave          Over                       9.5 -10000  99.0%
+      Chris Olave          Over                      14.5  -1100  91.7%
+      Chris Olave          Over                      19.5   -330  76.7%
+      Chris Olave          Over                      29.5   +130  43.5%
+      Devaughn Vele        Over                       9.5   -900  90.0%
+      Devaughn Vele        Over                      14.5   -270  73.0%
+      Devaughn Vele        Over                      19.5   -110  52.4%
+      Devaughn Vele        Over                      29.5   +310  24.4%
+      Drake London         Over                       9.5 -10000  99.0%
+      Drake London         Over                      14.5  -1100  91.7%
+      Drake London         Over                      19.5   -340  77.3%
+      Drake London         Over                      29.5   +115  46.5%
+      Jahan Dotson         Over                       9.5   -220  68.8%
+      Jahan Dotson         Over                      14.5   -110  52.4%
+      Jahan Dotson         Over                      19.5   +180  35.7%
+      Jahan Dotson         Over                      29.5   +500  16.7%
+      Juwan Johnson        Over                       9.5  -1000  90.9%
+      Juwan Johnson        Over                      14.5   -300  75.0%
+      Juwan Johnson        Over                      19.5   -125  55.6%
+      Juwan Johnson        Over                      29.5   +310  24.4%
+      Kyle Pitts           Over                       9.5   -380  79.2%
+      Kyle Pitts           Over                      14.5   -150  60.0%
+      Kyle Pitts           Over                      19.5   +160  38.5%
+      Kyle Pitts           Over                      29.5   +600  14.3%
+      Noah Fant            Over                       9.5   -165  62.3%
+      Noah Fant            Over                      14.5   +165  37.7%
+      Noah Fant            Over                      19.5   +390  20.4%
+      Olamide Zaccheaus    Over                       9.5   +130  43.5%
+      Olamide Zaccheaus    Over                      14.5   +290  25.6%
+      Olamide Zaccheaus    Over                      19.5   +600  14.3%
+  player_reception_yds  (26)
+      Alvin Kamara         Over                      15.5   -113  53.1%
+      Alvin Kamara         Under                     15.5   -113  53.1%
+      Austin Hooper        Over                       7.5   -106  51.5%
+      Austin Hooper        Under                      7.5   -120  54.5%
+      Bijan Robinson       Over                      35.5   -113  53.1%
+      Bijan Robinson       Under                     35.5   -113  53.1%
+      Bryce Lance          Over                      14.5   -113  53.1%
+      Bryce Lance          Under                     14.5   -113  53.1%
+      Chris Olave          Over                      84.5   -113  53.1%
+      Chris Olave          Under                     84.5   -113  53.1%
+      Devaughn Vele        Over                      44.5   -113  53.1%
+      Devaughn Vele        Under                     44.5   -113  53.1%
+      Drake London         Over                      79.5   -113  53.1%
+      Drake London         Under                     79.5   -113  53.1%
+      Jahan Dotson         Over                      19.5   -113  53.1%
+      Jahan Dotson         Under                     19.5   -113  53.1%
+      Juwan Johnson        Over                      45.5   -113  53.1%
+      Juwan Johnson        Under                     45.5   -113  53.1%
+      Kyle Pitts           Over                      29.5   -113  53.1%
+      Kyle Pitts           Under                     29.5   -113  53.1%
+      Noah Fant            Over                      16.5   -113  53.1%
+      Noah Fant            Under                     16.5   -113  53.1%
+      Olamide Zaccheaus    Over                       8.5   -113  53.1%
+      Olamide Zaccheaus    Under                      8.5   -113  53.1%
+      Zachariah Branch     Over                       3.5   -120  54.5%
+      Zachariah Branch     Under                      3.5   -106  51.5%
+  player_reception_yds_alternate  (130)
+      Alvin Kamara         Over                       4.5   -580  85.3%
+      Alvin Kamara         Over                       9.5   -245  71.0%
+      Alvin Kamara         Over                      14.5   -130  56.5%
+      Alvin Kamara         Over                      19.5   +130  43.5%
+      Alvin Kamara         Over                      24.5   +198  33.6%
+      Alvin Kamara         Over                      29.5   +290  25.6%
+      Alvin Kamara         Over                      39.5   +550  15.4%
+      Alvin Kamara         Over                      49.5   +880  10.2%
+      Alvin Kamara         Over                      59.5  +1400   6.7%
+      Austin Hooper        Over                       4.5   -166  62.4%
+      Austin Hooper        Over                       9.5   +122  45.0%
+      Austin Hooper        Over                      14.5   +205  32.8%
+      Austin Hooper        Over                      19.5   +320  23.8%
+      Austin Hooper        Over                      24.5   +490  16.9%
+      Austin Hooper        Over                      29.5   +700  12.5%
+      Austin Hooper        Over                      39.5  +1200   7.7%
+      Bijan Robinson       Over                       9.5  -1600  94.1%
+      Bijan Robinson       Over                      14.5   -700  87.5%
+      Bijan Robinson       Over                      19.5   -400  80.0%
+      Bijan Robinson       Over                      24.5   -250  71.4%
+      Bijan Robinson       Over                      29.5   -174  63.5%
+      Bijan Robinson       Over                      39.5   +114  46.7%
+      Bijan Robinson       Over                      49.5   +194  34.0%
+      Bijan Robinson       Over                      59.5   +310  24.4%
+      Bijan Robinson       Over                      69.5   +490  16.9%
+      Bijan Robinson       Over                      79.5   +750  11.8%
+      Bijan Robinson       Over                      89.5  +1000   9.1%
+      Bijan Robinson       Over                      99.5  +1400   6.7%
+      Bryce Lance          Over                       4.5   -300  75.0%
+      Bryce Lance          Over                       9.5   -180  64.3%
+      Bryce Lance          Over                      14.5   -114  53.3%
+      Bryce Lance          Over                      19.5   +128  43.9%
+      Bryce Lance          Over                      24.5   +178  36.0%
+      Bryce Lance          Over                      29.5   +225  30.8%
+      Bryce Lance          Over                      39.5   +370  21.3%
+      Bryce Lance          Over                      49.5   +580  14.7%
+      Bryce Lance          Over                      59.5   +850  10.5%
+      Chris Olave          Over                      39.5  -1400  93.3%
+      Chris Olave          Over                      49.5   -600  85.7%
+      Chris Olave          Over                      59.5   -340  77.3%
+      Chris Olave          Over                      69.5   -215  68.3%
+      Chris Olave          Over                      79.5   -138  58.0%
+      Chris Olave          Over                      89.5   +108  48.1%
+      Chris Olave          Over                      99.5   +158  38.8%
+      Chris Olave          Over                     109.5   +220  31.2%
+      Chris Olave          Over                     124.5   +360  21.7%
+      Chris Olave          Over                     149.5   +750  11.8%
+      Chris Olave          Over                     174.5  +1400   6.7%
+      Devaughn Vele        Over                      14.5  -1200  92.3%
+      Devaughn Vele        Over                      19.5   -670  87.0%
+      Devaughn Vele        Over                      24.5   -420  80.8%
+      Devaughn Vele        Over                      29.5   -280  73.7%
+      Devaughn Vele        Over                      39.5   -152  60.3%
+      Devaughn Vele        Over                      49.5   +116  46.3%
+      Devaughn Vele        Over                      59.5   +182  35.5%
+      Devaughn Vele        Over                      69.5   +280  26.3%
+      Devaughn Vele        Over                      79.5   +410  19.6%
+      Devaughn Vele        Over                      89.5   +630  13.7%
+      Devaughn Vele        Over                      99.5   +880  10.2%
+      Devaughn Vele        Over                     109.5  +1200   7.7%
+      Devaughn Vele        Over                     124.5  +1700   5.6%
+      Drake London         Over                      39.5   -850  89.5%
+      Drake London         Over                      49.5   -440  81.5%
+      Drake London         Over                      59.5   -270  73.0%
+      Drake London         Over                      69.5   -172  63.2%
+      Drake London         Over                      79.5   -114  53.3%
+      Drake London         Over                      89.5   +128  43.9%
+      Drake London         Over                      99.5   +182  35.5%
+      Drake London         Over                     109.5   +250  28.6%
+      Drake London         Over                     124.5   +400  20.0%
+      Drake London         Over                     149.5   +800  11.1%
+      Drake London         Over                     174.5  +1400   6.7%
+      Jahan Dotson         Over                       4.5   -490  83.1%
+      Jahan Dotson         Over                       9.5   -275  73.3%
+      Jahan Dotson         Over                      14.5   -172  63.2%
+      Jahan Dotson         Over                      19.5   -114  53.3%
+      Jahan Dotson         Over                      24.5   +124  44.6%
+      Jahan Dotson         Over                      29.5   +168  37.3%
+      Jahan Dotson         Over                      39.5   +290  25.6%
+      Jahan Dotson         Over                      49.5   +450  18.2%
+      Jahan Dotson         Over                      59.5   +680  12.8%
+      Jahan Dotson         Over                      69.5   +920   9.8%
+      Jahan Dotson         Over                      79.5  +1280   7.2%
+      Juwan Johnson        Over                      14.5  -1400  93.3%
+      Juwan Johnson        Over                      19.5   -700  87.5%
+      Juwan Johnson        Over                      24.5   -450  81.8%
+      Juwan Johnson        Over                      29.5   -310  75.6%
+      Juwan Johnson        Over                      39.5   -166  62.4%
+      Juwan Johnson        Over                      49.5   +108  48.1%
+      Juwan Johnson        Over                      59.5   +178  36.0%
+      Juwan Johnson        Over                      69.5   +270  27.0%
+      Juwan Johnson        Over                      79.5   +400  20.0%
+      Juwan Johnson        Over                      89.5   +630  13.7%
+      Juwan Johnson        Over                      99.5   +880  10.2%
+      Juwan Johnson        Over                     109.5  +1200   7.7%
+      Kyle Pitts           Over                       4.5  -1800  94.7%
+      Kyle Pitts           Over                       9.5   -700  87.5%
+      Kyle Pitts           Over                      14.5   -400  80.0%
+      Kyle Pitts           Over                      19.5   -245  71.0%
+      Kyle Pitts           Over                      24.5   -162  61.8%
+      Kyle Pitts           Over                      29.5   -114  53.3%
+      Kyle Pitts           Over                      39.5   +164  37.9%
+      Kyle Pitts           Over                      49.5   +280  26.3%
+      Kyle Pitts           Over                      59.5   +450  18.2%
+      Kyle Pitts           Over                      69.5   +700  12.5%
+      Kyle Pitts           Over                      79.5  +1000   9.1%
+      Kyle Pitts           Over                      89.5  +1500   6.2%
+      Noah Fant            Over                       4.5   -470  82.5%
+      Noah Fant            Over                       9.5   -235  70.1%
+      Noah Fant            Over                      14.5   -138  58.0%
+      Noah Fant            Over                      19.5   +116  46.3%
+      Noah Fant            Over                      24.5   +174  36.5%
+      Noah Fant            Over                      29.5   +240  29.4%
+      Noah Fant            Over                      39.5   +450  18.2%
+      Noah Fant            Over                      49.5   +800  11.1%
+      Noah Fant            Over                      59.5  +1200   7.7%
+      Olamide Zaccheaus    Over                       4.5   -200  66.7%
+      Olamide Zaccheaus    Over                       9.5   +102  49.5%
+      Olamide Zaccheaus    Over                      14.5   +168  37.3%
+      Olamide Zaccheaus    Over                      19.5   +260  27.8%
+      Olamide Zaccheaus    Over                      24.5   +390  20.4%
+      Olamide Zaccheaus    Over                      29.5   +550  15.4%
+      Olamide Zaccheaus    Over                      39.5   +920   9.8%
+      Zachariah Branch     Over                       4.5   -108  51.9%
+      Zachariah Branch     Over                       9.5   +154  39.4%
+      Zachariah Branch     Over                      14.5   +225  30.8%
+      Zachariah Branch     Over                      19.5   +320  23.8%
+      Zachariah Branch     Over                      24.5   +430  18.9%
+      Zachariah Branch     Over                      29.5   +580  14.7%
+      Zachariah Branch     Over                      39.5   +880  10.2%
+  player_receptions  (26)
+      Alvin Kamara         Over                       3.5   +134  42.7%
+      Alvin Kamara         Under                      3.5   -180  64.3%
+      Austin Hooper        Over                       1.5   +194  34.0%
+      Austin Hooper        Under                      1.5   -270  73.0%
+      Bijan Robinson       Over                       4.5   +118  45.9%
+      Bijan Robinson       Under                      4.5   -158  61.2%
+      Bryce Lance          Over                       1.5   +124  44.6%
+      Bryce Lance          Under                      1.5   -166  62.4%
+      Chris Olave          Over                       6.5   -132  56.9%
+      Chris Olave          Under                      6.5   +100  50.0%
+      Devaughn Vele        Over                       3.5   -172  63.2%
+      Devaughn Vele        Under                      3.5   +128  43.9%
+      Drake London         Over                       5.5   -140  58.3%
+      Drake London         Under                      5.5   +106  48.5%
+      Jahan Dotson         Over                       1.5   -138  58.0%
+      Jahan Dotson         Under                      1.5   +104  49.0%
+      Juwan Johnson        Over                       3.5   -158  61.2%
+      Juwan Johnson        Under                      3.5   +118  45.9%
+      Kyle Pitts           Over                       2.5   -154  60.6%
+      Kyle Pitts           Under                      2.5   +116  46.3%
+      Noah Fant            Over                       1.5   -178  64.0%
+      Noah Fant            Under                      1.5   +132  43.1%
+      Olamide Zaccheaus    Over                       1.5   +136  42.4%
+      Olamide Zaccheaus    Under                      1.5   -182  64.5%
+      Zachariah Branch     Over                       0.5   -144  59.0%
+      Zachariah Branch     Under                      0.5   +108  48.1%
+  player_receptions_alternate  (81)
+      Alvin Kamara         Over                       1.5   -550  84.6%
+      Alvin Kamara         Over                       2.5   -180  64.3%
+      Alvin Kamara         Over                       3.5   +136  42.4%
+      Alvin Kamara         Over                       4.5   +280  26.3%
+      Alvin Kamara         Over                       5.5   +520  16.1%
+      Alvin Kamara         Over                       6.5   +880  10.2%
+      Alvin Kamara         Over                       7.5  +1500   6.2%
+      Austin Hooper        Over                       0.5   -260  72.2%
+      Austin Hooper        Over                       1.5   +182  35.5%
+      Austin Hooper        Over                       2.5   +550  15.4%
+      Austin Hooper        Over                       3.5  +1260   7.4%
+      Bijan Robinson       Over                       2.5   -470  82.5%
+      Bijan Robinson       Over                       3.5   -194  66.0%
+      Bijan Robinson       Over                       4.5   +112  47.2%
+      Bijan Robinson       Over                       5.5   +210  32.3%
+      Bijan Robinson       Over                       6.5   +370  21.3%
+      Bijan Robinson       Over                       7.5   +640  13.5%
+      Bijan Robinson       Over                       8.5  +1000   9.1%
+      Bijan Robinson       Over                       9.5  +1500   6.2%
+      Bryce Lance          Over                       0.5   -360  78.3%
+      Bryce Lance          Over                       1.5   +122  45.0%
+      Bryce Lance          Over                       2.5   +360  21.7%
+      Bryce Lance          Over                       3.5   +880  10.2%
+      Chris Olave          Over                       3.5  -1600  94.1%
+      Chris Olave          Over                       4.5   -580  85.3%
+      Chris Olave          Over                       5.5   -260  72.2%
+      Chris Olave          Over                       6.5   -136  57.6%
+      Chris Olave          Over                       7.5   +136  42.4%
+      Chris Olave          Over                       8.5   +225  30.8%
+      Chris Olave          Over                       9.5   +370  21.3%
+      Chris Olave          Over                      10.5   +630  13.7%
+      Chris Olave          Over                      11.5   +920   9.8%
+      Chris Olave          Over                      12.5  +1400   6.7%
+      Devaughn Vele        Over                       2.5   -440  81.5%
+      Devaughn Vele        Over                       3.5   -174  63.5%
+      Devaughn Vele        Over                       4.5   +130  43.5%
+      Devaughn Vele        Over                       5.5   +250  28.6%
+      Devaughn Vele        Over                       6.5   +470  17.5%
+      Devaughn Vele        Over                       7.5   +850  10.5%
+      Devaughn Vele        Over                       8.5  +1280   7.2%
+      Drake London         Over                       3.5   -700  87.5%
+      Drake London         Over                       4.5   -290  74.4%
+      Drake London         Over                       5.5   -144  59.0%
+      Drake London         Over                       6.5   +134  42.7%
+      Drake London         Over                       7.5   +235  29.9%
+      Drake London         Over                       8.5   +410  19.6%
+      Drake London         Over                       9.5   +680  12.8%
+      Drake London         Over                      10.5  +1100   8.3%
+      Drake London         Over                      11.5  +1500   6.2%
+      Jahan Dotson         Over                       0.5   -700  87.5%
+      Jahan Dotson         Over                       1.5   -140  58.3%
+      Jahan Dotson         Over                       2.5   +220  31.2%
+      Jahan Dotson         Over                       3.5   +550  15.4%
+      Jahan Dotson         Over                       4.5  +1200   7.7%
+      Juwan Johnson        Over                       1.5  -1600  94.1%
+      Juwan Johnson        Over                       2.5   -420  80.8%
+      Juwan Johnson        Over                       3.5   -160  61.5%
+      Juwan Johnson        Over                       4.5   +140  41.7%
+      Juwan Johnson        Over                       5.5   +280  26.3%
+      Juwan Johnson        Over                       6.5   +520  16.1%
+      Juwan Johnson        Over                       7.5   +880  10.2%
+      Juwan Johnson        Over                       8.5  +1400   6.7%
+      Kyle Pitts           Over                       1.5   -470  82.5%
+      Kyle Pitts           Over                       2.5   -158  61.2%
+      Kyle Pitts           Over                       3.5   +162  38.2%
+      Kyle Pitts           Over                       4.5   +350  22.2%
+      Kyle Pitts           Over                       5.5   +700  12.5%
+      Kyle Pitts           Over                       6.5  +1200   7.7%
+      Noah Fant            Over                       0.5   -850  89.5%
+      Noah Fant            Over                       1.5   -178  64.0%
+      Noah Fant            Over                       2.5   +168  37.3%
+      Noah Fant            Over                       3.5   +370  21.3%
+      Noah Fant            Over                       4.5   +800  11.1%
+      Noah Fant            Over                       5.5  +1400   6.7%
+      Olamide Zaccheaus    Over                       0.5   -350  77.8%
+      Olamide Zaccheaus    Over                       1.5   +136  42.4%
+      Olamide Zaccheaus    Over                       2.5   +390  20.4%
+      Olamide Zaccheaus    Over                       3.5   +920   9.8%
+      Zachariah Branch     Over                       0.5   -152  60.3%
+      Zachariah Branch     Over                       1.5   +250  28.6%
+      Zachariah Branch     Over                       2.5   +580  14.7%
+  player_rush_reception_yds  (4)
+      Alvin Kamara         Over                      56.5   -111  52.6%
+      Alvin Kamara         Under                     56.5   -115  53.5%
+      Bijan Robinson       Over                     128.5   -113  53.1%
+      Bijan Robinson       Under                    128.5   -113  53.1%
+  player_rush_yds  (12)
+      Alvin Kamara         Over                      36.5   -113  53.1%
+      Alvin Kamara         Under                     36.5   -113  53.1%
+      Bijan Robinson       Over                      87.5   -113  53.1%
+      Bijan Robinson       Under                     87.5   -113  53.1%
+      Brian Robinson Jr.   Over                      28.5   -113  53.1%
+      Brian Robinson Jr.   Under                     28.5   -113  53.1%
+      Kendre Miller        Over                      24.5   -113  53.1%
+      Kendre Miller        Under                     24.5   -113  53.1%
+      Michael Penix Jr.    Over                       4.5   -113  53.1%
+      Michael Penix Jr.    Under                      4.5   -113  53.1%
+      Tyler Shough         Over                      16.5   -113  53.1%
+      Tyler Shough         Under                     16.5   -113  53.1%
+  player_rush_yds_alternate  (55)
+      Alvin Kamara         Over                      14.5   -900  90.0%
+      Alvin Kamara         Over                      19.5   -470  82.5%
+      Alvin Kamara         Over                      24.5   -290  74.4%
+      Alvin Kamara         Over                      29.5   -192  65.8%
+      Alvin Kamara         Over                      39.5   +106  48.5%
+      Alvin Kamara         Over                      49.5   +188  34.7%
+      Alvin Kamara         Over                      59.5   +300  25.0%
+      Alvin Kamara         Over                      69.5   +470  17.5%
+      Alvin Kamara         Over                      79.5   +700  12.5%
+      Alvin Kamara         Over                      89.5   +920   9.8%
+      Alvin Kamara         Over                      99.5  +1280   7.2%
+      Bijan Robinson       Over                      49.5  -1000  90.9%
+      Bijan Robinson       Over                      59.5   -470  82.5%
+      Bijan Robinson       Over                      69.5   -270  73.0%
+      Bijan Robinson       Over                      79.5   -166  62.4%
+      Bijan Robinson       Over                      89.5   -106  51.5%
+      Bijan Robinson       Over                      99.5   +142  41.3%
+      Bijan Robinson       Over                     109.5   +205  32.8%
+      Bijan Robinson       Over                     124.5   +350  22.2%
+      Bijan Robinson       Over                     149.5   +750  11.8%
+      Bijan Robinson       Over                     174.5  +1400   6.7%
+      Brian Robinson Jr.   Over                       9.5  -1100  91.7%
+      Brian Robinson Jr.   Over                      14.5   -450  81.8%
+      Brian Robinson Jr.   Over                      19.5   -260  72.2%
+      Brian Robinson Jr.   Over                      24.5   -160  61.5%
+      Brian Robinson Jr.   Over                      29.5   -106  51.5%
+      Brian Robinson Jr.   Over                      39.5   +188  34.7%
+      Brian Robinson Jr.   Over                      49.5   +320  23.8%
+      Brian Robinson Jr.   Over                      59.5   +550  15.4%
+      Brian Robinson Jr.   Over                      69.5   +850  10.5%
+      Brian Robinson Jr.   Over                      79.5  +1200   7.7%
+      Brian Robinson Jr.   Over                      89.5  +1500   6.2%
+      Kendre Miller        Over                       4.5  -1200  92.3%
+      Kendre Miller        Over                       9.5   -470  82.5%
+      Kendre Miller        Over                      14.5   -270  73.0%
+      Kendre Miller        Over                      19.5   -172  63.2%
+      Kendre Miller        Over                      24.5   -114  53.3%
+      Kendre Miller        Over                      29.5   +120  45.5%
+      Kendre Miller        Over                      39.5   +205  32.8%
+      Kendre Miller        Over                      49.5   +320  23.8%
+      Kendre Miller        Over                      59.5   +490  16.9%
+      Kendre Miller        Over                      69.5   +680  12.8%
+      Kendre Miller        Over                      79.5   +880  10.2%
+      Michael Penix Jr.    Over                       4.5   -114  53.3%
+      Michael Penix Jr.    Over                       9.5   +194  34.0%
+      Michael Penix Jr.    Over                      14.5   +360  21.7%
+      Michael Penix Jr.    Over                      19.5   +630  13.7%
+      Michael Penix Jr.    Over                      24.5   +880  10.2%
+      Tyler Shough         Over                       4.5   -850  89.5%
+      Tyler Shough         Over                       9.5   -300  75.0%
+      Tyler Shough         Over                      14.5   -148  59.7%
+      Tyler Shough         Over                      19.5   +120  45.5%
+      Tyler Shough         Over                      24.5   +194  34.0%
+      Tyler Shough         Over                      29.5   +290  25.6%
+      Tyler Shough         Over                      39.5   +630  13.7%
+  player_sacks  (8)
+      Brandon Dorlus       Over                       0.5   +205  32.8%
+      Cameron Jordan       Over                       0.5   +280  26.3%
+      Cameron Thomas       Over                       0.5   +162  38.2%
+      Chase Young          Over                       0.5   -114  53.3%
+      Gervon Dexter Sr.    Over                       0.5   +225  30.8%
+      Nathan Shepherd      Over                       0.5   +350  22.2%
+      Samson Ebukam        Over                       0.5   +300  25.0%
+      Tyree Wilson         Over                       0.5   +400  20.0%
+  player_tds_over  (26)
+      Alvin Kamara         Over                       1.5  +1000   9.1%
+      Alvin Kamara         Over                       2.5  +7000   1.4%
+      Atlanta Falcons Defe Over                       1.5  +8000   1.2%
+      Austin Hooper        Over                       1.5 +12500   0.8%
+      Bijan Robinson       Over                       1.5   +250  28.6%
+      Bijan Robinson       Over                       2.5  +1400   6.7%
+      Bijan Robinson       Over                       3.5  +8000   1.2%
+      Brian Robinson Jr.   Over                       1.5  +3300   2.9%
+      Bryce Lance          Over                       1.5  +7000   1.4%
+      CJ Donaldson         Over                       1.5  +7000   1.4%
+      Chris Olave          Over                       1.5   +950   9.5%
+      Chris Olave          Over                       2.5  +7000   1.4%
+      Devaughn Vele        Over                       1.5  +2000   4.8%
+      Devaughn Vele        Over                       2.5 +17500   0.6%
+      Drake London         Over                       1.5   +800  11.1%
+      Drake London         Over                       2.5  +5000   2.0%
+      Jahan Dotson         Over                       1.5  +4500   2.2%
+      Juwan Johnson        Over                       1.5  +2000   4.8%
+      Kendre Miller        Over                       1.5  +2500   3.8%
+      Kyle Pitts           Over                       1.5  +3000   3.2%
+      New Orleans Saints D Over                       1.5 +10000   1.0%
+      Noah Fant            Over                       1.5  +7000   1.4%
+      Olamide Zaccheaus    Over                       1.5 +10000   1.0%
+      Treyton Welch        Over                       1.5 +15000   0.7%
+      Tyler Shough         Over                       1.5  +2500   3.8%
+      Zachariah Branch     Over                       1.5 +15000   0.7%
+  spreads  (2)
+                           New Orleans Saints        -1.5   -110  52.4%
+                           Atlanta Falcons            1.5   -110  52.4%
+  spreads_h1  (2)
+                           New Orleans Saints        -1.5   +115  46.5%
+                           Atlanta Falcons            1.5   -135  57.4%
+  spreads_h2  (2)
+                           New Orleans Saints        -1.5   +115  46.5%
+                           Atlanta Falcons            1.5   -135  57.4%
+  team_totals  (4)
+      Atlanta Falcons      Over                      23.5   -113  53.1%
+      Atlanta Falcons      Under                     23.5   -113  53.1%
+      New Orleans Saints   Over                      24.5   -102  50.5%
+      New Orleans Saints   Under                     24.5   -125  55.6%
+  team_totals_h1  (4)
+      Atlanta Falcons      Over                      10.5   -111  52.6%
+      Atlanta Falcons      Under                     10.5   -115  53.5%
+      New Orleans Saints   Over                      12.5   -113  53.1%
+      New Orleans Saints   Under                     12.5   -113  53.1%
+  team_totals_h2  (4)
+      Atlanta Falcons      Over                      10.5   -115  53.5%
+      Atlanta Falcons      Under                     10.5   -111  52.6%
+      New Orleans Saints   Over                      12.5   -122  55.0%
+      New Orleans Saints   Under                     12.5   -104  51.0%
+  totals  (2)
+                           Over                      47.5   -110  52.4%
+                           Under                     47.5   -110  52.4%
+  totals_h1  (2)
+                           Over                      23.5   -110  52.4%
+                           Under                     23.5   -110  52.4%
+  totals_h2  (2)
+                           Over                      23.5   -110  52.4%
+                           Under                     23.5   -110  52.4%
