@@ -1,0 +1,149 @@
+
+=== Chicago White Sox @ Cleveland Guardians   2026-10-05T21:10:00Z ===
+  totals_1st_5_innings:
+      Over        3.5    -102    50.5%
+      Under       3.5    -128    56.1%
+  alternate_totals_1st_5_innings:
+      Over        0.5   -2200    95.7%
+      Under       0.5    +800    11.1%
+      Over        1.5    -470    82.5%
+      Under       1.5    +310    24.4%
+      Over        2.5    -210    67.7%
+      Under       2.5    +154    39.4%
+      Over        3.5    -102    50.5%
+      Under       3.5    -130    56.5%
+      Over        4.5    +168    37.3%
+      Under       4.5    -230    69.7%
+      Over        5.5    +280    26.3%
+      Under       5.5    -420    80.8%
+      Over        6.5    +430    18.9%
+      Under       6.5    -750    88.2%
+      Over        7.5    +640    13.5%
+      Under       7.5   -1450    93.5%
+      Over        8.5    +920     9.8%
+      Under       8.5   -3500    97.2%
+      Over        9.5   +1280     7.2%
+      Under       9.5   -7000    98.6%
+  h2h_1st_5_innings:
+      Chicago White Sox           +132    43.1%
+      Cleveland Guardians           -166    62.4%
+  totals:
+      Over        6.5    -118    54.1%
+      Under       6.5    -104    51.0%
+  h2h:
+      Chicago White Sox           +128    43.9%
+      Cleveland Guardians           -152    60.3%
+  spreads:
+      Cleveland Guardians   -1.5    +152    39.7%
+      Chicago White Sox    1.5    -184    64.8%
+
+=== New York Yankees @ Tampa Bay Rays   2026-10-06T00:00:00Z ===
+  totals_1st_5_innings:
+      Over        3.5    -102    50.5%
+      Under       3.5    -128    56.1%
+  alternate_totals_1st_5_innings:
+      Over        0.5   -2500    96.2%
+      Under       0.5    +850    10.5%
+      Over        1.5    -490    83.1%
+      Under       1.5    +320    23.8%
+      Over        2.5    -210    67.7%
+      Under       2.5    +154    39.4%
+      Over        3.5    -102    50.5%
+      Under       3.5    -130    56.5%
+      Over        4.5    +178    36.0%
+      Under       4.5    -245    71.0%
+      Over        5.5    +290    25.6%
+      Under       5.5    -440    81.5%
+      Over        6.5    +470    17.5%
+      Under       6.5    -850    89.5%
+      Over        7.5    +750    11.8%
+      Under       7.5   -2000    95.2%
+      Over        8.5   +1100     8.3%
+      Under       8.5   -4500    97.8%
+  h2h_1st_5_innings:
+      New York Yankees           -148    59.7%
+      Tampa Bay Rays           +118    45.9%
+  totals:
+      Over        6.5    -118    54.1%
+      Under       6.5    -104    51.0%
+  h2h:
+      New York Yankees           -120    54.5%
+      Tampa Bay Rays           +102    49.5%
+  spreads:
+      New York Yankees   -1.5    +146    40.7%
+      Tampa Bay Rays    1.5    -176    63.8%
+
+=== Los Angeles Dodgers @ Atlanta Braves   2026-10-06T22:00:00Z ===
+  totals_1st_5_innings:
+      Over        3.5    +100    50.0%
+      Under       3.5    -130    56.5%
+  alternate_totals_1st_5_innings:
+      Over        0.5   -3000    96.8%
+      Under       0.5    +880    10.2%
+      Over        1.5    -490    83.1%
+      Under       1.5    +320    23.8%
+      Over        2.5    -200    66.7%
+      Under       2.5    +148    40.3%
+      Over        3.5    +100    50.0%
+      Under       3.5    -132    56.9%
+      Over        4.5    +182    35.5%
+      Under       4.5    -250    71.4%
+      Over        5.5    +290    25.6%
+      Under       5.5    -440    81.5%
+      Over        6.5    +470    17.5%
+      Under       6.5    -850    89.5%
+      Over        7.5    +700    12.5%
+      Under       7.5   -1800    94.7%
+      Over        8.5   +1100     8.3%
+      Under       8.5   -4500    97.8%
+  h2h_1st_5_innings:
+      Atlanta Braves           -120    54.5%
+      Los Angeles Dodgers           -104    51.0%
+  totals:
+      Over        6.5    -102    50.5%
+      Under       6.5    -120    54.5%
+  h2h:
+      Atlanta Braves           -108    51.9%
+      Los Angeles Dodgers           -108    51.9%
+  spreads:
+      Los Angeles Dodgers   -1.5    +168    37.3%
+      Atlanta Braves    1.5    -205    67.2%
+
+=== Milwaukee Brewers @ San Diego Padres   2026-10-07T01:30:00Z ===
+  totals_1st_5_innings:
+      Over        3.5    -138    58.0%
+      Under       3.5    +106    48.5%
+  alternate_totals_1st_5_innings:
+      Over        0.5   -4500    97.8%
+      Under       0.5   +1100     8.3%
+      Over        1.5    -700    87.5%
+      Under       1.5    +410    19.6%
+      Over        2.5    -280    73.7%
+      Under       2.5    +200    33.3%
+      Over        3.5    -138    58.0%
+      Under       3.5    +104    49.0%
+      Over        4.5    +132    43.1%
+      Under       4.5    -178    64.0%
+      Over        5.5    +220    31.2%
+      Under       5.5    -310    75.6%
+      Over        6.5    +320    23.8%
+      Under       6.5    -500    83.3%
+      Over        7.5    +490    16.9%
+      Under       7.5    -900    90.0%
+      Over        8.5    +750    11.8%
+      Under       8.5   -2000    95.2%
+      Over        9.5   +1000     9.1%
+      Under       9.5   -4000    97.6%
+      Under      10.5   -8000    98.8%
+  h2h_1st_5_innings:
+      Milwaukee Brewers           +108    48.1%
+      San Diego Padres           -135    57.4%
+  totals:
+      Over        7.5    +110    47.6%
+      Under       7.5    -134    57.3%
+  h2h:
+      Milwaukee Brewers           +116    46.3%
+      San Diego Padres           -134    57.3%
+  spreads:
+      San Diego Padres   -1.5    +162    38.2%
+      Milwaukee Brewers    1.5    -200    66.7%
