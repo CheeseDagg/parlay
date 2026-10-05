@@ -135,15 +135,36 @@ HALF_LIFE = 5.0
 # 5% away, Olave under 84.5, Bijan under 87.5 -- came out of that dead zone and
 # was noise dressed as a number.
 #
-# The real skill is on RECEPTIONS alt rungs 30-60% off the projection. Receiving
-# yards and rushing yards never clear +5% anywhere, so their edges are reported
-# with the skill figure attached rather than silently.
+# Measured systematically across every stat and band rather than hand-set from
+# four spot checks -- the hand-set version had receiving yards at 30-60% as a
+# dead zone when it is +21%, and receptions beyond 60% at 5% when it is 46%, so
+# it was refusing lines the model prices well:
+#
+#   stat              0-10%   10-30%   30-60%    60%+
+#   receptions        +0.9%    +7.5%   +28.8%   +46.1%
+#   receiving yards   +0.6%    +4.5%   +21.3%   +32.1%
+#   rushing yards     +1.4%    +7.9%   +28.3%   +23.2%
+#   passing yards     +4.5%   +19.5%   +42.2%    +8.4%
+#   carries           +0.4%   +14.6%   +41.5%    +4.2%
+#
+# The dead zone is the 0-10% band and only that band -- which is precisely where
+# a book posts its main line.
 SKILL = {
-    ("receptions", 0.30, 0.60): 0.25,
+    # stat, lower and upper bound on |projection - bar| / projection
     ("receptions", 0.10, 0.30): 0.07,
-    ("receptions", 0.60, 9.99): 0.05,
-    ("receiving_yards", 0.60, 9.99): 0.05,
-    ("rushing_yards", 0.60, 9.99): 0.05,
+    ("receptions", 0.30, 0.60): 0.29,
+    ("receptions", 0.60, 9.99): 0.46,
+    ("receiving_yards", 0.10, 0.30): 0.05,
+    ("receiving_yards", 0.30, 0.60): 0.21,
+    ("receiving_yards", 0.60, 9.99): 0.32,
+    ("rushing_yards", 0.10, 0.30): 0.08,
+    ("rushing_yards", 0.30, 0.60): 0.28,
+    ("rushing_yards", 0.60, 9.99): 0.23,
+    ("passing_yards", 0.10, 0.30): 0.20,
+    ("passing_yards", 0.30, 0.60): 0.42,
+    ("passing_yards", 0.60, 9.99): 0.08,
+    ("carries", 0.10, 0.30): 0.15,
+    ("carries", 0.30, 0.60): 0.41,
 }
 MIN_SKILL = 0.05      # below this the edge is not reported as an edge
 
@@ -443,7 +464,7 @@ def selftest():
     # band must score the band's value
     ck(skill_of("receptions", 7.2, 7.0) == 0.0,
        f"a bar at the projection has no skill: {skill_of('receptions',7.2,7.0)}")
-    ck(skill_of("receptions", 7.2, 4.5) == 0.25,
+    ck(skill_of("receptions", 7.2, 4.5) == 0.29,
        f"38% away is the 30-60% band: {skill_of('receptions',7.2,4.5)}")
     # 6.5 is only 9.7% from 7.2, which is the DEAD ZONE, not the 10-30% band --
     # worth pinning, because that is the rung a book posts as the main line.
@@ -451,9 +472,11 @@ def selftest():
        f"9.7% away is still the dead zone: {skill_of('receptions',7.2,6.5)}")
     ck(skill_of("receptions", 7.2, 6.0) == 0.07,
        f"17% away is the 10-30% band: {skill_of('receptions',7.2,6.0)}")
-    ck(skill_of("receiving_yards", 114.6, 84.5) == 0.0,
-       "receiving yards at 26% away has no measured skill")
-    ck(skill_of("receiving_yards", 114.6, 39.5) == 0.05, "66% away does")
+    ck(skill_of("receiving_yards", 114.6, 84.5) == 0.05,
+       f"receiving yards at 26% away is the 10-30% band: "
+       f"{skill_of('receiving_yards',114.6,84.5)}")
+    ck(skill_of("receiving_yards", 114.6, 39.5) == 0.32,
+       f"66% away is the far band: {skill_of('receiving_yards',114.6,39.5)}")
     ck(skill_of("receptions", 0.0, 4.5) == 0.0, "a zero projection is no skill")
     # cast_change: a stable room scores 0, a fully replaced one scores 1
     def mk(who, week, mates):
@@ -504,14 +527,22 @@ def selftest():
     ok, why = gate("receptions", 7.2, 7.0, "QB", 10, 0.01, 0.0)
     ck(not ok and "no measured skill" in why, f"dead zone: {why}")
     ok, why = gate("receptions", 7.2, 4.5, "QB", 10, 0.01, 0.0)
-    ck(ok and why == 0.25, f"a clean line passes and returns its skill: {ok} {why}")
+    ck(ok and why == 0.29, f"a clean line passes and returns its skill: {ok} {why}")
     # a DIFFERENT band must return a DIFFERENT skill -- otherwise the pass
     # branch could be returning a constant and every line would read 25%.
     ok2, why2 = gate("receptions", 7.2, 6.0, "QB", 10, 0.01, 0.0)
     ck(ok2 and why2 == 0.07,
        f"the 10-30% band must return 0.07, not a constant: {why2}")
+    # passing yards peak in the middle band and fall off far out -- the shape
+    # differs by stat, which a single constant could not express
+    ck(skill_of("passing_yards", 300.0, 180.0) == 0.42, "passing 40% away")
+    ck(skill_of("passing_yards", 300.0, 100.0) == 0.08, "passing 67% away is weak")
     ok3, why3 = gate("receiving_yards", 114.6, 39.5, "QB", 10, 0.01, 0.0)
-    ck(ok3 and why3 == 0.05, f"receiving yards far out returns 0.05: {why3}")
+    ck(ok3 and why3 == 0.32, f"receiving yards far out returns 0.32: {why3}")
+    # the dead zone is the 0-10% band and ONLY that band
+    for st in ("receptions", "receiving_yards", "rushing_yards", "carries"):
+        ck(skill_of(st, 100.0, 95.0) == 0.0, f"{st} at 5% away is dead")
+        ck(skill_of(st, 100.0, 80.0) > 0.0, f"{st} at 20% away is not dead")
     # parse: a market key we do not map must be ignored, a mapped one kept
     import tempfile
     txt = ("  player_receptions  (2)\n"
