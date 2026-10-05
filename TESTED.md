@@ -115,6 +115,20 @@ Receiving keys off the total, rushing off the spread. Alpha 0.50.
 - **Opponent adjustment at face value.** See above — actively harmful.
 - **Shrinkage toward the calibration.** Worse than dropping the own rate.
 
+## Week of season
+
+Skill is lower early, and more so for rushing:
+
+| | wk 1-6 | wk 7-11 | wk 12-18 |
+|---|---|---|---|
+| receptions 3.5 | +25.8% | +28.9% | +30.4% |
+| receiving yards 69.5 | +21.1% | +18.4% | +20.7% |
+| rushing yards 69.5 | +13.2% | +17.9% | +22.1% |
+
+It is week 4, so every edge on the current board is modestly overstated — about
+15% relatively on receptions, around 40% on rushing. Not enough to flip a
+direction; enough that a +12 should be read as a +10.
+
 ## Settled parameters
 
 Bucket width ±15% and a 30-row minimum are both already optimal. Four prior
