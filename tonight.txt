@@ -1,0 +1,43 @@
+2026-10-05T17:51Z  next 12h  FanDuel
+
+--- NFL (1) ---
+  00:15Z  Atlanta Falcons @ New Orleans Saints
+       h2h     Atlanta Falcons                     +100   47.9% devig
+       h2h     New Orleans Saints                  -118   52.1% devig
+       totals  Over                        +47.5   -110   50.0% devig
+       totals  Under                       +47.5   -110   50.0% devig
+
+--- MLB (2) ---
+  21:10Z  Chicago White Sox @ Cleveland Guardians
+       h2h     Chicago White Sox                   +128   41.6% devig
+       h2h     Cleveland Guardians                 -152   58.4% devig
+       totals  Over                         +6.5   -118   51.6% devig
+       totals  Under                        +6.5   -104   48.4% devig
+  00:00Z  New York Yankees @ Tampa Bay Rays
+       h2h     New York Yankees                    -120   52.6% devig
+       h2h     Tampa Bay Rays                      +102   47.4% devig
+       totals  Over                         +6.5   -118   51.6% devig
+       totals  Under                        +6.5   -104   48.4% devig
+
+--- NHL (4) ---
+  23:10Z  Philadelphia Flyers @ Tampa Bay Lightning
+       h2h     Philadelphia Flyers                 +184   32.6% devig
+       h2h     Tampa Bay Lightning                 -225   67.4% devig
+       totals  Over                         +5.5   -124   53.0% devig
+       totals  Under                        +5.5   +102   47.0% devig
+  23:40Z  Ottawa Senators @ Boston Bruins
+       h2h     Boston Bruins                       -104   48.7% devig
+       h2h     Ottawa Senators                     -115   51.3% devig
+       totals  Over                         +5.5   -115   51.2% devig
+       totals  Under                        +5.5   -105   48.8% devig
+  23:40Z  Winnipeg Jets @ Pittsburgh Penguins
+       h2h     Pittsburgh Penguins                 -178   62.0% devig
+       h2h     Winnipeg Jets                       +146   38.0% devig
+       totals  Over                         +6.5   -106   49.1% devig
+       totals  Under                        +6.5   -114   50.9% devig
+  00:10Z  San Jose Sharks @ Dallas Stars
+       h2h     Dallas Stars                        -205   65.3% devig
+       h2h     San Jose Sharks                     +168   34.7% devig
+       totals  Over                         +6.5   -104   48.4% devig
+       totals  Under                        +6.5   -118   51.6% devig
+
