@@ -15,6 +15,8 @@ jobs:
       - run: |
           set -o pipefail
           python3 nflprops.py --selftest | tail -2
+          python3 calib.py --selftest
+          python3 score2.py --selftest
           # Four games, not fifteen: each event is its own API request and the
           # quota is shared with the board and scores pulls.
           MIN_GAP="${MIN_GAP:-0.0}" python3 nflprops.py 15 0 2>&1 | tee nflprops.new
@@ -22,6 +24,18 @@ jobs:
           test -s nflprops.new
           grep -q "lines where the RECORD" nflprops.new
           mv nflprops.new nflprops.txt
+          # The tested scorer, on the same board. nflprops.txt ranks on rules
+          # that five seasons of out-of-sample testing says are wrong -- a
+          # player's own hit rate (6-12 points hot) and a defence weighted at
+          # face value (worse than ignoring it). scored.txt is the one to read.
+          for y in 2022 2023 2024 2025 2026; do
+            curl -sS -L --max-time 120 -o "spw$y.csv" \
+              "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_$y.csv" || true
+          done
+          curl -sS -L --max-time 60 -o sched26b.csv \
+            "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv" || true
+          python3 score2.py nflprops_wide.txt --min-edge 0.0 2>&1 | tee scored.new || true
+          test -s scored.new && mv scored.new scored.txt || cp nflprops.txt scored.txt
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
       - name: Publish
@@ -30,12 +44,14 @@ jobs:
           git config user.email "actions@github.com"
           cp nflprops.txt /tmp/p.txt
           cp nflprops.wide /tmp/pw.txt || cp nflprops.txt /tmp/pw.txt
+          cp scored.txt /tmp/ps.txt || cp nflprops.txt /tmp/ps.txt
           for a in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/p.txt nflprops.txt
             cp /tmp/pw.txt nflprops_wide.txt
-            git add nflprops.txt nflprops_wide.txt
+            cp /tmp/ps.txt scored.txt
+            git add nflprops.txt nflprops_wide.txt scored.txt
             git diff --cached --quiet && { echo "unchanged"; exit 0; }
             git commit -m "nfl alt props $(date -u '+%Y-%m-%d %H:%M')"
             git push origin HEAD:main && { echo "published on attempt $a"; exit 0; }

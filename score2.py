@@ -18,8 +18,16 @@ import calib
 SEASONS = [2022, 2023, 2024, 2025, 2026]
 # Tonight's posted numbers, per team: the game total and that team's spread
 # (positive = favoured). Set from the board rather than inferred.
+# Posted numbers per team for every game on the board. Spread positive =
+# favoured. Read off the board, never inferred.
 TONIGHT = {("ATL", "total"): 47.5, ("ATL", "spread"): -1.5,
-           ("NO", "total"): 47.5, ("NO", "spread"): 1.5}
+           ("NO", "total"): 47.5, ("NO", "spread"): 1.5,
+           ("TB", "total"): 47.5, ("TB", "spread"): -1.5,
+           ("DAL", "total"): 47.5, ("DAL", "spread"): 1.5,
+           ("PHI", "total"): 44.5, ("PHI", "spread"): 3.5,
+           ("JAX", "total"): 44.5, ("JAX", "spread"): -3.5,
+           ("SF", "total"): 47.5, ("SF", "spread"): -3.0,
+           ("SEA", "total"): 47.5, ("SEA", "spread"): 3.0}
 CURRENT = 2026
 SPW = os.environ.get("SPW_DIR", ".")
 STATS = {
@@ -375,6 +383,29 @@ def project(rows, who, stat, qb_games=None):
     return vol * rate, vol, len(sel), tm, pos
 
 
+NFLPROPS_STAT = {"rush yds": "rushing_yards", "rec yds": "receiving_yards",
+                 "receptions": "receptions", "pass yds": "passing_yards"}
+
+
+def parse_nflprops(path):
+    """The board nflprops.py prints, which covers every game in the horizon
+    rather than the one game a sweep targets. One line per candidate:
+
+      Brock Purdy  Over  19.5 rush yds  -102  all 7/13= 54% ...
+    """
+    out = []
+    pat = re.compile(
+        r"^  (\S.{0,21}?)\s{2,}(Over|Under)\s+([\d.]+)\s+"
+        r"(rush yds|rec yds|receptions|pass yds)\s+(-?\d+)\s")
+    for line in open(path, encoding="utf-8"):
+        m = pat.match(line)
+        if not m:
+            continue
+        who, side, bar, lab, price = m.groups()
+        out.append((NFLPROPS_STAT[lab], who.strip(), side, float(bar), int(price)))
+    return out
+
+
 def parse(path):
     cur, out = None, []
     for line in open(path, encoding="utf-8"):
@@ -495,6 +526,20 @@ def selftest():
     ck(rows[0][2] == "Over" and rows[1][2] == "Under", "both sides parsed")
     ck(all(r[0] == "receptions" for r in rows), "market mapped to the nflverse stat")
     os.unlink(p)
+    # the nflprops format, which covers every game rather than one
+    txt2 = ("  Brock Purdy            Over    19.5 rush yds        -102  all  7/13= 54%\n"
+            "  Drake London           Under    5.5 receptions       106  all  8/15= 53%\n"
+            "  George Kittle          Under    4.5 receptions       104  all  8/15= 53%\n"
+            "  not a candidate line at all\n")
+    p2 = tempfile.mktemp(suffix=".txt")
+    open(p2, "w").write(txt2)
+    r2 = parse_nflprops(p2)
+    ck(len(r2) == 3, f"three candidates parsed, got {len(r2)}: {r2}")
+    ck(r2[0] == ("rushing_yards", "Brock Purdy", "Over", 19.5, -102),
+       f"first row: {r2[0]}")
+    ck(r2[1][2] == "Under" and r2[1][4] == 106, f"a plus price on Under: {r2[1]}")
+    ck(r2[2][1] == "George Kittle", f"a two-word surname: {r2[2]}")
+    os.unlink(p2)
     # project: the QB filter must actually narrow the sample
     fake = [(2026, {"player_display_name": "X", "position": "WR", "team": "ATL",
                     "week": str(w), "targets": "10" if w == 3 else "2",
@@ -565,6 +610,10 @@ def main(path, min_edge=0.03):
         models[stat] = m
         defs[stat] = {}
     board = parse(path)
+    if not board:
+        board = parse_nflprops(path)
+        if board:
+            print("(read as an nflprops board rather than a sweep)")
     print(f"{len(board)} outcomes parsed\n")
     want = defaultdict(set)
     for stat, who, side, bar, price in board:
