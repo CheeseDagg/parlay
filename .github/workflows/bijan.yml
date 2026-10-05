@@ -1,0 +1,27 @@
+name: Bijan ladder
+on:
+  workflow_dispatch: {}
+  push: { branches: [main], paths: ['experiments/BIJAN.txt'] }
+permissions: { contents: write }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 experiments/bijan.py 2>&1 | tee bijan.txt
+        env: { ODDS_API_KEY: "${{ secrets.ODDS_API_KEY }}" }
+      - if: always()
+        run: |
+          git config user.name "parlay-bot"; git config user.email "actions@github.com"
+          cp bijan.txt /tmp/bj.txt
+          for a in 1 2 3; do
+            git fetch origin main; git reset --hard origin/main; cp /tmp/bj.txt bijan.txt
+            git add bijan.txt
+            git diff --cached --quiet && { echo unchanged; exit 0; }
+            git commit -m "bijan ladder $(date -u '+%H:%M')"
+            git push origin HEAD:main && exit 0
+          done
+          exit 1
