@@ -18,6 +18,7 @@ jobs:
           # Four games, not fifteen: each event is its own API request and the
           # quota is shared with the board and scores pulls.
           MIN_GAP="${MIN_GAP:-0.0}" python3 nflprops.py 15 0 2>&1 | tee nflprops.new
+          HORIZON_H=200 MIN_GAP=0.0 python3 nflprops.py 15 0 2>&1 | tee nflprops.wide || true
           test -s nflprops.new
           grep -q "lines where the RECORD" nflprops.new
           mv nflprops.new nflprops.txt
@@ -28,11 +29,13 @@ jobs:
           git config user.name "parlay-bot"
           git config user.email "actions@github.com"
           cp nflprops.txt /tmp/p.txt
+          cp nflprops.wide /tmp/pw.txt || cp nflprops.txt /tmp/pw.txt
           for a in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/p.txt nflprops.txt
-            git add nflprops.txt
+            cp /tmp/pw.txt nflprops_wide.txt
+            git add nflprops.txt nflprops_wide.txt
             git diff --cached --quiet && { echo "unchanged"; exit 0; }
             git commit -m "nfl alt props $(date -u '+%Y-%m-%d %H:%M')"
             git push origin HEAD:main && { echo "published on attempt $a"; exit 0; }

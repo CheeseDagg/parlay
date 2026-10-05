@@ -32,7 +32,7 @@ BASE = "https://api.the-odds-api.com/v4"
 KEY = os.environ.get("ODDS_API_KEY", "")
 SPORT = "americanfootball_nfl"
 BOOK = "fanduel"
-HORIZON_H = 120
+HORIZON_H = int(os.environ.get("HORIZON_H", "120"))
 MIN_GAMES = 8          # below this a hit rate is noise, not a rate
 CURRENT_SEASON = 2026  # absent from it = injured, cut, or moved; not evidence
 MIN_CURRENT = 3        # games THIS season before the recent window means anything.
