@@ -1,0 +1,33 @@
+pulling alt props for up to 15 games, skipping the first 0
+  Atlanta Falcons @ New Orleans Saints: 380 lines  (quota left 17049)
+  Tampa Bay Buccaneers @ Dallas Cowboys: 357 lines  (quota left 17037)
+  Philadelphia Eagles @ Jacksonville Jaguars: 123 lines  (quota left 17028)
+  Chicago Bears @ Green Bay Packers: 0 lines  (quota left 17027)
+  Cincinnati Bengals @ Miami Dolphins: 0 lines  (quota left 17026)
+  Cleveland Browns @ New York Jets: 0 lines  (quota left 17025)
+  Houston Texans @ Tennessee Titans: 0 lines  (quota left 17024)
+  Indianapolis Colts @ Pittsburgh Steelers: 0 lines  (quota left 17023)
+  Las Vegas Raiders @ New England Patriots: 0 lines  (quota left 17022)
+  Minnesota Vikings @ New Orleans Saints: 0 lines  (quota left 17021)
+  New York Giants @ Washington Commanders: 0 lines  (quota left 17020)
+  Denver Broncos @ Los Angeles Chargers: 0 lines  (quota left 17019)
+  Detroit Lions @ Arizona Cardinals: 0 lines  (quota left 17018)
+  San Francisco 49ers @ Seattle Seahawks: 283 lines  (quota left 17006)
+  Baltimore Ravens @ Atlanta Falcons: 0 lines  (quota left 17005)
+
+loading game logs...
+  2287 players with logs
+
+10 lines where the RECORD beats the PRICE by 10+ points
+(hit rate is raw history; implied price still carries the vig)
+
+  Brock Purdy            Over    19.5 rush yds        -102  all  7/13= 54%  2026 4/4=100%  vs  50% (+3%)  D 20/21= 95%  snap 100% role  --   San Francisco 49ers @ Seattl
+  Brock Purdy            Over    18.5 rush yds        -114  all  7/13= 54%  2026 4/4=100%  vs  53% (+1%)  D 20/21= 95%  snap 100% role  --   San Francisco 49ers @ Seattl
+  Brock Purdy            Over    24.5 rush yds         162  all  6/13= 46%  2026 4/4=100%  vs  38% (+8%)  D 18/21= 86%  snap 100% role  --   San Francisco 49ers @ Seattl
+  Drake London           Under    5.5 receptions       106  all  8/15= 53%  2026 2/3= 67%  vs  49% (+5%)  D 17/20= 85%  snap  93% role  35%  Atlanta Falcons @ New Orlean
+  Drake London           Under   79.5 rec yds         -113  all  9/15= 60%  2026 2/3= 67%  vs  53% (+7%)  D 15/20= 75%  snap  93% role  35%  Atlanta Falcons @ New Orlean
+  Bijan Robinson         Under   87.5 rush yds        -113  all 13/20= 65%  2026 2/3= 67%  vs  53% (+12%)  D 15/20= 75%  snap  72% role  69%  Atlanta Falcons @ New Orlean
+  George Kittle          Under    4.5 receptions       104  all  8/15= 53%  2026 3/4= 75%  vs  49% (+4%)  D 11/21= 52%  snap  91% role  28%  San Francisco 49ers @ Seattl
+  Tyler Shough           Over    29.5 rush yds         300  all  4/14= 29%  2026 1/3= 33%  vs  25% (+4%)  D 18/20= 90%  snap 100% role  --   Atlanta Falcons @ New Orlean
+  Cooper Kupp            Over    29.5 rec yds          116  all 11/20= 55%  2026 2/4= 50%  vs  46% (+9%)  D 20/21= 95%  snap  57% role  13%  San Francisco 49ers @ Seattl
+  Dak Prescott           Over    24.5 rush yds         450  all  4/21= 19%  2026 1/4= 25%  vs  18% (+1%)  D 17/21= 81%  snap 100% role  --   Tampa Bay Buccaneers @ Dalla

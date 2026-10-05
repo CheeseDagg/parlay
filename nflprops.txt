@@ -1,6 +1,6 @@
 pulling alt props for up to 15 games, skipping the first 0
-  Atlanta Falcons @ New Orleans Saints: 381 lines  (quota left 17225)
-  Tampa Bay Buccaneers @ Dallas Cowboys: 357 lines  (quota left 17213)
+  Atlanta Falcons @ New Orleans Saints: 380 lines  (quota left 17073)
+  Tampa Bay Buccaneers @ Dallas Cowboys: 357 lines  (quota left 17061)
 
 loading game logs...
   2287 players with logs
@@ -11,5 +11,5 @@ loading game logs...
   Drake London           Under    5.5 receptions       106  all  8/15= 53%  2026 2/3= 67%  vs  49% (+5%)  D 17/20= 85%  snap  93% role  35%  Atlanta Falcons @ New Orlean
   Drake London           Under   79.5 rec yds         -113  all  9/15= 60%  2026 2/3= 67%  vs  53% (+7%)  D 15/20= 75%  snap  93% role  35%  Atlanta Falcons @ New Orlean
   Bijan Robinson         Under   87.5 rush yds        -113  all 13/20= 65%  2026 2/3= 67%  vs  53% (+12%)  D 15/20= 75%  snap  72% role  69%  Atlanta Falcons @ New Orlean
-  Tyler Shough           Over    29.5 rush yds         290  all  4/14= 29%  2026 1/3= 33%  vs  26% (+3%)  D 18/20= 90%  snap 100% role  --   Atlanta Falcons @ New Orlean
+  Tyler Shough           Over    29.5 rush yds         300  all  4/14= 29%  2026 1/3= 33%  vs  25% (+4%)  D 18/20= 90%  snap 100% role  --   Atlanta Falcons @ New Orlean
   Dak Prescott           Over    24.5 rush yds         450  all  4/21= 19%  2026 1/4= 25%  vs  18% (+1%)  D 17/21= 81%  snap 100% role  --   Tampa Bay Buccaneers @ Dalla
