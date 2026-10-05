@@ -423,7 +423,8 @@ def parse_nflprops(path):
         if not m:
             continue
         who, side, bar, lab, price = m.groups()
-        out.append((NFLPROPS_STAT[lab], who.strip(), side, float(bar), int(price)))
+        out.append((NFLPROPS_STAT[lab], who.strip(), side, float(bar),
+                    int(price), ""))
     return out
 
 
@@ -440,8 +441,14 @@ def parse_env(path):
 
 
 def parse(path):
-    cur, out = None, []
+    """(stat, player, side, bar, price, game). The game comes from the
+    `# game <away> @ <home>` header a board dump writes -- without it the output
+    lists lines from four different fixtures with no way to tell which."""
+    cur, out, game = None, [], ""
     for line in open(path, encoding="utf-8"):
+        m = re.match(r"^# game (.+?)\s*$", line)
+        if m:
+            game = m.group(1); continue
         m = re.match(r"^  ([a-z0-9_]+)  \(\d+\)\s*$", line)
         if m:
             cur = m.group(1); continue
@@ -454,7 +461,7 @@ def parse(path):
             side = ("Over" if n.startswith("Over")
                     else "Under" if n.startswith("Under") else None)
             if side:
-                out.append((MK[cur], d, side, float(pt), pr))
+                out.append((MK[cur], d, side, float(pt), pr, game))
     return out
 
 
@@ -566,6 +573,7 @@ def selftest():
     open(p, "w").write(txt)
     rows = parse(p)
     ck(len(rows) == 2, f"only mapped markets parsed, got {rows}")
+    ck(all(len(r) == 6 for r in rows), f"every row carries a game slot: {rows}")
     ck(rows[0][2] == "Over" and rows[1][2] == "Under", "both sides parsed")
     ck(all(r[0] == "receptions" for r in rows), "market mapped to the nflverse stat")
     os.unlink(p)
@@ -585,10 +593,26 @@ def selftest():
        f"env parsed: {e3}")
     ck(parse_env(p2) == {}, "a board with no env lines yields nothing")
     os.unlink(p3)
+    # the game header must attach to the lines that follow it
+    p4 = tempfile.mktemp(suffix=".txt")
+    open(p4, "w").write(
+        "# game Atlanta Falcons @ New Orleans Saints\n"
+        "  player_receptions  (1)\n"
+        "      Drake London         Over                      5.5   -140  0.0%\n"
+        "# game Tampa Bay Buccaneers @ Dallas Cowboys\n"
+        "  player_receptions  (1)\n"
+        "      CeeDee Lamb          Over                      6.5   +116  0.0%\n")
+    r4 = parse(p4)
+    ck(len(r4) == 2, f"two rows: {r4}")
+    ck(r4[0][5] == "Atlanta Falcons @ New Orleans Saints", f"first game: {r4[0]}")
+    ck(r4[1][5] == "Tampa Bay Buccaneers @ Dallas Cowboys",
+       f"the header must switch, not stick: {r4[1]}")
+    os.unlink(p4)
     r2 = parse_nflprops(p2)
     ck(len(r2) == 3, f"three candidates parsed, got {len(r2)}: {r2}")
-    ck(r2[0] == ("rushing_yards", "Brock Purdy", "Over", 19.5, -102),
-       f"first row: {r2[0]}")
+    ck(all(len(r) == 6 for r in r2), "the nflprops parser matches the shape")
+    ck(r2[0] == ("rushing_yards", "Brock Purdy", "Over", 19.5, -102, ""),
+       f"first row, with an empty game slot: {r2[0]}")
     ck(r2[1][2] == "Under" and r2[1][4] == 106, f"a plus price on Under: {r2[1]}")
     ck(r2[2][1] == "George Kittle", f"a two-word surname: {r2[2]}")
     os.unlink(p2)
@@ -672,7 +696,7 @@ def main(path, min_edge=0.03):
             print("(read as an nflprops board rather than a sweep)")
     print(f"{len(board)} outcomes parsed\n")
     want = defaultdict(set)
-    for stat, who, side, bar, price in board:
+    for stat, who, side, bar, price, _gm in board:
         want[stat].add(bar)
     for stat in models:
         biases[stat] = {bar: models[stat].bias(stat, bar) for bar in sorted(want[stat])}
@@ -684,7 +708,7 @@ def main(path, min_edge=0.03):
                       for bar in sorted(want[stat])}
     out, seen = [], set()
     skipped = defaultdict(int)
-    for stat, who, side, bar, price in board:
+    for stat, who, side, bar, price, gm in board:
         if stat not in models or (who, stat, side, bar) in seen:
             continue
         seen.add((who, stat, side, bar))
@@ -730,18 +754,19 @@ def main(path, min_edge=0.03):
         if p is None:
             continue
         out.append((p - imp(price), p, n, who, side, bar, stat, price, proj, ng,
-                    tm, sk))
+                    tm, sk, gm))
     out.sort(reverse=True)
     print(f"{len(out)} priced.  EDGE = calibrated probability minus the price\n")
-    print(f"  {'edge':>6s} {'hits':>6s} {'bet':38s} {'price':>6s} {'proj':>7s} "
-          f"{'gms':>4s} {'skill':>6s}")
-    print("-" * 84)
-    for e, p, n, who, side, bar, stat, price, proj, ng, tm, sk in out:
+    print(f"  {'edge':>6s} {'hits':>6s} {'bet':36s} {'price':>6s} {'proj':>7s} "
+          f"{'skill':>6s}  game")
+    print("-" * 96)
+    for e, p, n, who, side, bar, stat, price, proj, ng, tm, sk, gm in out:
         if e < min_edge:
             continue
         lab = f"{who} {side} {bar:g} {stat.replace('_',' ')}"
-        print(f"  {e*100:+5.1f} {p*100:5.1f}%  {lab[:38]:38s} {price:+6d} "
-              f"{proj:7.1f} {ng:4d} {sk*100:5.0f}%")
+        short = " @ ".join(w.split()[-1] for w in gm.split(" @ ")) if gm else "?"
+        print(f"  {e*100:+5.1f} {p*100:5.1f}%  {lab[:36]:36s} {price:+6d} "
+              f"{proj:7.1f} {sk*100:5.0f}%  {short}")
     neg = sum(1 for r in out if r[0] < min_edge)
     print(f"\n  {neg} of {len(out)} fall below the {min_edge*100:.0f}-point cutoff")
     if skipped:
