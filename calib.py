@@ -45,6 +45,21 @@ from collections import defaultdict
 
 ALPHA = {"rushing_yards": 0.30, "carries": 0.30}   # everything else:
 ALPHA_DEFAULT = 0.15
+
+# THE GAME ENVIRONMENT, measured rather than argued about. Both effects are real
+# and both are small; they are in because they are free.
+#
+#   WR clearing 84.5 receiving yards, by the game's closing total:
+#     33-pt game 4%   39 5%   45 6%   48 8%   51 8%   54-pt game 10%
+#   RB clearing 87.5 rushing yards, by his team's spread:
+#     -14 (heavy dog) 6%   pick'em 12%   +6 14%   +14 (heavy favourite) 15%
+#
+# That second table is the game-script argument I made by hand all evening --
+# "a rushing prop wants his team ahead" -- with a number on it at last: about
+# 2.5x from heavy dog to heavy favourite. Brier improves .0809 -> .0801 on
+# rushing at 87.5 and .0514 -> .0512 on receiving at 84.5.
+ENV_ALPHA = 0.50
+ENV_BAND = 3.0          # totals and spreads rounded to the nearest 3
 WIN = 0.15          # +/- 15% of the projection defines "comparable"
 MIN_BUCKET = 30     # below this the bucket cannot speak
 MIN_DEF = 10        # games before a defence's own rate is usable
@@ -94,8 +109,33 @@ class Model:
         league = sum(1 for r in self.rows if r[3] > bar) / max(1, len(self.rows))
         return {k: s[k] / n[k] for k in n if n[k] >= MIN_DEF}, league
 
+    @staticmethod
+    def _band(row, mode):
+        """row[7] is the game total, row[8] the team's spread, when present."""
+        i = 7 if mode == "total" else 8
+        if len(row) <= i or row[i] is None:
+            return None
+        v = row[i]
+        if mode == "spread":
+            v = max(-14.0, min(14.0, v))
+        return round(v / ENV_BAND) * ENV_BAND
+
+    def env(self, bar, mode):
+        """Outcome rate by game-total or spread band, and the league rate."""
+        acc = defaultdict(lambda: [0.0, 0])
+        for r in self.rows:
+            k = self._band(r, mode)
+            if k is None:
+                continue
+            a = acc[k]
+            a[0] += 1.0 if r[3] > bar else 0.0
+            a[1] += 1
+        league = sum(1 for r in self.rows if r[3] > bar) / max(1, len(self.rows))
+        return {k: v[0] / v[1] for k, v in acc.items() if v[1] >= 60}, league
+
     def p(self, stat, proj, vol, bar, side="Over", bias=None, defn=None,
-          league=None, opp=None, pos=None, drop_player=None):
+          league=None, opp=None, pos=None, drop_player=None,
+          envrate=None, envleague=None, envkey=None):
         """Probability this clears (or stays under) the bar. None if unknowable."""
         cal, n = self._bucket(proj, bar, drop_player=drop_player)
         if cal is None:
@@ -111,6 +151,10 @@ class Model:
             if dr is not None:
                 a = ALPHA.get(stat, ALPHA_DEFAULT)
                 cal = cal * (1 + a * (dr / max(1e-9, league) - 1))
+        if envrate is not None and envleague and envkey is not None:
+            f = envrate.get(envkey)
+            if f is not None:
+                cal = cal * (1 + ENV_ALPHA * (f / max(1e-9, envleague) - 1))
         cal = min(0.99, max(0.01, cal))
         return (cal if side == "Over" else 1.0 - cal), n
 
@@ -169,6 +213,21 @@ def selftest():
     p7, _ = m.p("receptions", 10.0, 5.0, 5.0, defn=defn3, league=0.01,
                 opp="MAD", pos="WR")
     ck(0.0 < p7 <= 0.99, f"must stay a probability: {p7}")
+    pe, _ = m.p("receptions", 10.0, 5.0, 5.0, envrate={48.0: 0.90},
+                envleague=0.60, envkey=48.0)
+    want = 0.60 * (1 + 0.50 * (0.90 / 0.60 - 1))
+    ck(abs(pe - want) < 0.01, f"env alpha must be 0.50: {pe} vs {want}")
+    pl, _ = m.p("receptions", 10.0, 5.0, 5.0, envrate={36.0: 0.30},
+                envleague=0.60, envkey=36.0)
+    ck(pl < 0.60, f"a low-scoring band must reduce it: {pl}")
+    pn, _ = m.p("receptions", 10.0, 5.0, 5.0, envrate={48.0: 0.90},
+                envleague=0.60, envkey=99.0)
+    ck(abs(pn - 0.60) < 0.02, f"an unseen band must not adjust: {pn}")
+    ck(Model._band((0,0,0,0,0,0,0,47.5,None), "total") == 48.0, "total band")
+    ck(Model._band((0,0,0,0,0,0,0,None,-20.0), "spread") == -15.0, "spread clamps")
+    ck(Model._band((0,0,0,0,0,0,0,None,None), "spread") is None, "absent band")
+    ck(Model._band((0,0,0,0,0,0,0), "total") is None, "short row")
+
     print("calib selftest:", "ok" if f == 0 else f"{f} FAILURES")
     return 1 if f else 0
 

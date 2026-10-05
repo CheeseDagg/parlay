@@ -16,6 +16,10 @@ from collections import defaultdict
 import calib
 
 SEASONS = [2022, 2023, 2024, 2025, 2026]
+# Tonight's posted numbers, per team: the game total and that team's spread
+# (positive = favoured). Set from the board rather than inferred.
+TONIGHT = {("ATL", "total"): 47.5, ("ATL", "spread"): -1.5,
+           ("NO", "total"): 47.5, ("NO", "spread"): 1.5}
 CURRENT = 2026
 SPW = os.environ.get("SPW_DIR", ".")
 STATS = {
@@ -88,8 +92,12 @@ def load():
     return rows
 
 
+TOT, SPD, TEAM = {}, {}, {}
+
+
 def build(rows, stat):
-    """Out-of-sample (player, projection, volume, outcome, opp, pos, season) rows."""
+    """Out-of-sample rows: (player, projection, volume, outcome, opp, pos,
+    season, game total, team spread)."""
     volcol, pos = STATS[stat]
     by = defaultdict(list)
     for y, r in rows:
@@ -107,8 +115,35 @@ def build(rows, stat):
             pr = v[:i]
             vol = sum(x[1] for x in pr) / len(pr)
             rt = sum(x[2] for x in pr) / max(1e-9, sum(x[1] for x in pr))
-            out.append((who, vol * rt, vol, v[i][2], v[i][3], v[i][4], y))
+            tm = TEAM.get((y, who))
+            k = (str(y), str(v[i][0]), tm)
+            out.append((who, vol * rt, vol, v[i][2], v[i][3], v[i][4], y,
+                        TOT.get(k), SPD.get(k)))
     return out
+
+
+def schedule(path="sched26b.csv"):
+    """(season, week, team) -> (game total, that team's spread). The spread is
+    positive when the team is favoured, which is the sign the rushing effect
+    runs with."""
+    tot, spd = {}, {}
+    if not os.path.exists(path):
+        return tot, spd
+    with open(path, newline="") as f:
+        for r in csv.DictReader(f):
+            y, w = r.get("season"), r.get("week")
+            try:
+                t = float(r.get("total_line") or 0)
+                sl = float(r.get("spread_line") or 0)
+            except ValueError:
+                continue
+            if not t:
+                continue
+            tot[(y, w, r.get("home_team"))] = t
+            tot[(y, w, r.get("away_team"))] = t
+            spd[(y, w, r.get("home_team"))] = sl
+            spd[(y, w, r.get("away_team"))] = -sl
+    return tot, spd
 
 
 def team_volume(rows):
@@ -268,8 +303,14 @@ def main(path, min_edge=0.03):
             continue
         if tm not in starter or max(cur) > starter[tm][1]:
             starter[tm] = (who, max(cur), gs)
+    global TOT, SPD, TEAM
+    TOT, SPD = schedule()
+    for y, r in rows:
+        TEAM[(y, r.get("player_display_name"))] = (r.get("team")
+                                                   or r.get("recent_team"))
+    print(f"schedule: {len(TOT)} team-games with a posted total\n")
     tt = team_volume(rows)
-    models, biases, defs = {}, {}, {}
+    models, biases, defs, envs = {}, {}, {}, {}
     for stat in STATS:
         rs = build(rows, stat)
         if len(rs) < 500:
@@ -285,6 +326,11 @@ def main(path, min_edge=0.03):
     for stat in models:
         biases[stat] = {bar: models[stat].bias(stat, bar) for bar in sorted(want[stat])}
         defs[stat] = {bar: models[stat].defence(bar) for bar in sorted(want[stat])}
+        # receiving keys off the game total, rushing off the spread -- that is
+        # where each one tested better.
+        mode = "spread" if stat in ("rushing_yards", "carries") else "total"
+        envs[stat] = {bar: (models[stat].env(bar, mode) + (mode,))
+                      for bar in sorted(want[stat])}
     out, seen = [], set()
     skipped = defaultdict(int)
     for stat, who, side, bar, price in board:
@@ -319,9 +365,16 @@ def main(path, min_edge=0.03):
                     else "role drift unmeasurable"] += 1
             continue
         dfn, league = defs[stat][bar]
+        erate, eleague, emode = envs[stat][bar]
+        ek = TONIGHT.get((tm, "spread" if emode == "spread" else "total"))
+        ekey = None if ek is None else (
+            round(max(-14.0, min(14.0, ek)) / calib.ENV_BAND) * calib.ENV_BAND
+            if emode == "spread"
+            else round(ek / calib.ENV_BAND) * calib.ENV_BAND)
         p, n = models[stat].p(stat, proj, vol, bar, side,
                               bias=biases[stat][bar], defn=dfn, league=league,
-                              opp=None, pos=pos, drop_player=who)
+                              opp=None, pos=pos, drop_player=who,
+                              envrate=erate, envleague=eleague, envkey=ekey)
         if p is None:
             continue
         out.append((p - imp(price), p, n, who, side, bar, stat, price, proj, ng, tm))
