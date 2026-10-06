@@ -1,33 +1,19 @@
-as_of 2026-08-19T15:49Z -- 45 active soccer leagues on the API; 31 events in today's CT window (455 later this week), FanDuel quoted btts on 16, 15 unquoted, 0 fetch errors
+as_of 2026-10-06T16:40Z -- 49 active soccer leagues on the API; 17 events in today's CT window (580 later this week), FanDuel quoted btts on 1, 16 unquoted, 0 fetch errors
   -- in-window but NO FanDuel btts quote via the API:
-     Avai v Sport Recife [Brazil Série B] 2026-08-19T22:30:00Z
-     Fortaleza v São Bernardo [Brazil Série B] 2026-08-19T22:30:00Z
-     Cuiabá v Operario PR [Brazil Série B] 2026-08-19T23:30:00Z
-     Vila Nova v Ponte Preta [Brazil Série B] 2026-08-19T23:30:00Z
-     Botafogo-SP v Criciuma [Brazil Série B] 2026-08-20T00:30:00Z
-     Cerro Porteño v Palmeiras-SP [Copa Libertadores] 2026-08-19T22:00:00Z
-     Coquimbo Unido v Platense [Copa Libertadores] 2026-08-19T22:00:00Z
-     Flamengo-RJ v Cruzeiro [Copa Libertadores] 2026-08-20T00:30:00Z
-     Clube Atlético Mineiro v Bragantino-SP [Copa Sudamericana] 2026-08-19T22:00:00Z
-     Montevideo City Torque v CA Tigre BA [Copa Sudamericana] 2026-08-20T00:30:00Z
-     Independiente Santa Fe v River Plate [Copa Sudamericana] 2026-08-20T00:30:00Z
-     NEC Nijmegen v Bodø/Glimt [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
-     Celtic v LASK [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
-     Hapoel Be'er Sheva v Sabah FK [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
-     ŠK Slovan Bratislava v NK Celje [UEFA Champions League Qualification] 2026-08-19T19:00:00Z
-  2026-08-19T19:00:00Z  Atlético Madrid v Málaga  No -118 / Yes -108  pNo=0.510  (La Liga - Spain)
-  2026-08-19T23:30:00Z  Columbus Crew SC v CF Montreal  No +138 / Yes -176  pNo=0.397  (MLS)
-  2026-08-19T23:30:00Z  Toronto FC v Charlotte FC  No +148 / Yes -190  pNo=0.381  (MLS)
-  2026-08-19T23:30:00Z  Orlando City SC v Chicago Fire  No +240 / Yes -330  pNo=0.277  (MLS)
-  2026-08-19T23:30:00Z  D.C. United v New England Revolution  No +138 / Yes -174  pNo=0.398  (MLS)
-  2026-08-19T23:30:00Z  FC Cincinnati v New York City FC  No +200 / Yes -270  pNo=0.314  (MLS)
-  2026-08-19T23:30:00Z  Philadelphia Union v Inter Miami CF  No +225 / Yes -310  pNo=0.289  (MLS)
-  2026-08-19T23:30:00Z  New York Red Bulls v Nashville SC  No +178 / Yes -230  pNo=0.340  (MLS)
-  2026-08-20T00:00:00Z  Sporting Kansas City v St. Louis City SC  No +158 / Yes -205  pNo=0.366  (MLS)
-  2026-08-20T00:30:00Z  Minnesota United FC v Atlanta United FC  No +122 / Yes -156  pNo=0.425  (MLS)
-  2026-08-20T01:30:00Z  Seattle Sounders FC v Austin FC  No +132 / Yes -168  pNo=0.407  (MLS)
-  2026-08-20T01:30:00Z  Colorado Rapids v Los Angeles FC  No +144 / Yes -182  pNo=0.388  (MLS)
-  2026-08-20T01:30:00Z  Real Salt Lake v FC Dallas  No +172 / Yes -220  pNo=0.348  (MLS)
-  2026-08-20T02:30:00Z  Vancouver Whitecaps FC v Houston Dynamo  No +112 / Yes -142  pNo=0.446  (MLS)
-  2026-08-20T02:30:00Z  LA Galaxy v San Jose Earthquakes  No +210 / Yes -280  pNo=0.304  (MLS)
-  2026-08-20T02:30:00Z  Portland Timbers v San Diego FC  No +220 / Yes -300  pNo=0.294  (MLS)
+     Sport Recife v São Bernardo [Brazil Série B] 2026-10-06T22:30:00Z
+     Goiás v Athletic Club (MG) [Brazil Série B] 2026-10-06T23:30:00Z
+     Ponte Preta v Juventude [Brazil Série B] 2026-10-07T00:35:00Z
+     Atherton Collieries AFC v Trafford FC [FA Cup] 2026-10-06T18:45:00Z
+     Wingate and Finchley FC v Bedford Town FC [FA Cup] 2026-10-06T18:45:00Z
+     Spalding United FC v Bury Town FC [FA Cup] 2026-10-06T18:45:00Z
+     Halesowen Town FC v Stafford Rangers FC [FA Cup] 2026-10-06T18:45:00Z
+     Scarborough Athletic FC v Macclesfield Town [FA Cup] 2026-10-06T18:45:00Z
+     Belarus v Finland [UEFA Nations League] 2026-10-06T18:45:00Z
+     Luxembourg v Bulgaria [UEFA Nations League] 2026-10-06T18:45:00Z
+     Croatia v Spain [UEFA Nations League] 2026-10-06T18:45:00Z
+     England v Czech Republic [UEFA Nations League] 2026-10-06T18:45:00Z
+     Estonia v Iceland [UEFA Nations League] 2026-10-06T18:45:00Z
+     Moldova v Slovakia [UEFA Nations League] 2026-10-06T18:45:00Z
+     Switzerland v North Macedonia [UEFA Nations League] 2026-10-06T18:45:00Z
+     Scotland v Slovenia [UEFA Nations League] 2026-10-06T18:45:00Z
+  2026-10-07T00:30:00Z  Chicago Fire v Vancouver Whitecaps FC  No +215 / Yes -290  pNo=0.299  (MLS)
