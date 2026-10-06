@@ -87,6 +87,23 @@ assert len(set(TEAM3.values())) == len(TEAM3) == 30
 # short list is real but small -- one call per league, and the far more expensive
 # goal ladders are already capped to fixtures inside SOCT_HOURS, so a league that
 # is live but dark tonight adds one call and no rungs.
+def soccer_pull_list(curated, missing_live):
+    """Which soccer competitions to pull: the curated list, plus whatever the
+    /sports diagnostic reports live and absent from it.
+
+    Out here because the rule otherwise lives inside a 300-line function that
+    makes network calls, where no test can reach it -- the failure mode that
+    has already shipped five broken rules in this project. Curated order is
+    preserved so the log stays readable; duplicates are dropped so a key that
+    is both curated and reported live is not queried twice."""
+    seen, out = set(), []
+    for k in list(curated) + list(missing_live):
+        if k and k not in seen:
+            seen.add(k)
+            out.append(k)
+    return out
+
+
 SOCCER_KEYS = [
     # -- originally curated; kept in kickoff-relevance order for readability
     "soccer_uefa_champs_league_qualification",
@@ -531,6 +548,7 @@ def pull_other(log):
     # all=true costs nothing extra (the sports list is a free endpoint) and the
     # out-of-season keys are reported separately below, because most of them
     # really are dark and a hundred-line log entry teaches nothing.
+    _miss = []          # always defined: the pull below unions it in
     try:
         _live = _get(f"{BASE}/sports?apiKey={KEY}&all=true")
         _soc = [(s.get("key",""), s.get("title",""), bool(s.get("active")))
@@ -556,8 +574,24 @@ def pull_other(log):
     # Eredivisie (dispersion p=0.0011), and mean goals runs 2.57 to 3.10. A
     # goal under and a DC are different bets in different leagues and the
     # board could not tell them apart.
+    # PULL WHAT THE DIAGNOSTIC JUST FOUND. The comment on SOCCER_KEYS says the
+    # curation "is now the diagnostic's, not ours" -- but it was not: the block
+    # above discovers every live competition missing from the list and then only
+    # LOGS it. On 2026-10-06 it named soccer_fa_cup while the FA Cup played five
+    # matches that evening, exactly the shape of the Leagues Cup miss the
+    # diagnostic was written for. Finding the gap and not closing it is the same
+    # empty board, with a paper trail.
+    #
+    # The cost argument is already settled above: one /odds call per league, and
+    # the expensive goal ladders are capped to fixtures inside SOCT_HOURS, so a
+    # live-but-dark league adds one call and no rungs. _miss is live-only (the
+    # out-of-season keys stay out), and it is empty on a normal day.
+    extra = [k for k, _t in _miss]
+    if extra:
+        log.append(f"SOC: pulling {len(extra)} competition(s) the diagnostic "
+                   f"found live and absent from SOCCER_KEYS — " + "; ".join(extra))
     soc_league = {}
-    for skey in SOCCER_KEYS:
+    for skey in soccer_pull_list(SOCCER_KEYS, extra):
         try:
             data = _get(f"{BASE}/sports/{skey}/odds?{q_for()}")
         except urllib.error.HTTPError as e:
@@ -819,6 +853,30 @@ def generate_all(start, ml, tot, fight_start, mma_lines, other_lines, f5_lines=(
 # ---------------------------------------------------------------- selftest
 def selftest():
     import tempfile, subprocess
+    # THE SOCCER PULL LIST. The diagnostic found soccer_fa_cup live and absent
+    # on 2026-10-06 while the FA Cup played five matches, and only logged it.
+    _c = ["soccer_epl", "soccer_usa_mls"]
+    assert soccer_pull_list(_c, []) == _c, "no discoveries changes nothing"
+    assert soccer_pull_list(_c, ["soccer_fa_cup"]) == _c + ["soccer_fa_cup"], \
+        "a live competition absent from the curated list MUST get pulled"
+    assert soccer_pull_list(_c, ["soccer_epl"]) == _c, \
+        "a key already curated is not queried twice"
+    assert soccer_pull_list(_c, ["soccer_fa_cup", "soccer_fa_cup"]) == \
+        _c + ["soccer_fa_cup"], "nor is a repeated discovery"
+    assert soccer_pull_list(_c, ["soccer_fa_cup"])[:len(_c)] == _c, \
+        "curated order is preserved so the log stays readable"
+    assert soccer_pull_list([], ["soccer_fa_cup"]) == ["soccer_fa_cup"]
+    assert soccer_pull_list(_c, [None, ""]) == _c, "empty keys are dropped"
+    # ...AND THE PULL LOOP MUST ACTUALLY USE IT. The call site lives inside a
+    # function that makes network calls, so no unit test reaches it: reverting
+    # the loop to `for skey in SOCCER_KEYS:` passed every check above while
+    # restoring the exact bug. Assert on the source, which is ugly but is the
+    # only thing here that fails when the call site regresses.
+    _src = open(__file__, encoding="utf-8").read()
+    assert "for skey in soccer_pull_list(SOCCER_KEYS, extra):" in _src, \
+        "the soccer pull loop must iterate soccer_pull_list(), not SOCCER_KEYS"
+    assert "\n    for skey in SOCCER_KEYS:" not in _src, \
+        "a bare SOCCER_KEYS loop is the bug: discoveries would be logged, not pulled"
     tmp = tempfile.mkdtemp()
     start = {"WSH@PHI": "2026-08-03T22:41Z", "SD@ARI": "2026-08-04T01:41Z"}
     ml = ["2026-08-03T22:41Z|WSH@PHI|Philadelphia Phillies ML|-146|136",
